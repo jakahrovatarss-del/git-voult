@@ -1,0 +1,264 @@
+{
+  "main": {
+    "id": "788ee19c4511851c",
+    "type": "split",
+    "children": [
+      {
+        "id": "7f13e9d09c26df09",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "59e05af9eaddb33f",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Attachments/mehanika/engineering-mechanics-statics-r-c-hibbeler-12th-edition.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "engineering-mechanics-statics-r-c-hibbeler-12th-edition"
+            }
+          },
+          {
+            "id": "30fbaa335bba3815",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Attachments/mehanika/SileBrezSkupnPrijem.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "SileBrezSkupnPrijem"
+            }
+          },
+          {
+            "id": "75e97b03536e4ac7",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Attachments/mehanika/arne mehanika strojništvo.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "arne mehanika strojništvo"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "79431f996f99f599",
+    "type": "split",
+    "children": [
+      {
+        "id": "3e5b44b76c8db76d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "266120e0ca03854e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "3e7f3b17f1c32b71",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "033dbda223ebce54",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 249.5,
+    "collapsed": true
+  },
+  "right": {
+    "id": "18dbd963988e1dae",
+    "type": "split",
+    "children": [
+      {
+        "id": "3dd8861a43599603",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "77b27799bc06994a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "715f285ab4f375bb",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "92920c42ece5b8bc",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          },
+          {
+            "id": "d708af01353ea250",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "9faa0f0760526748",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "zk-prefixer:Create new unique note": false,
+      "tasknotes:Open mini calendar": false,
+      "tasknotes:Open advanced calendar": false,
+      "tasknotes:Open task list": false,
+      "tasknotes:Open agenda": false,
+      "tasknotes:Open kanban board": false,
+      "tasknotes:Open pomodoro": false,
+      "tasknotes:Open pomodoro stats": false,
+      "tasknotes:Create new task": false,
+      "obsidian-excalidraw-plugin:New drawing": false
+    }
+  },
+  "active": "59e05af9eaddb33f",
+  "lastOpenFiles": [
+    "Untitled 1.md",
+    "Attachments/mehanika/engineering-mechanics-statics-r-c-hibbeler-12th-edition.pdf",
+    "Attachments/Pasted Image 20260301181354_350.png",
+    "Attachments/mehanika/SileBrezSkupnPrijem.pdf",
+    "Attachments/mehanika/arne mehanika strojništvo.pdf",
+    "Statika-enačbe statičnega ravnovesja, osnovni principi statike,redukcija sistema sil..md",
+    "Attachments/Pasted image 20260301175704.png",
+    "Attachments/Pasted image 20260301175646.png",
+    "Attachments/Pasted image 20260301175643.png",
+    "Attachments/Pasted image 20260301175521.png",
+    "Attachments/Pasted image 20260301175500.png",
+    "Attachments/Pasted image 20260301174859.png",
+    "Attachments/Pasted image 20260301174335.png",
+    "Attachments/Pasted image 20260301174233.png",
+    "Attachments/Pasted image 20260301174152.png",
+    "tasknotes-calendar (conflict 2026-03-01-17-25-00).ics",
+    "TaskNotes/Tasks/Za vinjeto preklic.md",
+    "Excalidraw/Drawing 2026-03-01 16.58.58.excalidraw.md",
+    "Excalidraw",
+    "Attachments/mehanika/LinKonstr1.pdf",
+    "Peter Teal.md",
+    "Attachments/mehanika/Nepotrjeno 115723.crdownload",
+    "Praxis- pametno mesto.md",
+    "praksis-pametno mesto posnetek.md",
+    "Sanford Reiew.md",
+    "Superiornost belih ljudi v Južni Afriki.md",
+    "Frierdrich Thiel.md",
+    "rudnik urana Rosing.md",
+    "Namibija.md",
+    "Swakopmund.md",
+    "TaskNotes/Views/calendar-default.base",
+    "Categories/Places.md",
+    "Izgon nacistov iz pomembnih fukcij v državi.md",
+    "Templates/People Template.md",
+    "NEON.md",
+    "Muhammad bin Salman.md",
+    "Saudska Arabija.md",
+    "TaskNotes/Tasks/pejt karburator sestaulat.md",
+    "TaskNotes/Views/kanban-default.base",
+    "TaskNotes/Tasks/smucanje.md",
+    "Templates/Project Template.md",
+    "Templates/Evergreen Template.md",
+    "Templates/Event Template.md",
+    "Templates/Daily Note Template.md",
+    "TaskNotes/Views/tasks-default.base"
+  ]
+}

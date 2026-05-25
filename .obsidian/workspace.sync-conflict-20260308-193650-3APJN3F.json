@@ -1,0 +1,438 @@
+{
+  "main": {
+    "id": "788ee19c4511851c",
+    "type": "split",
+    "children": [
+      {
+        "id": "7f13e9d09c26df09",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "272a82ea9897a93e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "STATIKA.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "STATIKA"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "79431f996f99f599",
+    "type": "split",
+    "children": [
+      {
+        "id": "3e5b44b76c8db76d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "266120e0ca03854e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "3e7f3b17f1c32b71",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "naloge",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "033dbda223ebce54",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 249.5
+  },
+  "right": {
+    "id": "18dbd963988e1dae",
+    "type": "split",
+    "children": [
+      {
+        "id": "3dd8861a43599603",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "77b27799bc06994a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "715f285ab4f375bb",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "92920c42ece5b8bc",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          },
+          {
+            "id": "d708af01353ea250",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "9faa0f0760526748",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "zk-prefixer:Create new unique note": false,
+      "tasknotes:Open mini calendar": false,
+      "tasknotes:Open advanced calendar": false,
+      "tasknotes:Open agenda": false,
+      "tasknotes:Open task list": false,
+      "tasknotes:Open kanban board": false,
+      "tasknotes:Open pomodoro": false,
+      "tasknotes:Open pomodoro stats": false,
+      "tasknotes:Create new task": false,
+      "obsidian-excalidraw-plugin:New drawing": false
+    }
+  },
+  "floating": {
+    "id": "8db135e677cc23de",
+    "type": "floating",
+    "children": [
+      {
+        "id": "95a8f0e5c19cdb28",
+        "type": "window",
+        "children": [
+          {
+            "id": "8b7182cc616d3705",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "42ef0895cea1a9cd",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Statika-enačbe statičnega ravnovesja, osnovni principi statike,redukcija sistema sil..md",
+                    "mode": "source",
+                    "source": false,
+                    "backlinks": true,
+                    "backlinkOpts": {
+                      "collapseAll": false,
+                      "extraContext": false,
+                      "sortOrder": "alphabetical",
+                      "showSearch": false,
+                      "searchQuery": "",
+                      "backlinkCollapsed": false,
+                      "unlinkedCollapsed": true
+                    }
+                  },
+                  "icon": "lucide-file",
+                  "title": "Statika-enačbe statičnega ravnovesja, osnovni principi statike,redukcija sistema sil."
+                }
+              },
+              {
+                "id": "588cf12e80f86cc3",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "STATIKA.md",
+                    "mode": "source",
+                    "source": false,
+                    "backlinks": true,
+                    "backlinkOpts": {
+                      "collapseAll": false,
+                      "extraContext": false,
+                      "sortOrder": "alphabetical",
+                      "showSearch": false,
+                      "searchQuery": "",
+                      "backlinkCollapsed": false,
+                      "unlinkedCollapsed": true
+                    }
+                  },
+                  "icon": "lucide-file",
+                  "title": "STATIKA"
+                }
+              },
+              {
+                "id": "c4b5e464fe31936d",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "STATIKA.md",
+                    "mode": "source",
+                    "source": false,
+                    "backlinks": true,
+                    "backlinkOpts": {
+                      "collapseAll": false,
+                      "extraContext": false,
+                      "sortOrder": "alphabetical",
+                      "showSearch": false,
+                      "searchQuery": "",
+                      "backlinkCollapsed": false,
+                      "unlinkedCollapsed": true
+                    }
+                  },
+                  "icon": "lucide-file",
+                  "title": "STATIKA"
+                }
+              }
+            ],
+            "currentTab": 1
+          }
+        ],
+        "direction": "vertical",
+        "x": 2442,
+        "y": 82,
+        "width": 1540,
+        "height": 1049,
+        "maximize": false,
+        "zoom": 0
+      },
+      {
+        "id": "082e385f27be607d",
+        "type": "window",
+        "children": [
+          {
+            "id": "aa39901e6728fcf8",
+            "type": "tabs",
+            "dimension": 49.78134110787172,
+            "children": [
+              {
+                "id": "6c82ed785d1a0394",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "Attachments/mehanika/SileBrezSkupnPrijem.pdf"
+                  },
+                  "icon": "lucide-file-text",
+                  "title": "SileBrezSkupnPrijem"
+                }
+              },
+              {
+                "id": "b9191e9a914244a2",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "Attachments/mehanika/engineering-mechanics-statics-r-c-hibbeler-12th-edition.pdf"
+                  },
+                  "icon": "lucide-file-text",
+                  "title": "engineering-mechanics-statics-r-c-hibbeler-12th-edition"
+                }
+              },
+              {
+                "id": "9e0699edfb01ddfd",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "naloge statika.md",
+                    "mode": "source",
+                    "source": false,
+                    "backlinks": true,
+                    "backlinkOpts": {
+                      "collapseAll": false,
+                      "extraContext": false,
+                      "sortOrder": "alphabetical",
+                      "showSearch": false,
+                      "searchQuery": "",
+                      "backlinkCollapsed": false,
+                      "unlinkedCollapsed": true
+                    }
+                  },
+                  "icon": "lucide-file",
+                  "title": "naloge statika"
+                }
+              }
+            ],
+            "currentTab": 1
+          },
+          {
+            "id": "a09b0b706cab92a1",
+            "type": "tabs",
+            "dimension": 50.218658892128275,
+            "children": [
+              {
+                "id": "e15d0bfc9efee984",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "Attachments/mehanika/engineering-mechanics-statics-r-c-hibbeler-12th-edition.pdf"
+                  },
+                  "icon": "lucide-file-text",
+                  "title": "engineering-mechanics-statics-r-c-hibbeler-12th-edition"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 2557,
+        "y": 0,
+        "width": 1371,
+        "height": 1440,
+        "maximize": true,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "b9191e9a914244a2",
+  "lastOpenFiles": [
+    "naloge statika.md",
+    "Attachments/mehanika/engineering-mechanics-statics-r-c-hibbeler-12th-edition.pdf",
+    "STATIKA.md",
+    "Untitled 1.md",
+    "Excalidraw/Mehanika.excalidraw.md",
+    "Statika-enačbe statičnega ravnovesja, osnovni principi statike,redukcija sistema sil..md",
+    "Superiornost belih ljudi v Južni Afriki.md",
+    "Swakopmund.md",
+    "Untitled.md",
+    "Untitled 2.md",
+    "Attachments/mehanika/ZapiskiUvod.pdf",
+    "Attachments/mehanika/SileBrezSkupnPrijem.pdf",
+    "Attachments/Pasted image 20260302151025.png",
+    "mehanika.md",
+    "Attachments/mehanika/Wood_As_An_Engineering_Material.pdf",
+    "Attachments/mehanika/podporeVeziLes.pdf",
+    "Attachments/mehanika/mehLastnLes.pdf",
+    "Attachments/mehanika/LinKonstr1.pdf",
+    "Wood_As_An_Engineering_Material.md",
+    "Attachments/mehanika/arne mehanika strojništvo.pdf",
+    "Attachments/Pasted Image 20260301181354_350.png",
+    "Attachments/Pasted image 20260301175704.png",
+    "Attachments/Pasted image 20260301175646.png",
+    "Attachments/Pasted image 20260301175643.png",
+    "Attachments/Pasted image 20260301175521.png",
+    "Attachments/Pasted image 20260301174859.png",
+    "Attachments/Pasted image 20260301174233.png",
+    "Attachments/Pasted image 20260301174152.png",
+    "Attachments/Pasted image 20260301174049.png",
+    "TaskNotes/Views/calendar-default.base",
+    "Rothchilds.md",
+    "Attachments/mehanika/statikaNalogeJesenko.pdf",
+    "Namibija.md",
+    "TaskNotes/Tasks/pejt karburator sestaulat.md",
+    "TaskNotes/Tasks/Naroč odganjalce za na vrt.md",
+    "TaskNotes/Tasks/Delaunicap odjetnistva.md",
+    "Izgon nacistov iz pomembnih fukcij v državi.md",
+    "Muhammad bin Salman.md",
+    "Frierdrich Thiel.md",
+    "Saudska Arabija.md",
+    "TaskNotes/Tasks/Za vinjeto preklic.md",
+    "NEON.md",
+    "TaskNotes/Tasks/smucanje.md",
+    "TaskNotes/Tasks/Poglej kdaj u auatrijo.md",
+    "rudnik urana Rosing.md"
+  ]
+}

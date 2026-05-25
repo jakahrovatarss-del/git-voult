@@ -1,0 +1,251 @@
+{
+  "main": {
+    "id": "788ee19c4511851c",
+    "type": "split",
+    "children": [
+      {
+        "id": "18eb5bd7b32de060",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7a0d69b60fd24cc4",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Drawing 2026-03-17 12.36.10.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2026-03-17 12.36.10.excalidraw"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "79431f996f99f599",
+    "type": "split",
+    "children": [
+      {
+        "id": "3e5b44b76c8db76d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "266120e0ca03854e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "3e7f3b17f1c32b71",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "033dbda223ebce54",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 312.5,
+    "collapsed": true
+  },
+  "right": {
+    "id": "18dbd963988e1dae",
+    "type": "split",
+    "children": [
+      {
+        "id": "3dd8861a43599603",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "77b27799bc06994a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "715f285ab4f375bb",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "92920c42ece5b8bc",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          },
+          {
+            "id": "d708af01353ea250",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "9faa0f0760526748",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "zk-prefixer:Create new unique note": false,
+      "tasknotes:Open mini calendar": false,
+      "tasknotes:Open advanced calendar": false,
+      "tasknotes:Open task list": false,
+      "tasknotes:Open agenda": false,
+      "tasknotes:Open kanban board": false,
+      "tasknotes:Open pomodoro": false,
+      "tasknotes:Open pomodoro stats": false,
+      "tasknotes:Create new task": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "omnisearch:Omnisearch": false,
+      "pdf-plus:PDF++: Toggle auto-copy": false,
+      "pdf-plus:PDF++: Toggle auto-focus": false,
+      "pdf-plus:PDF++: Toggle auto-paste": false,
+      "tasknotes:Open mini calendar view": false,
+      "tasknotes:Open calendar view": false,
+      "tasknotes:Open tasks view": false,
+      "tasknotes:Open agenda view": false,
+      "tasknotes:Open Kanban board": false,
+      "tasknotes:Open Pomodoro timer": false,
+      "tasknotes:Open Pomodoro statistics": false
+    }
+  },
+  "active": "7a0d69b60fd24cc4",
+  "lastOpenFiles": [
+    "Excalidraw/Drawing 2026-03-26 13.11.45.excalidraw.md",
+    "Excalidraw/Drawing 2026-03-26 13.13.12.excalidraw.md",
+    "Excalidraw/Fizika priprava na izpit teorijaexcalidraw.md",
+    "Excalidraw/Drawing 2026-03-17 12.36.10.excalidraw.md",
+    "Excalidraw/Drawing 2026-03-17 12.33.52.excalidraw.md",
+    "Excalidraw/Ravnovesje delca.excalidraw.md",
+    "Excalidraw/Ravnovesje delca naloge.excalidraw.md",
+    "Excalidraw/Mehanika.excalidraw.md",
+    "Statika-enačbe statičnega ravnovesja, osnovni principi statike,redukcija sistema sil..md",
+    "Swakopmund.md",
+    "Untitled.md",
+    "Untitled 1.md",
+    "Untitled 2.md",
+    "Untitled 3.md",
+    "Wood_As_An_Engineering_Material.md",
+    "Attachments/mehanika/engineering-mechanics-statics-r-c-hibbeler-12th-edition.pdf",
+    "Attachments/mehanika/DN1_rezkar.ipynb",
+    "Attachments/mehanika/NotrSileVaje (1).pdf",
+    "Attachments/mehanika/LinKonstr1.pdf",
+    "Antisemitizm.md",
+    "Curtis yarvin.md",
+    "LES UNI Vprašanja v01.pdf",
+    "Izgon nacistov iz pomembnih fukcij v državi.md",
+    "Open AI.md",
+    "pronomos capital.md",
+    "rudnik urana Rosing.md",
+    "Saudska Arabija.md",
+    "Statika – enačbe ravnovesja, principi, redukcija sil-naloge hubbert.md",
+    "Superiornost belih ljudi v Južni Afriki.md",
+    "TaskNotes/Views/calendar-default.base",
+    "Arss.md",
+    "TaskNotes/Views/kanban-default.base",
+    "tasknotes-calendar.sync-conflict-20260323-160539-K3S67X3.ics",
+    "Attachments/Zaslonski posnetek 2026-03-17 14-01-27.png",
+    "Attachments/Zaslonski posnetek 2026-03-17 13-54-27.png",
+    "Attachments/Pasted Image 20260317134023_025.png",
+    "Attachments/Pasted Image 20260317130835_418.png",
+    "Attachments/Zaslonski posnetek 2026-03-17 13-07-57.png",
+    "Attachments/Zaslonski posnetek 2026-03-17 13-07-27.png",
+    "Attachments/Zaslonski posnetek 2026-03-17 13-00-35.png",
+    "Attachments/Zaslonski posnetek 2026-03-17 12-58-58.png",
+    "Attachments/Zaslonski posnetek 2026-03-17 12-56-39.png",
+    "Attachments/Zaslonski posnetek 2026-03-17 12-55-21.png",
+    "Attachments/mehanika/Wood_As_An_Engineering_Material.pdf",
+    "Attachments/mehanika/statikaNalogeJesenko.pdf"
+  ]
+}

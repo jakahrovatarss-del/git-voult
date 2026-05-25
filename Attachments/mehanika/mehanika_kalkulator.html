@@ -1,0 +1,2151 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mehanika – Interaktivni Kalkulator</title>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d1b2a;--bg2:#112236;--bg3:#162d44;--panel:#0a1520;
+  --accent:#00c9ff;--accent2:#e94560;--gold:#f5a623;
+  --text:#d4e6f1;--text2:#8ab4cc;--text3:#4a7a99;
+  --grid:#1a3550;--success:#2ecc71;--warn:#f39c12;
+  --border:#1e3d5c;--radius:8px;
+  --font:'Courier New',monospace;
+}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',sans-serif;min-height:100vh;overflow-x:hidden}
+h1{font-family:var(--font);font-size:1.1rem;letter-spacing:3px;color:var(--accent);text-transform:uppercase}
+h2{font-size:.85rem;letter-spacing:2px;color:var(--text2);text-transform:uppercase;margin-bottom:12px}
+.header{background:var(--panel);border-bottom:1px solid var(--border);padding:12px 20px;display:flex;align-items:center;gap:16px}
+.badge{background:var(--accent);color:#001;font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:3px;letter-spacing:1px}
+.tabs{display:flex;background:var(--panel);border-bottom:1px solid var(--border);overflow-x:auto}
+.tab{padding:10px 18px;font-size:.78rem;letter-spacing:1px;text-transform:uppercase;color:var(--text2);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:.2s}
+.tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.tab:hover:not(.active){color:var(--text);border-bottom-color:var(--border)}
+.workspace{display:grid;grid-template-columns:280px 1fr 260px;height:calc(100vh - 86px);overflow:hidden}
+.sidebar{background:var(--panel);border-right:1px solid var(--border);overflow-y:auto;padding:14px}
+.results{background:var(--panel);border-left:1px solid var(--border);overflow-y:auto;padding:14px}
+.canvas-area{position:relative;background:var(--bg2);overflow:hidden}
+canvas{display:block;width:100%;height:100%}
+.panel-section{margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.panel-section:last-child{border-bottom:none}
+label{display:block;font-size:.72rem;color:var(--text3);margin-bottom:4px;letter-spacing:.5px;text-transform:uppercase}
+input[type=number],input[type=range],select{width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--text);border-radius:var(--radius);padding:7px 10px;font-size:.82rem;font-family:var(--font);outline:none;margin-bottom:10px}
+input[type=range]{padding:4px 0;margin-bottom:6px}
+input:focus{border-color:var(--accent)}
+.btn{display:block;width:100%;padding:9px;background:transparent;border:1px solid var(--accent);color:var(--accent);border-radius:var(--radius);font-size:.78rem;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:.2s;margin-bottom:8px;font-family:var(--font)}
+.btn:hover{background:var(--accent);color:#001}
+.btn.danger{border-color:var(--accent2);color:var(--accent2)}
+.btn.danger:hover{background:var(--accent2);color:#fff}
+.btn.gold{border-color:var(--gold);color:var(--gold)}
+.btn.gold:hover{background:var(--gold);color:#001}
+.result-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:12px;margin-bottom:10px}
+.result-card.highlight{border-color:var(--accent)}
+.result-card.success{border-color:var(--success)}
+.result-card.warn{border-color:var(--warn)}
+.result-label{font-size:.68rem;color:var(--text3);letter-spacing:.5px;text-transform:uppercase;margin-bottom:4px}
+.result-value{font-family:var(--font);font-size:1.1rem;color:var(--accent);font-weight:bold}
+.result-value.big{font-size:1.4rem}
+.result-value.warn{color:var(--warn)}
+.result-value.success{color:var(--success)}
+.result-value.danger{color:var(--accent2)}
+.eq-row{display:flex;justify-content:space-between;align-items:baseline;padding:4px 0;border-bottom:1px solid var(--border);font-size:.8rem}
+.eq-row:last-child{border-bottom:none}
+.eq-label{color:var(--text2);font-family:var(--font)}
+.eq-val{color:var(--text);font-family:var(--font)}
+.force-list{list-style:none}
+.force-item{display:flex;align-items:center;justify-content:space-between;padding:5px 8px;background:var(--bg3);border:1px solid var(--border);border-radius:5px;margin-bottom:4px;font-size:.78rem;font-family:var(--font)}
+.force-color{width:10px;height:10px;border-radius:50%;margin-right:8px;flex-shrink:0}
+.del-btn{background:none;border:none;color:var(--accent2);cursor:pointer;font-size:.9rem;padding:0 4px}
+.mode-toggle{display:flex;gap:0;margin-bottom:10px;border:1px solid var(--border);border-radius:5px;overflow:hidden}
+.mode-btn{flex:1;padding:5px 8px;background:var(--bg3);border:none;color:var(--text2);font-size:.72rem;cursor:pointer;font-family:var(--font);letter-spacing:.3px;transition:.15s}
+.mode-btn.active{background:var(--accent);color:#000;font-weight:bold}
+.mode-btn:hover:not(.active){background:var(--bg2);color:var(--text)}
+#statics-3d{width:100%;height:100%;position:relative;overflow:hidden;display:none;background:var(--bg)}
+#statics-3d canvas{width:100%!important;height:100%!important;display:block}
+.canvas-toolbar{position:absolute;top:10px;left:10px;display:flex;gap:6px;flex-wrap:wrap}
+.tool-btn{padding:5px 12px;background:var(--panel);border:1px solid var(--border);color:var(--text2);border-radius:5px;font-size:.72rem;cursor:pointer;letter-spacing:.5px;transition:.2s}
+.tool-btn.active{border-color:var(--accent);color:var(--accent)}
+.tool-btn:hover:not(.active){border-color:var(--text2);color:var(--text)}
+.canvas-info{position:absolute;bottom:10px;left:10px;font-size:.7rem;color:var(--text3);font-family:var(--font)}
+.input-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mohr-canvas{width:100%;aspect-ratio:1;background:var(--bg3);border-radius:var(--radius);border:1px solid var(--border);display:block}
+.hidden{display:none!important}
+.tab-content{display:none}
+.tab-content.active{display:block;height:100%;overflow:hidden}
+.problem-btn{display:block;width:100%;text-align:left;padding:8px 10px;background:var(--bg3);border:1px solid var(--border);color:var(--text2);border-radius:5px;font-size:.75rem;cursor:pointer;margin-bottom:5px;transition:.15s}
+.problem-btn:hover{border-color:var(--accent);color:var(--accent)}
+.tag{display:inline-block;font-size:.6rem;padding:1px 6px;border-radius:3px;text-transform:uppercase;letter-spacing:.5px;margin-left:6px;vertical-align:middle}
+.tag.stat{background:#0d3b4d;color:var(--accent)}
+.tag.hard{background:#3b1a0d;color:var(--gold)}
+.info-box{background:var(--bg3);border-left:3px solid var(--accent);padding:8px 12px;font-size:.77rem;color:var(--text2);border-radius:0 5px 5px 0;margin-bottom:10px;line-height:1.5}
+.divider{text-align:center;color:var(--text3);font-size:.7rem;letter-spacing:2px;padding:8px 0;text-transform:uppercase}
+.section-workspace{display:grid;grid-template-columns:280px 1fr 260px;height:100%;overflow:hidden}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>⚙ Mehanika</h1>
+  <span class="badge">Interaktivni Kalkulator</span>
+  <span style="font-size:.75rem;color:var(--text3);margin-left:auto">Klikni na canvas za sile · Dragi za vektor</span>
+</div>
+
+<div class="tabs">
+  <div class="tab active" onclick="switchTab('statics')">1. Statika – Ravnovesje sil</div>
+  <div class="tab" onclick="switchTab('rigid')">2. Togo telo – Reakcije</div>
+  <div class="tab" onclick="switchTab('stress')">3. Trdnost – Napetosti</div>
+  <div class="tab" onclick="switchTab('deform')">4. Trdnost – Deformacije</div>
+</div>
+
+<!-- ===================== TAB 1: STATICS ===================== -->
+<div id="tab-statics" class="tab-content active" style="height:calc(100vh - 86px)">
+<div class="section-workspace">
+<div class="sidebar">
+  <div class="panel-section">
+    <h2>Primeri nalog</h2>
+    <button class="problem-btn" onclick="loadStatics1()">Naloga 1.1 – Ravnovesje F₄<span class="tag stat">2D</span></button>
+    <button class="problem-btn" onclick="loadStatics2()">Naloga 1.2 – Redukcija 3 sil<span class="tag hard">3 sile</span></button>
+    <button class="problem-btn" onclick="loadStatics3()">Naloga 1.3 – Moment in OP<span class="tag stat">M+F</span></button>
+    <button class="problem-btn" onclick="clearForces()">Čisto platno</button>
+  </div>
+  
+  <div class="panel-section">
+    <h2>Dodaj silo</h2>
+    <div class="info-box" id="force-input-info">Klikni na platno za točko prijemališča, nato nastavi parametre spodaj in klikni "Dodaj silo".</div>
+    <label>Ime sile</label>
+    <input type="text" id="f-name" value="F₁" style="margin-bottom:10px">
+    <div class="mode-toggle">
+      <button class="mode-btn active" id="mode-polar" onclick="setInputMode('polar')">Polarne (F, α)</button>
+      <button class="mode-btn" id="mode-comp" onclick="setInputMode('comp')">Komponente (Fx,Fy,Fz)</button>
+    </div>
+    <div id="input-polar">
+      <label>Jakost F [kN]</label>
+      <input type="number" id="f-mag" value="6" step="0.1">
+      <label>Kot α [°] (od +x osi, CCW)</label>
+      <input type="number" id="f-angle" value="0" step="1">
+      <input type="range" id="f-angle-slider" min="-180" max="180" value="0" oninput="document.getElementById('f-angle').value=this.value">
+    </div>
+    <div id="input-comp" style="display:none">
+      <label>Fx [kN]</label>
+      <input type="number" id="f-fx" value="0" step="0.1">
+      <label>Fy [kN]</label>
+      <input type="number" id="f-fy" value="0" step="0.1">
+      <label>Fz [kN]</label>
+      <input type="number" id="f-fz" value="0" step="0.1">
+    </div>
+    <label>Točka prijemališča x [m]</label>
+    <input type="number" id="f-px" value="0" step="0.1">
+    <label>Točka prijemališča y [m]</label>
+    <input type="number" id="f-py" value="0" step="0.1">
+    <div id="input-pz-row" style="display:none">
+      <label>Točka prijemališča z [m]</label>
+      <input type="number" id="f-pz" value="0" step="0.1">
+    </div>
+    <button class="btn" onclick="addForceFromPanel()">+ Dodaj silo</button>
+    <button class="btn danger" onclick="clearForces()">Počisti vse</button>
+  </div>
+  
+  <div class="panel-section">
+    <h2>Izhodišče momentov [m]</h2>
+    <div class="input-row">
+      <div><label>x₀</label><input type="number" id="mo-x" value="0" step="0.1" oninput="calcEquilibrium()"></div>
+      <div><label>y₀</label><input type="number" id="mo-y" value="0" step="0.1" oninput="calcEquilibrium()"></div>
+    </div>
+  </div>
+
+  <div class="panel-section">
+    <h2>Aktivne sile</h2>
+    <ul class="force-list" id="force-list"></ul>
+  </div>
+</div>
+
+<div class="canvas-area">
+  <div class="canvas-toolbar">
+    <button class="tool-btn active" id="tool-select" onclick="setTool('select')">↖ Izberi</button>
+    <button class="tool-btn" id="tool-force" onclick="setTool('force')">→ Dodaj silo</button>
+    <button class="tool-btn" id="tool-moment" onclick="setTool('moment')">↺ Moment</button>
+    <button class="tool-btn" onclick="resetView()">⊞ Pogled</button>
+    <button class="tool-btn" id="tool-3d" onclick="toggle3DView()">⬡ 3D Pogled</button>
+  </div>
+  <canvas id="statics-canvas"></canvas>
+  <div id="statics-3d"></div>
+  <div class="canvas-info" id="canvas-coords">x: 0.00 m | y: 0.00 m</div>
+</div>
+
+<div class="results">
+  <h2>Rezultati</h2>
+  <div class="result-card highlight">
+    <div class="result-label">Rezultanta ΣF</div>
+    <div class="result-value big" id="res-F">0.00 kN</div>
+  </div>
+  <div class="result-card">
+    <div class="result-label">Kot rezultante φ</div>
+    <div class="result-value" id="res-phi">0.00°</div>
+  </div>
+  <div class="result-card" id="eq-card">
+    <div class="result-label">Ravnovesje</div>
+    <div class="result-value success" id="res-eq">Ni sil</div>
+  </div>
+  
+  <div style="margin:14px 0 6px"><h2>Enačbe ravnovesja</h2></div>
+  <div class="result-card">
+    <div class="eq-row"><span class="eq-label">ΣFx =</span><span class="eq-val" id="eq-fx">0.00 kN</span></div>
+    <div class="eq-row"><span class="eq-label">ΣFy =</span><span class="eq-val" id="eq-fy">0.00 kN</span></div>
+    <div class="eq-row"><span class="eq-label">ΣFz =</span><span class="eq-val" id="eq-fz">0.00 kN</span></div>
+    <div class="eq-row"><span class="eq-label">ΣM₀ =</span><span class="eq-val" id="eq-mo">0.00 kNm</span></div>
+  </div>
+
+  <div style="margin:14px 0 6px"><h2>Komponente</h2></div>
+  <div id="force-components"></div>
+  
+  <div style="margin:14px 0 6px"><h2>Iskana sila (za rav.)</h2></div>
+  <div class="result-card highlight">
+    <div class="result-label">F₄ (za ΣF=0)</div>
+    <div class="result-value" id="unknown-F">–</div>
+  </div>
+  <div class="result-card">
+    <div class="result-label">Kot φ₄ / Smer (lx,ly,lz)</div>
+    <div class="result-value" id="unknown-phi">–</div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- ===================== TAB 2: RIGID BODY ===================== -->
+<div id="tab-rigid" class="tab-content" style="height:calc(100vh - 86px)">
+<div class="section-workspace">
+<div class="sidebar">
+  <div class="panel-section">
+    <h2>Tip naloge</h2>
+    <button class="problem-btn" onclick="loadRigid1()">Naloga 2.1 – Krogla + vrvica<span class="tag stat">krogla</span></button>
+    <button class="problem-btn" onclick="loadRigid2()">Naloga 2.2 – Lomljen nosilec<span class="tag hard">F=15kN</span></button>
+    <button class="problem-btn" onclick="loadRigid3()">Naloga 2.3 – Krogla v kotu<span class="tag stat">G=120N</span></button>
+    <button class="problem-btn" onclick="loadRigid4()">Naloga 2.4 – Okvirni sistem<span class="tag hard">IMG_1194</span></button>
+  </div>
+  
+  <div class="panel-section" id="rigid-params">
+    <h2>Parametri</h2>
+    <div id="rigid-inputs">
+      <label>Teža/sila G [kN]</label>
+      <input type="number" id="r-G" value="0.981" step="0.01" oninput="calcRigid()">
+      <label>Razdalja a [m]</label>
+      <input type="number" id="r-a" value="2" step="0.1" oninput="calcRigid()">
+      <label>Razdalja b [m]</label>
+      <input type="number" id="r-b" value="3" step="0.1" oninput="calcRigid()">
+      <label>Dolžina vrvice L [m]</label>
+      <input type="number" id="r-L" value="0.3" step="0.01" oninput="calcRigid()">
+      <label>Polmer krogle r [m]</label>
+      <input type="number" id="r-r" value="0.1" step="0.01" oninput="calcRigid()">
+    </div>
+  </div>
+</div>
+
+<div class="canvas-area">
+  <canvas id="rigid-canvas"></canvas>
+  <div class="canvas-info" id="rigid-info">Izberi nalogo iz levega panela</div>
+</div>
+
+<div class="results">
+  <h2>Rezultati</h2>
+  <div id="rigid-results">
+    <div class="result-card"><div class="result-label">Izberi nalogo</div><div class="result-value" style="color:var(--text3)">←</div></div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- ===================== TAB 3: STRESS ===================== -->
+<div id="tab-stress" class="tab-content" style="height:calc(100vh - 86px)">
+<div class="section-workspace">
+<div class="sidebar">
+  <div class="panel-section">
+    <h2>Primeri</h2>
+    <button class="problem-btn" onclick="loadStress1()">Naloga 3.1 – σx=20, σy=-40, τ=30<span class="tag stat">MPa</span></button>
+    <button class="problem-btn" onclick="loadStress2()">Naloga 3.2 – Tenzor 3×3<span class="tag hard">50/30</span></button>
+    <button class="problem-btn" onclick="loadStress3()">Naloga 3.3 – Palica 30°<span class="tag stat">zlepek</span></button>
+  </div>
+  
+  <div class="panel-section">
+    <h2>Napetostno stanje [MPa]</h2>
+    <div class="input-row">
+      <div><label>σₓ</label><input type="number" id="sx" value="20" step="1" oninput="calcMohr()"></div>
+      <div><label>σᵧ</label><input type="number" id="sy" value="-40" step="1" oninput="calcMohr()"></div>
+    </div>
+    <label>τₓᵧ</label>
+    <input type="number" id="txy" value="30" step="1" oninput="calcMohr()">
+    <label>Kot lepljenja / ravnine θ [°]</label>
+    <input type="number" id="theta" value="0" step="1" oninput="calcMohr()">
+    <input type="range" id="theta-slider" min="-90" max="90" value="0" oninput="document.getElementById('theta').value=this.value;calcMohr()">
+    <button class="btn" onclick="calcMohr()">Izračunaj</button>
+  </div>
+</div>
+
+<div class="canvas-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:20px">
+  <canvas id="mohr-canvas" width="500" height="500" style="max-width:100%;max-height:55vh;background:var(--bg3);border-radius:var(--radius);border:1px solid var(--border)"></canvas>
+  <canvas id="stress-element" width="280" height="220" style="background:var(--bg3);border-radius:var(--radius);border:1px solid var(--border)"></canvas>
+</div>
+
+<div class="results">
+  <h2>Mohrova krožnica</h2>
+  <div class="result-card highlight">
+    <div class="result-label">Glavna napetost σ₁</div>
+    <div class="result-value big" id="s1">0 MPa</div>
+  </div>
+  <div class="result-card highlight">
+    <div class="result-label">Glavna napetost σ₂</div>
+    <div class="result-value big" id="s2">0 MPa</div>
+  </div>
+  <div class="result-card">
+    <div class="result-label">Max strižna napetost τmax</div>
+    <div class="result-value" id="tmax">0 MPa</div>
+  </div>
+  <div class="result-card">
+    <div class="result-label">Kot α₁ (do gl. ravnine)</div>
+    <div class="result-value" id="alpha1">0°</div>
+  </div>
+  <div class="result-card">
+    <div class="result-label">Srednja napetost σsr</div>
+    <div class="result-value" id="sigma-avg">0 MPa</div>
+  </div>
+  <div style="margin:14px 0 6px"><h2>Napetosti na ravnini θ</h2></div>
+  <div class="result-card">
+    <div class="eq-row"><span class="eq-label">σₙ(θ) =</span><span class="eq-val" id="sn-theta">0 MPa</span></div>
+    <div class="eq-row"><span class="eq-label">τ(θ) =</span><span class="eq-val" id="t-theta">0 MPa</span></div>
+  </div>
+  <div style="margin:14px 0 6px"><h2>Napetostni vektor</h2></div>
+  <div class="result-card">
+    <div class="eq-row"><span class="eq-label">|p| =</span><span class="eq-val" id="p-mag">0 MPa</span></div>
+    <div class="eq-row"><span class="eq-label">kot =</span><span class="eq-val" id="p-angle">0°</span></div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- ===================== TAB 4: DEFORMATION ===================== -->
+<div id="tab-deform" class="tab-content" style="height:calc(100vh - 86px)">
+<div class="section-workspace">
+<div class="sidebar">
+  <div class="panel-section">
+    <h2>Primeri</h2>
+    <button class="problem-btn" onclick="loadDeform1()">Naloga 4.1 – Palice + premik D<span class="tag hard">E=70GPa</span></button>
+    <button class="problem-btn" onclick="loadDeform2()">Naloga 4.2 – Maks. poves<span class="tag stat">M=12kNm</span></button>
+    <button class="problem-btn" onclick="loadDeform3()">Naloga 4.3 – Enakom. q: poves<span class="tag stat">q=3kN/m</span></button>
+    <button class="problem-btn" onclick="loadDeform4()">Naloga 4.4 – Trikotna obtežba<span class="tag stat">triang</span></button>
+    <button class="problem-btn" onclick="loadDeform5()">Naloga 4.5 – Trapezna q₁→q₂<span class="tag hard">trapez</span></button>
+    <button class="problem-btn" onclick="loadDeform6()">Naloga 4.6 – Moment M₀@a<span class="tag stat">M₀</span></button>
+  </div>
+  
+  <div class="panel-section">
+    <h2>Parametri nosilca</h2>
+    <label>Tip obremenitve</label>
+    <select id="beam-type" onchange="updateBeamTypeUI();calcBeam()">
+      <option value="moment">Čisti moment M (rob)</option>
+      <option value="point">Točkovna sila F @ a</option>
+      <option value="dist">Enakom. porazdeljena q</option>
+      <option value="cantilever">Konzola – točkovna F</option>
+      <option value="triang">Trikotna q [0→q_max]</option>
+      <option value="trapez">Trapezna q [q₁→q₂]</option>
+      <option value="midmoment">Moment M₀ @ pozicija a</option>
+    </select>
+    <label>Razpon L [m]</label>
+    <input type="number" id="b-L" value="3" step="0.1" oninput="calcBeam()">
+    <label id="lbl-P">Obremenitev P [kN ali kNm]</label>
+    <input type="number" id="b-P" value="12" step="0.1" oninput="calcBeam()">
+    <label id="lbl-a">Pozicija a [m] (od leve podpore)</label>
+    <input type="number" id="b-a" value="1.5" step="0.1" oninput="calcBeam()">
+    <div id="q2-row" style="display:none">
+      <label id="lbl-q2">q₂ desno [kN/m]</label>
+      <input type="number" id="b-q2" value="0" step="0.1" oninput="calcBeam()">
+    </div>
+    <label>E·I [kNm²]</label>
+    <input type="number" id="b-EI" value="1000" step="10" oninput="calcBeam()">
+    <button class="btn" onclick="calcBeam()">Izračunaj</button>
+  </div>
+</div>
+
+<div class="canvas-area" style="display:flex;flex-direction:column;overflow-y:auto;overflow-x:hidden">
+  <div style="flex:1 1 0;min-height:220px;position:relative">
+    <canvas id="beam-canvas" style="position:absolute;top:0;left:0;width:100%;height:100%"></canvas>
+  </div>
+  <div style="flex:0 0 28px;background:var(--bg);border-top:2px solid #1e3d5c;border-bottom:1px solid #1e3d5c;display:flex;align-items:center;padding:0 14px;gap:10px">
+    <span style="font-size:.68rem;letter-spacing:1.5px;color:#00c9ff;text-transform:uppercase;font-family:'Courier New',monospace;font-weight:bold">V – Prečne sile [kN]</span>
+  </div>
+  <div style="flex:0 0 160px;position:relative">
+    <canvas id="Vd-canvas" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block"></canvas>
+  </div>
+  <div style="flex:0 0 28px;background:var(--bg);border-top:2px solid #1e3d5c;border-bottom:1px solid #1e3d5c;display:flex;align-items:center;padding:0 14px;gap:10px">
+    <span style="font-size:.68rem;letter-spacing:1.5px;color:#f5a623;text-transform:uppercase;font-family:'Courier New',monospace;font-weight:bold">M – Upogibni momenti [kNm]</span>
+  </div>
+  <div style="flex:0 0 160px;position:relative">
+    <canvas id="Md-canvas" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block"></canvas>
+  </div>
+</div>
+
+<div class="results">
+  <h2>Rezultati – Poves</h2>
+  <div class="result-card highlight">
+    <div class="result-label">Maks. poves f_max</div>
+    <div class="result-value big" id="d-fmax">0 m</div>
+  </div>
+  <div class="result-card">
+    <div class="result-label">Mesto maks. povesa x</div>
+    <div class="result-value" id="d-xmax">0 m</div>
+  </div>
+  <div class="result-card">
+    <div class="result-label">Reakcija levo RA</div>
+    <div class="result-value" id="d-RA">0 kN</div>
+  </div>
+  <div class="result-card">
+    <div class="result-label">Reakcija desno RB</div>
+    <div class="result-value" id="d-RB">0 kN</div>
+  </div>
+  <div style="margin:14px 0 6px"><h2>Formula</h2></div>
+  <div class="result-card">
+    <div class="result-label">Obrazec za poves</div>
+    <div id="beam-formula" style="font-family:var(--font);font-size:.8rem;color:var(--accent);line-height:1.6"></div>
+  </div>
+  <div class="info-box" style="margin-top:8px;font-size:.75rem;color:var(--text3)">Diagrami V in M so prikazani v osrednjem področju pod risbo nosilca.</div>
+</div>
+</div>
+</div>
+
+<script>
+// ============================================================
+// GLOBAL STATE
+// ============================================================
+let forces = [];
+let moments_applied = [];
+let activeTab = 'statics';
+let selectedTool = 'select';
+let clickPoint = {x:0, y:0};
+let viewOffset = {x:0, y:0};
+let viewScale = 80; // pixels per meter
+let rigidMode = 'none';
+let isDragging = false, lastMouse = null;
+let currentInputMode = 'polar'; // 'polar' ali 'comp'
+let is3DActive = false;
+let threeRenderer = null, threeScene = null, threeCamera = null, threeControls = null;
+let threeAnimId = null;
+const COLORS = ['#00c9ff','#f5a623','#e94560','#2ecc71','#a29bfe','#fd79a8','#55efc4','#fdcb6e'];
+const NUM_EPS = 1e-9;
+let beamQ2 = 0;          // q₂ za trapezno obtežbo
+let beamDeflTable = null; // preizračunana tabela povesa za numerične tipe
+
+function isValidNumber(v){
+  return Number.isFinite(v);
+}
+
+function formatWarnCard(msg){
+  return `<div class="result-card warn"><div class="result-label">Opozorilo</div><div class="result-value warn" style="font-size:.9rem">${msg}</div></div>`;
+}
+
+function safeSqrt(x){
+  return Math.sqrt(Math.max(0, x));
+}
+
+// ============================================================
+// TAB SWITCHING
+// ============================================================
+function switchTab(tab){
+  activeTab = tab;
+  document.querySelectorAll('.tab').forEach((t,i)=>{
+    const tabs=['statics','rigid','stress','deform'];
+    t.classList.toggle('active', tabs[i]===tab);
+  });
+  document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+  document.getElementById('tab-'+tab).classList.add('active');
+  setTimeout(()=>{
+    if(tab==='statics') initStaticsCanvas();
+    if(tab==='rigid') initRigidCanvas();
+    if(tab==='stress'){calcMohr(); initStressCanvas();}
+    if(tab==='deform'){calcBeam(); initBeamCanvas();}
+  },50);
+}
+
+// ============================================================
+// TAB 1: STATICS
+// ============================================================
+let staticsCtx, staticsCanvas;
+
+function initStaticsCanvas(){
+  staticsCanvas = document.getElementById('statics-canvas');
+  if(!staticsCanvas) return;
+  if(is3DActive){ if(threeRenderer) drawStatics3D(); return; } // 3D mode: skip 2D init
+  staticsCanvas.width = staticsCanvas.offsetWidth;
+  staticsCanvas.height = staticsCanvas.offsetHeight;
+  staticsCtx = staticsCanvas.getContext('2d');
+  viewOffset = {x: staticsCanvas.width/2, y: staticsCanvas.height/2};
+  drawStatics();
+  
+  staticsCanvas.onclick = function(e){
+    if(selectedTool==='force'){
+      const r = staticsCanvas.getBoundingClientRect();
+      const mx = e.clientX-r.left, my = e.clientY-r.top;
+      const wx = (mx - viewOffset.x)/viewScale;
+      const wy = -(my - viewOffset.y)/viewScale;
+      document.getElementById('f-px').value = wx.toFixed(2);
+      document.getElementById('f-py').value = wy.toFixed(2);
+      clickPoint = {x:wx, y:wy};
+    }
+  };
+  
+  staticsCanvas.onmousemove = function(e){
+    const r = staticsCanvas.getBoundingClientRect();
+    const mx = e.clientX-r.left, my = e.clientY-r.top;
+    const wx = (mx - viewOffset.x)/viewScale;
+    const wy = -(my - viewOffset.y)/viewScale;
+    document.getElementById('canvas-coords').textContent = `x: ${wx.toFixed(2)} m | y: ${wy.toFixed(2)} m`;
+    if(isDragging && lastMouse && selectedTool==='select'){
+      viewOffset.x += mx - lastMouse.x;
+      viewOffset.y += my - lastMouse.y;
+      lastMouse = {x:mx, y:my};
+      drawStatics();
+    }
+  };
+  staticsCanvas.onmousedown = function(e){ isDragging=true; const r=staticsCanvas.getBoundingClientRect(); lastMouse={x:e.clientX-r.left,y:e.clientY-r.top}; };
+  staticsCanvas.onmouseup = function(){ isDragging=false; lastMouse=null; };
+  staticsCanvas.onwheel = function(e){ e.preventDefault(); viewScale *= e.deltaY<0?1.1:0.9; viewScale=Math.max(20,Math.min(300,viewScale)); drawStatics(); };
+}
+
+function worldToCanvas(x,y){ return {x: viewOffset.x + x*viewScale, y: viewOffset.y - y*viewScale}; }
+
+function drawStatics(){
+  if(!staticsCtx) return;
+  const c = staticsCtx, w = staticsCanvas.width, h = staticsCanvas.height;
+  c.clearRect(0,0,w,h);
+  
+  // Grid
+  c.strokeStyle='#1a3550'; c.lineWidth=0.5;
+  const gridStep = viewScale;
+  const ox = viewOffset.x % gridStep, oy = viewOffset.y % gridStep;
+  for(let x=ox; x<w; x+=gridStep){ c.beginPath(); c.moveTo(x,0); c.lineTo(x,h); c.stroke(); }
+  for(let y=oy; y<h; y+=gridStep){ c.beginPath(); c.moveTo(0,y); c.lineTo(w,y); c.stroke(); }
+  
+  // Axes
+  c.strokeStyle='#1e3d5c'; c.lineWidth=1.5;
+  c.beginPath(); c.moveTo(0,viewOffset.y); c.lineTo(w,viewOffset.y); c.stroke();
+  c.beginPath(); c.moveTo(viewOffset.x,0); c.lineTo(viewOffset.x,h); c.stroke();
+  c.fillStyle='#4a7a99'; c.font='11px Courier New';
+  c.fillText('x',w-15,viewOffset.y-8); c.fillText('y',viewOffset.x+6,14);
+  
+  // Grid labels
+  const step = Math.max(1, Math.round(80/viewScale));
+  c.fillStyle='#2a5a7a'; c.font='9px Courier New';
+  for(let i=-20; i<=20; i+=step){
+    if(i===0) continue;
+    const p = worldToCanvas(i,0);
+    if(p.x>0&&p.x<w) c.fillText(i+'m',p.x-8,viewOffset.y+14);
+    const p2 = worldToCanvas(0,i);
+    if(p2.y>0&&p2.y<h) c.fillText(i+'m',viewOffset.x+6,p2.y+4);
+  }
+  
+  // Moments
+  moments_applied.forEach(m=>{
+    const p = worldToCanvas(m.x, m.y);
+    c.strokeStyle = m.color; c.lineWidth = 2;
+    c.beginPath(); c.arc(p.x, p.y, 20, 0, Math.PI*1.7);
+    c.stroke();
+    const arrowAngle = Math.PI*1.7 + (m.M>0?0.3:-0.3);
+    drawArrowHead(c, p.x+20*Math.cos(arrowAngle), p.y+20*Math.sin(arrowAngle), arrowAngle+(m.M>0?Math.PI/2:-Math.PI/2), m.color, 8);
+    c.fillStyle=m.color; c.font='bold 12px Courier New';
+    c.fillText(`M=${m.M}kNm`, p.x+25, p.y-5);
+  });
+  
+  // Forces
+  forces.forEach((f,i)=>{
+    const px = worldToCanvas(f.x, f.y);
+    const mag2d = Math.sqrt(f.Fx*f.Fx + f.Fy*f.Fy);
+    const angleRad = Math.atan2(f.Fy, f.Fx);
+    const scale = mag2d * viewScale * 0.4;
+    const ex = px.x + Math.cos(angleRad)*scale;
+    const ey = px.y - Math.sin(angleRad)*scale;
+    
+    // Force line
+    c.strokeStyle = f.color; c.lineWidth = 2.5;
+    c.beginPath(); c.moveTo(px.x, px.y); c.lineTo(ex, ey); c.stroke();
+    if(mag2d > 0.001) drawArrowHead(c, ex, ey, angleRad, f.color, 10);
+    
+    // Point
+    c.fillStyle = f.color;
+    c.beginPath(); c.arc(px.x, px.y, 4, 0, Math.PI*2); c.fill();
+    
+    // Label
+    c.fillStyle = f.color; c.font = 'bold 13px Courier New';
+    const labelAngle = mag2d > 0.001 ? angleRad : 0;
+    const labelX = ex + Math.cos(labelAngle+0.4)*18;
+    const labelY = ey - Math.sin(labelAngle+0.4)*18;
+    const totalF = Math.sqrt(f.Fx**2+f.Fy**2+f.Fz**2);
+    c.fillText(`${f.name}=${totalF.toFixed(2)}kN`, labelX, labelY);
+    c.font = '11px Courier New'; c.fillStyle = '#8ab4cc';
+    if(Math.abs(f.Fz) > 0.001){
+      c.fillText(`(${f.Fx.toFixed(1)},${f.Fy.toFixed(1)},${f.Fz.toFixed(1)})`, labelX, labelY+14);
+    } else {
+      const deg = (Math.atan2(f.Fy,f.Fx)*180/Math.PI).toFixed(1);
+      c.fillText(`α=${deg}°`, labelX, labelY+14);
+    }
+  });
+  
+  // Resultant (dashed)
+  if(forces.length>0){
+    const eqs = computeEquilibrium();
+    if(Math.abs(eqs.Rx)>0.001 || Math.abs(eqs.Ry)>0.001){
+      const R = Math.sqrt(eqs.Rx**2+eqs.Ry**2);
+      const phi = Math.atan2(eqs.Ry, eqs.Rx);
+      const scale = R * viewScale * 0.4;
+      c.setLineDash([6,4]); c.strokeStyle='#555'; c.lineWidth=1.5;
+      c.beginPath(); c.moveTo(viewOffset.x, viewOffset.y);
+      c.lineTo(viewOffset.x+eqs.Rx/R*scale, viewOffset.y-eqs.Ry/R*scale); c.stroke();
+      c.setLineDash([]);
+    }
+  }
+}
+
+function drawArrowHead(ctx, x, y, angle, color, size){
+  ctx.fillStyle = color;
+  ctx.beginPath();
+  ctx.moveTo(x, y);
+  ctx.lineTo(x - size*Math.cos(angle-0.4), y + size*Math.sin(angle-0.4));
+  ctx.lineTo(x - size*Math.cos(angle+0.4), y + size*Math.sin(angle+0.4));
+  ctx.closePath(); ctx.fill();
+}
+
+function addForceFromPanel(){
+  const name = document.getElementById('f-name').value || ('F'+(forces.length+1));
+  let Fx, Fy, Fz;
+  if(currentInputMode === 'polar'){
+    const F = parseFloat(document.getElementById('f-mag').value) || 0;
+    const angle = parseFloat(document.getElementById('f-angle').value) || 0;
+    const a = angle * Math.PI / 180;
+    Fx = F * Math.cos(a); Fy = F * Math.sin(a); Fz = 0;
+  } else {
+    Fx = parseFloat(document.getElementById('f-fx').value) || 0;
+    Fy = parseFloat(document.getElementById('f-fy').value) || 0;
+    Fz = parseFloat(document.getElementById('f-fz').value) || 0;
+  }
+  const px = parseFloat(document.getElementById('f-px').value) || 0;
+  const py = parseFloat(document.getElementById('f-py').value) || 0;
+  const pz = parseFloat(document.getElementById('f-pz')?.value) || 0;
+  forces.push({name, Fx, Fy, Fz, x:px, y:py, z:pz, color: COLORS[forces.length % COLORS.length]});
+  updateForceList();
+  calcEquilibrium();
+  drawStatics();
+}
+
+function removeForce(i){ forces.splice(i,1); updateForceList(); calcEquilibrium(); drawStatics(); }
+
+function updateForceList(){
+  const ul = document.getElementById('force-list');
+  ul.innerHTML = '';
+  forces.forEach((f,i)=>{
+    const fTotal = Math.sqrt(f.Fx**2+f.Fy**2+f.Fz**2);
+    const has3D = Math.abs(f.Fz) > 0.001;
+    const desc = has3D
+      ? `(${f.Fx.toFixed(2)},${f.Fy.toFixed(2)},${f.Fz.toFixed(2)}) kN`
+      : `${fTotal.toFixed(3)}kN @ ${(Math.atan2(f.Fy,f.Fx)*180/Math.PI).toFixed(1)}°`;
+    ul.innerHTML += `<li class="force-item">
+      <span class="force-color" style="background:${f.color}"></span>
+      <span>${f.name}: ${desc}</span>
+      <button class="del-btn" onclick="removeForce(${i})">✕</button>
+    </li>`;
+  });
+}
+
+function computeEquilibrium(){
+  let Rx=0, Ry=0, Rz=0, Mo=0;
+  const ox = parseFloat(document.getElementById('mo-x').value)||0;
+  const oy = parseFloat(document.getElementById('mo-y').value)||0;
+  forces.forEach(f=>{
+    Rx += f.Fx;
+    Ry += f.Fy;
+    Rz += f.Fz;
+    Mo += (f.x-ox)*f.Fy - (f.y-oy)*f.Fx;
+  });
+  moments_applied.forEach(m=>{ Mo += m.M; });
+  return {Rx, Ry, Rz, Mo};
+}
+
+function calcEquilibrium(){
+  if(forces.length===0){
+    document.getElementById('res-F').textContent='0.00 kN';
+    document.getElementById('res-phi').textContent='0.00°';
+    document.getElementById('res-eq').textContent='Ni sil';
+    document.getElementById('eq-fx').textContent='0.00 kN';
+    document.getElementById('eq-fy').textContent='0.00 kN';
+    document.getElementById('eq-fz').textContent='0.00 kN';
+    document.getElementById('eq-mo').textContent='0.00 kNm';
+    document.getElementById('force-components').innerHTML='';
+    document.getElementById('unknown-F').textContent='–';
+    document.getElementById('unknown-phi').textContent='–';
+    return;
+  }
+  const eq = computeEquilibrium();
+  const R = Math.sqrt(eq.Rx**2+eq.Ry**2+eq.Rz**2);
+  document.getElementById('res-F').textContent = R.toFixed(3)+' kN';
+  document.getElementById('eq-fx').textContent = eq.Rx.toFixed(3)+' kN';
+  document.getElementById('eq-fy').textContent = eq.Ry.toFixed(3)+' kN';
+  document.getElementById('eq-fz').textContent = eq.Rz.toFixed(3)+' kN';
+  document.getElementById('eq-mo').textContent = eq.Mo.toFixed(3)+' kNm';
+
+  const has3D = Math.abs(eq.Rz) > 0.001;
+  if(has3D){
+    document.getElementById('res-phi').textContent = '3D vektor';
+  } else {
+    const phi = Math.atan2(eq.Ry, eq.Rx)*180/Math.PI;
+    document.getElementById('res-phi').textContent = phi.toFixed(2)+'°';
+  }
+
+  const isEq = Math.abs(eq.Rx)<0.01 && Math.abs(eq.Ry)<0.01 && Math.abs(eq.Rz)<0.01 && Math.abs(eq.Mo)<0.01;
+  const eqEl = document.getElementById('res-eq');
+  eqEl.textContent = isEq ? '✓ V ravnotežju!' : '✗ Ni ravnotežja';
+  eqEl.className = 'result-value '+(isEq?'success':'danger');
+  
+  // Components table
+  let html = '';
+  forces.forEach(f=>{
+    const fTotal = Math.sqrt(f.Fx**2+f.Fy**2+f.Fz**2);
+    const has3Df = Math.abs(f.Fz) > 0.001;
+    const header = has3Df
+      ? `(${f.Fx.toFixed(3)},${f.Fy.toFixed(3)},${f.Fz.toFixed(3)}) kN`
+      : `${fTotal.toFixed(3)}kN @ ${(Math.atan2(f.Fy,f.Fx)*180/Math.PI).toFixed(1)}°`;
+    html += `<div class="result-card" style="border-color:${f.color}">
+      <div class="eq-row"><span class="eq-label" style="color:${f.color}">${f.name}</span><span class="eq-val">${header}</span></div>
+      <div class="eq-row"><span class="eq-label">Fx</span><span class="eq-val">${f.Fx.toFixed(3)} kN</span></div>
+      <div class="eq-row"><span class="eq-label">Fy</span><span class="eq-val">${f.Fy.toFixed(3)} kN</span></div>
+      <div class="eq-row"><span class="eq-label">Fz</span><span class="eq-val">${f.Fz.toFixed(3)} kN</span></div>
+    </div>`;
+  });
+  document.getElementById('force-components').innerHTML = html;
+  
+  // Unknown force for equilibrium
+  const Funknown = R;
+  if(has3D && R > 0.001){
+    document.getElementById('unknown-F').textContent = Funknown.toFixed(3)+' kN';
+    const lx = (-eq.Rx/R).toFixed(3), ly = (-eq.Ry/R).toFixed(3), lz = (-eq.Rz/R).toFixed(3);
+    document.getElementById('unknown-phi').textContent = `(${lx},${ly},${lz})`;
+  } else {
+    const phiUnknown = (Math.atan2(-eq.Ry, -eq.Rx)*180/Math.PI);
+    document.getElementById('unknown-F').textContent = Funknown.toFixed(3)+' kN';
+    document.getElementById('unknown-phi').textContent = phiUnknown.toFixed(2)+'°';
+  }
+
+  if(is3DActive) drawStatics3D(); else drawStatics();
+}
+
+function clearForces(){
+  forces=[]; moments_applied=[];
+  updateForceList(); calcEquilibrium();
+  if(is3DActive) drawStatics3D(); else drawStatics();
+}
+function setTool(t){
+  selectedTool=t;
+  document.querySelectorAll('.tool-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tool-'+t)?.classList.add('active');
+}
+function resetView(){
+  viewOffset = {x: staticsCanvas.width/2, y: staticsCanvas.height/2};
+  viewScale = 80;
+  drawStatics();
+}
+
+// Load example problems
+function loadStatics1(){
+  clearForces();
+  forces = [
+    {name:'F₁', Fx:6, Fy:0, Fz:0, x:0, y:0, z:0, color:COLORS[0]},
+    {name:'F₂', Fx:8*Math.cos(120*Math.PI/180), Fy:8*Math.sin(120*Math.PI/180), Fz:0, x:0, y:0, z:0, color:COLORS[1]},
+    {name:'F₃', Fx:10*Math.cos(225*Math.PI/180), Fy:10*Math.sin(225*Math.PI/180), Fz:0, x:0, y:0, z:0, color:COLORS[2]},
+  ];
+  updateForceList(); calcEquilibrium(); drawStatics();
+  document.getElementById('f-name').value='F₄';
+  if(currentInputMode==='polar') document.getElementById('f-mag').value='';
+  showInfo('Naloga 1.1: F₁=6kN (0°), F₂=8kN (120°), F₃=10kN (225°). Rezultanta bo pokazala potrebno F₄ za ravnovesje.');
+}
+
+function loadStatics2(){
+  clearForces();
+  forces = [
+    {name:'F₁', Fx:10, Fy:-15, Fz:0, x:2, y:-5, z:0, color:COLORS[0]},
+    {name:'F₂', Fx:5, Fy:-8, Fz:0, x:-1, y:-2, z:0, color:COLORS[1]},
+    {name:'F₃', Fx:25, Fy:10, Fz:0, x:0, y:-3, z:0, color:COLORS[2]},
+  ];
+  document.getElementById('mo-x').value='6'; document.getElementById('mo-y').value='-2';
+  updateForceList(); calcEquilibrium(); drawStatics();
+  showInfo('Naloga 1.2: Redukcija 3 sil v T(6,-2,0). F₁=(10,-15), F₂=(5,-8), F₃=(25,10) kN.');
+}
+
+function loadStatics3(){
+  clearForces();
+  forces = [
+    {name:'F₁', Fx:0, Fy:-3, Fz:0, x:-2, y:0, z:0, color:COLORS[0]},
+    {name:'F₂', Fx:7*Math.cos(45*Math.PI/180), Fy:7*Math.sin(45*Math.PI/180), Fz:0, x:1, y:0, z:0, color:COLORS[1]},
+  ];
+  moments_applied = [{x:0, y:0, M:5, color:COLORS[2]}];
+  updateForceList(); calcEquilibrium(); drawStatics();
+  showInfo('Naloga 1.3: F₁=3kN↓, F₂=7kN@45°, M=5kNm. Redukcija v O in moment okrog osi OP.');
+}
+
+function showInfo(msg){
+  document.querySelector('#tab-statics .info-box').textContent = msg;
+}
+
+// ---- Input mode toggle ----
+function setInputMode(mode){
+  currentInputMode = mode;
+  document.getElementById('mode-polar').classList.toggle('active', mode==='polar');
+  document.getElementById('mode-comp').classList.toggle('active', mode==='comp');
+  document.getElementById('input-polar').style.display = mode==='polar' ? '' : 'none';
+  document.getElementById('input-comp').style.display = mode==='comp' ? '' : 'none';
+  document.getElementById('input-pz-row').style.display = mode==='comp' ? '' : 'none';
+  const info = document.getElementById('force-input-info');
+  if(mode==='comp') info.textContent = 'Vnesi komponente (Fx, Fy, Fz) v [kN] in točko prijemališča, nato klikni "Dodaj silo".';
+  else info.textContent = 'Klikni na platno za točko prijemališča, nato nastavi F in kot α ter klikni "Dodaj silo".';
+}
+
+// ---- 3D toggle ----
+function toggle3DView(){
+  is3DActive = !is3DActive;
+  const canvas = document.getElementById('statics-canvas');
+  const div3d = document.getElementById('statics-3d');
+  const btn = document.getElementById('tool-3d');
+  canvas.style.display = is3DActive ? 'none' : '';
+  div3d.style.display = is3DActive ? 'block' : 'none';
+  btn.classList.toggle('active', is3DActive);
+  if(is3DActive){
+    if(!threeRenderer) initThreeScene(div3d);
+    else {
+      const w = div3d.offsetWidth, h = div3d.offsetHeight;
+      threeRenderer.setSize(w, h);
+      threeCamera.aspect = w/h;
+      threeCamera.updateProjectionMatrix();
+    }
+    drawStatics3D();
+  } else {
+    // Reinitialize 2D canvas after it becomes visible again
+    setTimeout(()=>{ initStaticsCanvas(); }, 20);
+  }
+}
+
+function initThreeScene(container){
+  const w = container.offsetWidth || 500;
+  const h = container.offsetHeight || 400;
+  threeScene = new THREE.Scene();
+  threeScene.background = new THREE.Color(0x0d1b2a);
+
+  threeCamera = new THREE.PerspectiveCamera(50, w/h, 0.01, 1000);
+  threeCamera.position.set(8, 6, 10);
+  threeCamera.lookAt(0,0,0);
+
+  threeRenderer = new THREE.WebGLRenderer({antialias:true});
+  threeRenderer.setSize(w, h);
+  threeRenderer.setPixelRatio(window.devicePixelRatio);
+  container.innerHTML = '';
+  container.appendChild(threeRenderer.domElement);
+
+  threeControls = new THREE.OrbitControls(threeCamera, threeRenderer.domElement);
+  threeControls.enableDamping = true;
+  threeControls.dampingFactor = 0.08;
+
+  // Animate loop
+  function animate(){
+    threeAnimId = requestAnimationFrame(animate);
+    threeControls.update();
+    threeRenderer.render(threeScene, threeCamera);
+  }
+  animate();
+
+  // Resize observer
+  const ro = new ResizeObserver(()=>{
+    if(!threeRenderer) return;
+    const nw = container.offsetWidth, nh = container.offsetHeight;
+    if(nw>0 && nh>0){ threeRenderer.setSize(nw,nh); threeCamera.aspect=nw/nh; threeCamera.updateProjectionMatrix(); }
+  });
+  ro.observe(container);
+}
+
+function drawStatics3D(){
+  if(!threeScene || !threeRenderer) return;
+  // Clear old force objects (keep only helpers)
+  while(threeScene.children.length > 0) threeScene.remove(threeScene.children[0]);
+
+  // Grid helper (xz plane)
+  const grid = new THREE.GridHelper(20, 20, 0x1e3d5c, 0x1a3550);
+  grid.position.y = 0;
+  threeScene.add(grid);
+
+  // Axes helper
+  const axes = new THREE.AxesHelper(5);
+  threeScene.add(axes);
+
+  // Axes labels (sprites via canvas texture)
+  ['X','Y','Z'].forEach((lbl,i)=>{
+    const pos = [new THREE.Vector3(5.5,0,0), new THREE.Vector3(0,5.5,0), new THREE.Vector3(0,0,5.5)][i];
+    const sprite = makeTextSprite(lbl, '#8ab4cc');
+    sprite.position.copy(pos);
+    threeScene.add(sprite);
+  });
+
+  // Scale: 1 kN = 1 Three.js unit
+  const scale3d = 0.5; // visual scale factor per kN
+  const maxF = forces.reduce((m,f)=>Math.max(m,Math.sqrt(f.Fx**2+f.Fy**2+f.Fz**2)),1);
+  const vizScale = Math.min(3/maxF, 1.5); // normalize so largest arrow is ~3 units
+
+  forces.forEach(f=>{
+    const mag = Math.sqrt(f.Fx**2+f.Fy**2+f.Fz**2);
+    if(mag < 0.001) return;
+    const dir = new THREE.Vector3(f.Fx/mag, f.Fz/mag, -f.Fy/mag); // note: Three.js Y=up, swap Y/Z
+    const origin = new THREE.Vector3(f.x, f.z||0, -f.y);
+    const len = mag * vizScale;
+    const color = new THREE.Color(f.color);
+    const arrow = new THREE.ArrowHelper(dir, origin, len, color, len*0.2, len*0.12);
+    threeScene.add(arrow);
+    // Label
+    const labelPos = origin.clone().add(dir.clone().multiplyScalar(len*1.15));
+    const sp = makeTextSprite(`${f.name}`, f.color);
+    sp.position.copy(labelPos);
+    threeScene.add(sp);
+  });
+
+  // Resultant (dashed / gray arrow)
+  if(forces.length > 0){
+    const eq = computeEquilibrium();
+    const R = Math.sqrt(eq.Rx**2+eq.Ry**2+eq.Rz**2);
+    if(R > 0.001){
+      const dir = new THREE.Vector3(eq.Rx/R, eq.Rz/R, -eq.Ry/R);
+      const len = R * vizScale;
+      const arrow = new THREE.ArrowHelper(dir, new THREE.Vector3(0,0,0), len, 0x888888, len*0.2, len*0.12);
+      threeScene.add(arrow);
+      const sp = makeTextSprite('R', '#888888');
+      sp.position.copy(dir.clone().multiplyScalar(len*1.2));
+      threeScene.add(sp);
+    }
+  }
+
+  threeRenderer.render(threeScene, threeCamera);
+}
+
+function makeTextSprite(text, color){
+  const canvas = document.createElement('canvas');
+  canvas.width = 128; canvas.height = 64;
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = color || '#ffffff';
+  ctx.font = 'bold 28px Courier New';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(text, 64, 32);
+  const tex = new THREE.CanvasTexture(canvas);
+  const mat = new THREE.SpriteMaterial({map:tex, depthTest:false});
+  const sprite = new THREE.Sprite(mat);
+  sprite.scale.set(0.8, 0.4, 1);
+  return sprite;
+}
+
+// ============================================================
+// TAB 2: RIGID BODY
+// ============================================================
+let rigidCanvas, rigidCtx;
+
+function initRigidCanvas(){
+  rigidCanvas = document.getElementById('rigid-canvas');
+  if(!rigidCanvas) return;
+  rigidCanvas.width = rigidCanvas.offsetWidth;
+  rigidCanvas.height = rigidCanvas.offsetHeight;
+  rigidCtx = rigidCanvas.getContext('2d');
+  if(rigidMode!=='none') drawRigid();
+}
+
+function loadRigid1(){
+  rigidMode = 'ball-wall';
+  document.getElementById('r-G').value='0.981';
+  document.getElementById('r-a').value='0';
+  document.getElementById('r-b').value='0';
+  document.getElementById('r-L').value='0.3';
+  document.getElementById('r-r').value='0.1';
+  calcRigid(); initRigidCanvas();
+}
+function loadRigid2(){
+  rigidMode = 'beam';
+  document.getElementById('r-G').value='15';
+  document.getElementById('r-a').value='1';
+  document.getElementById('r-b').value='2';
+  calcRigid(); initRigidCanvas();
+}
+function loadRigid3(){
+  rigidMode = 'ball-corner';
+  document.getElementById('r-G').value='0.12';
+  document.getElementById('r-a').value='0.06';
+  document.getElementById('r-b').value='0.1';
+  document.getElementById('r-r').value='0.06';
+  calcRigid(); initRigidCanvas();
+}
+function loadRigid4(){
+  rigidMode = 'frame-1194';
+  document.getElementById('r-G').value='15';   // F [kN]
+  document.getElementById('r-a').value='3';    // AB [m]
+  document.getElementById('r-b').value='2';    // konzola [m]
+  document.getElementById('r-L').value='60';   // kot palic [deg]
+  calcRigid(); initRigidCanvas();
+}
+
+function calcRigid(){
+  const G = parseFloat(document.getElementById('r-G').value);
+  const a = parseFloat(document.getElementById('r-a').value);
+  const b = parseFloat(document.getElementById('r-b').value);
+  const L_rope = parseFloat(document.getElementById('r-L').value);
+  const r = parseFloat(document.getElementById('r-r').value);
+  
+  let html = '';
+  
+  if(rigidMode==='ball-wall'){
+    if(!isValidNumber(G) || !isValidNumber(L_rope) || !isValidNumber(r) || L_rope <= 0 || r <= 0 || r > L_rope){
+      document.getElementById('rigid-results').innerHTML = formatWarnCard('Neveljavni podatki: zahtevano je L > 0, r > 0 in r <= L.');
+      document.getElementById('rigid-info').textContent='Vnesi veljavne parametre za kroglo in vrvico.';
+      drawRigid();
+      return;
+    }
+    // Ball on wall with rope: r=10cm=0.1m, m=10kg→G=0.981kN, L=0.3m
+    const G_N = G*1000;
+    // Angle of rope: sin(α) = r/L (rope horizontal length)
+    // cos(α) = sqrt(L²-r²)/L
+    // Actually: wall is vertical, rope at angle α from wall
+    // α = arcsin(r/L) - but let's set up geometry properly
+    // Ball of radius r, rope length L, wall is vertical
+    // horizontal distance: d = sqrt(L²) - that's rope length
+    // For ball touching wall: horizontal distance from wall to rope anchor = r
+    // rope goes from wall anchor to ball center
+    // Ball center is r from wall, rope length L
+    // Angle rope makes with wall: α = arcsin(r/L)
+    const sinA = r / L_rope;
+    const cosA = safeSqrt(1 - sinA*sinA);
+    const alpha = Math.asin(sinA)*180/Math.PI;
+    // Equilibrium: T*cos(α) = G (vertical), N = T*sin(α) (horizontal, N from wall)
+    const T = G_N / cosA;
+    const N = T * sinA;
+    html = `<div class="result-card highlight"><div class="result-label">Kot vrvice α</div><div class="result-value big">${alpha.toFixed(2)}°</div></div>
+    <div class="result-card highlight"><div class="result-label">Sila v vrvici T</div><div class="result-value big">${(T/1000).toFixed(3)} kN</div></div>
+    <div class="result-card"><div class="result-label">Reakcija stene N</div><div class="result-value">${(N/1000).toFixed(3)} kN</div></div>
+    <div class="result-card"><div class="result-label">Enačbe ravnovesja</div>
+      <div class="eq-row"><span class="eq-label">ΣFx: N - T·sin(α) =</span><span class="eq-val success">0 ✓</span></div>
+      <div class="eq-row"><span class="eq-label">ΣFy: T·cos(α) - G =</span><span class="eq-val success">0 ✓</span></div>
+    </div>`;
+  }
+  
+  else if(rigidMode==='beam'){
+    if(!isValidNumber(G) || !isValidNumber(a) || !isValidNumber(b) || a < 0 || b < 0 || (a + b) <= NUM_EPS){
+      document.getElementById('rigid-results').innerHTML = formatWarnCard('Neveljavni podatki: zahtevano je a >= 0, b >= 0 in L = a + b > 0.');
+      document.getElementById('rigid-info').textContent='Vnesi veljaven razpon nosilca.';
+      drawRigid();
+      return;
+    }
+    // Simple beam with force F at position a from left, span L=a+b
+    const span = a + b;
+    const RB = G * a / span;
+    const RA = G - RB;
+    html = `<div class="result-card highlight"><div class="result-label">Reakcija RA (leva)</div><div class="result-value big">${RA.toFixed(3)} kN</div></div>
+    <div class="result-card highlight"><div class="result-label">Reakcija RB (desna)</div><div class="result-value big">${RB.toFixed(3)} kN</div></div>
+    <div class="result-card"><div class="result-label">Razpon L = a+b</div><div class="result-value">${span.toFixed(2)} m</div></div>
+    <div class="result-card"><div class="result-label">Enačbe ravnovesja</div>
+      <div class="eq-row"><span class="eq-label">ΣMA: RB·L - F·a =</span><span class="eq-val success">0 ✓</span></div>
+      <div class="eq-row"><span class="eq-label">ΣFy: RA + RB - F =</span><span class="eq-val success">0 ✓</span></div>
+    </div>
+    <div class="result-card"><div class="result-label">Maks. moment (pod F)</div><div class="result-value">${(RA*a).toFixed(3)} kNm</div></div>`;
+  }
+  
+  else if(rigidMode==='ball-corner'){
+    if(!isValidNumber(G) || !isValidNumber(a) || !isValidNumber(b) || a <= 0 || b <= 0){
+      document.getElementById('rigid-results').innerHTML = formatWarnCard('Neveljavni podatki: zahtevano je G > 0, R > 0 in l > 0.');
+      document.getElementById('rigid-info').textContent='Popravi geometrijo naloge krogla v kotu.';
+      drawRigid();
+      return;
+    }
+    // Ball in corner (two vertical walls, no friction):
+    // horizontal offset to center in plan view a = R*sqrt(2)
+    // distance from anchor to center L_total = l + R
+    const R = a; // polmer krogle (parameter a)
+    const l = b; // dolžina vrvice (od točke na krogli do sidrišča)
+    const Ltotal = l + R;
+    const horiz = R * Math.SQRT2;
+    if(Ltotal <= horiz){
+      document.getElementById('rigid-results').innerHTML = formatWarnCard('Neveljavna geometrija: zahtevano je l + R > R·√2.');
+      document.getElementById('rigid-info').textContent='Popravi geometrijo: vrvica je prekratka glede na polmer krogle.';
+      drawRigid();
+      return;
+    }
+    const G_N = G*1000;
+    const sinPhi = horiz / Ltotal;
+    const phi = Math.asin(sinPhi);
+    const cosPhi = Math.cos(phi);
+    const tanPhi = Math.tan(phi);
+
+    const T = G_N / cosPhi;      // sila v vrvici
+    const H = G_N * tanPhi;      // vodoravna rezultanta v kot
+    const A = H / Math.SQRT2;    // reakcija 1. stene
+    const B = H / Math.SQRT2;    // reakcija 2. stene
+
+    html = `<div class="result-card highlight"><div class="result-label">Sila v vrvici S</div><div class="result-value big">${(T).toFixed(2)} N (${(T/1000).toFixed(3)} kN)</div></div>
+    <div class="result-card"><div class="result-label">Sila stene A</div><div class="result-value">${A.toFixed(2)} N (${(A/1000).toFixed(3)} kN)</div></div>
+    <div class="result-card"><div class="result-label">Sila stene B</div><div class="result-value">${B.toFixed(2)} N (${(B/1000).toFixed(3)} kN)</div></div>
+    <div class="result-card"><div class="result-label">Kot vrvice φ</div><div class="result-value">${(phi*180/Math.PI).toFixed(2)}°</div></div>
+    <div class="result-card"><div class="result-label">Enačbe ravnovesja</div>
+      <div class="eq-row"><span class="eq-label">ΣFz: S·cos(φ) - G =</span><span class="eq-val success">0 ✓</span></div>
+      <div class="eq-row"><span class="eq-label">ΣFh: H - G·tan(φ) =</span><span class="eq-val success">0 ✓</span></div>
+      <div class="eq-row"><span class="eq-label">A = B = H/√2</span><span class="eq-val success">✓</span></div>
+    </div>
+    <div class="result-card"><div class="result-label">G = ${G_N.toFixed(0)} N, R = ${(R*100).toFixed(1)} cm, l = ${(l*100).toFixed(1)} cm</div></div>`;
+  }
+
+  else if(rigidMode==='frame-1194'){
+    const spanAB = a;      // razdalja med podporama A-B [m]
+    const overhang = b;    // konzolni del za B [m]
+    const alphaDeg = isValidNumber(L_rope) ? L_rope : 60;
+    if(!isValidNumber(G) || !isValidNumber(spanAB) || !isValidNumber(overhang) || !isValidNumber(alphaDeg) || G <= 0 || spanAB <= 0 || overhang < 0 || alphaDeg <= 0 || alphaDeg >= 90){
+      document.getElementById('rigid-results').innerHTML = formatWarnCard('Neveljavni podatki: zahtevano F > 0, AB > 0, konzola >= 0 in 0° < kot < 90°.');
+      document.getElementById('rigid-info').textContent='Popravi parametre okvirnega sistema.';
+      drawRigid();
+      return;
+    }
+
+    const alpha = alphaDeg * Math.PI / 180;
+    const totalLen = spanAB + overhang;
+
+    // Moment around A: By*AB - F*(AB+konzola) = 0
+    const By = G * totalLen / spanAB;
+    const Bx = By / Math.tan(alpha);  // magnitude; component on beam to the left
+    const RB = By / Math.sin(alpha);
+
+    // Force balance
+    const Ax = Bx;       // opposite direction to Bx on beam
+    const Ay = G - By;   // can be negative (downward)
+    const RA = Math.sqrt(Ax*Ax + Ay*Ay);
+
+    html = `<div class="result-card highlight"><div class="result-label">Reakcija v B (palica) R_B</div><div class="result-value big">${RB.toFixed(3)} kN</div></div>
+    <div class="result-card"><div class="result-label">Bₓ, Bᵧ</div><div class="result-value">Bₓ = ${Bx.toFixed(3)} kN, Bᵧ = ${By.toFixed(3)} kN</div></div>
+    <div class="result-card highlight"><div class="result-label">Reakcija v A (|R_A|)</div><div class="result-value big">${RA.toFixed(3)} kN</div></div>
+    <div class="result-card"><div class="result-label">Aₓ, Aᵧ</div><div class="result-value">Aₓ = ${Ax.toFixed(3)} kN, Aᵧ = ${Ay.toFixed(3)} kN</div></div>
+    <div class="result-card"><div class="result-label">Enačbe ravnovesja</div>
+      <div class="eq-row"><span class="eq-label">ΣM_A: Bᵧ·${spanAB.toFixed(2)} - F·${totalLen.toFixed(2)} =</span><span class="eq-val success">0 ✓</span></div>
+      <div class="eq-row"><span class="eq-label">ΣF_x: Aₓ - Bₓ =</span><span class="eq-val success">0 ✓</span></div>
+      <div class="eq-row"><span class="eq-label">ΣF_y: Aᵧ + Bᵧ - F =</span><span class="eq-val success">0 ✓</span></div>
+    </div>
+    <div class="result-card"><div class="result-label">Parametri: F=${G.toFixed(2)}kN, AB=${spanAB.toFixed(2)}m, konzola=${overhang.toFixed(2)}m, α=${alphaDeg.toFixed(1)}°</div></div>`;
+  }
+  
+  document.getElementById('rigid-results').innerHTML = html || '<div class="result-card"><div class="result-label">Izberi nalogo</div></div>';
+  drawRigid();
+}
+
+function drawRigid(){
+  if(!rigidCtx) return;
+  const c=rigidCtx, w=rigidCanvas.width, h=rigidCanvas.height;
+  c.clearRect(0,0,w,h);
+  
+  const G = parseFloat(document.getElementById('r-G').value)||0;
+  const a = parseFloat(document.getElementById('r-a').value)||2;
+  const b = parseFloat(document.getElementById('r-b').value)||3;
+  const L_rope = parseFloat(document.getElementById('r-L').value)||0.3;
+  const r = parseFloat(document.getElementById('r-r').value)||0.1;
+  
+  c.fillStyle='#d4e6f1'; c.font='12px Courier New';
+  
+  if(rigidMode==='ball-wall'){
+    const cx=w*0.5, cy=h*0.55, scale=Math.min(w,h)*0.4/L_rope;
+    const rPx = r*scale;
+    const sinA=r/L_rope, cosA=Math.sqrt(1-sinA*sinA);
+    const wallX = cx - rPx - L_rope*sinA*scale;
+    // Wall
+    c.fillStyle='#1e3d5c'; c.fillRect(wallX-20,cy-h*0.35,20,h*0.7);
+    drawHatch(c,wallX-20,cy-h*0.35,20,h*0.7);
+    // Rope anchor
+    const anchorY = cy - cosA*L_rope*scale;
+    c.fillStyle='#00c9ff'; c.beginPath(); c.arc(wallX,anchorY,5,0,Math.PI*2); c.fill();
+    // Ball
+    c.strokeStyle='#8ab4cc'; c.lineWidth=2; c.fillStyle='rgba(0,100,150,0.3)';
+    c.beginPath(); c.arc(cx,cy,rPx,0,Math.PI*2); c.fill(); c.stroke();
+    // Rope
+    c.strokeStyle='#f5a623'; c.lineWidth=2; c.setLineDash([5,3]);
+    c.beginPath(); c.moveTo(wallX,anchorY); c.lineTo(cx,cy); c.stroke();
+    c.setLineDash([]);
+    // Ground
+    c.fillStyle='#1e3d5c'; c.fillRect(w*0.1,cy+rPx,w*0.8,15);
+    drawHatch(c,w*0.1,cy+rPx,w*0.8,15);
+    // Force arrows
+    drawForceLine(c,cx,cy,cx,cy+60,'#2ecc71','G');
+    const alpha=Math.asin(sinA)*180/Math.PI;
+    const T=G*1000/cosA/1000;
+    const N=T*sinA;
+    drawForceLine(c,cx,cy,wallX,anchorY,'#f5a623',`T=${T.toFixed(2)}kN`);
+    drawForceLine(c,cx-rPx,cy,cx-rPx-50,cy,'#e94560',`N=${N.toFixed(2)}kN`);
+    c.fillStyle='#8ab4cc'; c.font='11px Courier New';
+    c.fillText(`α = ${alpha.toFixed(1)}°`,wallX+10,anchorY+20);
+    document.getElementById('rigid-info').textContent=`Krogla r=${r*100}cm, G=${G}kN, vrvica L=${L_rope*100}cm`;
+  }
+  
+  else if(rigidMode==='beam'){
+    const span=a+b;
+    const RB=G*a/span, RA=G-RB;
+    const margin=80, beamY=h*0.45, scale=(w-2*margin)/span;
+    // Beam
+    c.fillStyle='#1a3550'; c.fillRect(margin,beamY-8,w-2*margin,16);
+    // Support A (pin)
+    drawPin(c,margin,beamY+8);
+    // Support B (roller)
+    drawRoller(c,w-margin,beamY+8);
+    // Load F
+    const Fx=margin+a*scale;
+    drawForceLine(c,Fx,beamY-8,Fx,beamY-70,'#e94560',`F=${G}kN`,true);
+    // Reactions
+    drawForceLine(c,margin,beamY+60,margin,beamY+8,'#2ecc71',`RA=${RA.toFixed(2)}kN`,false);
+    drawForceLine(c,w-margin,beamY+60,w-margin,beamY+8,'#2ecc71',`RB=${RB.toFixed(2)}kN`,false);
+    // Dimensions
+    c.strokeStyle='#4a7a99'; c.lineWidth=1; c.setLineDash([3,3]);
+    c.beginPath(); c.moveTo(margin,beamY+30); c.lineTo(Fx,beamY+30); c.stroke();
+    c.beginPath(); c.moveTo(Fx,beamY+30); c.lineTo(w-margin,beamY+30); c.stroke();
+    c.setLineDash([]);
+    c.fillStyle='#8ab4cc'; c.font='11px Courier New'; c.textAlign='center';
+    c.fillText(`a = ${a}m`,margin+(Fx-margin)/2,beamY+45);
+    c.fillText(`b = ${b}m`,Fx+(w-margin-Fx)/2,beamY+45);
+    c.fillText(`L = ${span}m`,(margin+w-margin)/2,beamY+62);
+    c.textAlign='left';
+    // Bending moment diagram (simple)
+    drawBMD(c,margin,beamY+80,w-2*margin,60,span,a,G,RA,'#a29bfe');
+    document.getElementById('rigid-info').textContent=`Enostavni nosilec L=${span}m, F=${G}kN @ a=${a}m od A`;
+  }
+  
+  else if(rigidMode==='ball-corner'){
+    const Rv=a, l=b;
+    const Ltotal = l + Rv;
+    const horiz = Rv * Math.SQRT2;
+    if(!isValidNumber(G) || !isValidNumber(Rv) || !isValidNumber(l) || Rv <= 0 || l <= 0 || Ltotal <= horiz) {
+      document.getElementById('rigid-info').textContent='Neveljavna geometrija: zahtevano G>0, R>0, l>0 in l+R > R·√2.';
+      return;
+    }
+    const scale=Math.min(w,h)*0.35/Ltotal;
+    const cx=w*0.52, cy=h*0.58;
+    const sinPhi = horiz / Ltotal;
+    const phi = Math.asin(sinPhi);
+    const cosPhi = Math.cos(phi);
+    const rPx=Rv*scale;
+    const xw = cx-rPx-120;
+    const yg = cy+rPx+20;
+    const ropeLenPx = Ltotal*scale;
+    const ax = cx - ropeLenPx*sinPhi/Math.SQRT2;
+    const ay = cy - ropeLenPx*cosPhi;
+    const azx = cx - ropeLenPx*sinPhi;
+    const azy = cy;
+    // Walls
+    c.fillStyle='#1e3d5c';
+    c.fillRect(xw,cy-h*0.35,20,h*0.7);                 // stena 1
+    c.fillRect(xw,yg,w*0.65,20);                       // stena 2 (shematski tloris)
+    drawHatch(c,xw,cy-h*0.35,20,h*0.7);
+    drawHatch(c,xw,yg,w*0.65,20);
+    // Ball
+    c.strokeStyle='#8ab4cc'; c.lineWidth=2; c.fillStyle='rgba(0,100,150,0.35)';
+    c.beginPath(); c.arc(cx,cy,rPx,0,Math.PI*2); c.fill(); c.stroke();
+    // Rope to anchor (3D projected into 2D sketch)
+    c.fillStyle='#00c9ff'; c.beginPath(); c.arc(ax,ay,4,0,Math.PI*2); c.fill();
+    c.strokeStyle='#f5a623'; c.lineWidth=2; c.setLineDash([5,3]);
+    c.beginPath(); c.moveTo(ax,ay); c.lineTo(cx,cy); c.stroke();
+    c.setLineDash([]);
+    const G_N = G*1000;
+    const T_N = G_N/cosPhi;
+    const H_N = G_N*Math.tan(phi);
+    const A_N = H_N/Math.SQRT2;
+    drawForceLine(c,cx,cy,cx,cy+65,'#2ecc71',`G=${G_N.toFixed(0)}N`);
+    drawForceLine(c,cx,cy,ax,ay,'#f5a623',`S=${T_N.toFixed(1)}N`);
+    drawForceLine(c,cx-rPx,cy,cx-rPx-60,cy,'#e94560',`A=${A_N.toFixed(1)}N`);
+    drawForceLine(c,cx,cy+rPx+55,cx,cy+rPx,'#e94560',`B=${A_N.toFixed(1)}N`);
+    // Horizontal projection H for explanation
+    c.setLineDash([4,3]); c.strokeStyle='#9aa7b5';
+    c.beginPath(); c.moveTo(cx,cy); c.lineTo(azx,azy); c.stroke();
+    c.setLineDash([]);
+    c.fillStyle='#9aa7b5'; c.font='10px Courier New'; c.fillText(`H=${H_N.toFixed(1)}N`, (cx+azx)/2+5, cy-6);
+    c.fillStyle='#8ab4cc'; c.font='11px Courier New';
+    c.fillText(`φ = ${(phi*180/Math.PI).toFixed(2)}°`,cx+rPx+12,cy-20);
+    c.fillText(`R = ${(Rv*100).toFixed(1)}cm`,cx+rPx+12,cy-4);
+    c.fillText(`l = ${(l*100).toFixed(1)}cm`,cx+rPx+12,cy+12);
+    c.fillText(`a = R√2 = ${(horiz*100).toFixed(2)}cm`,cx+rPx+12,cy+28);
+    document.getElementById('rigid-info').textContent=`Krogla v kotu: G=${G}kN, R=${(Rv*100).toFixed(1)}cm, l=${(l*100).toFixed(1)}cm`;
+  }
+
+  else if(rigidMode==='frame-1194'){
+    const F = G;
+    const spanAB = a;
+    const overhang = b;
+    const alphaDeg = isValidNumber(L_rope) ? L_rope : 60;
+    if(!isValidNumber(F) || !isValidNumber(spanAB) || !isValidNumber(overhang) || !isValidNumber(alphaDeg) || F <= 0 || spanAB <= 0 || overhang < 0 || alphaDeg <= 0 || alphaDeg >= 90){
+      document.getElementById('rigid-info').textContent='Neveljavni parametri za okvirni sistem.';
+      return;
+    }
+
+    const alpha = alphaDeg*Math.PI/180;
+    const totalLen = spanAB + overhang;
+    const By = F * totalLen / spanAB;
+    const Bx = By / Math.tan(alpha);
+    const RB = By / Math.sin(alpha);
+    const Ax = Bx;
+    const Ay = F - By;
+
+    const margin = 80;
+    const beamY = h*0.42;
+    const scale = (w-2*margin)/totalLen;
+    const AxPos = margin;
+    const BxPos = margin + spanAB*scale;
+    const FxPos = margin + totalLen*scale;
+
+    // Beam
+    c.fillStyle='#1a3550';
+    c.fillRect(AxPos,beamY-8,w-2*margin,16);
+
+    // Supports and bars
+    drawPin(c,AxPos,beamY+8);
+    drawRoller(c,BxPos,beamY+8);
+
+    // Slanted support bars at B and A (schematic)
+    c.strokeStyle='#8ab4cc'; c.lineWidth=2;
+    c.beginPath(); c.moveTo(AxPos,beamY+8); c.lineTo(AxPos-70,beamY+8+70*Math.tan(Math.PI/6)); c.stroke();
+    c.beginPath(); c.moveTo(BxPos,beamY+8); c.lineTo(BxPos-70,beamY+8+70*Math.tan(Math.PI/6)); c.stroke();
+
+    // External load F at free end
+    drawForceLine(c,FxPos,beamY-8,FxPos,beamY-78,'#e94560',`F=${F.toFixed(2)}kN`);
+
+    // Reactions at B
+    drawForceLine(c,BxPos,beamY+12,BxPos,beamY-60,'#2ecc71',`Bᵧ=${By.toFixed(2)}`);
+    drawForceLine(c,BxPos,beamY-6,BxPos-70,beamY-6,'#f5a623',`Bₓ=${Bx.toFixed(2)}`);
+
+    // Reactions at A
+    drawForceLine(c,AxPos,beamY+12,AxPos,beamY+12+(Ay<0?60:-60),'#2ecc71',`Aᵧ=${Ay.toFixed(2)}`);
+    drawForceLine(c,AxPos,beamY-6,AxPos+70,beamY-6,'#f5a623',`Aₓ=${Ax.toFixed(2)}`);
+
+    // Dimensions
+    c.strokeStyle='#4a7a99'; c.lineWidth=1; c.setLineDash([3,3]);
+    c.beginPath(); c.moveTo(AxPos,beamY+40); c.lineTo(BxPos,beamY+40); c.stroke();
+    c.beginPath(); c.moveTo(BxPos,beamY+40); c.lineTo(FxPos,beamY+40); c.stroke();
+    c.setLineDash([]);
+    c.fillStyle='#8ab4cc'; c.font='11px Courier New'; c.textAlign='center';
+    c.fillText(`AB = ${spanAB.toFixed(2)}m`, (AxPos+BxPos)/2, beamY+55);
+    c.fillText(`konzola = ${overhang.toFixed(2)}m`, (BxPos+FxPos)/2, beamY+55);
+    c.fillText(`α = ${alphaDeg.toFixed(1)}°`, BxPos-50, beamY+90);
+    c.textAlign='left';
+
+    document.getElementById('rigid-info').textContent=`Okvirni sistem: F=${F.toFixed(2)}kN, AB=${spanAB.toFixed(2)}m, konzola=${overhang.toFixed(2)}m, α=${alphaDeg.toFixed(1)}°`;
+  }
+}
+
+function drawHatch(c,x,y,w,h){
+  c.strokeStyle='#2a4a6a'; c.lineWidth=1;
+  for(let i=0;i<w+h;i+=8){
+    c.beginPath();
+    c.moveTo(x+Math.max(0,i-h),y+Math.min(i,h));
+    c.lineTo(x+Math.min(i,w),y+Math.max(0,i-w));
+    c.stroke();
+  }
+}
+
+function drawPin(c,x,y){
+  c.fillStyle='#8ab4cc'; c.strokeStyle='#00c9ff'; c.lineWidth=1.5;
+  c.beginPath(); c.moveTo(x,y); c.lineTo(x-14,y+24); c.lineTo(x+14,y+24); c.closePath(); c.fill(); c.stroke();
+  c.fillStyle='#1e3d5c'; c.fillRect(x-20,y+24,40,8);
+  drawHatch(c,x-20,y+24,40,8);
+}
+
+function drawRoller(c,x,y){
+  c.fillStyle='#8ab4cc'; c.strokeStyle='#00c9ff'; c.lineWidth=1.5;
+  c.beginPath(); c.moveTo(x,y); c.lineTo(x-12,y+22); c.lineTo(x+12,y+22); c.closePath(); c.fill(); c.stroke();
+  c.beginPath(); c.arc(x-8,y+28,5,0,Math.PI*2); c.arc(x+8,y+28,5,0,Math.PI*2); c.fill();
+  c.fillStyle='#1e3d5c'; c.fillRect(x-20,y+33,40,6);
+}
+
+function drawForceLine(c,x1,y1,x2,y2,color,label,fromTop=false){
+  c.strokeStyle=color; c.fillStyle=color; c.lineWidth=2.5;
+  c.beginPath(); c.moveTo(x1,y1); c.lineTo(x2,y2); c.stroke();
+  const angle=Math.atan2(y2-y1,x2-x1);
+  c.beginPath();
+  c.moveTo(x2,y2);
+  c.lineTo(x2-10*Math.cos(angle-0.4),y2-10*Math.sin(angle-0.4));
+  c.lineTo(x2-10*Math.cos(angle+0.4),y2-10*Math.sin(angle+0.4));
+  c.closePath(); c.fill();
+  c.font='bold 11px Courier New';
+  const lx=x1+(x2-x1)*0.5+12, ly=y1+(y2-y1)*0.5;
+  c.fillText(label,lx,ly);
+}
+
+function drawBMD(c,x,y,len,h,L,a,F,RA,color){
+  const b=L-a;
+  c.strokeStyle=color; c.fillStyle=color+'44'; c.lineWidth=1.5;
+  const Mmax=RA*a;
+  const scale=h/Mmax;
+  c.beginPath();
+  c.moveTo(x,y);
+  c.lineTo(x+a/L*len,y-Mmax*scale);
+  c.lineTo(x+len,y);
+  c.stroke();
+  c.fill();
+  c.fillStyle=color; c.font='10px Courier New';
+  c.fillText(`Mmax=${Mmax.toFixed(2)}kNm`,x+a/L*len-30,y-Mmax*scale-6);
+}
+
+// ============================================================
+// TAB 3: STRESS / MOHR'S CIRCLE
+// ============================================================
+let mohrCtx, stressCtx;
+
+function initStressCanvas(){
+  const mc = document.getElementById('mohr-canvas');
+  const sc = document.getElementById('stress-element');
+  if(mc) mohrCtx = mc.getContext('2d');
+  if(sc) stressCtx = sc.getContext('2d');
+  calcMohr();
+}
+
+function calcMohr(){
+  const sx = parseFloat(document.getElementById('sx').value)||0;
+  const sy = parseFloat(document.getElementById('sy').value)||0;
+  const txy = parseFloat(document.getElementById('txy').value)||0;
+  const theta = parseFloat(document.getElementById('theta').value)||0;
+  document.getElementById('theta-slider').value = theta;
+  
+  // Principal stresses
+  const savg = (sx+sy)/2;
+  const R = Math.sqrt(((sx-sy)/2)**2 + txy**2);
+  const s1 = savg + R;
+  const s2 = savg - R;
+  const tmax = R;
+  const alpha1 = 0.5*Math.atan2(2*txy, sx-sy)*180/Math.PI;
+  
+  // Stresses on plane θ
+  const tRad = theta*Math.PI/180;
+  const sn = savg + (sx-sy)/2*Math.cos(2*tRad) + txy*Math.sin(2*tRad);
+  const tau = -(sx-sy)/2*Math.sin(2*tRad) + txy*Math.cos(2*tRad);
+  const pMag = Math.sqrt(sn**2+tau**2);
+  const pAngle = Math.atan2(tau,sn)*180/Math.PI;
+  
+  document.getElementById('s1').textContent = s1.toFixed(3)+' MPa';
+  document.getElementById('s2').textContent = s2.toFixed(3)+' MPa';
+  document.getElementById('tmax').textContent = tmax.toFixed(3)+' MPa';
+  document.getElementById('alpha1').textContent = alpha1.toFixed(2)+'°';
+  document.getElementById('sigma-avg').textContent = savg.toFixed(3)+' MPa';
+  document.getElementById('sn-theta').textContent = sn.toFixed(3)+' MPa';
+  document.getElementById('t-theta').textContent = tau.toFixed(3)+' MPa';
+  document.getElementById('p-mag').textContent = pMag.toFixed(3)+' MPa';
+  document.getElementById('p-angle').textContent = pAngle.toFixed(2)+'°';
+  
+  drawMohr(sx,sy,txy,theta,savg,R,s1,s2,sn,tau);
+  drawStressElement(sx,sy,txy,theta,s1,s2,alpha1);
+}
+
+function drawMohr(sx,sy,txy,theta,savg,R,s1,s2,sn,tau){
+  const mc=document.getElementById('mohr-canvas');
+  if(!mc) return;
+  const c=mc.getContext('2d');
+  const w=mc.width,h=mc.height;
+  c.clearRect(0,0,w,h);
+  
+  const cx=w/2, cy=h/2;
+  // Scale
+  const maxVal=Math.max(Math.abs(s1),Math.abs(s2),R)+10;
+  const scale=(Math.min(w,h)/2-40)/maxVal;
+  
+  // Grid
+  c.strokeStyle='#1a3550'; c.lineWidth=0.5;
+  for(let i=-10;i<=10;i++){
+    c.beginPath(); c.moveTo(cx+i*(maxVal/5)*scale,cy-h/2); c.lineTo(cx+i*(maxVal/5)*scale,cy+h/2); c.stroke();
+    c.beginPath(); c.moveTo(cx-w/2,cy+i*(maxVal/5)*scale); c.lineTo(cx+w/2,cy+i*(maxVal/5)*scale); c.stroke();
+  }
+  
+  // Axes
+  c.strokeStyle='#1e3d5c'; c.lineWidth=1.5;
+  c.beginPath(); c.moveTo(30,cy); c.lineTo(w-20,cy); c.stroke();
+  c.beginPath(); c.moveTo(cx,20); c.lineTo(cx,h-20); c.stroke();
+  c.fillStyle='#4a7a99'; c.font='12px Courier New';
+  c.fillText('σ [MPa]',w-60,cy-8);
+  c.fillText('τ [MPa]',cx+6,32);
+  
+  // Axis labels
+  c.fillStyle='#2a5a7a'; c.font='9px Courier New'; c.textAlign='center';
+  for(let i=-4;i<=4;i++){
+    if(i===0) continue;
+    const val=i*maxVal/4;
+    c.fillText(Math.round(val),cx+val*scale,cy+14);
+    c.fillText(Math.round(-val),cx-8,cy-val*scale+4);
+  }
+  c.textAlign='left';
+  
+  // Mohr's circle
+  const Rpx=R*scale;
+  c.beginPath(); c.arc(cx+savg*scale,cy,Rpx,0,Math.PI*2);
+  c.strokeStyle='#00c9ff'; c.lineWidth=2; c.stroke();
+  c.fillStyle='rgba(0,100,150,0.08)'; c.fill();
+  
+  // Center
+  c.fillStyle='#00c9ff'; c.beginPath(); c.arc(cx+savg*scale,cy,4,0,Math.PI*2); c.fill();
+  c.fillStyle='#8ab4cc'; c.font='10px Courier New';
+  c.fillText(`C(${savg.toFixed(1)},0)`,cx+savg*scale+6,cy-8);
+  
+  // Points A(σx,τxy) and B(σy,-τxy) on circle
+  c.fillStyle='#e94560';
+  c.beginPath(); c.arc(cx+sx*scale,cy-txy*scale,6,0,Math.PI*2); c.fill();
+  c.fillStyle='#e94560'; c.font='11px Courier New';
+  c.fillText(`A(${sx},${txy})`,cx+sx*scale+8,cy-txy*scale);
+  
+  c.fillStyle='#f5a623';
+  c.beginPath(); c.arc(cx+sy*scale,cy+txy*scale,6,0,Math.PI*2); c.fill();
+  c.fillStyle='#f5a623';
+  c.fillText(`B(${sy},${-txy})`,cx+sy*scale+8,cy+txy*scale);
+  
+  // Diameter line A-B
+  c.strokeStyle='#3a5a7a'; c.lineWidth=1; c.setLineDash([4,3]);
+  c.beginPath(); c.moveTo(cx+sx*scale,cy-txy*scale); c.lineTo(cx+sy*scale,cy+txy*scale); c.stroke();
+  c.setLineDash([]);
+  
+  // Principal stress points
+  c.fillStyle='#2ecc71';
+  c.beginPath(); c.arc(cx+s1*scale,cy,5,0,Math.PI*2); c.fill();
+  c.fillStyle='#2ecc71'; c.font='11px Courier New';
+  c.fillText(`σ₁=${s1.toFixed(1)}`,cx+s1*scale+4,cy-10);
+  c.beginPath(); c.arc(cx+s2*scale,cy,5,0,Math.PI*2); c.fill();
+  c.fillText(`σ₂=${s2.toFixed(1)}`,cx+s2*scale+4,cy+18);
+  
+  // Max shear stress points
+  c.fillStyle='#a29bfe';
+  c.beginPath(); c.arc(cx+savg*scale,cy-R*scale,5,0,Math.PI*2); c.fill();
+  c.fillText(`τmax=${R.toFixed(1)}`,cx+savg*scale+6,cy-R*scale-4);
+  
+  // Point for angle theta (rotated)
+  const angle2 = 2*theta*Math.PI/180;
+  const px = cx + (savg+(sx-sy)/2*Math.cos(angle2)+txy*Math.sin(angle2))*scale;
+  const py = cy - (-(sx-sy)/2*Math.sin(angle2)+txy*Math.cos(angle2))*scale;
+  c.fillStyle='#fd79a8';
+  c.beginPath(); c.arc(px,py,6,0,Math.PI*2); c.fill();
+  c.fillStyle='#fd79a8'; c.font='10px Courier New';
+  c.fillText(`θ=${theta}°`,px+8,py);
+  
+  // τmax indicator line
+  c.strokeStyle='#a29bfe22'; c.lineWidth=1; c.setLineDash([3,3]);
+  c.beginPath(); c.moveTo(cx+savg*scale,cy); c.lineTo(cx+savg*scale,cy-R*scale); c.stroke();
+  c.setLineDash([]);
+  
+  // Title
+  c.fillStyle='#00c9ff'; c.font='bold 12px Courier New';
+  c.fillText('MOHROVA KROŽNICA',30,20);
+}
+
+function drawStressElement(sx,sy,txy,theta,s1,s2,alpha1){
+  const sc=document.getElementById('stress-element');
+  if(!sc) return;
+  const c=sc.getContext('2d');
+  const w=sc.width,h=sc.height;
+  c.clearRect(0,0,w,h);
+  
+  const cx=w/2, cy=h/2, size=70;
+  c.save(); c.translate(cx,cy); c.rotate(theta*Math.PI/180);
+  // Element square
+  c.strokeStyle='#00c9ff'; c.lineWidth=1.5; c.fillStyle='rgba(0,50,100,0.3)';
+  c.fillRect(-size/2,-size/2,size,size);
+  c.strokeRect(-size/2,-size/2,size,size);
+  
+  // Stress arrows
+  const sn=parseFloat(document.getElementById('sn-theta').textContent)||0;
+  const tau=parseFloat(document.getElementById('t-theta').textContent)||0;
+  const maxS=Math.max(Math.abs(sx),Math.abs(sy),Math.abs(txy),10);
+  const arrowLen=30;
+  
+  // σx arrow (right face)
+  if(sn>=0){
+    c.strokeStyle='#e94560'; c.fillStyle='#e94560'; c.lineWidth=2;
+    c.beginPath(); c.moveTo(size/2,0); c.lineTo(size/2+arrowLen,0); c.stroke();
+    arrowHead2(c,size/2+arrowLen,0,0,'#e94560');
+    c.font='10px Courier New'; c.fillText(`σ=${sx.toFixed(0)}`,size/2+5,-8);
+  } else {
+    c.strokeStyle='#2ecc71'; c.fillStyle='#2ecc71'; c.lineWidth=2;
+    c.beginPath(); c.moveTo(size/2+arrowLen,0); c.lineTo(size/2,0); c.stroke();
+    arrowHead2(c,size/2,0,Math.PI,'#2ecc71');
+  }
+  // σy arrow (top face)
+  if(sy>=0){
+    c.strokeStyle='#f5a623'; c.fillStyle='#f5a623'; c.lineWidth=2;
+    c.beginPath(); c.moveTo(0,-size/2); c.lineTo(0,-size/2-arrowLen); c.stroke();
+    arrowHead2(c,0,-size/2-arrowLen,-Math.PI/2,'#f5a623');
+    c.font='10px Courier New'; c.fillText(`σ=${sy.toFixed(0)}`,-30,-size/2-10);
+  } else {
+    c.strokeStyle='#2ecc71'; c.fillStyle='#2ecc71'; c.lineWidth=2;
+    c.beginPath(); c.moveTo(0,-size/2-arrowLen); c.lineTo(0,-size/2); c.stroke();
+    arrowHead2(c,0,-size/2,Math.PI/2,'#2ecc71');
+  }
+  // τxy arrows
+  c.strokeStyle='#a29bfe'; c.fillStyle='#a29bfe'; c.lineWidth=1.5;
+  c.beginPath(); c.moveTo(size/2,-15); c.lineTo(size/2,15); c.stroke();
+  c.font='9px Courier New'; c.fillText(`τ=${txy.toFixed(0)}`,size/2+2,-20);
+  
+  c.restore();
+  
+  // Labels
+  c.fillStyle='#8ab4cc'; c.font='11px Courier New';
+  c.fillText(`σₓ=${sx}, σᵧ=${sy}, τₓᵧ=${txy} MPa`,10,18);
+  c.fillText(`θ = ${theta}°`,10,h-10);
+}
+
+function arrowHead2(c,x,y,angle,color){
+  const s=8;
+  c.fillStyle=color;
+  c.beginPath();
+  c.moveTo(x,y);
+  c.lineTo(x-s*Math.cos(angle-0.4),y-s*Math.sin(angle-0.4));
+  c.lineTo(x-s*Math.cos(angle+0.4),y-s*Math.sin(angle+0.4));
+  c.closePath(); c.fill();
+}
+
+function loadStress1(){
+  document.getElementById('sx').value=20;
+  document.getElementById('sy').value=-40;
+  document.getElementById('txy').value=30;
+  document.getElementById('theta').value=0;
+  calcMohr();
+}
+function loadStress2(){
+  document.getElementById('sx').value=50;
+  document.getElementById('sy').value=-10;
+  document.getElementById('txy').value=30;
+  document.getElementById('theta').value=0;
+  calcMohr();
+}
+function loadStress3(){
+  // Bar under axial load, plane at 30°
+  // Normal stress on inclined plane
+  document.getElementById('sx').value=100;
+  document.getElementById('sy').value=0;
+  document.getElementById('txy').value=0;
+  document.getElementById('theta').value=30;
+  calcMohr();
+}
+
+// ============================================================
+// TAB 4: DEFORMATION
+// ============================================================
+let beamCtx;
+
+function beamDeflectionAt(type,x,L,P,a,EI){
+  if(type==='moment'){
+    return P*x*(L*L - x*x - L*x)/(6*EI*L);
+  }
+  if(type==='point'){
+    if(x<=a) return P*(L-a)*x*(2*L*a-x*x-a*a)/(6*EI*L);
+    return P*a*(L-x)*(2*L*(L-a)-(L-x)*(L-x)-a*(L-a))/(6*EI*L);
+  }
+  if(type==='dist'){
+    return P*x*(L*L*L - 2*L*x*x + x*x*x)/(24*EI);
+  }
+  if(type==='cantilever'){
+    return P*x*x*(3*L-x)/(6*EI);
+  }
+  if(type==='triang'){
+    // q=0 pri A (x=0), q=P pri B (x=L), enostavno podprt
+    return P*x*(7*L*L*L*L - 10*L*L*x*x + 3*x*x*x*x)/(360*EI*L);
+  }
+  if((type==='trapez'||type==='midmoment') && beamDeflTable){
+    return interpDeflTable(beamDeflTable, x);
+  }
+  return 0;
+}
+
+function findMaxDeflection(type,L,P,a,EI){
+  const n = 600;
+  let maxAbs = -1;
+  let xAtMax = 0;
+  let yAtMax = 0;
+  for(let i=0; i<=n; i++){
+    const x = i/n*L;
+    const y = beamDeflectionAt(type,x,L,P,a,EI);
+    const ay = Math.abs(y);
+    if(ay > maxAbs){
+      maxAbs = ay;
+      xAtMax = x;
+      yAtMax = y;
+    }
+  }
+  return {fmax: maxAbs, xmax: xAtMax, yAtXmax: yAtMax};
+}
+
+// Numerični integrator povesa za poljuben M(x): Euler-Bernoulli d²f/dx² = -M(x)/EI
+function precomputeDeflection(MofX_fn, L, EI){
+  const N=600, dx=L/N;
+  // κ(x) = -M(x)/EI
+  const kappa=[];
+  for(let i=0;i<=N;i++) kappa.push(-MofX_fn(i*dx)/EI);
+  // Integriramo κ → relativni naklon φ (trapezno pravilo)
+  const phi=[0];
+  for(let i=1;i<=N;i++) phi.push(phi[i-1]+(kappa[i-1]+kappa[i])/2*dx);
+  // Integriramo φ → relativni poves f
+  const f=[0];
+  for(let i=1;i<=N;i++) f.push(f[i-1]+(phi[i-1]+phi[i])/2*dx);
+  // Popravek za RS: f(L)=0 (enostavno podprt)
+  const fL=f[N];
+  for(let i=0;i<=N;i++) f[i]-=fL*(i/N);
+  return {f,N,dx,L};
+}
+
+function interpDeflTable(tbl,x){
+  if(!tbl||x<0) return 0;
+  const raw=x/tbl.dx;
+  const idx=Math.min(Math.floor(raw),tbl.N-1);
+  const t=raw-idx;
+  return tbl.f[idx]*(1-t)+tbl.f[Math.min(idx+1,tbl.N)]*t;
+}
+
+function setBeamInvalidState(msg){
+  document.getElementById('d-fmax').textContent='—';
+  document.getElementById('d-xmax').textContent='—';
+  document.getElementById('d-RA').textContent='—';
+  document.getElementById('d-RB').textContent='—';
+  document.getElementById('beam-formula').textContent=msg;
+}
+
+function initBeamCanvas(){
+  const bc=document.getElementById('beam-canvas');
+  if(!bc) return;
+  bc.width=bc.offsetWidth; bc.height=bc.offsetHeight;
+  beamCtx=bc.getContext('2d');
+  // Also sync diagram canvas sizes so they draw correctly on first render
+  ['Vd-canvas','Md-canvas'].forEach(id=>{
+    const c=document.getElementById(id);
+    if(c && c.offsetWidth>0){ c.width=c.offsetWidth; c.height=c.offsetHeight||160; }
+  });
+  calcBeam();
+}
+
+function calcBeam(){
+  const type=document.getElementById('beam-type').value;
+  const L=parseFloat(document.getElementById('b-L').value);
+  const P=parseFloat(document.getElementById('b-P').value);
+  const a=parseFloat(document.getElementById('b-a').value);
+  const EI=parseFloat(document.getElementById('b-EI').value);
+  beamQ2 = parseFloat(document.getElementById('b-q2')?document.getElementById('b-q2').value:0)||0;
+  beamDeflTable = null;
+
+  if(!isValidNumber(L)||!isValidNumber(P)||!isValidNumber(a)||!isValidNumber(EI)||L<=0||EI<=0){
+    setBeamInvalidState('Neveljavni vhodi: zahtevano je L > 0, EI > 0 in numerični parametri.');
+    drawDiagrams(type,1,0,0,1,0,0); drawBeam(type,1,0,0,1,0,0,0,0); return;
+  }
+  if(type==='point'&&(a<=0||a>=L)){
+    setBeamInvalidState('Neveljavni vhodi za točkovno silo: mora veljati 0 < a < L.');
+    drawDiagrams(type,L,0,0,EI,0,0); drawBeam(type,L,0,0,EI,0,0,0,0); return;
+  }
+  if(type==='midmoment'&&(a<=0||a>=L)){
+    setBeamInvalidState('Neveljavni vhodi za M₀: mora veljati 0 < a < L.');
+    drawDiagrams(type,L,0,0,EI,0,0); drawBeam(type,L,0,0,EI,0,0,0,0); return;
+  }
+
+  let fmax=0, xmax=0, RA=0, RB=0, formula='';
+
+  if(type==='moment'){
+    RA=P/L; RB=-P/L;
+    const mi=findMaxDeflection(type,L,P,a,EI); fmax=mi.fmax; xmax=mi.xmax;
+    formula=`f(x) = Mx(L²-x²-Lx)/(6EIL)\nfmax = ${fmax.toFixed(6)} m @ x=${xmax.toFixed(3)} m`;
+  }
+  else if(type==='point'){
+    RA=P*(L-a)/L; RB=P*a/L;
+    const mi=findMaxDeflection(type,L,P,a,EI); fmax=mi.fmax; xmax=mi.xmax;
+    formula=`f(x) (kosovno):\n x≤a: P(L-a)x(2La-x²-a²)/(6EIL)\n x>a: Pa(L-x)(...)/(6EIL)\nfmax = ${fmax.toFixed(6)} m @ x=${xmax.toFixed(3)} m`;
+  }
+  else if(type==='dist'){
+    RA=P*L/2; RB=P*L/2;
+    const mi=findMaxDeflection(type,L,P,a,EI); fmax=mi.fmax; xmax=mi.xmax;
+    formula=`f = qx(L³-2Lx²+x³)/(24EI)\nfmax = 5qL⁴/(384EI) = ${fmax.toFixed(6)} m @ x=L/2`;
+  }
+  else if(type==='cantilever'){
+    RA=P; RB=0;
+    const mi=findMaxDeflection(type,L,P,a,EI); fmax=mi.fmax; xmax=mi.xmax;
+    formula=`f(x) = Px²(3L-x)/(6EI)\nfmax = PL³/(3EI) = ${fmax.toFixed(6)} m @ x=L`;
+  }
+  else if(type==='triang'){
+    // Trikotna: q=0 pri A, q=P pri B
+    RA=P*L/6; RB=P*L/3;
+    const mi=findMaxDeflection(type,L,P,a,EI); fmax=mi.fmax; xmax=mi.xmax;
+    formula=`f(x) = qx(7L⁴-10L²x²+3x⁴)/(360EIL)\nRA=${RA.toFixed(3)} kN, RB=${RB.toFixed(3)} kN\nfmax = ${fmax.toFixed(6)} m @ x=${xmax.toFixed(3)} m`;
+  }
+  else if(type==='trapez'){
+    const q1=P, q2=beamQ2;
+    RA=L*(2*q1+q2)/6; RB=L*(q1+2*q2)/6;
+    const MofX=x=> RA*x - q1*x*x/2 - (q2-q1)*x*x*x/(6*L);
+    beamDeflTable = precomputeDeflection(MofX, L, EI);
+    const mi=findMaxDeflection(type,L,P,a,EI); fmax=mi.fmax; xmax=mi.xmax;
+    formula=`q(x) = ${q1}+(${q2}-${q1})·x/L [kN/m]\nRA=${RA.toFixed(3)} kN, RB=${RB.toFixed(3)} kN\nfmax = ${fmax.toFixed(6)} m @ x=${xmax.toFixed(3)} m`;
+  }
+  else if(type==='midmoment'){
+    // M₀ v naprotni smeri urinega kazalca pri x=a
+    RA=-P/L; RB=P/L;
+    const MofX=x=> x<a ? RA*x : RA*x+P;
+    beamDeflTable = precomputeDeflection(MofX, L, EI);
+    const mi=findMaxDeflection(type,L,P,a,EI); fmax=mi.fmax; xmax=mi.xmax;
+    formula=`M₀=${P} kNm @ x=${a} m\nRA=${RA.toFixed(3)} kN, RB=${RB.toFixed(3)} kN\nfmax = ${fmax.toFixed(6)} m @ x=${xmax.toFixed(3)} m`;
+  }
+
+  document.getElementById('d-fmax').textContent=fmax.toFixed(6)+' m';
+  document.getElementById('d-xmax').textContent=xmax.toFixed(3)+' m';
+  document.getElementById('d-RA').textContent=RA.toFixed(3)+' kN';
+  document.getElementById('d-RB').textContent=RB.toFixed(3)+' kN';
+  document.getElementById('beam-formula').textContent=formula;
+
+  drawBeam(type,L,P,a,EI,fmax,xmax,RA,RB);
+  drawDiagrams(type,L,P,a,EI,RA,RB);
+}
+
+function drawBeam(type,L,P,a,EI,fmax,xmax,RA,RB){
+  const bc=document.getElementById('beam-canvas');
+  if(!bc||!beamCtx) return;
+  const c=beamCtx, w=bc.width, h=bc.height;
+  c.clearRect(0,0,w,h);
+  
+  const margin=80, beamY=h*0.35, beamH=14;
+  const scale=(w-2*margin)/L;
+  const defScale=Math.min(h*0.25/((fmax>NUM_EPS)?fmax:0.001), 500);
+  
+  // Beam body
+  c.fillStyle='#1a3550'; c.fillRect(margin,beamY,w-2*margin,beamH);
+  c.strokeStyle='#00c9ff'; c.lineWidth=1; c.strokeRect(margin,beamY,w-2*margin,beamH);
+  
+  // Deflection curve (dashed, exaggerated)
+  c.strokeStyle='#f5a62399'; c.lineWidth=2; c.setLineDash([5,3]);
+  c.beginPath();
+  const n=100;
+  for(let i=0;i<=n;i++){
+    const x=i/n*L;
+    const f=beamDeflectionAt(type,x,L,P,a,EI);
+    const cx2=margin+x*scale;
+    const cy2=beamY+beamH/2+f*defScale;
+    if(i===0) c.moveTo(cx2,cy2); else c.lineTo(cx2,cy2);
+  }
+  c.stroke(); c.setLineDash([]);
+  
+  // Load indicators
+  if(type==='point'){
+    const lx=margin+a*scale;
+    drawForceLine(c,lx,beamY-15,lx,beamY+beamH,'#e94560',`F=${P}kN`,true);
+  } else if(type==='dist'){
+    c.strokeStyle='#e94560'; c.lineWidth=1.5;
+    for(let xi=margin;xi<=w-margin;xi+=20){
+      c.beginPath(); c.moveTo(xi,beamY-30); c.lineTo(xi,beamY); c.stroke();
+      c.beginPath(); c.moveTo(xi,beamY);
+      c.lineTo(xi-4,beamY-8); c.lineTo(xi+4,beamY-8); c.closePath(); c.fill();
+    }
+    c.fillStyle='#e94560'; c.font='11px Courier New';
+    c.fillText(`q=${P}kN/m`,margin+10,beamY-35);
+  } else if(type==='moment'){
+    c.strokeStyle='#f5a623'; c.lineWidth=2;
+    c.beginPath(); c.arc(margin,beamY+beamH/2,18,0,Math.PI*1.7);
+    c.stroke(); c.fillStyle='#f5a623'; c.font='11px Courier New';
+    c.fillText(`M=${P}kNm`,margin+22,beamY-10);
+  } else if(type==='cantilever'){
+    const lx=w-margin;
+    drawForceLine(c,lx,beamY-15,lx,beamY+beamH,'#e94560',`F=${P}kN`,true);
+    // Fixed wall
+    c.fillStyle='#1e3d5c'; c.fillRect(margin-20,beamY-20,20,beamH+40);
+    drawHatch(c,margin-20,beamY-20,20,beamH+40);
+  } else if(type==='triang'){
+    // Trikotna: 0 pri A, q_max pri B — naraščajoče puščice
+    const nA=9;
+    c.strokeStyle='#e94560'; c.fillStyle='#e94560'; c.lineWidth=1.5;
+    for(let i=1;i<=nA;i++){
+      const t=i/nA;
+      const xi=margin+t*(w-2*margin);
+      const hi=Math.round(6+t*38);
+      c.beginPath(); c.moveTo(xi,beamY-hi); c.lineTo(xi,beamY); c.stroke();
+      c.beginPath(); c.moveTo(xi,beamY); c.lineTo(xi-4,beamY-8); c.lineTo(xi+4,beamY-8); c.closePath(); c.fill();
+    }
+    c.strokeStyle='#e9456088'; c.lineWidth=1.5;
+    c.beginPath(); c.moveTo(margin,beamY-2); c.lineTo(w-margin,beamY-44); c.stroke();
+    c.fillStyle='#e94560'; c.font='11px Courier New';
+    c.fillText(`q_max=${P}kN/m`,w-margin-85,beamY-50);
+  } else if(type==='trapez'){
+    // Trapezna obtežba q1→q2
+    const q1=P, q2=beamQ2;
+    const maxQ=Math.max(Math.abs(q1),Math.abs(q2),0.001);
+    const nA=10;
+    c.strokeStyle='#e94560'; c.fillStyle='#e94560'; c.lineWidth=1.5;
+    for(let i=0;i<=nA;i++){
+      const t=i/nA;
+      const xi=margin+t*(w-2*margin);
+      const qi=q1+(q2-q1)*t;
+      const hi=Math.round(8+Math.abs(qi)/maxQ*38);
+      c.beginPath(); c.moveTo(xi,beamY-hi); c.lineTo(xi,beamY); c.stroke();
+      c.beginPath(); c.moveTo(xi,beamY); c.lineTo(xi-4,beamY-8); c.lineTo(xi+4,beamY-8); c.closePath(); c.fill();
+    }
+    const h1=Math.round(8+Math.abs(q1)/maxQ*38), h2=Math.round(8+Math.abs(q2)/maxQ*38);
+    c.strokeStyle='#e9456088'; c.lineWidth=1.5;
+    c.beginPath(); c.moveTo(margin,beamY-h1); c.lineTo(w-margin,beamY-h2); c.stroke();
+    c.fillStyle='#e94560'; c.font='11px Courier New';
+    c.fillText(`q₁=${q1} → q₂=${q2} kN/m`,margin+8,beamY-Math.max(h1,h2)-8);
+  } else if(type==='midmoment'){
+    // Koncentrirani moment pri x=a
+    const mx=margin+a*scale;
+    c.strokeStyle='#a29bfe'; c.lineWidth=2.5;
+    c.beginPath(); c.arc(mx,beamY+beamH/2,20,Math.PI*0.1,Math.PI*1.8); c.stroke();
+    const ae=Math.PI*1.8;
+    c.fillStyle='#a29bfe';
+    const axh=mx+20*Math.cos(ae), ayh=beamY+beamH/2+20*Math.sin(ae);
+    c.beginPath(); c.moveTo(axh,ayh);
+    c.lineTo(axh-10*Math.cos(ae-0.5),ayh-10*Math.sin(ae-0.5));
+    c.lineTo(axh-10*Math.cos(ae+0.5),ayh-10*Math.sin(ae+0.5));
+    c.closePath(); c.fill();
+    c.fillStyle='#a29bfe'; c.font='11px Courier New';
+    c.fillText(`M₀=${P}kNm`,mx+24,beamY-10);
+  }
+  
+  // Supports
+  if(type!=='cantilever'){
+    drawPin(c,margin,beamY+beamH);
+    drawRoller(c,w-margin,beamY+beamH);
+    // Reactions
+    if(RA!==0) drawForceLine(c,margin,beamY+beamH+50,margin,beamY+beamH,'#2ecc71',`RA=${RA.toFixed(2)}kN`,false);
+    if(RB!==0) drawForceLine(c,w-margin,beamY+beamH+50,w-margin,beamY+beamH,'#2ecc71',`RB=${RB.toFixed(2)}kN`,false);
+  }
+  
+  // Max deflection indicator
+  const xmPx=margin+xmax*scale;
+  c.strokeStyle='#a29bfe'; c.lineWidth=1; c.setLineDash([3,3]);
+  c.beginPath(); c.moveTo(xmPx,beamY+beamH); c.lineTo(xmPx,beamY+beamH+fmax*defScale+10); c.stroke();
+  c.setLineDash([]);
+  c.fillStyle='#a29bfe'; c.font='11px Courier New';
+  c.fillText(`fmax=${fmax.toFixed(4)}m`,xmPx+5,beamY+beamH+fmax*defScale+25);
+  
+  // Span label
+  c.fillStyle='#4a7a99'; c.font='12px Courier New'; c.textAlign='center';
+  c.fillText(`L = ${L} m`,w/2,h-15);
+  c.textAlign='left';
+  c.fillStyle='#8ab4cc'; c.font='11px Courier New';
+  c.fillText(`EI = ${EI} kNm² (amplifikacija: ×${Math.round(defScale)})`,margin,20);
+}
+
+function drawDiagrams(type,L,P,a,EI,RA,RB){
+  const Vc=document.getElementById('Vd-canvas'), Mc=document.getElementById('Md-canvas');
+  if(!Vc||!Mc) return;
+  // Set proper pixel dimensions (fallback 500×160 if not yet in DOM)
+  Vc.width  = Vc.offsetWidth  || 500; Vc.height = Vc.offsetHeight || 160;
+  Mc.width  = Mc.offsetWidth  || 500; Mc.height = Mc.offsetHeight || 160;
+
+  const cV=Vc.getContext('2d'), cM=Mc.getContext('2d');
+  const n=300;
+  const Vd=[], Md=[];
+
+  for(let i=0;i<=n;i++){
+    const x = i/n*L;
+    let V=0, M=0;
+    if(type==='point'){
+      V = x < a ? RA : RA - P;
+      M = x <= a ? RA*x : RA*x - P*(x-a);
+    } else if(type==='dist'){
+      V = RA - P*x; M = RA*x - P*x*x/2;
+    } else if(type==='moment'){
+      V = RA; M = P - RA*x;
+    } else if(type==='cantilever'){
+      V = -P; M = P*(L-x);
+    } else if(type==='triang'){
+      V = RA - P*x*x/(2*L); M = RA*x - P*x*x*x/(6*L);
+    } else if(type==='trapez'){
+      const q1=P, q2=beamQ2;
+      V = RA - q1*x - (q2-q1)*x*x/(2*L);
+      M = RA*x - q1*x*x/2 - (q2-q1)*x*x*x/(6*L);
+    } else if(type==='midmoment'){
+      V = RA;
+      M = x < a ? RA*x : RA*x + P;
+    }
+    Vd.push({x,V}); Md.push({x,M});
+  }
+
+  function drawNTMDiag(ctx, data, field, clr, w, h, unit){
+    const mL=54, mR=16, mT=22, mB=28;
+    const drawW = w - mL - mR;
+    const drawH = h - mT - mB;
+    const midY  = mT + drawH/2;
+
+    // Background
+    ctx.fillStyle='#0d1b2a'; ctx.fillRect(0,0,w,h);
+
+    const vals = data.map(d=>d[field]);
+    const maxAbs = Math.max(...vals.map(Math.abs));
+
+    // Horizontal grid lines (4 divisions)
+    ctx.strokeStyle='#1a3550'; ctx.lineWidth=0.5; ctx.setLineDash([3,4]);
+    for(let i=0;i<=4;i++){
+      const gy = mT + i*drawH/4;
+      ctx.beginPath(); ctx.moveTo(mL,gy); ctx.lineTo(w-mR,gy); ctx.stroke();
+    }
+    // Vertical grid lines (5 divisions)
+    for(let i=0;i<=5;i++){
+      const gx = mL + i*drawW/5;
+      ctx.beginPath(); ctx.moveTo(gx,mT); ctx.lineTo(gx,h-mB); ctx.stroke();
+    }
+    ctx.setLineDash([]);
+
+    // Zero axis
+    ctx.strokeStyle='#2d5e80'; ctx.lineWidth=1.5;
+    ctx.beginPath(); ctx.moveTo(mL,midY); ctx.lineTo(w-mR,midY); ctx.stroke();
+    // Left vertical axis
+    ctx.strokeStyle='#2d5e80'; ctx.lineWidth=1;
+    ctx.beginPath(); ctx.moveTo(mL,mT); ctx.lineTo(mL,h-mB); ctx.stroke();
+
+    // X-axis tick labels
+    ctx.fillStyle='#4a7a99'; ctx.font='9px Courier New'; ctx.textAlign='center';
+    for(let i=0;i<=5;i++){
+      const xv = (i/5*L);
+      const xp = mL + i/5*drawW;
+      ctx.fillText(xv.toFixed(xv<10?2:1)+'m', xp, h-4);
+    }
+
+    if(maxAbs < NUM_EPS){
+      ctx.strokeStyle=clr+'66'; ctx.lineWidth=2;
+      ctx.beginPath(); ctx.moveTo(mL,midY); ctx.lineTo(w-mR,midY); ctx.stroke();
+      ctx.fillStyle=clr; ctx.font='10px Courier New'; ctx.textAlign='left';
+      ctx.fillText('0 '+unit, mL+6, midY-7);
+      return;
+    }
+
+    const sc = (drawH/2 - 6) / maxAbs;
+
+    // Filled area
+    ctx.fillStyle = clr+'25';
+    ctx.beginPath();
+    ctx.moveTo(mL, midY);
+    data.forEach(d=>{ ctx.lineTo(mL+d.x/L*drawW, midY - d[field]*sc); });
+    ctx.lineTo(w-mR, midY);
+    ctx.closePath(); ctx.fill();
+
+    // Outline
+    ctx.strokeStyle=clr; ctx.lineWidth=2;
+    ctx.beginPath();
+    data.forEach((d,i)=>{
+      const xp = mL + d.x/L*drawW;
+      const yp = midY - d[field]*sc;
+      if(i===0) ctx.moveTo(xp,yp); else ctx.lineTo(xp,yp);
+    });
+    ctx.stroke();
+
+    // Vertikalna prekinitev za diskontinuitete
+    if(type==='point' && field==='V' && a>0 && a<L){
+      const xJump = mL + a/L*drawW;
+      ctx.strokeStyle=clr+'90'; ctx.lineWidth=1.5; ctx.setLineDash([4,3]);
+      ctx.beginPath();
+      ctx.moveTo(xJump, midY - RA*sc);
+      ctx.lineTo(xJump, midY - (RA-P)*sc);
+      ctx.stroke(); ctx.setLineDash([]);
+    }
+    if(type==='midmoment' && field==='M' && a>0 && a<L){
+      const xJump = mL + a/L*drawW;
+      const mBef = RA*a, mAft = RA*a + P;
+      ctx.strokeStyle=clr+'90'; ctx.lineWidth=1.5; ctx.setLineDash([4,3]);
+      ctx.beginPath();
+      ctx.moveTo(xJump, midY - mBef*sc);
+      ctx.lineTo(xJump, midY - mAft*sc);
+      ctx.stroke(); ctx.setLineDash([]);
+    }
+
+    // Max/min dot and label
+    const extremeIdx = vals.reduce((mi,v,i)=>Math.abs(v)>Math.abs(vals[mi])?i:mi, 0);
+    const extVal = vals[extremeIdx];
+    const extX = mL + data[extremeIdx].x/L*drawW;
+    const extY = midY - extVal*sc;
+    ctx.fillStyle=clr; ctx.beginPath(); ctx.arc(extX,extY,4,0,Math.PI*2); ctx.fill();
+    ctx.strokeStyle='#0d1b2a'; ctx.lineWidth=1; ctx.stroke();
+    ctx.fillStyle=clr; ctx.font='bold 10px Courier New'; ctx.textAlign='center';
+    const lblOff = extY < midY ? -10 : 14;
+    ctx.fillText(extVal.toFixed(3)+' '+unit, extX, extY+lblOff);
+
+    // Y-axis labels
+    ctx.fillStyle='#4a7a99'; ctx.font='9px Courier New'; ctx.textAlign='right';
+    const step = maxAbs/2;
+    for(let i=-2;i<=2;i++){
+      if(i===0) continue;
+      const v = i*step;
+      const yp = midY - v*sc;
+      if(yp>mT && yp<h-mB){
+        ctx.fillText(v.toFixed(Math.abs(v)<100?2:1), mL-5, yp+3);
+        ctx.strokeStyle='#1e3d5c'; ctx.lineWidth=0.5;
+        ctx.beginPath(); ctx.moveTo(mL-3,yp); ctx.lineTo(mL,yp); ctx.stroke();
+      }
+    }
+  }
+
+  drawNTMDiag(cV, Vd, 'V', '#00c9ff', Vc.width, Vc.height, 'kN');
+  drawNTMDiag(cM, Md, 'M', '#f5a623', Mc.width, Mc.height, 'kNm');
+}
+
+function updateBeamTypeUI(){
+  const type=document.getElementById('beam-type').value;
+  const q2row=document.getElementById('q2-row');
+  if(q2row) q2row.style.display=(type==='trapez')?'':'none';
+  const pLabels={moment:'Moment M [kNm]',point:'Sila F [kN]',dist:'q [kN/m]',cantilever:'Sila F [kN]',triang:'q_max [kN/m]',trapez:'q₁ levo [kN/m]',midmoment:'M₀ [kNm]'};
+  const aLabels={moment:'Param. a (nevpot.)',point:'Pozicija a [m] od A',dist:'Param. a (nevpot.)',cantilever:'Param. a (nevpot.)',triang:'Param. a (nevpot.)',trapez:'Param. a (nevpot.)',midmoment:'Pozicija M₀ [m] od A'};
+  const lblP=document.getElementById('lbl-P'); if(lblP) lblP.textContent=pLabels[type]||'Obremenitev P';
+  const lblA=document.getElementById('lbl-a'); if(lblA) lblA.textContent=aLabels[type]||'Pozicija a [m]';
+}
+
+function loadDeform1(){
+  document.getElementById('beam-type').value='point';
+  document.getElementById('b-L').value='2';
+  document.getElementById('b-P').value='60';
+  document.getElementById('b-a').value='1';
+  document.getElementById('b-EI').value='70000';
+  updateBeamTypeUI(); calcBeam();
+}
+function loadDeform2(){
+  document.getElementById('beam-type').value='moment';
+  document.getElementById('b-L').value='3';
+  document.getElementById('b-P').value='12';
+  document.getElementById('b-a').value='1.5';
+  document.getElementById('b-EI').value='1000';
+  updateBeamTypeUI(); calcBeam();
+}
+function loadDeform3(){
+  document.getElementById('beam-type').value='dist';
+  document.getElementById('b-L').value='2';
+  document.getElementById('b-P').value='3';
+  document.getElementById('b-a').value='1';
+  document.getElementById('b-EI').value='500';
+  updateBeamTypeUI(); calcBeam();
+}
+function loadDeform4(){
+  // Naloga 4.4: Trikotna obtežba, L=4m, q_max=10kN/m, EI=2000
+  document.getElementById('beam-type').value='triang';
+  document.getElementById('b-L').value='4';
+  document.getElementById('b-P').value='10';
+  document.getElementById('b-a').value='2';
+  document.getElementById('b-EI').value='2000';
+  updateBeamTypeUI(); calcBeam();
+}
+function loadDeform5(){
+  // Naloga 4.5: Trapezna q1=8kN/m → q2=4kN/m, L=5m, EI=3000
+  document.getElementById('beam-type').value='trapez';
+  document.getElementById('b-L').value='5';
+  document.getElementById('b-P').value='8';
+  if(document.getElementById('b-q2')) document.getElementById('b-q2').value='4';
+  document.getElementById('b-a').value='2';
+  document.getElementById('b-EI').value='3000';
+  updateBeamTypeUI(); calcBeam();
+}
+function loadDeform6(){
+  // Naloga 4.6: Moment M0=20kNm pri x=1.5m, L=4m, EI=1500
+  document.getElementById('beam-type').value='midmoment';
+  document.getElementById('b-L').value='4';
+  document.getElementById('b-P').value='20';
+  document.getElementById('b-a').value='1.5';
+  document.getElementById('b-EI').value='1500';
+  updateBeamTypeUI(); calcBeam();
+}
+
+// ============================================================
+// INIT
+// ============================================================
+window.addEventListener('load',()=>{
+  initStaticsCanvas();
+  loadStatics1();
+  window.addEventListener('resize',()=>{
+    if(activeTab==='statics') initStaticsCanvas();
+    if(activeTab==='rigid') initRigidCanvas();
+    if(activeTab==='deform') initBeamCanvas();
+  });
+});
+</script>
+</body>
+</html>

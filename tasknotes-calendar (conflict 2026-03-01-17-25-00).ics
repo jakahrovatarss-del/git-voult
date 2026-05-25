@@ -1,0 +1,507 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//TaskNotes//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-Delaunicap-odjetnistva-md-0-1772381652427@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:Delaunicap odjetnistva
+DTSTART:20260311T170000Z
+DTEND:20260311T180000Z
+DESCRIPTION:Priority: normal\nStatus: open\nTags: task\nEstimated time: 60 
+ minutes\n\nExported from TaskNotes: TaskNotes/Tasks/Delaunicap odjetnistva
+ .md
+CATEGORIES:task
+PRIORITY:5
+STATUS:NEEDS-ACTION
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-smucanje-md-1-1772381652428@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:smucanje
+DTSTART:20260227T230000Z
+DTEND:20260228T000000Z
+DESCRIPTION:Priority: normal\nStatus: open\nTags: task\n\nExported from Tas
+ kNotes: TaskNotes/Tasks/smucanje.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:NEEDS-ACTION
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-pejt-karburator-sestaulat-md-2-1772381652428@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:pejt karburator sestaulat
+DTSTART:20260227T140000Z
+DTEND:20260227T160000Z
+DESCRIPTION:Priority: normal\nStatus: open\nTags: task\nEstimated time: 120
+  minutes\n\nExported from TaskNotes: TaskNotes/Tasks/pejt karburator sesta
+ ulat.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:NEEDS-ACTION
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-Uzem-podalsek-tadoug-al-ga-pa-kup-za-u-sobo-md-3-177238
+ 1652428@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:Uzem podalsek tadoug al ga pa kup za u sobo
+DTSTART:20260225T230000Z
+DTEND:20260301T230000Z
+DESCRIPTION:Priority: normal\nStatus: open\nTags: task\n\nExported from Tas
+ kNotes: TaskNotes/Tasks/Uzem podalsek tadoug al ga pa kup za u sobo.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:NEEDS-ACTION
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-Pla-ej-za-mui-thai-pa-klinika-si-poglej-md-4-1772381652
+ 428@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:Plačej za mui thai pa klinika si poglej
+DTSTART:20260224T230000Z
+DTEND:20260225T000000Z
+DESCRIPTION:Priority: normal\nStatus: done\nTags: task\n\nExported from Tas
+ kNotes: TaskNotes/Tasks/Plačej za mui thai pa klinika si poglej.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:COMPLETED
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-Preklic-narocnino-na-heptabase-md-5-1772381652428@taskn
+ otes
+DTSTAMP:20260301T161412Z
+SUMMARY:Preklic narocnino na heptabase
+DTSTART:20260224T230000Z
+DTEND:20260224T230000Z
+DESCRIPTION:Priority: normal\nStatus: done\nTags: task\n\nExported from Tas
+ kNotes: TaskNotes/Tasks/Preklic narocnino na heptabase.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:COMPLETED
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-Mehanika-2-md-6-1772381652428@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:Mehanika
+DTSTART:20260224T090000Z
+DTEND:20260224T120000Z
+DESCRIPTION:Priority: normal\nStatus: open\nProjects: [[mehanika]]\nTags: t
+ ask\nEstimated time: 180 minutes\n\nExported from TaskNotes: TaskNotes/Tas
+ ks/Mehanika-2.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:NEEDS-ACTION
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-Strojni-tvo-md-7-1772381652428@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:Strojništvo
+DTSTART:20260223T070000Z
+DTEND:20260223T090000Z
+DESCRIPTION:Priority: normal\nStatus: open\nTags: task\nEstimated time: 120
+  minutes\n\nExported from TaskNotes: TaskNotes/Tasks/Strojništvo.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:NEEDS-ACTION
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-Mehanika-md-8-1772381652428@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:Mehanika
+DTSTART:20260302T090000Z
+DTEND:20260302T120000Z
+DESCRIPTION:Priority: normal\nStatus: open\nProjects: [[mehanika]]\nTags: t
+ ask\nEstimated time: 180 minutes\n\nExported from TaskNotes: TaskNotes/Tas
+ ks/Mehanika.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:NEEDS-ACTION
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-Maturanc-s-karin-na-gospodarskem-rastaviscu-md-9-177238
+ 1652428@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:Maturanc s karin na gospodarskem rastaviscu
+DTSTART:20260326T230000Z
+DTEND:20260327T000000Z
+DESCRIPTION:Priority: normal\nStatus: open\nTags: task\n\nExported from Tas
+ kNotes: TaskNotes/Tasks/Maturanc s karin na gospodarskem rastaviscu.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:NEEDS-ACTION
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-Ponovitvene-vaje-pred-maturancom-md-10-1772381652428@ta
+ sknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:Ponovitvene vaje pred maturancom
+DTSTART:20260325T230000Z
+DTEND:20260326T000000Z
+DESCRIPTION:Priority: normal\nStatus: open\nTags: task\n\nExported from Tas
+ kNotes: TaskNotes/Tasks/Ponovitvene vaje pred maturancom.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:NEEDS-ACTION
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-Bajta-frej-pr-mami-md-11-1772381652428@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:Bajta frej pr mami
+DTSTART:20260312T230000Z
+DTEND:20260316T230000Z
+DESCRIPTION:Priority: normal\nStatus: open\nTags: task\n\nExported from Tas
+ kNotes: TaskNotes/Tasks/Bajta frej pr mami.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:NEEDS-ACTION
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-Volitve-md-12-1772381652428@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:Volitve
+DTSTART:20260321T230000Z
+DTEND:20260322T000000Z
+DESCRIPTION:Priority: normal\nStatus: open\nTags: task\n\nExported from Tas
+ kNotes: TaskNotes/Tasks/Volitve.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:NEEDS-ACTION
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-Sestank-pozitiva-z-o-itom-md-13-1772381652428@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:Sestank pozitiva z očitom
+DTSTART:20260302T090000Z
+DTEND:20260302T100000Z
+DESCRIPTION:Priority: high\nStatus: open\nTags: task\nEstimated time: 60 mi
+ nutes\n\nExported from TaskNotes: TaskNotes/Tasks/Sestank pozitiva z očito
+ m.md
+CATEGORIES:task
+PRIORITY:3
+STATUS:NEEDS-ACTION
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-za-arrs-trea-raziskt-pa-poklic-klaro-pa-se-zmen-za-to-n
+ ov-projekt-ka-goran-tezi-md-14-1772381652428@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:za arrs trea raziskt pa poklic klaro pa se zmen za to nov projekt k
+ a goran tezi
+DTSTART:20260302T230000Z
+DTEND:20260301T230000Z
+DESCRIPTION:Priority: normal\nStatus: in-progress\nTags: task\n\nExported f
+ rom TaskNotes: TaskNotes/Tasks/za arrs trea raziskt pa poklic klaro pa se 
+ zmen za to nov projekt ka goran tezi.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:IN-PROCESS
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-Za-zaslon-pa-za-ekstender-bo-poslou-ales-resetic-md-15-
+ 1772381652429@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:Za zaslon pa za ekstender bo poslou ales resetic
+DTSTART:20260224T230000Z
+DTEND:20260227T230000Z
+DESCRIPTION:Priority: normal\nStatus: in-progress\nTags: task\n\nExported f
+ rom TaskNotes: TaskNotes/Tasks/Za zaslon pa za ekstender bo poslou ales re
+ setic.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:IN-PROCESS
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-festa-smash-md-16-1772381652429@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:festa smash
+DTSTART:20260224T183000Z
+DTEND:20260224T203000Z
+DESCRIPTION:Priority: normal\nStatus: done\nTags: task\nEstimated time: 120
+  minutes\n\nExported from TaskNotes: TaskNotes/Tasks/festa smash.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:COMPLETED
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-Zmen-se-za-ekran-md-17-1772381652429@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:Zmen se za ekran
+DTSTART:20260224T230000Z
+DTEND:20260225T000000Z
+DESCRIPTION:Priority: normal\nStatus: done\nTags: task\n\nExported from Tas
+ kNotes: TaskNotes/Tasks/Zmen se za ekran.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:COMPLETED
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-Izpit-za-coven-in-izpit-za-kamijo-poglej-md-18-17723816
+ 52429@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:Izpit za coven in izpit za kamijo poglej
+DTSTART:20260222T230000Z
+DTEND:20260222T230000Z
+DESCRIPTION:Priority: normal\nStatus: open\nTags: task\n\nExported from Tas
+ kNotes: TaskNotes/Tasks/Izpit za coven in izpit za kamijo poglej.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:NEEDS-ACTION
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-Ocita-spomn-da-poklice-za-spletno-stran-md-19-177238165
+ 2429@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:Ocita spomn da poklice za spletno stran
+DTSTART:20260221T230000Z
+DTEND:20260301T230000Z
+DESCRIPTION:Priority: normal\nStatus: done\nTags: task\n\nExported from Tas
+ kNotes: TaskNotes/Tasks/Ocita spomn da poklice za spletno stran.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:COMPLETED
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-Spucej-avto-zadne-zice-md-20-1772381652429@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:Spucej avto zadne zice
+DTSTART:20260221T230000Z
+DTEND:20260222T000000Z
+DESCRIPTION:Priority: normal\nStatus: done\nTags: task\n\nExported from Tas
+ kNotes: TaskNotes/Tasks/Spucej avto zadne zice.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:COMPLETED
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-Ustau-se-pr-mt-za-kruh-bananin-md-21-1772381652429@task
+ notes
+DTSTAMP:20260301T161412Z
+SUMMARY:Ustau se pr mt za kruh bananin
+DTSTART:20260220T210000Z
+DTEND:20260220T220000Z
+DESCRIPTION:Priority: normal\nStatus: done\nTags: task\n\nExported from Tas
+ kNotes: TaskNotes/Tasks/Ustau se pr mt za kruh bananin.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:COMPLETED
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-Prodej-telfon-od-marjana-ka-je-u-stanovanju-md-22-17723
+ 81652429@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:Prodej telfon od marjana ka je u stanovanju
+DTSTART:20260219T230000Z
+DTEND:20260312T230000Z
+DESCRIPTION:Priority: normal\nStatus: open\nTags: task\n\nExported from Tas
+ kNotes: TaskNotes/Tasks/Prodej telfon od marjana ka je u stanovanju.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:NEEDS-ACTION
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-Microneedeling-md-23-1772381652429@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:Microneedeling
+DTSTART:20260226T230000Z
+DTEND:20260227T000000Z
+DESCRIPTION:Priority: normal\nStatus: open\nTags: task\n\nExported from Tas
+ kNotes: TaskNotes/Tasks/Microneedeling.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:NEEDS-ACTION
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-Vadi-pozavno-1-uro-md-24-1772381652429@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:Vadi pozavno 1 uro
+DTSTART:20260220T120000Z
+DTEND:20260220T130000Z
+DESCRIPTION:Priority: normal\nStatus: done\nTags: task\nEstimated time: 60 
+ minutes\n\nExported from TaskNotes: TaskNotes/Tasks/Vadi pozavno 1 uro.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:COMPLETED
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-Miha-frizer-md-25-1772381652429@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:Miha frizer
+DTSTART:20260220T135000Z
+DTEND:20260220T145500Z
+DESCRIPTION:Priority: normal\nStatus: done\nTags: task\nEstimated time: 65 
+ minutes\n\nExported from TaskNotes: TaskNotes/Tasks/Miha frizer.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:COMPLETED
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-zar-zjutrej-se-zmen-md-26-1772381652429@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:zar zjutrej se zmen
+DTSTART:20260220T230000Z
+DTEND:20260221T000000Z
+DESCRIPTION:Priority: normal\nStatus: done\nTags: task\n\nExported from Tas
+ kNotes: TaskNotes/Tasks/zar zjutrej se zmen.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:COMPLETED
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-Orkester-md-27-1772381652429@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:Orkester
+DTSTART:20260221T083000Z
+DTEND:20260221T093000Z
+DESCRIPTION:Priority: normal\nStatus: done\nTags: task\n\nExported from Tas
+ kNotes: TaskNotes/Tasks/Orkester.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:COMPLETED
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-18-15-orkester-trobila-md-28-1772381652429@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:18 15 orkester trobila
+DTSTART:20260220T165500Z
+DTEND:20260220T201500Z
+DESCRIPTION:Priority: normal\nStatus: done\nTags: task\nEstimated time: 200
+  minutes\n\nExported from TaskNotes: TaskNotes/Tasks/18 15 orkester trobil
+ a.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:COMPLETED
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-Toni-marele-2-md-29-1772381652429@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:Toni marele
+DTSTART:20260224T230000Z
+DTEND:20260225T000000Z
+DESCRIPTION:Priority: normal\nStatus: done\nTags: task\n\nExported from Tas
+ kNotes: TaskNotes/Tasks/Toni marele-2.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:COMPLETED
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-Toni-marele-md-30-1772381652430@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:Toni marele
+DTSTART:20260222T230000Z
+DTEND:20260223T000000Z
+DESCRIPTION:Priority: normal\nStatus: done\nTags: task\n\nExported from Tas
+ kNotes: TaskNotes/Tasks/Toni marele.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:COMPLETED
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-Ponovitvene-vaje-md-31-1772381652430@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:Ponovitvene vaje
+DTSTART:20260222T230000Z
+DTEND:20260223T000000Z
+DESCRIPTION:Priority: normal\nStatus: done\nTags: task\n\nExported from Tas
+ kNotes: TaskNotes/Tasks/Ponovitvene vaje.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:COMPLETED
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-Zobar-17-45-md-32-1772381652430@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:Zobar 17 45
+DTSTART:20260309T230000Z
+DTEND:20260310T000000Z
+DESCRIPTION:Priority: normal\nStatus: open\nTags: task\n\nExported from Tas
+ kNotes: TaskNotes/Tasks/Zobar 17 45.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:NEEDS-ACTION
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-zacni-sestaulat-karburator-nazaj-md-33-1772381652430@ta
+ sknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:zacni sestaulat karburator nazaj
+DTSTART:20260219T130000Z
+DTEND:20260219T140000Z
+DESCRIPTION:Priority: normal\nStatus: in-progress\nTags: task\n\nExported f
+ rom TaskNotes: TaskNotes/Tasks/zacni sestaulat karburator nazaj.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:IN-PROCESS
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-upras-na-univerzi-glede-kozouca-md-34-1772381652430@tas
+ knotes
+DTSTAMP:20260301T161412Z
+SUMMARY:upras na univerzi glede kozouca
+DTSTART:20260223T230000Z
+DTEND:20260224T000000Z
+DESCRIPTION:Priority: normal\nStatus: open\nTags: task\n\nExported from Tas
+ kNotes: TaskNotes/Tasks/upras na univerzi glede kozouca.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:NEEDS-ACTION
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-varna-voznja-vransko-md-35-1772381652430@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:varna voznja vransko
+DTSTART:20260220T230000Z
+DTEND:20260221T000000Z
+DESCRIPTION:Priority: high\nStatus: done\nTags: task\n\nExported from TaskN
+ otes: TaskNotes/Tasks/varna voznja vransko.md
+CATEGORIES:task
+PRIORITY:3
+STATUS:COMPLETED
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-pejt-u-fitnes-md-36-1772381652430@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:pejt u fitnes
+DTSTART:20260225T173000Z
+DTEND:20260225T183000Z
+DESCRIPTION:Priority: normal\nStatus: open\nTags: task\n\nExported from Tas
+ kNotes: TaskNotes/Tasks/pejt u fitnes.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:NEEDS-ACTION
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-pejt-vn-pogledat-mizo-md-37-1772381652430@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:pejt vn pogledat mizo
+DTSTART:20260218T230000Z
+DTEND:20260218T230000Z
+DESCRIPTION:Priority: normal\nStatus: done\nTags: task\n\nExported from Tas
+ kNotes: TaskNotes/Tasks/pejt vn pogledat mizo.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:COMPLETED
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-mui-thai-trening-md-38-1772381652430@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:mui thai trening
+DTSTART:20260225T230000Z
+DTEND:20260226T000000Z
+DESCRIPTION:Priority: normal\nStatus: open\nTags: task\n\nExported from Tas
+ kNotes: TaskNotes/Tasks/mui thai trening.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:NEEDS-ACTION
+END:VEVENT
+BEGIN:VEVENT
+UID:TaskNotes-Tasks-ne-pij-prevec-md-39-1772381652430@tasknotes
+DTSTAMP:20260301T161412Z
+SUMMARY:ne pij prevec
+DTSTART:20260220T120000Z
+DTEND:20260220T130000Z
+DESCRIPTION:Priority: normal\nStatus: done\nTags: task\n\nExported from Tas
+ kNotes: TaskNotes/Tasks/ne pij prevec.md
+CATEGORIES:task
+PRIORITY:5
+STATUS:COMPLETED
+END:VEVENT
+END:VCALENDAR
