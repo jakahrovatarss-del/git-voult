@@ -90,11 +90,19 @@ Topikalna nega - optimalna:
 UV sevanje je primaren vzrok prezgodnjega staranja - razgrajuje kolagen in elastin v globoki plasti kože. Sončna krema vsak dan zunaj, posebej nujno na retinolu.
 
 Za vitamin D: 15 minut naravne izpostavljenosti na dan.
-Za porjavitev brez staranja: Melanotan 2 ali samoportavljivi.
+Za porjavitev brez staranja: [[Melanotan 2]] ali samoportavljivi.
 
 # Zaključek
 
 Skinmaxxing ni eno kozmetično sredstvo - je sistem. Začneš z beta-karotenom in življenjskim slogom (prehrana, spanec, vadba, stres). Potem dodajaš topikalno nego. Antioksidanti in zaščita pred UV so dolgoročna investicija. Rezultati so vidni v barvi, sijaju in teksturi kože.
+
+# Povezave
+
+- [[Kolagen in elastičnost]] — kolagen, elastin, topikalna nega
+- [[Beta-karoten]] — osnova za barvo kože
+- [[NAC]] — antioksidant, glutationska pot
+- [[Steroidmaxxing - testosteron cikel]] — testosteron in koža (akne tveganje)
+- [[Posturemaxxing - drža]] — videz in samozaupanje
 
 # Viri
 

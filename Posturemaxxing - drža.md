@@ -88,7 +88,12 @@ Sedenje je glavni vzrok APT. Raztegi so nujni za tiste ki:
 
 Posturemaxxing je eden najenostavnejših face multiplierjev z neposrednim vplivom na višino in okvir. Temelj je korekcija anteriorne pelvične nagibe z raztegi in krepitvijo gluteusov + hamstringov. Vaje vzamejo 5-10 minut na dan, rezultati so vidni v tednih.
 
+# Povezave
+
+- [[Skinmaxxing - koža]] — celoten looksmax sistem
+- [[Steroidmaxxing - testosteron cikel]] — mišična masa in okvir
+- [[Socialmaxxing - socialni krogi]]
+
 # Viri
 
 - [Attractionmax: Deliciadecu's Posturemax Guide 2020](https://looksmax.org/threads/nsfw-attractionmax-deliciadecus-posturemax-guide-2020.86369/)
-- [[Socialmaxxing - socialni krogi]]
