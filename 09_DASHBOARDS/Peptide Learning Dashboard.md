@@ -49,20 +49,20 @@ Naslednji koraki:
 
 ## 🔬 Specifični Peptide
 
-| Peptid | Namen | Doze | Status |
-|--------|--------|-------|---------|
-| **BPC-157** | Temelj (popravljanje) | 500mcg-1mg | 📋 Učiti se |
-| **TB500** | Temelj (vnetje) | 2-3mg | 📋 Učiti se |
-| **Pinealon** | Temelj (receptorji) | 10-100mcg | 📋 Učiti se |
-| **Tesamorelin** | Growth hormone | 100mcg | 📋 Učiti se |
-| **Ipamorelin** | Growth hormone | 100mcg | 📋 Učiti se |
-| **Retatrutide** | Fat loss | 0.25-1mg | 📋 Učiti se |
-| **SS-31** | Mitohondrije | - | 📋 Učiti se |
-| **MOD-C** | Mitohondrije | - | 📋 Učiti se |
-| **Epitalon** | Spanje | 10-100mcg | 📋 Učiti se |
-| **CAX-5500** | Kognicija | 300mcg | 📋 Učiti se |
-| **Selank** | Stres | 250mcg | 📋 Učiti se |
-| **GHK-Cu** | Estetika | 500mcg-1mg | 🟢 Preglед |
+| Peptid          | Namen                 | Doze       | Status      |
+| --------------- | --------------------- | ---------- | ----------- |
+| **BPC-157**     | Temelj (popravljanje) | 500mcg-1mg | 📋 Učiti se |
+| **TB500**       | Temelj (vnetje)       | 2-3mg      | 📋 Učiti se |
+| **Pinealon**    | Temelj (receptorji)   | 10-100mcg  | 📋 Učiti se |
+| **Tesamorelin** | Growth hormone        | 100mcg     | 📋 Učiti se |
+| **Ipamorelin**  | Growth hormone        | 100mcg     | 📋 Učiti se |
+| **Retatrutide** | Fat loss              | 0.25-1mg   | 📋 Učiti se |
+| **SS-31**       | Mitohondrije          | -          | 📋 Učiti se |
+| **MOD-C**       | Mitohondrije          | -          | 📋 Učiti se |
+| **Epitalon**    | Spanje                | 10-100mcg  | 📋 Učiti se |
+| **CAX-5500**    | Kognicija             | 300mcg     | 📋 Učiti se |
+| **Selank**      | Stres                 | 250mcg     | 📋 Učiti se |
+| **GHK-Cu**      | Estetika              | 500mcg-1mg | 🟢 Preglед  |
 
 ---
 
