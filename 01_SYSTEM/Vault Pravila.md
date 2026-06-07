@@ -13,18 +13,17 @@ Operativna pravila za ta vault. To je živi dokument — posodobi ga kadar se pr
 
 ## Struktura Map
 
-| Mapa | Namen |
-|------|-------|
-| `00_INBOX` | Hitri capture, obdelaj čim prej |
-| `01_SYSTEM` | Pravila, tokovi, navodila |
-| `02_AREAS` | Stalna področja odgovornosti |
-| `03_PROJECTS` | Aktivni projekti z jasnim izidom |
-| `04_RESOURCES` | Viri, članki, ideje |
-| `05_SCHOOL` | Formalna šola — predmeti, naloge, izpiti |
-| `06_LEARNING` | Solo učenje — teme, skill trees, projekti |
-| `07_AI` | AI workflowi, prompti, avtomatizacije |
-| `08_TEMPLATES` | Predloge za nove note |
-| `09_DASHBOARDS` | Vstopne točke in pregledi |
+| Mapa            | Namen                                     |
+| --------------- | ----------------------------------------- |
+| `00_INBOX`      | Hitri capture, obdelaj čim prej           |
+| `01_SYSTEM`     | Pravila, tokovi, navodila                 |
+| `02_AREAS`      | Stalna področja odgovornosti              |
+| `03_PROJECTS`   | Aktivni projekti z jasnim izidom          |
+| `04_RESOURCES`  | Viri, članki, ideje                       |
+| `05_SCHOOL`     | Formalna šola — predmeti, naloge, izpiti  |
+| `06_LEARNING`   | Solo učenje — teme, skill trees, projekti |
+| `08_TEMPLATES`  | Predloge za nove note                     |
+| `09_DASHBOARDS` | Vstopne točke in pregledi                 |
 
 ---
 
@@ -114,6 +113,5 @@ Vsaka nota po možnosti vsebuje:
 ## Povezave
 
 - [[CLAUDE]] — AI navodila za vault
-- [[07_AI/AI Workflow|AI Workflow]] — kako delati z AI
 - [[09_DASHBOARDS/Dashboard|Glavni Dashboard]]
 - [[Solo Ucenje]] — metodologija solo učenja
