@@ -1,0 +1,83 @@
+<svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Uklon navpične lesene deske — konzola (spodaj vpeta, zgoraj prosta)</title>
+
+  <rect width="700" height="480" fill="#ffffff"/>
+
+  <!-- LEVA STRAN: Pred uklonom -->
+  <text x="130" y="30" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">Pred uklonom</text>
+
+  <rect x="80" y="390" width="100" height="14" fill="#888" rx="2"/>
+  <line x1="80" y1="404" x2="90" y2="418" stroke="#888" stroke-width="1.5"/>
+  <line x1="93" y1="404" x2="103" y2="418" stroke="#888" stroke-width="1.5"/>
+  <line x1="106" y1="404" x2="116" y2="418" stroke="#888" stroke-width="1.5"/>
+  <line x1="119" y1="404" x2="129" y2="418" stroke="#888" stroke-width="1.5"/>
+  <line x1="132" y1="404" x2="142" y2="418" stroke="#888" stroke-width="1.5"/>
+  <line x1="145" y1="404" x2="155" y2="418" stroke="#888" stroke-width="1.5"/>
+  <line x1="158" y1="404" x2="168" y2="418" stroke="#888" stroke-width="1.5"/>
+
+  <rect x="120" y="70" width="20" height="320" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2"/>
+
+  <defs>
+    <marker id="arrow-red" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+  <line x1="130" y1="30" x2="130" y2="65" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+  <text x="148" y="52" font-size="13" font-weight="bold" fill="#dc2626">F_k</text>
+
+  <line x1="160" y1="70" x2="160" y2="390" stroke="#555" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="155" y1="70" x2="165" y2="70" stroke="#555" stroke-width="1.5"/>
+  <line x1="155" y1="390" x2="165" y2="390" stroke="#555" stroke-width="1.5"/>
+  <text x="172" y="235" font-size="13" fill="#111">L = 3,5 m</text>
+
+  <text x="130" y="450" text-anchor="middle" font-size="11" fill="#444">vbetonirana (vpeta)</text>
+  <text x="130" y="62" text-anchor="middle" font-size="11" fill="#444">prosta</text>
+
+  <!-- DESNA STRAN: Uklonska oblika -->
+  <text x="480" y="30" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">Uklonska oblika (&#946; = 2)</text>
+
+  <rect x="430" y="390" width="100" height="14" fill="#888" rx="2"/>
+  <line x1="430" y1="404" x2="440" y2="418" stroke="#888" stroke-width="1.5"/>
+  <line x1="443" y1="404" x2="453" y2="418" stroke="#888" stroke-width="1.5"/>
+  <line x1="456" y1="404" x2="466" y2="418" stroke="#888" stroke-width="1.5"/>
+  <line x1="469" y1="404" x2="479" y2="418" stroke="#888" stroke-width="1.5"/>
+  <line x1="482" y1="404" x2="492" y2="418" stroke="#888" stroke-width="1.5"/>
+  <line x1="495" y1="404" x2="505" y2="418" stroke="#888" stroke-width="1.5"/>
+  <line x1="508" y1="404" x2="518" y2="418" stroke="#888" stroke-width="1.5"/>
+
+  <path d="M 480 390 Q 540 230 480 70" stroke="#1d4ed8" stroke-width="3" fill="none"/>
+  <line x1="480" y1="70" x2="480" y2="390" stroke="#aaa" stroke-width="1" stroke-dasharray="5,4"/>
+
+  <line x1="480" y1="30" x2="480" y2="65" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+  <text x="498" y="52" font-size="13" font-weight="bold" fill="#dc2626">F_k</text>
+
+  <line x1="410" y1="70" x2="410" y2="390" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="405" y1="70" x2="415" y2="70" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="405" y1="390" x2="415" y2="390" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="378" y="235" font-size="12" fill="#16a34a" text-anchor="middle">l_u = 2L</text>
+  <text x="378" y="250" font-size="12" fill="#16a34a" text-anchor="middle">= 700 cm</text>
+
+  <line x1="480" y1="70" x2="540" y2="70" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <text x="510" y="62" font-size="12" fill="#ea580c">&#948;</text>
+
+  <!-- Prerez -->
+  <rect x="595" y="180" width="15" height="80" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="602" y="175" font-size="11" text-anchor="middle" fill="#111">h=20cm</text>
+  <text x="620" y="225" font-size="11" fill="#111">b=2,5cm</text>
+  <line x1="595" y1="260" x2="610" y2="260" stroke="#555" stroke-width="1"/>
+  <line x1="595" y1="180" x2="610" y2="180" stroke="#555" stroke-width="1"/>
+  <line x1="588" y1="220" x2="618" y2="220" stroke="#f87171" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <text x="602" y="285" font-size="10" text-anchor="middle" fill="#dc2626">&#353;ibka os</text>
+
+  <!-- Legenda -->
+  <rect x="30" y="430" width="640" height="40" fill="#f8fafc" rx="4" stroke="#ddd" stroke-width="1"/>
+  <line x1="50" y1="455" x2="75" y2="455" stroke="#1d4ed8" stroke-width="2.5"/>
+  <text x="80" y="459" font-size="11" fill="#111">deska</text>
+  <line x1="130" y1="455" x2="155" y2="455" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="160" y="459" font-size="11" fill="#111">l_u = uklonska dolžina</text>
+  <line x1="310" y1="455" x2="335" y2="455" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="340" y="459" font-size="11" fill="#111">F_k = kritična sila</text>
+  <line x1="450" y1="455" x2="475" y2="455" stroke="#f87171" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <text x="480" y="459" font-size="11" fill="#111">šibka os (b=2,5cm)</text>
+</svg>

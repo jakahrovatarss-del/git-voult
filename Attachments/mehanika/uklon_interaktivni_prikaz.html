@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uklon (Buckling) — Eulerjeva teorija</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', sans-serif; background: #fff; color: #111; padding: 20px; max-width: 900px; margin: 0 auto; }
+  h1 { font-size: 22px; font-weight: 700; margin-bottom: 4px; color: #1e40af; }
+  .subtitle { font-size: 13px; color: #555; margin-bottom: 24px; }
+
+  .section { margin-bottom: 30px; }
+  .section-title { font-size: 15px; font-weight: 700; color: #111; border-left: 4px solid #1d4ed8; padding-left: 10px; margin-bottom: 12px; }
+
+  .analogy-box { background: #fefce8; border: 1px solid #fbbf24; border-radius: 8px; padding: 14px 16px; margin-bottom: 12px; }
+  .analogy-box p { font-size: 13px; line-height: 1.6; }
+
+  .steps { margin: 0; }
+  .step { display: flex; gap: 12px; margin-bottom: 10px; align-items: flex-start; }
+  .step-num { background: #1d4ed8; color: white; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+  .step-text { font-size: 13px; line-height: 1.6; }
+  .step-text strong { color: #1e40af; }
+
+  .euler-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 8px; }
+  .euler-card { border: 2px solid #e5e7eb; border-radius: 8px; padding: 10px 8px; text-align: center; cursor: pointer; transition: all 0.2s; }
+  .euler-card:hover { border-color: #60a5fa; background: #eff6ff; }
+  .euler-card.active { border-color: #1d4ed8; background: #eff6ff; }
+  .euler-card .beta { font-size: 22px; font-weight: 800; color: #1e40af; }
+  .euler-card .label { font-size: 11px; color: #555; margin-top: 4px; line-height: 1.4; }
+  .euler-card .lu { font-size: 12px; font-weight: 600; color: #16a34a; margin-top: 4px; }
+
+  .formula-box { background: #eff6ff; border: 2px solid #60a5fa; border-radius: 10px; padding: 16px; text-align: center; margin: 12px 0; }
+  .formula-main { font-size: 22px; font-weight: 800; color: #1e3a8a; letter-spacing: 0.5px; }
+  .formula-sub { font-size: 12px; color: #555; margin-top: 6px; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  th { background: #f3f4f6; padding: 6px 8px; text-align: left; font-weight: 600; }
+  td { padding: 6px 8px; border-bottom: 1px solid #f3f4f6; }
+  td:first-child { font-weight: 700; color: #1e40af; font-family: monospace; }
+
+  .slider-wrap { background: #f8fafc; border-radius: 8px; padding: 14px; margin-top: 12px; }
+  .slider-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .slider-row label { font-size: 12px; width: 70px; flex-shrink: 0; }
+  input[type=range] { flex: 1; accent-color: #1d4ed8; }
+  .slider-val { font-size: 13px; font-weight: 700; color: #1e40af; width: 80px; text-align: right; }
+  .result-fk { font-size: 18px; font-weight: 800; color: #16a34a; text-align: center; padding: 10px; background: #f0fdf4; border-radius: 8px; border: 1px solid #86efac; margin-top: 10px; }
+
+  .tip { background: #f9fafb; border-radius: 6px; padding: 10px 12px; font-size: 12px; color: #374151; line-height: 1.6; border-left: 3px solid #fb923c; margin-top: 10px; }
+  .euler-detail { margin-top: 14px; display: grid; grid-template-columns: 180px 1fr; gap: 16px; align-items: center; }
+  #euler-info { font-size: 13px; line-height: 1.8; }
+  #calc-steps { font-size: 12px; line-height: 2; margin: 10px 0; background: #fff; padding: 10px; border-radius: 6px; border: 1px solid #e5e7eb; }
+</style>
+</head>
+<body>
+
+<h1>📐 Uklon (Buckling) — Eulerjeva teorija</h1>
+<p class="subtitle">Mehanika · Stabilnost tlačno obremenjenih palic · Vir: IMG_1241.pdf, str. 22</p>
+
+<div class="section">
+  <div class="section-title">1. Kaj je uklon?</div>
+  <div class="analogy-box">
+    <p><strong>🍝 Analogija:</strong> Vzami kuhano špageto in jo stisni med palcema — pri nekem tlaku se nenadoma <em>ukloni</em> vstran. Ne <em>zdrobi</em> se, ampak <em>izgubi obliko</em>. Točno to je uklon.</p>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><div class="step-text">Palica je <strong>tlačno obremenjena</strong> (sila F gre vzdolž osi navzdol).</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text">Dokler je F majhna, palica ostane <strong>ravna</strong> — stabilno ravnotežje.</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text">Ko F doseže <strong>kritično vrednost F_k</strong>, ravnotežje postane nestabilno — palica se bočno ukloni.</div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-text">Pod F_k je stanje varno. Nad F_k pride do <strong>porušitve</strong> (četudi material še ni popustil!).</div></div>
+  </div>
+  <div class="tip">⚠️ <strong>Pomembno:</strong> Uklon je problem <em>stabilnosti</em>, ne trdnosti! Palica se lahko ukloni, preden napetosti sploh dosežejo mejo tečenja.</div>
+</div>
+
+<div class="section">
+  <div class="section-title">2. Eulerjeva formula</div>
+  <div class="formula-box">
+    <div class="formula-main">F_k = π² · E · I_min / l_u²</div>
+    <div class="formula-sub">Večji E in I → večja F_k (boljša odpornost) &nbsp;|&nbsp; Daljša l_u → manjša F_k (nevarnejše)</div>
+  </div>
+  <table>
+    <tr><th>Simbol</th><th>Pomen</th><th>Enota</th><th>Vpliv na F_k</th></tr>
+    <tr><td>E</td><td>modul elastičnosti (togost materiala)</td><td>kN/cm²</td><td>↑ E → ↑ F_k</td></tr>
+    <tr><td>I_min</td><td>min. vztrajnostni moment (šibka os)</td><td>cm⁴</td><td>↑ I → ↑ F_k</td></tr>
+    <tr><td>l_u</td><td>uklonska dolžina = β · L</td><td>cm</td><td>↑ l_u → ↓ F_k</td></tr>
+    <tr><td>β</td><td>uklonski faktor (način vpetja)</td><td>—</td><td>↑ β → ↓ F_k</td></tr>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-title">3. Načini vpetja — klikni za prikaz</div>
+  <div class="euler-grid">
+    <div class="euler-card" id="e1" onclick="selectEuler(1)">
+      <div class="beta">β = 1,0</div>
+      <div class="label">obe strani<br>členkasto</div>
+      <div class="lu">l_u = L</div>
+    </div>
+    <div class="euler-card" id="e2" onclick="selectEuler(2)">
+      <div class="beta">β = 0,7</div>
+      <div class="label">spodaj vpeta<br>zgoraj členek</div>
+      <div class="lu">l_u = 0,7L</div>
+    </div>
+    <div class="euler-card" id="e3" onclick="selectEuler(3)">
+      <div class="beta">β = 0,5</div>
+      <div class="label">obe strani<br>vpeti</div>
+      <div class="lu">l_u = 0,5L</div>
+    </div>
+    <div class="euler-card active" id="e4" onclick="selectEuler(4)">
+      <div class="beta">β = 2,0</div>
+      <div class="label">spodaj vpeta<br>zgoraj prosta ★</div>
+      <div class="lu">l_u = 2L</div>
+    </div>
+  </div>
+  <div class="euler-detail">
+    <svg id="euler-svg" viewBox="0 0 120 220" width="160" height="220" style="display:block; margin:0 auto;"></svg>
+    <div id="euler-info"></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">4. Zakaj šibka os?</div>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:start;">
+    <div style="text-align:center;">
+      <svg viewBox="0 0 140 100" width="140" height="100">
+        <rect x="30" y="10" width="70" height="70" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2"/>
+        <line x1="10" y1="45" x2="130" y2="45" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <line x1="65" y1="5" x2="65" y2="85" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <text x="65" y="98" text-anchor="middle" font-size="10" fill="#555">kvadrat: I_y = I_z</text>
+      </svg>
+    </div>
+    <div style="text-align:center;">
+      <svg viewBox="0 0 140 100" width="140" height="100">
+        <rect x="56" y="10" width="18" height="70" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2"/>
+        <line x1="10" y1="45" x2="130" y2="45" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="4,3"/>
+        <line x1="65" y1="5" x2="65" y2="85" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <text x="65" y="98" text-anchor="middle" font-size="10" fill="#dc2626" font-weight="bold">deska: šibka os = z (rdeča)</text>
+      </svg>
+    </div>
+  </div>
+  <div class="tip">Za desko 2,5×20 cm: I<sub>min</sub> = 20·2,5³/12 = <strong>26 cm⁴</strong> (šibka os) vs. I<sub>max</sub> = 2,5·20³/12 = <strong>1667 cm⁴</strong> (močna os) → razlika 64×!</div>
+</div>
+
+<div class="section">
+  <div class="section-title">5. Interaktivni izračun — naša naloga</div>
+  <div class="slider-wrap">
+    <div class="slider-row">
+      <label>L (m)</label>
+      <input type="range" id="sL" min="1" max="6" step="0.1" value="3.5" oninput="calcFk()">
+      <span class="slider-val" id="vL">3,5 m</span>
+    </div>
+    <div class="slider-row">
+      <label>b (cm)</label>
+      <input type="range" id="sb" min="1" max="10" step="0.5" value="2.5" oninput="calcFk()">
+      <span class="slider-val" id="vb">2,5 cm</span>
+    </div>
+    <div class="slider-row">
+      <label>h (cm)</label>
+      <input type="range" id="sh" min="5" max="40" step="1" value="20" oninput="calcFk()">
+      <span class="slider-val" id="vh">20 cm</span>
+    </div>
+    <div class="slider-row">
+      <label>E (kN/cm²)</label>
+      <input type="range" id="sE" min="200" max="3000" step="100" value="1000" oninput="calcFk()">
+      <span class="slider-val" id="vE">1000</span>
+    </div>
+    <div style="margin-top:6px; font-size:12px; color:#555;">Vpetje: spodaj vpeta, zgoraj prosta → β = 2</div>
+    <div id="calc-steps"></div>
+    <div class="result-fk" id="result-fk"></div>
+  </div>
+</div>
+
+<script>
+const eulerData = {
+  1: {
+    desc: '<strong>Primer 1:</strong> Obe strani členkasto podprti.<br>Ukloni se v obliki polsinusa.<br>β = 1,0 → l_u = L<br><br>Primer: lesena greda med dvema podporama.',
+    draw: (svg) => {
+      svg.innerHTML = `
+        <polygon points="60,190 50,205 70,205" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+        <line x1="45" y1="205" x2="75" y2="205" stroke="#888" stroke-width="2"/>
+        <line x1="60" y1="30" x2="60" y2="190" stroke="#1d4ed8" stroke-width="3"/>
+        <path d="M60,30 Q90,110 60,190" stroke="#dc2626" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+        <polygon points="60,30 50,15 70,15" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+        <line x1="45" y1="15" x2="75" y2="15" stroke="#888" stroke-width="2"/>
+        <text x="75" y="115" font-size="11" fill="#16a34a">l_u=L</text>`;
+    }
+  },
+  2: {
+    desc: '<strong>Primer 2:</strong> Spodaj vpeta, zgoraj členkasto.<br>β = 0,7 → l_u = 0,7L<br><br>Primer: steber z zgibom na vrhu.',
+    draw: (svg) => {
+      svg.innerHTML = `
+        <rect x="40" y="185" width="40" height="12" fill="#888" rx="2"/>
+        <line x1="40" y1="197" x2="48" y2="210" stroke="#888" stroke-width="1.5"/>
+        <line x1="53" y1="197" x2="61" y2="210" stroke="#888" stroke-width="1.5"/>
+        <line x1="66" y1="197" x2="74" y2="210" stroke="#888" stroke-width="1.5"/>
+        <line x1="60" y1="30" x2="60" y2="185" stroke="#1d4ed8" stroke-width="3"/>
+        <path d="M60,30 Q85,110 60,185" stroke="#dc2626" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+        <polygon points="60,30 50,15 70,15" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+        <line x1="45" y1="15" x2="75" y2="15" stroke="#888" stroke-width="2"/>
+        <text x="75" y="115" font-size="11" fill="#16a34a">l_u=0.7L</text>`;
+    }
+  },
+  3: {
+    desc: '<strong>Primer 3:</strong> Obe strani vpeti.<br>β = 0,5 → l_u = 0,5L<br><br>Najtrdnejši primer. Steber med dvema togo pritrjenima ploščama.',
+    draw: (svg) => {
+      svg.innerHTML = `
+        <rect x="40" y="185" width="40" height="12" fill="#888" rx="2"/>
+        <line x1="40" y1="197" x2="48" y2="210" stroke="#888" stroke-width="1.5"/>
+        <line x1="53" y1="197" x2="61" y2="210" stroke="#888" stroke-width="1.5"/>
+        <line x1="66" y1="197" x2="74" y2="210" stroke="#888" stroke-width="1.5"/>
+        <rect x="40" y="10" width="40" height="12" fill="#888" rx="2"/>
+        <line x1="40" y1="22" x2="48" y2="8" stroke="#888" stroke-width="1.5"/>
+        <line x1="53" y1="22" x2="61" y2="8" stroke="#888" stroke-width="1.5"/>
+        <line x1="66" y1="22" x2="74" y2="8" stroke="#888" stroke-width="1.5"/>
+        <line x1="60" y1="22" x2="60" y2="185" stroke="#1d4ed8" stroke-width="3"/>
+        <path d="M60,22 Q85,80 60,110 Q35,140 60,185" stroke="#dc2626" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+        <text x="75" y="115" font-size="11" fill="#16a34a">l_u=0.5L</text>`;
+    }
+  },
+  4: {
+    desc: '<strong>Primer 4 — naša naloga:</strong> Spodaj vpeta, zgoraj prosta (konzola).<br>β = 2,0 → l_u = 2L<br><br>⚠️ Najslabši primer! Deska se ukloni v četrtsinusu.',
+    draw: (svg) => {
+      svg.innerHTML = `
+        <rect x="40" y="175" width="40" height="12" fill="#888" rx="2"/>
+        <line x1="40" y1="187" x2="48" y2="200" stroke="#888" stroke-width="1.5"/>
+        <line x1="53" y1="187" x2="61" y2="200" stroke="#888" stroke-width="1.5"/>
+        <line x1="66" y1="187" x2="74" y2="200" stroke="#888" stroke-width="1.5"/>
+        <line x1="60" y1="30" x2="60" y2="175" stroke="#1d4ed8" stroke-width="3"/>
+        <path d="M60,175 Q90,100 60,30" stroke="#dc2626" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+        <line x1="55" y1="25" x2="65" y2="25" stroke="#dc2626" stroke-width="2.5"/>
+        <text x="14" y="95" font-size="10" fill="#888">prosta</text>
+        <text x="14" y="182" font-size="10" fill="#888">vpeta</text>
+        <line x1="35" y1="30" x2="35" y2="175" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="3,2"/>
+        <text x="4" y="108" font-size="10" fill="#16a34a">l_u</text>
+        <text x="2" y="120" font-size="10" fill="#16a34a">=2L</text>`;
+    }
+  }
+};
+
+function selectEuler(n) {
+  [1,2,3,4].forEach(i => document.getElementById('e'+i).classList.toggle('active', i===n));
+  const svg = document.getElementById('euler-svg');
+  eulerData[n].draw(svg);
+  document.getElementById('euler-info').innerHTML = eulerData[n].desc;
+}
+
+function calcFk() {
+  const L = parseFloat(document.getElementById('sL').value);
+  const b = parseFloat(document.getElementById('sb').value);
+  const h = parseFloat(document.getElementById('sh').value);
+  const E = parseFloat(document.getElementById('sE').value);
+
+  document.getElementById('vL').textContent = L.toFixed(1) + ' m';
+  document.getElementById('vb').textContent = b.toFixed(1) + ' cm';
+  document.getElementById('vh').textContent = h.toFixed(0) + ' cm';
+  document.getElementById('vE').textContent = E.toFixed(0);
+
+  const Lcm = L * 100;
+  const lu = 2 * Lcm;
+  const Imin = (h * Math.pow(b, 3)) / 12;
+  const Fk = (Math.PI ** 2 * E * Imin) / (lu ** 2);
+
+  document.getElementById('calc-steps').innerHTML =
+    `l<sub>u</sub> = β·L = 2 × ${Lcm} cm = <strong>${lu} cm</strong><br>
+     I<sub>min</sub> = h·b³/12 = ${h}·${b}³/12 = <strong>${Imin.toFixed(2)} cm⁴</strong><br>
+     F<sub>k</sub> = π²·${E}·${Imin.toFixed(2)} / ${lu}² = π²·${(E*Imin).toFixed(0)} / ${(lu**2).toFixed(0)}`;
+
+  document.getElementById('result-fk').innerHTML =
+    `F<sub>k</sub> = <strong>${(Fk*1000).toFixed(0)} N = ${Fk.toFixed(3)} kN</strong>`;
+}
+
+selectEuler(4);
+calcFk();
+</script>
+</body>
+</html>
