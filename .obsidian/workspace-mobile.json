@@ -89,7 +89,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Untitled 3.md",
+                "file": "Agartha.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -104,7 +104,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Untitled 3"
+              "title": "Agartha"
             }
           }
         ],
@@ -244,6 +244,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-git:Open Git source control": false,
       "tasknotes:Open mini calendar view": false,
       "tasknotes:Open calendar view": false,
       "tasknotes:Open tasks view": false,
@@ -268,6 +269,7 @@
   },
   "active": "45a4681c45932b20",
   "lastOpenFiles": [
+    "Untitled 3.md",
     "Excalidraw/Drawing 2026-03-26 13.13.12.excalidraw.md",
     "Excalidraw/Drawing 2026-03-26 13.11.45.excalidraw.md",
     "Excalidraw/Drawing 2026-03-17 12.36.10.excalidraw.md",
@@ -296,7 +298,6 @@
     "TaskNotes/Views/agenda-default.base",
     "TaskNotes/Tasks/za arrs trea raziskt pa poklic klaro pa se zmen za to nov projekt ka goran tezi.md",
     "TaskNotes/Tasks/Naroč odganjalce za na vrt.md",
-    "TaskNotes/Tasks/Poglej kdaj u auatrijo.md",
     "Attachments/Pasted image 20260301174233.png",
     "Attachments/Pasted image 20260301174335.png",
     "Attachments/Pasted image 20260301174152.png",
