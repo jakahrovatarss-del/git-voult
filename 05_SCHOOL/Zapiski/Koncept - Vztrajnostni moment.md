@@ -18,7 +18,7 @@ Vsak delček površine $dA$ prispeva $y^2 \cdot dA$ — torej **oddaljenost od o
 
 ## Enačbe za najpogostejše prereze
 
-![[vztrajnostni_moment_prerezi.svg]]
+![[vztrajnostni_moment_prerezi.svg|585]]
 
 | Prerez | $I_z$ (ok. hor. osi) | $I_y$ (ok. vert. osi) | $A$ |
 |--------|----------------------|-----------------------|-----|

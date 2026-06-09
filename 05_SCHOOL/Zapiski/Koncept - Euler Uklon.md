@@ -81,7 +81,7 @@ Vrednost $\omega$ se odčita iz **ω tabel** glede na $\lambda$. Za iglavce, $\l
 
 Statična skica — Euler 4. primer (konzola):
 
-![[uklon_lesena_deska.svg]]
+![[uklon_lesena_deska.svg|585]]
 
 Interaktivni prikaz z vsemi 4 Eulerjevimi primeri in kalkulatorjem:
 
