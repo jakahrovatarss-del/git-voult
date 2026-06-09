@@ -30,25 +30,63 @@ T-rama: horizontalni tram (2 m + 4 m) na vrhu stebra, sila F na desnem koncu.
 
 ## Ravnotežje — notranja sila v stebru
 
+![[ravnotezje_T_rama.svg]]
+
+Vzamemo točko A (leva podpora) kot vrtišče — reakcija $R_A$ pri tem odpade (ročica = 0). Ostaneta samo $N$ in $F$:
+
+| Sila | Ročica od A | Moment |
+|------|-------------|--------|
+| F (navzdol) | 6 m | F · 6 — v smeri ure |
+| N (navzgor) | 2 m | N · 2 — nasprotno |
+
 $$\sum M_A = 0: \quad N \cdot 2 = F \cdot 6 \quad \Rightarrow \quad N = 3 \cdot F$$
+
+> **Intuicija:** Steber je bližje podpori (2 m) kot sila F (6 m) — zato nosi 3× večjo silo. Enako kot gugalnica: bližje sredini = večja sila za ravnotežje.
 
 ## Lastnosti prereza 12×12 cm
 
-$$A = 144 \text{ cm}^2, \quad I_{min} = \frac{12^4}{12} = 1728 \text{ cm}^4, \quad i = \sqrt{12} = 3{,}464 \text{ cm}$$
+$$A = 12^2 = 144 \text{ cm}^2$$
+
+$$I_{min} = \frac{a^4}{12} = \frac{12^4}{12} = 1728 \text{ cm}^4$$
+
+$$i = \sqrt{\frac{I}{A}} = \sqrt{\frac{1728}{144}} = \sqrt{12} = 3{,}464 \text{ cm}$$
 
 ## Vitkost
 
-$$\lambda = \frac{l_u}{i} = \frac{400}{3{,}464} = 115{,}5 \quad > \quad \lambda_e \approx 100 \quad \Rightarrow \text{ Euler velja ✓}$$
+$$\lambda = \frac{l_u}{i} = \frac{400}{3{,}464} = 115{,}47 \quad > \quad \lambda_e \approx 100 \quad \Rightarrow \text{ Euler velja ✓}$$
 
-## Eulerjeva kritična sila
+---
+
+## Metoda 1 — Euler
 
 $$F_k = \frac{\pi^2 \cdot E \cdot I}{l_u^2} = \frac{\pi^2 \cdot 1000 \cdot 1728}{400^2} = \boxed{106{,}59 \text{ kN}}$$
 
-## Dopustna sila in F_max
-
 $$F_{dop} = \frac{F_k}{\nu} = \frac{106{,}59}{3} = 35{,}53 \text{ kN}$$
 
-$$\boxed{F_{max} = \frac{F_{dop}}{3} = \frac{35{,}53}{3} = 11{,}84 \text{ kN}}$$
+$$\boxed{F_{max} = F_{dop} \cdot \frac{2}{6} = \frac{35{,}53}{3} = 11{,}84 \text{ kN}}$$
+
+---
+
+## Metoda 2 — ω postopek
+
+Upošteva vitkost palice preko koeficienta ω iz tabel (upošteva nepopolnosti realne palice).
+
+$$\lambda = 115{,}47 \quad \Rightarrow \quad \omega = 4{,}00743 \quad \text{(iz tabel za iglavce)}$$
+
+$$F_{dop} = \frac{\sigma_{dop} \cdot A}{\omega} = \frac{1{,}0 \cdot 144}{4{,}00743} = 35{,}933 \text{ kN}$$
+
+$$\boxed{F_{max} = F_{dop} \cdot \frac{2}{6} = \frac{35{,}933}{3} = 11{,}977 \text{ kN}}$$
+
+---
+
+## Primerjava metod
+
+| Metoda | F_dop | F_max |
+|--------|-------|-------|
+| Euler | 35,53 kN | **11,84 kN** |
+| ω postopek | 35,93 kN | **11,98 kN** |
+
+Razlika ~1 %. ω metoda je natančnejša — Euler je nekoliko konzervativnejši pri tej vitkosti.
 
 ## Povezave
 

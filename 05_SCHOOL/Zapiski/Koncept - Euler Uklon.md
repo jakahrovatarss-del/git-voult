@@ -46,9 +46,21 @@ Euler velja samo, če je $\lambda > \lambda_e$. Za les (iglavci): $\lambda_e \ap
 
 ## Uklonska varnost in dopustna sila
 
+### Euler
+
 $$F_{dop} = \frac{F_k}{\nu}$$
 
 Za les: $\nu = 3$ (tipično). Dopustna napetost: $\sigma_{dop} = 1{,}0$ kN/cm² (iglavci).
+
+### ω postopek
+
+Natančnejša metoda — upošteva vitkost in nepopolnosti realne palice:
+
+$$F_{dop} = \frac{\sigma_{dop} \cdot A}{\omega}$$
+
+Vrednost $\omega$ se odčita iz **ω tabel** glede na $\lambda$. Za iglavce, $\lambda = 115{,}47$ → $\omega = 4{,}007$.
+
+> **Razlika Euler vs. ω:** Euler je nekoliko konzervativnejši. Pri $\lambda \approx 115$ sta rezultata praktično enaka (~1 % razlika).
 
 ## Spremenljivke
 
@@ -82,6 +94,7 @@ Interaktivni prikaz z vsemi 4 Eulerjevimi primeri in kalkulatorjem:
 
 ## Povezave
 
+- [[Koncept - Vztrajnostni moment]]
 - [[mehanika]]
 - [[STATIKA]]
 - [[Naloga - Mehanika - Uklon lesene deske]]
