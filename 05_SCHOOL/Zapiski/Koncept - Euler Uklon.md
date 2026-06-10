@@ -62,6 +62,27 @@ Vrednost $\omega$ se odčita iz **ω tabel** glede na $\lambda$. Za iglavce, $\l
 
 > **Razlika Euler vs. ω:** Euler je nekoliko konzervativnejši. Pri $\lambda \approx 115$ sta rezultata praktično enaka (~1 % razlika).
 
+## Meja Eulerja za jeklo
+
+Za jeklo (E = 21000 kN/cm², σ_dop = 16 kN/cm²):
+
+$$\lambda_e = \pi\sqrt{\frac{E}{\sigma_{dop}}} = \pi\sqrt{\frac{21000}{16}} \approx 114$$
+
+- $\lambda > 114$ → Euler velja za jeklo
+- $\lambda \leq 114$ → Tetmajer ali ω postopek
+
+> Primerjaj: za les (iglavci) $\lambda_e \approx 100$ (E = 1000 kN/cm², σ_dop = 1 kN/cm²)
+
+## Ravnotežje pred uklonskim pogojem
+
+Ko sila S ni neposredno v smeri palice, poišči najprej **notranjo silo N** v palici iz ravnotežja:
+
+**Primer (diagonala 45°, S vodoravno):**
+
+$$N_1 = S \cdot \sqrt{2} \quad \text{(iz } \sum F_x = 0\text{)}$$
+
+Pogoj: $N_1 \leq F_{dop}$ → $S_{dop} = F_{dop} / \sqrt{2}$
+
 ## Spremenljivke
 
 | Simbol | Pomen | Enota |
@@ -91,6 +112,7 @@ Interaktivni prikaz z vsemi 4 Eulerjevimi primeri in kalkulatorjem:
 
 - [[Naloga - Mehanika - Uklon lesene deske]] — konzola (β=2), 2,5×20 cm, L=3,5m → $F_k = 0{,}524$ kN
 - [[Naloga - Mehanika - Uklon leseni steber F_max]] — T-rama, obe strani členkasto (β=1), 12×12 cm, L=4m → $F_{max} = 11{,}84$ kN *(ravnotežje: N = 3·F)*
+- [[Naloga - Mehanika - Uklon palica S_dop]] — **jeklo**, I-profil, triangularna konstr., β=1, L=3√2 m → $S_{dop} = 23{,}4$ kN *(ravnotežje: N = S√2)*
 
 ## Povezave
 
@@ -99,4 +121,5 @@ Interaktivni prikaz z vsemi 4 Eulerjevimi primeri in kalkulatorjem:
 - [[STATIKA]]
 - [[Naloga - Mehanika - Uklon lesene deske]]
 - [[Naloga - Mehanika - Uklon leseni steber F_max]]
+- [[Naloga - Mehanika - Uklon palica S_dop]]
 - [[Mehanika Hub]]
