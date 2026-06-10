@@ -1,118 +1,120 @@
 # YouTube → Obsidian Note Workflow
 
-## Kontekst
-Jaka pošlje YouTube link. Jaz potegnem transkripcijo (ali povzetek iz videa), jo obdelam in ustvarim strukturirano Obsidian noto.
-
 ## Jezik
-Vedno slovenščina. Strokovni termini ostanejo v angleščini (peptidi, tehnika, itd.).
+Slovenščina. Strokovni termini v angleščini.
 
 ---
 
-## Korak 1 — Potegni vsebino videa
+## NAJPREJ: Preveri vault
 
-Uporabi `mcp__workspace__web_fetch` ali WebSearch za:
-- Naslov videa
-- Avtorja / kanal
-- Temo (o čem je video)
-- Transkripcijo ali opis (YouTube auto-generated captions, opis, komentarji)
+Preden karkoli ustvariš, poišči obstoječe note:
+```bash
+ls /sessions/.../mnt/obsidian/ | grep -i "[ključna beseda]"
+```
+Če nota že obstaja → **preberi jo in dopolni z novimi informacijami iz videa**. Nikoli duplikatov, nikoli nova nota za isto temo.
 
-Če transkripcija ni dostopna → povzemi iz naslova, opisa in znanja o temi.
-
----
-
-## Korak 2 — Določi tip note
-
-Glede na vsebino videa izberi tip:
-
-| Vsebina videa | Tip note | Mapa | Ime |
-|---|---|---|---|
-| Vir / referenca (video o temi) | `Vir - ...` | `04_RESOURCES/` | `Vir - [Naslov Videa].md` |
-| Šolska snov / predavanje | `Koncept - ...` | `05_SCHOOL/Zapiski/` | `Koncept - [Ime].md` |
-| Solo učenje / biohacking / tech | `Tema - ...` ali `Koncept - ...` | `06_LEARNING/Teme/` | `Tema - [Ime].md` ali `Koncept - [Ime].md` |
-| Povzetek za skill tree | `Vir - ...` | `06_LEARNING/Summaries/` | `Vir - [Naslov].md` |
-
-**Privzeto**: večina videov gre v `04_RESOURCES/` kot `Vir - [Naslov].md`.
+### Obstoječe note v root vaulta (junij 2026)
+Agartha, Akceleranizem, Aktivni Priklic, Antisemitizem, Aromatase Inhibitor, Astralna projekcija, BPC-157, Beta-karoten, CJC-1295, Civilizacijski cikel, Clean Aesthetic Protocol, Curtis yarvin, Dnevnik sanj, Drža, EQ, Elon Musk, Feynmanova Tehnika, Frierdrich Thiel, GHK-Cu, Geopolitika - Civilizacijski Kolaps, Geopolitika - Velike Moci - Noi, Google Dorking, GrapheneOS, HCG, HPTA, HUMINT, Holokavst, Homo Sedatus, Injectable Glutathione, Ipamorelin, Kolagen in elastičnost, Lucidno sanjanje, MK-677, Masteron, Melanotan 2, Muhammad bin Salman, NAC, NEON, Namibija, Nasdaq, OPSEC, OSINT, Open AI, Ostarine, PCT, Peptidi, Peter Teal, Praxis- pametno mesto, Primobolan, Projekt - PLFM RADAR, Prosper City, Qubes OS, Razmaknjeno Ponavljanje, Retatrutide, Rothchilds, Saudska Arabija, Sherlock, Skill Tree, Solo Ucenje, SpaceX, Starlink, Study Plan, TB-500, TUDCA, Testosteron Enanthate, Tor Browser, Von Ungern-Sternberg, Von Ungern-Sternberg - Šambala in akceleranizem, Wayback Machine, Šambala, donald trump 2024 predcedništvo, mehanika, podjetna mesta, pronomos capital, xAI ...
 
 ---
 
-## Korak 3 — Struktura note (Vir - Template)
+## Dva tipa not
 
-```markdown
+### Tip A — Hub poročilo (za video kot celoto)
+Ime: `Tema - podnaslov.md` ali `ImeTeme.md`
+Lokacija: root vault
+Frontmatter:
+```yaml
 ---
-title: Vir - [Naslov Videa]
-type: resource
-category: [tema npr. peptide-protocols / biohacking / engineering]
-source: youtube
-url: [YouTube URL]
-avtor: [Kanal / Avtor]
 created: YYYY-MM-DD
+tags:
+  - note
+  - journal
+source: [URL]
 ---
-
-# Vir - [Naslov Videa]
-
-## Osnovni Podatki
-**Avtor**: [Kanal]
-**Tema**: [O čem je video]
-**Format**: YouTube video ([X] min)
-**URL**: [link]
-
----
-
-## Ključni Zaključek
-> En stavek — glavna poanta videa.
-
----
-
-## Glavne Točke
-[Strukturirano po sekcijah — enako kot obstoječe Vir note v 04_RESOURCES/]
-
----
-
-## Actionable Ideje
-- 
-- 
-
-## Opozorila / Napake (če relevantno)
-- 
-
-## Povezave
-[[Tema / Koncept / Projekt ki je soroden]] | [[drugi sorodni]] | [[Hub note]]
+```
+Struktura:
+```
+# Uvod
+# Struktura teme  ← seznam vej z [[WikiLinki]]
+# [Sekcija 1]
+# [Sekcija 2]
+# ...
+# Zaključek
+# Viri
 ```
 
+### Tip B — Konceptna opomba (za vsak nov koncept iz videa)
+Ime: `ImKoncepta.md`
+Lokacija: root vault (večina not je tam)
+Frontmatter:
+```yaml
+---
+categories:
+  - "[[Koncepti]]"
+created: YYYY-MM-DD
+---
+```
+Struktura:
+```
+# Kaj je
+[1-3 stavki]
+
+# [Funkcionalna sekcija]
+[kratko, modularno]
+
+# Viri / Povezano
+[[Hub poročilo]]
+[[Sorodni koncepti]]
+```
+
+**Pravilo:** Konceptna opomba = en koncept. Če postane dolga → razbiješ na dva.
+
 ---
 
-## Korak 4 — Obvezna pravila
+## Postopek za YouTube video
 
-1. **Vsaj 2 wikilinks** na obstoječe note v vaultu.
-2. **Nikoli orphan note** — vedno linki na hub ali temo.
-3. **Sekcija `Povezave`** je obvezna.
-4. **Frontmatter** vedno z `title`, `type`, `source: youtube`, `url`, `created`.
-5. Pred shranjevanjem **vprašaj Jako**: "Shranim kot `[predlagana pot]`?"
-
----
-
-## Korak 5 — Preveri obstoječe note
-
-Preden ustvariš novo noto, preveri:
-- `04_RESOURCES/` — ali že obstaja podoben Vir?
-- `06_LEARNING/Teme/` — ali tema že obstaja?
-- Če obstaja → **dopolni obstoječo**, ne ustvari duplikata.
+1. **Potegni transkripcijo**: `https://youtubetotranscript.com/transcript?v=[VIDEO_ID]`
+2. **Preveri vault** — kaj od tega že obstaja?
+3. **Ustvari hub poročilo** z vsebino videa
+4. **Identificiraj nove koncepte** → kratke konceptne opombe
+5. **Vzpostavi WikiLinke**: hub ↔ koncepti ↔ obstoječe note
+6. **Vprašaj pred shranjevanjem**: "Shranim? Predlog: `ImeNote.md`"
 
 ---
 
-## Primeri obstoječih Video not (za stil reference)
+## Pravila stila
 
-- `04_RESOURCES/Vir - GHK-Cu Protokol Video.md` — peptide video, detajlna struktura z napakami, protokoli, opozorili
-- `04_RESOURCES/Vir - Peptide Protokoli Video Transkripcija.md` — multi-peptide video, strukturiran po peptidih
-
-Oba imata: Osnovni Podatki → Ključni Zaključek → Sekcije po vsebini → Povezave.
+- Kratko, modularno, z lastnimi besedami — nikoli copy-paste
+- Sekcija `# Povezano` ali `# Viri` je obvezna
+- Vsaj 2 WikiLinka na obstoječe note
+- Nikoli orphan note
+- Brez emoji v notah
+- Brez samodejnega shranjevanja — vedno vprašaj najprej
 
 ---
 
-## Povpraševanje ob koncu
+## Pravilo: Maksimalni wikilinki
 
-Na koncu vsakega odgovora ponudi:
+**Vedno poveži z VSEM relevantnim v vaultu** — ne le z očitnimi note. Preden zaključiš, premisli:
+- Katera obstoječa nota ima sorodno temo? (anche indirektno)
+- Ali se nova nota dotika iste osebe, koncepta, ali tradicije kot obstoječa nota?
+- Ali obstaja vzporednica ki jo wikilink razkrije?
 
-> **Shranim noto?**
-> Predlog: `04_RESOURCES/Vir - [Naslov].md`
-> Linki: `[[...]]`, `[[...]]`
+Cilj: vsaka nova nota ima vsaj 5+ wikilinkov navzven.
+
+---
+
+## Note dodane junij 2026
+
+Iz videa "Do You Want Civilization To Collapse?" (fJoOKZ7pgUM):
+- Homo Sedatus
+
+Iz videa "Did CERN Try to Destroy the Earth?" (UuYcpI6MX5o):
+- CERN - Ali smo poskusili uničiti Zemljo (hub)
+- CERN, Kvantna nesmrtnost, Dvojna reža, Brahman in Maya, Singularnost
+
+Iz videa "They Want To Live Forever In The Black Cube" (3pBYk3gCFm8):
+- Simulated Leviathan - Črna Kocka in Nesmrtnost (hub)
+- Kult Kronosa, Saturn - Simbolizem, Tikkun Olam, Gnosticizem in Demiurg, Črna Kocka, Simulacijska teorija
+- Dopolnjene: Jeffrey Epstein, Singularnost, Brahman in Maya, Akceleranizem, CERN

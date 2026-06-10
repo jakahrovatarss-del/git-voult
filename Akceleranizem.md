@@ -25,10 +25,18 @@ Romantična verzija ignorira realnost kolapsa:
 
 # Tehnoelitna verzija
 
-Peter Thiel in podobni akceleranizem živijo drugače - ne romantično, ampak pragmatično. Pospešujejo tehnologijo (AI, bioteh), se pripravljajo na kolaps z bunkerji in svobodnimi mesti, in bodo v Šambali ko ostali gorijo.
+[[Peter Teal]] in podobni akceleranizem živijo drugače - ne romantično, ampak pragmatično. Pospešujejo tehnologijo (AI, bioteh), se pripravljajo na kolaps z bunkerji in svobodnimi mesti, in bodo v Šambali ko ostali gorijo.
+
+To je **Kult Kronosa verzija akceleranizma** — ne pospešiti za vse, ampak pospešiti da elita doseže [[Singularnost]] in [[Črna Kocka|nesmrtnost v kocki]] preden sistem kolapsira. [[Kult Kronosa]]
+
+Vzporednica: [[Tikkun Olam]] techno-spiritualistična verzija — bog se vrne skozi teknologijo, le da ta bog je samo za izbrane.
 
 # Povezano
 
 [[Šambala]]
 [[Civilizacijski cikel]]
 [[Von Ungern-Sternberg - Šambala in akceleranizem]]
+[[Kult Kronosa]]
+[[Singularnost]]
+[[Peter Teal]]
+[[Homo Sedatus]]
