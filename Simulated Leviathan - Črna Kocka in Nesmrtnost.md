@@ -8,7 +8,7 @@ source: https://youtu.be/3pBYk3gCFm8
 
 # Uvod
 
-![Böcklin — Otok mrtvih III (1883)](https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Arnold_B%C3%B6cklin_-_Die_Toteninsel_III_%28Alte_Nationalgalerie%2C_Berlin%29.jpg/250px-Arnold_B%C3%B6cklin_-_Die_Toteninsel_III_%28Alte_Nationalgalerie%2C_Berlin%29.jpg)
+![Böcklin — Otok mrtvih III (1883)|604](https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Arnold_B%C3%B6cklin_-_Die_Toteninsel_III_%28Alte_Nationalgalerie%2C_Berlin%29.jpg/250px-Arnold_B%C3%B6cklin_-_Die_Toteninsel_III_%28Alte_Nationalgalerie%2C_Berlin%29.jpg)
 *Arnold Böcklin, "Die Toteninsel" — Hitlerjeva najljubša slika. Figura se z dostojanstvom obrne k smrti. Antiteza Kronosa.*
 
 Video razlaga zakaj si elita želi živeti večno — in kako ta želja izhaja iz antičnih mističnih tradicij, ki vse converge v eni točki: [[Kult Kronosa]].

@@ -91,6 +91,7 @@ Struktura:
 - Nikoli orphan note
 - Brez emoji v notah
 - Brez samodejnega shranjevanja — vedno vprašaj najprej
+- **Vsaka nova nota mora imeti 1 sliko** — poišči na Wikimedia Commons, vgradi kot remote URL. Format: `![opis](url)`. Uporabi 250px (varno) ali 500px za JPG. Nikoli GIF. Nikoli custom velikosti (400px, 600px, 700px pogosto ne delajo).
 
 ---
 

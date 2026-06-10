@@ -6,7 +6,7 @@ created: 2026-06-10
 
 # Kaj je
 
-![Goya — Saturn požira svojega sina (1820–1823)](https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Francisco_de_Goya%2C_Saturno_devorando_a_su_hijo_%281819-1823%29.jpg/400px-Francisco_de_Goya%2C_Saturno_devorando_a_su_hijo_%281819-1823%29.jpg)
+![Goya — Saturn požira svojega sina (1820–1823)](https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Francisco_de_Goya%2C_Saturno_devorando_a_su_hijo_%281819-1823%29.jpg/250px-Francisco_de_Goya%2C_Saturno_devorando_a_su_hijo_%281819-1823%29.jpg)
 *Francisco Goya, "Saturn Devouring His Son" (1820–23) — arhetip Kulta Kronosa*
 
 Kult Kronosa ni dobesedna religija — je arhetip elite ki noče umreti in noče prenesti moči na naslednjo generacijo. Kronos je v grški mitologiji požrl svoje otroke da bi preprečil cikličen prenos moči. Danes: gerontokracija, ekstenzija življenja, zaprt transhumanizem.
