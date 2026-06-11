@@ -24,7 +24,7 @@ Določiti dimenzije pravokotnega lesenega prereza ($a \times b$) previsnega nosi
 
 ## Shema konstrukcije
 
-![[upogib_lesen_nosilec.svg]]
+![[upogib_lesen_nosilec.svg|637]]
 
 - **A** = členkasta podpora (levo)
 - **B** = členkasta podpora (desno, pri x=3m)
