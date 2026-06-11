@@ -1,0 +1,144 @@
+<svg viewBox="0 0 780 520" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <rect width="780" height="520" fill="#1a1a2e" rx="10"/>
+
+  <!-- ═══ BEAM DIAGRAM ═══ -->
+  <rect x="15" y="30" width="750" height="215" rx="8" fill="#0d1b2a" stroke="#2196F3" stroke-width="1.2"/>
+  <text x="390" y="50" text-anchor="middle" font-size="13" font-weight="bold" fill="#90CAF9">Statični sistem — previsni nosilci</text>
+
+  <!-- Beam line (previs left + field) -->
+  <!-- Previs: x=90..230 (1.5m), Field: x=230..610 (3m) -->
+  <line x1="90" y1="140" x2="610" y2="140" stroke="#FFD700" stroke-width="5"/>
+
+  <!-- Free end cap -->
+  <line x1="90" y1="130" x2="90" y2="150" stroke="#FFD700" stroke-width="3"/>
+
+  <!-- Support A (pin) at x=230 -->
+  <polygon points="230,140 218,162 242,162" fill="#90CAF9"/>
+  <line x1="210" y1="165" x2="250" y2="165" stroke="#90CAF9" stroke-width="2"/>
+  <text x="230" y="178" text-anchor="middle" font-size="12" font-weight="bold" fill="#4FC3F7">A</text>
+
+  <!-- Support B (roller) at x=610 -->
+  <polygon points="610,140 598,162 622,162" fill="#90CAF9"/>
+  <line x1="592" y1="165" x2="628" y2="165" stroke="#90CAF9" stroke-width="2"/>
+  <text x="610" y="178" text-anchor="middle" font-size="12" font-weight="bold" fill="#4FC3F7">B</text>
+
+  <!-- F arrow at free left end (horizontal, pointing right = wind/horizontal load) -->
+  <line x1="50" y1="140" x2="82" y2="140" stroke="#FF5252" stroke-width="2.5"/>
+  <polygon points="85,140 75,135 75,145" fill="#FF5252"/>
+  <text x="35" y="134" text-anchor="middle" font-size="11" font-weight="bold" fill="#FF5252">F=4kN</text>
+  <text x="35" y="148" text-anchor="middle" font-size="9" fill="#FF7070">(vodoraven)</text>
+
+  <!-- q distributed load on field (A to B) -->
+  <line x1="230" y1="100" x2="610" y2="100" stroke="#FF9800" stroke-width="1.5"/>
+  <text x="420" y="93" text-anchor="middle" font-size="11" fill="#FF9800">q = 2 kN/m</text>
+  <g stroke="#FF9800" fill="#FF9800">
+    <line x1="260" y1="100" x2="260" y2="133" stroke-width="1.2"/> <polygon points="260,136 256,128 264,128"/>
+    <line x1="300" y1="100" x2="300" y2="133" stroke-width="1.2"/> <polygon points="300,136 296,128 304,128"/>
+    <line x1="340" y1="100" x2="340" y2="133" stroke-width="1.2"/> <polygon points="340,136 336,128 344,128"/>
+    <line x1="380" y1="100" x2="380" y2="133" stroke-width="1.2"/> <polygon points="380,136 376,128 384,128"/>
+    <line x1="420" y1="100" x2="420" y2="133" stroke-width="1.2"/> <polygon points="420,136 416,128 424,128"/>
+    <line x1="460" y1="100" x2="460" y2="133" stroke-width="1.2"/> <polygon points="460,136 456,128 464,128"/>
+    <line x1="500" y1="100" x2="500" y2="133" stroke-width="1.2"/> <polygon points="500,136 496,128 504,128"/>
+    <line x1="540" y1="100" x2="540" y2="133" stroke-width="1.2"/> <polygon points="540,136 536,128 544,128"/>
+    <line x1="580" y1="100" x2="580" y2="133" stroke-width="1.2"/> <polygon points="580,136 576,128 584,128"/>
+    <line x1="610" y1="100" x2="610" y2="133" stroke-width="1.2"/> <polygon points="610,136 606,128 614,128"/>
+  </g>
+
+  <!-- Reactions A_y and B_y (upward) -->
+  <line x1="230" y1="185" x2="230" y2="168" stroke="#4FC3F7" stroke-width="2.5"/>
+  <polygon points="230,165 225,175 235,175" fill="#4FC3F7"/>
+  <text x="230" y="200" text-anchor="middle" font-size="11" fill="#4FC3F7">A_y=1kN</text>
+
+  <line x1="610" y1="185" x2="610" y2="168" stroke="#4FC3F7" stroke-width="2.5"/>
+  <polygon points="610,165 605,175 615,175" fill="#4FC3F7"/>
+  <text x="610" y="200" text-anchor="middle" font-size="11" fill="#4FC3F7">B_y=5kN</text>
+
+  <!-- Dimension lines -->
+  <line x1="90" y1="210" x2="230" y2="210" stroke="#888" stroke-width="1"/>
+  <line x1="90" y1="206" x2="90" y2="214" stroke="#888"/>
+  <line x1="230" y1="206" x2="230" y2="214" stroke="#888"/>
+  <text x="160" y="223" text-anchor="middle" font-size="10" fill="#aaa">1,5 m</text>
+
+  <line x1="230" y1="210" x2="610" y2="210" stroke="#888" stroke-width="1"/>
+  <line x1="610" y1="206" x2="610" y2="214" stroke="#888"/>
+  <text x="420" y="223" text-anchor="middle" font-size="10" fill="#aaa">3 m</text>
+
+  <!-- Circular cross-section sketch -->
+  <circle cx="700" cy="140" r="28" fill="none" stroke="#81C784" stroke-width="2"/>
+  <line x1="700" y1="112" x2="700" y2="168" stroke="#81C784" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="672" y1="140" x2="728" y2="140" stroke="#81C784" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="700" y1="140" x2="728" y2="140" stroke="#FFD700" stroke-width="1.5"/>
+  <text x="714" y="136" font-size="9" fill="#FFD700">d/2</text>
+  <text x="700" y="185" text-anchor="middle" font-size="11" fill="#81C784">d = ?</text>
+
+  <!-- ═══ M DIAGRAM ═══ -->
+  <rect x="15" y="255" width="750" height="170" rx="8" fill="#0d1b2a" stroke="#9C27B0" stroke-width="1.2"/>
+  <text x="390" y="274" text-anchor="middle" font-size="12" font-weight="bold" fill="#CE93D8">M-diagram upogibnih momentov</text>
+
+  <!-- Baseline -->
+  <line x1="90" y1="385" x2="660" y2="385" stroke="#555" stroke-width="1" stroke-dasharray="4,2"/>
+
+  <!-- Previs section: M goes from 0 at free end to -6 kNm at A -->
+  <!-- Free end x=90, A x=230, zero line y=385 -->
+  <!-- M_A = -6 kNm → hogging → diagram ABOVE baseline (convention: draw below axis for negative? or above?) -->
+  <!-- Standard: positive M below, negative M above the baseline -->
+  <polygon points="90,385 230,310 230,385" fill="#FF5252" opacity="0.5"/>
+  <polyline points="90,385 230,310" fill="none" stroke="#FF5252" stroke-width="2"/>
+  <line x1="230" y1="310" x2="230" y2="385" stroke="#FF5252" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <text x="175" y="304" text-anchor="middle" font-size="10" fill="#FF5252">M_A = −6 kNm</text>
+  <text x="175" y="316" text-anchor="middle" font-size="9" fill="#FF7070">(hogging)</text>
+
+  <!-- Field parabola: from A(x=230,M=6) to max(x=420+30=approx 610-2.5/3*380=... let me compute) -->
+  <!-- x from B toward A: B at x=610, A at x=230, 3m = 380px → 1px = 3/380 m -->
+  <!-- x=2.5m from B → pixel x = 610 - 2.5/3*380 = 610 - 316.7 = 293... -->
+  <!-- Wait: x in formula is from B to LEFT. x=0 at B (px=610), x=3 at A (px=230) -->
+  <!-- x=2.5m → px = 610 - (2.5/3)*380 = 610 - 316.7 = 293.3 ≈ 293 -->
+  <!-- M(x)=5x-x², M_max=6.25 at x=2.5 → y offset below baseline -->
+  <!-- Scale: 6.25 kNm = 70px → 1 kNm = 11.2px -->
+  <!-- Parabola points: x from 0 to 3m (px 610 down to 230) -->
+  <!-- M(0)=0, M(0.5)=5*0.5-0.25=2.25, M(1)=4, M(1.5)=5.25, M(2)=6, M(2.5)=6.25, M(3)=6 -->
+  <polygon points="230,385 230,316 258,303 293,315 327,318 360,314 393,307 420,295 450,298 480,308 520,326 560,352 610,385"
+           fill="#4CAF50" opacity="0.4"/>
+  <polyline points="230,316 258,303 293,315 327,318 360,314 393,307 420,295 450,298 480,308 520,326 560,352 610,385"
+            fill="none" stroke="#4CAF50" stroke-width="2.5"/>
+
+  <!-- Let me redo the parabola properly -->
+  <!-- M(x)=5x-x², x=0 at B (px=610), x=3 at A (px=230), 3m=380px -->
+  <!-- scale: 6.25 kNm = 65px (positive=below baseline at y=385) -->
+  <!-- x=0.25: M=5*0.25-0.0625=1.1875, y=385-1.1875*10.4=372.6 -->
+  <!-- Let me recalculate with scale 6.25kNm=65px → 1kNm=10.4px -->
+  <!-- M values and pixel y (below=sagging=positive): -->
+  <!-- x=0(B=610): M=0, y=385 -->
+  <!-- x=0.5: M=2.25, y=385-23.4=361.6 px -->
+  <!-- x=1.0: M=4.0, y=385-41.6=343.4 -->
+  <!-- x=1.5: M=5.25, y=385-54.6=330.4 (A-B midpoint, px=610-190=420) -->
+  <!-- x=2.0: M=6.0, y=385-62.4=322.6, px=610-253=357 -->
+  <!-- x=2.5: M=6.25, y=385-65=320, px=610-316.7=293 -->
+  <!-- x=3.0(A=230): M=6.0, y=385-62.4=322.6 -->
+
+  <!-- Redraw with correct points -->
+  <polygon points="230,322 263,320 293,320 357,322 420,330 483,344 547,362 610,385 610,385 547,385 483,385 420,385 357,385 293,385 263,385 230,385"
+           fill="#4CAF50" opacity="0.35"/>
+  <polyline points="230,322 263,320 293,320 357,322 420,330 483,344 547,362 610,385"
+            fill="none" stroke="#4CAF50" stroke-width="2.5"/>
+
+  <!-- Max marker at x=2.5m from B (px≈293) -->
+  <line x1="293" y1="320" x2="293" y2="385" stroke="#81C784" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <circle cx="293" cy="320" r="4" fill="#81C784"/>
+  <text x="293" y="313" text-anchor="middle" font-size="11" font-weight="bold" fill="#81C784">M_max = 6,25 kNm</text>
+  <text x="293" y="398" text-anchor="middle" font-size="10" fill="#888">ξ=2,5m od B</text>
+
+  <!-- Legend -->
+  <rect x="470" y="280" width="12" height="12" fill="#FF5252" opacity="0.6"/>
+  <text x="488" y="291" font-size="10" fill="#FF5252">M < 0 (hogging)</text>
+  <rect x="470" y="298" width="12" height="12" fill="#4CAF50" opacity="0.6"/>
+  <text x="488" y="309" font-size="10" fill="#4CAF50">M > 0 (sagging)</text>
+  <text x="540" y="325" font-size="10" fill="#FFD700">★ M_max = 6,25 &gt; |M_A| = 6</text>
+  <text x="540" y="338" font-size="10" fill="#aaa">→ merodajen za dim.</text>
+
+  <!-- ═══ FORMULAS BOTTOM ═══ -->
+  <rect x="15" y="435" width="750" height="72" rx="8" fill="#0d1b2a" stroke="#4CAF50" stroke-width="1.2"/>
+  <text x="390" y="453" text-anchor="middle" font-size="11" font-weight="bold" fill="#81C784">Dimenzioniranje: W = πd³/32, σ = M/W ≤ σ_dop → d = ∛(32·M / π·σ_dop)</text>
+  <text x="390" y="471" text-anchor="middle" font-size="12" fill="#FFD700">d³ = 32 · 625 / (π · 1,2) = 5305,16 cm³</text>
+  <text x="390" y="493" text-anchor="middle" font-size="14" font-weight="bold" fill="#81C784">d = ∛5305,16 ≈ 17,44 cm</text>
+</svg>
