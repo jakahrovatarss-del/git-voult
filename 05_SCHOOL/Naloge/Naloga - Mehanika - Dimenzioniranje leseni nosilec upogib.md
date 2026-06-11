@@ -39,17 +39,23 @@ $$M_{max} = \frac{q \cdot L_{BC}^2}{2} = \frac{5 \cdot 2^2}{2} = \mathbf{10\ \te
 
 > Moment je negativen (konzola se uklanja navzdol pri B), za dimenzioniranje vzamemo absolutno vrednost.
 
+> **glej:** [[Koncept - Upogib#Korak 2 — Diagram upogibnih momentov]]
+
 ## Korak 2 — Vztrajnostni moment prereza
 
 Prerez: širina $a = 3x$, višina $b = 5x$:
 
 $$I_x = \frac{a \cdot b^3}{12} = \frac{3x \cdot (5x)^3}{12} = \frac{3x \cdot 125x^3}{12} = \frac{375x^4}{12} = 31{,}25x^4\ \text{cm}^4$$
 
+> **glej:** [[Koncept - Vztrajnostni moment#Korak 1 — Enačbe za enostavne prereze]]
+
 ## Korak 3 — Odpornostni moment prereza
 
 Razdalja od nevtralne osi do skrajnega vlakna: $e = b/2 = 2{,}5x$
 
 $$W_x = \frac{I_x}{e} = \frac{31{,}25x^4}{2{,}5x} = 12{,}5x^3\ \text{cm}^3$$
+
+> **glej:** [[Koncept - Vztrajnostni moment#Odpornostni moment (W) — povezava z upogibom]]
 
 ## Korak 4 — Pogoj dopustne napetosti
 
@@ -60,6 +66,8 @@ $$1{,}0 = \frac{1000}{12{,}5x^3}$$
 $$x^3 = \frac{1000}{1{,}0 \cdot 12{,}5} = 80\ \text{cm}^3$$
 
 $$\boxed{x = \sqrt[3]{80} = 4{,}31\ \text{cm}}$$
+
+> **glej:** [[Koncept - Upogib#Korak 5 — Dimenzioniranje]]
 
 ## Korak 5 — Dimenzije prereza
 
@@ -76,6 +84,8 @@ Dejanski odpornostni moment z zaokroženimi dimenzijami:
 $$W_{dej} = \frac{a \cdot b^2}{6} = \frac{13 \cdot 22^2}{6} = \frac{13 \cdot 484}{6} = \frac{6292}{6} = 1048{,}7\ \text{cm}^3$$
 
 $$\sigma_{dej} = \frac{M_{max}}{W_{dej}} = \frac{1000}{1048{,}7} = 0{,}953\ \text{kN/cm}^2 < 1{,}0\ \text{kN/cm}^2\ ✓$$
+
+> **glej:** [[Koncept - Upogib#Korak 5 — Dimenzioniranje]]
 
 ## Spremenljivke
 

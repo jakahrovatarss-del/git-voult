@@ -35,6 +35,8 @@ $$\sum M_B = 0: \quad R_A \cdot 2{,}5 = F \cdot 3{,}5 + q \cdot 2{,}5 \cdot 1{,}
 
 $$\boxed{R_A = 34\ \text{kN}} \qquad R_B = 50 - 34 = \boxed{16\ \text{kN}}$$
 
+> **glej:** [[Koncept - Upogib#Korak 1 — Statični sistem in reakcije]]
+
 ## Korak 2 — Diagram upogibnih momentov
 
 Koordinata ξ od A v desno:
@@ -49,6 +51,8 @@ $$M(\xi) = -10 + 24\xi - 8\xi^2 \quad \text{[kNm]}$$
 | Podpora B | 2,5 | 0 |
 
 Max v polju: $dM/d\xi = 24 - 16\xi = 0 \Rightarrow \xi = 1{,}5\ \text{m}$, $M = +8\ \text{kNm}$
+
+> **glej:** [[Koncept - Upogib#Korak 2 — Diagram upogibnih momentov]]
 
 ## Korak 3 — Geometrija U-prereza
 
@@ -71,6 +75,8 @@ $$= 2 \cdot 2330{,}95 + 1578{,}9$$
 
 $$\boxed{J_{x_T} = 6240{,}8\ \text{cm}^4}$$
 
+> **glej:** [[Koncept - Vztrajnostni moment#Korak 4 — Sestavljeni prerezi (I, T, U, C)]]
+
 Razdalji skrajnih vlaken:
 
 $$e_{zg} = 15 - 5{,}6428 = 9{,}357\ \text{cm} \qquad e_{sp} = 5{,}6428\ \text{cm}$$
@@ -83,6 +89,8 @@ $$\sigma_{zg} = \frac{|M| \cdot e_{zg}}{J} = \frac{1000 \cdot 9{,}357}{6240{,}8}
 
 $$\sigma_{sp} = \frac{|M| \cdot e_{sp}}{J} = \frac{1000 \cdot 5{,}643}{6240{,}8} = \boxed{-0{,}904\ \text{kN/cm}^2\ \text{(tlak)}}$$
 
+> **glej:** [[Koncept - Upogib#Korak 4 — Napetosti in predznak]]
+
 ## Korak 5 — Napetosti v polju ($M = +800\ \text{kNcm}$, sagging, ξ=1,5m od A)
 
 Pozitiven moment → **spodaj nateg, zgoraj tlak**:
@@ -90,6 +98,8 @@ Pozitiven moment → **spodaj nateg, zgoraj tlak**:
 $$\sigma_{sp} = \frac{800 \cdot 5{,}643}{6240{,}8} = +0{,}723\ \text{kN/cm}^2\ \text{(nateg)}$$
 
 $$\sigma_{zg} = \frac{800 \cdot 9{,}357}{6240{,}8} = \boxed{-1{,}199\ \text{kN/cm}^2\ \text{(tlak)}}$$
+
+> **glej:** [[Koncept - Upogib#Korak 4 — Napetosti in predznak]]
 
 ## Rezultati — Ekstremne napetosti
 
