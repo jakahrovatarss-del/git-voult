@@ -68,10 +68,24 @@ $$\boxed{I_{vzp} = I_T + A \cdot e^2}$$
 | Lesena deska | 2,5 × 20 cm | $h \cdot b^3/12 = 20 \cdot 2{,}5^3/12 = 26{,}04$ cm⁴ |
 | Lesen steber | 12 × 12 cm | $a^4/12 = 12^4/12 = 1728$ cm⁴ |
 
+## Odpornostni moment (W) — povezava z upogibom
+
+Iz vztrajnostnega momenta izhaja **odpornostni moment**, ki se uporablja pri [[Koncept - Upogib|dimenzionirnaju na upogib]]:
+
+$$W_x = \frac{I_x}{e}$$
+
+kjer je $e$ razdalja od nevtralne osi do skrajnega vlakna. Za pravokotnik ($b \times h$):
+
+$$W_x = \frac{b \cdot h^2}{6}$$
+
+Pogoj upogibne trdnosti: $\sigma = M / W_x \leq \sigma_{dop}$
+
 ## Povezave
 
 - [[Koncept - Euler Uklon]]
+- [[Koncept - Upogib]]
 - [[Naloga - Mehanika - Uklon lesene deske]]
 - [[Naloga - Mehanika - Uklon leseni steber F_max]]
+- [[Naloga - Mehanika - Dimenzioniranje leseni nosilec upogib]]
 - [[mehanika]]
 - [[Mehanika Hub]]

@@ -1,0 +1,110 @@
+<svg viewBox="0 0 820 430" xmlns="http://www.w3.org/2000/svg">
+  <title>Dimenzioniranje lesenega nosilca na upogib — 13×22 cm</title>
+  <rect width="820" height="430" fill="#ffffff"/>
+  <text x="410" y="24" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Dimenzioniranje lesenega nosilca na upogib</text>
+
+  <!-- ===== LEVO: SHEMA NOSILCA ===== -->
+  <text x="230" y="50" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">Shema nosilca</text>
+
+  <!-- Defs: puščice -->
+  <defs>
+    <marker id="arr_d" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#dc2626"/>
+    </marker>
+    <marker id="arr_dim" markerWidth="7" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <path d="M7,0 L0,3.5 L7,7 Z" fill="#555"/>
+    </marker>
+    <marker id="arr_dim2" markerWidth="7" markerHeight="7" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#555"/>
+    </marker>
+  </defs>
+
+  <!-- Nosilec (vodoravna linija) od A do C -->
+  <rect x="60" y="160" width="420" height="18" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2"/>
+
+  <!-- Podpora A (levo, členek) -->
+  <polygon points="60,178 45,205 75,205" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+  <line x1="35" y1="205" x2="85" y2="205" stroke="#888" stroke-width="2"/>
+  <line x1="35" y1="209" x2="45" y2="219" stroke="#888" stroke-width="1.5"/>
+  <line x1="50" y1="209" x2="60" y2="219" stroke="#888" stroke-width="1.5"/>
+  <line x1="65" y1="209" x2="75" y2="219" stroke="#888" stroke-width="1.5"/>
+  <text x="60" y="228" text-anchor="middle" font-size="12" fill="#1d4ed8" font-weight="bold">A</text>
+
+  <!-- Podpora B (sredina, členek) pri 3m = 300px od A -->
+  <polygon points="285,178 270,205 300,205" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+  <line x1="260" y1="205" x2="310" y2="205" stroke="#888" stroke-width="2"/>
+  <line x1="260" y1="209" x2="270" y2="219" stroke="#888" stroke-width="1.5"/>
+  <line x1="275" y1="209" x2="285" y2="219" stroke="#888" stroke-width="1.5"/>
+  <line x1="290" y1="209" x2="300" y2="219" stroke="#888" stroke-width="1.5"/>
+  <text x="285" y="228" text-anchor="middle" font-size="12" fill="#1d4ed8" font-weight="bold">B</text>
+
+  <!-- Prosti konec C (2m desno od B = 200px) -->
+  <circle cx="480" cy="169" r="4" fill="#dc2626"/>
+  <text x="490" y="173" font-size="12" fill="#1d4ed8" font-weight="bold">C</text>
+
+  <!-- Obtežba q = 5 kN/m na konzolnem delu (B do C) -->
+  <!-- Puščice navzdol -->
+  <text x="382" y="130" text-anchor="middle" font-size="12" fill="#dc2626" font-weight="bold">q = 5 kN/m</text>
+  <line x1="295" y1="138" x2="475" y2="138" stroke="#dc2626" stroke-width="1.5"/>
+  <line x1="300" y1="138" x2="300" y2="157" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr_d)"/>
+  <line x1="330" y1="138" x2="330" y2="157" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr_d)"/>
+  <line x1="360" y1="138" x2="360" y2="157" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr_d)"/>
+  <line x1="390" y1="138" x2="390" y2="157" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr_d)"/>
+  <line x1="420" y1="138" x2="420" y2="157" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr_d)"/>
+  <line x1="450" y1="138" x2="450" y2="157" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr_d)"/>
+  <line x1="476" y1="138" x2="476" y2="157" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr_d)"/>
+
+  <!-- Dimenzija: 3m med A in B -->
+  <line x1="60" y1="248" x2="285" y2="248" stroke="#555" stroke-width="1" marker-start="url(#arr_dim)" marker-end="url(#arr_dim2)"/>
+  <text x="172" y="263" text-anchor="middle" font-size="12" fill="#555" font-weight="bold">3 m</text>
+
+  <!-- Dimenzija: 2m med B in C -->
+  <line x1="285" y1="248" x2="480" y2="248" stroke="#555" stroke-width="1" marker-start="url(#arr_dim)" marker-end="url(#arr_dim2)"/>
+  <text x="382" y="263" text-anchor="middle" font-size="12" fill="#dc2626" font-weight="bold">2 m (konzola)</text>
+
+  <!-- Moment diagram (orisek) -->
+  <text x="60" y="295" font-size="11" fill="#7c3aed" font-weight="bold">M diagram:</text>
+  <line x1="60" y1="310" x2="480" y2="310" stroke="#aaa" stroke-width="1"/>
+  <!-- Negativni moment pri B (konzola) -->
+  <polygon points="60,310 285,310 285,360" fill="#ddd6fe" stroke="#7c3aed" stroke-width="1.5" fill-opacity="0.5"/>
+  <polygon points="285,310 480,310 285,390" fill="#ddd6fe" stroke="#7c3aed" stroke-width="2" fill-opacity="0.7"/>
+  <text x="350" y="375" text-anchor="middle" font-size="11" fill="#7c3aed" font-weight="bold">M_max = −10 kNm</text>
+  <text x="172" y="348" text-anchor="middle" font-size="10" fill="#7c3aed">(pozitivni del)</text>
+
+  <!-- ===== DESNO: PREREZ ===== -->
+  <line x1="540" y1="40" x2="540" y2="420" stroke="#e5e7eb" stroke-width="1.5"/>
+  <text x="680" y="50" text-anchor="middle" font-size="13" font-weight="bold" fill="#111">Prerez (a=3x, b=5x)</text>
+
+  <!-- Pravokotni prerez: a=3x (širina), b=5x (višina), scale ~12px/cm pri x=4.31 -->
+  <!-- Prikaz splošno z x: a~90px (3x), b~150px (5x) -->
+  <rect x="620" y="80" width="90" height="150" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2"/>
+
+  <!-- Os z (vodoravna) -->
+  <line x1="590" y1="155" x2="740" y2="155" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="582" y="159" font-size="10" fill="#dc2626">z</text>
+  <!-- Os y (navpična) -->
+  <line x1="665" y1="65" x2="665" y2="245" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="667" y="62" font-size="10" fill="#16a34a">y</text>
+
+  <!-- Dimenzija a = 3x -->
+  <line x1="620" y1="248" x2="710" y2="248" stroke="#555" stroke-width="1" marker-start="url(#arr_dim)" marker-end="url(#arr_dim2)"/>
+  <text x="665" y="265" text-anchor="middle" font-size="12" fill="#555" font-weight="bold">a = 3x</text>
+  <text x="665" y="280" text-anchor="middle" font-size="11" fill="#555">= 13 cm</text>
+
+  <!-- Dimenzija b = 5x -->
+  <line x1="725" y1="80" x2="725" y2="230" stroke="#555" stroke-width="1" marker-start="url(#arr_dim)" marker-end="url(#arr_dim2)"/>
+  <text x="745" y="162" font-size="12" fill="#555" font-weight="bold">b = 5x</text>
+  <text x="745" y="177" font-size="11" fill="#555">= 22 cm</text>
+
+  <!-- Oznaka e = b/2 -->
+  <line x1="665" y1="155" x2="665" y2="230" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="660" y1="155" x2="670" y2="155" stroke="#7c3aed" stroke-width="1.5"/>
+  <line x1="660" y1="230" x2="670" y2="230" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="590" y="197" font-size="11" fill="#7c3aed">e = b/2</text>
+  <text x="590" y="211" font-size="11" fill="#7c3aed">= 2,5x</text>
+
+  <!-- ===== SPODAJ: REZULTAT ===== -->
+  <line x1="20" y1="400" x2="800" y2="400" stroke="#e5e7eb" stroke-width="1.5"/>
+  <rect x="30" y="408" width="760" height="16" fill="#fefce8" rx="4" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="410" y="420" text-anchor="middle" font-size="12" fill="#1e40af" font-weight="bold">x = ³√(M / (σ·12,5)) = ³√80 = 4,31 cm  →  13 × 22 cm ✓</text>
+</svg>
