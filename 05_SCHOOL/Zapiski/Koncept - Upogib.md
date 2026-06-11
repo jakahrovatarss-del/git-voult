@@ -76,9 +76,18 @@ Za les (iglavci): $\sigma_{dop} = 1{,}0\ \text{kN/cm}^2$ (upogib), ki je višja 
 > Primerjaj: pri [[Koncept - Euler Uklon|uklonu]] je varnostni faktor ν=3 (kritična sila se deli z ν).  
 > Pri upogibu varnosti ni treba posebej upoštevati — $\sigma_{dop}$ jo že vsebuje.
 
+## Asimetričen prerez — pozor!
+
+Če prerez **ni simetričen** (npr. U-profil, T-profil), velja $e_{zg} \neq e_{sp}$. Takrat je treba preveriti napetosti pri **vsakem kritičnem prerezu posebej** — maksimalni |M| ni nujno merodajen za oba roba!
+
+$$\sigma_{max} = \max\left(\frac{|M_i| \cdot e_{max}}{J}\right)$$
+
+> Primer: U-prerez z $e_{zg} = 9{,}36\ \text{cm} > e_{sp} = 5{,}64\ \text{cm}$ — zgornji rob kritičen pri obeh predznaknih momentih.
+
 ## Primer nalog
 
 - [[Naloga - Mehanika - Dimenzioniranje leseni nosilec upogib]] — konzola 2m + razpon 3m, q=5kN/m, 13×22 cm
+- [[Naloga - Mehanika - Upogibne napetosti U-prerez]] — previs 1m + polje 2,5m, F+q, U-prerez 40×15×7 cm → σ_max=1,50 kN/cm²
 
 ## Povezave
 
