@@ -78,10 +78,10 @@ Iščemo $x_0$, kjer je $T(x_0) = 0$:
 $$T(x_0) = -7{,}5 + 2 \cdot x_0 = 0 \quad \Rightarrow \quad x_0 = \frac{7{,}5}{2} = \boxed{3{,}75\ \text{m od B}}$$
 
 $$M_{max} = 7{,}5 \cdot 3{,}75 - (3{,}75)^2 = 28{,}125 - 14{,}0625$$
+$
 
-$$\boxed{M_{max} = 14{,}06\ \text{kNm} = 1406\ \text{kNcm}}$$
-
-> **glej:** [[Koncept - Upogib#Korak 2 — Diagram upogibnih momentov]]
+> **glej:** [[Koncept - Upogib#Korak 2 — Diagram upogibnih momentov
+$$\boxed{M_{max} = 14{,}06\ \text{kNm} = 1406\ \text{kNcm}}$]]
 
 ---
 
