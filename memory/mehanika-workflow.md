@@ -1,4 +1,10 @@
-# Mehanika Cowork Workflow
+---
+name: mehanika-workflow
+description: "Obvezen workflow za mehanika vprašanja — 4 viri, korak 0, slog izpeljav, shranjevanje not"
+metadata:
+  node_type: memory
+  type: feedback
+---
 
 ## Kdo
 Jaka Hrovat, strojništvo student. Vprašanja o mehaniki (statika, kinematika, dinamika, trdnost materialov).
@@ -29,7 +35,7 @@ Preveri vault: `C:\Users\MojPC\Desktop\obsidian\05_SCHOOL\Zapiski\` in `05_SCHOO
 - SVG z `show_widget`, vedno z legendo
 
 ## Shranjevanje not
-- Vprašaj pred shranjevanjem — ne shranjuj samodejno
+- **Vprašaj pred shranjevanjem** — ne shranjuj samodejno
 - Mapa: `05_SCHOOL\Zapiski\`
 - Ime: `Koncept - ImeKoncepta.md`
 - Vsaka nota: vsaj 2 wikilinks na obstoječe note
@@ -49,3 +55,8 @@ Vedno ponudi:
 > **Shranim kot noto v Obsidian?**
 > Predlog: `05_SCHOOL\Zapiski\Koncept - [Tema].md`
 > Linki: `[[...]]`, `[[...]]`, `[[Mehanika Hub]]`
+
+**Why:** Jaka želi strukturirane note z wikilinki za vsak rešen problem. Za mehaniko vedno vprašaj pred shranjevanjem (za fiziko shranjuj samodejno).
+**How to apply:** Sledi workflowu pri vsakem mehanika vprašanju.
+
+**Linked memories:** [[fizika-workflow]], [[obsidian-note-style]]
