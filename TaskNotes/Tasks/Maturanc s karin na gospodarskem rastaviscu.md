@@ -1,10 +1,10 @@
 ---
 title: Maturanc s karin na gospodarskem rastaviscu
-status: open
+status: done
 priority: normal
 scheduled: 2026-03-27
 dateCreated: 2026-02-25T11:00:20.840+01:00
-dateModified: 2026-02-25T11:02:07.497+01:00
+dateModified: 2026-06-12T11:48:12.166+02:00
 tags:
   - task
 reminders:
@@ -16,5 +16,6 @@ reminders:
   - id: rem_1772013724937
     type: absolute
     absoluteTime: 2026-03-26T11:02:00
+completedDate: 2026-06-12
 ---
 

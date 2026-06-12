@@ -1,0 +1,5 @@
+# This directory is a Syncthing folder marker.
+# Do not delete.
+
+folderID: ngcxi-deoej
+created: 2026-06-08T15:39:18+02:00
