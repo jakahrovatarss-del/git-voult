@@ -1,0 +1,157 @@
+<svg viewBox="0 0 780 560" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <rect width="780" height="560" fill="#1a1a2e" rx="10"/>
+
+  <!-- ═══ PANEL 1: BEAM DIAGRAM ═══ -->
+  <rect x="15" y="15" width="470" height="160" rx="8" fill="#0d1b2a" stroke="#2196F3" stroke-width="1.2"/>
+  <text x="245" y="36" text-anchor="middle" font-size="13" font-weight="bold" fill="#90CAF9">Statični sistem — konzolni nosilci</text>
+
+  <!-- Beam: cantilever fixed at right (x=400), free end at left (x=100) -->
+  <!-- Fixed wall at right -->
+  <rect x="410" y="75" width="15" height="80" fill="#90CAF9" opacity="0.4"/>
+  <line x1="425" y1="75" x2="440" y2="60" stroke="#90CAF9" stroke-width="1.5"/>
+  <line x1="425" y1="92" x2="440" y2="77" stroke="#90CAF9" stroke-width="1.5"/>
+  <line x1="425" y1="110" x2="440" y2="95" stroke="#90CAF9" stroke-width="1.5"/>
+  <line x1="425" y1="128" x2="440" y2="113" stroke="#90CAF9" stroke-width="1.5"/>
+  <line x1="425" y1="146" x2="440" y2="131" stroke="#90CAF9" stroke-width="1.5"/>
+  <text x="448" y="120" font-size="11" fill="#90CAF9">vpetje</text>
+
+  <!-- Beam line -->
+  <line x1="100" y1="115" x2="410" y2="115" stroke="#FFD700" stroke-width="5"/>
+  <!-- Free end cap -->
+  <line x1="100" y1="105" x2="100" y2="125" stroke="#FFD700" stroke-width="3"/>
+
+  <!-- F force at free end (downward) -->
+  <line x1="100" y1="80" x2="100" y2="108" stroke="#FF5252" stroke-width="2.5"/>
+  <polygon points="100,112 95,102 105,102" fill="#FF5252"/>
+  <text x="100" y="72" text-anchor="middle" font-size="11" font-weight="bold" fill="#FF5252">F = 400 N</text>
+
+  <!-- Dimension a = 15 cm -->
+  <line x1="100" y1="145" x2="410" y2="145" stroke="#888" stroke-width="1"/>
+  <line x1="100" y1="141" x2="100" y2="149" stroke="#888"/>
+  <line x1="410" y1="141" x2="410" y2="149" stroke="#888"/>
+  <text x="255" y="160" text-anchor="middle" font-size="11" fill="#aaa">a = 15 cm</text>
+
+  <!-- Moment at fixed end label -->
+  <text x="380" y="68" text-anchor="end" font-size="10" fill="#FF9800">M_vpetje = F·a</text>
+  <text x="380" y="80" text-anchor="end" font-size="10" fill="#FFD700">= 400·15 = 6000 Ncm</text>
+
+  <!-- ═══ PANEL 2: CROSS-SECTION ═══ -->
+  <rect x="500" y="15" width="265" height="260" rx="8" fill="#0d1b2a" stroke="#4CAF50" stroke-width="1.2"/>
+  <text x="632" y="36" text-anchor="middle" font-size="13" font-weight="bold" fill="#81C784">Prerez — pravokotnik</text>
+
+  <!-- Solid rectangle cross-section: b=1.5 cm, h=5 cm -->
+  <!-- Draw to scale: scale ~14px/cm → b=21px, h=70px -->
+  <rect x="596" y="70" width="72" height="170" fill="#1565C0" opacity="0.6" stroke="#90CAF9" stroke-width="2"/>
+
+  <!-- Centroidal axis (neutral axis) -->
+  <line x1="520" y1="155" x2="758" y2="155" stroke="#FFD700" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="524" y="151" font-size="10" fill="#FFD700">N.O.</text>
+
+  <!-- Dimension labels -->
+  <!-- h = 5 cm (left side) -->
+  <line x1="580" y1="70" x2="580" y2="240" stroke="#4CAF50" stroke-width="1"/>
+  <line x1="576" y1="70" x2="584" y2="70" stroke="#4CAF50"/>
+  <line x1="576" y1="240" x2="584" y2="240" stroke="#4CAF50"/>
+  <text x="565" y="160" text-anchor="end" font-size="11" fill="#4CAF50">h = 5 cm</text>
+
+  <!-- b = 1.5 cm (bottom) -->
+  <line x1="596" y1="252" x2="668" y2="252" stroke="#4CAF50" stroke-width="1"/>
+  <line x1="596" y1="248" x2="596" y2="256" stroke="#4CAF50"/>
+  <line x1="668" y1="248" x2="668" y2="256" stroke="#4CAF50"/>
+  <text x="632" y="270" text-anchor="middle" font-size="11" fill="#4CAF50">b = 1,5 cm</text>
+
+  <!-- e distances -->
+  <line x1="676" y1="70" x2="676" y2="155" stroke="#FF9800" stroke-width="1.2"/>
+  <line x1="672" y1="70" x2="680" y2="70" stroke="#FF9800"/>
+  <line x1="672" y1="155" x2="680" y2="155" stroke="#FF9800"/>
+  <text x="680" y="115" font-size="10" fill="#FF9800">e = 2,5 cm</text>
+
+  <line x1="676" y1="155" x2="676" y2="240" stroke="#FF9800" stroke-width="1.2"/>
+  <line x1="672" y1="240" x2="680" y2="240" stroke="#FF9800"/>
+  <text x="680" y="202" font-size="10" fill="#FF9800">e = 2,5 cm</text>
+
+  <!-- Labels for extreme fibers -->
+  <text x="596" y="67" font-size="10" fill="#FF5252">zg. vlakno (+σ)</text>
+  <text x="596" y="252" font-size="9" fill="#4CAF50">sp. vlakno (−σ)</text>
+
+  <!-- Formulas panel inside cross-section -->
+  <rect x="508" y="200" width="180" height="70" rx="4" fill="#0a1628" stroke="#2196F3" stroke-width="0.8"/>
+  <text x="598" y="215" text-anchor="middle" font-size="10" fill="#aaa">I_z = b·h³/12</text>
+  <text x="598" y="228" text-anchor="middle" font-size="10" fill="#FFD700">= 1,5·5³/12 = 15,625 cm⁴</text>
+  <text x="598" y="241" text-anchor="middle" font-size="10" fill="#aaa">W = I_z/e = 15,625/2,5</text>
+  <text x="598" y="256" text-anchor="middle" font-size="11" font-weight="bold" fill="#81C784">W = 6,25 cm³</text>
+
+  <!-- ═══ PANEL 3: STRESS DISTRIBUTION ═══ -->
+  <rect x="15" y="185" width="470" height="175" rx="8" fill="#0d1b2a" stroke="#9C27B0" stroke-width="1.2"/>
+  <text x="245" y="204" text-anchor="middle" font-size="13" font-weight="bold" fill="#CE93D8">Porazdelitev upogibnih napetosti</text>
+
+  <!-- Cross-section outline (to scale: h=5cm → 100px) -->
+  <rect x="80" y="225" width="30" height="120" fill="#1565C0" opacity="0.5" stroke="#90CAF9" stroke-width="1.5"/>
+
+  <!-- Neutral axis through cross-section -->
+  <line x1="60" y1="285" x2="145" y2="285" stroke="#FFD700" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <text x="57" y="281" text-anchor="end" font-size="9" fill="#FFD700">N.O.</text>
+
+  <!-- Labeled points a, b, c, d, e -->
+  <!-- e (top): y=225, d: y=249, c: y=285 (NA), b: y=321, a: y=345 -->
+  <circle cx="95" cy="225" r="3" fill="#FF5252"/>
+  <text x="68" y="229" text-anchor="end" font-size="10" fill="#FF5252">e</text>
+  <circle cx="95" cy="249" r="3" fill="#FF9800"/>
+  <text x="68" y="253" text-anchor="end" font-size="10" fill="#FF9800">d</text>
+  <circle cx="95" cy="285" r="3" fill="#FFD700"/>
+  <text x="68" y="289" text-anchor="end" font-size="10" fill="#FFD700">c (N.O.)</text>
+  <circle cx="95" cy="321" r="3" fill="#FF9800"/>
+  <text x="68" y="325" text-anchor="end" font-size="10" fill="#FF9800">b</text>
+  <circle cx="95" cy="345" r="3" fill="#4CAF50"/>
+  <text x="68" y="349" text-anchor="end" font-size="10" fill="#4CAF50">a</text>
+
+  <!-- Stress diagram (linear distribution) -->
+  <!-- σ_e (top) = +0.96 kN/cm² → draw right (tension) -->
+  <!-- σ_a (bottom) = -0.96 kN/cm² → draw left (compression) -->
+  <!-- Scale: 0.96 kN/cm² = 100px -->
+  <polygon points="110,225 210,225 110,345" fill="#FF5252" opacity="0.25"/>
+  <polygon points="110,225 210,225 110,285" fill="#FF5252" opacity="0.35"/>
+  <polygon points="110,285 110,345 210,345" fill="#4CAF50" opacity="0.25"/>
+
+  <!-- Stress lines -->
+  <line x1="110" y1="225" x2="210" y2="225" stroke="#FF5252" stroke-width="2"/>
+  <line x1="110" y1="285" x2="110" y2="285" stroke="#FFD700" stroke-width="2"/>
+  <line x1="110" y1="345" x2="210" y2="345" stroke="#4CAF50" stroke-width="2"/>
+  <line x1="110" y1="249" x2="160" y2="249" stroke="#FF9800" stroke-width="1.5"/>
+  <line x1="110" y1="321" x2="160" y2="321" stroke="#FF9800" stroke-width="1.5"/>
+
+  <!-- Diagonal connecting lines -->
+  <line x1="210" y1="225" x2="110" y2="345" stroke="#aaa" stroke-width="1.5"/>
+
+  <!-- Zero axis vertical line -->
+  <line x1="110" y1="220" x2="110" y2="350" stroke="#666" stroke-width="1"/>
+
+  <!-- Stress labels -->
+  <text x="215" y="229" font-size="10" fill="#FF5252">+0,96 kN/cm²</text>
+  <text x="215" y="241" font-size="9" fill="#FF7070">(nateg)</text>
+  <text x="165" y="247" font-size="9" fill="#FF9800">+0,48</text>
+  <text x="105" y="283" text-anchor="end" font-size="9" fill="#FFD700">0</text>
+  <text x="165" y="319" font-size="9" fill="#FF9800">−0,48</text>
+  <text x="215" y="349" font-size="10" fill="#4CAF50">−0,96 kN/cm²</text>
+  <text x="215" y="361" font-size="9" fill="#66BB6A">(tlak)</text>
+
+  <!-- ═══ PANEL 4: FORMULA RESULT ═══ -->
+  <rect x="15" y="370" width="750" height="80" rx="8" fill="#0d1b2a" stroke="#4CAF50" stroke-width="1.2"/>
+  <text x="390" y="390" text-anchor="middle" font-size="12" font-weight="bold" fill="#81C784">Upogibne napetosti: σ = M·y/I_z = M/W (na ekst. vlaknih)</text>
+  <text x="390" y="410" text-anchor="middle" font-size="12" fill="#FFD700">M = F·a = 400 N · 15 cm = 6000 N·cm = 6 kNcm       W = I_z/e = 6,25 cm³</text>
+  <text x="390" y="432" text-anchor="middle" font-size="15" font-weight="bold" fill="#81C784">σ_e = +M/W = +0,96 kN/cm² = +9,6 MPa     σ_a = −M/W = −0,96 kN/cm² = −9,6 MPa</text>
+
+  <!-- ═══ PANEL 5: VARIABLES ═══ -->
+  <rect x="15" y="460" width="750" height="88" rx="8" fill="#0d1b2a" stroke="#607D8B" stroke-width="1"/>
+  <text x="30" y="478" font-size="10" fill="#90CAF9">F = 400 N</text>
+  <text x="30" y="493" font-size="10" fill="#90CAF9">a = 15 cm (ročica)</text>
+  <text x="30" y="508" font-size="10" fill="#90CAF9">M = 6 kNcm</text>
+  <text x="200" y="478" font-size="10" fill="#81C784">b = 1,5 cm (širina)</text>
+  <text x="200" y="493" font-size="10" fill="#81C784">h = 5 cm (višina)</text>
+  <text x="200" y="508" font-size="10" fill="#81C784">e = h/2 = 2,5 cm</text>
+  <text x="370" y="478" font-size="10" fill="#FFD700">I_z = b·h³/12 = 15,625 cm⁴</text>
+  <text x="370" y="493" font-size="10" fill="#FFD700">W = I_z/e = 6,25 cm³</text>
+  <text x="580" y="478" font-size="11" font-weight="bold" fill="#FF5252">σ_max = ±0,96 kN/cm²</text>
+  <text x="580" y="493" font-size="11" font-weight="bold" fill="#FF5252">= ±9,6 MPa</text>
+  <text x="580" y="510" font-size="10" fill="#aaa">točke a–e: σ = M·y/I_z</text>
+</svg>

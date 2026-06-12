@@ -1,0 +1,170 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <rect width="800" height="600" fill="#1a1a2e" rx="10"/>
+
+  <!-- ═══ PANEL 1: BEAM DIAGRAM ═══ -->
+  <rect x="15" y="15" width="765" height="185" rx="8" fill="#0d1b2a" stroke="#2196F3" stroke-width="1.2"/>
+  <text x="397" y="36" text-anchor="middle" font-size="13" font-weight="bold" fill="#90CAF9">Statični sistem — 10 m razpon, q = 2 kN/m na desni polovici</text>
+
+  <!-- Beam: A at left (x=80), midpoint (x=390), B at right (x=700) -->
+  <!-- Left span 5m: no load. Right span 5m: q = 2 kN/m -->
+  <line x1="80" y1="120" x2="700" y2="120" stroke="#FFD700" stroke-width="5"/>
+
+  <!-- Support A (pin) at x=80 -->
+  <polygon points="80,120 68,142 92,142" fill="#90CAF9"/>
+  <line x1="62" y1="145" x2="98" y2="145" stroke="#90CAF9" stroke-width="2"/>
+  <text x="80" y="158" text-anchor="middle" font-size="12" font-weight="bold" fill="#4FC3F7">A</text>
+
+  <!-- Support B (roller) at x=700 -->
+  <polygon points="700,120 688,142 712,142" fill="#90CAF9"/>
+  <line x1="682" y1="145" x2="718" y2="145" stroke="#90CAF9" stroke-width="2"/>
+  <text x="700" y="158" text-anchor="middle" font-size="12" font-weight="bold" fill="#4FC3F7">B</text>
+
+  <!-- Midpoint marker (x=390 = 5m from A) -->
+  <line x1="390" y1="116" x2="390" y2="124" stroke="#888" stroke-width="2"/>
+
+  <!-- Distributed load q on RIGHT half (from x=390 to x=700) -->
+  <line x1="390" y1="80" x2="700" y2="80" stroke="#FF9800" stroke-width="1.5"/>
+  <text x="540" y="73" text-anchor="middle" font-size="11" fill="#FF9800">q = 2 kN/m</text>
+  <g stroke="#FF9800" fill="#FF9800">
+    <line x1="420" y1="80" x2="420" y2="113" stroke-width="1.2"/><polygon points="420,116 416,108 424,108"/>
+    <line x1="460" y1="80" x2="460" y2="113" stroke-width="1.2"/><polygon points="460,116 456,108 464,108"/>
+    <line x1="500" y1="80" x2="500" y2="113" stroke-width="1.2"/><polygon points="500,116 496,108 504,108"/>
+    <line x1="540" y1="80" x2="540" y2="113" stroke-width="1.2"/><polygon points="540,116 536,108 544,108"/>
+    <line x1="580" y1="80" x2="580" y2="113" stroke-width="1.2"/><polygon points="580,116 576,108 584,108"/>
+    <line x1="620" y1="80" x2="620" y2="113" stroke-width="1.2"/><polygon points="620,116 616,108 624,108"/>
+    <line x1="660" y1="80" x2="660" y2="113" stroke-width="1.2"/><polygon points="660,116 656,108 664,108"/>
+    <line x1="700" y1="80" x2="700" y2="113" stroke-width="1.2"/><polygon points="700,116 696,108 704,108"/>
+  </g>
+
+  <!-- Reactions -->
+  <line x1="80" y1="162" x2="80" y2="147" stroke="#4FC3F7" stroke-width="2.5"/>
+  <polygon points="80,143 75,153 85,153" fill="#4FC3F7"/>
+  <text x="80" y="177" text-anchor="middle" font-size="11" fill="#4FC3F7">A_y=2,5 kN</text>
+
+  <line x1="700" y1="162" x2="700" y2="147" stroke="#4FC3F7" stroke-width="2.5"/>
+  <polygon points="700,143 695,153 705,153" fill="#4FC3F7"/>
+  <text x="700" y="177" text-anchor="middle" font-size="11" fill="#4FC3F7">B_y=7,5 kN</text>
+
+  <!-- Dimension lines -->
+  <line x1="80" y1="187" x2="390" y2="187" stroke="#666" stroke-width="1"/>
+  <line x1="80" y1="183" x2="80" y2="191" stroke="#666"/>
+  <line x1="390" y1="183" x2="390" y2="191" stroke="#666"/>
+  <text x="235" y="200" text-anchor="middle" font-size="10" fill="#aaa">5 m (brez obtežbe)</text>
+
+  <line x1="390" y1="187" x2="700" y2="187" stroke="#666" stroke-width="1"/>
+  <line x1="700" y1="183" x2="700" y2="191" stroke="#666"/>
+  <text x="545" y="200" text-anchor="middle" font-size="10" fill="#aaa">5 m (q = 2 kN/m)</text>
+
+  <!-- M_max location marker at x₀=3.75m from B → pixel: 700-3.75/5*310=700-232.5=467.5≈468 -->
+  <line x1="468" y1="112" x2="468" y2="128" stroke="#81C784" stroke-width="2" stroke-dasharray="3,2"/>
+  <text x="468" y="107" text-anchor="middle" font-size="9" fill="#81C784">x₀=3,75 m od B</text>
+
+  <!-- ═══ PANEL 2: M-DIAGRAM ═══ -->
+  <rect x="15" y="210" width="765" height="155" rx="8" fill="#0d1b2a" stroke="#9C27B0" stroke-width="1.2"/>
+  <text x="397" y="228" text-anchor="middle" font-size="12" font-weight="bold" fill="#CE93D8">M-diagram upogibnih momentov</text>
+
+  <!-- Baseline: x from 80 to 700, y=340 -->
+  <line x1="80" y1="340" x2="700" y2="340" stroke="#555" stroke-width="1" stroke-dasharray="4,2"/>
+
+  <!-- Left region: M linear from A(x=80,M=0) to midpoint(x=390, M=2.5*5=12.5 kNm) -->
+  <!-- Scale: 14.06 kNm = 85px → 1 kNm = 6.04 px -->
+  <!-- M(midpoint) = 12.5 kNm → y = 340-12.5*6.04 = 340-75.5 = 264.5 ≈ 265 -->
+  <polygon points="80,340 80,340 390,265 390,340" fill="#4CAF50" opacity="0.3"/>
+  <polyline points="80,340 390,265" fill="none" stroke="#4CAF50" stroke-width="2.5"/>
+
+  <!-- Right region parabola: from B(x=700,M=0) to midpoint(x=390,M=12.5), max at x₀(x=468,M=14.06) -->
+  <!-- x₀ = 3.75m from B → pixel x = 700 - 3.75/5*310 = 700 - 232.5 = 467.5 ≈ 468 -->
+  <!-- M values at key points (from B going left, all sagging = below baseline):
+    x=0(B=700): M=0, y=340
+    x=0.5: M=7.5*0.5-0.5*0.25=3.625, y=340-3.625*6.04=340-21.9=318
+    x=1.0: M=7.5-1=6.5, y=340-39.3=300.7
+    x=1.5: M=11.25-2.25=9.0, y=340-54.4=285.6
+    x=2.0: M=15-4=11.0, y=340-66.4=273.6
+    x=2.5: M=18.75-6.25=12.5, y=340-75.5=264.5 (also matches left region at midpoint)
+    x=3.0: M=22.5-9=13.5, y=340-81.5=258.5
+    x=3.75: M=28.125-14.0625=14.0625, y=340-85=255 (MAX)
+    x=4.0: M=30-16=14.0, y=340-84.6=255.4
+    x=5.0: M=37.5-25=12.5, y=265 -->
+  <!-- Pixel positions: from x=700 going left, 5m=310px, 1m=62px -->
+  <!-- x=0.5m from B: px=700-31=669, x=1.0:638, x=1.5:607, x=2.0:576, x=2.5:545, x=3.0:514, x=3.75:468, x=4.0:452, x=5.0:390 -->
+  <polygon points="390,265 390,340 452,340 468,340 514,340 545,340 576,340 607,340 638,340 669,340 700,340
+                   700,340 669,318 638,301 607,286 576,274 545,265 514,259 468,255 452,255 390,265"
+           fill="#4CAF50" opacity="0.3"/>
+  <polyline points="390,265 452,255 468,255 514,259 545,265 576,274 607,286 638,301 669,318 700,340"
+            fill="none" stroke="#4CAF50" stroke-width="2.5"/>
+
+  <!-- Max marker -->
+  <line x1="468" y1="255" x2="468" y2="340" stroke="#81C784" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <circle cx="468" cy="255" r="5" fill="#81C784"/>
+  <text x="468" y="248" text-anchor="middle" font-size="11" font-weight="bold" fill="#81C784">M_max = 14,06 kNm</text>
+  <text x="390" y="353" text-anchor="middle" font-size="10" fill="#aaa">midspan</text>
+  <text x="700" y="353" text-anchor="middle" font-size="10" fill="#aaa">B</text>
+  <text x="80" y="353" text-anchor="middle" font-size="10" fill="#aaa">A</text>
+
+  <!-- ═══ PANEL 3: CROSS-SECTION ═══ -->
+  <rect x="15" y="375" width="370" height="210" rx="8" fill="#0d1b2a" stroke="#4CAF50" stroke-width="1.2"/>
+  <text x="200" y="394" text-anchor="middle" font-size="12" font-weight="bold" fill="#81C784">Škatlasti prerez (votla pravokotna cev)</text>
+
+  <!-- Cross-section: outer 7.5×10 cm, inner 5.5×8 cm -->
+  <!-- Scale: 10cm height → 100px, 7.5cm → 75px -->
+  <!-- Center at (200, 480) -->
+  <!-- Outer rect: 75×100 centered at (200,480) → from (162,430) to (237,530) -->
+  <rect x="162" y="430" width="76" height="100" fill="#2196F3" opacity="0.5" stroke="#4FC3F7" stroke-width="2"/>
+  <!-- Inner void: 5.5×8 cm → 55×80px centered at (200,480) → from (172,440) to (227,520) -->
+  <rect x="173" y="440" width="54" height="80" fill="#0d1b2a" stroke="#1565C0" stroke-width="1"/>
+
+  <!-- Neutral axis -->
+  <line x1="145" y1="480" x2="320" y2="480" stroke="#FFD700" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="145" y="476" text-anchor="end" font-size="9" fill="#FFD700">N.O.</text>
+
+  <!-- Outer dimension h=10cm -->
+  <line x1="248" y1="430" x2="248" y2="530" stroke="#4CAF50" stroke-width="1"/>
+  <line x1="244" y1="430" x2="252" y2="430" stroke="#4CAF50"/>
+  <line x1="244" y1="530" x2="252" y2="530" stroke="#4CAF50"/>
+  <text x="260" y="484" font-size="10" fill="#4CAF50">h = 10 cm</text>
+
+  <!-- Outer dimension b=7.5cm -->
+  <line x1="162" y1="540" x2="238" y2="540" stroke="#4CAF50" stroke-width="1"/>
+  <line x1="162" y1="536" x2="162" y2="544" stroke="#4CAF50"/>
+  <line x1="238" y1="536" x2="238" y2="544" stroke="#4CAF50"/>
+  <text x="200" y="556" text-anchor="middle" font-size="10" fill="#4CAF50">b = 7,5 cm</text>
+
+  <!-- Inner dimensions -->
+  <line x1="149" y1="440" x2="149" y2="520" stroke="#FF9800" stroke-width="1"/>
+  <line x1="145" y1="440" x2="153" y2="440" stroke="#FF9800"/>
+  <line x1="145" y1="520" x2="153" y2="520" stroke="#FF9800"/>
+  <text x="141" y="484" text-anchor="end" font-size="9" fill="#FF9800">8 cm</text>
+
+  <line x1="173" y1="405" x2="227" y2="405" stroke="#FF9800" stroke-width="1"/>
+  <line x1="173" y1="401" x2="173" y2="409" stroke="#FF9800"/>
+  <line x1="227" y1="401" x2="227" y2="409" stroke="#FF9800"/>
+  <text x="200" y="420" text-anchor="middle" font-size="9" fill="#FF9800">5,5 cm</text>
+
+  <!-- Wall thickness labels -->
+  <text x="320" y="445" font-size="9" fill="#aaa">t_vert = 1 cm</text>
+  <text x="320" y="460" font-size="9" fill="#aaa">t_horiz = 1 cm</text>
+
+  <!-- e distance -->
+  <line x1="300" y1="430" x2="300" y2="480" stroke="#FF5252" stroke-width="1"/>
+  <line x1="296" y1="430" x2="304" y2="430" stroke="#FF5252"/>
+  <line x1="296" y1="480" x2="304" y2="480" stroke="#FF5252"/>
+  <text x="310" y="460" font-size="9" fill="#FF5252">e = 5 cm</text>
+
+  <!-- ═══ PANEL 4: FORMULAS ═══ -->
+  <rect x="395" y="375" width="385" height="210" rx="8" fill="#0d1b2a" stroke="#FF5252" stroke-width="1.2"/>
+  <text x="587" y="394" text-anchor="middle" font-size="12" font-weight="bold" fill="#CE93D8">Izračun I_z in σ_max</text>
+
+  <text x="415" y="416" font-size="11" fill="#aaa">I_z = (b_zun·h_zun³ − b_not·h_not³) / 12</text>
+  <text x="415" y="434" font-size="11" fill="#aaa">    = (7,5·10³ − 5,5·8³) / 12</text>
+  <text x="415" y="452" font-size="11" fill="#aaa">    = (7500 − 2816) / 12</text>
+  <text x="415" y="470" font-size="13" font-weight="bold" fill="#FFD700">    = 390,33 cm⁴  = 3,904·10⁻⁶ m⁴</text>
+
+  <line x1="415" y1="480" x2="760" y2="480" stroke="#444" stroke-width="1"/>
+
+  <text x="415" y="498" font-size="11" fill="#aaa">e = h_zun/2 = 10/2 = 5 cm = 0,05 m</text>
+  <text x="415" y="516" font-size="11" fill="#aaa">σ_max = M_max · e / I_z</text>
+  <text x="415" y="534" font-size="11" fill="#aaa">      = 14,06 kNm · 0,05 m / (3,904·10⁻⁶ m⁴)</text>
+  <text x="415" y="552" font-size="11" fill="#aaa">      = 703 / 3,904·10⁻⁶ = 180·10⁶ Pa</text>
+  <rect x="413" y="560" width="265" height="22" rx="4" fill="#1a3a1a"/>
+  <text x="545" y="576" text-anchor="middle" font-size="14" font-weight="bold" fill="#81C784">σ_max = 180 MPa</text>
+</svg>
