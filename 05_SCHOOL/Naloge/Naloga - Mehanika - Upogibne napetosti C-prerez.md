@@ -23,7 +23,7 @@ Za konzolni nosilci z znano obtežbo $F$ določiti napetosti v ekst­remnih vlak
 
 ## Shema konstrukcije
 
-![[upogib_c_prerez.svg|700]]
+![[upogib_c_prerez.svg|637]]
 
 - Konzolni nosilci vpet na desni, prosta leva konica
 - Sila $F = 400$ N deluje navpično na prostem koncu
