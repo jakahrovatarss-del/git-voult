@@ -5,7 +5,7 @@ priority: high
 scheduled: 2026-06-12T20:00
 due: 2026-06-12
 dateCreated: 2026-06-12T11:10:56.000+02:00
-dateModified: 2026-06-12T13:15:31.092+02:00
+dateModified: 2026-06-12T11:53:45.000+02:00
 tags:
   - task
   - supplement
@@ -20,7 +20,7 @@ blockedBy:
 
 # 🍊 Vitamin C 1000mg + Magnezij 300mg
 
-⏰ **Čas: 19:00**
+⏰ **Čas: 20:00**
 
 Vzemi Z večerjo (ne moti več Vyvanse ker je dovolj časa minilo):
 

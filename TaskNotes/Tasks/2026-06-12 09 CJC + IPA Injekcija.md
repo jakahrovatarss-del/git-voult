@@ -2,10 +2,10 @@
 title: 💉 CJC-1295 + Ipamorelin SC — 3H PO VEČERJI
 status: open
 priority: urgent
-scheduled: 2026-06-12T23:30
+scheduled: 2026-06-12T23:00
 due: 2026-06-12
 dateCreated: 2026-06-12T11:10:56.000+02:00
-dateModified: 2026-06-12T11:17:41.000+02:00
+dateModified: 2026-06-12T11:53:46.000+02:00
 tags:
   - task
   - supplement
@@ -22,7 +22,7 @@ blockedBy:
 
 # 💉 CJC-1295 + Ipamorelin SC — 3H PO VEČERJI
 
-⏰ **Čas: 23:30**
+⏰ **Čas: 23:00**
 
 > 🔄 **AUTO-POSODOBLJENO ob 11:17** — 3h po večerji (20:30 + 3h)
 
@@ -35,6 +35,6 @@ blockedBy:
 - [ ] Ipamorelin: 300mcg = 6 enot U100
 - [ ] SC v trebuh, 45° kot
 - [ ] Hialuronska kislina serum (topikalno na obraz)
-- [ ] Po injekciji NIJ HRANE do 00:30
+- [ ] Po injekciji NIJ HRANE do 00:00
 
 > 🔬 Zakaj tešče? Insulin blokira GH sproščanje. Tešče = čisti GH pulz ponoči.

@@ -12,6 +12,7 @@ vir: IMG_1241.pdf, str. 24 (naloga), str. 26 (rešitev)
 Določiti minimalni premer $d$ krožnega prereza previsnega nosilca, obremenjenega s točkovno silo $F$ in enakomerno obtežbo $q$.
 
 ## Podatki
+Human: 2026-06-12 — Vyvanse ob 11:00 ✅
 
 | Simbol | Vrednost | Pomen |
 |--------|----------|-------|
@@ -24,7 +25,7 @@ Določiti minimalni premer $d$ krožnega prereza previsnega nosilca, obremenjene
 
 ## Shema konstrukcije
 
-![[upogib_krozni_prerez.svg|637]]
+![[upogib_krozni_prerez.svg|637]] 
 
 - **A** = leva podpora (pri x = 0)
 - **B** = desna podpora (pri x = 3 m)

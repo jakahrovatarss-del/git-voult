@@ -1,0 +1,418 @@
+---
+tags:
+  - dashboard
+  - dnevni
+cssclasses:
+  - wide-page
+---
+
+```dataviewjs
+// ═══════════════════════════════════════════════════════════════════
+// SUPPLEMENT TRACKER — INTERAKTIVNI (brez Meta Bind)
+// ═══════════════════════════════════════════════════════════════════
+const today = moment().format("YYYY-MM-DD");
+const TASKS = "TaskNotes/Tasks";
+
+const addMin = (t, m) => {
+    const [h, min] = t.split(":").map(Number);
+    const tot = h*60 + min + m;
+    return `${String(Math.floor(tot/60)%24).padStart(2,"0")}:${String(tot%60).padStart(2,"0")}`;
+};
+const nowStamp = () => new Date().toISOString().slice(0,19)+".000+02:00";
+
+async function updateTask(filename, newTime, extra="") {
+    const file = app.vault.getAbstractFileByPath(`${TASKS}/${filename}`);
+    if (!file) return false;
+    let c = await app.vault.read(file);
+    c = c.replace(/^(scheduled:\s*)(.+)$/m, `$1${today}T${newTime}`);
+    c = c.replace(/(⏰ \*\*Čas: )\d{2}:\d{2}(\*\*)/, `$1${newTime}$2`);
+    c = c.replace(/^(dateModified:\s*)(.+)$/m, `$1${nowStamp()}`);
+    await app.vault.modify(file, c);
+    return true;
+}
+
+async function setDone(filename) {
+    const file = app.vault.getAbstractFileByPath(`${TASKS}/${filename}`);
+    if (!file) return;
+    let c = await app.vault.read(file);
+    c = c.replace(/^status:\s*open$/m, "status: done");
+    if (!c.includes("completedDate:")) c = c.replace(/^(dateModified:.+)$/m, `$1\ncompletedDate: ${today}`);
+    c = c.replace(/^(dateModified:\s*)(.+)$/m, `$1${nowStamp()}`);
+    await app.vault.modify(file, c);
+}
+
+async function getTask(filename) {
+    const file = app.vault.getAbstractFileByPath(`${TASKS}/${filename}`);
+    if (!file) return null;
+    const c = await app.vault.read(file);
+    return {
+        status: c.match(/^status:\s*(.+)$/m)?.[1]?.trim(),
+        time:   c.match(/^scheduled:\s*.+T(\d{2}:\d{2})$/m)?.[1]
+    };
+}
+
+// ─── CSS ────────────────────────────────────────────────────────────
+const style = document.createElement("style");
+style.textContent = `
+.sd { font-family: var(--font-interface); }
+.sd-header { font-size:1.05em; font-weight:700; padding:6px 0 4px; border-bottom:2px solid var(--color-accent); color:var(--color-accent); margin:12px 0 6px; display:flex; align-items:center; gap:6px; }
+.sd-row { display:flex; align-items:center; gap:8px; padding:6px 10px; border-radius:7px; margin:2px 0; background:var(--background-secondary); transition:background 0.15s; }
+.sd-row:hover { background:var(--background-modifier-hover); }
+.sd-ico { font-size:1.1em; width:22px; text-align:center; }
+.sd-lbl { flex:1; font-size:0.88em; }
+.sd-t { font-size:0.82em; color:var(--color-accent); font-weight:600; min-width:40px; }
+.sd-input { border:1px solid var(--background-modifier-border); border-radius:4px; padding:3px 5px; font-size:0.82em; background:var(--background-primary); color:var(--text-normal); width:84px; }
+.sd-btn { border:none; border-radius:5px; padding:3px 11px; font-size:0.8em; cursor:pointer; font-weight:600; }
+.sd-vb { background:#7c3aed; color:white; }
+.sd-vb:hover { background:#6d28d9; }
+.sd-eb { background:#059669; color:white; }
+.sd-eb:hover { background:#047857; }
+.sd-db { background:var(--interactive-accent); color:white; min-width:28px; }
+.sd-done { opacity:0.45; text-decoration:line-through; }
+.sd-done .sd-t { text-decoration:none; }
+.sd-info { background:#d1fae5; border-left:3px solid #10b981; padding:5px 10px; border-radius:4px; font-size:0.8em; margin:3px 0; display:none; }
+.sd-warn { background:#fef3c7; border-left:3px solid #f59e0b; padding:6px 10px; border-radius:5px; font-size:0.85em; }
+.sd-miss { background:#fee2e2; border-left:3px solid #ef4444; padding:8px 12px; border-radius:6px; font-size:0.88em; margin:4px 0; }
+.sd-sep { border:none; border-top:1px solid var(--background-modifier-border); margin:10px 0; }
+.sd-grid2 { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.sd-grid3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; }
+.sd-col {}
+.sd-nav { display:flex; flex-wrap:wrap; gap:8px; padding:6px 0; }
+.sd-navbtn { background:var(--background-secondary); border:1px solid var(--background-modifier-border); border-radius:6px; padding:5px 14px; text-decoration:none; color:var(--text-normal); font-size:0.88em; cursor:pointer; }
+.sd-navbtn:hover { background:var(--background-modifier-hover); }
+.sd-pill { display:inline-flex; align-items:center; gap:4px; background:var(--background-secondary); border-radius:12px; padding:2px 10px; font-size:0.8em; margin:2px; }
+.sd-pill-done { background:#d1fae5; color:#065f46; }
+.sd-pill-open { background:#fef3c7; color:#92400e; }
+.sd-pill-late { background:#fee2e2; color:#991b1b; }
+.sd-refresh { float:right; background:none; border:1px solid var(--background-modifier-border); border-radius:5px; padding:2px 10px; font-size:0.78em; cursor:pointer; color:var(--text-muted); }
+.sd-refresh:hover { color:var(--text-normal); background:var(--background-modifier-hover); }
+.sd-konc { font-size:0.85em; padding:4px 8px; border-radius:5px; background:var(--background-secondary); margin:2px 0; display:flex; justify-content:space-between; }
+.sd-naloga { font-size:0.85em; padding:4px 8px; border-radius:5px; background:var(--background-secondary); margin:2px 0; }
+`;
+dv.container.appendChild(style);
+
+const root = dv.container.createEl("div", {cls:"sd"});
+
+// ─── Check tasks exist ───────────────────────────────────────────────
+const vyvFile = app.vault.getAbstractFileByPath(`${TASKS}/${today} 03 Vyvanse 40mg.md`);
+
+// ═══════════════════════════════════════════════════════════════════
+// LAYOUT: dvokolonski
+// ═══════════════════════════════════════════════════════════════════
+const topGrid = root.createEl("div", {cls:"sd-grid2"});
+const colLeft  = topGrid.createEl("div", {cls:"sd-col"});
+const colRight = topGrid.createEl("div", {cls:"sd-col"});
+
+// ════════════════════════════════
+// LEVA KOLONA — Supplement Tracker
+// ════════════════════════════════
+const supHdr = colLeft.createEl("div", {cls:"sd-header"});
+supHdr.innerHTML = "💊 Supplement Tracker";
+const refreshBtn = supHdr.createEl("button", {cls:"sd-refresh", text:"🔄 Osveži"});
+refreshBtn.addEventListener("click", () => app.workspace.activeLeaf?.rebuildView?.() || location.reload());
+
+if (!vyvFile) {
+    colLeft.createEl("div", {cls:"sd-miss", text:"⚠️ Teski za danes niso ustvarjeni. Pritisni Ctrl+Shift+S."});
+} else {
+    // Vyvanse
+    const vyv = await getTask(`${today} 03 Vyvanse 40mg.md`);
+    const vyvDone = vyv?.status === "done";
+    const vRow = colLeft.createEl("div", {cls:`sd-row${vyvDone?" sd-done":""}`});
+    vRow.createEl("span", {cls:"sd-ico", text: vyvDone?"✅":"⬜"});
+    vRow.createEl("span", {cls:"sd-lbl", text:"💊 Vyvanse 40mg"});
+    vRow.createEl("span", {cls:"sd-t",   text: vyv?.time ? `${vyv.time}` : "—"});
+    const vInp = vRow.createEl("input", {cls:"sd-input"}); vInp.type="time"; vInp.value = vyv?.time || moment().format("HH:mm");
+    const vBtn = vRow.createEl("button", {cls:"sd-btn sd-vb", text: vyvDone?"✅ Vzeto":"Vzeto →"});
+    const vInfo = colLeft.createEl("div", {cls:"sd-info"});
+
+    vBtn.addEventListener("click", async () => {
+        const t = vInp.value || moment().format("HH:mm");
+        vBtn.textContent="⏳..."; vBtn.disabled=true;
+        await setDone(`${today} 03 Vyvanse 40mg.md`);
+        await updateTask(`${today} 04 Zajtrk + Suplementi.md`, addMin(t,15));
+        await updateTask(`${today} 05 L-Theanine 200mg.md`,    addMin(t,135));
+        await updateTask(`${today} 06 Kosilo + Baker 2mg.md`,  addMin(t,315));
+        const f = app.vault.getAbstractFileByPath(`${TASKS}/${today} 03 Vyvanse 40mg.md`);
+        if (f) { let c=await app.vault.read(f); c=c.replace(/(🍳 Zajtrk OBVEZEN do \| \*\*)[\d:]+(\*\* \|)/,`$1${addMin(t,60)}$2`); await app.vault.modify(f,c); }
+        vRow.classList.add("sd-done"); vRow.querySelector(".sd-ico").textContent="✅"; vRow.querySelector(".sd-t").textContent=t;
+        vBtn.textContent="✅ Vzeto"; vBtn.disabled=false;
+        vInfo.style.display="block";
+        vInfo.innerHTML=`🔄 Zajtrk <b>${addMin(t,15)}</b> (do ${addMin(t,60)}) · Theanine <b>${addMin(t,135)}</b> · Kosilo <b>${addMin(t,315)}</b>`;
+        new Notice(`✅ Vyvanse ob ${t}\n🍳 Zajtrk: ${addMin(t,15)} | 🍵 Theanine: ${addMin(t,135)} | 🥗 Kosilo: ${addMin(t,315)}`, 7000);
+    });
+
+    // Večerja
+    const vec = await getTask(`${today} 07 Vecerja.md`);
+    const vecDone = vec?.status === "done";
+    const eRow = colLeft.createEl("div", {cls:`sd-row${vecDone?" sd-done":""}`});
+    eRow.createEl("span", {cls:"sd-ico", text: vecDone?"✅":"⬜"});
+    eRow.createEl("span", {cls:"sd-lbl", text:"🍽️ Večerja"});
+    eRow.createEl("span", {cls:"sd-t",   text: vec?.time ? `${vec.time}` : "—"});
+    const eInp = eRow.createEl("input", {cls:"sd-input"}); eInp.type="time"; eInp.value = vec?.time || "19:00";
+    const eBtn = eRow.createEl("button", {cls:"sd-btn sd-eb", text: vecDone?"✅ Vzeto":"Vzeto →"});
+    const eInfo = colLeft.createEl("div", {cls:"sd-info"});
+
+    eBtn.addEventListener("click", async () => {
+        const t = eInp.value || "19:00";
+        eBtn.textContent="⏳..."; eBtn.disabled=true;
+        await setDone(`${today} 07 Vecerja.md`);
+        await updateTask(`${today} 08 VitaminC + Magnezij.md`, t);
+        await updateTask(`${today} 09 CJC + IPA Injekcija.md`, addMin(t,180));
+        await updateTask(`${today} 10 Spanje.md`,               addMin(t,225));
+        const cf = app.vault.getAbstractFileByPath(`${TASKS}/${today} 09 CJC + IPA Injekcija.md`);
+        if (cf) { let c=await app.vault.read(cf); c=c.replace(/(NIJ HRANE do )\d{2}:\d{2}/,`$1${addMin(t,240)}`); await app.vault.modify(cf,c); }
+        eRow.classList.add("sd-done"); eRow.querySelector(".sd-ico").textContent="✅"; eRow.querySelector(".sd-t").textContent=t;
+        eBtn.textContent="✅ Vzeto"; eBtn.disabled=false;
+        eInfo.style.display="block";
+        eInfo.innerHTML=`🔄 CJC+IPA <b>${addMin(t,180)}</b> · Spanje <b>${addMin(t,225)}</b> · 🚫 NIJ HRANE do ${addMin(t,240)}`;
+        new Notice(`✅ Večerja ob ${t}\n💉 CJC: ${addMin(t,180)} | 😴 Spanje: ${addMin(t,225)}`, 6000);
+    });
+
+    colLeft.createEl("hr", {cls:"sd-sep"});
+
+    // Urnik za danes — ŽIVAHNA tabela z dejal časi
+    colLeft.createEl("div", {cls:"sd-header", text:"📋 Urnik — danes"});
+
+    const taskDefs = [
+        [`${today} 01 L-Tirozin 500mg`,       "🧠 L-Tirozin 500mg"],
+        [`${today} 02 Injekcija GLOW50 + RT`, "💉 GLOW50 + RT"],
+        [`${today} 03 Vyvanse 40mg`,           "💊 Vyvanse 40mg"],
+        [`${today} 04 Zajtrk + Suplementi`,    "🍳 Zajtrk + Suplementi"],
+        [`${today} 05 L-Theanine 200mg`,       "🍵 L-Theanine 200mg"],
+        [`${today} 06 Kosilo + Baker 2mg`,     "🥗 Kosilo + Baker 2mg"],
+        [`${today} 07 Vecerja`,                "🍽️ Večerja"],
+        [`${today} 08 VitaminC + Magnezij`,    "🍊 Vitamin C + Magnezij"],
+        [`${today} 09 CJC + IPA Injekcija`,   "💉 CJC + IPA"],
+        [`${today} 10 Spanje`,                 "😴 Spanje"],
+    ];
+
+    const nowMin = parseInt(moment().format("HH"))*60 + parseInt(moment().format("mm"));
+
+    for (const [name, label] of taskDefs) {
+        const info = await getTask(`${name}.md`);
+        if (!info) continue;
+        const isDone = info.status === "done";
+        const tMin = info.time ? parseInt(info.time.split(":")[0])*60 + parseInt(info.time.split(":")[1]) : null;
+        const isLate = !isDone && tMin && tMin < nowMin;
+        const isCurrent = !isDone && tMin && Math.abs(tMin - nowMin) <= 30;
+
+        let rowStyle = "";
+        if (isCurrent) rowStyle = "background:rgba(124,58,237,0.1);border-left:3px solid #7c3aed;";
+        else if (isLate) rowStyle = "background:rgba(239,68,68,0.07);";
+
+        const row = colLeft.createEl("div", {cls:`sd-row${isDone?" sd-done":""}`, attr:{style:rowStyle}});
+        row.createEl("span", {cls:"sd-ico", text: isDone ? "✅" : isLate ? "⚠️" : isCurrent ? "▶️" : "⬜"});
+        row.createEl("span", {cls:"sd-lbl", text: label});
+        row.createEl("span", {cls:"sd-t",   text: info.time || "—"});
+
+        const isVyv = name === `${today} 03 Vyvanse 40mg`;
+        const isVec = name === `${today} 07 Vecerja`;
+        if (!isDone && !isVyv && !isVec) {
+            const db = row.createEl("button", {cls:"sd-btn sd-db", text:"✅"});
+            db.addEventListener("click", async () => {
+                await setDone(`${name}.md`);
+                row.classList.add("sd-done");
+                row.querySelector(".sd-ico").textContent = "✅";
+                db.remove();
+            });
+        }
+    }
+}
+
+// ════════════════════════════════
+// DESNA KOLONA — Šola
+// ════════════════════════════════
+colRight.createEl("div", {cls:"sd-header", text:"🏫 Šola"});
+
+// Koncepti
+colRight.createEl("div", {attr:{style:"font-size:0.8em;color:var(--text-muted);margin:4px 0 2px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;"}, text:"🧩 Koncepti"});
+const konceptFiles = app.vault.getMarkdownFiles()
+    .filter(f => f.path.startsWith("05_SCHOOL/") && f.name.startsWith("Koncept -"))
+    .sort((a,b) => b.stat.mtime - a.stat.mtime);
+
+if (konceptFiles.length === 0) {
+    colRight.createEl("div", {attr:{style:"color:var(--text-muted);font-size:0.82em;padding:4px 8px;"}, text:"Ni konceptnih not."});
+} else {
+    for (const f of konceptFiles.slice(0, 8)) {
+        const row = colRight.createEl("div", {cls:"sd-konc"});
+        const link = row.createEl("a", {cls:"internal-link", text: f.name.replace("Koncept - ","").replace(".md",""), href: f.path});
+        row.createEl("span", {attr:{style:"color:var(--text-muted);font-size:0.78em;"}, text: moment(f.stat.mtime).fromNow()});
+    }
+}
+
+colRight.createEl("hr", {cls:"sd-sep"});
+
+// Naloge
+colRight.createEl("div", {attr:{style:"font-size:0.8em;color:var(--text-muted);margin:4px 0 2px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;"}, text:"📝 Naloge"});
+const nalogaFiles = app.vault.getMarkdownFiles()
+    .filter(f => f.path.startsWith("05_SCHOOL/Naloge/") && !f.name.includes("README"))
+    .sort((a,b) => b.stat.mtime - a.stat.mtime);
+
+if (nalogaFiles.length === 0) {
+    colRight.createEl("div", {attr:{style:"color:var(--text-muted);font-size:0.82em;padding:4px 8px;"}, text:"Ni nalog."});
+} else {
+    for (const f of nalogaFiles.slice(0, 8)) {
+        const row = colRight.createEl("div", {cls:"sd-naloga"});
+        row.createEl("a", {cls:"internal-link", text: f.name.replace("Naloga - ","").replace(".md",""), href: f.path});
+    }
+}
+
+colRight.createEl("hr", {cls:"sd-sep"});
+
+// Izpiti
+colRight.createEl("div", {attr:{style:"font-size:0.8em;color:var(--text-muted);margin:4px 0 2px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;"}, text:"📅 Izpiti"});
+const izpitiFiles = app.vault.getMarkdownFiles()
+    .filter(f => f.path.startsWith("05_SCHOOL/Izpiti/") && !f.name.includes("README"))
+    .sort((a,b) => a.name.localeCompare(b.name));
+
+if (izpitiFiles.length === 0) {
+    colRight.createEl("div", {attr:{style:"color:var(--text-muted);font-size:0.82em;padding:4px 8px;"}, text:"Ni izpitov."});
+} else {
+    for (const f of izpitiFiles) {
+        const row = colRight.createEl("div", {cls:"sd-naloga", attr:{style:"background:#fef3c7;border-left:3px solid #f59e0b;"}});
+        row.createEl("a", {cls:"internal-link", text: f.name.replace(".md",""), href: f.path});
+    }
+}
+
+colRight.createEl("hr", {cls:"sd-sep"});
+
+// Solo učenje
+colRight.createEl("div", {attr:{style:"font-size:0.8em;color:var(--text-muted);margin:4px 0 2px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;"}, text:"🧠 Solo Učenje — Teme"});
+const temeFiles = app.vault.getMarkdownFiles()
+    .filter(f => f.path.startsWith("06_LEARNING/Teme/") && !f.name.includes("README"))
+    .sort((a,b) => b.stat.mtime - a.stat.mtime);
+
+if (temeFiles.length === 0) {
+    colRight.createEl("div", {attr:{style:"color:var(--text-muted);font-size:0.82em;padding:4px 8px;"}, text:"Ni tem."});
+} else {
+    for (const f of temeFiles.slice(0,5)) {
+        const row = colRight.createEl("div", {cls:"sd-konc"});
+        row.createEl("a", {cls:"internal-link", text:f.name.replace(".md",""), href:f.path});
+        row.createEl("span", {attr:{style:"color:var(--text-muted);font-size:0.78em;"}, text: moment(f.stat.mtime).fromNow()});
+    }
+}
+
+// ════════════════════════════════
+// SPODAJ — 3-kolonski pas
+// ════════════════════════════════
+root.createEl("hr", {cls:"sd-sep"});
+const botGrid = root.createEl("div", {cls:"sd-grid3"});
+
+// --- Odprte naloge ---
+const openCol = botGrid.createEl("div");
+openCol.createEl("div", {cls:"sd-header", text:"✅ Odprte Naloge"});
+const allTasks = app.vault.getMarkdownFiles().filter(f => f.path.startsWith("TaskNotes/Tasks/"));
+const openTasks = [];
+for (const file of allTasks) {
+    const c = await app.vault.read(file);
+    const status = c.match(/^status:\s*(.+)$/m)?.[1]?.trim();
+    const title  = c.match(/^title:\s*(.+)$/m)?.[1]?.trim();
+    const sched  = c.match(/^scheduled:\s*(.+)$/m)?.[1]?.trim()?.slice(0,10);
+    const tags   = c.match(/^tags:([\s\S]*?)^[a-zA-Z]/m)?.[1] || "";
+    if (status === "open" && !tags.includes("supplement")) {
+        openTasks.push({title, sched, path: file.path});
+    }
+}
+if (openTasks.length === 0) {
+    openCol.createEl("p", {text:"Vse naloge so opravljene ✅", attr:{style:"color:var(--text-muted);font-style:italic;font-size:0.85em;"}});
+} else {
+    openTasks.sort((a,b) => (a.sched||"z").localeCompare(b.sched||"z"));
+    for (const t of openTasks) {
+        const row = openCol.createEl("div", {cls:"sd-naloga"});
+        row.createEl("a", {cls:"internal-link", text: t.title || t.path.split("/").pop().replace(".md",""), href: t.path});
+        if (t.sched) row.createEl("span", {text:` — ${t.sched}`, attr:{style:"color:var(--text-muted);font-size:0.8em;"}});
+    }
+}
+
+// --- Projekti ---
+const projCol = botGrid.createEl("div");
+projCol.createEl("div", {cls:"sd-header", text:"🔄 Projekti"});
+const projFiles = app.vault.getMarkdownFiles()
+    .filter(f => f.path.startsWith("03_PROJECTS/") && !f.name.includes("README") && !f.name.includes("Hub"))
+    .sort((a,b) => b.stat.mtime - a.stat.mtime);
+if (projFiles.length === 0) {
+    projCol.createEl("p", {text:"Ni aktivnih projektov.", attr:{style:"color:var(--text-muted);font-style:italic;font-size:0.85em;"}});
+} else {
+    for (const f of projFiles.slice(0,8)) {
+        const row = projCol.createEl("div", {cls:"sd-naloga"});
+        const link = row.createEl("a", {cls:"internal-link", text: f.name.replace(".md",""), href: f.path});
+    }
+}
+
+// --- Inbox + Gmail ---
+const inboxCol = botGrid.createEl("div");
+inboxCol.createEl("div", {cls:"sd-header", text:"📥 Inbox + Gmail"});
+
+// Gmail inbox (preberi iz sinhronizirane note)
+const gmailFile = app.vault.getAbstractFileByPath("00_INBOX/📧 Gmail Inbox.md");
+if (gmailFile) {
+    const gc = await app.vault.read(gmailFile);
+    const syncMatch = gc.match(/synced:\s*(.+)/);
+    const syncTime = syncMatch ? syncMatch[1].trim().slice(0,16).replace("T"," ") : "—";
+    const gmailHdr = inboxCol.createEl("div", {attr:{style:"font-size:0.78em;color:var(--text-muted);margin:0 0 4px;display:flex;justify-content:space-between;align-items:center;"}});
+    gmailHdr.createEl("span", {text:"📧 Gmail"});
+    gmailHdr.createEl("span", {text:`sync: ${syncTime}`, attr:{style:"font-size:0.85em;"}});
+
+    // Parse table rows from the sync block
+    const tableMatch = gc.match(/<!-- GMAIL_SYNC_START -->([\s\S]*?)<!-- GMAIL_SYNC_END -->/);
+    if (tableMatch) {
+        const rows = tableMatch[1].split("\n").filter(l => l.startsWith("| ") && !l.includes("---|"));
+        const dataRows = rows.filter(r => !r.includes("| # |")); // skip header
+        for (const r of dataRows.slice(0,6)) {
+            const parts = r.split("|").map(p=>p.trim()).filter(Boolean);
+            if (parts.length < 4) continue;
+            const [ico, from, subj, time] = parts;
+            const row = inboxCol.createEl("div", {attr:{style:`display:flex;align-items:baseline;gap:6px;padding:3px 6px;border-radius:5px;margin:2px 0;font-size:0.82em;background:${ico==="🔴"?"#fee2e2":"var(--background-secondary)"};`}});
+            row.createEl("span", {text:ico, attr:{style:"font-size:1em;min-width:16px;"}});
+            row.createEl("span", {text:subj.replace(/\*\*/g,""), attr:{style:"flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"}});
+            row.createEl("span", {text:time, attr:{style:"color:var(--text-muted);font-size:0.85em;white-space:nowrap;"}});
+        }
+    }
+    inboxCol.createEl("a", {
+        cls:"internal-link",
+        text:"→ Odpri Gmail Inbox",
+        href:"00_INBOX/📧 Gmail Inbox",
+        attr:{style:"font-size:0.8em;color:var(--color-accent);display:block;margin-top:6px;"}
+    });
+    inboxCol.createEl("hr", {cls:"sd-sep"});
+}
+
+// Vault inbox notes
+const inboxFiles = app.vault.getMarkdownFiles()
+    .filter(f => f.path.startsWith("00_INBOX/") && !f.name.includes("README") && !f.name.startsWith("_") && !f.name.includes("Gmail"))
+    .sort((a,b) => b.stat.mtime - a.stat.mtime);
+if (inboxFiles.length === 0) {
+    inboxCol.createEl("p", {text:"Vault inbox je prazen ✅", attr:{style:"color:var(--text-muted);font-style:italic;font-size:0.82em;"}});
+} else {
+    for (const f of inboxFiles.slice(0,5)) {
+        const row = inboxCol.createEl("div", {cls:"sd-naloga", attr:{style:"background:#fef3c7;"}});
+        row.createEl("a", {cls:"internal-link", text: f.name.replace(".md",""), href: f.path});
+    }
+}
+
+// ═══ NAVIGACIJA ════════════════════════════════════════════════════
+root.createEl("hr", {cls:"sd-sep"});
+root.createEl("div", {cls:"sd-header", text:"🔗 Navigacija"});
+const nav = root.createEl("div", {cls:"sd-nav"});
+
+const navLinks = [
+    ["🏫 School Hub",           "05_SCHOOL/School Hub"],
+    ["📚 Predmeti",              "05_SCHOOL/Predmeti/README"],
+    ["📝 Naloge",                "05_SCHOOL/Naloge/README"],
+    ["📅 Izpiti",                "05_SCHOOL/Izpiti"],
+    ["🧠 Learning Hub",          "06_LEARNING/Learning Hub"],
+    ["🌳 Skill Trees",           "06_LEARNING/Skill Trees"],
+    ["📋 Study Plans",           "06_LEARNING/Study Plans"],
+    ["🔬 Solo Projekti",         "06_LEARNING/Projects"],
+    ["💊 Supplement Tracker",    "09_DASHBOARDS/💊 Supplement Tracker"],
+    ["💊 Peptide Urnik",         "02_AREAS/Peptidni Dnevnik/Dnevni Urnik - Peptide Protocol"],
+    ["🔄 Projekti Hub",          "03_PROJECTS/Projects Hub"],
+    ["📥 Inbox",                 "00_INBOX/_Inbox"],
+    ["🤖 AI Prompti",            "07_AI/AI Prompti"],
+    ["📦 Templates",             "08_TEMPLATES"],
+];
+
+for (const [label, path] of navLinks) {
+    const a = nav.createEl("a", {cls:"sd-navbtn internal-link", text:label, href:path});
+}
+```

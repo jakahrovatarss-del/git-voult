@@ -56,16 +56,16 @@ budget: "€255-305"
 
 ### [ ] PRED PRVO INJEKCIJO (Dan 0)
 
-- [ ] 2× GLOW50 viale (€90)
-- [ ] 2× RT viale (€50, za uvajanje — do 4× za cikel)
-- [ ] 1× CJC+IPA viala (€35)
-- [ ] 2× BAC10 viale (€10)
-- [ ] Inzulinske brizge U100 (100+ kom)
-- [ ] Alkoholni tamponi (100+ kom)
-- [ ] Suplementi: CoQ10, NMN, Vitamin C, Collagen, Elektroliti
-- [ ] Suhi komprese
-- [ ] Laboratorij (opcijsko): IGF-1, CRP
-- [ ] Tehtnica + fotografije (pred ciklom)
+- [x] 2× GLOW50 viale (€90) ✅ 2026-06-12
+- [x] 2× RT viale (€50, za uvajanje — do 4× za cikel) ✅ 2026-06-12
+- [x] 1× CJC+IPA viala (€35) ✅ 2026-06-12
+- [x] 2× BAC10 viale (€10) ✅ 2026-06-12
+- [x] Inzulinske brizge U100 (100+ kom) ✅ 2026-06-12
+- [x] Alkoholni tamponi (100+ kom) ✅ 2026-06-12
+- [x] Suplementi: CoQ10, NMN, Vitamin C, Collagen, Elektroliti ✅ 2026-06-12
+- [x] Suhi komprese ✅ 2026-06-12
+- [x] Laboratorij (opcijsko): IGF-1, CRP ✅ 2026-06-12
+- [x] Tehtnica + fotografije (pred ciklom) ✅ 2026-06-12
 
 ### [ ] REKONSTITUCIJA (teden 0, dan 1)
 

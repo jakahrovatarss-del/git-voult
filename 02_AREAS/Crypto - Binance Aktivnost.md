@@ -25,8 +25,8 @@ Evidenca aktivnosti na Binance računu.
 Fiat deposit je bil zavrnjen — preveriti vzrok v Binance FAQ ali kontaktirati podporo.
 
 ## Naslednji koraki
-- [ ] Preveriti zakaj je deposit 300 USD propadel
-- [ ] Potrditi prejem dviga BTC na zunanji denarnici
+- [x] Preveriti zakaj je deposit 300 USD propadel ✅ 2026-06-12
+- [x] Potrditi prejem dviga BTC na zunanji denarnici ✅ 2026-06-12
 
 ## Povezave
 - [[02_AREAS/Finance - Mesečni Stroški]]

@@ -2,10 +2,10 @@
 title: 🥗 Kosilo + Baker 2mg
 status: open
 priority: high
-scheduled: 2026-06-12T15:30
+scheduled: 2026-06-12T13:00
 due: 2026-06-12
 dateCreated: 2026-06-12T11:10:56.000+02:00
-dateModified: 2026-06-12T11:17:28.000+02:00
+dateModified: 2026-06-12T11:53:22.000+02:00
 tags:
   - task
   - supplement
@@ -18,7 +18,10 @@ projects:
 
 # 🥗 Kosilo + Baker 2mg
 
-⏰ **Čas: 15:30**
+⏰ **Čas: 13:00**
+> 🔄 **AUTO** ob 13:51: 5h15m po Vyvanse
+> 🔄 **AUTO** ob 13:31: 5h15m po Vyvanse
+> 🔄 **AUTO** ob 13:24: 5h15m po Vyvanse
 
 > 🔄 **AUTO-POSODOBLJENO ob 11:17** — 5h15m po Vyvanse
 

@@ -2,10 +2,10 @@
 title: 🍳 Zajtrk + Jutranji Suplementi
 status: done
 priority: urgent
-scheduled: 2026-06-12T10:30
+scheduled: 2026-06-12T08:00
 due: 2026-06-12
 dateCreated: 2026-06-12T11:10:56.000+02:00
-dateModified: 2026-06-12T11:17:28.000+02:00
+dateModified: 2026-06-12T11:53:22.000+02:00
 tags:
   - task
   - supplement
@@ -23,7 +23,10 @@ completedDate: 2026-06-12
 
 # 🍳 Zajtrk + Jutranji Suplementi
 
-⏰ **Čas: 10:30**
+⏰ **Čas: 08:00**
+> 🔄 **AUTO** ob 13:51: Vzami do 12:00 (1h po Vyvanse!)
+> 🔄 **AUTO** ob 13:31: Vzami do 12:00 (1h po Vyvanse!)
+> 🔄 **AUTO** ob 13:24: Vzami do 12:00 (1h po Vyvanse!)
 
 > 🔄 **AUTO-POSODOBLJENO ob 11:17** — Vzemi do 11:15! (1h po Vyvanse)
 
