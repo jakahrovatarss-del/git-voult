@@ -1,0 +1,40 @@
+[11:17:09] ==================================================
+[11:17:09] 🚀 Supplement Watcher zagnan
+[11:17:09] 📁 Opazujem: /sessions/elegant-trusting-feynman/mnt/obsidian/TaskNotes/Tasks
+[11:17:09] ==================================================
+[11:17:09] Čaka na označitve v Obsidianu...
+[11:17:09]   → Označi Vyvanse done = posodobi zajtrk/theanine/kosilo
+[11:17:09]   → Označi Večerja done = posodobi CJC+IPA/spanje
+[11:17:09]   (Ctrl+C za zaustavitev)
+
+[11:17:26] ==================================================
+[11:17:26] 🚀 Supplement Watcher zagnan
+[11:17:26] 📁 Opazujem: /sessions/elegant-trusting-feynman/mnt/obsidian/TaskNotes/Tasks
+[11:17:26] ==================================================
+[11:17:26] Čaka na označitve v Obsidianu...
+[11:17:26]   → Označi Vyvanse done = posodobi zajtrk/theanine/kosilo
+[11:17:26]   → Označi Večerja done = posodobi CJC+IPA/spanje
+[11:17:26]   (Ctrl+C za zaustavitev)
+
+[11:17:28] 
+🎯 VYVANSE označen done! Čas: 10:15
+[11:17:28] 🔄 Vyvanse ob 10:15 → Računam odvisnosti...
+[11:17:28]   → Posodobljen: 2026-06-12 04 Zajtrk + Suplementi.md → 10:30
+[11:17:28]   → Posodobljen: 2026-06-12 05 L-Theanine 200mg.md → 12:30
+[11:17:28]   → Posodobljen: 2026-06-12 06 Kosilo + Baker 2mg.md → 15:30
+[11:17:28] ✅ Vyvanse veriga posodobljena: Zajtrk 10:30 | Theanine 12:30 | Kosilo 15:30
+[11:17:39] ==================================================
+[11:17:39] 🚀 Supplement Watcher zagnan
+[11:17:39] 📁 Opazujem: /sessions/elegant-trusting-feynman/mnt/obsidian/TaskNotes/Tasks
+[11:17:39] ==================================================
+[11:17:39] Čaka na označitve v Obsidianu...
+[11:17:39]   → Označi Vyvanse done = posodobi zajtrk/theanine/kosilo
+[11:17:39]   → Označi Večerja done = posodobi CJC+IPA/spanje
+[11:17:39]   (Ctrl+C za zaustavitev)
+
+[11:17:41] 
+🎯 VEČERJA označena done! Čas: 20:30
+[11:17:41] 🔄 Večerja ob 20:30 → Računam CJC+IPA...
+[11:17:41]   → Posodobljen: 2026-06-12 09 CJC + IPA Injekcija.md → 23:30
+[11:17:41]   → Posodobljen: 2026-06-12 10 Spanje.md → 00:15
+[11:17:41] ✅ Večerja veriga posodobljena: CJC 23:30 | Spanje 00:15

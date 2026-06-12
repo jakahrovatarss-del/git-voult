@@ -68,3 +68,5 @@ views:
     options:
       columnWidth: 280
       hideEmptyColumns: false
+  - type: tasknotesKanban
+    name: View
