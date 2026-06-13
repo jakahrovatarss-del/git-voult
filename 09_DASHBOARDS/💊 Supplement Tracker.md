@@ -6,6 +6,7 @@ tags:
 cssclasses:
   - wide-page
 ---
+Human: 2026-06-13 — Vyvanse ob 11:30 ✅
 
 ```dataviewjs
 // ═══════════════════════════════════════════════════════════════════════
@@ -430,4 +431,4 @@ if (seLog.length > 0) {
 
 > 💡 **Navodila:** Vsak dan zvečer vnesi počutje, energijo, fokus in spanje. Tracker avtomatsko bere, kdaj si vzel suplemente iz TaskNotes.
 > 
-> 🔗 [[09_DASHBOARDS/🏠 Dnevni Dashboard|← Dnevni Dashboard]] · [[02_AREAS/Peptidni Dnevnik/Dnevni Urnik - Peptide Protocol|💊 Peptide Urnik]]
+> 🔗 [[2026-06-13|← Dnevni Dashboard]] · [[02_AREAS/Peptidni Dnevnik/Dnevni Urnik - Peptide Protocol|💊 Peptide Urnik]]

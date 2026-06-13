@@ -25,7 +25,7 @@ tags:
 
 # 📅 <% tp.date.now("dddd, DD. MMMM YYYY") %>
 
-> [[09_DASHBOARDS/🏠 Dnevni Dashboard|🏠 Glavni Dashboard]] | [[<% tp.date.now("YYYY-MM-DD", -1) %>|◀ Včeraj]] | [[<% tp.date.now("YYYY-MM-DD", 1) %>|Jutri ▶]]
+> [[2026-06-13|🏠 Glavni Dashboard]] | [[<% tp.date.now("YYYY-MM-DD", -1) %>|◀ Včeraj]] | [[<% tp.date.now("YYYY-MM-DD", 1) %>|Jutri ▶]]
 
 ---
 
@@ -94,5 +94,5 @@ sort by scheduled
 
 ## 🔗 Povezave
 
-- [[09_DASHBOARDS/🏠 Dnevni Dashboard|🏠 Dnevni Dashboard]]
+- [[2026-06-13|2026-06-13]]
 - [[02_AREAS/Peptidni Dnevnik/Dnevni Urnik - Peptide Protocol|💊 Peptide Urnik]]
