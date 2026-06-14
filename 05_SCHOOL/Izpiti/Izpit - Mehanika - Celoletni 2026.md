@@ -116,6 +116,43 @@ $$\boxed{\varphi_0 = \frac{1}{2}\arctan\frac{2\tau_{xy}}{\sigma_x - \sigma_y}}$$
 
 ---
 
+## BLOK 3.5 — Hipoteze porušitve ⭐⭐⭐
+
+**→ [[Koncept - Hipoteze Porusitve]] | [[Naloga - Mehanika - Izpit Feb2019 - Tresca Von Mises]]**
+
+### Algoritem:
+
+```
+1. Iz σij izračunaj σ1 ≥ σ2 ≥ σ3 (Mohrova metoda ali lastne vrednosti)
+2. Tresca:    σ_ekv = σ1 − σ3  (max − min!)
+3. Von Mises: σ_ekv = √[½((σ1−σ2)²+(σ2−σ3)²+(σ3−σ1)²)]
+4. Preveri: σ_ekv ≤ σ_dop?
+```
+
+### Formule:
+
+$$\boxed{\sigma_{ekv,T} = \sigma_1 - \sigma_3}$$
+
+$$\boxed{\sigma_{ekv,VM} = \sqrt{\frac{1}{2}\left[(\sigma_1-\sigma_2)^2 + (\sigma_2-\sigma_3)^2 + (\sigma_3-\sigma_1)^2\right]}}$$
+
+**2D poenostavitev** ($\sigma_x = \sigma$, $\tau_{xy} = \tau$, ostalo 0):
+
+$$\sigma_{ekv,VM} = \sqrt{\sigma^2 + 3\tau^2}$$
+
+### Primerjava:
+
+| | Tresca | Von Mises |
+|--|--------|-----------|
+| σ_ekv | **večji** (bolj konzervativna) | manjši |
+| Osnova | max strižna napetost | energija oblike |
+| Za izpit | pogosteje zavrne | bliže eksperimentu |
+
+> ⚠️ **Razvrstitev σ₁ ≥ σ₂ ≥ σ₃ je obvezna!** — $\sigma_z = 0$ ni nujno $\sigma_3$!
+>
+> **Primer (Feb 2019):** σ₁=+385.4, σ₂=0, σ₃=−285.4 MPa → Tresca=670.8 MPa ❌, Von Mises=583.1 MPa ✓
+
+---
+
 ## BLOK 4 — Euler Uklon ⭐⭐
 
 **→ [[Koncept - Euler Uklon]]**
@@ -150,6 +187,16 @@ $$\tau_{max} = \frac{M_t}{W_t}, \qquad W_t = \frac{\pi d^3}{16} \quad \text{(pol
 $$\varphi = \frac{M_t \cdot L}{G \cdot I_p}, \qquad I_p = \frac{\pi d^4}{32}$$
 
 $$G_{jeklo} \approx 80\ 000\ \text{MPa} = 8 \cdot 10^4\ \text{kN/cm}^2$$
+
+### Tankosteni zaprti prerezi — Bredt:
+
+$$\boxed{\tau = \frac{M_t}{2 \cdot A_m \cdot t}}$$
+
+- $A_m$ = ploščina znotraj **srednje linije** (ne zunanja, ne notranja kontura!)
+- Škatlast prerez $B \times H$, debelina $t$: $A_m = (B-t)(H-t)$
+- Ko $t = \text{konst.}$: $\tau = \text{konst.}$ po vsem obodu
+
+> **Primer (Feb 2019):** $10 \times 15$ cm, $t=1$ cm → $A_m = 9 \times 14 = 126\ \text{cm}^2$, $M_t=3\ \text{kNm}$ → $\tau=11{,}9\ \text{MPa}$
 
 ### Kombinirano (upogib + torzija):
 
@@ -206,9 +253,18 @@ EULER UKLON:
   lu: β=1(členki), 0.7, 0.5, 2.0(prosto)
 
 TORZIJA:
-  τ = Mt/Wt,  Wt = πd³/16
+  τ = Mt/Wt,  Wt = πd³/16  (polni krog)
   φ = Mt·L/(G·Ip),  Ip = πd⁴/32
   σekv = √(σ²+3τ²)
+  BREDT (zaprti tankosteni): τ = Mt/(2·Am·t)
+    Am = ploščina znotraj srednje linije!
+
+HIPOTEZE PORUŠITVE:
+  σ1 ≥ σ2 ≥ σ3  ← razvrstiti OBVEZNO!
+  Tresca:    σekv = σ1 − σ3
+  Von Mises: σekv = √[½((σ1−σ2)²+(σ2−σ3)²+(σ3−σ1)²)]
+  2D: σekv = √(σ²+3τ²)
+  Tresca > Von Mises → Tresca bolj konzervativna
 ═══════════════════════════════════════════
 ```
 
@@ -222,6 +278,25 @@ TORZIJA:
 4. **Napetostni tenzor:** $\tau_{xy}$ je nediago­nalnih — paziti na predznak!
 5. **Euler:** $I_{min}$ (ne max!) in pravilni $\beta$
 6. **Enote:** vse v enakomernih enotah! (kN/cm² ali MPa, ne mešati)
+7. **Tresca/Von Mises:** $\sigma_z = 0$ ni nujno $\sigma_3$ — razvrstiti $\sigma_1 \geq \sigma_2 \geq \sigma_3$ najprej!
+8. **Bredt $A_m$:** ploščina ZNOTRAJ SREDNJE LINIJE — ne zunanja ($B \times H$) in ne notranja!
+
+---
+
+## Vzorci na izpitih (Jul 2018 + Feb 2019)
+
+| Naloga | Jul 2018 | Feb 2019 |
+|--------|----------|----------|
+| N1 | Statika + NTM | Statika + NTM |
+| N2 | Upogib (dimenzioniranje) | Upogib (Steiner) |
+| N3 | **Čisto strižno stanje** (Mohr, φ₀=45°) | **Tresca + Von Mises** (3D tenzor) |
+| N4 | Dimenzioniranje prereza (les, h:b=2:1) | **Torzija Bredt** (škatlast prerez) |
+
+**Pogoste teme na izpitu:**
+- NTM diagrami (vsak izpit!)
+- Upogib / Steiner / dimenzioniranje (vsak izpit!)
+- Napetostno stanje / Mohr — pogosto
+- Tresca/Von Mises + Bredt torzija — pojavljata se skupaj (2019)
 
 ---
 
@@ -234,6 +309,8 @@ TORZIJA:
 | Napetostno stanje | [[Koncept - Napetostno stanje]] | IMG_1183.pdf str. 1-2 |
 | Euler uklon | [[Koncept - Euler Uklon]] | IMG_1241.pdf |
 | Torzija | [[Koncept - Torzija]] | IMG_1183.pdf str. 50 |
+| Bredt torzija | [[Naloga - Mehanika - Izpit Feb2019 - Torzija Bredt skatlast]] | — |
+| Hipoteze porušitve | [[Koncept - Hipoteze Porusitve]] | — |
 | Kinematika | [[Koncept - Kinematika Mehanizmi]] | IMG_1183.pdf str. 14-15 |
 | Vztrajnostni moment | [[Koncept - Vztrajnostni moment]] | IMG_1241.pdf |
 

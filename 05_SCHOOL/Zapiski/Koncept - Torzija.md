@@ -171,6 +171,7 @@ $$M_{ekv} = \frac{1}{2}\left(M + \sqrt{M^2 + M_t^2}\right) \quad \text{(Tresca)}
 ## Rešene naloge
 
 - Primer iz izpita Statike 1 (7.1.2001): $G = 750$ N, $R = 5$ cm, $L = 40$ cm
+- [[Naloga - Mehanika - Izpit Feb2019 - Torzija Bredt skatlast]] — škatlast prerez 10×15 cm, $M_t = F \cdot a$, Bredt formula
 
 ---
 
@@ -179,5 +180,6 @@ $$M_{ekv} = \frac{1}{2}\left(M + \sqrt{M^2 + M_t^2}\right) \quad \text{(Tresca)}
 - [[Koncept - Napetostno stanje]]
 - [[Koncept - Upogib]]
 - [[Koncept - Vztrajnostni moment]]
+- [[Naloga - Mehanika - Izpit Feb2019 - Torzija Bredt skatlast]]
 - [[Mehanika Hub]]
 - [[Izpit - Mehanika - Celoletni 2026]]

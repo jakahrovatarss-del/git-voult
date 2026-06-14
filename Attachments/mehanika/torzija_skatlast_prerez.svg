@@ -1,0 +1,103 @@
+<svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif" font-size="12">
+
+  <text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a2e">Bredt — torzija škatlastega prereza</text>
+
+  <!-- === ŠKATLAST PREREZ === -->
+  <g transform="translate(50, 45)">
+    <text x="100" y="16" text-anchor="middle" fill="#2c3e50" font-weight="bold">Prerez (10×15 cm, t=1 cm)</text>
+
+    <!-- Zunanja kontura -->
+    <rect x="20" y="30" width="160" height="240" fill="#c8d8e8" stroke="#2c5f8a" stroke-width="2"/>
+    <!-- Notranja kontura (odštej stene t=1cm → 16px) -->
+    <rect x="36" y="46" width="128" height="208" fill="white" stroke="#2c5f8a" stroke-width="1.5"/>
+
+    <!-- Dimenzije -->
+    <!-- Širina 10 cm = 160px (10cm * 16px/cm) -->
+    <line x1="20" y1="285" x2="180" y2="285" stroke="#555" stroke-width="1"/>
+    <line x1="20" y1="280" x2="20" y2="290" stroke="#555" stroke-width="1"/>
+    <line x1="180" y1="280" x2="180" y2="290" stroke="#555" stroke-width="1"/>
+    <text x="100" y="300" text-anchor="middle" fill="#555" font-size="11">10 cm</text>
+
+    <!-- Višina 15 cm -->
+    <line x1="190" y1="30" x2="190" y2="270" stroke="#555" stroke-width="1"/>
+    <line x1="185" y1="30" x2="195" y2="30" stroke="#555" stroke-width="1"/>
+    <line x1="185" y1="270" x2="195" y2="270" stroke="#555" stroke-width="1"/>
+    <text x="205" y="155" fill="#555" font-size="11">15 cm</text>
+
+    <!-- t oznaka -->
+    <line x1="20" y1="150" x2="36" y2="150" stroke="#e67e22" stroke-width="2"/>
+    <text x="0" y="148" fill="#e67e22" font-size="11">t=1</text>
+
+    <!-- Am oznaka (ploščina srednje linije) -->
+    <text x="100" y="150" text-anchor="middle" fill="#27ae60" font-size="11" font-weight="bold">A_m</text>
+    <text x="100" y="165" text-anchor="middle" fill="#27ae60" font-size="10">= 9×14=126 cm²</text>
+
+    <!-- τ puščice po stenah (Bredt: enakomerne) -->
+    <!-- Leva stena - navzgor -->
+    <line x1="28" y1="200" x2="28" y2="160" stroke="#c0392b" stroke-width="2" marker-end="url(#tArr)"/>
+    <!-- Zgornja stena - desno -->
+    <line x1="60" y1="38" x2="100" y2="38" stroke="#c0392b" stroke-width="2" marker-end="url(#tArr)"/>
+    <!-- Desna stena - navzdol -->
+    <line x1="172" y1="100" x2="172" y2="140" stroke="#c0392b" stroke-width="2" marker-end="url(#tArr)"/>
+    <!-- Spodnja stena - levo -->
+    <line x1="140" y1="262" x2="100" y2="262" stroke="#c0392b" stroke-width="2" marker-end="url(#tArr)"/>
+
+    <!-- τ = konst oznaka -->
+    <text x="100" y="318" text-anchor="middle" fill="#c0392b" font-size="11" font-weight="bold">τ = konst. po obodu (t=konst.)</text>
+  </g>
+
+  <!-- === PALICA IN OBREMENITEV === -->
+  <g transform="translate(280, 45)">
+    <text x="180" y="16" text-anchor="middle" fill="#2c3e50" font-weight="bold">Palica L=4a=1.2 m</text>
+
+    <!-- Palica -->
+    <rect x="40" y="100" width="280" height="50" fill="#d5e8f7" stroke="#2c5f8a" stroke-width="2"/>
+
+    <!-- Vpetje levo -->
+    <polygon points="40,95 15,88 15,160" fill="#e8c84a" stroke="#8a6200" stroke-width="2"/>
+    <line x1="15" y1="80" x2="15" y2="175" stroke="#8a6200" stroke-width="2"/>
+
+    <!-- Sila F na desni (z ročico a) -->
+    <line x1="320" y1="50" x2="320" y2="100" stroke="#c0392b" stroke-width="2.5" marker-end="url(#fArr)"/>
+    <text x="325" y="75" fill="#c0392b" font-weight="bold">F = 10 kN</text>
+
+    <!-- Ročica a -->
+    <line x1="320" y1="100" x2="320" y2="125" stroke="#e67e22" stroke-width="2" stroke-dasharray="5,3"/>
+    <line x1="290" y1="125" x2="350" y2="125" stroke="#e67e22" stroke-width="1.5"/>
+    <text x="355" y="129" fill="#e67e22" font-size="11">a = 0.3 m</text>
+
+    <!-- Mt puščica -->
+    <path d="M 50,125 A 20,20 0 0 1 50,100" fill="none" stroke="#8e44ad" stroke-width="2.5" marker-end="url(#mArr)"/>
+    <text x="5" y="112" fill="#8e44ad" font-weight="bold" font-size="11">M_t=3kNm</text>
+    <text x="5" y="126" fill="#8e44ad" font-size="10">= F·a (konst.)</text>
+
+    <!-- Dolžina L -->
+    <line x1="40" y1="165" x2="320" y2="165" stroke="#555" stroke-width="1"/>
+    <line x1="40" y1="160" x2="40" y2="170" stroke="#555" stroke-width="1"/>
+    <line x1="320" y1="160" x2="320" y2="170" stroke="#555" stroke-width="1"/>
+    <text x="180" y="180" text-anchor="middle" fill="#555" font-size="11">L = 4a = 1.2 m</text>
+
+    <!-- τ vzdolž palice (konst.) -->
+    <text x="180" y="220" text-anchor="middle" fill="#c0392b" font-size="12" font-weight="bold">τ = konst. vzdolž celotne palice</text>
+    <text x="180" y="238" text-anchor="middle" fill="#555" font-size="11">(M_t = F·a = konst. po dolžini)</text>
+  </g>
+
+  <!-- === FORMULA BREDT === -->
+  <rect x="50" y="330" width="600" height="42" rx="6" fill="#f0fff0" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="60" y="348" font-weight="bold" fill="#27ae60" font-size="13">Bredt (tankostenski zaprti profil):</text>
+  <text x="60" y="365" fill="#c0392b" font-size="13" font-weight="bold">τ = M_t / (2 · A_m · t)</text>
+  <text x="280" y="365" fill="#555" font-size="11">A_m = ploščina znotraj srednje linije stene</text>
+  <text x="280" y="350" fill="#555" font-size="11">t = debelina stene (pri konst. t → τ = konst. po obodu)</text>
+
+  <defs>
+    <marker id="tArr" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#c0392b"/>
+    </marker>
+    <marker id="fArr" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#c0392b"/>
+    </marker>
+    <marker id="mArr" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#8e44ad"/>
+    </marker>
+  </defs>
+</svg>

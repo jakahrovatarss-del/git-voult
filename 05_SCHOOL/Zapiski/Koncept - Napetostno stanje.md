@@ -334,6 +334,8 @@ KORAK 6: Razvrsti σ1 ≥ σ2 ≥ σ3
 - [[Naloga - Mehanika - Tenzorska analiza - deformacijski tenzor]] — εij → σij → σ1,2,3 (IMG_1241 str. 3-5)
 - [[Naloga - Mehanika - Tenzorska analiza - aluminijast kvader]] — 3D Hooke, F iz εz
 - [[Naloga - Mehanika - Tenzorska analiza - nagnjene ravnine]] — σφ, τφ na zasučeni ravnini
+- [[Naloga - Mehanika - Izpit Jul2018 - Cisto strizno stanje]] — σx=σy=0, τxy=50 MPa → φ₀=45° vedno
+- [[Naloga - Mehanika - Izpit Feb2019 - Tresca Von Mises]] — 3D tenzor → glavne napetosti → Tresca/Von Mises
 - Primer iz izpita 9.9.2006 — σij tenzor → σ1,2 (2D, zgoraj)
 
 ---
@@ -346,5 +348,8 @@ KORAK 6: Razvrsti σ1 ≥ σ2 ≥ σ3
 - [[Koncept - Vztrajnostni moment]]
 - [[Naloga - Mehanika - Tenzorska analiza - aluminijast kvader]]
 - [[Naloga - Mehanika - Tenzorska analiza - nagnjene ravnine]]
+- [[Naloga - Mehanika - Izpit Feb2019 - Tresca Von Mises]]
+- [[Naloga - Mehanika - Izpit Jul2018 - Cisto strizno stanje]]
+- [[Koncept - Hipoteze Porusitve]]
 - [[Mehanika Hub]]
 - [[Izpit - Mehanika - Celoletni 2026]]
