@@ -89,7 +89,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Agartha.md",
+                "file": "09_DASHBOARDS/2026-06-13.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -104,7 +104,41 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Agartha"
+              "title": "2026-06-13"
+            }
+          },
+          {
+            "id": "f0dc7f759f32643a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "09_DASHBOARDS/2026-06-13.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "2026-06-13"
+            }
+          },
+          {
+            "id": "7f05540c6601ce0b",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ],
@@ -199,7 +233,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "TaskNotes/Views/kanban-default.base",
+            "file": "09_DASHBOARDS/2026-06-13.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -244,6 +278,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "templater-obsidian:Templater": false,
       "obsidian-git:Open Git source control": false,
       "tasknotes:Open mini calendar view": false,
       "tasknotes:Open calendar view": false,
@@ -269,6 +304,11 @@
   },
   "active": "45a4681c45932b20",
   "lastOpenFiles": [
+    "02_AREAS/Peptidni Dnevnik/Dnevni Urnik - Peptide Protocol.md",
+    "09_DASHBOARDS/2026-06-13.md",
+    "09_DASHBOARDS/Daily",
+    "09_DASHBOARDS/💊 Supplement Tracker.md",
+    "Agartha.md",
     "Untitled 3.md",
     "Excalidraw/Drawing 2026-03-26 13.13.12.excalidraw.md",
     "Excalidraw/Drawing 2026-03-26 13.11.45.excalidraw.md",
@@ -293,11 +333,7 @@
     "TaskNotes/Tasks/Toni marele ljubljana.md",
     "TaskNotes/Tasks/Vaje.md",
     "TaskNotes/Tasks/Koncert v filhamorniji.md",
-    "TaskNotes/Tasks/9-12 skupna vaja.md",
-    "TaskNotes/Tasks/Vaje trobila 18.md",
     "TaskNotes/Views/agenda-default.base",
-    "TaskNotes/Tasks/za arrs trea raziskt pa poklic klaro pa se zmen za to nov projekt ka goran tezi.md",
-    "TaskNotes/Tasks/Naroč odganjalce za na vrt.md",
     "Attachments/Pasted image 20260301174233.png",
     "Attachments/Pasted image 20260301174335.png",
     "Attachments/Pasted image 20260301174152.png",
@@ -312,7 +348,6 @@
     "Attachments/mehanika/Wood_As_An_Engineering_Material.pdf",
     "Attachments/mehanika/ZapiskiUvod.pdf",
     "Attachments/mehanika/vrsteKonstrukcijLes.pdf",
-    "Attachments/mehanika/statikaNalogeJesenko.pdf",
     "Attachments/20260222_133114.jpg",
     "Attachments/20260222_133115.jpg"
   ]
