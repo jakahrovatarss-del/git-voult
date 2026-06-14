@@ -36,6 +36,10 @@ $$\sigma_{\varphi} = \frac{\sigma_x + \sigma_y}{2} + \frac{\sigma_x - \sigma_y}{
 
 $$\tau_{\varphi} = -\frac{\sigma_x - \sigma_y}{2}\sin 2\varphi + \tau_{xy}\cos 2\varphi$$
 
+> ⚠️ **Pozor:** $\varphi$ je kot **normale** na ravnino od osi x (ne ravnine same!). V formulah nastopa $2\varphi$.
+
+> **Primer:** [[Naloga - Mehanika - Tenzorska analiza - nagnjene ravnine]] — 4 primeri z izračunom σ_φ in τ_φ
+
 ---
 
 ## Glavne napetosti σ₁,₂
@@ -247,6 +251,10 @@ $$\varepsilon_z = \frac{1}{E}[\sigma_z - \nu(\sigma_x + \sigma_y)]$$
 $$\gamma_{xy} = \frac{\tau_{xy}}{G}, \quad \gamma_{xz} = \frac{\tau_{xz}}{G}, \quad \gamma_{yz} = \frac{\tau_{yz}}{G}$$
 
 > 🔍 **Fizikalni pomen:** $\nu$ opisuje, koliko se material v prečni smeri skrči, ko ga nategnemo vzdolžno. Za jeklo $\nu \approx 0{,}3$ — 30% prečnega skrčka glede na vzdolžni nateg.
+
+> ⚠️ **Ključna napaka:** Deformacija $\varepsilon_z$ je odvisna od **vseh treh** napetosti (Poissonov efekt). Zanemaritev $\nu$ pri kvaderju → 21% napaka!
+
+> **Primer:** [[Naloga - Mehanika - Tenzorska analiza - aluminijast kvader]] — F iz pogoja ΔH z upoštevanjem Poissona
 
 ---
 
