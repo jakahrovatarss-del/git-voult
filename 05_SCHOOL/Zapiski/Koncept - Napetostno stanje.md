@@ -194,10 +194,135 @@ $$\sigma_{ekv} = \sqrt{\sigma^2 + 3\tau^2} \leq \sigma_{dop} \quad \text{(Von Mi
 
 ---
 
+---
+
+## 3D Napetostno stanje — Hookov zakon in Laméjeve konstante
+
+> ℹ️ Ta razdelek se nanaša na **tenzorsko analizo** — kadar je dano deformacijsko stanje εij in iščemo napetosti σij.
+
+### Materialne konstante
+
+Iz $E$ (Young) in $\nu$ (Poisson) izpeljemo dve Laméjevi konstanti:
+
+$$\boxed{\lambda = \frac{E \nu}{(1+\nu)(1-2\nu)}}$$
+
+$$\boxed{G = \frac{E}{2(1+\nu)}}$$
+
+- $\lambda$ [MPa] — 1. Laméjeva konstanta (poveže volumsko dilatacijo z napetostjo)
+- $G$ [MPa] — strižni modul
+
+**Za jeklo** ($E = 210\,000$ MPa, $\nu = 0{,}3$):
+$$\lambda = \frac{210000 \cdot 0{,}3}{1{,}3 \cdot 0{,}4} = 121\,154\ \text{MPa}, \qquad G = \frac{210000}{2 \cdot 1{,}3} = 80\,769\ \text{MPa}$$
+
+> **glej:** [[Koncept - Torzija#Formule za prereze]]
+
+### Volumska dilatacija
+
+$$\boxed{\varepsilon_v = \varepsilon_x + \varepsilon_y + \varepsilon_z = \text{sled}(\varepsilon_{ij})}$$
+
+> 🔍 Volumska dilatacija = relativna sprememba prostornine telesa. Sled tenzorja = vsota diagonalnih komponent.
+
+### Hookov zakon v 3D (tenzorska oblika)
+
+$$\boxed{\sigma_{ij} = \lambda \varepsilon_v \delta_{ij} + 2G\,\varepsilon_{ij}}$$
+
+kjer je $\delta_{ij}$ Kroneckerjev delta ($\delta_{ii}=1$, $\delta_{ij}=0$ za $i\neq j$).
+
+**Eksplicitno za vsako komponento:**
+
+$$\sigma_x = \lambda\varepsilon_v + 2G\varepsilon_x, \quad \sigma_y = \lambda\varepsilon_v + 2G\varepsilon_y, \quad \sigma_z = \lambda\varepsilon_v + 2G\varepsilon_z$$
+
+$$\tau_{xy} = 2G\varepsilon_{xy}, \quad \tau_{xz} = 2G\varepsilon_{xz}, \quad \tau_{yz} = 2G\varepsilon_{yz}$$
+
+> ⚠️ **Pozor na faktor 2:** V inženirski notaciji je $\gamma_{xy} = 2\varepsilon_{xy}$ (tehnični strižni kot). Tenzorska komponenta $\varepsilon_{xy}$ je torej **polovica** tehničnega strižnega kota!
+
+### Inverz — deformacije iz napetosti
+
+$$\varepsilon_x = \frac{1}{E}[\sigma_x - \nu(\sigma_y + \sigma_z)]$$
+$$\varepsilon_y = \frac{1}{E}[\sigma_y - \nu(\sigma_x + \sigma_z)]$$
+$$\varepsilon_z = \frac{1}{E}[\sigma_z - \nu(\sigma_x + \sigma_y)]$$
+$$\gamma_{xy} = \frac{\tau_{xy}}{G}, \quad \gamma_{xz} = \frac{\tau_{xz}}{G}, \quad \gamma_{yz} = \frac{\tau_{yz}}{G}$$
+
+> 🔍 **Fizikalni pomen:** $\nu$ opisuje, koliko se material v prečni smeri skrči, ko ga nategnemo vzdolžno. Za jeklo $\nu \approx 0{,}3$ — 30% prečnega skrčka glede na vzdolžni nateg.
+
+---
+
+## Lastne vrednosti tenzorja — 3D glavne napetosti
+
+Ko imamo 3D napetostni tenzor:
+
+$$\sigma_{ij} = \begin{pmatrix} \sigma_x & \tau_{xy} & \tau_{xz} \\ \tau_{xy} & \sigma_y & \tau_{yz} \\ \tau_{xz} & \tau_{yz} & \sigma_z \end{pmatrix}$$
+
+Glavne napetosti $\sigma_1, \sigma_2, \sigma_3$ so lastne vrednosti tega tenzorja:
+
+$$\det(\sigma_{ij} - \sigma \delta_{ij}) = 0$$
+
+### Karakteristična enačba:
+
+$$\sigma^3 - I_1 \sigma^2 + I_2 \sigma - I_3 = 0$$
+
+kjer so **invariante tenzorja napetosti**:
+
+$$I_1 = \sigma_x + \sigma_y + \sigma_z \quad \text{(sled)}$$
+
+$$I_2 = \sigma_x\sigma_y + \sigma_y\sigma_z + \sigma_x\sigma_z - \tau_{xy}^2 - \tau_{yz}^2 - \tau_{xz}^2$$
+
+$$I_3 = \det(\sigma_{ij}) \quad \text{(determinanta)}$$
+
+### Poenostavitev — kadar je $\tau_{xz} = \tau_{yz} = 0$:
+
+Tenzor se razpade na 2D podmatriko + σz:
+
+- Ena glavna napetost: $\sigma_2 = \sigma_z$ (direktno)
+- Preostali dve iz 2D enačbe:
+
+$$(\sigma_x - \sigma)(\sigma_y - \sigma) - \tau_{xy}^2 = 0$$
+
+$$\sigma^2 - (\sigma_x + \sigma_y)\sigma + (\sigma_x \sigma_y - \tau_{xy}^2) = 0$$
+
+$$\boxed{\sigma_{1,3} = \frac{(\sigma_x+\sigma_y) \pm \sqrt{(\sigma_x+\sigma_y)^2 - 4(\sigma_x\sigma_y - \tau_{xy}^2)}}{2}}$$
+
+Razvrstimo: $\sigma_1 \geq \sigma_2 \geq \sigma_3$.
+
+---
+
+## Algoritem — od deformacijskega tenzorja do glavnih napetosti
+
+```
+KORAK 0: Preberi εij in materialne konstante E, ν
+
+KORAK 1: Izračunaj λ in G
+   λ = Eν / ((1+ν)(1-2ν))
+   G = E / (2(1+ν))
+
+KORAK 2: Volumska dilatacija
+   εv = εx + εy + εz
+
+KORAK 3: Napetostni tenzor
+   σx = λεv + 2G·εx
+   σy = λεv + 2G·εy
+   σz = λεv + 2G·εz
+   τxy = 2G·εxy  (pozor: εxy = γxy/2!)
+
+KORAK 4: Zapiši σij matriko
+
+KORAK 5: Glavne napetosti
+   Če τxz=τyz=0: σ2=σz, reši kvadratno enačbo za σ1,σ3
+   Splošno: karakteristična kubična enačba
+
+KORAK 6: Razvrsti σ1 ≥ σ2 ≥ σ3
+```
+
+> **Primer:** [[Naloga - Mehanika - Tenzorska analiza - deformacijski tenzor]]
+
+---
+
 ## Rešene naloge
 
 - [[Naloga - Mehanika - Upogibne napetosti U-prerez]] — kombinirano σ iz M-diagrama
-- Primer iz izpita 9.9.2006 — σij tenzor → σ1,2 (zgoraj)
+- [[Naloga - Mehanika - Tenzorska analiza - deformacijski tenzor]] — εij → σij → σ1,2,3 (IMG_1241 str. 3-5)
+- [[Naloga - Mehanika - Tenzorska analiza - aluminijast kvader]] — 3D Hooke, F iz εz
+- Primer iz izpita 9.9.2006 — σij tenzor → σ1,2 (2D, zgoraj)
 
 ---
 
