@@ -1,11 +1,11 @@
 ---
 title: 💉 CJC-1295 + Ipamorelin SC — 3H PO VEČERJI
-status: open
+status: done
 priority: urgent
 scheduled: 2026-06-12T23:00
 due: 2026-06-12
 dateCreated: 2026-06-12T11:10:56.000+02:00
-dateModified: 2026-06-12T11:53:46.000+02:00
+dateModified: 2026-06-14T12:51:15.239+02:00
 tags:
   - task
   - supplement
@@ -18,6 +18,7 @@ blocking:
   - "[[2026-06-12 10 Spanje]]"
 blockedBy:
   - "[[2026-06-12 07 Vecerja]]"
+completedDate: 2026-06-14
 ---
 
 # 💉 CJC-1295 + Ipamorelin SC — 3H PO VEČERJI

@@ -1,11 +1,11 @@
 ---
 title: 🥗 Kosilo + Baker 2mg
-status: open
+status: done
 priority: high
 scheduled: 2026-06-12T13:00
 due: 2026-06-12
 dateCreated: 2026-06-12T11:10:56.000+02:00
-dateModified: 2026-06-12T11:53:22.000+02:00
+dateModified: 2026-06-14T12:51:21.082+02:00
 tags:
   - task
   - supplement
@@ -14,6 +14,7 @@ contexts:
   - zdravje
 projects:
   - Peptide Protocol
+completedDate: 2026-06-14
 ---
 
 # 🥗 Kosilo + Baker 2mg

@@ -1,11 +1,11 @@
 ---
 title: 🍊 Vitamin C 1000mg + Magnezij 300mg
-status: open
+status: done
 priority: high
 scheduled: 2026-06-12T20:00
 due: 2026-06-12
 dateCreated: 2026-06-12T11:10:56.000+02:00
-dateModified: 2026-06-12T11:53:45.000+02:00
+dateModified: 2026-06-14T12:51:17.840+02:00
 tags:
   - task
   - supplement
@@ -16,6 +16,7 @@ projects:
   - Peptide Protocol
 blockedBy:
   - "[[2026-06-12 07 Vecerja]]"
+completedDate: 2026-06-14
 ---
 
 # 🍊 Vitamin C 1000mg + Magnezij 300mg
