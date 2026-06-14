@@ -12,6 +12,8 @@ Za dano gibanje mehanizma določiti hitrosti točk, kotno hitrost telesa in pol 
 
 ---
 
+![[pol_hitrosti.svg]]
+
 ## Osnove kinematike togega telesa
 
 Za togo telo (rigid body) velja:

@@ -19,6 +19,8 @@ vir: IMG_1241.pdf, str. 44 (naloga), str. 45-46 (rešitev)
 
 ---
 
+![[kvader_3d.svg|637]]
+
 ## Korak 1 — Normalne napetosti iz sil
 
 ### Zakaj?

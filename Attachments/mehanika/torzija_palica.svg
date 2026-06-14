@@ -1,0 +1,94 @@
+<svg viewBox="0 0 680 420" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif" font-size="13">
+
+  <text x="340" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a2e">Torzija palice — napetosti in zasuk</text>
+
+  <!-- === PALICA 3D POGLED === -->
+  <g transform="translate(20, 40)">
+    <!-- Palica (trapezoid za 3D vtis) -->
+    <polygon points="80,60 80,140 380,150 380,50" fill="#d5e8f7" stroke="#2c5f8a" stroke-width="2"/>
+    <!-- Prednja stranica -->
+    <ellipse cx="80" cy="100" rx="20" ry="42" fill="#b8d4eb" stroke="#2c5f8a" stroke-width="2"/>
+    <!-- Zadnja stranica (desno) -->
+    <ellipse cx="380" cy="100" rx="20" ry="50" fill="#e8f4fb" stroke="#2c5f8a" stroke-width="1.5" stroke-dasharray="5,3"/>
+
+    <!-- Mt puščica levo (CCW) -->
+    <path d="M 30,90 A 35,35 0 0 1 30,115" fill="none" stroke="#c0392b" stroke-width="2.5" marker-end="url(#mtArrow)"/>
+    <text x="0" y="105" fill="#c0392b" font-weight="bold" font-size="12">M_t</text>
+    <path d="M 420,88 A 35,35 0 0 0 420,113" fill="none" stroke="#c0392b" stroke-width="2.5" marker-end="url(#mtArrow2)"/>
+    <text x="425" y="105" fill="#c0392b" font-weight="bold" font-size="12">M_t</text>
+
+    <!-- Dolžina L -->
+    <line x1="80" y1="165" x2="380" y2="165" stroke="#555" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="80" y1="160" x2="80" y2="170" stroke="#555" stroke-width="1"/>
+    <line x1="380" y1="160" x2="380" y2="170" stroke="#555" stroke-width="1"/>
+    <text x="230" y="182" text-anchor="middle" fill="#555" font-size="12">L</text>
+
+    <!-- Premer d -->
+    <line x1="62" y1="100" x2="98" y2="100" stroke="#e67e22" stroke-width="1.5"/>
+    <text x="30" y="80" fill="#e67e22" font-size="11">d</text>
+  </g>
+
+  <!-- === PREREZ (krog) === -->
+  <g transform="translate(460, 60)">
+    <text x="90" y="18" text-anchor="middle" fill="#2c3e50" font-weight="bold" font-size="13">Prerez — τ(r)</text>
+
+    <!-- Prerez krog -->
+    <circle cx="90" cy="130" r="90" fill="#eaf3fb" stroke="#2c5f8a" stroke-width="2"/>
+
+    <!-- Radialne τ puščice (strižna napetost) -->
+    <!-- Linearno narašča od centra navzven -->
+    <!-- Točka na robu -->
+    <line x1="90" y1="130" x2="90" y2="42" stroke="#8e44ad" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <!-- τ puščice vzdolž radija -->
+    <line x1="90" y1="130" x2="155" y2="75" stroke="#555" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+    <!-- Strižna napetost na robu (tangencialna puščica) -->
+    <line x1="90" y1="42" x2="140" y2="42" stroke="#c0392b" stroke-width="2.5" marker-end="url(#tauArrow)"/>
+    <text x="142" y="38" fill="#c0392b" font-weight="bold" font-size="12">τ_max</text>
+
+    <!-- Strižna napetost na polovici radija -->
+    <line x1="90" y1="86" x2="120" y2="86" stroke="#e67e22" stroke-width="2" marker-end="url(#tauArrow2)"/>
+    <text x="122" y="82" fill="#e67e22" font-size="11">τ = r/R · τ_max</text>
+
+    <!-- Središče -->
+    <circle cx="90" cy="130" r="4" fill="#333"/>
+    <text x="95" y="148" fill="#333" font-size="11">τ = 0</text>
+
+    <!-- R in r oznaki -->
+    <text x="30" y="100" fill="#8e44ad" font-size="11">R (polmer)</text>
+
+    <!-- Legenda porazdelitve -->
+    <rect x="-10" y="235" width="200" height="50" rx="4" fill="#f8f9fa" stroke="#ccc" stroke-width="1"/>
+    <text x="0" y="252" fill="#2c3e50" font-size="11" font-weight="bold">Linearna porazdelitev τ(r):</text>
+    <text x="0" y="268" fill="#2c3e50" font-size="11">τ(r) = M_t · r / I_p</text>
+    <text x="0" y="282" fill="#c0392b" font-size="11">τ_max = M_t / W_t</text>
+  </g>
+
+  <!-- === FORMULE === -->
+  <g transform="translate(20, 280)">
+    <rect x="0" y="0" width="420" height="120" rx="6" fill="#f8f9fa" stroke="#bdc3c7" stroke-width="1"/>
+    <text x="10" y="20" font-weight="bold" fill="#2c3e50" font-size="13">Formule za torzijo (kružni prerez):</text>
+
+    <text x="10" y="42" fill="#2c3e50" font-size="12">W_t = π·d³/16     (modul torzijskega odpora)</text>
+    <text x="10" y="62" fill="#2c3e50" font-size="12">I_p = π·d⁴/32     (polarni vztrajnostni moment)</text>
+    <text x="10" y="82" fill="#c0392b" font-size="12" font-weight="bold">τ_max = M_t / W_t   (max strižna napetost)</text>
+    <text x="10" y="102" fill="#2980b9" font-size="12">φ = M_t · L / (G · I_p)   (zasuk — radiani)</text>
+    <text x="280" y="115" fill="#555" font-size="11">G_jeklo ≈ 80 000 MPa</text>
+  </g>
+
+  <!-- Puščice -->
+  <defs>
+    <marker id="mtArrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#c0392b"/>
+    </marker>
+    <marker id="mtArrow2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#c0392b"/>
+    </marker>
+    <marker id="tauArrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#c0392b"/>
+    </marker>
+    <marker id="tauArrow2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#e67e22"/>
+    </marker>
+  </defs>
+</svg>

@@ -12,6 +12,8 @@ Določiti potek osne sile N, prečne sile T in upogibnega momenta M vzdolž kons
 
 ---
 
+![[ntm_diagrami.svg]]
+
 ## Definicije in predznaki
 
 | Količina | Simbol | Fizikalni pomen | Pozitiven predznak |

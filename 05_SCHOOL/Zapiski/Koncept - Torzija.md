@@ -12,6 +12,8 @@ Izračunati strižne napetosti $\tau$ in zasuk $\varphi$ v palici, obremenjeni s
 
 ---
 
+![[torzija_palica.svg]]
+
 ## Osnovna enačba torzije
 
 $$\boxed{\tau = \frac{M_t}{W_t}}$$

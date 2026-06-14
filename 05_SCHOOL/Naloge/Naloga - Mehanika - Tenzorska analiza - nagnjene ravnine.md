@@ -13,6 +13,8 @@ Za dano napetostno stanje ($\sigma_x$, $\sigma_y$, $\tau_{xy}$) izračunati **no
 
 ---
 
+![[nagnjene_ravnine.svg]]
+
 ## Formulozem
 
 ### Transformacijske enačbe:

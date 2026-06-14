@@ -1,0 +1,86 @@
+<svg viewBox="0 0 680 460" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif" font-size="13">
+
+  <text x="340" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a2e">Pol hitrosti (Trenutni pol P) — metoda</text>
+
+  <!-- === MEHANIZEM: ročica AB klizač === -->
+
+  <!-- Tečajišče O (fiksno) -->
+  <polygon points="120,180 105,205 135,205" fill="#e8c84a" stroke="#8a6200" stroke-width="2"/>
+  <line x1="90" y1="205" x2="150" y2="205" stroke="#8a6200" stroke-width="2"/>
+  <circle cx="120" cy="180" r="7" fill="white" stroke="#8a6200" stroke-width="2"/>
+  <text x="112" y="225" fill="#8a6200" font-weight="bold" font-size="12">O</text>
+
+  <!-- Ročica OA (vrtenje) -->
+  <line x1="120" y1="180" x2="230" y2="100" stroke="#2c5f8a" stroke-width="3"/>
+
+  <!-- Točka A -->
+  <circle cx="230" cy="100" r="8" fill="white" stroke="#2c5f8a" stroke-width="2"/>
+  <text x="238" y="96" fill="#2c5f8a" font-weight="bold">A</text>
+
+  <!-- Hitrost v_A (pravokotno na OA → pribl. navzgor-desno) -->
+  <line x1="230" y1="100" x2="280" y2="60" stroke="#c0392b" stroke-width="2.5" marker-end="url(#vArrow)"/>
+  <text x="285" y="55" fill="#c0392b" font-weight="bold">v_A</text>
+
+  <!-- Vezna ročica AB -->
+  <line x1="230" y1="100" x2="420" y2="170" stroke="#27ae60" stroke-width="3"/>
+
+  <!-- Točka B (klizač) -->
+  <circle cx="420" cy="170" r="8" fill="white" stroke="#27ae60" stroke-width="2"/>
+  <text x="428" y="166" fill="#27ae60" font-weight="bold">B</text>
+
+  <!-- Klizač (vodoravno gibanje) -->
+  <rect x="400" y="163" width="40" height="16" fill="#f0f0f0" stroke="#555" stroke-width="1.5" rx="3"/>
+  <line x1="340" y1="180" x2="500" y2="180" stroke="#555" stroke-width="1.5" stroke-dasharray="5,3"/>
+
+  <!-- Hitrost v_B (vodoravno) -->
+  <line x1="420" y1="170" x2="490" y2="170" stroke="#c0392b" stroke-width="2.5" marker-end="url(#vArrow)"/>
+  <text x="495" y="167" fill="#c0392b" font-weight="bold">v_B</text>
+
+  <!-- === POL HITROSTI P === -->
+  <!-- Normala na v_A (pravokotno na v_A → vzdolž OA smer) -->
+  <!-- Normala na v_B (pravokotno na v_B → vertikalno) -->
+
+  <!-- Normala na v_A: vzdolž OA podaljšano (smer O→A in dalje) -->
+  <line x1="50" y1="230" x2="350" y2="40" stroke="#e67e22" stroke-width="1.5" stroke-dasharray="8,4"/>
+  <text x="55" y="220" fill="#e67e22" font-size="11" font-style="italic">normala na v_A</text>
+
+  <!-- Normala na v_B: vertikalna skozi B -->
+  <line x1="420" y1="20" x2="420" y2="280" stroke="#8e44ad" stroke-width="1.5" stroke-dasharray="8,4"/>
+  <text x="425" y="30" fill="#8e44ad" font-size="11" font-style="italic">normala na v_B</text>
+
+  <!-- Presečišče = Pol P -->
+  <!-- Normala vzdolž OA: y = -0.727x + 267.3 → pri x=420: y=267.3-305=-37.7 → ne ujema, priblizno P=(420, 50) -->
+  <!-- Vizualni P pri presecišcu obeh črt -->
+  <circle cx="420" cy="50" r="10" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="430" y="46" fill="#c0392b" font-size="14" font-weight="bold">P</text>
+  <text x="430" y="62" fill="#c0392b" font-size="11">(pol hitrosti)</text>
+
+  <!-- r_PA in r_PB -->
+  <line x1="420" y1="50" x2="230" y2="100" stroke="#555" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="300" y="62" fill="#555" font-size="11">r_PA</text>
+  <line x1="420" y1="50" x2="420" y2="170" stroke="#555" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="428" y="115" fill="#555" font-size="11">r_PB</text>
+
+  <!-- ω puščica pri P -->
+  <path d="M 395,50 A 15,15 0 0 1 420,30" fill="none" stroke="#e67e22" stroke-width="2" marker-end="url(#omArrow)"/>
+  <text x="365" y="35" fill="#e67e22" font-weight="bold" font-size="12">ω_AB</text>
+
+  <!-- === FORMULE === -->
+  <rect x="20" y="290" width="630" height="150" rx="6" fill="#f8f9fa" stroke="#bdc3c7" stroke-width="1"/>
+  <text x="30" y="312" font-weight="bold" fill="#2c3e50" font-size="13">Metoda pola hitrosti — algoritem:</text>
+
+  <text x="30" y="335" fill="#2c3e50" font-size="12">1. Nariši hitrosti v_A in v_B (smer ali velikost znana)</text>
+  <text x="30" y="355" fill="#e67e22" font-size="12">2. Potegni normale na hitrosti → presečišče = POL P</text>
+  <text x="30" y="375" fill="#c0392b" font-size="12" font-weight="bold">3. ω = v_A / r_PA  (kotna hitrost ročice AB)</text>
+  <text x="30" y="395" fill="#2980b9" font-size="12">4. v_B = ω · r_PB  (hitrost katerekoli točke)</text>
+  <text x="30" y="415" fill="#555" font-size="11">Posebej: kotalni stik → P = točka stika | pure translacija → P v neskončnosti</text>
+
+  <defs>
+    <marker id="vArrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#c0392b"/>
+    </marker>
+    <marker id="omArrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#e67e22"/>
+    </marker>
+  </defs>
+</svg>

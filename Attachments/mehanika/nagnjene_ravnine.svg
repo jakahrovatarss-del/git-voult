@@ -1,0 +1,115 @@
+<svg viewBox="0 0 680 440" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif" font-size="13">
+
+  <text x="340" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a2e">Napetosti na nagnjenih ravninah — transformacijske enačbe</text>
+
+  <!-- === NAPETOSTNI ELEMENT (kvadrat, osnovna os) === -->
+  <g transform="translate(50, 50)">
+    <text x="90" y="18" text-anchor="middle" fill="#2c3e50" font-weight="bold">Osnovno stanje</text>
+
+    <!-- Kvadrat element -->
+    <rect x="30" y="30" width="120" height="120" fill="#eaf3fb" stroke="#2c5f8a" stroke-width="2"/>
+
+    <!-- σ_x puščici (desno in levo) -->
+    <line x1="150" y1="90" x2="195" y2="90" stroke="#c0392b" stroke-width="2.5" marker-end="url(#sxArr)"/>
+    <text x="198" y="88" fill="#c0392b" font-weight="bold">σ_x</text>
+    <line x1="30" y1="90" x2="-15" y2="90" stroke="#c0392b" stroke-width="2" marker-end="url(#sxArr2)"/>
+
+    <!-- σ_y puščici (gor in dol) -->
+    <line x1="90" y1="30" x2="90" y2="-15" stroke="#27ae60" stroke-width="2.5" marker-end="url(#syArr)"/>
+    <text x="95" y="-5" fill="#27ae60" font-weight="bold">σ_y</text>
+    <line x1="90" y1="150" x2="90" y2="195" stroke="#27ae60" stroke-width="2" marker-end="url(#syArr)"/>
+
+    <!-- τ_xy puščice (strižne) -->
+    <line x1="150" y1="50" x2="150" y2="20" stroke="#e67e22" stroke-width="2" marker-end="url(#txyArr)"/>
+    <text x="155" y="18" fill="#e67e22" font-size="11">τ_xy</text>
+    <line x1="60" y1="150" x2="30" y2="150" stroke="#e67e22" stroke-width="2" marker-end="url(#txyArr)"/>
+
+    <!-- Koordinatni sistem -->
+    <line x1="30" y1="210" x2="80" y2="210" stroke="#333" stroke-width="1.5" marker-end="url(#axArr)"/>
+    <text x="84" y="214" fill="#333" font-size="11">x</text>
+    <line x1="30" y1="210" x2="30" y2="165" stroke="#333" stroke-width="1.5" marker-end="url(#axArr)"/>
+    <text x="33" y="162" fill="#333" font-size="11">y</text>
+  </g>
+
+  <!-- === ZASUČEN ELEMENT === -->
+  <g transform="translate(280, 50)">
+    <text x="100" y="18" text-anchor="middle" fill="#2c3e50" font-weight="bold">Zasučen za φ</text>
+
+    <!-- Zasučen kvadrat za kot φ≈30° -->
+    <!-- Točke zasučenega kvadrata -->
+    <polygon points="90,5 185,57 153,155 58,103" fill="#fef9e7" stroke="#e67e22" stroke-width="2"/>
+
+    <!-- Normala ravnine (φ od x osi) -->
+    <line x1="90" y1="80" x2="145" y2="30" stroke="#8e44ad" stroke-width="1.5" stroke-dasharray="6,3"/>
+    <text x="150" y="28" fill="#8e44ad" font-size="11">normala (φ)</text>
+
+    <!-- Kot φ -->
+    <path d="M 110,80 A 22,22 0 0 1 130,67" fill="none" stroke="#8e44ad" stroke-width="2"/>
+    <text x="127" y="64" fill="#8e44ad" font-size="11">φ</text>
+
+    <!-- σ_n (normalna napetost na ravnini) -->
+    <line x1="90" y1="80" x2="148" y2="27" stroke="#c0392b" stroke-width="2.5" marker-end="url(#sxArr)"/>
+    <text x="155" y="15" fill="#c0392b" font-weight="bold">σ_n = σ_φ</text>
+
+    <!-- τ_n (strižna napetost vzdolž ravnine) -->
+    <line x1="90" y1="80" x2="140" y2="115" stroke="#27ae60" stroke-width="2.5" marker-end="url(#syArr)"/>
+    <text x="145" y="118" fill="#27ae60" font-weight="bold">τ_n = τ_φ</text>
+
+    <!-- Ravnina (vzdolž zasučenega elementa) -->
+    <line x1="185" y1="57" x2="58" y2="103" stroke="#c0392b" stroke-width="2" stroke-dasharray="none"/>
+
+    <!-- Koordinatni sistem -->
+    <line x1="30" y1="210" x2="80" y2="210" stroke="#333" stroke-width="1.5" marker-end="url(#axArr)"/>
+    <text x="84" y="214" fill="#333" font-size="11">x</text>
+    <line x1="30" y1="210" x2="30" y2="165" stroke="#333" stroke-width="1.5" marker-end="url(#axArr)"/>
+    <text x="33" y="162" fill="#333" font-size="11">y</text>
+  </g>
+
+  <!-- === TRANSFORMACIJSKE ENAČBE === -->
+  <g transform="translate(490, 60)">
+    <rect x="0" y="0" width="180" height="165" rx="6" fill="#f0f7ff" stroke="#2980b9" stroke-width="1.5"/>
+    <text x="8" y="22" font-weight="bold" fill="#2980b9" font-size="12">Transformacijske enačbe:</text>
+
+    <text x="8" y="48" fill="#2c3e50" font-size="11">σ_φ = σ_sr</text>
+    <text x="8" y="65" fill="#2c3e50" font-size="11">+ (σ_x−σ_y)/2 · cos2φ</text>
+    <text x="8" y="82" fill="#2c3e50" font-size="11">+ τ_xy · sin2φ</text>
+
+    <line x1="8" y1="92" x2="170" y2="92" stroke="#ccc" stroke-width="1"/>
+
+    <text x="8" y="110" fill="#2c3e50" font-size="11">τ_φ = −(σ_x−σ_y)/2 · sin2φ</text>
+    <text x="8" y="127" fill="#2c3e50" font-size="11">      + τ_xy · cos2φ</text>
+
+    <line x1="8" y1="137" x2="170" y2="137" stroke="#ccc" stroke-width="1"/>
+
+    <text x="8" y="155" fill="#555" font-size="11">σ_sr = (σ_x + σ_y) / 2</text>
+  </g>
+
+  <!-- === PRIMER 3: φ=30° === -->
+  <rect x="20" y="280" width="650" height="140" rx="6" fill="#f8f9fa" stroke="#bdc3c7" stroke-width="1"/>
+  <text x="30" y="302" font-weight="bold" fill="#2c3e50" font-size="13">Primer: σ_x=50, σ_y=−10, τ_xy=30 MPa → ravnina φ=30°</text>
+
+  <text x="30" y="326" fill="#2c3e50" font-size="12">σ_sr = (50−10)/2 = 20 MPa  |  (σ_x−σ_y)/2 = 30 MPa  |  2φ = 60°</text>
+  <text x="30" y="350" fill="#c0392b" font-size="12" font-weight="bold">σ_30° = 20 + 30·cos60° + 30·sin60° = 20 + 15 + 25.98 = 60.98 MPa</text>
+  <text x="30" y="374" fill="#27ae60" font-size="12" font-weight="bold">τ_30° = −30·sin60° + 30·cos60° = −25.98 + 15 = −10.98 MPa</text>
+
+  <text x="30" y="400" fill="#555" font-size="11">⚠️  φ je kot NORMALE na ravnino (ne ravnine same!)</text>
+  <text x="300" y="400" fill="#e67e22" font-size="11">Kontrola: točka leži na Mohrovi krožnici s C=(20,0), R=42.43 MPa ✓</text>
+
+  <defs>
+    <marker id="sxArr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#c0392b"/>
+    </marker>
+    <marker id="sxArr2" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto">
+      <path d="M8,0 L8,6 L0,3 z" fill="#c0392b"/>
+    </marker>
+    <marker id="syArr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#27ae60"/>
+    </marker>
+    <marker id="txyArr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#e67e22"/>
+    </marker>
+    <marker id="axArr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#333"/>
+    </marker>
+  </defs>
+</svg>

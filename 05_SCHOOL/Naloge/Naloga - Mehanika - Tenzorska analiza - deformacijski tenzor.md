@@ -18,6 +18,8 @@ $$\varepsilon_{ij} = \begin{pmatrix} 1 & -3 & 0 \\ -3 & 2 & 0 \\ 0 & 0 & 0 \end{
 
 ---
 
+![[napetostni_element_3d.svg]]
+
 ## Korak 1 — Laméjevi konstanti
 
 ### Zakaj?

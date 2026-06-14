@@ -12,6 +12,9 @@ Iz danega napetostnega stanja (σx, σy, τxy) izračunati **glavne napetosti** 
 
 ---
 
+![[mohrova_kroznica.svg]]
+![[napetostni_element_3d.svg]]
+
 ## Definicija napetostnega stanja (2D)
 
 Napetostno stanje v točki opisujemo z napetostnim tenzorjem:
@@ -322,6 +325,7 @@ KORAK 6: Razvrsti σ1 ≥ σ2 ≥ σ3
 - [[Naloga - Mehanika - Upogibne napetosti U-prerez]] — kombinirano σ iz M-diagrama
 - [[Naloga - Mehanika - Tenzorska analiza - deformacijski tenzor]] — εij → σij → σ1,2,3 (IMG_1241 str. 3-5)
 - [[Naloga - Mehanika - Tenzorska analiza - aluminijast kvader]] — 3D Hooke, F iz εz
+- [[Naloga - Mehanika - Tenzorska analiza - nagnjene ravnine]] — σφ, τφ na zasučeni ravnini
 - Primer iz izpita 9.9.2006 — σij tenzor → σ1,2 (2D, zgoraj)
 
 ---
@@ -332,5 +336,7 @@ KORAK 6: Razvrsti σ1 ≥ σ2 ≥ σ3
 - [[Koncept - Upogib]]
 - [[Koncept - Torzija]]
 - [[Koncept - Vztrajnostni moment]]
+- [[Naloga - Mehanika - Tenzorska analiza - aluminijast kvader]]
+- [[Naloga - Mehanika - Tenzorska analiza - nagnjene ravnine]]
 - [[Mehanika Hub]]
 - [[Izpit - Mehanika - Celoletni 2026]]

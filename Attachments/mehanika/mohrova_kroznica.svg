@@ -1,0 +1,93 @@
+<svg viewBox="0 0 680 480" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif" font-size="13">
+
+  <text x="340" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a2e">Mohrova krožnica — napetostno stanje</text>
+
+  <!-- Koordinatni sistem -->
+  <!-- sigma os (x) -->
+  <line x1="60" y1="250" x2="620" y2="250" stroke="#333" stroke-width="1.5" marker-end="url(#axArrow)"/>
+  <text x="625" y="255" fill="#333" font-size="12">σ</text>
+  <!-- tau os (y) -->
+  <line x1="340" y1="420" x2="340" y2="60" stroke="#333" stroke-width="1.5" marker-end="url(#axArrow)"/>
+  <text x="348" y="58" fill="#333" font-size="12">τ</text>
+
+  <!-- Krožnica: center C=(340, 250), R=130 (v pikslih) -->
+  <!-- Skaliranje: σsr = (σx+σy)/2, primer: σx=80, σy=-20, τxy=40 MPa -->
+  <!-- σsr = 30, R = sqrt(50²+40²) = 64.03 MPa → px skaliranje ~2px/MPa → C=(340,250), R=128px -->
+
+  <!-- Krožnica -->
+  <circle cx="340" cy="250" r="130" fill="#eaf3fb" stroke="#2980b9" stroke-width="2.5" stroke-dasharray="none"/>
+
+  <!-- Center C -->
+  <circle cx="340" cy="250" r="4" fill="#2980b9"/>
+  <text x="345" y="268" fill="#2980b9" font-size="11">C(σ_sr, 0)</text>
+
+  <!-- Točka A (σx, +τxy) = σx=80 → x=340+100=440, τxy=40 → y=250-80=170 -->
+  <circle cx="440" cy="170" r="6" fill="#c0392b"/>
+  <text x="445" y="165" fill="#c0392b" font-size="12" font-weight="bold">A(σ_x, +τ_xy)</text>
+
+  <!-- Točka B (σy, -τxy) = σy=-20 → x=340-40=300, -τxy → y=250+80=330 -->
+  <circle cx="300" cy="330" r="6" fill="#8e44ad"/>
+  <text x="255" y="350" fill="#8e44ad" font-size="12" font-weight="bold">B(σ_y, −τ_xy)</text>
+
+  <!-- Premer A-B -->
+  <line x1="440" y1="170" x2="300" y2="330" stroke="#555" stroke-width="1.5" stroke-dasharray="5,3"/>
+
+  <!-- σ1 (desno) = C + R = 340+130 = 470 -->
+  <circle cx="470" cy="250" r="6" fill="#e67e22"/>
+  <line x1="470" y1="250" x2="470" y2="240" stroke="#e67e22" stroke-width="1.5"/>
+  <text x="465" y="235" text-anchor="middle" fill="#e67e22" font-weight="bold">σ₁</text>
+
+  <!-- σ2 (levo) = C - R = 340-130 = 210 -->
+  <circle cx="210" cy="250" r="6" fill="#e67e22"/>
+  <line x1="210" y1="250" x2="210" y2="240" stroke="#e67e22" stroke-width="1.5"/>
+  <text x="215" y="235" fill="#e67e22" font-weight="bold">σ₂</text>
+
+  <!-- σsr oznaka -->
+  <line x1="340" y1="250" x2="340" y2="260" stroke="#2980b9" stroke-width="1"/>
+  <text x="340" y="275" text-anchor="middle" fill="#2980b9" font-size="11">σ_sr</text>
+
+  <!-- R polmer -->
+  <line x1="340" y1="250" x2="440" y2="170" stroke="#27ae60" stroke-width="2"/>
+  <text x="405" y="200" fill="#27ae60" font-weight="bold">R = τ_max</text>
+
+  <!-- τmax zgoraj -->
+  <circle cx="340" cy="120" r="5" fill="#27ae60"/>
+  <text x="350" y="115" fill="#27ae60" font-size="11">τ_max = R</text>
+  <line x1="340" y1="120" x2="340" y2="250" stroke="#27ae60" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- τmin spodaj -->
+  <circle cx="340" cy="380" r="5" fill="#27ae60"/>
+  <text x="350" y="392" fill="#27ae60" font-size="11">−τ_max</text>
+
+  <!-- kot 2φ0 -->
+  <path d="M 360,250 A 20,20 0 0 0 352,230" fill="none" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="368" y="240" fill="#c0392b" font-size="11">2φ₀</text>
+
+  <!-- σsr oznaka na osi -->
+  <line x1="340" y1="246" x2="340" y2="254" stroke="#333" stroke-width="1"/>
+
+  <!-- Formule -->
+  <rect x="430" y="310" width="235" height="115" rx="6" fill="#f8f9fa" stroke="#bdc3c7" stroke-width="1"/>
+  <text x="440" y="330" fill="#2c3e50" font-size="12" font-weight="bold">Ključne formule:</text>
+  <text x="440" y="350" fill="#2c3e50" font-size="11">σ_sr = (σ_x + σ_y) / 2</text>
+  <text x="440" y="368" fill="#2c3e50" font-size="11">R = √[(σ_x−σ_y)²/4 + τ_xy²]</text>
+  <text x="440" y="386" fill="#2c3e50" font-size="11">σ₁₂ = σ_sr ± R</text>
+  <text x="440" y="404" fill="#2c3e50" font-size="11">2φ₀ = arctan[2τ/(σ_x−σ_y)]</text>
+  <text x="440" y="422" fill="#2c3e50" font-size="11">τ_max = R  (pri φ = φ₀ + 45°)</text>
+
+  <!-- Legenda -->
+  <rect x="20" y="310" width="180" height="75" rx="6" fill="#f8f9fa" stroke="#bdc3c7" stroke-width="1"/>
+  <circle cx="35" cy="330" r="5" fill="#c0392b"/>
+  <text x="45" y="335" fill="#c0392b" font-size="11">A = točka (σ_x, +τ_xy)</text>
+  <circle cx="35" cy="352" r="5" fill="#8e44ad"/>
+  <text x="45" y="357" fill="#8e44ad" font-size="11">B = točka (σ_y, −τ_xy)</text>
+  <circle cx="35" cy="374" r="5" fill="#e67e22"/>
+  <text x="45" y="379" fill="#e67e22" font-size="11">σ₁, σ₂ = preseki z σ-osjo</text>
+
+  <!-- Puščice -->
+  <defs>
+    <marker id="axArrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#333"/>
+    </marker>
+  </defs>
+</svg>
