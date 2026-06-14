@@ -12,7 +12,7 @@ Določiti potek osne sile N, prečne sile T in upogibnega momenta M vzdolž kons
 
 ---
 
-![[ntm_diagrami.svg]]
+![[ntm_diagrami.svg|637]]
 
 ## Definicije in predznaki
 
