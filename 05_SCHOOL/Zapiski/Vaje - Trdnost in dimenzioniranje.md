@@ -284,7 +284,7 @@ $$W_{min} = \frac{M_{max}}{\sigma_{dop}} = \frac{2500}{16} = 156{,}3\ \text{cm}^
 
 ## NALOGA 4 — Ekscentrični tlak N + M
 
-![[trdnost_n4.svg]]
+![[trdnost_n4.svg|697]]
 
 > **Besedilo naloge:** Kratki jekleni steber kvadratnega prereza $10\ \text{cm} \times 10\ \text{cm}$ je obremenjen z navpično tlačno silo $F = 200\ \text{kN}$, ki deluje na odmiku $e = 3\ \text{cm}$ od geometrijske osi stebra. Izračunajte napetostno porazdelitev po prerezu, ugotovite, ali se na kateri strani pojavi nateg, in preverite trdnostni pogoj. ($\sigma_{dop} = 16\ \text{kN/cm}^2$)
 
