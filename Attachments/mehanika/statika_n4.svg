@@ -1,0 +1,84 @@
+<svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" font-family="'Latin Modern Math', 'STIX Two Math', serif" font-size="14">
+  <rect width="700" height="380" fill="#fafafa" rx="8"/>
+  <text x="350" y="28" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a2e">NALOGA 4 — Nagnjena sila pod kotom α=40° od navpičnice</text>
+
+  <!-- Ground hatching -->
+  <line x1="80" y1="280" x2="650" y2="280" stroke="#555" stroke-width="2"/>
+  <line x1="85" y1="280" x2="75" y2="295" stroke="#555" stroke-width="1.5"/>
+  <line x1="105" y1="280" x2="95" y2="295" stroke="#555" stroke-width="1.5"/>
+  <line x1="625" y1="280" x2="615" y2="295" stroke="#555" stroke-width="1.5"/>
+  <line x1="645" y1="280" x2="635" y2="295" stroke="#555" stroke-width="1.5"/>
+
+  <!-- Main beam -->
+  <rect x="100" y="235" width="520" height="14" fill="#d6eaf8" stroke="#2a6099" stroke-width="2" rx="3"/>
+
+  <!-- Support A (pin/tečaj) at x=100 -->
+  <polygon points="100,249 75,279 125,279" fill="none" stroke="#1e8449" stroke-width="2.5"/>
+  <circle cx="100" cy="249" r="5" fill="#1e8449"/>
+  <text x="86" y="310" font-size="14" font-weight="bold" fill="#1e8449">A</text>
+  <!-- Ax reaction -->
+  <line x1="100" y1="249" x2="55" y2="249" stroke="#e67e22" stroke-width="2.5"/>
+  <polygon points="50,249 63,243 63,255" fill="#e67e22"/>
+  <text x="28" y="253" font-size="13" fill="#e67e22" font-weight="bold">Ax</text>
+  <!-- Ay reaction -->
+  <line x1="100" y1="249" x2="100" y2="204" stroke="#27ae60" stroke-width="2.5"/>
+  <polygon points="100,199 94,212 106,212" fill="#27ae60"/>
+  <text x="108" y="215" font-size="13" fill="#27ae60" font-weight="bold">Ay=3,83kN</text>
+
+  <!-- Support B (roller) at x=620 -->
+  <polygon points="620,249 595,279 645,279" fill="none" stroke="#2a6099" stroke-width="2.5"/>
+  <line x1="590" y1="279" x2="650" y2="279" stroke="#2a6099" stroke-width="2"/>
+  <circle cx="620" cy="249" r="5" fill="#2a6099"/>
+  <text x="608" y="310" font-size="14" font-weight="bold" fill="#2a6099">B</text>
+  <!-- By reaction -->
+  <line x1="620" y1="249" x2="620" y2="200" stroke="#2a6099" stroke-width="2.5"/>
+  <polygon points="620,195 614,208 626,208" fill="#2a6099"/>
+  <text x="628" y="212" font-size="13" fill="#2a6099" font-weight="bold">By=7,66kN</text>
+
+  <!-- Point C at x=100+4/6*520=100+347=447 -->
+  <circle cx="447" cy="242" r="6" fill="#c0392b"/>
+  <text x="447" y="230" text-anchor="middle" font-size="14" font-weight="bold" fill="#c0392b">C</text>
+
+  <!-- Force F at C, angled α=40° from vertical -->
+  <!-- Going upward-left: dx=-sin40*80=-51, dy=-cos40*80=-61 -->
+  <line x1="447" y1="242" x2="396" y2="162" stroke="#c0392b" stroke-width="3"/>
+  <polygon points="393,157 390,172 404,167" fill="#c0392b"/>
+  <text x="390" y="150" font-size="14" fill="#c0392b" font-weight="bold">F=15kN</text>
+
+  <!-- Vertical reference from C -->
+  <line x1="447" y1="242" x2="447" y2="155" stroke="#ddd" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- Angle arc -->
+  <path d="M 447 185 A 32 32 0 0 0 426 195" stroke="#8e44ad" stroke-width="1.5" fill="none"/>
+  <text x="404" y="188" font-size="13" fill="#8e44ad" font-weight="bold">α=40°</text>
+
+  <!-- Fx component (horizontal, leftward from C) -->
+  <line x1="447" y1="242" x2="390" y2="242" stroke="#e74c3c" stroke-width="2" stroke-dasharray="5,3"/>
+  <polygon points="385,242 398,236 398,248" fill="#e74c3c"/>
+  <text x="395" y="260" font-size="12" fill="#e74c3c">Fx=F·sinα</text>
+  <text x="395" y="275" font-size="12" fill="#e74c3c" font-weight="bold">=9,64 kN</text>
+
+  <!-- Fy component (vertical, downward from C) -->
+  <line x1="447" y1="242" x2="447" y2="315" stroke="#3498db" stroke-width="2" stroke-dasharray="5,3"/>
+  <polygon points="447,320 441,307 453,307" fill="#3498db"/>
+  <text x="457" y="295" font-size="12" fill="#3498db">Fy=F·cosα</text>
+  <text x="457" y="310" font-size="12" fill="#3498db" font-weight="bold">=11,49 kN</text>
+
+  <!-- Dimension xC=4m from A -->
+  <line x1="100" y1="335" x2="447" y2="335" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="100" y1="329" x2="100" y2="341" stroke="#aaa" stroke-width="1.5"/>
+  <line x1="447" y1="329" x2="447" y2="341" stroke="#aaa" stroke-width="1.5"/>
+  <text x="270" y="352" text-anchor="middle" font-size="12" fill="#777" font-style="italic">xc = 4 m</text>
+
+  <!-- Total L=6m -->
+  <line x1="100" y1="355" x2="620" y2="355" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="100" y1="349" x2="100" y2="361" stroke="#aaa" stroke-width="1.5"/>
+  <line x1="620" y1="349" x2="620" y2="361" stroke="#aaa" stroke-width="1.5"/>
+  <text x="360" y="372" text-anchor="middle" font-size="12" fill="#777" font-style="italic">L = 6 m</text>
+
+  <!-- Key formula box -->
+  <rect x="490" y="55" width="200" height="100" fill="#fef9e7" stroke="#f39c12" stroke-width="1.5" rx="6"/>
+  <text x="590" y="76" text-anchor="middle" font-size="12" font-weight="bold" fill="#b7770d">α od navpičnice:</text>
+  <text x="498" y="96" font-size="12" fill="#e74c3c" font-weight="bold">Fx = F·sinα = 9,64 kN</text>
+  <text x="498" y="114" font-size="12" fill="#3498db" font-weight="bold">Fy = F·cosα = 11,49 kN</text>
+  <text x="498" y="140" font-size="11" fill="#c0392b">⚠ sinα=vodoravno, cosα=navpično!</text>
+</svg>

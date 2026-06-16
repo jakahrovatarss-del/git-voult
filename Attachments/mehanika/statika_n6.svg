@@ -1,0 +1,84 @@
+<svg viewBox="0 0 700 430" xmlns="http://www.w3.org/2000/svg" font-family="'Latin Modern Math', 'STIX Two Math', serif" font-size="14">
+  <rect width="700" height="430" fill="#fafafa" rx="8"/>
+  <text x="350" y="28" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a2e">NALOGA 6 — Konzola + nagnjena sila + uklon po Eulerju</text>
+
+  <!-- Ground at bottom, vpetje at B -->
+  <line x1="130" y1="390" x2="250" y2="390" stroke="#555" stroke-width="2"/>
+  <line x1="135" y1="390" x2="125" y2="405" stroke="#555" stroke-width="1.5"/>
+  <line x1="150" y1="390" x2="140" y2="405" stroke="#555" stroke-width="1.5"/>
+  <line x1="165" y1="390" x2="155" y2="405" stroke="#555" stroke-width="1.5"/>
+  <line x1="180" y1="390" x2="170" y2="405" stroke="#555" stroke-width="1.5"/>
+  <line x1="195" y1="390" x2="185" y2="405" stroke="#555" stroke-width="1.5"/>
+  <line x1="210" y1="390" x2="200" y2="405" stroke="#555" stroke-width="1.5"/>
+  <line x1="225" y1="390" x2="215" y2="405" stroke="#555" stroke-width="1.5"/>
+  <line x1="240" y1="390" x2="230" y2="405" stroke="#555" stroke-width="1.5"/>
+
+  <!-- Vpetje (fixed support) rectangle at B -->
+  <rect x="163" y="376" width="55" height="15" fill="#888" stroke="#444" stroke-width="1.5" rx="2"/>
+
+  <!-- Vertical column (B at bottom, A at top) -->
+  <!-- B at y=375, A at y=90, height=4m -->
+  <rect x="170" y="90" width="42" height="285" fill="#d6eaf8" stroke="#1a3a6b" stroke-width="2.5" rx="2"/>
+  <text x="191" y="240" text-anchor="middle" font-size="11" fill="#1a3a6b" font-weight="bold" transform="rotate(-90,191,240)">L = 4 m</text>
+
+  <!-- Point B label (bottom) -->
+  <circle cx="191" cy="375" r="5" fill="#c0392b"/>
+  <text x="155" y="380" font-size="14" font-weight="bold" fill="#c0392b">B</text>
+
+  <!-- Point A label (top) -->
+  <circle cx="191" cy="90" r="5" fill="#1e8449"/>
+  <text x="200" y="86" font-size="14" font-weight="bold" fill="#1e8449">A</text>
+
+  <!-- Force F at A, angled α=25° from vertical -->
+  <!-- F going left-upward (compression): dx=-sin25*90=-38, dy=-cos25*90=-82 -->
+  <line x1="191" y1="90" x2="153" y2="8" stroke="#c0392b" stroke-width="3"/>
+  <polygon points="150,3 147,18 161,13" fill="#c0392b"/>
+  <text x="130" y="40" font-size="14" fill="#c0392b" font-weight="bold">F=8kN</text>
+  <text x="105" y="56" font-size="12" fill="#8e44ad">α=25° od navpič.</text>
+
+  <!-- Vertical reference from A -->
+  <line x1="191" y1="90" x2="191" y2="35" stroke="#ddd" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- Angle arc -->
+  <path d="M 191 56 A 34 34 0 0 0 175 65" stroke="#8e44ad" stroke-width="1.5" fill="none"/>
+
+  <!-- FN component (axial, downward — compression) -->
+  <line x1="191" y1="90" x2="191" y2="165" stroke="#e74c3c" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <polygon points="191,170 185,157 197,157" fill="#e74c3c"/>
+  <text x="200" y="140" font-size="12" fill="#e74c3c" font-weight="bold">FN=F·cosα</text>
+  <text x="200" y="155" font-size="12" fill="#e74c3c" font-weight="bold">=7,25 kN</text>
+  <text x="200" y="168" font-size="11" fill="#e74c3c">(osna — tlak)</text>
+
+  <!-- F⊥ component (horizontal, bending) -->
+  <line x1="191" y1="90" x2="128" y2="90" stroke="#3498db" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <polygon points="123,90 136,84 136,96" fill="#3498db"/>
+  <text x="82" y="78" font-size="12" fill="#3498db" font-weight="bold">F⊥=F·sinα</text>
+  <text x="90" y="93" font-size="12" fill="#3498db" font-weight="bold">=3,38 kN</text>
+  <text x="75" y="107" font-size="11" fill="#3498db">(upogib)</text>
+
+  <!-- Cross-section at B (bottom of column) -->
+  <rect x="255" y="355" width="50" height="30" fill="#85c1e9" stroke="#2a6099" stroke-width="2" rx="2"/>
+  <text x="280" y="368" text-anchor="middle" font-size="11" fill="#1a3a6b">b×h</text>
+  <text x="280" y="382" text-anchor="middle" font-size="10" fill="#1a3a6b">prerez</text>
+  <!-- Arrow pointing to cross section -->
+  <line x1="212" y1="370" x2="252" y2="370" stroke="#aaa" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Results / key formulas box -->
+  <rect x="340" y="55" width="340" height="270" fill="#fef9e7" stroke="#f39c12" stroke-width="1.5" rx="6"/>
+  <text x="510" y="78" text-anchor="middle" font-size="13" font-weight="bold" fill="#b7770d">Postopek rešitve:</text>
+  <line x1="348" y1="86" x2="672" y2="86" stroke="#f0c060" stroke-width="1"/>
+  <text x="348" y="104" font-size="12" fill="#333">1. Razstavi silo:</text>
+  <text x="355" y="121" font-size="12" fill="#e74c3c" font-weight="bold">  FN = F·cosα = 8·cos25° = 7,25 kN</text>
+  <text x="355" y="138" font-size="12" fill="#3498db" font-weight="bold">  F⊥ = F·sinα = 8·sin25° = 3,38 kN</text>
+  <text x="348" y="160" font-size="12" fill="#333">2. Notranje sile v prerezu (vpetje B):</text>
+  <text x="355" y="177" font-size="12" fill="#e74c3c">  N = FN = 7,25 kN  (tlačna)</text>
+  <text x="355" y="194" font-size="12" fill="#3498db">  M = F⊥ · L = 3,38 · 4 = 13,52 kNm</text>
+  <text x="348" y="216" font-size="12" fill="#333">3. Napetost v prerezu:</text>
+  <text x="355" y="233" font-size="12" fill="#c0392b" font-weight="bold">  σ = N/A + M/W ≤ σdop</text>
+  <text x="355" y="250" font-size="12" fill="#c0392b">  σmax = 10,26 kN/cm²</text>
+  <text x="348" y="272" font-size="12" fill="#333">4. Euler uklon (šibka os):</text>
+  <text x="355" y="289" font-size="12" fill="#8e44ad" font-weight="bold">  Fk = π²EI/(β·L)² = 4,93 kN</text>
+  <text x="348" y="308" font-size="12" fill="#c0392b" font-weight="bold">  ν = Fk/FN = 0,68 &lt; 1 → ❌ UKLON!</text>
+
+  <!-- Warning -->
+  <text x="350" y="415" text-anchor="middle" font-size="13" fill="#c0392b" font-weight="bold">⚠ Varnostni faktor ν &lt; 1 → konstrukcija NI varna!</text>
+</svg>

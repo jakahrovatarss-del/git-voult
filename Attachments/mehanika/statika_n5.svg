@@ -1,0 +1,81 @@
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" font-family="'Latin Modern Math', 'STIX Two Math', serif" font-size="14">
+  <rect width="700" height="420" fill="#fafafa" rx="8"/>
+  <text x="350" y="28" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a2e">NALOGA 5 — T-prerez: Steiner / vzporednoosni izrek</text>
+
+  <!-- T cross-section drawing -->
+  <!-- Scale: 1cm = 18px -->
+  <!-- Pasnica (top flange): 12cm wide × 2cm tall → 216 × 36px -->
+  <!-- Stojina (web): 2cm wide × 12cm tall → 36 × 216px -->
+  <!-- Total height = 14cm = 252px -->
+  <!-- Centered at x=230, bottom of section at y=370 -->
+
+  <!-- Section origin: x=122, top of section: y=118 -->
+  <!-- Pasnica: x=122..338, y=118..154 -->
+  <rect x="122" y="118" width="216" height="36" fill="#d6eaf8" stroke="#1a3a6b" stroke-width="2.5"/>
+  <text x="230" y="141" text-anchor="middle" font-size="12" fill="#1a3a6b" font-weight="bold">Pasnica 12×2 cm</text>
+
+  <!-- Stojina: x=194..230, y=154..370 -->
+  <rect x="194" y="154" width="36" height="216" fill="#a9cce3" stroke="#1a3a6b" stroke-width="2.5"/>
+  <text x="212" y="265" text-anchor="middle" font-size="11" fill="#1a3a6b" font-weight="bold" transform="rotate(-90,212,265)">Stojina 2×12 cm</text>
+
+  <!-- Sub-section centroids -->
+  <!-- A1 centroid (pasnica): y=118+18=136 from top, so from bottom=370-136=234px from bottom; 14cm-1cm=13cm from bottom -->
+  <circle cx="230" cy="136" r="5" fill="#e67e22"/>
+  <text x="348" y="140" font-size="12" fill="#e67e22">y₁=13 cm</text>
+
+  <!-- A2 centroid (stojina): y=154+108=262 from top, so from bottom=370-262=108px; 108/18=6cm from bottom -->
+  <circle cx="212" cy="262" r="5" fill="#27ae60"/>
+  <text x="348" y="266" font-size="12" fill="#27ae60">y₂=6 cm</text>
+
+  <!-- yT = 9.5cm from bottom → y = 370 - 9.5*18 = 370-171 = 199 -->
+  <!-- Neutral axis (NA) line -->
+  <line x1="90" y1="199" x2="360" y2="199" stroke="#c0392b" stroke-width="2.5" stroke-dasharray="8,4"/>
+  <text x="62" y="204" font-size="14" fill="#c0392b" font-weight="bold">NA</text>
+  <circle cx="230" cy="199" r="6" fill="#c0392b"/>
+  <text x="240" y="185" font-size="13" fill="#c0392b" font-weight="bold">yT=9,5 cm</text>
+
+  <!-- Dimension: total height from bottom -->
+  <!-- e_sp (bottom to NA) = 9.5cm -->
+  <line x1="80" y1="199" x2="80" y2="370" stroke="#e74c3c" stroke-width="1.5"/>
+  <line x1="74" y1="199" x2="86" y2="199" stroke="#e74c3c" stroke-width="1.5"/>
+  <line x1="74" y1="370" x2="86" y2="370" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="20" y="293" text-anchor="middle" font-size="12" fill="#e74c3c" font-weight="bold">esp</text>
+  <text x="20" y="308" text-anchor="middle" font-size="11" fill="#e74c3c">9,5 cm</text>
+
+  <!-- e_zg (NA to top) = 4.5cm -->
+  <line x1="80" y1="118" x2="80" y2="199" stroke="#3498db" stroke-width="1.5"/>
+  <line x1="74" y1="118" x2="86" y2="118" stroke="#3498db" stroke-width="1.5"/>
+  <text x="20" y="165" text-anchor="middle" font-size="12" fill="#3498db" font-weight="bold">ezg</text>
+  <text x="20" y="180" text-anchor="middle" font-size="11" fill="#3498db">4,5 cm</text>
+
+  <!-- Steiner distance d1 for pasnica (centroid A1 to NA): 13-9.5=3.5cm -->
+  <line x1="355" y1="136" x2="355" y2="199" stroke="#e67e22" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="349" y1="136" x2="361" y2="136" stroke="#e67e22" stroke-width="1.5"/>
+  <line x1="349" y1="199" x2="361" y2="199" stroke="#e67e22" stroke-width="1.5"/>
+  <text x="363" y="173" font-size="12" fill="#e67e22" font-weight="bold">d₁=3,5cm</text>
+
+  <!-- Steiner distance d2 for stojina (centroid A2 to NA): 9.5-6=3.5cm -->
+  <line x1="355" y1="199" x2="355" y2="262" stroke="#27ae60" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="349" y1="262" x2="361" y2="262" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="363" y="237" font-size="12" fill="#27ae60" font-weight="bold">d₂=3,5cm</text>
+
+  <!-- W critical indicator -->
+  <text x="100" y="395" font-size="12" fill="#c0392b" font-weight="bold">⚠ Wsp = J/esp = 93,1 cm³  (kritičen, manjši!)</text>
+
+  <!-- Formula box -->
+  <rect x="415" y="60" width="270" height="195" fill="#fef9e7" stroke="#f39c12" stroke-width="1.5" rx="6"/>
+  <text x="550" y="82" text-anchor="middle" font-size="13" font-weight="bold" fill="#b7770d">Steiner izrek:</text>
+  <text x="423" y="104" font-size="12" fill="#333">I = I₀ + A·d²</text>
+  <text x="423" y="125" font-size="12" fill="#e67e22">I₁ = 12·2³/12 + 24·3,5² = 302 cm⁴</text>
+  <text x="423" y="145" font-size="12" fill="#27ae60">I₂ = 2·12³/12 + 24·3,5² = 582 cm⁴</text>
+  <text x="423" y="165" font-size="12" fill="#c0392b" font-weight="bold">J = I₁+I₂ = 884 cm⁴</text>
+  <line x1="423" y1="175" x2="677" y2="175" stroke="#ddd" stroke-width="1"/>
+  <text x="423" y="193" font-size="12" fill="#e74c3c" font-weight="bold">Wsp = 884/9,5 = 93,1 cm³ ← KRITIČEN</text>
+  <text x="423" y="211" font-size="12" fill="#3498db">Wzg = 884/4,5 = 196,4 cm³</text>
+  <text x="423" y="232" font-size="11" fill="#666">yT = (A₁·y₁ + A₂·y₂)/(A₁+A₂)</text>
+  <text x="423" y="248" font-size="11" fill="#666">   = (24·13 + 24·6)/48 = 9,5 cm</text>
+
+  <!-- Area labels -->
+  <text x="140" y="90" font-size="12" fill="#e67e22">A₁=12·2=24 cm²</text>
+  <text x="230" y="310" text-anchor="middle" font-size="12" fill="#27ae60">A₂=2·12=24 cm²</text>
+</svg>

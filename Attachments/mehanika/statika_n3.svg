@@ -1,0 +1,113 @@
+<svg viewBox="0 0 700 440" xmlns="http://www.w3.org/2000/svg" font-family="'Latin Modern Math', 'STIX Two Math', serif" font-size="14">
+  <rect width="700" height="440" fill="#fafafa" rx="8"/>
+  <text x="350" y="28" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a2e">NALOGA 3 — Valji v kupu (3+2+1), gladki stiki</text>
+
+  <!-- Define cylinder radius -->
+  <!-- r = 55px, center spacing = 110px -->
+
+  <!-- Ground line -->
+  <line x1="80" y1="370" x2="620" y2="370" stroke="#555" stroke-width="2.5"/>
+  <!-- Ground hatch -->
+  <line x1="85" y1="370" x2="75" y2="385" stroke="#555" stroke-width="1.5"/>
+  <line x1="105" y1="370" x2="95" y2="385" stroke="#555" stroke-width="1.5"/>
+  <line x1="125" y1="370" x2="115" y2="385" stroke="#555" stroke-width="1.5"/>
+  <line x1="595" y1="370" x2="585" y2="385" stroke="#555" stroke-width="1.5"/>
+  <line x1="615" y1="370" x2="605" y2="385" stroke="#555" stroke-width="1.5"/>
+
+  <!-- Left wall -->
+  <line x1="100" y1="140" x2="100" y2="370" stroke="#555" stroke-width="2.5"/>
+  <line x1="100" y1="150" x2="85" y2="165" stroke="#555" stroke-width="1.5"/>
+  <line x1="100" y1="170" x2="85" y2="185" stroke="#555" stroke-width="1.5"/>
+  <line x1="100" y1="190" x2="85" y2="205" stroke="#555" stroke-width="1.5"/>
+  <line x1="100" y1="210" x2="85" y2="225" stroke="#555" stroke-width="1.5"/>
+  <line x1="100" y1="230" x2="85" y2="245" stroke="#555" stroke-width="1.5"/>
+  <line x1="100" y1="250" x2="85" y2="265" stroke="#555" stroke-width="1.5"/>
+  <line x1="100" y1="270" x2="85" y2="285" stroke="#555" stroke-width="1.5"/>
+  <line x1="100" y1="290" x2="85" y2="305" stroke="#555" stroke-width="1.5"/>
+  <line x1="100" y1="310" x2="85" y2="325" stroke="#555" stroke-width="1.5"/>
+  <line x1="100" y1="330" x2="85" y2="345" stroke="#555" stroke-width="1.5"/>
+  <line x1="100" y1="350" x2="85" y2="365" stroke="#555" stroke-width="1.5"/>
+
+  <!-- Right wall -->
+  <line x1="600" y1="140" x2="600" y2="370" stroke="#555" stroke-width="2.5"/>
+  <line x1="600" y1="150" x2="615" y2="165" stroke="#555" stroke-width="1.5"/>
+  <line x1="600" y1="170" x2="615" y2="185" stroke="#555" stroke-width="1.5"/>
+  <line x1="600" y1="190" x2="615" y2="205" stroke="#555" stroke-width="1.5"/>
+  <line x1="600" y1="210" x2="615" y2="225" stroke="#555" stroke-width="1.5"/>
+  <line x1="600" y1="230" x2="615" y2="245" stroke="#555" stroke-width="1.5"/>
+  <line x1="600" y1="250" x2="615" y2="265" stroke="#555" stroke-width="1.5"/>
+  <line x1="600" y1="270" x2="615" y2="285" stroke="#555" stroke-width="1.5"/>
+  <line x1="600" y1="290" x2="615" y2="305" stroke="#555" stroke-width="1.5"/>
+  <line x1="600" y1="310" x2="615" y2="325" stroke="#555" stroke-width="1.5"/>
+  <line x1="600" y1="330" x2="615" y2="345" stroke="#555" stroke-width="1.5"/>
+  <line x1="600" y1="350" x2="615" y2="365" stroke="#555" stroke-width="1.5"/>
+
+  <!-- ROW 1 (bottom): 3 cylinders, y_center=315, r=50 -->
+  <!-- Cylinder centers: x=205, 350, 495 -->
+  <circle cx="205" cy="315" r="50" fill="#d6eaf8" stroke="#2a6099" stroke-width="2.5"/>
+  <text x="205" y="319" text-anchor="middle" font-size="12" fill="#1a3a6b" font-weight="bold">G=800N</text>
+  <circle cx="350" cy="315" r="50" fill="#d6eaf8" stroke="#2a6099" stroke-width="2.5"/>
+  <text x="350" y="319" text-anchor="middle" font-size="12" fill="#1a3a6b" font-weight="bold">G=800N</text>
+  <circle cx="495" cy="315" r="50" fill="#d6eaf8" stroke="#2a6099" stroke-width="2.5"/>
+  <text x="495" y="319" text-anchor="middle" font-size="12" fill="#1a3a6b" font-weight="bold">G=800N</text>
+
+  <!-- ROW 2 (middle): 2 cylinders at x=277.5, 422.5, y=220 -->
+  <!-- (between bottom cylinders: x = (205+350)/2=277.5, y=315-50*√3≈315-86.6=228) -->
+  <circle cx="277" cy="228" r="50" fill="#d5f5e3" stroke="#1e8449" stroke-width="2.5"/>
+  <text x="277" y="232" text-anchor="middle" font-size="12" fill="#145a32" font-weight="bold">G=800N</text>
+  <circle cx="422" cy="228" r="50" fill="#d5f5e3" stroke="#1e8449" stroke-width="2.5"/>
+  <text x="422" y="232" text-anchor="middle" font-size="12" fill="#145a32" font-weight="bold">G=800N</text>
+
+  <!-- ROW 3 (top): 1 cylinder at x=350, y=228-86.6≈141 -->
+  <circle cx="350" cy="141" r="50" fill="#fdebd0" stroke="#d35400" stroke-width="2.5"/>
+  <text x="350" y="145" text-anchor="middle" font-size="12" fill="#7d3c00" font-weight="bold">G=800N</text>
+
+  <!-- Contact force lines between cylinders (center-to-center) -->
+  <!-- Top → middle-left: (350,141)→(277,228) -->
+  <line x1="350" y1="141" x2="277" y2="228" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.7"/>
+  <!-- Top → middle-right: (350,141)→(422,228) -->
+  <line x1="350" y1="141" x2="422" y2="228" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.7"/>
+
+  <!-- N1 force arrows at top cylinder -->
+  <!-- Left contact: direction from (350,141) to (277,228), normalized -->
+  <!-- dx=-73, dy=87 → len=113.5 → unit=(-0.643,0.766) → scale by 30: (-19.3,23) -->
+  <line x1="350" y1="141" x2="333" y2="165" stroke="#c0392b" stroke-width="2.5"/>
+  <polygon points="333,165 346,154 337,172" fill="#c0392b"/>
+  <text x="290" y="158" font-size="13" fill="#c0392b" font-weight="bold">N₁=462N</text>
+
+  <!-- Right contact force -->
+  <line x1="350" y1="141" x2="367" y2="165" stroke="#c0392b" stroke-width="2.5"/>
+  <polygon points="367,165 363,152 374,162" fill="#c0392b"/>
+
+  <!-- Angle 30° label near top cylinder -->
+  <path d="M 350 155 A 14 14 0 0 1 340 163" stroke="#8e44ad" stroke-width="1.5" fill="none"/>
+  <text x="324" y="178" font-size="12" fill="#8e44ad">30°</text>
+  <!-- Vertical reference from top cylinder -->
+  <line x1="350" y1="141" x2="350" y2="100" stroke="#ddd" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- F (wall force) arrows on outer bottom cylinders -->
+  <line x1="100" y1="315" x2="148" y2="315" stroke="#e67e22" stroke-width="3"/>
+  <polygon points="153,315 140,308 140,322" fill="#e67e22"/>
+  <text x="108" y="305" font-size="13" fill="#e67e22" font-weight="bold">F</text>
+  <text x="104" y="323" font-size="11" fill="#e67e22">=231N</text>
+
+  <line x1="600" y1="315" x2="551" y2="315" stroke="#e67e22" stroke-width="3"/>
+  <polygon points="546,315 559,308 559,322" fill="#e67e22"/>
+  <text x="560" y="305" font-size="13" fill="#e67e22" font-weight="bold">F</text>
+  <text x="556" y="323" font-size="11" fill="#e67e22">=231N</text>
+
+  <!-- G arrows (downward) on all cylinders -->
+  <line x1="205" y1="365" x2="205" y2="390" stroke="#2c3e50" stroke-width="1.5"/>
+  <polygon points="205,395 200,382 210,382" fill="#2c3e50"/>
+  <line x1="350" y1="365" x2="350" y2="390" stroke="#2c3e50" stroke-width="1.5"/>
+  <polygon points="350,395 345,382 355,382" fill="#2c3e50"/>
+  <line x1="495" y1="365" x2="495" y2="390" stroke="#2c3e50" stroke-width="1.5"/>
+  <polygon points="495,395 490,382 500,382" fill="#2c3e50"/>
+
+  <!-- Result box -->
+  <rect x="12" y="55" width="175" height="75" fill="#eaf4fb" stroke="#2a6099" stroke-width="1.5" rx="6"/>
+  <text x="99" y="74" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a3a6b">Rezultati:</text>
+  <text x="18" y="92" font-size="11" fill="#333">N₁ = G/(2cos30°)</text>
+  <text x="18" y="108" font-size="11" fill="#c0392b" font-weight="bold">N₁ = 462 N</text>
+  <text x="18" y="124" font-size="11" fill="#e67e22" font-weight="bold">F = N₁·sin30° = 231 N</text>
+</svg>

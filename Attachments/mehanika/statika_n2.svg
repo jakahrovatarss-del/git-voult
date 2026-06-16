@@ -1,0 +1,95 @@
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" font-family="'Latin Modern Math', 'STIX Two Math', serif" font-size="14">
+  <rect width="700" height="420" fill="#fafafa" rx="8"/>
+  <text x="350" y="28" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a2e">NALOGA 2 — Škripec z nagnjeno vrvjo (α=30° od navpičnice)</text>
+
+  <!-- Ground + vpetje at B -->
+  <line x1="100" y1="360" x2="220" y2="360" stroke="#555" stroke-width="2"/>
+  <line x1="105" y1="360" x2="95" y2="375" stroke="#555" stroke-width="1.5"/>
+  <line x1="120" y1="360" x2="110" y2="375" stroke="#555" stroke-width="1.5"/>
+  <line x1="135" y1="360" x2="125" y2="375" stroke="#555" stroke-width="1.5"/>
+  <line x1="150" y1="360" x2="140" y2="375" stroke="#555" stroke-width="1.5"/>
+  <line x1="165" y1="360" x2="155" y2="375" stroke="#555" stroke-width="1.5"/>
+  <line x1="180" y1="360" x2="170" y2="375" stroke="#555" stroke-width="1.5"/>
+  <line x1="195" y1="360" x2="185" y2="375" stroke="#555" stroke-width="1.5"/>
+  <line x1="210" y1="360" x2="200" y2="375" stroke="#555" stroke-width="1.5"/>
+  <rect x="142" y="348" width="36" height="13" fill="#888" stroke="#444" stroke-width="1.5" rx="2"/>
+
+  <!-- Vertical steber -->
+  <line x1="160" y1="120" x2="160" y2="350" stroke="#1a3a6b" stroke-width="7" stroke-linecap="round"/>
+  <!-- Horizontal arm -->
+  <line x1="160" y1="120" x2="390" y2="120" stroke="#1a3a6b" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- Pulley at end -->
+  <circle cx="410" cy="120" r="22" fill="none" stroke="#2a6099" stroke-width="2.5"/>
+  <circle cx="410" cy="120" r="5" fill="#2a6099"/>
+
+  <!-- S1: vertical rope (tovor navzdol) -->
+  <line x1="410" y1="142" x2="410" y2="310" stroke="#b8860b" stroke-width="2.5"/>
+  <!-- S1 arrow -->
+  <polygon points="410,315 404,302 416,302" fill="#b8860b"/>
+  <text x="420" y="230" font-size="13" fill="#b8860b" font-weight="bold">S₁=G</text>
+  <text x="420" y="246" font-size="11" fill="#666">=0,5 kN</text>
+  <text x="420" y="262" font-size="11" fill="#666">(navzdol)</text>
+
+  <!-- Mass -->
+  <rect x="385" y="310" width="50" height="35" fill="#e8c96a" stroke="#b8860b" stroke-width="2" rx="4"/>
+  <text x="410" y="332" text-anchor="middle" font-size="12" fill="#5a3a00" font-weight="bold">m=50kg</text>
+
+  <!-- S2: angled rope at 30° from vertical = 60° from horizontal -->
+  <!-- From pulley top-left direction: angle 30° from vertical = going upper-left -->
+  <!-- sin30°=0.5, cos30°=0.866 → dx=-60, dy=-104 -->
+  <line x1="410" y1="120" x2="300" y2="3" stroke="#e74c3c" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <!-- Arrow on S2 (away from pulley) -->
+  <polygon points="303,7 314,20 295,16" fill="#e74c3c"/>
+  <text x="320" y="65" font-size="13" fill="#e74c3c" font-weight="bold">S₂=G</text>
+  <text x="320" y="81" font-size="11" fill="#666">=0,5 kN</text>
+  <text x="316" y="97" font-size="11" fill="#666">(nagnjeno)</text>
+
+  <!-- Angle arc at pulley for alpha -->
+  <path d="M 410 98 A 22 22 0 0 0 399 103" stroke="#8e44ad" stroke-width="1.5" fill="none"/>
+  <text x="375" y="100" font-size="13" fill="#8e44ad" font-weight="bold">α=30°</text>
+  <!-- Vertical reference dashed line from pulley -->
+  <line x1="410" y1="98" x2="410" y2="50" stroke="#ccc" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- Components of S2 -->
+  <!-- S2x = 0.25 kN horizontal -->
+  <line x1="160" y1="120" x2="100" y2="120" stroke="#e67e22" stroke-width="2" stroke-dasharray="5,3"/>
+  <polygon points="95,120 108,114 108,126" fill="#e67e22"/>
+  <text x="75" y="115" font-size="12" fill="#e67e22" font-weight="bold">Bx=0,25kN</text>
+
+  <!-- By arrow -->
+  <line x1="160" y1="350" x2="160" y2="296" stroke="#27ae60" stroke-width="2.5"/>
+  <polygon points="160,291 154,304 166,304" fill="#27ae60"/>
+  <text x="170" y="310" font-size="13" fill="#27ae60" font-weight="bold">By</text>
+  <text x="170" y="326" font-size="11" fill="#27ae60">=0,933kN</text>
+
+  <!-- MB arc -->
+  <path d="M 190 342 A 22 22 0 0 0 173 325" stroke="#8e44ad" stroke-width="2" fill="none"/>
+  <polygon points="173,325 164,336 177,333" fill="#8e44ad"/>
+  <text x="192" y="332" font-size="13" fill="#8e44ad" font-weight="bold">MB=2,4kNm</text>
+
+  <!-- Point labels -->
+  <circle cx="160" cy="350" r="5" fill="#c0392b"/>
+  <text x="130" y="355" font-size="14" font-weight="bold" fill="#c0392b">B</text>
+  <circle cx="160" cy="120" r="5" fill="#27ae60"/>
+  <text x="135" y="118" font-size="14" font-weight="bold" fill="#27ae60">A</text>
+
+  <!-- Dim H -->
+  <line x1="60" y1="120" x2="60" y2="350" stroke="#aaa" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="54" y1="120" x2="66" y2="120" stroke="#aaa" stroke-width="1.5"/>
+  <line x1="54" y1="350" x2="66" y2="350" stroke="#aaa" stroke-width="1.5"/>
+  <text x="35" y="245" font-size="12" fill="#777" font-style="italic">H=4m</text>
+  <!-- Dim a -->
+  <line x1="160" y1="82" x2="410" y2="82" stroke="#aaa" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="160" y1="76" x2="160" y2="88" stroke="#aaa" stroke-width="1.5"/>
+  <line x1="410" y1="76" x2="410" y2="88" stroke="#aaa" stroke-width="1.5"/>
+  <text x="280" y="76" text-anchor="middle" font-size="12" fill="#777" font-style="italic">a=1,5m</text>
+
+  <!-- Key formula box -->
+  <rect x="490" y="130" width="195" height="120" fill="#fef9e7" stroke="#f39c12" stroke-width="1.5" rx="6"/>
+  <text x="587" y="152" text-anchor="middle" font-size="13" font-weight="bold" fill="#b7770d">Ključ (α od navpičnice):</text>
+  <text x="500" y="173" font-size="12" fill="#333">S₂ₓ = S·sin α = 0,25 kN</text>
+  <text x="500" y="191" font-size="12" fill="#333">S₂ᵧ = S·cos α = 0,433 kN</text>
+  <text x="500" y="215" font-size="12" fill="#c0392b" font-weight="bold">MB = Fy·a + Fx·H</text>
+  <text x="500" y="233" font-size="12" fill="#c0392b" font-weight="bold">   = 1,4 + 1,0 = 2,4 kNm</text>
+</svg>
