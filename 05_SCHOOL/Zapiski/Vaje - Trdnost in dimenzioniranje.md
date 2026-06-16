@@ -364,7 +364,7 @@ Steber je varen. Kritičen je tlačni rob (strani sile).
 
 ## NALOGA 5 — Sestavljena obremenitev upogib + torzija
 
-![[trdnost_n5.svg]]
+![[trdnost_n5.svg|697]]
 
 > **Besedilo naloge:** Jeklena gred polnega krožnega prereza premera $d = 50\ \text{mm}$ je hkrati obremenjena z upogibnim momentom $M = 1{,}5\ \text{kNm}$ in torzijskim momentom $M_t = 1{,}2\ \text{kNm}$. Preverite trdnost gredi po hipotezah Von Mises in Tresca. Katero hipotezo bi izbrali za projektiranje? ($\sigma_{dop} = 150\ \text{MPa}$)
 
