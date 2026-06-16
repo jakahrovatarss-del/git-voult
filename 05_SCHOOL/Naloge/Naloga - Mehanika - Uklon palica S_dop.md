@@ -101,5 +101,5 @@ $$\boxed{\boxed{S_{dop} = 23{,}4\ \text{kN}}}$$
 - [[Koncept - Euler Uklon]]
 - [[Koncept - Vztrajnostni moment]]
 - [[Naloga - Mehanika - Uklon leseni steber F_max]]
-- [[mehanika]]
+- [[Mehanika Hub]]
 - [[Mehanika Hub]]

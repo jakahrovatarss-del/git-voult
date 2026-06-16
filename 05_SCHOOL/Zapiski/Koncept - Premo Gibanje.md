@@ -107,7 +107,7 @@ $$h = \frac{1}{2}gt^2 \implies t = \sqrt{\frac{2h}{g}} = \sqrt{\frac{40}{9{,}81}
 
 ## Povezave
 
-- [[mehanika]] — nadrejena nota (kinematika, dinamika)
+- [[Mehanika Hub]] — nadrejena nota (kinematika, dinamika)
 - [[Fizika Hub]] — hub predmeta
 - [[Koncept - Zakoni Gibanja]] — naslednje poglavje (vzroki gibanja)
 - [[Specifična Toplota]] — soroden fizika koncept

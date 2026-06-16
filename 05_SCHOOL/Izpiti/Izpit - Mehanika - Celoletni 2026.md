@@ -7,6 +7,13 @@ izpit-datum: 2026-06-19
 
 # Izpit — Mehanika: Celoletni 2026 (19.6.2026)
 
+## Namen
+
+> 📚 **PREP NOTA — podrobni algoritmi in razlaga** — za pripravo pred izpitom.
+> Za kompakten cheat sheet na dan izpita → [[Izpit - Mehanika - Junij 2026]]
+
+---
+
 ## Analiza izpitnih nalog (iz IMG_1183.pdf)
 
 Vsak izpit vsebuje tipično **3 naloge**:
@@ -118,7 +125,7 @@ $$\boxed{\varphi_0 = \frac{1}{2}\arctan\frac{2\tau_{xy}}{\sigma_x - \sigma_y}}$$
 
 ## BLOK 3.5 — Hipoteze porušitve ⭐⭐⭐
 
-**→ [[Koncept - Hipoteze Porusitve]] | [[Naloga - Mehanika - Izpit Feb2019 - Tresca Von Mises]]**
+**→ [[Koncept - Napetostno stanje#Hipotezi porušitve — Tresca in Von Mises]] | [[Naloga - Mehanika - Izpit Feb2019 - Tresca Von Mises]]**
 
 ### Algoritem:
 
@@ -310,7 +317,7 @@ HIPOTEZE PORUŠITVE:
 | Euler uklon | [[Koncept - Euler Uklon]] | IMG_1241.pdf |
 | Torzija | [[Koncept - Torzija]] | IMG_1183.pdf str. 50 |
 | Bredt torzija | [[Naloga - Mehanika - Izpit Feb2019 - Torzija Bredt skatlast]] | — |
-| Hipoteze porušitve | [[Koncept - Hipoteze Porusitve]] | — |
+| Hipoteze porušitve | [[Koncept - Napetostno stanje#Hipotezi porušitve — Tresca in Von Mises]] | — |
 | Kinematika | [[Koncept - Kinematika Mehanizmi]] | IMG_1183.pdf str. 14-15 |
 | Vztrajnostni moment | [[Koncept - Vztrajnostni moment]] | IMG_1241.pdf |
 

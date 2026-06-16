@@ -92,5 +92,5 @@ Razlika ~1 %. ω metoda je natančnejša — Euler je nekoliko konzervativnejši
 
 - [[Koncept - Euler Uklon]]
 - [[Naloga - Mehanika - Uklon lesene deske]]
-- [[mehanika]]
+- [[Mehanika Hub]]
 - [[Mehanika Hub]]

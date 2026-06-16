@@ -75,6 +75,6 @@ Centralna vstopna točka za vse vsebine predmeta Mehanika.
 
 ## Povezave
 
-- [[mehanika]] — osnovna nota
+- [[Mehanika Hub]] — osnovna nota
 - [[STATIKA]] — statika in ravnotežje
 - [[05_SCHOOL/School Hub]] — hub vseh predmetov

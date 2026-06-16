@@ -169,5 +169,5 @@ Pogoj upogibne trdnosti: $\sigma = M / W_x \leq \sigma_{dop}$
 - [[Naloga - Mehanika - Uklon leseni steber F_max]]
 - [[Naloga - Mehanika - Dimenzioniranje leseni nosilec upogib]]
 - [[Naloga - Mehanika - Upogibne napetosti U-prerez]]
-- [[mehanika]]
+- [[Mehanika Hub]]
 - [[Mehanika Hub]]

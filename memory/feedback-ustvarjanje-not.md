@@ -2,7 +2,6 @@
 name: feedback-ustvarjanje-not
 description: "Kdaj ustvariti novo noto vs. dopolniti obstoječo — osnovno pravilo"
 metadata:
-  node_type: memory
   type: feedback
 ---
 

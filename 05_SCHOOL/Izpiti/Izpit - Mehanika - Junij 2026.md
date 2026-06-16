@@ -8,6 +8,9 @@ datum: 2026-06-14
 
 ## Namen
 
+> 📋 **CHEAT SHEET za dan izpita** — kompaktne formule, tipi nalog, hitra referenca.
+> Za podrobne algoritme in razlago pred izpitom → [[Izpit - Mehanika - Celoletni 2026]]
+
 Celovita priprava na izpit iz Mehanike (LE007, BTF Lesarstvo UN). Analiza temelji na 10+ zbranih izpitih in kolokvijih (2013–2025), predavanjih, DN1 in zvezku.
 
 ---

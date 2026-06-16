@@ -126,7 +126,7 @@ $$a = g(\sin 30° - 0{,}2 \cdot \cos 30°) = 9{,}81(0{,}5 - 0{,}2 \times 0{,}866
 
 ## Povezave
 
-- [[mehanika]] — nadrejena nota (kinematika, dinamika, statika)
+- [[Mehanika Hub]] — nadrejena nota (kinematika, dinamika, statika)
 - [[Fizika Hub]] — hub predmeta
 - [[Koncept - Premo Gibanje]] — predhodno poglavje (kinematika)
 - [[STATIKA]] — statika teles (ravnovesje)

@@ -16,7 +16,7 @@ Centralna vstopna točka za vse šolske obveznosti.
 Dodaj predmet sem ko začneš:
 
 - [[STATIKA]] → `05_SCHOOL/Predmeti/`
-- [[mehanika]]
+- [[Mehanika Hub]]
 - *Nov predmet → ustvari `Predmet - Ime.md` v `05_SCHOOL/Predmeti/`*
 
 ---
@@ -72,7 +72,7 @@ Pred izpitom → ustvari "Izpit - Predmet - Rok" v 05_SCHOOL/Izpiti/
 ## Šola ↔ Solo Učenje
 
 Šola in solo učenje nista ločena sveta. Poveži jih:
-- `[[STATIKA]]` ↔ `[[mehanika]]` ↔ `[[Fizika]]`
+- `[[STATIKA]]` ↔ `[[Mehanika Hub]]` ↔ `[[Fizika]]`
 - Formalne naloge → poveži s solo projekti ([[06_LEARNING/Learning Hub|Learning Hub]])
 
 ---

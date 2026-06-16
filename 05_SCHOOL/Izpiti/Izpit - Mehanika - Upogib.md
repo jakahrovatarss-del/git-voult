@@ -237,6 +237,6 @@ Točke: (1) vrh, (2) stik pasnice in vratu, (3) NO (→ σ=0)
 - [[Koncept - Upogib]]
 - [[Koncept - Vztrajnostni moment]]
 - [[Koncept - Euler Uklon]]
-- [[mehanika]]
+- [[Mehanika Hub]]
 - [[Mehanika Hub]]
 - [[05_SCHOOL/School Hub]]

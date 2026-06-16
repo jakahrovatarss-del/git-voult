@@ -62,7 +62,7 @@ $$\sigma_{ekv,T} = \sigma_1 - \sigma_3 = 385{,}4 - (-285{,}4) = \boxed{670{,}8\ 
 
 $$670{,}8\ \text{MPa} > 610\ \text{MPa} \quad \Rightarrow \quad \boxed{\textbf{PREKORAČENO po Trescu!}}$$
 
-> **glej:** [[Koncept - Hipoteze Porusitve#Tresca]]
+> **glej:** [[Koncept - Napetostno stanje#Tresca (hipoteza maksimalne strižne napetosti)]]
 
 ---
 
@@ -83,7 +83,7 @@ $$= \sqrt{\frac{679\,958}{2}} = \sqrt{339\,979} = \boxed{583{,}1\ \text{MPa}}$$
 
 $$583{,}1\ \text{MPa} < 610\ \text{MPa} \quad \Rightarrow \quad \boxed{\textbf{Varno po Von Misesu ✓}}$$
 
-> **glej:** [[Koncept - Hipoteze Porusitve#Von Mises]]
+> **glej:** [[Koncept - Napetostno stanje#Von Mises (hipoteza specifične energije oblike)]]
 
 ---
 
@@ -118,7 +118,6 @@ $$583{,}1\ \text{MPa} < 610\ \text{MPa} \quad \Rightarrow \quad \boxed{\textbf{V
 
 ## Povezave
 
-- [[Koncept - Hipoteze Porusitve]]
 - [[Koncept - Napetostno stanje]]
 - [[Naloga - Mehanika - Tenzorska analiza - deformacijski tenzor]]
 - [[Mehanika Hub]]

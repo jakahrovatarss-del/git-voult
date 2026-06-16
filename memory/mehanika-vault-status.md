@@ -9,9 +9,11 @@ metadata:
 ## Vault struktura (lokalna pot)
 
 **Vault root:** `/home/jaka/Zdaj Pa Zares Obsidian/`  
-**Mehanika note (root):** direktno v root — `mehanika.md`, `STATIKA.md`, `ravnovesje delca.md`, `Mehanika Hub.md`, `naloge statika.md`  
+**Mehanika note (root):** `STATIKA.md` (v 05_SCHOOL/), `ravnovesje delca.md`, `Mehanika Hub.md`  
 **Šolske note:** `05_SCHOOL/`  
 **PDF-ji:** `Attachments/mehanika/` in `Attachments/fizika/`
+
+> ⚠️ **Stanje po reorganizaciji (2026-06-16):** 6 starih not je bilo izbrisanih ali integriranih — glej opombe spodaj.
 
 ---
 
@@ -47,38 +49,57 @@ metadata:
 - `Koncept - Upogib.md` ✅ — 7 korakov, M-diagram, Steiner, dimenzioniranje, SVG-ji, primeri, flashcards
 - `Koncept - Euler Uklon.md` ✅ — 6 korakov, 4 Eulerovi primeri, ω tabela, SVG, flashcards
 - `Koncept - Vztrajnostni moment.md` ✅ — enostavni prerezi, Steiner, sestavljeni prerezi (U, T, I, box), primer U-prerez
-- `Koncept - Premo Gibanje.md` ✅ — fizika poglavje 2
-- `Koncept - Zakoni Gibanja.md` ✅ — fizika poglavje 4
-- `Koncept - Toplota.md` ✅ — fizika poglavje 11
+- `Koncept - Napetostno stanje.md` ✅ — 2D/3D Mohr, Tresca/Von Mises (canonical!), Hookov zakon 3D, lastne vrednosti
+- `Koncept - NTM Diagrami.md` ✅ — N, T, M diagrami
+- `Koncept - Torzija.md` ✅ — τ, zasuk φ, Bredt, kombinirano M+Mt
+- `Koncept - Kinematika Mehanizmi.md` ✅ — pol hitrosti, kotalna kinematika
 - `Koncept - Krožni žagalni stroj.md` ✅ — aplikacija mehanike
+- `Koncept - Premo Gibanje.md` — fizika poglavje 2
+- `Koncept - Zakoni Gibanja.md` — fizika poglavje 4
+- `Koncept - Toplota.md` — fizika poglavje 11
+- ~~`Koncept - Hipoteze Porusitve.md`~~ ❌ IZBRISANA — vsebina integrirana v `Koncept - Napetostno stanje.md#Hipotezi porušitve`
+
+### Vaje note (`05_SCHOOL/Zapiski/`)
+- `Vaje - Napetostni tenzor in Mohrova kroznica.md`
+- `Vaje - NTM diagrami - Vse vrste.md`
+- `Vaje - Trdnost in dimenzioniranje.md`
 
 ### Naloga note (`05_SCHOOL/Naloge/`)
 - `Naloga - Mehanika - Dimenzioniranje leseni nosilec upogib.md` — pravokotnik 13×22 cm
 - `Naloga - Mehanika - Dimenzioniranje krozni prerez upogib.md` — d ≥ 17,44 cm
 - `Naloga - Mehanika - Upogibne napetosti U-prerez.md` — σ_max = 1,50 kN/cm²
+- `Naloga - Mehanika - Upogibne napetosti C-prerez.md`
+- `Naloga - Mehanika - Napetosti skatlaski profil.md`
 - `Naloga - Mehanika - Uklon lesene deske.md` — F_k = 0,524 kN, β=2
 - `Naloga - Mehanika - Uklon leseni steber F_max.md` — F_max = 11,84 kN
 - `Naloga - Mehanika - Uklon palica S_dop.md` — S_dop = 23,4 kN, jeklo
+- `Naloga - Mehanika - Tenzorska analiza - deformacijski tenzor.md`
+- `Naloga - Mehanika - Tenzorska analiza - aluminijast kvader.md`
+- `Naloga - Mehanika - Tenzorska analiza - nagnjene ravnine.md`
+- `Naloga - Mehanika - Izpit Feb2019 - Torzija Bredt skatlast.md`
+- `Naloga - Mehanika - Izpit Feb2019 - Tresca Von Mises.md`
+- `Naloga - Mehanika - Izpit Jul2018 - Cisto strizno stanje.md`
 
 ### Izpit note (`05_SCHOOL/Izpiti/`)
 - `Izpit - Mehanika - Upogib.md` ✅ — 7 tipov nalog, algoritmi, formule, primer za vsak tip
+- `Izpit - Mehanika - Celoletni 2026.md` ✅ — **PREP NOTA** (podrobni algoritmi, wiki-referenčna tabela, izpit 2026-06-19)
+- `Izpit - Mehanika - Junij 2026.md` ✅ — **CHEAT SHEET** (kompaktne formule, hitra referenca za dan izpita)
 
 ### Ostalo v 05_SCHOOL/
-- `School Hub.md` — centralni hub, linki na STATIKA, mehanika
-- `Zapiski/Govorniške Veščine - Nastop in Predstavitev.md`
-- `Zapiski/Trening - ZMOREM Mars Venus.md`
+- `STATIKA.md` ✅ — **PRENOVLJENA** (2026-06-16): SL↔EN terminologija, ravnotežne enačbe, podpore, redukcija sil, FBD postopek, Hibbeler ref.
+- `School Hub.md` — centralni hub
 
 ---
 
 ## Root vault — note relevantne za mehaniko
 
 - `Mehanika Hub.md` ✅ — hub s koncepti, nalogami, algoritmi, SVG listi
-- `mehanika.md` — stara nota (daily format), vsebuje fizika dopolnilo (kinematika, Newton)
-- `STATIKA.md` — statika: ravnovesje, FBD, reakcije podpor (pin, roller, vpetje), Hibbeler ref.
 - `ravnovesje delca.md` — kratka nota ravnovesja točke, slika
-- `naloge statika.md` — kratke statika naloge (napetost TAC, cos/sin)
-- `Statika-enačbe statičnega ravnovesja, osnovni principi statike,redukcija sistema sil..md` — daljša statika nota (7677 B)
-- `Sklop 1 Statika – enačbe statičnega ravnovesja...md` — sklop zapiskov
+- ~~`mehanika.md`~~ ❌ IZBRISANA — superseded by Mehanika Hub
+- ~~`naloge statika.md`~~ ❌ IZBRISANA — integrirana v STATIKA.md
+- ~~`Statika-enačbe statičnega ravnovesja...md`~~ ❌ IZBRISANA — integrirana v STATIKA.md
+- ~~`Statika – enačbe ravnovesja, principi...md`~~ ❌ IZBRISANA — integrirana v STATIKA.md
+- ~~`Sklop 1 Statika – enačbe statičnega ravnovesja...md`~~ ❌ IZBRISANA — integrirana v STATIKA.md
 
 ---
 
@@ -132,7 +153,6 @@ Relevantne predloge:
 **Visoka prioriteta:**
 - `Koncept - Nateg in tlak.md` — σ = N/A, Hookov zakon, raztezek
 - `Koncept - Strižne napetosti.md` — τ = Q·S/(I·b)
-- `Koncept - Torzija.md` — zasuk, momentni diagram
 - `Izpit - Mehanika - Uklon.md` — po vzoru Izpit - Upogib
 
 **Why:** Pred vsako novo noto preveri ta seznam — prepreči duplikate.

@@ -431,7 +431,7 @@ $$= \sqrt{149{,}3 + 95{,}7} = \sqrt{245{,}0} = \boxed{15{,}65\ \text{kN/cm}^2 = 
 
 > **Na izpitu:** Če ni podana hipoteza, izračunaj **obe** in navedi, katera je strožja. Tresca je varna izbira.
 
-> **glej:** [[Koncept - Hipoteze Porusitve#Hitre formule po obremenitvah]]
+> **glej:** [[Koncept - Napetostno stanje#Hipotezi porušitve — Tresca in Von Mises]]
 
 ---
 
@@ -571,8 +571,7 @@ $$\sigma = \frac{N}{A} \pm \frac{M}{W} \quad \leftarrow \text{superponiranje}$$
 - [[Koncept - Upogib]] ← W, M-diagram, dimenzioniranje, Steiner
 - [[Koncept - Euler Uklon]] ← lu, λ, Fk, ω metoda, β tabela
 - [[Koncept - Torzija]] ← Wt=2W, φ, kombinirano M+Mt
-- [[Koncept - Hipoteze Porusitve]] ← Tresca, VM, hitre formule
-- [[Koncept - Napetostno stanje]] ← tenzor, glavne napetosti
+- [[Koncept - Napetostno stanje]] ← tenzor, glavne napetosti, Tresca, VM, hitre formule
 - [[Vaje - Napetostni tenzor in Mohrova kroznica]] ← naloge 3 in 5 (M+Mt, čist strig)
 - [[Mehanika Hub]]
 - [[Izpit - Mehanika - Celoletni 2026]]

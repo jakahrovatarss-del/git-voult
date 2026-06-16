@@ -431,7 +431,7 @@ $$\sigma_{ekv,VM} = \sqrt{\sigma^2 + 3\tau^2} = \sqrt{0 + 3 \cdot 47{,}16^2} = 4
 
 > ⚠️ **Na izpitu:** Če ni rečeno katera hipoteza, izračunaj **obe** in komentiraj razliko!
 
-> **Zobacz:** [[Koncept - Napetostno stanje#Kombinirane obremenitve → napetostno stanje]] | [[Koncept - Hipoteze Porusitve]]
+> **Zobacz:** [[Koncept - Napetostno stanje#Kombinirane obremenitve → napetostno stanje]]
 
 ---
 
@@ -455,6 +455,5 @@ $$\sigma_{ekv,VM} = \sqrt{\sigma^2 + 3\tau^2} = \sqrt{0 + 3 \cdot 47{,}16^2} = 4
 - [[Naloga - Mehanika - Izpit Jul2018 - Cisto strizno stanje]]
 - [[Koncept - Upogib]]
 - [[Koncept - Torzija]]
-- [[Koncept - Hipoteze Porusitve]]
 - [[Mehanika Hub]]
 - [[Izpit - Mehanika - Celoletni 2026]]

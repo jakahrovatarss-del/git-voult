@@ -1,98 +1,101 @@
 ---
-created: 2026-03-02
-tags:
-  - 0🌲
+tags: [mehanika, statika, ravnotežje, FBD, reakcije, redukcija-sil, koncept]
+predmet: Mehanika
+datum: 2026-06-16
 ---
-```table-of-contents
-title: 
-style: nestedList # TOC style (nestedList|nestedOrderedList|inlineFirstLevel)
-minLevel: 0 # Include headings from the specified level
-maxLevel: 0 # Include headings up to the specified level
-include: 
-exclude: 
-includeLinks: true # Make headings clickable
-hideWhenEmpty: false # Hide TOC if no headings are found
-debugInConsole: false # Print debug info in Obsidian console
+
+# Statika — Osnove
+
+Statika je veja mehanike ki obravnava telesa v **mirovanju** ali gibanju s konstantno hitrostjo. Rezultanta vseh sil je vedno enaka 0.
+
+## Temeljni pojmi (SL ↔ EN)
+
+| Slovensko | English | Opomba |
+|-----------|---------|--------|
+| Togo telo | Rigid body | dimenzije upoštevamo, brez deformacij |
+| Masna točka | Particle | dimenzije zanemarimo, sile se sekajo v točki |
+| Diagram prostega telesa | Free-Body Diagram (FBD) | osnova vsake rešitve |
+| Ravnotežne enačbe | Equations of equilibrium | ΣF=0, ΣM=0 |
+| Redukcija sil | Force system resultants | zamenjaj sistem z rezultanto + momentom |
+| Rezultanta | Resultant force R = ΣF | — |
+| Dvojica sil | Couple moment | čisto vrtenje brez translacije |
+| Reakcije podpor | Support reactions | nadomestijo podporo na FBD |
+
+**Hibbeler reference:** Ch. 3 (Particle equilibrium) · Ch. 4 (Force resultants) · Ch. 5 (Rigid body equilibrium)
+
+---
+
+## Ravnotežne enačbe
+
+### Masna točka (2D)
+$$\sum F_x = 0 \qquad \sum F_y = 0$$
+
+### Togo telo (2D) — 3 enačbe
+$$\sum F_x = 0 \qquad \sum F_y = 0 \qquad \sum M_O = 0$$
+
+> **Pravilo:** Vzemi moment okrog točke z največ neznankami → te se izničijo.
+
+### Togo telo (3D) — 6 enačb
+$$\sum F_{x,y,z} = 0 \qquad \sum M_{x,y,z} = 0$$
+
+---
+
+## Podpore in reakcije
+
+| Podpora | Slovensko | Reakcije | Neznanke |
+|---------|-----------|----------|----------|
+| Pin / Zglob | Nepomični členek (tečaj) | $R_x$, $R_y$ | 2 |
+| Roller / Valj | Pomični členek | $R_y$ (⊥ površini) | 1 |
+| Fixed / Vpetje | Togo vpetje | $R_x$, $R_y$, $M_A$ | 3 |
+| Free end | Prosti konec | — | 0 |
+| Internal hinge | Notranji členek (Gerber) | doda pogoj $M=0$ | −1 |
+
+**Statična določenost:** Σ reakcij = 3 za ravninski problem.
+
+---
+
+## Redukcija sistema sil
+
+Sistem sil zamenjamo z ekvivalentnim v točki O:
+$$\vec{R} = \sum \vec{F} \qquad \vec{M}_O = \sum (\vec{r} \times \vec{F}) + \sum \vec{M}$$
+
+Tipična naloga: "Reduciraj sistem v točko O" → izračunaj R in M_O.
+
+---
+
+## Postopek reševanja — togo telo
+
 ```
-# Osnovne iformacije
+1. Nariši FBD — odstrani podpore, nadomesti z reakcijami
+2. Razstavi silo pod kotom: Fx = F·cosα, Fy = F·sinα
+3. ΣMₐ = 0 → By (A se izniči)
+4. ΣFy = 0 → Ay
+5. Kontrola: ΣMB = 0 mora dati 0
+```
 
-- statika je del mehanike kejr telo mirujeali pa se giblje z konstantno hitrostjo zato je **rezultanta sil vedno enaka 0** 
-- usa telesa so **deformabilna**- togo telo. da izračunamo sile in momente brez upostevanja mansih deformacij. 
-## Postopek reševanja
+---
 
-- ali je točka ali pa togo telo (POJAVIJO SE SE POGOJI Z MOMENTI) 
-![[Pasted image 20260302151025.png]]
-če miruje pomeni da je rezultanta sil nič
+## Ravnovesje delca — primer
 
-# 2) Sila, moment, dvojica (Force, Moment, Couple)
+Za obroček z dvema vrvema pod kotom:
+$$T_{AC}\cos\alpha - T_{BC}\cos\beta = 0$$
+$$T_{AC}\sin\alpha + T_{BC}\sin\beta - W = 0$$
 
-- **Sila (Force)** je vektor: ima velikost, smer in prijemališče (kjer deluje). V ravnini jo običajno razstavimo na komponente Fx,FyFx,Fy in računamo z vsotami komponent.
+→ [[ravnovesje delca]]
 
-- **Moment sile (Moment of a force)** pove, kako močno sila “vrti” telo okrog točke: v 2D je ideja M=F⋅dM=F⋅d (sila krat pravokotna ročica).
+---
 
-- **Dvojica sil (Couple moment)** je par enako velikih nasprotnih sil, ki povzroča čisto vrtenje (brez translacije) in je “svobodni vektor” — lahko jo narišeš kamorkoli na FBD.
+## Newtonovi zakoni
 
-## 3) Redukcija sistema sil (Reduction of a force system)
+1. $\sum \vec{F} = 0 \iff \vec{v} = \text{konst.}$ (vztrajnost)
+2. $\sum \vec{F} = m\vec{a}$ (osnovna enačba gibanja)
+3. $\vec{F}_{12} = -\vec{F}_{21}$ (akcija = reakcija)
 
-Cilj redukcije je: več sil na togem telesu zamenjamo z **ekvivalentnim** sistemom v izbrani točki OO:
+---
 
-- rezultanta R=∑FR=∑F (Resultant force)
-    
-- in glavni moment MO=∑(r×F)+∑MMO=∑(r×F)+∑M (Resultant couple moment at O).
-    
+## Povezave
 
-To je osnova, da sploh znaš potem pravilno pisati ravnotežne enačbe za togo telo. V nalogah Jesenko imaš direkt tipične primere “Reduciraj sistem v točko O” (to je točno redukcija!).
-
-Spodaj je moja skica (da si predstavljaš idejo): sile zamenjamo z RR v točki OO + momentom MOMO.
-
-(Priložena slika kot artefakt)
-
-- **reduction_force_couple.png** [code_file]
-    
-
-## 4) Enačbe statičnega ravnovesja (Equations of static equilibrium) + FBD
-
-Najbolj pomembno pravilo: **naloge ne rešujemo brez diagrama prostega telesa** (Free-Body Diagram, FBD).​
-
-## 4.1 Ravnovesje točke (Particle equilibrium)
-
-Če je telo modelirano kot točka v 2D, sta pogoja:
-
-- ∑Fx=0∑Fx=0
-    
-- ∑Fy=0∑Fy=0  
-    To je v Hibbelerju v **Chapter 3 (Equilibrium of a Particle)**, kjer je tudi postopek risanja FBD.​
-    
-
-Realni primer (točka): obroček, na katerem visijo 2 vrvi in masa. Sestaviš FBD obročka in rešiš 2 enačbi za 2 neznanki (napetosti).​
-
-## 4.2 Ravnovesje togega telesa (Rigid body equilibrium)
-
-Four beam support types: fixed support with moment, pin support, roller support, and free end with reaction forces [](https://www.eigenplus.com/basic-terminologies-in-structure/)
-
-Če ima telo “dimenzije” (nosilec, plošča, drog), potrebuješ še moment:
-
-- ∑Fx=0∑Fx=0
-    
-- ∑Fy=0∑Fy=0
-    
-- ∑MO=0∑MO=0 (moment okrog poljubne točke OO)  
-    To je v Hibbelerju v **Chapter 5 (Equilibrium of a Rigid Body)**, kjer so tudi reakcije podpor in pravila za FBD.​
-    
-
-Spodaj je moja skica tipičnega nosilca s **zglobom (pin)** in **valjem (roller)** ter reakcijami.
-
-(Priložena slika kot artefakt)
-
-- **fbd_beam_pin_roller.png** [code_file] 
-    
-
-## Reakcije podpor (Support reactions)
-
-Ključna ideja: podpora prepreči določene pomike → zato nastanejo ustrezne reakcije.​
-
-- Zglob/pin: običajno Ax,AyAx,Ay (2 neznanki).​
-    
-- Valj/roller: običajno samo ByBy (1 neznanka).​
-    
-- Vpetje/fixed: Ax,AyAx,Ay in še moment MAMA (3 neznanke).​
+- [[ravnovesje delca]]
+- [[Mehanika Hub]]
+- [[Koncept - NTM Diagrami]]
+- [[05_SCHOOL/School Hub]]

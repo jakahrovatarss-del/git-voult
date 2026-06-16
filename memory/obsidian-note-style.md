@@ -2,7 +2,6 @@
 name: obsidian-note-style
 description: "Kako Jaka dejansko gradi note — slog, struktura, vzorci iz 05_SCHOOL (mehanika fokus)"
 metadata:
-  node_type: memory
   type: feedback
 ---
 
@@ -107,4 +106,4 @@ Izpiti:
 **Why:** Jaka gradi mehanika bazo po tem vzorcu — vsaka nova nota mora ustrezati temu stilu.
 **How to apply:** Ko ustvarjaš mehanika noto, sledi tej strukturi točno.
 
-**Linked memories:** [[mehanika-workflow]], [[fizika-obsidian-struktura]]
+**Linked memories:** [[mehanika-workflow]], [[mehanika-vault-status]]

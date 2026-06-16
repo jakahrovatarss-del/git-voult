@@ -171,6 +171,6 @@ $$\sum M_A = 0 \quad \Rightarrow \quad N_{palice} = 3F \quad \text{(iz ravnotež
 - [[Koncept - Vztrajnostni moment]] — izračun $I_{min}$, šibka os, Steiner
 - [[Koncept - Upogib]] — paralelna tema: upogib vs. uklon
 - [[Izpit - Mehanika - Upogib]] — pregled vseh tipov nalog
-- [[mehanika]]
+- [[Mehanika Hub]]
 - [[STATIKA]]
 - [[Mehanika Hub]]

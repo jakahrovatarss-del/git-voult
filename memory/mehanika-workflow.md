@@ -2,7 +2,6 @@
 name: mehanika-workflow
 description: "Obvezen workflow za mehanika vprašanja — 4 viri, korak 0, slog izpeljav, shranjevanje not"
 metadata:
-  node_type: memory
   type: feedback
 ---
 
@@ -11,17 +10,17 @@ Jaka Hrovat, strojništvo student. Vprašanja o mehaniki (statika, kinematika, d
 Jezik odgovorov: **slovenščina**.
 
 ## KORAK 0 — pred vsakim odgovorom
-Preveri vault: `C:\Users\MojPC\Desktop\obsidian\05_SCHOOL\Zapiski\` in `05_SCHOOL\Predmeti\`
+Preveri vault: `05_SCHOOL/Zapiski/` in `05_SCHOOL/Predmeti/`
 Če nota obstaja → preberi in uporabi kot osnovo.
 
 ## Viri (vse štiri pri vsakem odgovoru)
 
 | # | Vir | Pot / URL |
 |---|-----|-----------|
-| 1 | Skeniran zvezek | `D:\strojništvo` — relevantne strani glede na temo |
-| 2 | PDF predavanja | Poišči PDF ki ustreza temi, preberi relevantne strani |
-| 3 | NotebookLM | https://notebooklm.google.com/notebook/3c9ae58d-26fa-428e-a49c-022594020583 — odpri Chrome MCP, vpiši vprašanje, vključi odgovor |
-| 4 | Obsidian vault | `C:\Users\MojPC\Desktop\obsidian\` — obstoječe note za wikilinks |
+| 1 | Skeniran zvezek | `Attachments/mehanika/` — relevantne strani glede na temo |
+| 2 | PDF predavanja | PDF iz `Attachments/mehanika/` ki ustreza temi |
+| 3 | NotebookLM | https://notebooklm.google.com/notebook/3c9ae58d-26fa-428e-a49c-022594020583 — odpri Chrome MCP, vpiši vprašanje |
+| 4 | Obsidian vault | obstoječe note za wikilinks |
 
 ## Slog odgovorov — enačbe
 1. Pogoj za varno delovanje
@@ -59,4 +58,4 @@ Vedno ponudi:
 **Why:** Jaka želi strukturirane note z wikilinki za vsak rešen problem. Za mehaniko vedno vprašaj pred shranjevanjem (za fiziko shranjuj samodejno).
 **How to apply:** Sledi workflowu pri vsakem mehanika vprašanju.
 
-**Linked memories:** [[fizika-workflow]], [[obsidian-note-style]]
+**Linked memories:** [[fizika-workflow]], [[obsidian-note-style]], [[mehanika-vault-status]]

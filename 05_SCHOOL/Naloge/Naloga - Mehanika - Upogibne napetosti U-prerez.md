@@ -128,5 +128,5 @@ $$\sigma_{zg} = \frac{800 \cdot 9{,}357}{6240{,}8} = \boxed{-1{,}199\ \text{kN/c
 - [[Koncept - Upogib]]
 - [[Koncept - Vztrajnostni moment]]
 - [[Naloga - Mehanika - Dimenzioniranje leseni nosilec upogib]]
-- [[mehanika]]
+- [[Mehanika Hub]]
 - [[Mehanika Hub]]

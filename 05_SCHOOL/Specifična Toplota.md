@@ -91,5 +91,5 @@ $$P = e\sigma A(T^4 - T_0^4), \quad \sigma = 5{,}67 \times 10^{-8}\ \text{W/m}^2
 
 [[Solarni Koncentrator]]
 [[Concept Crafted - DIY Solarni Koncentrator]]
-[[mehanika]]
+[[Mehanika Hub]]
 [[Koncept - Toplota]]

@@ -105,5 +105,5 @@ $$\sigma_{dej} = \frac{M_{max}}{W_{dej}} = \frac{1000}{1048{,}7} = 0{,}953\ \tex
 
 - [[Koncept - Upogib]]
 - [[Koncept - Vztrajnostni moment]]
-- [[mehanika]]
+- [[Mehanika Hub]]
 - [[Mehanika Hub]]

@@ -189,7 +189,7 @@ $$M_{ekv} = \frac{1}{2}\left(M + \sqrt{M^2 + M_t^2}\right) \quad \text{(Tresca)}
 
 - [[Vaje - Napetostni tenzor in Mohrova kroznica]] ← kombinirano M+Mt, čist strig
 - [[Koncept - Napetostno stanje]]
-- [[Koncept - Hipoteze Porusitve]]
+
 - [[Koncept - Upogib]]
 - [[Koncept - Vztrajnostni moment]]
 - [[Naloga - Mehanika - Izpit Feb2019 - Torzija Bredt skatlast]]

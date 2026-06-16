@@ -145,4 +145,4 @@ $$4425T = 129000 \implies T \approx 29{,}2°C$$
 - [[Solarni Koncentrator]] — aplikacija prenosa toplote (konveksija, sevanje)
 - [[Concept Crafted - DIY Solarni Koncentrator]] — praktičen primer (924W, beton)
 - [[Fizika Hub]] — hub predmeta
-- [[mehanika]] — nadrejena fizika nota
+- [[Mehanika Hub]] — nadrejena fizika nota

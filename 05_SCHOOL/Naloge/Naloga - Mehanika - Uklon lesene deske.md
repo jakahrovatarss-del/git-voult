@@ -50,6 +50,6 @@ Deska je kritično vitka v smeri $b = 2{,}5$ cm. Že ~524 N osne tlačne sile za
 ## Povezave
 
 - [[Koncept - Euler Uklon]]
-- [[mehanika]]
+- [[Mehanika Hub]]
 - [[STATIKA]]
 - [[Mehanika Hub]]
