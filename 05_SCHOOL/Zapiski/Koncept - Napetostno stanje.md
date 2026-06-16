@@ -12,8 +12,8 @@ Iz danega napetostnega stanja (σx, σy, τxy) izračunati **glavne napetosti** 
 
 ---
 
-![[mohrova_kroznica.svg]]
-![[napetostni_element_3d.svg]]
+![[mohrova_kroznica.svg|681]]
+![[napetostni_element_3d.svg|697]]
 
 ## Definicija napetostnega stanja (2D)
 
@@ -100,31 +100,46 @@ $$\boxed{\varphi_0 = \frac{1}{2}\arctan\frac{2\tau_{xy}}{\sigma_x - \sigma_y}}$$
 
 ---
 
-## Algoritem (5 korakov)
+## Algoritem (6 korakov — za izpit)
 
-### Korak 1 — Preberi napetostno stanje
+### KORAK 0 — Prepoznaj tip naloge
+
+| Tip | Dano | Postopek |
+|-----|------|----------|
+| **2D direktno** | σx, σy, τxy | σsr, R → σ1,2, φ0 |
+| **3D tenzor** | matrika σij (τxz=τyz=0) | σz direktno + kvadratna enačba |
+| **Kombinirano M+Mt** | M, Mt, d | W, Wt → σ, τ → σsr, R → σekv |
+| **Deformacijski** | εij, E, ν | λ, G → σij → σ1,2,3 |
+
+> **Ključ:** Preberi, kaj je dano, preden začneš računati!
+
+### KORAK 1 — Preberi napetostno stanje
 
 Iz naloge razberito $\sigma_x$, $\sigma_y$, $\tau_{xy}$ (pozor na predznake!).
 
-### Korak 2 — Izračunaj povprečno napetost in polmer
+### KORAK 2 — Središče in polmer
 
 $$\sigma_{sr} = \frac{\sigma_x + \sigma_y}{2}, \qquad R = \sqrt{\left(\frac{\sigma_x-\sigma_y}{2}\right)^2 + \tau_{xy}^2}$$
 
-### Korak 3 — Glavne napetosti
+### KORAK 3 — Glavne napetosti
 
 $$\sigma_1 = \sigma_{sr} + R, \qquad \sigma_2 = \sigma_{sr} - R$$
 
-### Korak 4 — Kot θ
+### KORAK 4 — Kot φ₀
 
 $$2\varphi_0 = \arctan\frac{2\tau_{xy}}{\sigma_x - \sigma_y}, \qquad \varphi_0 = \frac{2\varphi_0}{2}$$
 
-### Korak 5 — Kontrola
+### KORAK 5 — Ekvivalentne napetosti (za dimenzioniranje)
 
-Vstavi $\varphi_0$ v transformacijsko enačbo: $\sigma_{\varphi_0}$ mora biti $\sigma_1$ ali $\sigma_2$.
+Glejte razdelek "Hipotezi porušitve" spodaj.
 
-$$\sigma(\varphi_0) = \sigma_{sr} + \frac{\sigma_x-\sigma_y}{2}\cos 2\varphi_0 + \tau_{xy}\sin 2\varphi_0$$
+### KORAK 6 — Kontrola z invarianto I₁
 
-> **glej:** [[Koncept - NTM Diagrami]]
+$$\boxed{I_1 = \sigma_x + \sigma_y + \sigma_z = \sigma_1 + \sigma_2 + \sigma_3}$$
+
+> Sled tenzorja je invarianta — mora biti enaka pred in po diagonalizaciji! ✓
+
+> **glej:** [[Koncept - NTM Diagrami]] | [[Vaje - Napetostni tenzor in Mohrova kroznica]]
 
 ---
 
@@ -189,7 +204,52 @@ Za dimenzioniranje pri kombiniranih obremenitvah:
 
 $$\sigma_{ekv} = \sqrt{\sigma^2 + 3\tau^2} \leq \sigma_{dop} \quad \text{(Von Mises)}$$
 
+$$\sigma_{ekv} = \sqrt{\sigma^2 + 4\tau^2} \leq \sigma_{dop} \quad \text{(Tresca)}$$
+
+> 💡 **Trik za kombinirano:** Tresca zamenja faktor 3 z 4 pred $\tau^2$. Lažje si zapomniti: **"Tresca 4, VM 3"**.
+
 > **glej:** [[Koncept - Upogib#Korak 4 — Napetosti in predznak]]
+
+---
+
+## Hipotezi porušitve — Tresca in Von Mises
+
+> **To pride na VSAK izpit!** Nauči se obe formuli in kdaj katera velja.
+
+### Tresca (hipoteza max strižne napetosti)
+
+$$\boxed{\sigma_{ekv,T} = \max(|\sigma_1-\sigma_2|,\ |\sigma_2-\sigma_3|,\ |\sigma_1-\sigma_3|)}$$
+
+Za **2D** (σ3=0): $\sigma_{ekv,T} = \sigma_1 - \sigma_3$ (ko sta različnih predznakov)
+
+Za **kombinirano** (σ in τ): $\sigma_{ekv,T} = \sqrt{\sigma^2 + 4\tau^2}$
+
+Za **čisto strižno** (σ=0): $\sigma_{ekv,T} = 2\tau_{max}$
+
+### Von Mises (hipoteza energije distorzije)
+
+$$\boxed{\sigma_{ekv,VM} = \sqrt{\frac{1}{2}\left[(\sigma_1-\sigma_2)^2+(\sigma_2-\sigma_3)^2+(\sigma_3-\sigma_1)^2\right]}}$$
+
+Za **kombinirano** (σ in τ): $\sigma_{ekv,VM} = \sqrt{\sigma^2 + 3\tau^2}$
+
+Za **čisto strižno** (σ=0): $\sigma_{ekv,VM} = \tau\sqrt{3}$
+
+### Primerjava — kdaj katera
+
+| | Tresca | Von Mises |
+|--|--------|-----------|
+| **Fizikalni pomen** | Maks. strižna napetost | Energija distorzije |
+| **Čisto strižno** | $2\tau$ | $\tau\sqrt{3} = 1{,}732\,\tau$ |
+| **% razlika** | +15,5% (bolj konzervat.) | osnova |
+| **Konzervativnost** | ✓ bolj konzervativna | manj konzervativna |
+| **Raba** | les, konstrukcijsko jeklo | duktilne kovine (aluminij) |
+| **Faktor pred τ²** | **4** | **3** |
+
+> ⚠️ **Tresca > VM vedno!** Kadar naloga ne pove katera, izračunaj **obe** in komentiraj.
+
+> ⚠️ **Posebnost čistega striga:** $\sigma_1=+\tau$, $\sigma_3=-\tau$, $\varphi_0=45°$ — **vedno**!
+
+> **Primer:** [[Vaje - Napetostni tenzor in Mohrova kroznica#NALOGA 5 — Čisto strižno stanje + dimenzioniranje]]
 
 ---
 
@@ -198,6 +258,10 @@ $$\sigma_{ekv} = \sqrt{\sigma^2 + 3\tau^2} \leq \sigma_{dop} \quad \text{(Von Mi
 > **Napaka:** Zamešanje $\tau_{xy}$ s $\sigma_y$ — tenzor ima $\tau$ na nediago­nalnih mestih!
 > 
 > **Napaka:** Kot $\varphi_0$ je zasuk v **fizičnem prostoru** — na Mohrovi krožnici je kota **2φ₀**!
+>
+> **Napaka:** Pozabiti razvrstiti $\sigma_1 \geq \sigma_2 \geq \sigma_3$ — brez tega Tresca napačna!
+>
+> **Napaka:** Pri deformacijskem tenzorju: $\tau_{xy} = 2G\varepsilon_{xy}$ (ne $G\varepsilon_{xy}$!) — $\varepsilon_{xy}$ je pol $\gamma_{xy}$!
 
 ---
 
@@ -330,6 +394,7 @@ KORAK 6: Razvrsti σ1 ≥ σ2 ≥ σ3
 
 ## Rešene naloge
 
+- [[Vaje - Napetostni tenzor in Mohrova kroznica]] — **5 tipov nalog** (2D, 3D, kombinirano, deform., čist strig) z rešitvami
 - [[Naloga - Mehanika - Upogibne napetosti U-prerez]] — kombinirano σ iz M-diagrama
 - [[Naloga - Mehanika - Tenzorska analiza - deformacijski tenzor]] — εij → σij → σ1,2,3 (IMG_1241 str. 3-5)
 - [[Naloga - Mehanika - Tenzorska analiza - aluminijast kvader]] — 3D Hooke, F iz εz
@@ -342,6 +407,7 @@ KORAK 6: Razvrsti σ1 ≥ σ2 ≥ σ3
 
 ## Povezave
 
+- [[Vaje - Napetostni tenzor in Mohrova kroznica]] ← **vaje z vsemi tipi nalog**
 - [[Koncept - NTM Diagrami]]
 - [[Koncept - Upogib]]
 - [[Koncept - Torzija]]

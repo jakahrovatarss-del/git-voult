@@ -60,7 +60,7 @@ $$I_1 = \sigma_x+\sigma_y+\sigma_z = \sigma_1+\sigma_2+\sigma_3 \quad \checkmark
 
 ## NALOGA 1 — 2D Mohrova krožnica (osnovna)
 
-![[mohr_naloga1.svg]]
+![[mohr_naloga1.svg|697]]
 
 ### Podatki
 
@@ -111,7 +111,7 @@ $$I_1 = \sigma_x + \sigma_y = 80 + (-20) = 60 = \sigma_1 + \sigma_2 = 94{,}03 + 
 
 ## NALOGA 2 — 3D tenzor, ravninsko stanje (tip Jul. 2018, Feb. 2019)
 
-![[mohr_naloga2.svg]]
+![[mohr_naloga2.svg|697]]
 
 ### Podatki
 
@@ -193,7 +193,7 @@ $$\sigma_1+\sigma_2+\sigma_3 = 385{,}4+0+(-285{,}4) = 100\ \text{MPa}\ \checkmar
 
 ## NALOGA 3 — Kombinirano: upogib + torzija → ekvivalentne napetosti
 
-![[mohr_naloga3.svg]]
+![[mohr_naloga3.svg|697]]
 
 ### Podatki
 
@@ -268,7 +268,7 @@ $$\sigma_{ekv,T} = \sqrt{\sigma^2 + 4\tau^2} = \sqrt{159{,}15^2 + 4 \cdot 39{,}7
 
 ## NALOGA 4 — Deformacijski tenzor → napetostni tenzor → glavne napetosti
 
-![[mohr_naloga4.svg]]
+![[mohr_naloga4.svg|697]]
 
 ### Podatki
 
@@ -361,7 +361,7 @@ $$\sigma_1+\sigma_2+\sigma_3 = 55{,}37+26{,}25+(-2{,}87) = 78{,}75\ \text{MPa}\ 
 
 ## NALOGA 5 — Čisto strižno stanje + dimenzioniranje (Tresca vs Von Mises)
 
-![[mohr_naloga5.svg]]
+![[mohr_naloga5.svg|697]]
 
 ### Podatki
 

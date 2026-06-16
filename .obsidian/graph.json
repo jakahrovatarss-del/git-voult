@@ -6,32 +6,17 @@
   "hideUnresolved": true,
   "showOrphans": false,
   "collapse-color-groups": false,
-  "colorGroups": [
-    {
-      "query": "file: paraxis",
-      "color": {
-        "a": 1,
-        "rgb": 15608619
-      }
-    },
-    {
-      "query": "",
-      "color": {
-        "a": 1,
-        "rgb": 14069084
-      }
-    }
-  ],
+  "colorGroups": [],
   "collapse-display": false,
-  "showArrow": false,
-  "textFadeMultiplier": 0,
-  "nodeSizeMultiplier": 1.61293604651163,
-  "lineSizeMultiplier": 2.45668604651163,
+  "showArrow": true,
+  "textFadeMultiplier": -1.2,
+  "nodeSizeMultiplier": 2.67281901041667,
+  "lineSizeMultiplier": 2.80042317708333,
   "collapse-forces": false,
   "centerStrength": 0,
   "repelStrength": 20,
-  "linkStrength": 1,
+  "linkStrength": 0.269856770833333,
   "linkDistance": 500,
-  "scale": 0.030182895067324154,
+  "scale": 0.0078125,
   "close": false
 }

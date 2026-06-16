@@ -12,7 +12,7 @@ Določiti, **kdaj material poruši** (ali prekorači mejo tečenja), ko je obrem
 
 ---
 
-![[hipoteze_porusitve.svg]]
+![[hipoteze_porusitve.svg|697]]
 
 ---
 
@@ -50,6 +50,10 @@ $$\sigma_{ekv,VM} = \sqrt{\sigma_1^2 - \sigma_1\sigma_2 + \sigma_2^2}$$
 
 $$\boxed{\sigma_{ekv,VM} = \sqrt{\sigma^2 + 3\tau^2}}$$
 
+**Za čisto strižno stanje** ($\sigma=0$):
+
+$$\sigma_{ekv,VM} = \sqrt{0 + 3\tau^2} = \tau\sqrt{3} = 1{,}732\,\tau$$
+
 > **Fizikalni pomen:** Von Mises meri energijo, ki gre v spremembo oblike (ne volumna). Eksperimentalno bližje resnici kot Tresca.
 
 ---
@@ -67,6 +71,29 @@ $$\boxed{\sigma_{ekv,VM} = \sqrt{\sigma^2 + 3\tau^2}}$$
 > ⚠️ Tresca je vedno: $\sigma_{ekv,Tresca} \geq \sigma_{ekv,VM}$
 
 **Katera je bolj konzervativna?** → Tresca, ker da višji σ_ekv → pogosteje zavrne.
+
+### Hitre formule po obremenitvah
+
+| Obremenitev | Tresca | Von Mises |
+|-------------|--------|-----------|
+| Splošno 3D | $\sigma_1 - \sigma_3$ | $\sqrt{\frac{1}{2}[(\sigma_1{-}\sigma_2)^2+(\sigma_2{-}\sigma_3)^2+(\sigma_3{-}\sigma_1)^2]}$ |
+| Kombinirano σ+τ | $\sqrt{\sigma^2 + 4\tau^2}$ | $\sqrt{\sigma^2 + 3\tau^2}$ |
+| Čist strig (σ=0) | $2\tau$ | $\tau\sqrt{3} = 1{,}732\,\tau$ |
+| Enoosno (τ=0) | $\sigma$ | $\sigma$ |
+
+> 💡 **Trik "Tresca 4, VM 3":** razlika je samo v faktorju pred $\tau^2$ v alternativni formuli!
+
+> ⚠️ **Razvrstitev je ključna:** Vedno razvrsti $\sigma_1 \geq \sigma_2 \geq \sigma_3$ preden vstaviš v formulo!
+
+### Kadar rezultat ni enak pri obeh — primer (d=60 mm, Mt=2 kNm)
+
+$$\tau = 47{,}16\ \text{MPa}$$
+
+$$\sigma_{ekv,T} = 2\tau = 94{,}32\ \text{MPa} \qquad \sigma_{ekv,VM} = \tau\sqrt{3} = 81{,}65\ \text{MPa}$$
+
+Za $\sigma_{dop} = 90\ \text{MPa}$: Tresca zavrne (94,32 > 90), VM sprejme (81,65 < 90) → **razlika 15,5% je kritična!**
+
+> **Rešen primer:** [[Vaje - Napetostni tenzor in Mohrova kroznica#NALOGA 5 — Čisto strižno stanje + dimenzioniranje]]
 
 ---
 
@@ -150,6 +177,7 @@ $$\sigma_1 + \sigma_2 + \sigma_3 = 385{,}4 + (-285{,}4) + 0 = 100\ \text{MPa} \q
 
 ## Povezave
 
+- [[Vaje - Napetostni tenzor in Mohrova kroznica]] ← vaje z vsemi tipi in Tresca/VM primerjavami
 - [[Koncept - Napetostno stanje]]
 - [[Naloga - Mehanika - Izpit Feb2019 - Tresca Von Mises]]
 - [[Koncept - Torzija]]

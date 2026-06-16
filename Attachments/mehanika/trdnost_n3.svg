@@ -1,0 +1,145 @@
+<svg viewBox="0 0 760 500" xmlns="http://www.w3.org/2000/svg" font-family="Arial,sans-serif">
+<text x="380" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#222">NALOGA 3 — Kontrola napetosti asimetričnega T-prereza</text>
+
+<!-- ===== LEFT: T-prerez geometry ===== -->
+<text x="130" y="50" text-anchor="middle" font-size="11" font-weight="bold" fill="#444">T-prerez (geometrija)</text>
+
+<!-- T-section drawing: pasnica (top) + stojina (bottom) -->
+<!-- Total H=14cm. Scale: 10px/cm -->
+<!-- Pasnica: 12×2 cm → 120×20px, top at y=80 -->
+<!-- Stojina: 2×12 cm → 20×120px, center at x=130 -->
+
+<!-- Stojina: x=120..140, y=100..220 (12cm * 10px = 120px) -->
+<rect x="120" y="100" width="20" height="120" fill="rgba(150,180,220,0.3)" stroke="#336699" stroke-width="2.5"/>
+
+<!-- Pasnica: x=70..190, y=80..100 (12cm * 10px = 120px wide, 2cm=20px tall) -->
+<rect x="70" y="80" width="120" height="20" fill="rgba(150,180,220,0.3)" stroke="#336699" stroke-width="2.5"/>
+
+<!-- Total height annotation H=14cm -->
+<line x1="55" y1="80" x2="55" y2="220" stroke="#666" stroke-width="1.5"/>
+<polygon points="52,84 55,76 58,84" fill="#666"/>
+<polygon points="52,216 55,224 58,216" fill="#666"/>
+<text x="20" y="154" font-size="11" fill="#666" font-weight="bold">H=14</text>
+
+<!-- Pasnica width 12cm -->
+<line x1="70" y1="65" x2="190" y2="65" stroke="#666" stroke-width="1"/>
+<polygon points="74,62 66,65 74,68" fill="#666"/>
+<polygon points="186,62 194,65 186,68" fill="#666"/>
+<text x="130" y="60" text-anchor="middle" font-size="10" fill="#666">12 cm</text>
+
+<!-- Stojina width 2cm -->
+<line x1="120" y1="235" x2="140" y2="235" stroke="#666" stroke-width="1"/>
+<polygon points="124,232 116,235 124,238" fill="#666"/>
+<polygon points="136,232 144,235 136,238" fill="#666"/>
+<text x="130" y="248" text-anchor="middle" font-size="10" fill="#666">2 cm</text>
+
+<!-- Heights: pasnica 2cm, stojina 12cm -->
+<text x="198" y="92" font-size="9" fill="#336699">2 cm</text>
+<text x="148" y="165" font-size="9" fill="#336699">12 cm</text>
+
+<!-- yT = 9.5 cm from bottom (y=220-95=125px from bottom=y=220) -->
+<!-- y=220 is bottom, y=80 is top. yT=9.5cm from bottom → 220-9.5*10=125px → y=125 -->
+<line x1="60" y1="125" x2="205" y2="125" stroke="#cc0000" stroke-width="2" stroke-dasharray="5,3"/>
+<text x="208" y="129" font-size="10" fill="#cc0000" font-weight="bold">yT = 9,5</text>
+
+<!-- e_sp and e_zg annotations -->
+<line x1="210" y1="125" x2="210" y2="220" stroke="#cc0000" stroke-width="1.5"/>
+<polygon points="207,129 210,121 213,129" fill="#cc0000"/>
+<polygon points="207,216 210,224 213,216" fill="#cc0000"/>
+<text x="218" y="178" font-size="10" fill="#cc0000" font-weight="bold">e_sp</text>
+<text x="218" y="190" font-size="10" fill="#cc0000">= 9,5 cm</text>
+
+<line x1="228" y1="80" x2="228" y2="125" stroke="#006600" stroke-width="1.5"/>
+<polygon points="225,84 228,76 231,84" fill="#006600"/>
+<polygon points="225,121 228,129 231,121" fill="#006600"/>
+<text x="236" y="108" font-size="10" fill="#006600" font-weight="bold">e_zg</text>
+<text x="236" y="120" font-size="10" fill="#006600">= 4,5 cm</text>
+
+<!-- ===== CENTER: Steiner calculation table ===== -->
+<text x="420" y="50" text-anchor="middle" font-size="11" font-weight="bold" fill="#444">Steiner — výpočet J</text>
+
+<!-- Table header -->
+<rect x="285" y="58" width="285" height="25" rx="3" fill="#336699"/>
+<text x="305" y="74" font-size="9" fill="white">Del</text>
+<text x="340" y="74" font-size="9" fill="white">Ai [cm²]</text>
+<text x="390" y="74" font-size="9" fill="white">yi [cm]</text>
+<text x="430" y="74" font-size="9" fill="white">Ai·yi</text>
+<text x="470" y="74" font-size="9" fill="white">Ii+Ai·di²</text>
+<!-- Row 1: Stojina -->
+<rect x="285" y="83" width="285" height="22" fill="#f0f4ff"/>
+<text x="305" y="98" font-size="9" fill="#333">Stojina 2×12</text>
+<text x="355" y="98" font-size="9" fill="#333">24</text>
+<text x="395" y="98" font-size="9" fill="#333">6,0</text>
+<text x="435" y="98" font-size="9" fill="#333">144</text>
+<text x="470" y="98" font-size="9" fill="#333">288+294=582</text>
+<!-- Row 2: Pasnica -->
+<rect x="285" y="105" width="285" height="22" fill="white"/>
+<text x="305" y="120" font-size="9" fill="#333">Pasnica 12×2</text>
+<text x="355" y="120" font-size="9" fill="#333">24</text>
+<text x="395" y="120" font-size="9" fill="#333">13,0</text>
+<text x="435" y="120" font-size="9" fill="#333">312</text>
+<text x="470" y="120" font-size="9" fill="#333">8+294=302</text>
+<!-- Row total -->
+<rect x="285" y="127" width="285" height="22" rx="0" fill="#e8e8e8"/>
+<text x="305" y="142" font-size="9" font-weight="bold" fill="#333">Skupaj</text>
+<text x="355" y="142" font-size="9" font-weight="bold" fill="#333">48</text>
+<text x="435" y="142" font-size="9" font-weight="bold" fill="#333">456</text>
+<text x="470" y="142" font-size="9" font-weight="bold" fill="#cc0000">J = 884 cm⁴</text>
+
+<!-- yT formula -->
+<text x="290" y="168" font-size="10" fill="#333">yT = ΣAi·yi / ΣAi = 456 / 48 = <tspan font-weight="bold" fill="#cc0000">9,5 cm</tspan></text>
+
+<!-- W values -->
+<rect x="285" y="178" width="285" height="55" rx="4" fill="#fff8e8" stroke="#cc9900" stroke-width="1.5"/>
+<text x="420" y="194" text-anchor="middle" font-size="10" font-weight="bold" fill="#885500">Odpornostna momenta</text>
+<text x="295" y="210" font-size="11" fill="#cc0000">W_sp = J/e_sp = 884/9,5 = <tspan font-weight="bold">93,05 cm³ ← kritičen!</tspan></text>
+<text x="295" y="226" font-size="11" fill="#006600">W_zg = J/e_zg = 884/4,5 = <tspan font-weight="bold">196,4 cm³</tspan></text>
+
+<!-- ===== BOTTOM: Stress distribution diagram ===== -->
+<text x="380" y="265" text-anchor="middle" font-size="11" font-weight="bold" fill="#444">Napetostna porazdelitev pri Mmax = 2500 kNcm (F=25kN, L=4m)</text>
+
+<!-- T-section outline again (small, left side) -->
+<rect x="80" y="285" width="60" height="10" fill="rgba(150,180,220,0.3)" stroke="#336699" stroke-width="1.5"/>
+<rect x="105" y="295" width="10" height="60" fill="rgba(150,180,220,0.3)" stroke="#336699" stroke-width="1.5"/>
+<!-- yT line on small section: 9.5cm from bottom → 9.5/14*70=47.5px from bottom=y=355-47.5=307.5 -->
+<line x1="75" y1="308" x2="152" y2="308" stroke="#cc0000" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text x="58" y="312" font-size="8" fill="#cc0000">yT</text>
+
+<!-- Neutral axis label -->
+<text x="160" y="312" font-size="9" fill="#cc0000">← nevtralna os</text>
+
+<!-- Stress triangle: left=compression (top), right=tension (bottom) -->
+<!-- Section goes from y=285 (top) to y=355 (bottom). NeutralAxis at y=308 -->
+<!-- Scale for stress: σ_zg=12.7, σ_sp=26.9 MPa -->
+<!-- Max width for compression: 12.7/26.9 * 60px = 28px at top -->
+<!-- Max width for tension: 60px at bottom -->
+
+<!-- Compression (above NA, going left from axis x=230) -->
+<polygon points="230,285 202,285 230,308" fill="rgba(200,0,0,0.2)" stroke="#cc0000" stroke-width="1.5"/>
+<text x="185" y="300" font-size="9" fill="#cc0000">σ_zg=12,7</text>
+<text x="185" y="310" font-size="8" fill="#cc0000">kN/cm²</text>
+<text x="215" y="280" font-size="8" fill="#cc0000">TLAK</text>
+
+<!-- Tension (below NA, going right from axis x=230) -->
+<polygon points="230,308 230,355 290,355" fill="rgba(0,0,200,0.2)" stroke="#336699" stroke-width="1.5"/>
+<text x="295" y="355" font-size="9" fill="#cc0000" font-weight="bold">σ_sp = 26,9</text>
+<text x="295" y="367" font-size="9" fill="#cc0000" font-weight="bold">kN/cm² ❌</text>
+<text x="295" y="379" font-size="8" fill="#cc0000">PREKORAČENO!</text>
+
+<!-- Vertical line = NA -->
+<line x1="230" y1="280" x2="230" y2="360" stroke="#cc0000" stroke-width="2"/>
+
+<!-- Linear interpolation lines -->
+<line x1="202" y1="285" x2="290" y2="355" stroke="#555" stroke-width="1" stroke-dasharray="3,2"/>
+
+<!-- σdop line -->
+<line x1="290" y1="300" x2="340" y2="300" stroke="#006600" stroke-width="1.5" stroke-dasharray="4,2"/>
+<text x="343" y="304" font-size="9" fill="#006600">σ_dop = 16 kN/cm²</text>
+
+<!-- Result box at bottom -->
+<rect x="40" y="400" width="680" height="80" rx="5" fill="#fff0f0" stroke="#cc0000" stroke-width="2"/>
+<text x="380" y="418" text-anchor="middle" font-size="12" font-weight="bold" fill="#cc0000">ZAKLJUČEK: Prerez NI ZADOSTEN!</text>
+<text x="55" y="435" font-size="10" fill="#333">Spodnji rob (natazan): σ_sp = M/W_sp = 2500/93,05 = <tspan font-weight="bold" fill="#cc0000">26,9 kN/cm² &gt; 16 kN/cm² ❌ PREKORAČENO</tspan></text>
+<text x="55" y="450" font-size="10" fill="#333">Zgornji rob (tlačen):  σ_zg = M/W_zg = 2500/196,4 = <tspan font-weight="bold" fill="#006600">12,7 kN/cm² &lt; 16 kN/cm² ✓ varno</tspan></text>
+<text x="55" y="468" font-size="10" fill="#885500">⚠ Kritičen je SPODNJI rob — ker je e_sp &gt; e_zg (dlje od težišča). Vedno preveri oba robova!</text>
+</svg>

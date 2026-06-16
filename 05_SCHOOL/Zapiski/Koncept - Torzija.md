@@ -37,6 +37,8 @@ $$\tau(r) = \frac{M_t \cdot r}{I_p}$$
 
 $$I_p = \frac{\pi d^4}{32} \qquad W_t = \frac{\pi d^3}{16} \qquad e = \frac{d}{2}$$
 
+> 💡 **Trik:** $W_t = \frac{\pi d^3}{16} = 2 \cdot \frac{\pi d^3}{32} = 2W$ — torzijski odpornostni moment je **dvakrat upogibni** za polni krog!
+
 $$\tau_{max} = \frac{M_t}{W_t} = \frac{M_t \cdot 16}{\pi d^3} = \frac{M_t \cdot d/2}{I_p}$$
 
 ### Votli krog (zunanji $D$, notranji $d$)
@@ -148,7 +150,15 @@ $$\sigma = \frac{M}{W_x}, \qquad \tau = \frac{M_t}{W_t}$$
 
 **Dimenzioniranje po Von Mises:**
 
-$$\sigma_{ekv} = \sqrt{\sigma^2 + 3\tau^2} \leq \sigma_{dop}$$
+$$\sigma_{ekv,VM} = \sqrt{\sigma^2 + 3\tau^2} \leq \sigma_{dop}$$
+
+**Dimenzioniranje po Tresca:**
+
+$$\sigma_{ekv,T} = \sqrt{\sigma^2 + 4\tau^2} \leq \sigma_{dop}$$
+
+> 💡 **Trik "Tresca 4, VM 3"** — edina razlika je faktor pred $\tau^2$!
+
+> **Rešen primer z obema:** [[Vaje - Napetostni tenzor in Mohrova kroznica#NALOGA 3 — Kombinirano: upogib + torzija → ekvivalentne napetosti]]
 
 **Ekvivalentni moment (za krožne prereze):**
 
@@ -177,7 +187,9 @@ $$M_{ekv} = \frac{1}{2}\left(M + \sqrt{M^2 + M_t^2}\right) \quad \text{(Tresca)}
 
 ## Povezave
 
+- [[Vaje - Napetostni tenzor in Mohrova kroznica]] ← kombinirano M+Mt, čist strig
 - [[Koncept - Napetostno stanje]]
+- [[Koncept - Hipoteze Porusitve]]
 - [[Koncept - Upogib]]
 - [[Koncept - Vztrajnostni moment]]
 - [[Naloga - Mehanika - Izpit Feb2019 - Torzija Bredt skatlast]]

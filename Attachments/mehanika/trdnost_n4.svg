@@ -1,0 +1,131 @@
+<svg viewBox="0 0 760 480" xmlns="http://www.w3.org/2000/svg" font-family="Arial,sans-serif">
+<text x="380" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#222">NALOGA 4 — Ekscentrični tlak N + M (superponiranje napetosti)</text>
+
+<!-- ===== LEFT: Steber diagram ===== -->
+<text x="120" y="50" text-anchor="middle" font-size="11" font-weight="bold" fill="#444">Ekscentrična sila → N + M</text>
+
+<!-- Column: 10×10cm, height=200px -->
+<rect x="90" y="120" width="60" height="200" fill="rgba(200,200,200,0.3)" stroke="#555" stroke-width="2.5"/>
+
+<!-- Ground hatch -->
+<line x1="80" y1="322" x2="160" y2="322" stroke="#555" stroke-width="2"/>
+<line x1="80" y1="322" x2="72" y2="334" stroke="#555" stroke-width="1.5"/>
+<line x1="92" y1="322" x2="84" y2="334" stroke="#555" stroke-width="1.5"/>
+<line x1="104" y1="322" x2="96" y2="334" stroke="#555" stroke-width="1.5"/>
+<line x1="116" y1="322" x2="108" y2="334" stroke="#555" stroke-width="1.5"/>
+<line x1="128" y1="322" x2="120" y2="334" stroke="#555" stroke-width="1.5"/>
+<line x1="140" y1="322" x2="132" y2="334" stroke="#555" stroke-width="1.5"/>
+<line x1="152" y1="322" x2="144" y2="334" stroke="#555" stroke-width="1.5"/>
+<line x1="164" y1="322" x2="156" y2="334" stroke="#555" stroke-width="1.5"/>
+
+<!-- Force F eccentric (x=150+e=150+30=180, from center x=120) -->
+<!-- Center of column is at x=120, e=3cm=30px (scale 10px/cm) -->
+<!-- Force applied at x=150 (=120+30=3cm offset) -->
+<line x1="150" y1="60" x2="150" y2="118" stroke="#cc0000" stroke-width="3"/>
+<polygon points="147,115 150,123 153,115" fill="#cc0000"/>
+<text x="168" y="80" font-size="11" fill="#cc0000" font-weight="bold">F=200kN</text>
+
+<!-- e = 3cm annotation -->
+<line x1="120" y1="110" x2="150" y2="110" stroke="#cc0000" stroke-width="1.5"/>
+<polygon points="124,107 116,110 124,113" fill="#cc0000"/>
+<polygon points="146,107 154,110 146,113" fill="#cc0000"/>
+<text x="135" y="106" text-anchor="middle" font-size="9" fill="#cc0000">e=3cm</text>
+
+<!-- Column center axis (dashed) -->
+<line x1="120" y1="60" x2="120" y2="325" stroke="#888" stroke-width="1" stroke-dasharray="5,3"/>
+<text x="102" y="80" font-size="9" fill="#888">ось</text>
+
+<!-- Equivalent: N + M arrows on right of column -->
+<text x="195" y="155" font-size="10" font-weight="bold" fill="#555">≡</text>
+
+<!-- N arrow (centered, downward) -->
+<line x1="240" y1="80" x2="240" y2="118" stroke="#cc0000" stroke-width="2.5"/>
+<polygon points="237,115 240,123 243,115" fill="#cc0000"/>
+<text x="255" y="95" font-size="10" fill="#cc0000" font-weight="bold">N=−200kN</text>
+<text x="255" y="108" font-size="9" fill="#cc0000">(tlak)</text>
+
+<!-- Column 2 (equivalent) -->
+<rect x="220" y="120" width="40" height="200" fill="rgba(200,200,200,0.2)" stroke="#888" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+<!-- M moment curved arrow -->
+<path d="M 240,140 Q 270,155 240,170" fill="none" stroke="#336699" stroke-width="2.5"/>
+<polygon points="238,168 244,176 248,168" fill="#336699"/>
+<text x="276" y="158" font-size="10" fill="#336699" font-weight="bold">M=600 kNcm</text>
+<text x="276" y="171" font-size="9" fill="#336699">(=F·e)</text>
+
+<!-- ===== CENTER: Stress superposition diagram ===== -->
+<text x="480" y="50" text-anchor="middle" font-size="11" font-weight="bold" fill="#444">Superponiranje napetosti</text>
+
+<!-- Three diagrams side by side: σN + σM = σtotal -->
+<!-- Each diagram: rect showing prerez (40×120px) + stress distribution -->
+
+<!-- σN: uniform compression -->
+<text x="340" y="85" text-anchor="middle" font-size="10" fill="#cc0000">σN = N/A</text>
+<rect x="315" y="95" width="50" height="120" fill="rgba(200,200,200,0.15)" stroke="#888" stroke-width="1.5" stroke-dasharray="3,2"/>
+<!-- Uniform stress block to the left -->
+<rect x="285" y="95" width="30" height="120" fill="rgba(200,0,0,0.2)" stroke="#cc0000" stroke-width="1.5"/>
+<text x="265" y="162" font-size="10" fill="#cc0000" text-anchor="middle">−2,0</text>
+<text x="265" y="174" font-size="8" fill="#cc0000" text-anchor="middle">kN/cm²</text>
+
+<!-- Plus sign -->
+<text x="390" y="162" font-size="18" font-weight="bold" fill="#555">+</text>
+
+<!-- σM: linear (compression top, tension bottom) -->
+<text x="450" y="85" text-anchor="middle" font-size="10" fill="#336699">σM = ±M/W</text>
+<rect x="425" y="95" width="50" height="120" fill="rgba(200,200,200,0.15)" stroke="#888" stroke-width="1.5" stroke-dasharray="3,2"/>
+<!-- Triangle compression left (top), tension right (bottom) -->
+<polygon points="425,95 395,95 425,215" fill="rgba(200,0,0,0.2)" stroke="#cc0000" stroke-width="1.5"/>
+<polygon points="475,95 475,215 505,215" fill="rgba(0,0,200,0.2)" stroke="#336699" stroke-width="1.5"/>
+<text x="380" y="102" font-size="9" fill="#cc0000">−3,6</text>
+<text x="510" y="218" font-size="9" fill="#336699">+3,6</text>
+
+<!-- Equals sign -->
+<text x="538" y="162" font-size="18" font-weight="bold" fill="#555">=</text>
+
+<!-- σtotal: superposition -->
+<text x="620" y="85" text-anchor="middle" font-size="10" fill="#555">σ = σN + σM</text>
+<rect x="590" y="95" width="60" height="120" fill="rgba(200,200,200,0.15)" stroke="#888" stroke-width="1.5"/>
+<!-- Combined: top = -2-3.6=-5.6 (compression, left), bottom = -2+3.6=+1.6 (tension, right) -->
+<!-- Scale: 5.6 max = 42px. 1.6 = 12px -->
+<!-- Compression side (left of center line x=590): at top -5.6 → 42px, at bottom -(-1.6)=goes right... -->
+<!-- Actually draw linear distribution from -5.6 at top to +1.6 at bottom -->
+<!-- NA at y=95+120*(5.6/7.2)=95+93=188 (but that's outside range if total is 120px and ratio 5.6/7.2=0.778*120=93px) -->
+<!-- Actually NA at distance from top: e*5.6/(5.6+1.6) = 120*5.6/7.2 = 93px from top → y=188 -->
+<line x1="620" y1="95" x2="620" y2="215" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+<!-- Polygon: compression (left of axis, top portion) -->
+<polygon points="620,95 578,95 620,188" fill="rgba(200,0,0,0.25)" stroke="#cc0000" stroke-width="1.5"/>
+<!-- Polygon: tension (right of axis, bottom portion) -->
+<polygon points="620,188 620,215 633,215" fill="rgba(0,0,200,0.2)" stroke="#336699" stroke-width="1.5"/>
+<text x="560" y="102" font-size="10" fill="#cc0000" font-weight="bold">−5,6</text>
+<text x="638" y="218" font-size="10" fill="#336699" font-weight="bold">+1,6</text>
+
+<!-- NA annotation -->
+<line x1="580" y1="188" x2="660" y2="188" stroke="#cc0000" stroke-width="1.5" stroke-dasharray="4,2"/>
+<text x="665" y="192" font-size="9" fill="#cc0000">n.o.</text>
+
+<!-- Labels under each diagram -->
+<text x="340" y="235" text-anchor="middle" font-size="9" fill="#cc0000">σN=−2,0 kN/cm²</text>
+<text x="340" y="247" text-anchor="middle" font-size="9" fill="#cc0000">(enakomerno)</text>
+
+<text x="450" y="235" text-anchor="middle" font-size="9" fill="#336699">σM=±3,6 kN/cm²</text>
+<text x="450" y="247" text-anchor="middle" font-size="9" fill="#336699">(linearno)</text>
+
+<text x="620" y="235" text-anchor="middle" font-size="9" fill="#555">−5,6 do +1,6</text>
+<text x="620" y="247" text-anchor="middle" font-size="9" fill="#555">(kombinacija)</text>
+
+<!-- ===== BOTTOM: Result box ===== -->
+<rect x="40" y="350" width="680" height="115" rx="5" fill="#f8f8f8" stroke="#555" stroke-width="1.5"/>
+<text x="380" y="368" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">ZAKLJUČEK — Kontrola napetosti</text>
+
+<!-- Formulas -->
+<text x="55" y="388" font-size="10" fill="#333">A = 10×10 = 100 cm²      W = 10³/6 = 166,7 cm³</text>
+<text x="55" y="404" font-size="10" fill="#cc0000">σN = N/A = −200/100 = <tspan font-weight="bold">−2,0 kN/cm²</tspan>  (tlak)</text>
+<text x="55" y="420" font-size="10" fill="#336699">σM = ±M/W = ±600/166,7 = <tspan font-weight="bold">±3,6 kN/cm²</tspan></text>
+<text x="55" y="438" font-size="11" fill="#cc0000" font-weight="bold">σ_max = −2,0 − 3,6 = −5,6 kN/cm²  (tlak, na strani sile)</text>
+<text x="55" y="456" font-size="11" fill="#336699" font-weight="bold">σ_min = −2,0 + 3,6 = +1,6 kN/cm²  (NATEG! — na nasprotni strani) ⚠</text>
+
+<text x="400" y="404" font-size="10" fill="#006600">σ_max: 5,6 &lt; 16 kN/cm² ✓</text>
+<text x="400" y="420" font-size="10" fill="#006600">σ_min: 1,6 &lt; 16 kN/cm² ✓</text>
+<text x="400" y="438" font-size="10" fill="#885500">⚠ Nateg kljub tlačni sili!</text>
+<text x="400" y="456" font-size="10" fill="#885500">n.o. = 2,78 cm od težišča</text>
+</svg>

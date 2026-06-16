@@ -1,0 +1,134 @@
+<svg viewBox="0 0 760 480" xmlns="http://www.w3.org/2000/svg" font-family="Arial,sans-serif">
+<text x="380" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#222">NALOGA 6 — Euler uklon prostoležeče palice (β=1, šibka os)</text>
+
+<!-- ===== LEFT: Prerez b×h with Imin annotation ===== -->
+<text x="110" y="50" text-anchor="middle" font-size="11" font-weight="bold" fill="#444">Prerez b=10, h=15 cm</text>
+
+<!-- Rectangle cross-section, scale 8px/cm: b=80px, h=120px -->
+<rect x="60" y="80" width="80" height="120" fill="rgba(200,160,80,0.25)" stroke="#cc8800" stroke-width="2.5"/>
+
+<!-- Centroid -->
+<circle cx="100" cy="140" r="3" fill="#555"/>
+
+<!-- Strong axis (Imax, horizontal, y axis) -->
+<line x1="45" y1="140" x2="155" y2="140" stroke="#006600" stroke-width="2" stroke-dasharray="6,3"/>
+<text x="157" y="144" font-size="10" fill="#006600" font-weight="bold">Imax = 2812,5</text>
+<text x="157" y="156" font-size="9" fill="#006600">(b·h³/12)</text>
+
+<!-- Weak axis (Imin, vertical, x axis → uklon v tej ravnini) -->
+<line x1="100" y1="65" x2="100" y2="215" stroke="#cc0000" stroke-width="2" stroke-dasharray="6,3"/>
+<text x="106" y="228" font-size="10" fill="#cc0000" font-weight="bold">Imin = 1250</text>
+<text x="106" y="240" font-size="9" fill="#cc0000">(h·b³/12) ← uklon!</text>
+
+<!-- Dimension annotations -->
+<line x1="60" y1="248" x2="140" y2="248" stroke="#666" stroke-width="1"/>
+<polygon points="64,245 56,248 64,251" fill="#666"/>
+<polygon points="136,245 144,248 136,251" fill="#666"/>
+<text x="100" y="263" text-anchor="middle" font-size="11" fill="#666">b = 10 cm</text>
+
+<line x1="152" y1="80" x2="152" y2="200" stroke="#666" stroke-width="1"/>
+<polygon points="149,84 152,76 155,84" fill="#666"/>
+<polygon points="149,196 152,204 155,196" fill="#666"/>
+<text x="162" y="145" font-size="11" fill="#666">h = 15</text>
+
+<!-- Uklon direction arrow -->
+<path d="M 105,80 Q 130,100 105,140 Q 130,180 105,200" fill="none" stroke="#cc0000" stroke-width="2" stroke-dasharray="5,3"/>
+<text x="138" y="280" font-size="9" fill="#cc0000">↑ uklon v</text>
+<text x="138" y="292" font-size="9" fill="#cc0000">tej ravnini</text>
+<text x="138" y="304" font-size="9" fill="#cc0000">(b=10 cm)</text>
+
+<!-- ===== CENTER: Steber diagram ===== -->
+<text x="350" y="50" text-anchor="middle" font-size="11" font-weight="bold" fill="#444">Prostoležeč steber (β=1, L=4m)</text>
+
+<!-- Support bottom pin -->
+<polygon points="350,290 335,315 365,315" fill="none" stroke="#333" stroke-width="2"/>
+<line x1="325" y1="318" x2="375" y2="318" stroke="#333" stroke-width="2"/>
+
+<!-- Support top pin -->
+<polygon points="350,100" fill="none"/>
+<circle cx="350" cy="95" r="6" fill="none" stroke="#333" stroke-width="2"/>
+<line x1="325" y1="89" x2="375" y2="89" stroke="#333" stroke-width="1.5"/>
+
+<!-- Column -->
+<rect x="338" y="95" width="24" height="195" fill="rgba(200,160,80,0.25)" stroke="#cc8800" stroke-width="2"/>
+
+<!-- Force F at top -->
+<line x1="350" y1="50" x2="350" y2="91" stroke="#cc0000" stroke-width="2.5"/>
+<polygon points="347,88 350,96 353,88" fill="#cc0000"/>
+<text x="362" y="62" font-size="11" fill="#cc0000" font-weight="bold">F = 20 kN</text>
+
+<!-- Buckled shape -->
+<path d="M 350,95 Q 395,175 350,290" fill="none" stroke="#cc0000" stroke-width="2.5" stroke-dasharray="7,4"/>
+
+<!-- lu = L annotation -->
+<line x1="405" y1="95" x2="405" y2="290" stroke="#336699" stroke-width="1.5"/>
+<polygon points="402,99 405,91 408,99" fill="#336699"/>
+<polygon points="402,286 405,294 408,286" fill="#336699"/>
+<text x="412" y="196" font-size="10" fill="#336699">lu=β·L</text>
+<text x="412" y="210" font-size="10" fill="#336699">=1·400</text>
+<text x="412" y="224" font-size="10" fill="#336699">=400 cm</text>
+
+<!-- ===== RIGHT: Euler critical curve ===== -->
+<text x="610" y="50" text-anchor="middle" font-size="11" font-weight="bold" fill="#444">Euler krivulja</text>
+
+<!-- Axes -->
+<line x1="480" y1="290" x2="750" y2="290" stroke="#333" stroke-width="1.5"/>
+<polygon points="746,285 756,290 746,295" fill="#333"/>
+<text x="755" y="294" font-size="10" fill="#333">λ</text>
+<line x1="490" y1="80" x2="490" y2="305" stroke="#333" stroke-width="1.5"/>
+<polygon points="485,84 490,74 495,84" fill="#333"/>
+<text x="468" y="78" font-size="10" fill="#333">Fk/A</text>
+<text x="468" y="90" font-size="10" fill="#333">[kN/cm²]</text>
+
+<!-- λe line (vertical) at λ=90.7 → scale: (90.7/200)*250=113px from x=490 → x=603 -->
+<line x1="603" y1="80" x2="603" y2="295" stroke="#cc9900" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text x="605" y="295" font-size="9" fill="#cc9900">λe=90,7</text>
+
+<!-- Euler curve: σk=π²E/λ². At λ=90.7, σk=σdop=1.2kN/cm² (y=290-1.2*... need scale) -->
+<!-- y scale: max σ=5 at λ=60, min σ=0 at λ=∞. Scale: 50px per kN/cm² -->
+<!-- y=290 is σ=0, y=290-5*50=40 is σ=5 -->
+<!-- Euler: σk = π²·E/λ² = 9869.6/λ² kN/cm² -->
+<!-- At λ=60: σk=9869.6/3600=2.74 → y=290-2.74*50=153 -->
+<!-- At λ=80: σk=9869.6/6400=1.54 → y=290-1.54*50=213 -->
+<!-- At λ=90.7: σk=9869.6/8226=1.2 → y=290-1.2*50=230 -->
+<!-- At λ=100: σk=9869.6/10000=0.987 → y=290-0.987*50=240.7 -->
+<!-- At λ=120: σk=9869.6/14400=0.686 → y=290-0.686*50=255.7 -->
+<!-- At λ=138.6: σk=9869.6/19210=0.514 → y=290-0.514*50=264.3 -->
+<!-- At λ=160: σk=9869.6/25600=0.386 → y=290-0.386*50=270.7 -->
+<!-- At λ=200: σk=9869.6/40000=0.247 → y=290-0.247*50=277.7 -->
+<!-- x scale: 250px for λ=0..200. So λ=1 → 1.25px. x = 490 + λ*1.25 -->
+<!-- At λ=60: x=490+75=565; At λ=80: x=590; At λ=90.7: x=603; At λ=100: x=615 -->
+<!-- At λ=120: x=640; At λ=138.6: x=663; At λ=160: x=690; At λ=200: x=740 -->
+
+<path d="M 565,153 Q 590,213 603,230 Q 640,256 663,264 Q 690,271 740,278" fill="none" stroke="#336699" stroke-width="2.5"/>
+<text x="678" y="248" font-size="9" fill="#336699">Euler</text>
+
+<!-- ω-region (before λe, filled gray) -->
+<rect x="490" y="80" width="113" height="210" fill="rgba(200,200,200,0.1)"/>
+<text x="547" y="200" text-anchor="middle" font-size="9" fill="#888">ω metoda</text>
+<text x="547" y="213" text-anchor="middle" font-size="8" fill="#888">(λ &lt; λe)</text>
+
+<!-- σdop line (horizontal) at y=290-1.2*50=230 -->
+<line x1="490" y1="230" x2="750" y2="230" stroke="#006600" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text x="492" y="224" font-size="9" fill="#006600">σdop=1,2</text>
+
+<!-- Our λ=138.6 marker -->
+<line x1="663" y1="80" x2="663" y2="295" stroke="#cc0000" stroke-width="2" stroke-dasharray="5,3"/>
+<circle cx="663" cy="264" r="6" fill="#cc0000"/>
+<text x="665" y="308" font-size="10" fill="#cc0000" font-weight="bold">λ=138,6</text>
+<text x="665" y="320" font-size="9" fill="#cc0000">naša naloga</text>
+
+<!-- Fk/A marker: σk=0.514 at λ=138.6, y=290-0.514*50=264 ✓ -->
+<line x1="490" y1="264" x2="663" y2="264" stroke="#cc0000" stroke-width="1" stroke-dasharray="3,2"/>
+<text x="492" y="260" font-size="9" fill="#cc0000">Fk/A=0,514</text>
+
+<!-- ===== BOTTOM: Calculation summary ===== -->
+<rect x="40" y="350" width="680" height="115" rx="5" fill="#e8f8e8" stroke="#006600" stroke-width="1.5"/>
+<text x="380" y="368" text-anchor="middle" font-size="11" font-weight="bold" fill="#005500">ZAKLJUČEK — Euler uklon, β=1</text>
+
+<text x="55" y="386" font-size="10" fill="#333">Imin = h·b³/12 = 15·10³/12 = <tspan font-weight="bold">1250 cm⁴</tspan>  (šibka os, b=10cm)     A = 150 cm²</text>
+<text x="55" y="402" font-size="10" fill="#333">i = √(Imin/A) = √(1250/150) = 2,887 cm      λ = lu/i = 400/2,887 = <tspan font-weight="bold" fill="#cc0000">138,6</tspan></text>
+<text x="55" y="418" font-size="10" fill="#333">λe = π√(E/σdop) = π√(1000/1,2) = <tspan font-weight="bold">90,7</tspan>       λ=138,6 &gt; λe=90,7 → <tspan font-weight="bold" fill="#006600">Euler formula velja ✓</tspan></text>
+<text x="55" y="436" font-size="11" fill="#336699" font-weight="bold">Fk = π²·E·Imin/lu² = π²·1000·1250/400² = <tspan fill="#cc0000">77,1 kN</tspan></text>
+<text x="55" y="454" font-size="10" fill="#333">Fdop = Fk/ν = 77,1/3 = 25,7 kN      F_dej = 20 kN &lt; 25,7 kN  →  <tspan font-weight="bold" fill="#006600">ν_dej = 3,86 &gt; 3 ✓ VARNO</tspan></text>
+</svg>
