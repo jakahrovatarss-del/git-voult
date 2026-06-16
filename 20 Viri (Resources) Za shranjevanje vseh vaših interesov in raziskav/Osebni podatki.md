@@ -1,0 +1,3 @@
+davčna številka-32595603
+emšo-1703005500413
+JAKA HROVAT

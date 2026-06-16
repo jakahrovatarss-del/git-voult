@@ -1,0 +1,7 @@
+- spalna, igralna in delovna soba
+- [[mirni del]] 
+- velika in svetla in zračna
+- prilagojena razvoju in potrebi [[otrok]]
+- velikokrat jo zamenjamo in preuredimo 
+- položaj postelje 
+- ![[Pasted image 20230920180333.jpg]]

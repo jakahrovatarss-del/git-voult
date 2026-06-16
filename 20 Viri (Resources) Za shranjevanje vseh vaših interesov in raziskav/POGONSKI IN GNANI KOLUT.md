@@ -1,0 +1,22 @@
+---
+tags:
+  - ŠOLA
+Class: POL
+Teachers: MIHAEL GORŠE
+date: 2023-09-24
+---
+
+## Observation
+- POGONJSKI MOTOR PREKO POGONSKEGA GONILA POGANJASPONJI IN ZGORNJI KOLUT
+- ZGORNJI KOLUT NAPENJA ŽAGIN LIST
+- IZ SIVE LITINE - INAMIČNO URAVNOTEŽENA
+- VENEC KOLUTA JE GLAEK IN BOMBIRAN
+
+## Citation
+
+## Own thoughts
+
+## Related topics / notes
+
+
+

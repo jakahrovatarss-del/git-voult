@@ -1,0 +1,2 @@
+-veliko ogledalo 45x120 cm 45 cm od tal  
+- če je ogledalo majhno mora biti v višini oči 175-180 cm od tal

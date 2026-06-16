@@ -1,0 +1,3 @@
+- mora biti globoka vsaj 15 cm
+	- veliko in osvetljeno [[ogledalo]] 
+	- stol ali klop

@@ -1,0 +1,1 @@
+# [kapitalizem 1.md](./kapitalizem%201.md)

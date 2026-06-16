@@ -1,0 +1,17 @@
+---
+tags: 
+Class: 
+Teachers: 
+date:
+---
+
+## KRATEK OPIS
+
+## DOLGO NAKLADANJE
+
+## OSEBNO MIŠLJENJE GLEDE TEGA
+
+## VIRI IN POVEZUJOČI DOKUMENTI
+
+
+

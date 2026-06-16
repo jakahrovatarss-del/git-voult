@@ -49,7 +49,7 @@ views:
         - '!status.contains("done")'
     groupBy:
       property: due
-      direction: ASC
+      direction: DESC
     order:
       - status
       - priority
@@ -65,7 +65,7 @@ views:
       - file.tasks
     sort:
       - property: due
-        direction: ASC
+        direction: DESC
   - type: tasknotesTaskList
     name: Not Blocked
     filters:

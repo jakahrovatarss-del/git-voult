@@ -1,0 +1,98 @@
+katere vrste gradiv v strojništvu poznaš
+    kovine
+    plastične mase 
+    keramika
+    guma
+    les
+    olje
+    drugo(beton)
+steklo
+kakšna je struktura kovin→so trdne snovi iz kristalov
+kakšne so značilne lastnosti kovin
+    bava
+    sijaj
+    trdnost
+    trdota
+    žilavost
+    plastičnost
+kakšne so fizikalne lastnosti kovin
+    barva 
+    sijaj
+    gostota
+    tališče
+    vrelišče
+    prevodnost
+s čim reagira kovina→s kislinami in bazami
+kaj pomeni kratica pH→koncentracija hidronijevih ionov
+kakšne so tehnološke lastnosti kovin
+    livnost
+    kovnost
+    varjenje
+    odrezovanje
+kakšne so mehanske lastnosti kovin
+    trdnost
+    trdota
+    žilavost
+    elastičnost
+kaj je trdnost materiala→je odpor materiala proti zunanjim silam ki mu skušajo spremeniti obliko in ga na koncu porušiti
+kaj je trdota materiala→je odpor materiala proti drugemu tršemu predmetu ki skuša podreti njegovo površino
+kaj je žilavost materiala→je odpor proti večkratni spremembi oblike
+kako po barvi delimo kovine
+    črne
+    barvne
+kako nastane kovinska zlitina→če kovini ki je že staljena dodamo še neko drugo kovino ali nekovino
+kaj je sintranje kovine→postopek s katerim mešanico praha v kateri so elci kovin in nekovin stisnemo pod visokim tlakom.
+kje delamo sintranje kovine→v kalupu
+v kaj se pri toplotni obdelavi stalijo delci→v vezivo
+kako poteka postopek nastanka železa
+    rudarjenje
+    drobljenje v pesek in drobne kamne
+    ločevanje rude od jalovine
+    surovo železo izločimo iz rude
+    jeklo se izboljša v elektropečeh
+kako poteka postopek pridobivanja jekla
+    pridobljen je iz belega grodja iz peči
+    litje ingota v kokil
+katere vrste jekal poznamo po postopku→navadna in plemenita
+katere vrste jekal poznamo po ogljiku→jekla in legirana
+katere vrste jekal poznamo po uporabi→konstrukcijska in orodna
+kakšno jeklo je aluminizirano jeklo→prevlečeno na obeh straneh z aluminij-silicijeve zlitino
+katere barvne kovine poznamo
+    težke
+    lahke
+    plemenite
+druge
+katere so najbolj poznane barvne kovine
+    baker
+    kositer
+    aluminij
+    svinec
+zakaj pride do karozije→zaradi elektronskih reakcijah
+kako rečemo kovini ki korodira→galvanski člen
+kako zasščitimo kovine
+    organski premazi
+    kovinjske prevleke
+    z dušikovo kislino
+    z vročim laneni oljem
+    plastificiranje
+kako delimo maziva
+    po izvoru
+        naravna
+            rastlinska 
+            živilska
+        mineralna sintetična
+            surova nafta
+    uporabi
+        podmazovanje
+        hlajenje
+        zaščita
+    agregatnem stanju
+        olja
+        masti
+        trdna maziva
+kje se uporablja mzalna mast→pri vseh gibljivih strojnih elementih
+kakšne lastnosti morajo imeti masti
+    dobro stabilnost
+    obstojnost pri temperaturi
+    kemijsko odpornost
+    vodoodpornost

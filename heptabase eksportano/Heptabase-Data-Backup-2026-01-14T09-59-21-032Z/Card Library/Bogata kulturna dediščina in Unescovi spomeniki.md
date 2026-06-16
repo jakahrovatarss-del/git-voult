@@ -1,0 +1,7 @@
+# Bogata kulturna dediščina in Unescovi spomeniki
+
+- Iran se ponaša s tisočletno tradicijo, ki obsega vse od vrhunske perzijske književnosti in umetniških miniatur do številnih Unescovih spomenikov. [\[1\]](https://app.heptabase.com/7b0edf5d-3ea2-4bee-ae45-0d7fec330766/card/5e3cc1a0-a04a-42a6-8fd5-134ce9c02c52#66487dd1-12a4-4fa4-b463-4e4d2e5852ca,2019c3c7-d4f2-42ea-9dbd-3bc8db68c0e8,9cdf5363-67f3-40a2-9d51-c21948fb8ebf,1fd1ecdd-6619-4365-8541-7f3ca1646775,aef1ce38-e890-4d94-9dde-fa2bcb8fbdd9,5cbe419c-7291-4628-b780-fed142378810)
+
+- Kulturna identiteta države je globoko zakoreninjena v njeni zgodovini, kar se odraža v bogastvu spomenikov in umetniških del po vsej državi. [\[1\]](https://app.heptabase.com/7b0edf5d-3ea2-4bee-ae45-0d7fec330766/card/5e3cc1a0-a04a-42a6-8fd5-134ce9c02c52#66487dd1-12a4-4fa4-b463-4e4d2e5852ca,2019c3c7-d4f2-42ea-9dbd-3bc8db68c0e8,9cdf5363-67f3-40a2-9d51-c21948fb8ebf,1fd1ecdd-6619-4365-8541-7f3ca1646775,aef1ce38-e890-4d94-9dde-fa2bcb8fbdd9,5cbe419c-7291-4628-b780-fed142378810)
+
+- Poleg umetnosti kulturno in naravno bogastvo vključuje tudi tradicionalno kmetijstvo, kjer so svetovno znane predvsem iranske pistacije. [\[2\]](https://app.heptabase.com/7b0edf5d-3ea2-4bee-ae45-0d7fec330766/card/5e3cc1a0-a04a-42a6-8fd5-134ce9c02c52#bcdef5b9-48f8-4cd1-8af2-fb3b9a84ddbd,d820b416-15cb-48ae-b379-fca12c4f3db3,7dbf19df-9966-4cc2-804f-7965fde232ee,65fce585-b78e-42db-a67c-2df0e681fd81,23e6a835-881c-4031-bb31-9ffdcd0aceb3,2b0e86be-76e9-4b20-91c3-e4194312c7a8,eab69d0c-3ce2-41e3-b9b2-2bf53aa97ca9)

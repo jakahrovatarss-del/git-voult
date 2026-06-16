@@ -1,0 +1,1 @@
+- [ ] zamenjaj zavorno tekocino

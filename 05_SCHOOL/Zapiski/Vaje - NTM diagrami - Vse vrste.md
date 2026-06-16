@@ -5,6 +5,25 @@
 
 ---
 
+## Vrste podpor — katere reakcije ima vsaka
+
+![[ntm_vrste_podpor.svg]]
+
+| Podpora | Simbol | Reakcije | Število neznank |
+|---------|--------|----------|-----------------|
+| **Nepomični členek** (tečaj) | △ na tleh | $R_x$, $R_y$ | 2 |
+| **Pomični členek** (roller) | △ + kolesca | $R_y$ | 1 |
+| **Togo vpetje** (konzola) | □ v steni | $R_x$, $R_y$, $M_A$ | 3 |
+| **Prost konec** | — | nič | 0 → $T=0$, $M=0$ ✓ |
+| **Notranji členek** (Gerber) | ○ na gredi | doda pogoj: $M=0$ | −1 |
+
+> **Pravilo statične določenosti:** Σ reakcij = 3 za ravninski problem.  
+> Nepomični členek (2) + pomični členek (1) = 3 ✓ → statično določena greda.
+
+> **zobacz:** [[STATIKA#Podpore in reakcije]]
+
+---
+
 ## SPLOŠNI POSTOPEK — 6 korakov za vsako nalogo
 
 > Nauči se to zaporedje. Na izpitu ga sledi mehanično, ne improvizira.
@@ -93,6 +112,8 @@ Za vsak odsek reši $T(x) = 0$ → preveri ali je $x$ v območju odseka → izra
 ---
 
 ## NALOGA 1 — Prosta greda: točkovna sila + porazdeljena obtežba
+
+![[ntm_naloga1.svg]]
 
 ### Podatki
 
@@ -187,6 +208,8 @@ M:  (narašča linearno do x=2, nato pada parabolično)
 
 ## NALOGA 2 — Nosilci s previsom (konzola + prosta greda)
 
+![[ntm_naloga2.svg]]
+
 ### Podatki
 
 ```
@@ -271,6 +294,8 @@ M:   (majhen + vrh pri x=0.167)
 
 ## NALOGA 3 — Lomljen nosilci (L-oblika) — pojavi se N ≠ 0!
 
+![[ntm_naloga3.svg|697]]
+
 ### Podatki
 
 ```
@@ -349,6 +374,8 @@ M:  0 pri A → 24 kNm pri B (linearno narašča)
 
 ## NALOGA 4 — Portalni okvir ← **tip izpita 2018!**
 
+![[ntm_naloga4.svg|697]]
+
 ### Podatki
 
 ```
@@ -422,9 +449,58 @@ M:    0 ────────── 6.75 ────────── 0
 
 > **Zakaj je to na izpitu:** Leseni portalni okviri so tipičen konstrukt v lesarstvu (okvirji hiš, garažna vrata). Moment 6,75 kN·m v sredini prečke dimenzionira prereze!
 
+### 🎓 Profesorjeva razlaga — portalni okvir (konceptualno)
+
+> **Korak 0 — Uvod: statična (ne)določenost**
+>
+> Portalni okvir je pogosto **statično nedoločen**: togo vpetje (A) + členek (B) dá 5 neznank, a imamo le 3 enačbe ravnotežja. Na izpitu to rešimo s **poenostavitvijo na oba členka** in **simetrijo** → $A_y = B_y$.
+>
+> **Splošno pravilo:**
+> - Togo vpetje: 3 neznanke
+> - Členek: 2 neznanki
+> - Skupaj > 3 → statično nedoločeno (rešujemo s simetrijo ali notranjo articulacijo)
+
+> **Korak 1 — Navpične reakcije iz simetrije**
+>
+> Ker je portal simetričen in obtežba $q$ simetrična:
+> $$A_y = B_y = \frac{q \cdot L}{2} = \frac{1{,}5 \cdot 6}{2} = 4{,}5\ \text{kN}$$
+> Vodoravnih sil ni → $A_x = B_x = 0$.
+>
+> **Korak 2 — Steber CA** (od A navzgor do C)
+>
+> Reakcija $A_y$ pritiska neposredno v steber → steber je v **tlaku**:
+> $$N = -4{,}5\ \text{kN}$$
+> Ker $A_x = 0$: ni prečnih sil → $T = 0$ in $M = 0$ v celotnem stebru.
+>
+> 💡 V lesarstvu je to ugodno — les dobro prenaša tlak vzdolž vlaken.
+
+> **Korak 3 — Prečka CD** (x od C proti D)
+>
+> V vogalu C se **osna sila iz stebra prelije v prečno silo v prečki**:
+> $$T(x) = 4{,}5 - 1{,}5x$$
+> $$M(x) = 4{,}5x - 0{,}75x^2$$
+>
+> Ekstremen moment tam kjer $T = 0$: $x = 3\ \text{m}$ (sredina — simetrija ✓)
+> $$\boxed{M_{max} = 6{,}75\ \text{kNm}}$$
+>
+> **Napaka, na katero pazi:** Vogala C in D v *idealnem simetričnem* primeru nimata momenta ($M_C = M_D = 0$). V realnosti (veter, nesimetrično breme) postanejo vogali **kritična mesta** — tam bi bila potrebna ojačitev spoja!
+
+> **Inženirski zaključek:**
+>
+> $M_{max} = 6{,}75\ \text{kNm}$ **dimenzionira prerez prečke** — iz tega izračunamo potreben $W_{min}$ in izberemo dimenzijo tramov. Če bi les bil prešibak, bi prečka razpokala na spodnji strani (nateg vlaken v sredini).
+>
+> **Diagram — kako brati:**
+> - $N$: dva polna pravokotnika na stebrih ($-4{,}5$), prečka prazna
+> - $T$: trikotnika nad prečko: $+4{,}5 \to 0 \to -4{,}5$
+> - $M$: simetrična parabola pod prečko z vrhom $6{,}75\ \text{kNm}$; stebra sta čista (ničle)
+>
+> **→ glej:** [[STATIKA#Portalni okvir]] | [[Mehanika Hub]]
+
 ---
 
 ## NALOGA 5 — Kombinacija q + F pod kotom + točkasti moment M₀
+
+![[ntm_naloga5.svg|697]]
 
 ### Podatki (najtežja varianta — izpitni nivo!)
 

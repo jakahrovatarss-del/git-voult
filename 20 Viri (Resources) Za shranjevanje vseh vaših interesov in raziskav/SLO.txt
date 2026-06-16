@@ -1,0 +1,330 @@
+OBLIKOVNA STRAN BESEDE #[[OBLIKOVNA STRAN BESEDE]] 
+SE SKLANJAJO
+BESEDNE VRSTE GLEDE NA PREGIBANOST DELIMO NA↔PREGIBNE IN NEPREGIBNE BESEDNE VRSTE.
+PREGIBNE BESEDNE VRSTE
+    SPREGAJO ALI STOPNJUJEJO
+    SE PREGIBAJO ALI SPREMINJAJO V:
+        SPOLU(LEP,LEPA,LEPO)
+        ŠTEVILU(MIZ-A,MIZ-I)
+        OSEBI(DELA-M,DELA-Ž)
+    TO SO:
+        SAM. BESEDA(SKLANJAMO)
+        PRID. BESEDA(STOPNJUJEMO)
+        GLAGOL(SPREGAMO)
+        NAČINOVNI PRISLOV(STOPNJUJEMO)
+
+NEPREGIBNE BESEDNE VRSTE
+    SE NE PREGIBAJO,OSTAJAJO ENAKE
+    TO SO:
+        KRAJEVNI, VZROČNI IN ČASOVNI PRISLOV
+        MEDMED
+        ČLENEK
+        VEZNIK(IN)
+        PREDLOG(ZA)
+        
+    
+PREGIBNE BESEDE SO SESTAVLJENE IZ→OSNOV IN KONČNIC
+OSNOVNA PREGIBNE BESEDE
+    DEL BESEDE KI SE PRI PREGIBANJU NE SPREMNIJA
+    NOSILEC PREDMETNEGA POMENA
+KONČNICA PREGIBNE BESEDE
+    DEL BESEDE KI SE SPREMIJA
+    JE NOSILEC SLOVNIČNEGA POMENA(SPOL,SKLON,ŠTEVILO,OSEBA)
+SKLON↓
+    
+    IMENOVALNIK-KDO ALI KAJ
+    RODILNIK-KAGA ALI ČESA(NI)
+    DAJALNIK-KOMU ALI ČEMU(DAM)
+    TOŽILNIK'KOGA ALI KAJ(TOČIM)
+    MESTNIK-PRI(O) KOM ALI O ČEM(GOVORIM)
+    ORODNIK-S KOM ALI S ČIM PIJEM
+PRIDEVNIŠKA BESEDA
+    kaj je pridevniška beseda→je ena od pregibnih besednih vrst. jo stopnjujemo ali sklanjamo
+    katere besede so pridevniške besede→besede ki označujejo lastnosti, vrsto, svojino in količino
+    na katera dva načina lahko delajo pridevniške besede
+        neposredno(pridevnik,števnik)
+        posredno(pridevniški zaimek)
+    so pridevniške besede pregibne→pridevniške besede so pregibne
+    katere stvari spreminjajo pridevniške besede
+        slovnične lastnosti
+        spol
+        sklon
+        število
+    kje se največkrat pojavijo pridevniške besede→največkrat se pojavijo ob samostalnikih
+    s čim se pridevniške besede ujemajo s samostalniki ko so zraven njih→z njegovimi slovničnimi lastnostmi
+    ali se vsi pridevniki pregibajo z glasovnimi končnicami→Ne, nekateri ostajajo enaki v spolih sklonih in številih(bila)
+PRIDEVNIK:
+    kaj poimenujemo s pridevniki
+        lastnost
+        vrsto
+        svojino
+    Pridevnike delimo na
+        lastnostne- kakšen (barva,mera,snovnost)
+        vrstne- kateri
+        svojilne- čigav
+
+književnost vprašanja
+    biblija
+        napisal bog
+        1000 pred - 100 popalestina
+        
+    prilika o izgubljenem sinu
+        vsebuje mnogovezja
+        lukov evangelij
+        epika
+        nasprotja
+        metafore
+        stalne besedne veze
+    antična književnost
+        obdobje antika (grška in rimska književnost)
+        1000 pr.-500
+        homer v 9. stoletju
+        homerska primera- vsako osebo ko nastiopi uvede na zelo obširen način
+        homer: odiseja,iliada
+        sofoklej: antigona,kralj ojdip
+        
+    kaj pomen i da je delo sintetično in kaj analitično→si- dogodki si sledijo po krn9ološkem zaporedju , nekaj se nam razkrije in nato vemo zakaj se je to zgodilo
+    kako je zgrajen dramski triotnik
+        zasnova
+        zaplet
+        vrh
+        razpelt
+        razsnova
+    kralj ojdip
+        sofoklej
+        429 pr. n. št.
+        dramatika
+        tragedija
+        mit o tebnskli kraljevi družini
+    antigona
+        hči ojdipa
+        očeta spreemljata v pregnanstvo
+    srednjeveška književnost
+        476-1492
+        latinščina
+        avtorji: duhovniki in menihi
+        ustvarjali os pesništvo, himniko, proze
+        pasioni  o jezusuvem trpljenju
+        trubadurska lirika- potujoči pevci, viteška ljubezen
+    slovenska srednjeveška književnost
+        bribrižinski spomeniki- 10. stoletje
+        celovški in stiški rokopis
+        verski značaji
+        meščanstvo- itzalianščina in nemščina
+        kmetje-slovenščina
+        konec- tisk prve slovenske knjige letp1550  
+        začne se reformacija
+    brižinski spomeniki
+        1 besedilo napisano v zgodnji slovenščini ne več v pravoslavlavnem jeziku
+        10. stoletje našli
+        vrbsko jezero na avstriskokoroškem
+        nastali 1000
+        karolinška minuskual
+        dva nemška duhovnika
+        državna knjižnica v muhnhnu
+        obsega 3 besedila: 1,3- obrazca splošne spovedi   2-pridiga o grehu in pokori
+    ljudsko slovstvo
+        ustno izročilo iz roda v rod
+        lepa vida
+        različne verzije besedi
+        srednji vek
+        avtor ni znan
+        razvilo v ljudsko pripoved in ljudsko pesem
+        preprosta oblika
+        preprost narečni jezik, okrasni pridevki, ponvlajnja
+    lepa vida
+        epsak pesem
+        ženska ljudska balada
+        zgodovinska
+        najdemo 19 različic
+    zahodna evropsrenensansa v evropi
+        14-16 stoletje
+        preporod miselnosti
+        človek je najvišja vrednota
+        nastanejo lirika epika in dramatika
+    humanizem
+        zavrača vero
+        zgleduje s3e po antiki
+    romeo in julija
+        renensansa
+        dramatika
+        tragdija
+    
+    reformacija
+        versko gibanje
+        16 st.
+        martin luter 1517
+        95 tez
+    reformacija naslovenskem
+        1550-1595
+        primož trubar- abecednik in katekizem- 1550
+        prevod svetega pisma- jurij dalmatin
+        prva slovnica- adam bohorič
+        otročja biblija- sebastjan kregelj 
+    trubar- o zidavi cerkva
+        pridiga- versko besedilo ki je namenjeno vsem vernikom
+        poskrbel da je bila napisana v preprostem jeziku
+    primož trubar
+        utemeljitelj slovenskega jezika
+        bohoričica
+    protireformacija
+        TOMAŽ HREN
+        DALMATINOVA BIBLIJA
+        1555 SKLENJEN SPORAZUM
+    BAROK
+        17-18 STOL
+        GOSTOBESEDNOST
+        PRISPODOBE
+        
+    BAROK NA SLOVENSKEM
+        18 stol
+        janez svetokrstniški
+    o zidavi cerkva
+        JANEZ SVETOKSTNIŠKI NA NOVGA LETA DAN
+        EPIKA
+        PRIDIGA
+        NJEN NAMEN JE INFORMIRATI IN POUČEVATI
+        NAGOVARJA ZAKONC3E DUHONVIKE ITD
+        RETORIČNE RPVINE: METAFORE VZKLIKI, STOPNJEVANJE, PONAVLJANJA
+    RAZSVETLENSKTVO
+        DUHOVNO IN DRUŽBENO GIBANJE
+        18. STOLETJE
+    RASVETLENSKTVO NA SLOVENSKEM
+        MARIJA TEREZIJA IN JOŽEF 2
+        ZOISOV KROŽEK- VALENTIN VODNIK(PESNIK)(SLOVAR,ČASOPSI), ANTON TOMAŽ LINHART(DRAMATIK)(ZGODOVINA SLOVENCEV)
+    MATIČEK SE ŽENI
+        ANTON TOMAŽ LINHART
+        DRAMATIKA
+        KOMEDIJA
+        PRIREDBA FRANCOSKEGA  FIGAROVA SVADBA
+        BESEDNA TELESNA ZNAČAJSKA KOMIČNOST
+    DRAMILO
+        VALENTIN VODNIK
+        RASVETLENSTVO
+        NAGOVOR POOSEBITEV
+        HVALI DOMAČO ZEMLJO 
+    ROMANTIKA V EVROPI
+        19. STOLETJE
+        POUDARJATI ČUSTVA IN DOMIŠLJIJO
+        1830
+        ČLOVEKOVO NOTRAJNOST, ČUSTVA
+        LJUBEZEN NARAVA
+        RAZVIJEJO LIRIKA IN EPIKA
+    ROMANTIČNI JUNAK
+        PLEMENIT LEP BOGAT
+        RAZOČARAN NAD SVETOM DRUŽBO
+        RAZKOL MED STVARNOSTJO IN IDEALI
+    ALEKSANDER SERGEJEVIČ PUŠKIN- JEVGENIJ ONJEGIN
+        ROMANTIKA
+        EPIKA
+        ROMAN V VERZIH
+        PRVOOSEBNI PRIPOVEDOVALEC
+    KRST PRI SAVICI
+        8 STOELTJE
+        POKRISTOVANJE SLOVANOV
+        1835
+    FRANCE PREŠEREN ZDRAVLJICA
+        prva narodnopolitična pesem(LJUBEZN D ODOMOVINE, OSAMOSVOJITVI)
+        CENZURIRANA 3 KER GOVORI O KONCU SOVRAŽNIKOV
+        4 CENZURIRAL MIKLOŠIČ KER GOVORI O ENOTNOSTI VSEH SLOVENSKIH NARODOV
+        OBJAVLJENA 1848
+    SESTAVA ZDRAVLJICE
+        8 KITIC
+        1NAGOVOR PRIJATELJEM
+        2POZDRAVI DEŽELO IN SORODNJAKE
+        3GROŽNJA NAŠIM SOVRAŽNIKOM
+        4POVABLJANJE V EDINOST
+        5SLAVI SLOVENKE
+        6VSPODBUJE SLOVENSKE MLADENČE DA BRANIJO DOMOVINO
+        7HIMNA, BRATSKO ŽIVLJENJE
+        8 NAGOVORI OMIZJE PRIJATELJEV
+    LIKOVNA PESEM
+        8 KITIC
+        7 RAZLIČNO DOLGIH VERZOV
+        OBLIKA ČAŠE
+        RAZLIČNO ŠTEVILO ZLOGOV V VERZIH 7-8-7-8-3-3-8
+        VERZI POVEZANI Z RIMO ABABCCC
+    FRANCE PREŠERN- SONETNI VENEC
+        ZGRAJEN JE IZ 14 SONETOV IN IZ ZADNJEGA 15 KI GA JE POIMENOVAL MAGISTRALE
+        ITALIANSLAS PESNIŠKA OBLIKA
+        4 KITICE- 2 KVARTINI IN 2 TERCINI
+        
+    AKROSTIH
+        SPOROČILO
+        PRVE ČRKE VSEH 14 SONETV SESTAVLAJJO IME PRIMICEVI JULJI
+        
+    KATERE SO TRI TEME KI ZDRUŽUJEJO DELO SONETNI VENEX
+        LJUBEZEN DO ODMOVINE
+        LJUBEZEN DO JULIJE
+        TEMA PESNIŠTVA
+    1 SONETNI VENEC
+        SPOROČA ZGRADBO SONETA
+        POVELIČUJE JULIJO PRIMIC
+    KAJ JE GLAVNO SPOROČILO SONETA
+        ŽELI S POEZIJO ODREŠITI ŽALOST IN ZAPUŠČENOST
+        DA BI GA JULIJA IELA RADA
+        ŽELJA PO NARODNE IN KULTURNE PREBUJANJU
+    
+    realizem
+        2 polovica 19 stoletja. po letu 1849
+        opisujejo svet tak kakeršen je v resnici
+        objektivno
+        jezik je živ
+    katere vrste realizma poznamo
+        psihološki človeška spiha
+        romantični→romantične in realistične značilnosti
+        objektivni-brez čustev
+        naturalizem- znanstveno opisovanje
+    dostojevski- zločin in kazen
+        epika
+        roman
+        psihološki realizem
+        
+    katere so glavne ideje vv knjigi dostojevski- zločin in kazen
+        življenje je svetlo in nihče ga nima pravice vzeti
+        če storiš zločin moraš plačati kazen
+    kateri so bili predstavniki realizma
+        fran levsnik
+        josip jurčič
+        anton aškert
+        janko kresnik
+        simon jenko
+    kaj je bil pomen obdobja realizma
+        rojstvo slovenske pripovedne proze
+        deseti brat-prvi slovenski roman
+    josip jurčič deseti brat
+        prvi slo roman
+        vsevidni pripovedovalec
+    kakšna je preteklost, sedanjost
+    in konec zgodbe deseti brat
+        martinkova zgodba-analitična
+        zgodba med lavretom in manico-sintetična 
+        martinek umre,marjan se poroči in odseli,lovre se poroči z manico in podeduje grad polesek
+    simon jenko obrazi
+        21 pesmi(20 plus uvod)
+        govori o naravi in življenju
+        obraz
+        iterarna vrsta, ozanak za epsko razpooženo pesem
+    simon jelko tilka
+        psihološka novela 
+        značajsko realistično delo
+        tilka romantičen lik
+        posredno označen→opisuje obnašamje-zančaj
+    novela→kratka z enim osrednjim dogodkom, stopnjevanje dogajanja napetosti
+    anton aškerc-mejnik
+        balada→mračno temačno vzdušje, tragičen konec,dramski trikotnik 
+        opiši mi zgodbo(zasnova,vrh razplet
+            zasnova-na sejmu prodaja,zadrži se v gostilni
+            vrh-zasliši glas in vidi podobo človeka
+            razplet-zbeži
+            razsnova-sosed vid je mrtev
+            razsnova-sosed vid je mrtev
+        kako se ta balada razlikuje od klasične→martin ni žrtev nandnaraavnih sil
+    ivan tavčar-visoška kronika
+        prvi slovenski zgodovinski roman
+        psihološki roman
+        prvo osebni pripovedovalec
+        kakšna je pripovedna tehnika
+            sintetična-govori o izidorjevem življenju
+            analitična-poseže v polikorpovo preteklost vojno in zločin
+    

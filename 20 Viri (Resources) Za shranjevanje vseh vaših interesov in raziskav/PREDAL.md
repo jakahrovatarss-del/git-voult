@@ -1,0 +1,32 @@
+ stranici,
+    - hrbtišče
+    - dno
+    - slepa ličnica
+    - vidna ličnica
+- kater so vodila za predalaa↓
+    - kalsična
+    - drsna
+    - okovje
+- iz česa so izdealne stranice predalov
+    - masivn les
+    - umetne snovi
+    - iverne plošče
+    - kovina
+- naštej povezave med ličnico in stranico
+    - mozničeno
+    - rogelna vez
+    - peresna jeralna
+- iz česa so ličnce poredalov
+    - masivni les
+    - panelne plošče
+    - iverne plošče
+    - furniranega vezalnega lesa
+- hrbtišče predalov
+    - zapirajo prala zadaj
+    - Hrbtišče sega samo do zgornjega rob utora za dno v stranici, če dno vstavimo potem ko smo obod predala zlepili
+    - Hrbet predala lahko sega 6-8 mm od zgornjega roba stranice, da lahko vhaja zrak ko predal pritisnemo v omaro,
+- dno predala
+    - Zagotavlja pravokotnost oboda predala in nosi težo predmetov,
+    - Dno praviloma utorimo v stranico in ličnico
+    - s spodnje strani ga pritrdimo z vijaki, žeblji ali sponkam
+    - Da se dno dobro prilega ga lahko po boku zarežemo,

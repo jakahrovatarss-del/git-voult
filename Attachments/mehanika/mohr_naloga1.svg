@@ -1,0 +1,134 @@
+<svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" font-family="Arial,sans-serif">
+<text x="360" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#222">NALOGA 1 — Mohrova krožnica (2D osnova)</text>
+
+<!-- Coordinate system. Origin at (360,230). Scale: 2px/MPa -->
+<!-- σ range: -80 to +140 MPa. τ range: -90 to +90 MPa (τ+ downward in SVG) -->
+
+<!-- Axes -->
+<line x1="120" y1="230" x2="680" y2="230" stroke="#333" stroke-width="1.5"/>
+<polygon points="676,225 686,230 676,235" fill="#333"/>
+<text x="690" y="234" font-size="12" fill="#333">σ [MPa]</text>
+
+<line x1="360" y1="50" x2="360" y2="420" stroke="#333" stroke-width="1.5"/>
+<polygon points="355,54 360,44 365,54" fill="#333"/>
+<text x="340" y="42" font-size="12" fill="#333">τ [MPa]</text>
+<text x="370" y="42" font-size="10" fill="#888">(+ navzdol)</text>
+
+<!-- Grid ticks on σ-axis -->
+<g font-size="9" fill="#888" text-anchor="middle">
+  <line x1="200" y1="226" x2="200" y2="234" stroke="#aaa"/>
+  <text x="200" y="244">−80</text>
+  <line x1="240" y1="226" x2="240" y2="234" stroke="#aaa"/>
+  <text x="240" y="244">−60</text>
+  <line x1="280" y1="226" x2="280" y2="234" stroke="#aaa"/>
+  <text x="280" y="244">−40</text>
+  <line x1="320" y1="226" x2="320" y2="234" stroke="#aaa"/>
+  <text x="320" y="244">−20</text>
+  <line x1="360" y1="226" x2="360" y2="234" stroke="#aaa"/>
+  <text x="360" y="244">0</text>
+  <line x1="400" y1="226" x2="400" y2="234" stroke="#aaa"/>
+  <text x="400" y="244">20</text>
+  <line x1="440" y1="226" x2="440" y2="234" stroke="#aaa"/>
+  <text x="440" y="244">40</text>
+  <line x1="480" y1="226" x2="480" y2="234" stroke="#aaa"/>
+  <text x="480" y="244">60</text>
+  <line x1="520" y1="226" x2="520" y2="234" stroke="#aaa"/>
+  <text x="520" y="244">80</text>
+  <line x1="560" y1="226" x2="560" y2="234" stroke="#aaa"/>
+  <text x="560" y="244">100</text>
+  <line x1="600" y1="226" x2="600" y2="234" stroke="#aaa"/>
+  <text x="600" y="244">120</text>
+  <line x1="640" y1="226" x2="640" y2="234" stroke="#aaa"/>
+  <text x="640" y="244">140</text>
+</g>
+<!-- Grid ticks on τ-axis -->
+<g font-size="9" fill="#888" text-anchor="end">
+  <line x1="356" y1="150" x2="364" y2="150" stroke="#aaa"/>
+  <text x="354" y="153">−80</text>
+  <line x1="356" y1="170" x2="364" y2="170" stroke="#aaa"/>
+  <text x="354" y="173">−60</text>
+  <line x1="356" y1="190" x2="364" y2="190" stroke="#aaa"/>
+  <text x="354" y="193">−40</text>
+  <line x1="356" y1="210" x2="364" y2="210" stroke="#aaa"/>
+  <text x="354" y="213">−20</text>
+  <line x1="356" y1="250" x2="364" y2="250" stroke="#aaa"/>
+  <text x="354" y="253">+20</text>
+  <line x1="356" y1="270" x2="364" y2="270" stroke="#aaa"/>
+  <text x="354" y="273">+40</text>
+  <line x1="356" y1="290" x2="364" y2="290" stroke="#aaa"/>
+  <text x="354" y="293">+60</text>
+  <line x1="356" y1="310" x2="364" y2="310" stroke="#aaa"/>
+  <text x="354" y="313">+80</text>
+</g>
+
+<!-- σsr = 30 MPa → x=360+30*2=420 -->
+<!-- R = 64.03 MPa → 128 px -->
+<!-- σ1 = 94.03 → x=360+94.03*2=548 -->
+<!-- σ2 = -34.03 → x=360-34.03*2=292 -->
+<!-- Center C = (420, 230) -->
+<!-- Point A (σx=80, τxy=40): x=360+80*2=520, y=230+40*2=310 -->
+<!-- Point B (σy=-20, -τxy=-40): x=360-20*2=320, y=230-40*2=150 -->
+
+<!-- Mohrova krožnica -->
+<circle cx="420" cy="230" r="128" fill="rgba(100,150,255,0.08)" stroke="#336699" stroke-width="2"/>
+
+<!-- Diameter line A-B -->
+<line x1="520" y1="310" x2="320" y2="150" stroke="#555" stroke-width="1.5" stroke-dasharray="5,3"/>
+
+<!-- Center C -->
+<circle cx="420" cy="230" r="4" fill="#336699"/>
+<text x="425" y="222" font-size="11" fill="#336699" font-weight="bold">C(30, 0)</text>
+
+<!-- Point A (x-face): (80, 40) = (520, 310) -->
+<circle cx="520" cy="310" r="5" fill="#cc0000"/>
+<text x="528" y="316" font-size="11" fill="#cc0000" font-weight="bold">A(80; 40)</text>
+<text x="528" y="328" font-size="9" fill="#cc0000">x-ploskev</text>
+
+<!-- Point B (y-face): (-20, -40) = (320, 150) -->
+<circle cx="320" cy="150" r="5" fill="#006600"/>
+<text x="236" y="148" font-size="11" fill="#006600" font-weight="bold">B(−20; −40)</text>
+<text x="270" y="160" font-size="9" fill="#006600">y-ploskev</text>
+
+<!-- σ1 = 94.03 → x=548 -->
+<circle cx="548" cy="230" r="5" fill="#cc0000"/>
+<line x1="548" y1="215" x2="548" y2="230" stroke="#cc0000" stroke-width="1.5" stroke-dasharray="3,2"/>
+<text x="548" y="210" text-anchor="middle" font-size="12" fill="#cc0000" font-weight="bold">σ₁=94,03</text>
+
+<!-- σ2 = -34.03 → x=292 -->
+<circle cx="292" cy="230" r="5" fill="#006600"/>
+<line x1="292" y1="245" x2="292" y2="230" stroke="#006600" stroke-width="1.5" stroke-dasharray="3,2"/>
+<text x="292" y="258" text-anchor="middle" font-size="12" fill="#006600" font-weight="bold">σ₂=−34,03</text>
+
+<!-- τmax = R = 64.03 → top of circle at y=230-128=102 -->
+<circle cx="420" cy="102" r="4" fill="#8B4500"/>
+<line x1="420" y1="102" x2="548" y2="102" stroke="#8B4500" stroke-width="1" stroke-dasharray="3,2"/>
+<text x="484" y="97" text-anchor="middle" font-size="10" fill="#8B4500" font-weight="bold">τmax = R = 64,03 MPa</text>
+
+<!-- τmax on bottom (positive down) -->
+<circle cx="420" cy="358" r="4" fill="#8B4500"/>
+
+<!-- Radius line to A for angle display -->
+<line x1="420" y1="230" x2="548" y2="230" stroke="#336699" stroke-width="1" stroke-dasharray="3,2"/>
+<text x="484" y="225" text-anchor="middle" font-size="9" fill="#336699">R = 64,03</text>
+
+<!-- Angle arc 2φ₀ = 38.66° from σ-axis to A -->
+<path d="M 452,230 A 32,32 0 0 1 445,246" fill="none" stroke="#cc0000" stroke-width="1.5"/>
+<text x="460" y="252" font-size="10" fill="#cc0000">2φ₀=38,66°</text>
+<text x="460" y="264" font-size="10" fill="#cc0000">φ₀=19,33°</text>
+
+<!-- Info box -->
+<rect x="32" y="50" width="168" height="110" rx="5" fill="#f0f4ff" stroke="#336699" stroke-width="1.5"/>
+<text x="116" y="68" text-anchor="middle" font-size="11" font-weight="bold" fill="#222">Rezultati</text>
+<text x="40" y="84" font-size="10" fill="#333">σ_sr = 30 MPa</text>
+<text x="40" y="99" font-size="10" fill="#333">R = 64,03 MPa</text>
+<text x="40" y="114" font-size="10" fill="#cc0000" font-weight="bold">σ₁ = +94,03 MPa</text>
+<text x="40" y="129" font-size="10" fill="#006600" font-weight="bold">σ₂ = −34,03 MPa</text>
+<text x="40" y="144" font-size="10" fill="#8B4500" font-weight="bold">τmax = 64,03 MPa</text>
+<text x="40" y="159" font-size="10" fill="#333">φ₀ = 19,33°</text>
+
+<!-- Kontrola box -->
+<rect x="32" y="175" width="168" height="50" rx="5" fill="#e8f4e8" stroke="#006600" stroke-width="1"/>
+<text x="116" y="191" text-anchor="middle" font-size="10" font-weight="bold" fill="#005500">Kontrola I₁</text>
+<text x="40" y="206" font-size="10" fill="#333">80+(−20) = 60 MPa</text>
+<text x="40" y="219" font-size="10" fill="#333">94,03+(−34,03) = 60 ✓</text>
+</svg>

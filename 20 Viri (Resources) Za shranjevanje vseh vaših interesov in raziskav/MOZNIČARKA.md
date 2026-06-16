@@ -1,0 +1,2 @@
+DELAMO NA [[IVERNA PLOŠČA]] 
+IN NA [[MDF]] 

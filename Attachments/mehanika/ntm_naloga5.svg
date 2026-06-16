@@ -1,0 +1,207 @@
+<svg viewBox="0 0 720 550" xmlns="http://www.w3.org/2000/svg" font-family="Arial,sans-serif">
+<text x="360" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#222">NALOGA 5 — Kombinacija: q + M₀ + F∠30° (najtežja varianta)</text>
+
+<!-- ── KONSTRUKCIJA ── -->
+<!-- Beam A-B: 4m = 400px, 100px/m. A=x80, B=x480 -->
+<rect x="80" y="65" width="400" height="10" rx="2" fill="#555"/>
+<!-- Pin A -->
+<polygon points="80,65 66,96 94,96" fill="white" stroke="#333" stroke-width="2"/>
+<line x1="54" y1="99" x2="106" y2="99" stroke="#333" stroke-width="2"/>
+<!-- Roller B -->
+<polygon points="480,65 466,96 494,96" fill="white" stroke="#333" stroke-width="2"/>
+<circle cx="469" cy="102" r="4" fill="none" stroke="#333" stroke-width="1.5"/>
+<circle cx="481" cy="102" r="4" fill="none" stroke="#333" stroke-width="1.5"/>
+<line x1="457" y1="108" x2="505" y2="108" stroke="#333" stroke-width="2"/>
+<!-- Labels -->
+<text x="66" y="62" font-size="12" font-weight="bold" fill="#222">A</text>
+<text x="483" y="62" font-size="12" font-weight="bold" fill="#222">B</text>
+
+<!-- q = 2 kN/m na celotnem razponu -->
+<line x1="80" y1="40" x2="480" y2="40" stroke="#cc0000" stroke-width="1.5"/>
+<text x="280" y="35" text-anchor="middle" font-size="11" fill="#cc0000">q = 2 kN/m (celoten razpon)</text>
+<g stroke="#cc0000" stroke-width="1.3" fill="#cc0000">
+  <line x1="80" y1="40" x2="80" y2="63"/><polygon points="76,60 80,67 84,60"/>
+  <line x1="130" y1="40" x2="130" y2="63"/><polygon points="126,60 130,67 134,60"/>
+  <line x1="180" y1="40" x2="180" y2="63"/><polygon points="176,60 180,67 184,60"/>
+  <line x1="230" y1="40" x2="230" y2="63"/><polygon points="226,60 230,67 234,60"/>
+  <line x1="280" y1="40" x2="280" y2="63"/><polygon points="276,60 280,67 284,60"/>
+  <line x1="330" y1="40" x2="330" y2="63"/><polygon points="326,60 330,67 334,60"/>
+  <line x1="380" y1="40" x2="380" y2="63"/><polygon points="376,60 380,67 384,60"/>
+  <line x1="430" y1="40" x2="430" y2="63"/><polygon points="426,60 430,67 434,60"/>
+  <line x1="480" y1="40" x2="480" y2="63"/><polygon points="476,60 480,67 484,60"/>
+</g>
+
+<!-- M₀ = 12 kNm at x=2m (x=280) — curved arrow -->
+<path d="M 265,58 A 18,18 0 0 1 295,58" fill="none" stroke="#9900cc" stroke-width="2"/>
+<polygon points="295,52 299,60 291,61" fill="#9900cc"/>
+<text x="280" y="78" text-anchor="middle" font-size="11" fill="#9900cc" font-weight="bold">M₀=12 kNm</text>
+<line x1="280" y1="65" x2="280" y2="82" stroke="#9900cc" stroke-width="1" stroke-dasharray="2,2"/>
+
+<!-- F = 10 kN at 30° at x=3m (x=380) -->
+<!-- Arrow pointing at 30° from horizontal (up-right) -->
+<!-- From (380,65) in direction (cos30°, -sin30°) = (0.866, -0.5) -->
+<!-- Reversed: arrow TIP at beam, tail at 40px away -->
+<line x1="415" y1="45" x2="382" y2="65" stroke="#cc0000" stroke-width="2"/>
+<polygon points="380,60 386,68 378,67" fill="#cc0000"/>
+<text x="430" y="44" font-size="11" fill="#cc0000" font-weight="bold">F=10 kN</text>
+<text x="430" y="57" font-size="10" fill="#cc0000">∠30°</text>
+
+<!-- Fx, Fy decomposition small labels -->
+<text x="390" y="78" font-size="9" fill="#cc0000">Fx=8.66 kN, Fy=5 kN</text>
+
+<!-- Reactions -->
+<!-- Ax at A (horizontal) -->
+<line x1="48" y1="70" x2="78" y2="70" stroke="#006600" stroke-width="2"/>
+<polygon points="76,64 83,70 76,76" fill="#006600"/>
+<text x="10" y="69" font-size="10" fill="#006600">Ax=8.66 kN</text>
+<!-- Ay at A (vertical) -->
+<line x1="80" y1="114" x2="80" y2="90" stroke="#006600" stroke-width="2"/>
+<polygon points="74,90 80,79 86,90" fill="#006600"/>
+<text x="10" y="126" font-size="10" fill="#006600">Ay=8.25 kN↑</text>
+<!-- By at B -->
+<line x1="480" y1="114" x2="480" y2="90" stroke="#006600" stroke-width="2"/>
+<polygon points="474,90 480,79 486,90" fill="#006600"/>
+<text x="490" y="107" font-size="10" fill="#006600">By=4.75 kN↑</text>
+
+<!-- Dimension lines -->
+<line x1="80" y1="128" x2="280" y2="128" stroke="#aaa" stroke-width="1"/>
+<text x="180" y="141" text-anchor="middle" font-size="10" fill="#888">2 m</text>
+<line x1="280" y1="128" x2="380" y2="128" stroke="#aaa" stroke-width="1"/>
+<text x="330" y="141" text-anchor="middle" font-size="10" fill="#888">1 m</text>
+<line x1="380" y1="128" x2="480" y2="128" stroke="#aaa" stroke-width="1"/>
+<text x="430" y="141" text-anchor="middle" font-size="10" fill="#888">1 m</text>
+<!-- Zone markers -->
+<text x="180" y="156" text-anchor="middle" font-size="10" fill="#333" font-style="italic">Območje I</text>
+<text x="330" y="156" text-anchor="middle" font-size="10" fill="#333" font-style="italic">II</text>
+<text x="430" y="156" text-anchor="middle" font-size="10" fill="#333" font-style="italic">III</text>
+<!-- Zone dividers -->
+<line x1="280" y1="60" x2="280" y2="170" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="380" y1="60" x2="380" y2="170" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/>
+
+<line x1="10" y1="168" x2="710" y2="168" stroke="#ddd" stroke-width="1"/>
+
+<!-- ── N DIAGRAM ── -->
+<text x="10" y="185" font-size="12" font-weight="bold" fill="#1a1a8c">N [kN]</text>
+<!-- baseline y=205 -->
+<line x1="80" y1="205" x2="480" y2="205" stroke="#bbb" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="68" y="208" text-anchor="end" font-size="10" fill="#555">0</text>
+<!-- N [0,3m]: +8.66 (from Ax), 3px/kN scale = 26px above baseline → y=179 -->
+<rect x="80" y="179" width="300" height="26" rx="1" fill="rgba(0,0,180,0.15)" stroke="#1a1a8c" stroke-width="2"/>
+<text x="230" y="196" text-anchor="middle" font-size="10" fill="#1a1a8c">N = +8.66 kN (nateg, I+II)</text>
+<!-- N [3,4m]: 0 (after Fx applied at x=3m) -->
+<line x1="380" y1="205" x2="480" y2="205" stroke="#1a1a8c" stroke-width="2.5"/>
+<text x="430" y="196" text-anchor="middle" font-size="9" fill="#1a1a8c">0</text>
+<!-- Skok at x=380 -->
+<line x1="380" y1="179" x2="380" y2="205" stroke="#555" stroke-width="1.5" stroke-dasharray="3,2"/>
+<text x="383" y="192" font-size="9" fill="#555">skok Fx</text>
+<text x="68" y="182" text-anchor="end" font-size="9" fill="#1a1a8c">+8.66</text>
+<line x1="73" y1="179" x2="83" y2="179" stroke="#1a1a8c" stroke-width="1"/>
+
+<line x1="10" y1="218" x2="710" y2="218" stroke="#ddd" stroke-width="1"/>
+
+<!-- ── T DIAGRAM ── -->
+<text x="10" y="235" font-size="12" font-weight="bold" fill="#006600">T [kN]</text>
+<!-- baseline y=285 -->
+<line x1="80" y1="285" x2="480" y2="285" stroke="#bbb" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="68" y="288" text-anchor="end" font-size="10" fill="#555">0</text>
+<!--
+T[0,2m]: 8.25-2x. At x=0: 8.25; at x=2m: 4.25. Scale 5px/kN.
+T[2,3m]: continues 8.25-2x (M₀ doesn't affect T). At x=2: 4.25, x=3: 2.25
+T[3,4m]: jumps by -Fy=-5kN at x=3: 2.25→-2.75. At x=4: -4.75.
+
+Heights: 8.25*5=41.3, 4.25*5=21.3, 2.25*5=11.3, -2.75*5=13.8, -4.75*5=23.8
+
+Positive area (triangle+trapezoid from x=80 to x=380):
+  (80, 285-41=244), (280, 285-21=264), (380, 285-11=274)
+  Then back along baseline to (80,285)
+
+Negative area (x=380 to x=480):
+  (380, 285+14=299), (480, 285+24=309)
+-->
+<!-- Positive T area I+II: linear decrease -->
+<polygon points="80,244 280,264 380,274 380,285 80,285" fill="rgba(0,140,0,0.18)" stroke="#006600" stroke-width="2"/>
+<text x="180" y="262" text-anchor="middle" font-size="10" fill="#006600">+8.25 → +2.25</text>
+<!-- Negative T area III: negative trapezoid -->
+<polygon points="380,285 380,299 480,309 480,285" fill="rgba(180,0,0,0.13)" stroke="#990000" stroke-width="2"/>
+<text x="430" y="305" text-anchor="middle" font-size="10" fill="#990000">−2.75→−4.75</text>
+<!-- Skok at x=380 (Fy=5kN↓) -->
+<line x1="380" y1="274" x2="380" y2="299" stroke="#555" stroke-width="1.5" stroke-dasharray="3,2"/>
+<text x="383" y="288" font-size="9" fill="#555">skok↓Fy=5</text>
+<!-- Tick marks -->
+<line x1="73" y1="244" x2="83" y2="244" stroke="#006600" stroke-width="1"/>
+<text x="68" y="247" text-anchor="end" font-size="9" fill="#006600">+8.25</text>
+<line x1="73" y1="309" x2="83" y2="309" stroke="#990000" stroke-width="1"/>
+<text x="68" y="312" text-anchor="end" font-size="9" fill="#990000">−4.75</text>
+<!-- M₀ zone boundary -->
+<line x1="280" y1="264" x2="280" y2="298" stroke="#9900cc" stroke-width="1" stroke-dasharray="3,2"/>
+<!-- x-labels -->
+<text x="80" y="322" text-anchor="middle" font-size="10" fill="#555">A</text>
+<text x="280" y="322" text-anchor="middle" font-size="10" fill="#555">x=2m (M₀)</text>
+<text x="380" y="322" text-anchor="middle" font-size="10" fill="#555">x=3m (F)</text>
+<text x="480" y="322" text-anchor="middle" font-size="10" fill="#555">B</text>
+
+<line x1="10" y1="330" x2="710" y2="330" stroke="#ddd" stroke-width="1"/>
+
+<!-- ── M DIAGRAM ── -->
+<text x="10" y="348" font-size="12" font-weight="bold" fill="#8B4500">M [kNm]</text>
+<!-- baseline y=515 -->
+<line x1="80" y1="515" x2="480" y2="515" stroke="#bbb" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="68" y="518" text-anchor="end" font-size="10" fill="#555">0</text>
+<!--
+M values (scale 3px/kNm, baseline y=515):
+  I [0→2m]: parabolic 0→12.5. At x=1m: M=8.25-1=7.25 → y=515-21.8=493; at x=2m: 12.5 → y=515-37.5=477.5
+  JUMP at x=2m: preskok -12 kNm: 12.5→0.5 kNm → y=515-1.5=513.5
+  II [2→3m]: parabolic from 0.5 to 3.75. At x=2.5: M=8.25*2.5-6.25-12=20.6-6.25-12=2.1 → y=515-6.3=509
+            at x=3m: 3.75 → y=515-11.25=503.75
+  III [3→4m]: parabolic from 3.75 to 0. At x=3.5: 3.25*3.5-12.25+3=11.4-12.25+3=2.15 → y=515-6.5=508.5
+             at x=4: 0
+
+Approximated with line segments (parabolas are close enough):
+Zone I left part: (80,515) → (180,493) → (280,477.5)
+  [parabola 0→12.5 in 2m]
+Jump at x=280: from y=477.5 to y=513.5
+Zone II: (280,513.5) → (330,509) → (380,503.75)
+Zone III: (380,503.75) → (430,508.5) → (480,515)
+-->
+<!-- Zone I positive area -->
+<path d="M 80,515 Q 180,488 280,477 L 280,515 Z" fill="rgba(139,69,0,0.18)" stroke="#8B4500" stroke-width="2"/>
+<text x="180" y="496" text-anchor="middle" font-size="10" fill="#8B4500">0→12.5</text>
+
+<!-- Preskok at x=280 (M₀=12 kNm ↓) -->
+<line x1="280" y1="477" x2="280" y2="513" stroke="#9900cc" stroke-width="2.5"/>
+<polygon points="274,513 280,520 286,513" fill="#9900cc"/>
+<text x="252" y="497" font-size="9" fill="#9900cc">preskok</text>
+<text x="250" y="507" font-size="9" fill="#9900cc">−12 kNm</text>
+
+<!-- Zone II positive area (small) -->
+<path d="M 280,513 Q 330,507 380,503 L 380,515 L 280,515 Z" fill="rgba(139,69,0,0.15)" stroke="#8B4500" stroke-width="2"/>
+<text x="330" y="508" text-anchor="middle" font-size="9" fill="#8B4500">0.5→3.75</text>
+
+<!-- Zone III positive area -->
+<path d="M 380,503 Q 430,508 480,515 L 480,515 L 380,515 Z" fill="rgba(139,69,0,0.15)" stroke="#8B4500" stroke-width="2"/>
+<text x="430" y="508" text-anchor="middle" font-size="9" fill="#8B4500">3.75→0</text>
+
+<!-- Key M values -->
+<text x="280" y="471" text-anchor="middle" font-size="11" fill="#8B4500" font-weight="bold">12.5</text>
+<text x="282" y="498" text-anchor="start" font-size="10" fill="#9900cc">0.5</text>
+<text x="380" y="498" text-anchor="middle" font-size="11" fill="#8B4500" font-weight="bold">3.75</text>
+<!-- Tick labels -->
+<line x1="73" y1="477" x2="83" y2="477" stroke="#8B4500" stroke-width="1"/>
+<text x="68" y="480" text-anchor="end" font-size="9" fill="#8B4500">12.5</text>
+<line x1="73" y1="503" x2="83" y2="503" stroke="#8B4500" stroke-width="1"/>
+<text x="68" y="506" text-anchor="end" font-size="9" fill="#8B4500">3.75</text>
+
+<!-- Vertical dashed zone dividers -->
+<line x1="280" y1="330" x2="280" y2="530" stroke="#9900cc" stroke-width="1" stroke-dasharray="3,2"/>
+<line x1="380" y1="330" x2="380" y2="530" stroke="#cc0000" stroke-width="1" stroke-dasharray="3,2"/>
+
+<!-- x-labels -->
+<text x="80" y="532" text-anchor="middle" font-size="10" fill="#555">A</text>
+<text x="280" y="532" text-anchor="middle" font-size="10" fill="#9900cc">x=2m</text>
+<text x="380" y="532" text-anchor="middle" font-size="10" fill="#cc0000">x=3m</text>
+<text x="480" y="532" text-anchor="middle" font-size="10" fill="#555">B</text>
+
+<!-- Note box -->
+<rect x="80" y="540" width="400" height="20" rx="4" fill="#fff3cd" stroke="#e6ac00" stroke-width="1"/>
+<text x="280" y="554" text-anchor="middle" font-size="10" fill="#7a5c00">Mmax = 3.75 kNm pri x=3m | Preskok M₀ je vidno −12 kNm pri x=2m</text>
+</svg>

@@ -1,0 +1,4 @@
+- [[otroška soba]]
+- [[spalnica]]
+- [[dnevna soba]]
+- 

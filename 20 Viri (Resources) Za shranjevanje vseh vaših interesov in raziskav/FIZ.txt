@@ -1,0 +1,22 @@
+
+kdaj se gibalna količina ohrani→če na telo ali skupino teles od zunaj ne deluje noben sunek sile ali pa je vsota vseh sunkov sile enaka 0
+TRKI:
+    prožni trk→pri trku se telesa  odbijejo. rečemo mu tudi idealni trk
+        kaj se ohrani pri prožnem trku→ohrani se gibalna in kinetična energija
+    neprožen trk→telesa se po trku sprimejo
+        kaj se ohrani pri neprožnem trku→gibalna količina
+MEHANSKE ENERGIJE:
+    kdaj ima telo kinetično energijo→ko se giblje
+        kdaj se telesu spremeni kinetična energija→kadar se spreminja njegova hitrost
+    kdaj ima telo lahko potencialno energijo→kadar lahko pade
+        kdaj se telesu spreminja potencialna energija→kadar pada ali se zvišuje
+    katera telesa imajo lahko samo prožnostno energijo→prožnostna telesa
+        katera telesa so prožnostna→to so telesa ki se po obremenitvi lahko samo vrnejo v prvotno stanje
+        kdaj imajo prožnostna telesa prožno energijo→ko so raztegnjena ali skrčena
+        kaj se dogaja pri raztegovanju ali krčenju prožnostnih teles→prožnostna energija se ji spreminja
+MOČ:
+    kaj je moč→moč je delo opravljeno v enoti časa
+    izrek o kinetični, potencialni in prožnostni energiji→delo vseh zunanjih sil razen sile teže in sile prožnega telesa je enaka spremembi kinetične, potencialne in prožnostne energije.
+    zakon o ohranitvi energije→če na telo ne deluje nobena zunanja sila se celotna energija telesa ohranja- energija se lahko samo pretvarja iz ene v drugo
+    
+

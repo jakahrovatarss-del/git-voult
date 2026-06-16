@@ -1,0 +1,1 @@
+Civilni inženirji so visoko usposobljeni strokovnjaki, ki načrtujejo projekte javnih del in nadzirajo njihovo izvajanje. Večina dela v zasebnem sektorju, a dober del dela v vladi. Njihovo delo je okrog nas. Infrastruktura, ki se giblje ljudi in trgovina po državi, je bila zasnovana in izvedena pod vodstvom generacij gradbenih inženirjev.

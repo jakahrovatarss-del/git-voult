@@ -1,0 +1,130 @@
+<svg viewBox="0 0 720 580" xmlns="http://www.w3.org/2000/svg" font-family="Arial,sans-serif">
+<text x="360" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#222">NALOGA 3 — Lomljeni nosilci (L-oblika)</text>
+
+<!-- ── KONSTRUKCIJA ── -->
+<!-- L-shape: prečka AB horizontal, steber BC vertical -->
+<!-- Scale: 60px/m. A=(80,240), B=(320,240), C=(320,60) -->
+<!-- 4m prečka: 240px; 3m steber: 180px -->
+
+<!-- Prečka AB (horizontal, y=240) -->
+<rect x="80" y="234" width="240" height="10" rx="2" fill="#555"/>
+<!-- Steber BC (vertical, x=320) -->
+<rect x="315" y="60" width="10" height="180" rx="2" fill="#555"/>
+
+<!-- Pin A -->
+<polygon points="80,234 66,265 94,265" fill="white" stroke="#333" stroke-width="2"/>
+<line x1="54" y1="268" x2="106" y2="268" stroke="#333" stroke-width="2"/>
+<!-- Pin B (rotation = supports vertical steber and horizontal prečka) -->
+<polygon points="320,244 306,275 334,275" fill="white" stroke="#333" stroke-width="2"/>
+<line x1="294" y1="278" x2="346" y2="278" stroke="#333" stroke-width="2"/>
+
+<!-- Labels A, B, C -->
+<text x="65" y="232" font-size="12" font-weight="bold" fill="#222">A</text>
+<text x="328" y="260" font-size="12" font-weight="bold" fill="#222">B</text>
+<text x="328" y="72" font-size="12" font-weight="bold" fill="#222">C</text>
+
+<!-- F = 8 kN horizontal (→) at C -->
+<line x1="360" y1="65" x2="328" y2="65" stroke="#cc0000" stroke-width="2"/>
+<polygon points="332,59 325,65 332,71" fill="#cc0000"/>
+<text x="365" y="69" font-size="11" fill="#cc0000" font-weight="bold">F = 8 kN</text>
+<!-- Arrow direction note -->
+<text x="365" y="82" font-size="9" fill="#cc0000">(vodoravno)</text>
+
+<!-- Reactions -->
+<!-- Ax at A (horizontal, ←) -->
+<line x1="50" y1="239" x2="78" y2="239" stroke="#006600" stroke-width="2"/>
+<polygon points="76,233 83,239 76,245" fill="#006600"/>
+<text x="10" y="237" font-size="10" fill="#006600">Ax=8 kN→</text>
+<!-- Ay at A (vertical, ↓) - negative, so pointing down -->
+<line x1="80" y1="276" x2="80" y2="252" stroke="#006600" stroke-width="2"/>
+<polygon points="74,252 80,241 86,252" fill="#006600"/>
+<text x="10" y="260" font-size="10" fill="#990000">Ay=−6 kN↓</text>
+<!-- By at B -->
+<line x1="320" y1="286" x2="320" y2="261" stroke="#006600" stroke-width="2"/>
+<polygon points="314,261 320,250 326,261" fill="#006600"/>
+<text x="330" y="275" font-size="10" fill="#006600">By=6 kN↑</text>
+
+<!-- Dimension lines -->
+<line x1="80" y1="290" x2="320" y2="290" stroke="#aaa" stroke-width="1"/>
+<text x="200" y="303" text-anchor="middle" font-size="10" fill="#888">4 m (prečka AB)</text>
+<line x1="350" y1="60" x2="350" y2="240" stroke="#aaa" stroke-width="1"/>
+<text x="370" y="155" font-size="10" fill="#888">3 m (steber BC)</text>
+
+<!-- Moment at B (connection point) -->
+<text x="200" y="228" text-anchor="middle" font-size="10" fill="#8B4500">M_B = 24 kNm</text>
+
+<line x1="10" y1="315" x2="710" y2="315" stroke="#ddd" stroke-width="1"/>
+
+<!-- ── DIAGRAMI za PREČKO AB (vodoravna) ── -->
+<text x="200" y="333" text-anchor="middle" font-size="12" font-weight="bold" fill="#444">Prečka AB (x = 0→4m od A)</text>
+
+<!-- N prečka: -8 kN (tlak, konstanta) -->
+<text x="10" y="355" font-size="11" font-weight="bold" fill="#1a1a8c">N</text>
+<line x1="80" y1="362" x2="320" y2="362" stroke="#bbb" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="80" y1="370" x2="320" y2="370" stroke="#1a1a8c" stroke-width="2.5"/>
+<!-- Offset below baseline (negative = pressure) -->
+<rect x="80" y="362" width="240" height="8" rx="1" fill="rgba(0,0,180,0.15)" stroke="#1a1a8c" stroke-width="1.5"/>
+<text x="200" y="378" text-anchor="middle" font-size="10" fill="#1a1a8c">N = −8 kN (TLAK)</text>
+
+<!-- T prečka: +6 kN (konstanta) -->
+<text x="10" y="397" font-size="11" font-weight="bold" fill="#006600">T</text>
+<line x1="80" y1="405" x2="320" y2="405" stroke="#bbb" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="80" y="375" width="240" height="30" rx="1" fill="rgba(0,140,0,0.18)" stroke="#006600" stroke-width="2"/>
+<line x1="80" y1="405" x2="320" y2="405" stroke="#006600" stroke-width="2.5"/>
+<text x="200" y="392" text-anchor="middle" font-size="10" fill="#006600">T = +6 kN (konstanta)</text>
+
+<!-- M prečka: linear 0→24 kNm -->
+<text x="10" y="430" font-size="11" font-weight="bold" fill="#8B4500">M</text>
+<line x1="80" y1="450" x2="320" y2="450" stroke="#bbb" stroke-width="1" stroke-dasharray="4,3"/>
+<!-- M linear: 3px/kNm, 24kNm → 72px above baseline y=450 → top y=378 -->
+<polygon points="80,450 320,378 320,450" fill="rgba(139,69,0,0.18)" stroke="#8B4500" stroke-width="2"/>
+<text x="330" y="390" font-size="10" fill="#8B4500">24 kNm</text>
+<text x="68" y="452" text-anchor="end" font-size="9" fill="#555">0</text>
+<text x="68" y="381" text-anchor="end" font-size="9" fill="#8B4500">24</text>
+<line x1="73" y1="378" x2="83" y2="378" stroke="#8B4500" stroke-width="1"/>
+<!-- x-labels prečka -->
+<text x="80" y="465" text-anchor="middle" font-size="10" fill="#555">A(0)</text>
+<text x="320" y="465" text-anchor="middle" font-size="10" fill="#555">B(4m)</text>
+
+<line x1="380" y1="315" x2="380" y2="580" stroke="#ddd" stroke-width="1"/>
+
+<!-- ── DIAGRAMI za STEBER BC (navpičen) ── -->
+<text x="540" y="333" text-anchor="middle" font-size="12" font-weight="bold" fill="#444">Steber BC (z = 0→3m od B)</text>
+
+<!-- N steber: +6 kN (nateg) -->
+<text x="400" y="355" font-size="11" font-weight="bold" fill="#1a1a8c">N</text>
+<line x1="440" y1="362" x2="640" y2="362" stroke="#bbb" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="440" y="354" width="200" height="8" rx="1" fill="rgba(0,0,180,0.15)" stroke="#1a1a8c" stroke-width="1.5"/>
+<line x1="440" y1="362" x2="640" y2="362" stroke="#1a1a8c" stroke-width="2.5"/>
+<text x="540" y="373" text-anchor="middle" font-size="10" fill="#1a1a8c">N = +6 kN (NATEG)</text>
+
+<!-- T steber: +8 kN (konstanta) -->
+<text x="400" y="397" font-size="11" font-weight="bold" fill="#006600">T</text>
+<line x1="440" y1="405" x2="640" y2="405" stroke="#bbb" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="440" y="365" width="200" height="40" rx="1" fill="rgba(0,140,0,0.18)" stroke="#006600" stroke-width="2"/>
+<line x1="440" y1="405" x2="640" y2="405" stroke="#006600" stroke-width="2.5"/>
+<text x="540" y="388" text-anchor="middle" font-size="10" fill="#006600">T = +8 kN (konstanta)</text>
+
+<!-- M steber: linear 24→0 (od B do C) -->
+<text x="400" y="430" font-size="11" font-weight="bold" fill="#8B4500">M</text>
+<line x1="440" y1="450" x2="640" y2="450" stroke="#bbb" stroke-width="1" stroke-dasharray="4,3"/>
+<!-- 3px/kNm, 24kNm=72px. At z=0 (B): M=24 → y=450-72=378; at z=3m(C): M=0 → y=450 -->
+<!-- x scale: 200px/3m = 66px/m. z=0→x=440, z=3m→x=640 -->
+<polygon points="440,378 640,450 640,450 440,450" fill="rgba(139,69,0,0.18)" stroke="#8B4500" stroke-width="2"/>
+<text x="430" y="390" text-anchor="end" font-size="10" fill="#8B4500">24 kNm</text>
+<line x1="433" y1="378" x2="443" y2="378" stroke="#8B4500" stroke-width="1"/>
+<text x="68" y="378" text-anchor="end" font-size="9" fill="#8B4500">24</text>
+<text x="68" y="453" text-anchor="end" font-size="9" fill="#555">0</text>
+<!-- z-labels steber -->
+<text x="440" y="465" text-anchor="middle" font-size="10" fill="#555">B(z=0)</text>
+<text x="640" y="465" text-anchor="middle" font-size="10" fill="#555">C(z=3m)</text>
+
+<!-- Key insight box -->
+<rect x="400" y="475" width="300" height="40" rx="4" fill="#e8f4e8" stroke="#006600" stroke-width="1"/>
+<text x="550" y="491" text-anchor="middle" font-size="10" fill="#005500" font-weight="bold">Ključ: M = 24 kNm v točki B</text>
+<text x="550" y="506" text-anchor="middle" font-size="10" fill="#005500">je enako v prečki in stebru! ✓</text>
+
+<rect x="10" y="475" width="360" height="40" rx="4" fill="#fff3cd" stroke="#e6ac00" stroke-width="1"/>
+<text x="190" y="491" text-anchor="middle" font-size="10" fill="#7a5c00" font-weight="bold">Ko greš iz prečke v steber:</text>
+<text x="190" y="506" text-anchor="middle" font-size="10" fill="#7a5c00">vzdolžna sila ↔ prečna sila (zamenjata vlogi!)</text>
+</svg>

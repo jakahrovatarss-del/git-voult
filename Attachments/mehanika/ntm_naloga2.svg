@@ -1,0 +1,150 @@
+<svg viewBox="0 0 680 530" xmlns="http://www.w3.org/2000/svg" font-family="Arial,sans-serif">
+<text x="340" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#222">NALOGA 2 — Nosilci s previsom (previs BC)</text>
+
+<!-- ── KONSTRUKCIJA ── -->
+<!-- Beam A-B-C: A=x80, B=x80+240=320, C=x80+400=480. Scale: 80px/m -->
+<rect x="80" y="65" width="400" height="10" rx="2" fill="#555"/>
+<!-- Pin A -->
+<polygon points="80,65 66,96 94,96" fill="white" stroke="#333" stroke-width="2"/>
+<line x1="54" y1="99" x2="106" y2="99" stroke="#333" stroke-width="2"/>
+<!-- Pin B -->
+<polygon points="320,65 306,96 334,96" fill="white" stroke="#333" stroke-width="2"/>
+<line x1="294" y1="99" x2="346" y2="99" stroke="#333" stroke-width="2"/>
+<!-- Free end C (just a label) -->
+<text x="65" y="62" font-size="12" font-weight="bold" fill="#222">A</text>
+<text x="313" y="62" font-size="12" font-weight="bold" fill="#222">B</text>
+<text x="474" y="62" font-size="12" font-weight="bold" fill="#222">C</text>
+<!-- q distributed on AB (x=80 to x=320) -->
+<line x1="80" y1="42" x2="320" y2="42" stroke="#cc0000" stroke-width="1.5"/>
+<text x="200" y="37" text-anchor="middle" font-size="11" fill="#cc0000">q = 3 kN/m</text>
+<g stroke="#cc0000" stroke-width="1.5" fill="#cc0000">
+  <line x1="80" y1="42" x2="80" y2="63"/><polygon points="76,60 80,67 84,60"/>
+  <line x1="120" y1="42" x2="120" y2="63"/><polygon points="116,60 120,67 124,60"/>
+  <line x1="160" y1="42" x2="160" y2="63"/><polygon points="156,60 160,67 164,60"/>
+  <line x1="200" y1="42" x2="200" y2="63"/><polygon points="196,60 200,67 204,60"/>
+  <line x1="240" y1="42" x2="240" y2="63"/><polygon points="236,60 240,67 244,60"/>
+  <line x1="280" y1="42" x2="280" y2="63"/><polygon points="276,60 280,67 284,60"/>
+  <line x1="320" y1="42" x2="320" y2="63"/><polygon points="316,60 320,67 324,60"/>
+</g>
+<!-- F ↓ at C -->
+<line x1="480" y1="30" x2="480" y2="62" stroke="#cc0000" stroke-width="2"/>
+<polygon points="474,61 480,70 486,61" fill="#cc0000"/>
+<text x="490" y="50" font-size="11" fill="#cc0000" font-weight="bold">F=6 kN</text>
+<!-- Reactions ↑ -->
+<line x1="80" y1="113" x2="80" y2="90" stroke="#006600" stroke-width="2"/>
+<polygon points="74,90 80,79 86,90" fill="#006600"/>
+<text x="10" y="127" font-size="10" fill="#006600">Ay=0.5 kN</text>
+<line x1="320" y1="113" x2="320" y2="90" stroke="#006600" stroke-width="2"/>
+<polygon points="314,90 320,79 326,90" fill="#006600"/>
+<text x="330" y="113" font-size="10" fill="#006600">By=14.5 kN</text>
+<!-- Dimension lines -->
+<line x1="80" y1="120" x2="320" y2="120" stroke="#aaa" stroke-width="1"/>
+<text x="200" y="133" text-anchor="middle" font-size="10" fill="#888">3 m (AB)</text>
+<line x1="320" y1="120" x2="480" y2="120" stroke="#aaa" stroke-width="1"/>
+<text x="400" y="133" text-anchor="middle" font-size="10" fill="#888">2 m (previs)</text>
+<!-- Previs label -->
+<line x1="480" y1="60" x2="480" y2="75" stroke="#555" stroke-width="1" stroke-dasharray="3,2"/>
+<text x="490" y="80" font-size="10" fill="#555" font-style="italic">prost konec</text>
+
+<line x1="10" y1="145" x2="670" y2="145" stroke="#ddd" stroke-width="1"/>
+
+<!-- ── N DIAGRAM ── -->
+<text x="10" y="163" font-size="12" font-weight="bold" fill="#1a1a8c">N [kN]</text>
+<line x1="80" y1="172" x2="480" y2="172" stroke="#bbb" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="80" y1="172" x2="480" y2="172" stroke="#1a1a8c" stroke-width="2.5"/>
+<text x="68" y="175" text-anchor="end" font-size="10" fill="#555">0</text>
+<text x="280" y="186" text-anchor="middle" font-size="10" fill="#1a1a8c" font-style="italic">N = 0</text>
+
+<line x1="10" y1="196" x2="670" y2="196" stroke="#ddd" stroke-width="1"/>
+
+<!-- ── T DIAGRAM ── -->
+<text x="10" y="215" font-size="12" font-weight="bold" fill="#006600">T [kN]</text>
+<!-- baseline y=280 -->
+<line x1="80" y1="280" x2="480" y2="280" stroke="#bbb" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="68" y="283" text-anchor="end" font-size="10" fill="#555">0</text>
+<!--
+T Area I (AB, 0→3m):
+  T(x) = 0.5 - 3x
+  x=0: T=+0.5 → y=280-2.5=277.5 (tiny positive)
+  T=0 at x=0.167m → px=80+13=93, y=280
+  x=3-: T=-8.5 → y=280+42.5=322.5
+  5px/kN scale
+  Positive sliver: (80,280) to (80,277.5) to (93,280) — tiny triangle
+  Negative trapezoid: (93,280) to (320,322.5) to (320,280)
+-->
+<!-- tiny positive triangle near A -->
+<polygon points="80,280 80,277 93,280" fill="rgba(0,140,0,0.3)" stroke="#006600" stroke-width="1.5"/>
+<!-- negative area I: parabola approx (93→320) below baseline -->
+<!-- approx with control points: x=1m(160): T=0.5-3=-2.5 → y=292.5; x=2m(240): T=0.5-6=-5.5→y=307.5 -->
+<polygon points="93,280 160,292 240,307 320,322 320,280" fill="rgba(180,0,0,0.13)" stroke="#990000" stroke-width="2"/>
+<!-- Skok ↑ 14.5 at x=320 (B):  T goes from -8.5 to +6.0 -->
+<!-- Pos area II (BC, 3→5m): T=+6 constant. y=280-30=250 -->
+<polygon points="320,280 320,250 480,250 480,280" fill="rgba(0,140,0,0.18)" stroke="#006600" stroke-width="2"/>
+<text x="400" y="262" text-anchor="middle" font-size="11" fill="#006600">+6.0</text>
+<!-- Skok line at x=320 -->
+<line x1="320" y1="250" x2="320" y2="322" stroke="#555" stroke-width="1.5" stroke-dasharray="3,2"/>
+<text x="322" y="285" font-size="9" fill="#555">skok By↑</text>
+<!-- Labels -->
+<text x="68" y="253" text-anchor="end" font-size="9" fill="#006600">+6.0</text>
+<text x="68" y="325" text-anchor="end" font-size="9" fill="#990000">-8.5</text>
+<line x1="73" y1="322" x2="83" y2="322" stroke="#990000" stroke-width="1"/>
+<text x="180" y="322" text-anchor="middle" font-size="11" fill="#990000">-8.5 (pri B)</text>
+<!-- x-labels -->
+<text x="80" y="336" text-anchor="middle" font-size="10" fill="#555">A</text>
+<text x="320" y="336" text-anchor="middle" font-size="10" fill="#555">B (3m)</text>
+<text x="480" y="336" text-anchor="middle" font-size="10" fill="#555">C (5m)</text>
+
+<line x1="10" y1="344" x2="670" y2="344" stroke="#ddd" stroke-width="1"/>
+
+<!-- ── M DIAGRAM ── -->
+<text x="10" y="362" font-size="12" font-weight="bold" fill="#8B4500">M [kNm]</text>
+<!-- baseline y=500 (M positive above, negative below) -->
+<line x1="80" y1="470" x2="480" y2="470" stroke="#bbb" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="68" y="473" text-anchor="end" font-size="10" fill="#555">0</text>
+<!--
+M Area I (AB): M(x) = 0.5x - 1.5x²
+  Positive peak: x=0.167m → M=0.042 kNm (tiny, ~0.1px — barely visible)
+  x=1m(160): M=0.5-1.5=-1 kNm → y=470+3=473
+  x=2m(240): M=1-6=-5 kNm → y=470+15=485
+  x=2.5m(280): M=1.25-9.375≈-8 kNm → y=470+24=494
+  x=3m(320): M=-12 kNm → y=470+36=506... out of bounds
+
+  Let me rescale: 2.5px/kNm for M
+  baseline y=445
+  x=1m(160): M=-1 → y=445+2.5=447.5
+  x=2m(240): M=-5 → y=445+12.5=457.5
+  x=2.5m(280): M=-8.1 → y=445+20=465
+  x=3m(320): M=-12 → y=445+30=475
+
+  Positive area [0,0.167m]: very tiny sliver
+  Negative area [0.167m → 3m]: parabola below baseline
+  Negative area [3m→5m]: linear -12→0
+
+  scale 2.5px/kNm, baseline y=445
+-->
+<line x1="80" y1="445" x2="480" y2="445" stroke="#bbb" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="68" y="448" text-anchor="end" font-size="10" fill="#555">0</text>
+
+<!-- tiny positive near A (barely visible) -->
+<polygon points="80,445 80,444 93,445" fill="rgba(139,69,0,0.3)" stroke="#8B4500" stroke-width="1"/>
+<!-- Negative M area AB (below baseline): parabola -->
+<!-- points: A(80,445)→ tiny to (93,445) → parabola to B(320,475) -->
+<path d="M 93,445 Q 200,465 320,475 L 320,445 Z" fill="rgba(180,0,0,0.13)" stroke="#990000" stroke-width="2"/>
+<!-- Negative M area BC (linear -12→0): -->
+<polygon points="320,475 320,445 480,445" fill="rgba(180,0,0,0.13)" stroke="#990000" stroke-width="2"/>
+<!-- Labels -->
+<text x="200" y="468" text-anchor="middle" font-size="11" fill="#990000" font-style="italic">M negativen!</text>
+<text x="320" y="482" text-anchor="middle" font-size="12" fill="#990000" font-weight="bold">−12 kNm</text>
+<line x1="320" y1="475" x2="320" y2="445" stroke="#990000" stroke-width="1" stroke-dasharray="2,2"/>
+<text x="68" y="478" text-anchor="end" font-size="9" fill="#990000">−12</text>
+<line x1="73" y1="475" x2="83" y2="475" stroke="#990000" stroke-width="1"/>
+
+<!-- x-labels -->
+<text x="80" y="520" text-anchor="middle" font-size="10" fill="#555">A</text>
+<text x="320" y="520" text-anchor="middle" font-size="10" fill="#555">B (3m)</text>
+<text x="480" y="520" text-anchor="middle" font-size="10" fill="#555">C (5m)</text>
+
+<!-- Warning note -->
+<rect x="80" y="488" width="400" height="24" rx="4" fill="#fff3cd" stroke="#e6ac00" stroke-width="1"/>
+<text x="280" y="503" text-anchor="middle" font-size="10" fill="#7a5c00">⚠ Negativen M pri B → vlakna na ZGORNJEM robu nategno obremenjena!</text>
+</svg>

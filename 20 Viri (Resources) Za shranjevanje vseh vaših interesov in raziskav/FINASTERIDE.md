@@ -1,0 +1,1 @@
+za izpadanje las

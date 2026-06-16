@@ -1,0 +1,11 @@
+# Finančna in vojaška pomoč
+
+- Izrael je do leta 2005 prejel skoraj 154 milijard dolarjev neposredne ameriške ekonomske in vojaške pomoči, pri čemer so večino predstavljala nepovratna sredstva.[\[1\]](https://app.heptabase.com/7b0edf5d-3ea2-4bee-ae45-0d7fec330766/card/cec0db7a-73e4-4756-a4ab-35cba4f5047e?pdfPage=36&pdfBoundingBox=%7B%22left%22%3A54.812999999999995%2C%22top%22%3A178.84%2C%22width%22%3A337.938%2C%22height%22%3A108.79999999999998%7D)
+
+- Letna pomoč ZDA znaša približno 3 milijarde dolarjev, kar predstavlja šestino celotnega ameriškega proračuna za tujo pomoč in približno 2 % izraelskega BDP.[\[2\]](https://app.heptabase.com/7b0edf5d-3ea2-4bee-ae45-0d7fec330766/card/cec0db7a-73e4-4756-a4ab-35cba4f5047e?pdfPage=38&pdfBoundingBox=%7B%22left%22%3A58.89%2C%22top%22%3A300.56%2C%22width%22%3A337.938%2C%22height%22%3A254.32%7D)
+
+- Za razliko od drugih prejemnikov Izrael prejme celoten letni znesek pomoči v enkratnem nakazilu na začetku leta, kar mu omogoča prejemanje obresti.[\[3\]](https://app.heptabase.com/7b0edf5d-3ea2-4bee-ae45-0d7fec330766/card/cec0db7a-73e4-4756-a4ab-35cba4f5047e?pdfPage=39&pdfBoundingBox=%7B%22left%22%3A59.796%2C%22top%22%3A123.75999999999999%2C%22width%22%3A337.938%2C%22height%22%3A106.76000000000002%7D)[\[4\]](https://app.heptabase.com/7b0edf5d-3ea2-4bee-ae45-0d7fec330766/card/cec0db7a-73e4-4756-a4ab-35cba4f5047e?pdfPage=39&pdfBoundingBox=%7B%22left%22%3A59.796%2C%22top%22%3A231.88000000000002%2C%22width%22%3A337.938%2C%22height%22%3A189.04%7D)
+
+- Izrael je edina država, ki ji je dovoljeno porabiti približno 25 % prejete vojaške pomoči za subvencioniranje lastne obrambne industrije namesto za nakupe v ZDA.[\[5\]](https://app.heptabase.com/7b0edf5d-3ea2-4bee-ae45-0d7fec330766/card/cec0db7a-73e4-4756-a4ab-35cba4f5047e?pdfPage=39&pdfBoundingBox=%7B%22left%22%3A59.796%2C%22top%22%3A421.6%2C%22width%22%3A337.938%2C%22height%22%3A146.88%7D)
+
+- ZDA so neposredno financirale razvoj specifičnih izraelskih orožij, kot sta raketa Arrow in letalo Lavi, čeprav teh sistemov niso nameravale uporabljati same.[\[6\]](https://app.heptabase.com/7b0edf5d-3ea2-4bee-ae45-0d7fec330766/card/cec0db7a-73e4-4756-a4ab-35cba4f5047e?pdfPage=44&pdfBoundingBox=%7B%22left%22%3A54.812999999999995%2C%22top%22%3A370.6%2C%22width%22%3A337.938%2C%22height%22%3A227.79999999999995%7D)

@@ -1,0 +1,114 @@
+<svg viewBox="0 0 760 480" xmlns="http://www.w3.org/2000/svg" font-family="Arial,sans-serif">
+<text x="380" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#222">NALOGA 2 — 3D Napetostni tenzor: 3 Mohrove krožnice</text>
+
+<!-- Principal stresses: σ1=385.4, σ2=0, σ3=-285.4 MPa -->
+<!-- Origin at x=380, y=255. Scale: 0.5 px/MPa -->
+<!-- σ3=-285.4 → x=380-285.4*0.5=237   σ2=0 → x=380   σ1=385.4 → x=380+385.4*0.5=573 -->
+
+<!-- Axes -->
+<line x1="100" y1="255" x2="690" y2="255" stroke="#333" stroke-width="1.5"/>
+<polygon points="686,250 696,255 686,260" fill="#333"/>
+<text x="700" y="259" font-size="12" fill="#333">σ [MPa]</text>
+
+<line x1="380" y1="50" x2="380" y2="440" stroke="#333" stroke-width="1.5"/>
+<polygon points="375,54 380,44 385,54" fill="#333"/>
+<text x="350" y="44" font-size="12" fill="#333">τ [MPa]</text>
+
+<!-- Grid marks -->
+<g font-size="9" fill="#888" text-anchor="middle">
+  <line x1="237" y1="251" x2="237" y2="259" stroke="#aaa"/>
+  <text x="237" y="270">−285</text>
+  <line x1="280" y1="251" x2="280" y2="259" stroke="#aaa"/>
+  <text x="280" y="270">−200</text>
+  <line x1="330" y1="251" x2="330" y2="259" stroke="#aaa"/>
+  <text x="330" y="270">−100</text>
+  <line x1="380" y1="251" x2="380" y2="259" stroke="#aaa"/>
+  <text x="380" y="270">0</text>
+  <line x1="430" y1="251" x2="430" y2="259" stroke="#aaa"/>
+  <text x="430" y="270">100</text>
+  <line x1="480" y1="251" x2="480" y2="259" stroke="#aaa"/>
+  <text x="480" y="270">200</text>
+  <line x1="530" y1="251" x2="530" y2="259" stroke="#aaa"/>
+  <text x="530" y="270">300</text>
+  <line x1="573" y1="251" x2="573" y2="259" stroke="#aaa"/>
+  <text x="573" y="270">385</text>
+</g>
+
+<!-- C12 = (σ1+σ2)/2 = 192.7 → x=380+192.7*0.5=476.35≈476; R12=(σ1-σ2)/2=192.7 → 96.35 px -->
+<!-- C13 = (σ1+σ3)/2 = 50 → x=380+50*0.5=405; R13=(σ1-σ3)/2=335.4 → 167.7 px -->
+<!-- C23 = (σ2+σ3)/2 = -142.7 → x=380-142.7*0.5=308.65≈309; R23=(σ2-σ3)/2=142.7 → 71.35 px -->
+
+<!-- Largest circle (σ1-σ3): center=(405,255), R=167.7 — light blue bg -->
+<circle cx="405" cy="255" r="168" fill="rgba(100,150,255,0.06)" stroke="#336699" stroke-width="2.5"/>
+
+<!-- Medium circle (σ1-σ2): center=(476,255), R=96 — light red -->
+<circle cx="476" cy="255" r="96" fill="rgba(255,100,100,0.06)" stroke="#cc3333" stroke-width="2"/>
+
+<!-- Small circle (σ2-σ3): center=(309,255), R=71 — light green -->
+<circle cx="309" cy="255" r="71" fill="rgba(50,160,50,0.06)" stroke="#006600" stroke-width="2"/>
+
+<!-- Principal stress points on σ-axis -->
+<circle cx="237" cy="255" r="6" fill="#336699"/>
+<text x="237" y="240" text-anchor="middle" font-size="11" fill="#336699" font-weight="bold">σ₃=−285,4</text>
+
+<circle cx="380" cy="255" r="6" fill="#8B4500"/>
+<text x="380" y="240" text-anchor="middle" font-size="11" fill="#8B4500" font-weight="bold">σ₂=0</text>
+
+<circle cx="573" cy="255" r="6" fill="#cc3333"/>
+<text x="573" y="240" text-anchor="middle" font-size="11" fill="#cc3333" font-weight="bold">σ₁=+385,4</text>
+
+<!-- τmax markings -->
+<!-- τmax,13 = R13 = 335.4/2 = 167.7 at center 405 -->
+<circle cx="405" cy="87" r="4" fill="#336699"/>
+<line x1="405" y1="87" x2="573" y2="87" stroke="#336699" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="490" y="82" text-anchor="middle" font-size="10" fill="#336699" font-weight="bold">τmax = 335,4 MPa</text>
+<text x="490" y="93" text-anchor="middle" font-size="9" fill="#336699">(Tresca = 2·τmax = 670,8 MPa)</text>
+
+<!-- τmax,12 = 96 -->
+<circle cx="476" cy="159" r="3" fill="#cc3333"/>
+<text x="540" y="168" font-size="9" fill="#cc3333">τ₁₂=192,7 MPa</text>
+
+<!-- τmax,23 = 71 -->
+<circle cx="309" cy="184" r="3" fill="#006600"/>
+<text x="140" y="191" font-size="9" fill="#006600">τ₂₃=142,7 MPa</text>
+
+<!-- Centers marked -->
+<circle cx="476" cy="255" r="3" fill="#cc3333"/>
+<circle cx="309" cy="255" r="3" fill="#006600"/>
+<circle cx="405" cy="255" r="3" fill="#336699"/>
+
+<!-- Results box -->
+<rect x="20" y="50" width="185" height="145" rx="5" fill="#f0f4ff" stroke="#336699" stroke-width="1.5"/>
+<text x="112" y="68" text-anchor="middle" font-size="11" font-weight="bold" fill="#222">Rezultati</text>
+<text x="28" y="84" font-size="10" fill="#336699" font-weight="bold">σ₁ = +385,4 MPa</text>
+<text x="28" y="99" font-size="10" fill="#8B4500" font-weight="bold">σ₂ = 0 MPa (=σz)</text>
+<text x="28" y="114" font-size="10" fill="#006600" font-weight="bold">σ₃ = −285,4 MPa</text>
+<line x1="28" y1="120" x2="198" y2="120" stroke="#ccc"/>
+<text x="28" y="133" font-size="9" fill="#555">τmax = (σ₁−σ₃)/2 = 335,4</text>
+<text x="28" y="146" font-size="9" fill="#cc0000" font-weight="bold">Tresca = σ₁−σ₃ = 670,8 MPa</text>
+<text x="28" y="159" font-size="9" fill="#cc6600" font-weight="bold">Von Mises = 583,0 MPa</text>
+<text x="28" y="174" font-size="9" fill="#555">σ_sr = (σx+σy)/2 = 50 MPa</text>
+<text x="28" y="186" font-size="9" fill="#555">R = √(50²+300²) = 335,4 MPa</text>
+
+<!-- Tensor box -->
+<rect x="20" y="210" width="185" height="95" rx="5" fill="#fff8ee" stroke="#cc6600" stroke-width="1.5"/>
+<text x="112" y="228" text-anchor="middle" font-size="11" font-weight="bold" fill="#222">Napetostni tenzor</text>
+<text x="28" y="244" font-size="10" fill="#333">σx=−100, σy=+200 MPa</text>
+<text x="28" y="258" font-size="10" fill="#333">τxy=−300 MPa</text>
+<text x="28" y="272" font-size="10" fill="#333">σz=0, τxz=τyz=0</text>
+<text x="28" y="286" font-size="9" fill="#888">→ σz je takoj σ₂=0!</text>
+<text x="28" y="298" font-size="9" fill="#888">→ rešiš le 2×2 sistem</text>
+
+<!-- Legend -->
+<rect x="20" y="320" width="185" height="75" rx="5" fill="#fff" stroke="#aaa" stroke-width="1"/>
+<text x="112" y="336" text-anchor="middle" font-size="10" font-weight="bold" fill="#333">Legenda</text>
+<line x1="30" y1="346" x2="55" y2="346" stroke="#336699" stroke-width="2.5"/>
+<text x="60" y="350" font-size="9" fill="#336699">Krožnica σ₁−σ₃ (največja)</text>
+<line x1="30" y1="361" x2="55" y2="361" stroke="#cc3333" stroke-width="2"/>
+<text x="60" y="365" font-size="9" fill="#cc3333">Krožnica σ₁−σ₂</text>
+<line x1="30" y1="376" x2="55" y2="376" stroke="#006600" stroke-width="2"/>
+<text x="60" y="380" font-size="9" fill="#006600">Krožnica σ₂−σ₃</text>
+
+<!-- VM formula at bottom -->
+<text x="380" y="430" text-anchor="middle" font-size="10" fill="#cc6600">Von Mises: σVM = √(½[(σ₁−σ₂)²+(σ₂−σ₃)²+(σ₃−σ₁)²]) = √(½[385.4²+285.4²+670.8²]) = 583,0 MPa</text>
+</svg>

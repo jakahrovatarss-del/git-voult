@@ -1,0 +1,121 @@
+<svg viewBox="0 0 760 500" xmlns="http://www.w3.org/2000/svg" font-family="Arial,sans-serif">
+<text x="380" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#222">NALOGA 3 — Kombiniran upogib + torzija (d=80 mm)</text>
+
+<!-- LEFT SIDE: Cross-section diagram -->
+<!-- Circle at (170, 180), r=60 -->
+<text x="170" y="65" text-anchor="middle" font-size="11" font-weight="bold" fill="#555">Prerez (d=80 mm)</text>
+<circle cx="170" cy="160" r="60" fill="#e8f0ff" stroke="#336699" stroke-width="2.5"/>
+<!-- Diameter line -->
+<line x1="110" y1="160" x2="230" y2="160" stroke="#336699" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="170" y1="100" x2="170" y2="220" stroke="#336699" stroke-width="1" stroke-dasharray="4,3"/>
+<!-- d label -->
+<line x1="110" y1="230" x2="230" y2="230" stroke="#555" stroke-width="1.5" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<text x="170" y="245" text-anchor="middle" font-size="11" fill="#333">d = 80 mm</text>
+
+<!-- Arrows for M (bending) — pointing up-down at neutral axis level -->
+<text x="80" y="125" text-anchor="middle" font-size="10" fill="#cc0000">M</text>
+<line x1="95" y1="115" x2="115" y2="135" stroke="#cc0000" stroke-width="2"/>
+<polygon points="115,135 105,130 120,125" fill="#cc0000"/>
+
+<!-- Arrows for Mt (torsion) — curved arrow around section -->
+<path d="M 215,130 A 30,30 0 0 1 215,190" fill="none" stroke="#0066cc" stroke-width="2.5"/>
+<polygon points="215,190 207,183 222,180" fill="#0066cc"/>
+<text x="232" y="165" font-size="10" fill="#0066cc">Mt</text>
+
+<!-- Stress state box at critical point -->
+<rect x="70" y="285" width="200" height="100" rx="5" fill="#fff8ee" stroke="#cc6600" stroke-width="1.5"/>
+<text x="170" y="303" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">Napetosti na ext. vlaknu</text>
+<text x="80" y="320" font-size="10" fill="#cc0000">σ = M/W = 8×10⁶/50265 = 159,15 MPa</text>
+<text x="80" y="335" font-size="10" fill="#0066cc">τ = Mt/Wt = 4×10⁶/100531 = 39,79 MPa</text>
+<text x="80" y="350" font-size="9" fill="#555">W = πd³/32 = 50265 mm³</text>
+<text x="80" y="364" font-size="9" fill="#555">Wt = πd³/16 = 100531 mm³ = 2W</text>
+
+<!-- Formulas box -->
+<rect x="70" y="395" width="200" height="70" rx="5" fill="#e8f4e8" stroke="#006600" stroke-width="1.5"/>
+<text x="170" y="413" text-anchor="middle" font-size="10" font-weight="bold" fill="#005500">Rezultati</text>
+<text x="80" y="429" font-size="10" fill="#cc0000" font-weight="bold">σ₁ = 168,55 MPa</text>
+<text x="80" y="443" font-size="10" fill="#006600" font-weight="bold">σ₂ = −9,39 MPa</text>
+<text x="80" y="457" font-size="9" fill="#333">Tresca=177,9 | VM=173,4 MPa</text>
+
+<!-- RIGHT SIDE: Mohr's circle -->
+<!-- σsr = 79.58 → x_offset from origin. Scale 1.5 px/MPa -->
+<!-- Origin at (530, 280). -->
+<!-- σsr = 79.58 → cx = 530+79.58*1.5=649≈650; R=88.97 → 133 px -->
+<!-- σ1 = 168.55 → x = 530+168.55*1.5=783 (offscreen, use scale 0.9) -->
+<!-- Re-scale 0.9: σsr=79.58→72px; σ1=168.55→152px; σ2=-9.39→-8px; R=88.97→80px -->
+<!-- cx = 450+72=522; R=80; σ1=450+152=602; σ2=450-8=442 -->
+
+<text x="580" y="65" text-anchor="middle" font-size="11" font-weight="bold" fill="#555">Mohrova krožnica</text>
+
+<!-- Axes. Origin = (450, 280) -->
+<line x1="310" y1="280" x2="690" y2="280" stroke="#333" stroke-width="1.5"/>
+<polygon points="686,275 696,280 686,285" fill="#333"/>
+<text x="700" y="284" font-size="11" fill="#333">σ</text>
+
+<line x1="450" y1="80" x2="450" y2="440" stroke="#333" stroke-width="1.5"/>
+<polygon points="445,84 450,74 455,84" fill="#333"/>
+<text x="435" y="74" font-size="11" fill="#333">τ</text>
+
+<!-- Tick marks on σ axis (scale 0.9 px/MPa from 450) -->
+<g font-size="9" fill="#888" text-anchor="middle">
+  <line x1="441" y1="276" x2="441" y2="284" stroke="#aaa"/> <text x="441" y="294">−10</text>
+  <line x1="468" y1="276" x2="468" y2="284" stroke="#aaa"/> <text x="468" y="294">20</text>
+  <line x1="495" y1="276" x2="495" y2="284" stroke="#aaa"/> <text x="495" y="294">50</text>
+  <line x1="522" y1="276" x2="522" y2="284" stroke="#aaa"/> <text x="522" y="294">80</text>
+  <line x1="549" y1="276" x2="549" y2="284" stroke="#aaa"/> <text x="549" y="294">110</text>
+  <line x1="576" y1="276" x2="576" y2="284" stroke="#aaa"/> <text x="576" y="294">140</text>
+  <line x1="603" y1="276" x2="603" y2="284" stroke="#aaa"/> <text x="603" y="294">170</text>
+</g>
+<g font-size="9" fill="#888" text-anchor="end">
+  <line x1="446" y1="244" x2="454" y2="244" stroke="#aaa"/> <text x="444" y="247">−40</text>
+  <line x1="446" y1="262" x2="454" y2="262" stroke="#aaa"/> <text x="444" y="265">−20</text>
+  <line x1="446" y1="298" x2="454" y2="298" stroke="#aaa"/> <text x="444" y="301">+20</text>
+  <line x1="446" y1="316" x2="454" y2="316" stroke="#aaa"/> <text x="444" y="319">+40</text>
+</g>
+
+<!-- Center: cx=522, cy=280, R=80 -->
+<!-- Point A (σ, τ) = (159.15, 39.79) → scale 0.9: x=450+159.15*0.9=593, y=280+39.79*0.9=316 -->
+<!-- Point B (0, -τ) → x=450, y=280-36=244 -->
+<!-- σ1=168.55 → x=450+168.55*0.9=602; σ2=-9.39 → x=450-9.39*0.9=442 -->
+
+<!-- Mohr circle -->
+<circle cx="522" cy="280" r="80" fill="rgba(150,100,255,0.08)" stroke="#6633cc" stroke-width="2"/>
+
+<!-- Center -->
+<circle cx="522" cy="280" r="4" fill="#6633cc"/>
+<text x="527" y="272" font-size="10" fill="#6633cc">C(79,6; 0)</text>
+
+<!-- Point A — x-face (σ=159.15, τ=39.79) -->
+<circle cx="593" cy="316" r="5" fill="#cc0000"/>
+<text x="600" y="314" font-size="10" fill="#cc0000" font-weight="bold">A(159; 40)</text>
+<text x="600" y="326" font-size="9" fill="#cc0000">σ,τ — vlakno σ+τ</text>
+
+<!-- Point B — y-face (0, -τ) -->
+<circle cx="450" cy="244" r="5" fill="#0066cc"/>
+<text x="420" y="238" font-size="10" fill="#0066cc" font-weight="bold">B(0; −40)</text>
+
+<!-- Diameter line -->
+<line x1="593" y1="316" x2="450" y2="244" stroke="#666" stroke-width="1" stroke-dasharray="4,3"/>
+
+<!-- σ1 = 168.55 → x=602 -->
+<circle cx="602" cy="280" r="5" fill="#cc0000"/>
+<text x="602" y="270" text-anchor="middle" font-size="11" fill="#cc0000" font-weight="bold">σ₁=168,55</text>
+
+<!-- σ2 = -9.39 → x=442 -->
+<circle cx="442" cy="280" r="5" fill="#0066cc"/>
+<text x="442" y="298" text-anchor="middle" font-size="11" fill="#0066cc" font-weight="bold">σ₂=−9,39</text>
+
+<!-- τmax = 80 → y=280-80=200 -->
+<circle cx="522" cy="200" r="4" fill="#8B4500"/>
+<text x="540" y="196" font-size="10" fill="#8B4500">τmax=88,97</text>
+
+<!-- R line -->
+<line x1="522" y1="280" x2="602" y2="280" stroke="#6633cc" stroke-width="1" stroke-dasharray="3,2"/>
+<text x="562" y="274" text-anchor="middle" font-size="9" fill="#6633cc">R=88,97</text>
+
+<!-- Tresca vs VM comparison at bottom -->
+<rect x="310" y="420" width="380" height="55" rx="5" fill="#fff0f0" stroke="#cc0000" stroke-width="1.5"/>
+<text x="500" y="437" text-anchor="middle" font-size="10" font-weight="bold" fill="#333">Primerjava kriterij (σdop ocena)</text>
+<text x="320" y="453" font-size="10" fill="#cc0000">Tresca: σekv = √(σ²+4τ²) = √(159²+4·40²) = 177,9 MPa</text>
+<text x="320" y="466" font-size="10" fill="#cc6600">VM:     σekv = √(σ²+3τ²) = √(159²+3·40²) = 173,4 MPa</text>
+</svg>

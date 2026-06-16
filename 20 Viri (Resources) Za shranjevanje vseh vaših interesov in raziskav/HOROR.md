@@ -1,0 +1,3 @@
+## česa se uresnikci bojimo
+ne govorim o bavbavu ali kakšnih morilcih ali pošasti iz omare. ne govori o strahu in kako pomemben je za naše preživetje. 
+hočem da si predstavljaš masko ki lebdi v zraku. to ni strah zato kere je premalo informacij da bi tvoji možgani pravilno odreagirali. zato je v možganih bol kot ne prisoten samo zanimanje in prestrašenost. zdaj pi si predstavljaj da kar naenkrat se pokaže da t omasko nosi človek. takoj se telo odzvoe s strahom. ampak kaj je fora. sutaciji se razlikujeta samo v tem da zdaj lahko bolje oceniš situacijo in vidiš da je človek. 

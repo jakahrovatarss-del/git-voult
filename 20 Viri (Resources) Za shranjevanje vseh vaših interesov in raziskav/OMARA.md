@@ -1,0 +1,40 @@
+SHRANJEVALNE(garderobne omare,​knjižne omare,​komode,​
+    - DELOBVNE OMARE( kuhinjske pultne omarice,​sekretar omara ,[[REGAL]] 
+- KAJ SO REGALI→POLIČNE OMARE BRTEZU VRAT
+- KAK OZAPIŠEMO OSNOVNE MERE OMARE→ŠIRINA, GLOBINA, VIŠINA
+-  kaj moramo upoštevati pri dimenzionranju omare→da upoštevamo njen prostor in namen v njem
+- katere so standardne mere omar→kuhinjskih in pisarniških ostale so priporočene
+- iz česa je lahko izdelan obod omare
+    - je lahko izdelan iz površinsko oplemenitene iverne plošče – z melaminsko folijo ali furnirjem. ​
+    - Pri omarah višjega cenovnega razreda je obod izdelan iz masivnega lesa. ​
+    - Pojavljajo se tudi vezane plošče, mizarske plošče (panelne plošče) in vlaknene plošče. ​
+    - Enake materiale se uporablja tudi za **police** **in** **pregrade****.**​
+- iz česa je lahko izdelan hrobet omare
+    - vlaknena hdf plošča
+    - mdf
+- iz česa je lahko izdelan vrata in čela predalov
+    - oplemenitena iverna plošča
+    - masivni les
+    
+- kako je v osnovi sestavljena omara
+    - hrbtišče
+    - podnožje
+    - vrataa
+    - predali
+    - pregrade
+    - police
+- iz česa je sestavljen obod omare
+    - strop
+    - dno
+    - stranici
+    - pregrade
+- **Strop**→je zgornji horizontalni del omare.​
+- **Stranic**i→sta v omari stranska pokončna elementa, ki nosita večino teže in jo prenašata na tla in na dno omare.​
+- **Dno**→je spodnji del omare, na katerega je pritrjeno podnožje. Nanj se prenašajo vse obremenitve omare.​
+- **Pregrade**→se v omari trdno povezujejo z osnovnim ogrodjem in ga ojačajo.​
+- kakšni spoji se uporabljajo za obod omare→ravbni kotni spoji
+- kakšne cezi uporabljamo za nerastavljive oz. rastavljive obode omar
+    - nerastavljiva-mozničena vez,vez z lečastim peresom
+    - rastavljiva-spoj z ekcentričnim vijakom in spojko
+- čemu služi hrbet omare→pravokotnosti in zapiranju s zadnje strani
+- kako je vstavljeno hrbtiščle omare→v brazdo oboda ali utor pritrjeno s sponkami ali vijaki

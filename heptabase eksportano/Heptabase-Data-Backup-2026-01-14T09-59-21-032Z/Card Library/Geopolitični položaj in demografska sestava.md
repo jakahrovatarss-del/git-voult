@@ -1,0 +1,7 @@
+# Geopolitični položaj in demografska sestava
+
+- Iran je 17. največja država na svetu, ki jo zaznamuje gorat teren in izjemno strateška lega ob Hormuški ožini. [\[1\]](https://app.heptabase.com/7b0edf5d-3ea2-4bee-ae45-0d7fec330766/card/5e3cc1a0-a04a-42a6-8fd5-134ce9c02c52#66487dd1-12a4-4fa4-b463-4e4d2e5852ca,2019c3c7-d4f2-42ea-9dbd-3bc8db68c0e8,9cdf5363-67f3-40a2-9d51-c21948fb8ebf,1fd1ecdd-6619-4365-8541-7f3ca1646775,aef1ce38-e890-4d94-9dde-fa2bcb8fbdd9,5cbe419c-7291-4628-b780-fed142378810)
+
+- Prebivalstvo šteje skoraj 90 milijonov ljudi, pri čemer večino predstavljajo prebivalci perzijskega izvora, pomembne pa so tudi manjšine, kot so Azerbajdžanci in Kurdi. [\[1\]](https://app.heptabase.com/7b0edf5d-3ea2-4bee-ae45-0d7fec330766/card/5e3cc1a0-a04a-42a6-8fd5-134ce9c02c52#66487dd1-12a4-4fa4-b463-4e4d2e5852ca,2019c3c7-d4f2-42ea-9dbd-3bc8db68c0e8,9cdf5363-67f3-40a2-9d51-c21948fb8ebf,1fd1ecdd-6619-4365-8541-7f3ca1646775,aef1ce38-e890-4d94-9dde-fa2bcb8fbdd9,5cbe419c-7291-4628-b780-fed142378810)
+
+- Družbeno sestavo dopolnjujejo raznoliki jeziki in etnične skupine, ki kljub prevladujočemu muslimanskemu prebivalstvu tvorijo kompleksen demografski mozaik. [\[2\]](https://app.heptabase.com/7b0edf5d-3ea2-4bee-ae45-0d7fec330766/card/5e3cc1a0-a04a-42a6-8fd5-134ce9c02c52#5e3041db-7780-414a-b933-35b584e21fa5,ecaa21fa-5fa5-40ae-8437-faf86e4fb792,99836f6e-2f52-413d-ad77-c0e126ce3228)

@@ -14,6 +14,8 @@ Določiti potek osne sile N, prečne sile T in upogibnega momenta M vzdolž kons
 
 ![[ntm_diagrami.svg|637]]
 
+> **Vaje z rešenimi primeri (vsi tipi):** [[Vaje - NTM diagrami - Vse vrste]]
+
 ## Definicije in predznaki
 
 | Količina | Simbol | Fizikalni pomen | Pozitiven predznak |
@@ -99,6 +101,24 @@ $$q(x) = -\frac{dT}{dx} = -\frac{d^2M}{dx^2}$$
 
 ---
 
+## Vrste podpor — pregled
+
+![[ntm_vrste_podpor.svg|637]]
+
+| Podpora | Reakcije | Neznank | Pogoj |
+|---------|----------|---------|-------|
+| Nepomični členek (tečaj) | $R_x$, $R_y$ | 2 | — |
+| Pomični členek (roller) | $R_y$ | 1 | x prost |
+| Togo vpetje | $R_x$, $R_y$, $M_A$ | 3 | — |
+| Prost konec | — | 0 | $T=0$, $M=0$ ✓ |
+| Notranji členek (Gerber) | doda pogoj | −1 | $M=0$ ✓ |
+
+> **Statična določenost:** $\sum \text{reakcij} = 3$ za ravninski problem.
+
+> **zobacz:** [[STATIKA#Podpore in reakcije]]
+
+---
+
 ## Primer 1 — Prostoležeč nosilec s točkovno silo
 
 **Podatki:** $L = 6$ m, $F = 12$ kN na sredini ($a = 3$ m)
@@ -152,16 +172,54 @@ $$M(x) = -\frac{q x^2}{2} = -1{,}5 x^2\ \text{kNm}$$
 
 ---
 
-## Primer 3 — L-profil (ločna konstrukcija)
+## Primer 3 — L-profil (lomljeni nosilci, L-oblika)
 
 Za L-profile ali ločne konstrukcije:
 
 1. **Razdeli na horizontalni in vertikalni del** posebej
 2. Vsak del ima svojo koordinato (npr. $x$ in $y$)
-3. Pri spoju prenesi notranje sile: $N$ enega dela postane $T$ drugega!
+3. Pri spoju prenesi notranje sile: **$N$ enega dela postane $T$ drugega!**
 4. M je v spoju **kontinuiren** (ni skoka)
 
-> ⚠️ **Pri poševnih elementih:** osna sila N ima komponente v x in y smeri → razstavi!
+> ⚠️ **Najpogostejša past:** Ko preidemo iz prečke v steber, se vlogi N in T zamenjata — kar je bilo vzdolžna (osna) sila v prečki, postane prečna sila v stebru in obratno!
+
+**Primer (F = 8 kN vodoravno pri vrhu stebra):**
+
+| Odsek | N | T | M |
+|-------|---|---|---|
+| Prečka AB | −8 kN (tlak) | +6 kN | 0 → 24 kNm |
+| Steber BC | +6 kN (nateg) | +8 kN | 24 → 0 kNm |
+
+> M = 24 kNm v točki B je enako v prečki in stebru — **M je v vozlišču enak!** ✓
+
+> **zie:** [[Vaje - NTM diagrami - Vse vrste#NALOGA 3 — Lomljeni nosilci]]
+
+---
+
+## Primer 4 — Portalni okvir
+
+> **Ključni koncept: statična nedoločenost in simetrija**
+
+Portalni okvir (stebra + prečka) je pogosto **statično nedoločen**:
+- Togo vpetje A (3 neznanke) + členek B (2 neznanki) = 5 neznank > 3 enačb → nedoločeno
+- Rešitev na izpitu: poenostavitev na **oba členka** + **simetrija**
+
+**Simetričen portal z $q$ na prečki:**
+
+$$A_y = B_y = \frac{q \cdot L}{2}, \quad A_x = B_x = 0$$
+
+| Odsek | N | T | M |
+|-------|---|---|---|
+| Steber CA | $-A_y$ (tlak) | 0 | 0 |
+| Prečka CD | 0 | $A_y - qx$ (linear) | parabola, vrh $M_{max}$ |
+
+$$M_{max} = \frac{q \cdot L^2}{8} \quad \text{(pri simetričnem portalu, na sredini prečke)}$$
+
+> 💡 **V lesarstvu:** $M_{max}$ dimenzionira prerez prečke. Vogali (C, D) pri idealnem simetričnem portalu nimajo momenta — v realnosti (veter) postanejo **kritična mesta**.
+
+> 💡 **Steber je v tlaku** — ugodno za les (dober v tlaku vzdolž vlaken).
+
+> **zie:** [[Vaje - NTM diagrami - Vse vrste#NALOGA 4 — Portalni okvir]]
 
 ---
 
@@ -208,11 +266,25 @@ Ali pa preprosto: **vedno računaj iz LEVE strani** — manj zmede.
 
 ---
 
+## Povzetek — tipi nalog na izpitu
+
+| Tip | Posebnost | Pazi na |
+|-----|-----------|---------|
+| Prosta greda | $N=0$, $M=0$ na obeh koncih | Razdalja rezultante $q$ |
+| Nosilci s previsom | $A_y$ je lahko majhen ali negativen | Predznak $A_y$ |
+| Lomljeni nosilci (L) | $N \neq 0$, N↔T zamenjata vlogi | Koordinatni sistem pri stebru |
+| Portalni okvir | Simetrija → $A_y = B_y$, steber v tlaku | Statična nedoločenost |
+| $F$ pod kotom + $M_0$ | Razstavi $F$, predznak $M_0$ v $\sum M$ | Preskok M pri $M_0$ |
+
+---
+
 ## Povezave
 
+- [[Vaje - NTM diagrami - Vse vrste]]
 - [[Koncept - Upogib]]
 - [[Koncept - Napetostno stanje]]
 - [[Koncept - Euler Uklon]]
+- [[STATIKA]]
 - [[Mehanika Hub]]
 - [[05_SCHOOL/School Hub]]
 - [[Izpit - Mehanika - Celoletni 2026]]

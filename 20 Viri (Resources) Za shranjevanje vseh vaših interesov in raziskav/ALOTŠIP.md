@@ -1,0 +1,6 @@
+[[LOOKING UP TO THE CELING- štefan kralj]] 
+[[2023-12-17]]
+[[2023-11-17]]
+[[[kremsec in jurij zgodba brez smisla]]
+[[2023-11-16]]
+[[Misli]]

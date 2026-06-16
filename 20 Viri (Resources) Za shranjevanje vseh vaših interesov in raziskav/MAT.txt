@@ -1,0 +1,81 @@
+GEOMETRIJA
+kaj je premica¸¸→premica je neomejena ravna črta
+kaj je poltrak→je ravna črta ki je na eni strani omejena na drugi pa gre v neskončnost
+kdaj sta dve premici v ravnini vsporedni→ko nimata nobene skupne točke
+kaj je kot→del ravnine ki je omejen z dvema poltrakoma
+    opiši splošni trikotnik→lik z tremi oglijšči in tremi stranicami.
+vrste trikotnikov
+    enakostranični trikotnik
+    enakokraki trikotnik
+    raznostranični trikotnik
+    pravokotni trikotnik
+
+
+kaj je višina trikotnika→je daljica ki poteka od ogljišča trikotnika do nasprotne stranice in je najnjo pravokotna
+kaj je težiščnica trikotnika→je daljica ki  poteka od ogljišča trikotnika do sredine nasprotne stranice
+kdaj sta trikotnika skladna→ko imata skladne vse tri stranice in vse tri notranje kote
+kaj je kvadrat→je pravokotnik ki ima vse 4 stranice enako dolge
+kaj je pravokotnik→je štirikotnik kjer sta sosednji stranici pravokotni in nasprotni stranici enako dolgi
+kaj je romb→je štirikotnik ki ima vse 4 stranice enako dolg. diagonali romba se sekata pod pravim kotom in sta simetrali notranjih kotov.
+kaj je paralelogram→je štirikotnik z dvema paroma vzporednih in skladnih stranic. vsak pravokotnik je paralelogram 
+kaj je trapez→je štirikotnik ki ima en par vzporednih stranic
+kaj je enakokraki trapez→je trapez ki ima oba kraka enako dolga.
+kaj je deltoid→je štirikotni ki ima dva para SOSEDNO skladnih stranic
+kaj je krog→je geometrijski lik ki je del ravnine tega pa omejuje krožnica.
+kaj predstavlja mali s v heronove izrazu→polovico obsega
+kaj je krožnica→je kriva sklenjena črta ki omejuje krog. krožnica je tudi množica točk v isti ravnini ki so enako oddaljene od točke S.
+kaj je diagonala→diagonala je daljica ki povezuje dve nesosednji ogljišči
+kaj je točka→točka je goemetrijski objekt brez razšeznosti
+kaj je dolžina daljice→razdalja med obema kraiščema daljice
+kaj je simetrala daljice→je premica ki je pravokotna na daljico in jo razpolavlja
+kja je razlika med topim in ostrim trikotnikom→ostri ima use kote ostre, topi pa ima enega od tem topega
+kateri izreki veljajo v pravokotnem trikotniku→višinski, evklidov in pitagorov
+kaj je notanji kot→je sokot zunanjega kota
+kaj so podnobni trikotniki→
+kdaj sta si trikotnika podobna→ko imata enaka razmerja vseh stranic in enake vse notranje kote
+sinus kota→nasproti ležeča kateta ulomljeno s hipotenuzo
+kosinus kota→priležna kateta ulomljeno s hipotenuzo
+tanges kota→nasprati ležeča ulomljeno s priležno
+kotanges→priležna ulomljeno z nasproti ležečo kateto
+kako izraunamo diagonali paralelograma→s pomočjo kosinusnega izreka9( {\displaystyle f_{1,2}={\sqrt {a^{2}+b^{2}\pm 2ab\cos \alpha }}\!\,,})
+kako izačunamo diagonali trapeza→s pomočjo pitagorovega izreka(e2=v2+(a+c2)2
+kaj je krožni lok→je del koržnice med dvema točkama na krožnici
+kaj je krožni izsek→je del kroga ki ga omejujeta dva polmera in krožni lok
+kaj je krožni odsek→je del kroga ki ga moejujeta lok in tetiva
+kaj je tetiva→daljica ki ima kraišči na krožnici
+kaj je središčni kot→kot pod katerim vidimo krožni lok
+kako konstruiramo središče trikotniku včrtanega kroga→Trikotniku včrtana krožnica ima središče v sečišču simetral notranjih kotov in se dotika vseh treh stranic trikotnika.
+kako konstruiramo središče trikotniku očrtanega kroga→Trikotniku očrtana krožnica ima središče v sečišču simetral stranic in poteka skozi vsa tri oglišča trikotnika.
+kako izračunamo polmer včrtanemu krogu→r=S:s
+kako izračunamo polmer očrtanemu krogu→R=abc:4S
+
+
+kaj je prizma→je oglat geometrijsko telo omejeno z dvema osnovnima ploskva in plaščem 
+Opiši pravilni pokončni valj→je okroglo geometrijsko telo ki je sestavljeno iz dveh osnovnih ploskev in plašča.osnovni ploskvi sta kroga med tem ko je plašč pravokotnik
+Kaj je osni presek valja ?→Če valj presekamo z ravnino, ki poteka skozi os valja,  
+Opiši pravilni pokončni stožec→je okroglo geometrijsko telo, ki ga omejujeta dve ploskvi osnovna ploskev in plašč. osnovna ploskev je krog plašč pa krožni izsek.
+Kaj je osni presek stožca→je enakokraki trikotnik ki ga dobimo, če stožec presekamo z ravnino, ki gre skozi njegovo os.  
+. Kdaj je stožec enakostraničen→ko ima stranice enake premeru osnovne ploskve
+kaj je geometrijsko telo→je strnjen del prostora, omejen s sklenjeno ploskvijo
+kaj je osnovni rob→rob ki omejuje osnovno ploskev
+kaj je stranski rob→
+kaj je ogljišče→je točka kjer se stiakta dve stranici geometrijskega lika
+kaj je prostorninska diagonala→daljica ki veže dve nesosednji ogljišči ki ne ležita na isti ploskvi
+kaj je ploščinska diagonala→je daljica ki veže dve nesosednji ogljišči ki ležita na isti ploosvi
+ka jje mreža prizme→dobimo jo če vse mejne plosve prizme razgrnemo v ravnino.
+kaj je osnovna ploskev prizem→dva poljubna skladna in vsporedna lika
+kaj je stranska plsokev prizem→so pravokotniki z enako višino
+kaj je osni presek→geometrijski lik ki nastane če telo prerežemo z ravnino, po njem poteka ploščinska diagonala
+kaj jje krogla→okroglo geometrijsko telo ki ima eno ploskev ki je ukrivljena in sklenjena,. sestavljena je iz množice točk  ki so enako odaljene od središča za razdljo imenovano polmer. ploskev imenuje+mo tudi sfera.
+kdaj je valj enakostraničen→ko je višina enaka pomeru
+kdaj je stožec enakostranični→ko je stranica enaka premeru
+pravilna prizma→robovi osnovne ploskve so enako dolgi
+pravilna enakoroba prizma→enake ima osnovne robove in višino stranskih ploskev
+kaj je površina→seštevek vseh površin ploskev telesda izražena v kvadratnih merskih enotah
+volumen→je prosztor obdan s ploskvami geometrijskega telesa izražen v kubičnih merskih enotah
+dolžinske merske enote→z njimi merimo dolžine, osnovna enota je meter, če gremo nižje za deset dobimo dm-cm za 1000 gor pa kilometer
+
+
+
+
+
