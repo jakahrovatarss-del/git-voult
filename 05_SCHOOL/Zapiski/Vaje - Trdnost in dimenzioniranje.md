@@ -113,7 +113,7 @@ $$\sigma = \frac{M_{max}}{W_{dej}} = \frac{2187{,}5}{2250} = \boxed{0{,}972\ \te
 
 ## NALOGA 2 — Euler uklon konzole (kvadraten prerez)
 
-![[trdnost_n2.svg]]
+![[trdnost_n2.svg|697]]
 
 > **Besedilo naloge:** Lesen steber (iglavci) kvadratnega prereza $a \times a$ in dolžine $L = 4\ \text{m}$ je vpet spodaj kot konzola — spodaj togo vpet, zgoraj prost. Na prostem koncu deluje navpična tlačna sila $F = 30\ \text{kN}$. Dimenzioniraje prerez pri zahtevanem varnostnem faktorju $\nu = 3$ in preverite, ali je steber v Eulerjevem uklonskem območju. ($E = 1000\ \text{kN/cm}^2$, $\sigma_{dop} = 1{,}2\ \text{kN/cm}^2$)
 

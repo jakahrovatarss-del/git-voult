@@ -104,13 +104,13 @@ $$\nu = \frac{F_k}{F} \geq \nu_{zahtevani}$$
 
 ## Prepoznavanje razlik med podtipi nalog
 
-| Tip | Kako prepoznaš | Posebnost |
-|-----|----------------|-----------|
-| Kontrola uklona | Dana $F$, $L$, prerez → izračunaj $\nu$ | Preveri $\lambda > \lambda_e$ |
-| Dimenzioniranje | Dana $F$, $\nu$, $L$ → poišči dimenzijo | Iz $I_{min,potr}$ izrazi $b$, $d$... |
-| Konzola | $\beta = 2$, pogosto manj očitno v besedilu | Tipično: steber z vpetjem spodaj |
-| Asimetričen prerez | $I_{min}$ ni očiten | Izračunaj obe osi, vzami manjši! |
-| Les vs. Jeklo | Različen $\lambda_e$ | Les: $\lambda_e \approx 90$, Jeklo: $\lambda_e \approx 114$ |
+| Tip                | Kako prepoznaš                              | Posebnost                                                   |
+| ------------------ | ------------------------------------------- | ----------------------------------------------------------- |
+| Kontrola uklona    | Dana $F$, $L$, prerez → izračunaj $\nu$     | Preveri $\lambda > \lambda_e$                               |
+| Dimenzioniranje    | Dana $F$, $\nu$, $L$ → poišči dimenzijo     | Iz $I_{min,potr}$ izrazi $b$, $d$...                        |
+| Konzola            | $\beta = 2$, pogosto manj očitno v besedilu | Tipično: steber z vpetjem spodaj                            |
+| Asimetričen prerez | $I_{min}$ ni očiten                         | Izračunaj obe osi, vzami manjši!                            |
+| Les vs. Jeklo      | Različen $\lambda_e$                        | Les: $\lambda_e \approx 90$, Jeklo: $\lambda_e \approx 114$ |
 
 ---
 
