@@ -196,12 +196,54 @@ ENOOSNO:     σ1=σ, σ2=0,   τmax=σ/2
 
 ---
 
+## Primer iz izpita — Deformacijski tenzor → napetostni tenzor (jeklo)
+
+$$\varepsilon_{ij} = \begin{pmatrix} 1 & -3 & 0 \\ -3 & 2 & 0 \\ 0 & 0 & 0 \end{pmatrix} \cdot 10^{-4}, \quad E = 210\,000\ \text{MPa}, \quad \nu = 0{,}3$$
+
+$$\lambda = 121\,154\ \text{MPa}, \quad G = 80\,769\ \text{MPa}, \quad \varepsilon_v = 3 \cdot 10^{-4}$$
+
+$$\sigma_{ij} = \begin{pmatrix} 52{,}5 & -48{,}5 & 0 \\ -48{,}5 & 68{,}7 & 0 \\ 0 & 0 & 36{,}4 \end{pmatrix}\ \text{MPa}$$
+
+$$\sigma_1 = 109{,}7\ \text{MPa}, \quad \sigma_2 = 36{,}4\ \text{MPa}, \quad \sigma_3 = 11{,}4\ \text{MPa}$$
+
+Kontrola: $52{,}5 + 68{,}7 + 36{,}4 = 157{,}6 = 109{,}7 + 36{,}4 + 11{,}4 = 157{,}5$ ✓
+
+> **Primer:** [[Naloga - Mehanika - Tenzorska analiza - deformacijski tenzor]]
+
+---
+
+## Primer iz izpita — 3D Hookov zakon (aluminijast kvader)
+
+Kvader $100 \times 150 \times 200$ mm, $F_x = 15$ kN (nateg), pogoj $\Delta H = -0{,}002$ mm, $E = 70\,000$ MPa, $\nu = 0{,}3$:
+
+$$\sigma_x = 0{,}5\ \text{MPa}, \quad \varepsilon_z = \Delta H / H = -10^{-5}$$
+
+$$\varepsilon_z = \frac{1}{E}[\sigma_z - \nu(\sigma_x + \sigma_y)] \Rightarrow \sigma_z = -0{,}55\ \text{MPa}$$
+
+$$F_z = |\sigma_z| \cdot A_{xy} = 0{,}55 \cdot 15\,000 = \boxed{8\,250\ \text{N}}$$
+
+> ⚠️ Brez Poissonovega efekta ($\nu$) bi dobili $F_z = 10{,}5$ kN — **napaka 21%**!
+
+> **Primer:** [[Naloga - Mehanika - Tenzorska analiza - aluminijast kvader]]
+
+---
+
+## Primer — Kamniti zid pod tlakom + strigom
+
+$\sigma_x = -2{,}5$ MPa (tlak), $\sigma_y = 0$, $\tau_{xy} = 0{,}8$ MPa → $\sigma_1 = +0{,}234$ MPa (**nateg**!), $\sigma_2 = -2{,}734$ MPa
+
+> ⚠️ Kljub prevladujočemu tlaku se pojavi **nateg** — nevarno za krhke materiale (beton, kamen)!
+
+---
+
 ## Pogosta napaka
 
 - Napačen predznak $\tau_{xy}$ pri odčitavanju tenzorja
 - Pozabiti preveriti invarianto $\sigma_1 + \sigma_2 = \sigma_x + \sigma_y$
 - $\phi_0$ je kot zasuka v **fizičnem prostoru** = polovica kota na Mohrovi krožnici
 - Za 3D problem: $\sigma_3 = 0$ (ravninsko stanje) — ne pozabiti pri VM!
+- ⚠️ Zamenjava kota normale in kota ravnine — razlika 90°! V formulah nastopa $\phi$ kot NORMALE!
+- ⚠️ Tenzorska konvencija: $\tau_{xy} = 2G \cdot \varepsilon_{xy}$ (tenzorska), enako kot $G \cdot \gamma_{xy}$ (inženirska) — ker $\gamma = 2\varepsilon$!
 
 ---
 
@@ -212,5 +254,10 @@ ENOOSNO:     σ1=σ, σ2=0,   τmax=σ/2
 - [[Blok 2 - Upogib]] ← od kje pridejo σ in τ
 - [[Blok 5 - Torzija]] ← torzijsko strižno stanje
 - [[Vaje - Napetostni tenzor in Mohrova kroznica]] ← rešene naloge
+- [[Naloga - Mehanika - Tenzorska analiza - deformacijski tenzor]] ← εij→σij→σ1,2,3
+- [[Naloga - Mehanika - Tenzorska analiza - aluminijast kvader]] ← 3D Hooke, Poissonov efekt
+- [[Naloga - Mehanika - Tenzorska analiza - nagnjene ravnine]] ← σ(φ), τ(φ) formule
+- [[Naloga - Mehanika - Izpit Jul2018 - Cisto strizno stanje]] ← čist strig, φ0=45°
+- [[Naloga - Mehanika - Izpit Feb2019 - Tresca Von Mises]] ← 3D tenzor, razvrstitev
 - [[Izpit - Mehanika - Celoletni 2026]]
 - [[Mehanika Hub]]

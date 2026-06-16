@@ -150,11 +150,35 @@ Naloga: steber z N in M → napetostni tenzor → hipoteza.
 
 ---
 
+## Primer iz izpita — 3D tenzor (Feb2019)
+
+**Dano:** $\sigma_{ij} = \begin{pmatrix} -100 & -300 & 0 \\ -300 & 200 & 0 \\ 0 & 0 & 0 \end{pmatrix}$ MPa, $\sigma_{dop} = 610$ MPa
+
+**Mohr:** $\sigma_{sr} = 50$ MPa, $R = 335{,}4$ MPa
+
+$$\sigma_1 = 385{,}4\ \text{MPa}, \quad \sigma_2 = 0\ \text{MPa}, \quad \sigma_3 = -285{,}4\ \text{MPa}$$
+
+> ⚠️ **PAZI:** $\sigma_z = 0$ je **vmesna vrednost** $\sigma_2$, ne minimum! Razvrstitev obvezna: $\sigma_1 \geq \sigma_2 \geq \sigma_3$
+
+**Kontrola I₁:** $-100 + 200 + 0 = 100$ MPa $= 385{,}4 + 0 - 285{,}4 = 100$ MPa ✓
+
+**Tresca:** $\sigma_{ekv} = \sigma_1 - \sigma_3 = 385{,}4 + 285{,}4 = 670{,}8\ \text{MPa} > 610 \rightarrow$ **PREKORAČENO!**
+
+**Von Mises:** $\sigma_{ekv} = \sqrt{\frac{1}{2}[(385{,}4)^2 + (285{,}4)^2 + (670{,}8)^2]} = 583{,}1\ \text{MPa} < 610 \rightarrow$ **varno**
+
+Razlika: Tresca 15% višji od VM — hipotezi dasta **različen rezultat**!
+
+> **Primer:** [[Naloga - Mehanika - Izpit Feb2019 - Tresca Von Mises]]
+
+---
+
 ## Pogosta napaka
 
 - Zamenjati faktor **4** (Tresca) in **3** (VM) — zapomni si: **"Tresca 4, VM 3"**
 - Za gredi: $Wt = 2W$ (polni krog) — ne $Wt = W$!
 - Pozabiti predznak σ pri tlaku (steber pod tlačno silo)
+- ⚠️ **Razvrstitev σ1≥σ2≥σ3 je OBVEZNA** — $\sigma_z = 0$ je pogosto vmesna vrednost, ne minimum!
+- Primer: $\sigma_1=385$, $\sigma_2=0$, $\sigma_3=-285$ → Tresca: $|385-(-285)|=670$, ne $|385-0|=385$!
 
 ---
 
@@ -165,5 +189,7 @@ Naloga: steber z N in M → napetostni tenzor → hipoteza.
 - [[Blok 2 - Upogib]] ← vir σ
 - [[Blok 5 - Torzija]] ← vir τ
 - [[Vaje - Trdnost in dimenzioniranje]] ← N5 (M+Mt), N6 (M+Mt z uklonskim koeficientom)
+- [[Naloga - Mehanika - Izpit Feb2019 - Tresca Von Mises]] ← 3D tenzor, σ2=0 vmesna vrednost!
+- [[Vaje - Napetostni tenzor in Mohrova kroznica]] ← NALOGA 5 (čisto strižno)
 - [[Izpit - Mehanika - Celoletni 2026]]
 - [[Mehanika Hub]]

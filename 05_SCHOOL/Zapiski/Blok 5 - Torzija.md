@@ -159,12 +159,39 @@ Naloga: Gredi obremenjena z več silami → najprej NTM diagrami, nato v kritič
 
 ---
 
+## Primer iz izpita — Bredt škatlast prerez (Feb2019)
+
+Škatla $15 \times 10$ cm, $t = 1$ cm, $Mt = 3 \cdot 10^6$ Nmm = $30\ \text{kNm}$:
+
+$$A_m = (15-1)(10-1) = 14 \cdot 9 = 126\ \text{cm}^2$$
+
+$$\tau = \frac{Mt}{2 \cdot A_m \cdot t} = \frac{3 \cdot 10^6}{2 \cdot 12\,600 \cdot 10} = \boxed{11{,}9\ \text{MPa}}$$
+
+> **Torzijski tok:** $q = \tau \cdot t = 11{,}9 \cdot 10 = 119\ \text{N/mm}$ = konst po obodu!
+
+> ⚠️ **Ko je $Mt = \text{konst}$ in $t = \text{konst}$:** $\tau$ je konstanten **vzdolž palice** IN **po obodu** prereza!
+
+> **Primer:** [[Naloga - Mehanika - Izpit Feb2019 - Torzija Bredt skatlast]]
+
+---
+
+## Čisto torzijsko stanje in spiralno lom
+
+Za čisto torzijo: $\sigma_x = \sigma_y = 0$, $\tau_{xy} = \tau$ → Mohr: $\sigma_1 = +\tau$, $\sigma_2 = -\tau$, $\phi_0 = 45°$
+
+> **Spiralni lom (spiral fracture):** Krhki materiali se lomijo **pod 45°** pri torziji — ker je $\sigma_1 = +\tau$ pod kotom 45°, ki je natezna napetost, ki jih uniči!
+
+> **Primer:** [[Naloga - Mehanika - Izpit Jul2018 - Cisto strizno stanje]]
+
+---
+
 ## Pogosta napaka
 
 - $Wt = W$ namesto $Wt = 2W$ za polni krog
 - Bredt: vzeti zunanjo ploščino namesto $Am$ (srednja linija!)
 - Enote: $Mt$ mora biti v kNcm, $Wt$ v cm³ → $\tau$ v kN/cm²
 - Kombinirano: pozabiti, da $M$ povzroča $\sigma$, ne $\tau$
+- ⚠️ Bredt $A_m$: za pravokotni box je $A_m = (a-t)(b-t)$ — ne zunanja ploščina $a \cdot b$!
 
 ---
 
@@ -174,5 +201,7 @@ Naloga: Gredi obremenjena z več silami → najprej NTM diagrami, nato v kritič
 - [[Blok 3.5 - Hipoteze Porusitve]] ← kombinirano napetostno stanje
 - [[Blok 1.5 - Geometrijske Karakteristike]] ← $I_p$, $W_t$
 - [[Vaje - Trdnost in dimenzioniranje]] ← N5 (d=50mm, M+Mt)
+- [[Naloga - Mehanika - Izpit Feb2019 - Torzija Bredt skatlast]] ← 15×10 box, Am=126 cm², τ=konst
+- [[Naloga - Mehanika - Izpit Jul2018 - Cisto strizno stanje]] ← spiralni lom, φ0=45°
 - [[Izpit - Mehanika - Celoletni 2026]]
 - [[Mehanika Hub]]

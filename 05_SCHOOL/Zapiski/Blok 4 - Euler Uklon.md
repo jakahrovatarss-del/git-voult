@@ -200,5 +200,8 @@ Redkeje — konzolna palica z $F$ + $M_t$.
 - [[Blok 1.5 - Geometrijske Karakteristike]] ← izračun I_min
 - [[Blok 2 - Upogib]] ← kombinacija N+M
 - [[Vaje - Trdnost in dimenzioniranje]] ← N2 (konzola, β=2), N6 (β=1)
+- [[Naloga - Mehanika - Uklon lesene deske]] ← konzola β=2, I_min šibka os!
+- [[Naloga - Mehanika - Uklon leseni steber F_max]] ← T-rama ravnotežje, Euler vs ω
+- [[Naloga - Mehanika - Uklon palica S_dop]] ← jeklo I-prerez, λ=233 → Euler
 - [[Izpit - Mehanika - Celoletni 2026]]
 - [[Mehanika Hub]]

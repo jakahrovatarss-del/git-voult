@@ -182,9 +182,49 @@ Steber z ekscentrično obremenitvijo: N+M kombinacija + uklon kontrola.
 ## Profesorjev »ček-list«
 
 1. ⚠️ **Enote:** $M$ v kNcm, $W$ v cm³, $\sigma$ v kN/cm² — ne mešaj m in cm!
-2. $M_{max}$: tam kjer $T = 0$
+2. $M_{max}$: tam kjer $T = 0$ (iščemo $x_0$: $dM/dx = 0$)
 3. Asimetričen prerez: **oba** $W$, kritičen je **manjši**
 4. $h = 2b$: najpogostejša lesarska naloga — $W = 2b^3/3$
+5. ⚠️ **Vodoravna sila** $F_x$ ne prispeva k $\sum F_y$ — samo k momentu!
+6. ⚠️ **U-prerez (asimetričen):** $e_{zg} \neq e_{sp}$ → zgornji rob je kritičen pri **OBEH** predznaknih momentih — ne samo pri večjem $|M|$!
+7. **Votli prerez** (škatlast, cevi): $I = I_{zun} - I_{not}$ (metoda odštevanja!)
+8. **Navierjev zakon** (porazdelitev σ po višini): $\sigma(y) = M \cdot y / I_z$ — linearna, max na robu!
+
+---
+
+## Primer iz izpita — U-prerez (asimetričen)
+
+Previs z $F = 10$ kN in poljem z $q = 16$ kN/m, U-prerez $B = 40$ cm, $H = 15$ cm, $t = 7$ cm:
+
+$$y_T = 5{,}64\ \text{cm od spodnjega roba}, \quad e_{zg} = 9{,}36\ \text{cm} > e_{sp} = 5{,}64\ \text{cm}$$
+
+$$J = 6240{,}8\ \text{cm}^4, \quad M_A = -10\ \text{kNm}, \quad M_{max} = +8\ \text{kNm v polju}$$
+
+| Prerez | $M$ [kNm] | Vlakno | $\sigma$ [kN/cm²] |
+|--------|-----------|--------|-------------------|
+| Podpora A | $-10$ | zgornji (nateg) | **+1,50** ← max nateg! |
+| Polje | $+8$ | zgornji (tlak) | $-1,20$ |
+| Polje | $+8$ | spodnji (nateg) | $+0,72$ |
+
+> ⚠️ **Ključna ugotovitev:** Zgornji rob je kritičen pri obeh momentih! Samo primerjava $|M_A|$ vs $|M_{max}|$ ni dovolj — preveriti σ pri vsakem prerezu posebej.
+
+> **Primer:** [[Naloga - Mehanika - Upogibne napetosti U-prerez]]
+
+---
+
+## Primer iz izpita — Dimenzioniranje (krožni prerez)
+
+Za previsni nosilci $F = 4$ kN (vodoraven!), $q = 2$ kN/m, $\sigma_{dop} = 1{,}2$ kN/cm²:
+
+**Ključno:** F vodoravna → ne prispeva k $\sum F_y$, samo ustvari moment $M_A = -6$ kNm pri A.
+
+$$M_{mer} = 6{,}25\ \text{kNm} = 625\ \text{kNcm}$$
+
+$$W_{min} = M_{mer}/\sigma_{dop} = 625/1{,}2 = 520{,}83\ \text{cm}^3$$
+
+$$\frac{\pi d^3}{32} \geq 520{,}83 \quad \Rightarrow \quad d \geq \sqrt[3]{5305} = \boxed{17{,}44\ \text{cm}}$$
+
+> **Primer:** [[Naloga - Mehanika - Dimenzioniranje krozni prerez upogib]]
 
 ---
 
@@ -196,5 +236,10 @@ Steber z ekscentrično obremenitvijo: N+M kombinacija + uklon kontrola.
 - [[Blok 3 - Napetostno Stanje]] ← kombinirana napetostna stanja
 - [[Blok 3.5 - Hipoteze Porusitve]] ← VM, Tresca
 - [[Vaje - Trdnost in dimenzioniranje]] ← N1 (h=2b), N3 (T-prerez), N4 (N+M)
+- [[Naloga - Mehanika - Upogibne napetosti U-prerez]] ← asimetričen prerez, oba M
+- [[Naloga - Mehanika - Upogibne napetosti C-prerez]] ← konzola, Navierjev zakon
+- [[Naloga - Mehanika - Napetosti skatlaski profil]] ← votli prerez, σ > σdop primer
+- [[Naloga - Mehanika - Dimenzioniranje krozni prerez upogib]] ← vodoravna F, d_min
+- [[Naloga - Mehanika - Dimenzioniranje leseni nosilec upogib]] ← a×b iz x³=80
 - [[Izpit - Mehanika - Celoletni 2026]]
 - [[Mehanika Hub]]

@@ -437,7 +437,7 @@ $$= \sqrt{149{,}3 + 95{,}7} = \sqrt{245{,}0} = \boxed{15{,}65\ \text{kN/cm}^2 = 
 
 ## NALOGA 6 — Euler uklon prostoležeče palice (šibka os)
 
-![[trdnost_n6.svg]]
+![[trdnost_n6.svg|697]]
 
 > **Besedilo naloge:** Lesen steber pravokotnega prereza ($b = 10\ \text{cm}$, $h = 15\ \text{cm}$) in dolžine $L = 4\ \text{m}$ je podprt na obeh koncih prostoležeče ($\beta = 1$). Na steber deluje osna tlačna sila $F = 20\ \text{kN}$. Preverite varnost pred uklonom in izračunajte dejanski varnostni faktor. Upoštevajte uklon po šibki osi. ($E = 1000\ \text{kN/cm}^2$, $\sigma_{dop} = 1{,}2\ \text{kN/cm}^2$, $\nu_{zaht} = 3$)
 
