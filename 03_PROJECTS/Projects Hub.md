@@ -15,6 +15,7 @@ Aktivni projekti z jasnim izidom. Projekt = stvar z rokom ali jasnim "done" krit
 
 - Dodaj projekte sem z linki
 - Primer: `[[Projekt - Python Kalkulator]]`
+- [[Soncna Elektrarna/Projekt - Sončna Elektrarna Šentjernej]] ← dimenzioniranje, ROI, baterija, wallbox
 
 ---
 
