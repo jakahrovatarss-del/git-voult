@@ -194,7 +194,7 @@ $$\sigma_{tlak} = \frac{F}{A} = \frac{30}{289} = 0{,}104\ \text{kN/cm}^2 \ll 1{,
 
 ## NALOGA 3 — Kontrola napetosti asimetričnega T-prereza
 
-![[trdnost_n3.svg]]
+![[trdnost_n3.svg|697]]
 
 > **Besedilo naloge:** Jekleni varjenec T-prereza (pasnica $12\ \text{cm} \times 2\ \text{cm}$ zgoraj, stojina $2\ \text{cm} \times 12\ \text{cm}$ spodaj) leži kot prostoležeč nosilci razpona $L = 4\ \text{m}$. Na sredini razpona deluje točkovna sila $F = 25\ \text{kN}$. Izračunajte napetosti na zgornji in spodnji vlakni prerezu in preverite, ali je prerez zadosten. ($\sigma_{dop} = 16\ \text{kN/cm}^2$)
 
