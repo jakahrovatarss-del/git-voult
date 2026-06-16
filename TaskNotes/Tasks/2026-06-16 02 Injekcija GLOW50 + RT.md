@@ -1,11 +1,11 @@
 ---
 title: 💉 Injekcija GLOW50 750mcg + RT 1mg SC
-status: open
+status: done
 priority: urgent
 scheduled: 2026-06-16T07:00
 due: 2026-06-16
 dateCreated: 2026-06-16T08:47:33.000+02:00
-dateModified: 2026-06-16T08:47:33.000+02:00
+dateModified: 2026-06-16T12:00:30.792+02:00
 tags:
   - task
   - supplement
@@ -16,6 +16,7 @@ projects:
   - Peptide Protocol
 blocking:
   - "[[2026-06-16 03 Vyvanse 40mg]]"
+completedDate: 2026-06-16
 ---
 
 # 💉 Injekcija GLOW50 750mcg + RT 1mg SC
