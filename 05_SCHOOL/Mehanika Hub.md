@@ -73,6 +73,17 @@ Centralna vstopna točka za vse vsebine predmeta Mehanika.
 
 ---
 
+## Viri in učni materiali
+
+| Vir | Tema | Tip |
+|-----|------|-----|
+| [[Vir - Intuitivno Razumevanje Mehanike]] | Meta-učna strategija, intuicija | YouTube |
+| [[Vir - Tehnično Risanje in GDT]] | Engineering drawings, GD&T, tolerancing | YouTube |
+| [[Vir - Pregled Mehanike Fizike]] | Klasična mehanika, energija, Newton | YouTube |
+| [[Vir - The Efficient Engineer Kanal]] | Statics, dynamics, trdnost, risanje | YouTube kanal |
+
+---
+
 ## Povezave
 
 - [[Mehanika Hub]] — osnovna nota
