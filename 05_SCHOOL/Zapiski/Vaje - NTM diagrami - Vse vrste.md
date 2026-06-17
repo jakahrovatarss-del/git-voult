@@ -208,7 +208,7 @@ M:  (narašča linearno do x=2, nato pada parabolično)
 
 ## NALOGA 2 — Nosilci s previsom (konzola + prosta greda)
 
-![[ntm_naloga2.svg]]
+![[ntm_naloga2.svg|694]]
 
 ### Podatki
 
