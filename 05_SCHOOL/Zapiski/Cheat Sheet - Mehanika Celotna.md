@@ -235,7 +235,7 @@ kjer je $e_{sp} = y_T$ (od sp. roba do težišča), $e_{zg} = H - y_T$ (od zg. r
 
 **Standardni prerezi:**
 
-![[upogib_c_prerez.svg]]
+![[upogib_c_prerez.svg|657]]
 
 ![[upogib_krozni_prerez.svg]]
 
