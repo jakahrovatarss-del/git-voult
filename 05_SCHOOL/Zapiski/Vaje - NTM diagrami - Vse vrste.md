@@ -113,7 +113,7 @@ Za vsak odsek reši $T(x) = 0$ → preveri ali je $x$ v območju odseka → izra
 
 ## NALOGA 1 — Prosta greda: točkovna sila + porazdeljena obtežba
 
-![[ntm_naloga1.svg]]
+![[ntm_naloga1.svg|697]]
 
 ### Podatki
 

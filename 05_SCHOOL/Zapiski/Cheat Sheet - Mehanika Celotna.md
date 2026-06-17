@@ -213,17 +213,69 @@ Središča tvorijo **enakostranični trikotnik**, kontaktna sila med valji: nakl
 
 ## TIP F: PALIČJE — metoda vozlišč (N8 — Vaje)
 
-**Izhodišče:** Paličje = sistem dvosil. Vsaka palica: samo $N$ (nateg + ali tlak −).
+### Osnove paličja
+
+**Paličje** je statična konstrukcija, sestavljena iz ravnih palic, ki so na obeh koncih artikilirano (členkovito) pritrjene v vozlišča. Ključna lastnost: **vsaka palica je dvoročica (dvosila)** — prenaša samo osno silo $S$ (nateg ali tlak), brez upogibnih momentov.
+
+**Predpostavke:**
+- Obtežbe delujejo **samo v vozliščih** (ne vzdolž palic)
+- Palice so lahke (brez lastne teže)
+- Vsaka palica = ena neznana ($S_i$)
+
+**Predznaki:**
+| Vrsta | Simbol | Pomen |
+|-------|--------|-------|
+| **Nateg** | $S > 0$ (+) | Palica se razteza — sila kaže **stran od vozlišča** |
+| **Tlak** | $S < 0$ (−) | Palica se stiska — sila kaže **v vozlišče** |
+
+> ⚠️ **Konvencija:** Vedno predpostavi nateg ($S > 0$). Če pride negativen rezultat → palica je v tlaku.
+
+---
+
+### Ničelne palice (Ničelne palice — pogoji)
+
+Ničelne palice nosijo silo $S = 0$. Hitro jih prepoznaš:
+
+**Pravilo 1 — Prazno vozlišče, 2 palici (niso kolinearne):**  
+Če v vozlišče prita 2 palici, ki **nista v isti liniji**, in ni nobene zunanje sile → **obe palici ste ničelni**.
+
+**Pravilo 2 — 3 palice, 2 kolinearni:**  
+Če v vozlišče prihajajo 3 palice, od katerih sta 2 kolinearni (v isti liniji), in ni nobene zunanje sile → **tretja palica je ničelna**.
+
+> 💡 Ničelne palice identificiraj **PRED začetkom računanja** — prihrani cel korak.
+
+---
+
+### Algoritem — metoda vozlišč
 
 ```
-1. Globalne reakcije (ΣMA=0, ΣFy=0, ΣFx=0)
-2. Začni pri vozlišču z ≤ 2 neznanima palicama
-3. Za vsako vozlišče: ΣFx=0, ΣFy=0 → 2 neznani
-4. Napreduj do naslednjega vozlišča
-5. Kontrola: zadnje vozlišče → 0=0
+KORAK 1: Globalne reakcije
+  ΣMA = 0  →  Dy (ali Ay)
+  ΣFy = 0  →  Ay
+  ΣFx = 0  →  Ax
+
+KORAK 2: Poišči ničelne palice (pravili zgoraj)
+
+KORAK 3: Začni pri vozlišču z ≤ 2 neznankama
+  → Za vsako vozlišče: ΣFx = 0, ΣFy = 0 → reši 2 neznani
+  → Smer sile: predpostavi nateg (stran od vozlišča)
+
+KORAK 4: Napreduj na naslednje vozlišče
+  → Rešene sile prenesi kot znane
+
+KORAK 5: Kontrola — zadnje vozlišče
+  → ΣFx = 0 in ΣFy = 0 morata biti izpolnjeni (0 = 0)
 ```
 
-⚠️ Sile palic kažejo OD vozlišča (nateg) ali V vozlišče (tlak) — vedno predpostavi nateg!
+**Koristni kotni razmerji:**
+
+| Geometrija | sin | cos |
+|-----------|-----|-----|
+| 45° | $\frac{\sqrt{2}}{2} \approx 0{,}707$ | $\frac{\sqrt{2}}{2} \approx 0{,}707$ |
+| 30° / 60° | $0{,}5$ / $0{,}866$ | $0{,}866$ / $0{,}5$ |
+| Splošno: h=140, l=150 | $\frac{h}{l}$ | $\frac{\sqrt{l^2-h^2}}{l}$ |
+
+![[palicje_diagram.svg|697]]
 
 > 🔗 **Rešeno:** [[Vaje - Statika - Vse vrste]] — N8
 
@@ -231,16 +283,48 @@ Središča tvorijo **enakostranični trikotnik**, kontaktna sila med valji: nakl
 
 ## TIP F2: PALIČJE — metoda prereza (Ritter) (N13 — Poglavje Statika)
 
+### Kdaj uporabiti Ritter?
+
+Metoda vozlišč zahteva računanje vseh palic po vrsti — zamudno za velika paličja. **Ritterjeva metoda prereza** ti omogoča, da **direktno izračunaš silo v eni specifični palici** brez reševanja celega sistema.
+
+### Algoritem — metoda prereza
+
 ```
-1. Prereži 3 palice katerih sile iščemo
-2. Nariši FBD leve ali desne strani
-3. ΣM okrog presečišča dveh neznanih palic → direktno 3. sila
-4. ΣFy = 0 ali ΣFx = 0 → ostali dve
+KORAK 1: Globalne reakcije (kot pri metodi vozlišč)
+
+KORAK 2: Nariši prerez
+  → Prereži natanko 3 palice, katerih sile iščeš
+  → Prerez narišeš kot namišljeno linijo skozi paličje
+  ⚠️ MAX 3 neznane palice v prerezu!
+
+KORAK 3: Izberi levo ALI desno stran prereza
+  → Upoštevaj vse sile na izbrani strani (obtežbe + reakcije)
+
+KORAK 4: Momentno ravnotežje
+  → ΣM okrog točke, kjer se sekata 2 od 3 neznanih palic
+  → Direktno dobiš 3. silo brez matrik!
+
+KORAK 5: Ravnotežje sil
+  → ΣFy = 0 → ena od preostalih dveh
+  → ΣFx = 0 → zadnja sila
+
+KORAK 6: Kontrola predznaka
+  → Pozitivno = nateg (+), negativno = tlak (−)
 ```
 
-⚠️ Max **3 neznane** palice v prerezu!
+### Ključna tehnika — izbira momentne točke
 
-**Primer N13:** $S_{GH} = +30\ \text{kN}$, $S_{EF} = -45\ \text{kN}$, $S_{EH} = +21{,}2\ \text{kN}$
+| Iščeš silo palice | Postavi ΣM okrog |
+|-------------------|-----------------|
+| Zgornjega pasu | Vozlišče spodnjega pasu pod njo |
+| Spodnjega pasu | Vozlišče zgornjega pasu nad njo |
+| Diagonale | Presečišče zgornjega in spodnjega pasu |
+
+> 💡 Vedno izberi točko, ki **eliminira 2 neznani naenkrat** → preostane 1 enačba, 1 neznanka.
+
+**Primer N13:**
+
+$$S_{GH} = +30\ \text{kN (nateg)}, \quad S_{EF} = -45\ \text{kN (tlak)}, \quad S_{EH} = +21{,}2\ \text{kN (nateg)}$$
 
 > 🔗 **Rešeno:** [[Poglavje - Statika]] — N13
 

@@ -1,0 +1,158 @@
+<svg viewBox="0 0 820 480" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="820" height="480" fill="#0f1117" rx="12"/>
+
+  <!-- Title -->
+  <text x="410" y="32" text-anchor="middle" fill="#e2e8f0" font-size="15" font-weight="bold">PALIČJE — metoda vozlišč + metoda prereza (Ritter)</text>
+
+  <!-- ===== TRUSS GEOMETRY ===== -->
+  <!-- Nodes: A(80,340), B(230,340), C(380,340), D(530,340), E(155,200), F(305,200), G(455,200) -->
+  <!-- Members: bottom chord A-B-C-D, top chord A-E-F-G-D, diagonals E-B, F-C, G-D, B-F, C-G -->
+
+  <!-- === MEMBER LINES first (behind nodes) === -->
+
+  <!-- Bottom chord (nateg +) -->
+  <line x1="80" y1="340" x2="230" y2="340" stroke="#4ade80" stroke-width="4"/>
+  <line x1="230" y1="340" x2="380" y2="340" stroke="#4ade80" stroke-width="4"/>
+  <line x1="380" y1="340" x2="530" y2="340" stroke="#4ade80" stroke-width="4"/>
+
+  <!-- Top chord (tlak –) -->
+  <line x1="80" y1="340" x2="155" y2="200" stroke="#f87171" stroke-width="4"/>
+  <line x1="155" y1="200" x2="305" y2="200" stroke="#f87171" stroke-width="4"/>
+  <line x1="305" y1="200" x2="455" y2="200" stroke="#f87171" stroke-width="4"/>
+  <line x1="455" y1="200" x2="530" y2="340" stroke="#f87171" stroke-width="4"/>
+
+  <!-- Verticals (ničelne palice context) -->
+  <line x1="155" y1="200" x2="155" y2="340" stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <line x1="305" y1="200" x2="305" y2="340" stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <line x1="455" y1="200" x2="455" y2="340" stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="6,3"/>
+
+  <!-- Diagonals -->
+  <line x1="155" y1="200" x2="305" y2="340" stroke="#60a5fa" stroke-width="3"/>
+  <line x1="305" y1="200" x2="455" y2="340" stroke="#60a5fa" stroke-width="3"/>
+
+  <!-- ===== RITTER CUT LINE ===== -->
+  <line x1="280" y1="155" x2="320" y2="380" stroke="#fbbf24" stroke-width="2" stroke-dasharray="8,5"/>
+  <text x="322" y="168" fill="#fbbf24" font-size="12" font-weight="bold">Ritter prerez</text>
+  <text x="322" y="185" fill="#fbbf24" font-size="11">(max 3 neznane!)</text>
+
+  <!-- ===== SUPPORTS ===== -->
+  <!-- A = pin support -->
+  <polygon points="80,340 65,370 95,370" fill="none" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="55" y1="373" x2="105" y2="373" stroke="#94a3b8" stroke-width="2"/>
+  <text x="57" y="390" fill="#94a3b8" font-size="12">A (čep)</text>
+
+  <!-- D = roller support -->
+  <polygon points="530,340 515,370 545,370" fill="none" stroke="#94a3b8" stroke-width="2"/>
+  <ellipse cx="520" cy="376" rx="6" ry="6" fill="none" stroke="#94a3b8" stroke-width="2"/>
+  <ellipse cx="540" cy="376" rx="6" ry="6" fill="none" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="505" y1="385" x2="555" y2="385" stroke="#94a3b8" stroke-width="2"/>
+  <text x="498" y="400" fill="#94a3b8" font-size="12">D (kotalka)</text>
+
+  <!-- ===== EXTERNAL LOAD ===== -->
+  <!-- Load at F (305, 200) downward -->
+  <line x1="305" y1="135" x2="305" y2="193" stroke="#fb923c" stroke-width="3" marker-end="url(#arrow_load)"/>
+  <text x="315" y="160" fill="#fb923c" font-size="13" font-weight="bold">F = 20 kN</text>
+
+  <!-- ===== REACTION ARROWS ===== -->
+  <!-- Ay upward at A -->
+  <line x1="80" y1="395" x2="80" y2="347" stroke="#a78bfa" stroke-width="2.5" marker-end="url(#arrow_r)"/>
+  <text x="50" y="415" fill="#a78bfa" font-size="12">Ay</text>
+  <!-- Ax rightward at A -->
+  <line x1="25" y1="340" x2="73" y2="340" stroke="#a78bfa" stroke-width="2.5" marker-end="url(#arrow_r)"/>
+  <text x="12" y="337" fill="#a78bfa" font-size="12">Ax</text>
+  <!-- Dy upward at D -->
+  <line x1="530" y1="395" x2="530" y2="347" stroke="#a78bfa" stroke-width="2.5" marker-end="url(#arrow_r)"/>
+  <text x="535" y="415" fill="#a78bfa" font-size="12">Dy</text>
+
+  <!-- ===== NODES ===== -->
+  <!-- A -->
+  <circle cx="80" cy="340" r="8" fill="#1e293b" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="67" y="328" fill="#e2e8f0" font-size="13" font-weight="bold">A</text>
+  <!-- B -->
+  <circle cx="230" cy="340" r="8" fill="#1e293b" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="218" y="328" fill="#e2e8f0" font-size="13" font-weight="bold">B</text>
+  <!-- C -->
+  <circle cx="380" cy="340" r="8" fill="#1e293b" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="368" y="328" fill="#e2e8f0" font-size="13" font-weight="bold">C</text>
+  <!-- D -->
+  <circle cx="530" cy="340" r="8" fill="#1e293b" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="536" y="328" fill="#e2e8f0" font-size="13" font-weight="bold">D</text>
+  <!-- E -->
+  <circle cx="155" cy="200" r="8" fill="#1e293b" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="142" y="192" fill="#e2e8f0" font-size="13" font-weight="bold">E</text>
+  <!-- F -->
+  <circle cx="305" cy="200" r="8" fill="#1e293b" stroke="#fb923c" stroke-width="2.5"/>
+  <text x="292" y="192" fill="#fb923c" font-size="13" font-weight="bold">F</text>
+  <!-- G -->
+  <circle cx="455" cy="200" r="8" fill="#1e293b" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="460" y="192" fill="#e2e8f0" font-size="13" font-weight="bold">G</text>
+
+  <!-- ===== MEMBER FORCE LABELS ===== -->
+  <!-- AB label (bottom chord) -->
+  <text x="146" y="362" fill="#4ade80" font-size="11" text-anchor="middle">S_AB (+)</text>
+  <!-- BC label -->
+  <text x="296" y="362" fill="#4ade80" font-size="11" text-anchor="middle">S_BC (+)</text>
+  <!-- CD label -->
+  <text x="446" y="362" fill="#4ade80" font-size="11" text-anchor="middle">S_CD (+)</text>
+  <!-- EF top chord label -->
+  <text x="228" y="192" fill="#f87171" font-size="11" text-anchor="middle">S_EF (−)</text>
+  <!-- FG top chord label -->
+  <text x="378" y="192" fill="#f87171" font-size="11" text-anchor="middle">S_FG (−)</text>
+  <!-- BF diagonal label -->
+  <text x="259" y="268" fill="#60a5fa" font-size="11" text-anchor="middle" transform="rotate(-40,259,268)">S_BF</text>
+  <!-- CG diagonal label -->
+  <text x="405" y="268" fill="#60a5fa" font-size="11" text-anchor="middle" transform="rotate(-40,405,268)">S_CG</text>
+
+  <!-- ===== LEGEND ===== -->
+  <rect x="590" y="60" width="215" height="280" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <text x="697" y="85" text-anchor="middle" fill="#e2e8f0" font-size="13" font-weight="bold">LEGENDA</text>
+
+  <!-- nateg -->
+  <line x1="610" y1="108" x2="655" y2="108" stroke="#4ade80" stroke-width="4"/>
+  <text x="665" y="113" fill="#4ade80" font-size="12">Nateg (+)</text>
+  <!-- tlak -->
+  <line x1="610" y1="135" x2="655" y2="135" stroke="#f87171" stroke-width="4"/>
+  <text x="665" y="140" fill="#f87171" font-size="12">Tlak (−)</text>
+  <!-- ničelna palica -->
+  <line x1="610" y1="162" x2="655" y2="162" stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <text x="665" y="167" fill="#94a3b8" font-size="12">Ničelna palica?</text>
+  <!-- diagonal -->
+  <line x1="610" y1="189" x2="655" y2="189" stroke="#60a5fa" stroke-width="3"/>
+  <text x="665" y="194" fill="#60a5fa" font-size="12">Diagonal (±)</text>
+  <!-- Ritter -->
+  <line x1="610" y1="216" x2="655" y2="216" stroke="#fbbf24" stroke-width="2" stroke-dasharray="8,5"/>
+  <text x="665" y="221" fill="#fbbf24" font-size="12">Ritter prerez</text>
+  <!-- load -->
+  <line x1="625" y1="250" x2="625" y2="237" stroke="#fb923c" stroke-width="3" marker-end="url(#arrow_load)"/>
+  <text x="665" y="248" fill="#fb923c" font-size="12">Zunanja sila</text>
+  <!-- reaction -->
+  <line x1="625" y1="290" x2="625" y2="277" stroke="#a78bfa" stroke-width="2.5" marker-end="url(#arrow_r)"/>
+  <text x="665" y="288" fill="#a78bfa" font-size="12">Reakcija</text>
+
+  <!-- ===== ZERO FORCE MEMBER RULES BOX ===== -->
+  <rect x="590" y="355" width="215" height="105" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="697" y="374" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="bold">⚡ Ničelne palice</text>
+  <text x="600" y="393" fill="#e2e8f0" font-size="11">P1: 2 palici + brez sile →</text>
+  <text x="612" y="408" fill="#e2e8f0" font-size="11">obe ničelni</text>
+  <text x="600" y="425" fill="#e2e8f0" font-size="11">P2: 3 palice, 2 kolinearni →</text>
+  <text x="612" y="440" fill="#e2e8f0" font-size="11">3. palica je ničelna</text>
+
+  <!-- ===== STEP LABELS BOTTOM ===== -->
+  <text x="80" y="460" fill="#64748b" font-size="11" text-anchor="middle">①Glob.reak.</text>
+  <text x="230" y="460" fill="#64748b" font-size="11" text-anchor="middle">②Vozlišče A</text>
+  <text x="155" y="460" fill="#64748b" font-size="11" text-anchor="middle">③Voz. E</text>
+  <text x="305" y="460" fill="#64748b" font-size="11" text-anchor="middle">④Ritter ↗</text>
+
+  <!-- ARROW MARKERS -->
+  <defs>
+    <marker id="arrow_load" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#fb923c"/>
+    </marker>
+    <marker id="arrow_r" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#a78bfa"/>
+    </marker>
+  </defs>
+
+</svg>
