@@ -3,6 +3,8 @@ tags: [mehanika, statika, poglavje, reakcije, paličje, trenje, vrvi, škripec, 
 predmet: Mehanika
 datum: 2026-06-17
 ---
+```table-of-contents
+```
 
 # Poglavje — 1. SKLOP: Statika
 
