@@ -119,6 +119,24 @@ Kinematika dá hitrosti in pospeške → te "odzive" poveže dinamika s silami:
 
 ---
 
+## Gibalna stanja — primerjalna tabela
+
+| Gibalno stanje | Pogoj | $s(t)$ / $\varphi(t)$ | $v(t)$ / $\omega(t)$ | $a_t$ | $a_n$ |
+|----------------|-------|----------------------|----------------------|-------|-------|
+| Premočrtno enakomerno | $a = 0$ | $s = v_0 t$ | $v = v_0 = \text{const}$ | 0 | 0 |
+| Premočrtno enako-pospešeno | $a = \text{const}$ | $s = v_0 t + \frac{1}{2}at^2$ | $v = v_0 + at$ | $a \neq 0$ | 0 (ker $R = \infty$) |
+| Enakomerno krožno | $\omega = \text{const}$ | $\varphi = \omega t$ | $\omega = \text{const}$ | $a_t = 0$ | $a_n = \omega^2 R$ |
+| Neenakomerno krožno | $\alpha \neq 0$ | $\varphi = \varphi_0 + \omega_0 t + \frac{1}{2}\alpha t^2$ | $\omega = \omega_0 + \alpha t$ | $a_t = \alpha R$ | $a_n = \omega^2 R$ |
+| Harmonično (nihanje) | $\ddot{x} + \omega_0^2 x = 0$ | $x = A\cos(\omega_0 t + \phi)$ | $v = -A\omega_0\sin(\omega_0 t + \phi)$ | $a = -\omega_0^2 x$ | — |
+
+> **Ključna razlika:** $a_n$ (normalni) menja **smer** hitrosti, $a_t$ (tangencialni) menja **velikost**. Pri premočrtnem gibanju $a_n = 0$ ker $\rho = \infty$.
+
+> **Skupni pospešek:** $a = \sqrt{a_t^2 + a_n^2}$ — vedno pozitiven skalar; smer določi kompozicija!
+
+> **gl.:** [[Blok 7 - Dinamika Nihanje#VSE ENAČBE]]
+
+---
+
 ## Kako prepoznamo nalogo tega bloka
 
 **Ključne besede v besedilu:**

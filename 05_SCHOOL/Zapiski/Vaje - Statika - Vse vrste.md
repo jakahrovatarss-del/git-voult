@@ -1,5 +1,5 @@
 ---
-tags: [mehanika, statika, reakcije, škripec, paličje, 3D-statika, valji, ravnovesje, izpit]
+tags: [mehanika, statika, reakcije, škripec, paličje, 3D-statika, valji, steiner, uklon, ravnovesje, izpit]
 predmet: Mehanika
 datum: 2026-06-17
 ---
@@ -8,7 +8,7 @@ datum: 2026-06-17
 
 ## Namen
 
-Celovite rešene naloge za **1. SKLOP: Statika** — pokriva vse štiri tipe izpitnih vprašanj korak za korakom. Vsaka naloga vsebuje FBD, izpeljavo, pogosto napako in cross-link na ustrezni Blok.
+Celovite rešene naloge za **1. SKLOP: Statika** — pokriva vse tipe izpitnih vprašanj. Vsaka naloga z FBD, izpeljavo korak za korakom, pogosto napako in cross-linki. Združuje škripce, posebna telesa (valji), 3D statiko, Steiner in paličja.
 
 ---
 
@@ -16,610 +16,477 @@ Celovite rešene naloge za **1. SKLOP: Statika** — pokriva vse štiri tipe izp
 
 | Naloga | Tip | Ključna tehnika |
 |--------|-----|-----------------|
-| [[#NALOGA 1 — L-nosilci s škripcem (navpična vrv)\|NALOGA 1]] | Reakcije, škripec | S = G, ΣM okrog B |
-| [[#NALOGA 2 — L-nosilci s škripcem pod kotom\|NALOGA 2]] | Škripec + nagnjena vrv | Razstavi S na komponenti |
-| [[#NALOGA 3 — Prostoležeč nosilci z porazdeljeno obtežbo in točkovno silo\|NALOGA 3]] | Klasičen nosilci A–B | ΣMA = 0 → By direktno |
-| [[#NALOGA 4 — 3D statika: redukcija sistema sil\|NALOGA 4]] | 3D vektorji R, M₀ | Vektorski produkt r × F |
-| [[#NALOGA 5 — Valji v kupu (3+2+1)\|NALOGA 5]] | Posebna telesa | Geometrija 60°, N1 iz cos30° |
-| [[#NALOGA 6 — Paličje: metoda vozlišč\|NALOGA 6]] | Paličje, 5 palic | ΣF = 0 v vsakem vozlišču |
-| [[#NALOGA 7 — Kombinirana: nosilci + NTM + geometrija\|NALOGA 7]] | Celotna veriga Blok 0→1→1.5 | Reakcije → Mmax → W |
+| [[#NALOGA 1 — Škripec, navpična vrv\|N1]] | Škripec, reakcije v vpetju | S = G, ΣM okrog B |
+| [[#NALOGA 2 — Škripec, nagnjena vrv\|N2]] | Škripec + kot vrvi | Razstavi S na Sx, Sy |
+| [[#NALOGA 3 — Prostoležeč nosilci z q in F\|N3]] | Klasičen nosilci A–B | ΣMA = 0 → By direktno |
+| [[#NALOGA 4 — Nagnjena sila pod kotom\|N4]] | Sila pod kotom α od navpičnice | Fx = Fsinα, Fy = Fcosα |
+| [[#NALOGA 5 — 3D statika: redukcija sistema sil\|N5]] | 3D vektorji R, M₀ | Vektorski produkt r × F |
+| [[#NALOGA 6 — Valji v kupu (3+2+1)\|N6]] | Posebna telesa | Geometrija 60°, N1 iz cos30° |
+| [[#NALOGA 7 — Steiner za T-prerez\|N7]] | Geometrija prereza | yT, I (Steiner), Wsp ≠ Wzg |
+| [[#NALOGA 8 — Paličje: metoda vozlišč\|N8]] | Paličje, 5 palic | ΣF = 0 v vsakem vozlišču |
+| [[#NALOGA 9 — Kombinirana: nosilci + NTM + Steiner\|N9]] | Veriga Blok 0→1→1.5→2 | Reakcije → Mmax → W → σ |
+| [[#NALOGA 10 — Kombinirana: nagnjena sila + Steiner + uklon\|N10]] | BTF tip (konzola + Euler) | FN, F⊥, I_min, Fk, ν |
 
 ---
 
-## NALOGA 1 — L-nosilci s škripcem (navpična vrv)
+## NALOGA 1 — Škripec, navpična vrv
 
-> **Besedilo naloge:** Kovinsko dvigalo (nosilci v obliki obrnjene L) je togo vpeto v tleh v točki B. Na koncu konzolnega dela (točka A, $a = 2\ \text{m}$ od osi stebra) je pritrjen fiksni škripec. Vodoravna ročica $a = 2\ \text{m}$, višina stebra $H = 4\ \text{m}$. Dvigujemo tovor mase $m = 20\ \text{kg}$. Izračunajte reakcije v vpetju B. ($g = 10\ \text{m/s}^2$)
+> **Besedilo naloge:** Kovinsko dvigalo (nosilci v obliki L) je togo vpeto v B. Na koncu konzolnega dela (točka A) je pritrjen škripec. Vodoravna ročica $a = 2\ \text{m}$, višina stebra $H = 4\ \text{m}$. Dvigamo tovor mase $m = 20\ \text{kg}$. Izračunajte reakcije v vpetju B. ($g = 10\ \text{m/s}^2$)
 
-**Podatki:**
-- $m = 20\ \text{kg}$, $G = m \cdot g = 200\ \text{N} = 0{,}2\ \text{kN}$
-- Ročica: $a = 2\ \text{m}$, višina: $H = 4\ \text{m}$
-- Škripec v točki A, vrv poteka navpično
+**Podatki:** $m = 20\ \text{kg}$, $G = 0{,}2\ \text{kN}$, $a = 2\ \text{m}$, $H = 4\ \text{m}$
 
 ---
 
 ### Korak 1 — Sila v vrvi
 
-Škripec **samo** preusmerja vrv — sile **ne** povečuje:
-
 $$S = G = m \cdot g = 20 \cdot 10 = \boxed{200\ \text{N} = 0{,}2\ \text{kN}}$$
 
 Na škripec delujeta **dve veji vrvi**, obe navpično navzdol:
 
-$$F_A = 2 \cdot S = 2 \cdot 0{,}2 = \boxed{0{,}4\ \text{kN} \downarrow}$$
+$$F_A = 2 \cdot S = \boxed{0{,}4\ \text{kN}\ \downarrow}$$
 
-> **Zakaj 2S?** Škripec je kladka v ravnovesju — nanj "vlečeta" tovor s silo S navzdol IN vrvna veja, ki gre k dvigalu, s silo S navzdol. Obe sta enaki, ker je vrv napeta enakomerno.
+> **Zakaj 2S?** Škripec drži dve veji. Vsaka nese $S = G$. Skupna sila na ležaje = $2S$.
 
-> **Poenostavitev BTF:** Ko naloga omeni le tovor brez opisa poteka vrvi, privzamemo $F_A = G$ (en segment vrvi). Ko je eksplicitno naveden škripec → $F_A = 2G$.
+> **Poenostavitev (BTF):** Ko naloga navede le tovor brez opisa poteka vrvi → privzamemo $F = G$ (ena veja).
 
 > **glej:** [[Blok 0 - Statika#Intuicija]]
 
 ---
 
-### Korak 2 — FBD vpetja B
-
-Vpetje prevzame **tri neznane reakcije**: $B_x$ (vodoravno), $B_y$ (navpično), $M_B$ (moment).
-
-```
-         A ← F_A = 0,4 kN ↓
-         |
-    ─────┤  ← a = 2 m →
-         |
-    B ───┘  ← vpetje (Bx, By, MB)
-```
-
----
-
-### Korak 3 — Enačbe ravnovesja
+### Korak 2 — Enačbe ravnovesja
 
 $$\sum F_x = 0 \quad \Rightarrow \quad \boxed{B_x = 0}$$
 
-$$\sum F_y = 0 \quad \Rightarrow \quad B_y - F_A = 0 \quad \Rightarrow \quad \boxed{B_y = 0{,}4\ \text{kN}\ \uparrow}$$
+$$\sum F_y = 0 \quad \Rightarrow \quad \boxed{B_y = 0{,}4\ \text{kN}\ \uparrow}$$
 
-$$\sum M_B = 0 \quad \Rightarrow \quad M_B - F_A \cdot a = 0$$
+$$\sum M_B = 0 \quad \Rightarrow \quad M_B = F_A \cdot a = 0{,}4 \cdot 2 = \boxed{0{,}8\ \text{kNm}}$$
 
-$$M_B = 0{,}4 \cdot 2 = \boxed{0{,}8\ \text{kNm}}$$
-
----
-
-### Korak 4 — Rezultati
-
-| Reakcija | Vrednost | Smer |
-|----------|----------|------|
-| $B_x$ | 0 kN | — |
-| $B_y$ | 0,4 kN | gor ↑ |
-| $M_B$ | 0,8 kNm | (v smeri urinega kazalca) |
-
-> ⚠️ **Pogosta napaka:** Ročica momenta je **vodoravna razdalja** $a$, ne višina stebra $H$. Navpična sila $F_A$ povzroča moment z ročico $a = 2\ \text{m}$, ne $H = 4\ \text{m}$.
+> ⚠️ **Napaka:** Ročica momenta je $a$ (vodoravna razdalja), ne $H$!
 
 ---
 
-## NALOGA 2 — L-nosilci s škripcem pod kotom
+## NALOGA 2 — Škripec, nagnjena vrv
 
-> **Besedilo naloge:** Enaki L-nosilci kot v Nalogi 1 ($a = 1{,}5\ \text{m}$, $H = 4\ \text{m}$), a tokrat prosta veja vrvi (ki jo drži delavec) ni navpična — teče pod kotom $\alpha = 30°$ glede na navpičnico. Tovor $m = 50\ \text{kg}$. Izračunajte $B_x$, $B_y$, $M_B$.
+> **Besedilo naloge:** Isti L-nosilci, a prosta veja vrvi teče pod kotom $\alpha = 30°$ od navpičnice. Tovor $m = 50\ \text{kg}$, $a = 1{,}5\ \text{m}$, $H = 4\ \text{m}$. Izračunajte $B_x$, $B_y$, $M_B$.
 
-**Podatki:**
-- $G = 50 \cdot 10 = 500\ \text{N} = 0{,}5\ \text{kN}$
-- $\alpha = 30°$ od navpičnice (prosta veja vrvi)
-- $a = 1{,}5\ \text{m}$, $H = 4\ \text{m}$
+**Podatki:** $G = 0{,}5\ \text{kN}$, $\alpha = 30°$, $a = 1{,}5\ \text{m}$, $H = 4\ \text{m}$
 
 ---
 
-### Korak 1 — Sili v točki A
+### Korak 1 — Sili v škripcu
 
-Sila v vrvi je enaka povsod: $S = G = 0{,}5\ \text{kN}$.
+Sila v vrvi je povsod enaka $S = G = 0{,}5\ \text{kN}$.
 
-**Navpična veja** (tovor, navpično navzdol):
+| Veja vrvi | $S_x$ | $S_y$ |
+|-----------|-------|-------|
+| Navpična (tovor) | 0 | $-0{,}5\ \text{kN}$ |
+| Pod $\alpha = 30°$ od navpičnice | $+S\sin30° = +0{,}25$ | $-S\cos30° = -0{,}433$ |
+| **Skupaj** | **$+0{,}25$** | **$-0{,}933$** |
 
-$$\vec{S}_1 = (0,\ -0{,}5)\ \text{kN}$$
+> **Pravilo:** Kot od **navpičnice** → sin = vodoravna, cos = navpična komponenta.
 
-**Poševna veja** (pod $\alpha = 30°$ od navpičnice → vodoravna komponenta desno):
-
-$$S_{2,x} = +S \cdot \sin\alpha = 0{,}5 \cdot \sin 30° = 0{,}5 \cdot 0{,}5 = +0{,}25\ \text{kN}$$
-
-$$S_{2,y} = -S \cdot \cos\alpha = -0{,}5 \cdot \cos 30° = -0{,}5 \cdot 0{,}866 = -0{,}433\ \text{kN}$$
-
-> **Zakaj sin/cos?** Ker je $\alpha$ od **navpičnice** → $\sin\alpha$ = vodoravna, $\cos\alpha$ = navpična komponenta. Nasprotno od kota od vodoravnice!
+> **zobacz:** [[Blok 0 - Statika#Razstavljanje sil po komponentah]]
 
 ---
 
-### Korak 2 — Skupna sila na točko A
+### Korak 2 — Enačbe ravnovesja
 
-$$F_{A,x} = +0{,}25\ \text{kN} \quad \text{(desno)}$$
+$$\sum F_x = 0 \quad \Rightarrow \quad \boxed{B_x = -0{,}25\ \text{kN}\ \leftarrow}$$
 
-$$F_{A,y} = -0{,}5 - 0{,}433 = -0{,}933\ \text{kN} \quad \text{(navzdol)}$$
+$$\sum F_y = 0 \quad \Rightarrow \quad \boxed{B_y = +0{,}933\ \text{kN}\ \uparrow}$$
 
----
+$$\sum M_B = 0 \quad \Rightarrow \quad M_B = |F_{A,y}| \cdot a + |F_{A,x}| \cdot H = 0{,}933 \cdot 1{,}5 + 0{,}25 \cdot 4 = \boxed{2{,}4\ \text{kNm}}$$
 
-### Korak 3 — Enačbe ravnovesja
-
-$$\sum F_x = 0 \quad \Rightarrow \quad B_x + F_{A,x} = 0 \quad \Rightarrow \quad \boxed{B_x = -0{,}25\ \text{kN}\ \leftarrow}$$
-
-$$\sum F_y = 0 \quad \Rightarrow \quad B_y + F_{A,y} = 0 \quad \Rightarrow \quad \boxed{B_y = +0{,}933\ \text{kN}\ \uparrow}$$
-
-Moment okrog B — vsaka komponenta sile $F_A$ ima svojo ročico:
-
-$$\sum M_B = 0 \quad \Rightarrow \quad M_B - |F_{A,y}| \cdot a - |F_{A,x}| \cdot H = 0$$
-
-$$M_B = 0{,}933 \cdot 1{,}5 + 0{,}25 \cdot 4 = 1{,}4 + 1{,}0 = \boxed{2{,}4\ \text{kNm}}$$
-
-> ⚠️ **Ključno:** $F_{A,y}$ (navpična sila) ima ročico $a$ (vodoravna razdalja). $F_{A,x}$ (vodoravna sila) ima ročico $H$ (navpična višina). Ne zamešaj!
-
-> **glej:** [[Vaje - Statika posebnih teles in Steiner#NALOGA 2]]
+> ⚠️ **Ključno:** $F_{A,y}$ (navpična) ima ročico $a$; $F_{A,x}$ (vodoravna) ima ročico $H$!
 
 ---
 
-## NALOGA 3 — Prostoležeč nosilci z porazdeljeno obtežbo in točkovno silo
+## NALOGA 3 — Prostoležeč nosilci z q in F
 
-> **Besedilo naloge:** Vodoravni nosilci dolžine $L = 6\ \text{m}$ leži na dveh prostoležečih podporah A (nepomični tečaj) in B (pomični valj). Na razdalji $x_C = 4\ \text{m}$ od A deluje točkovna sila $F = 12\ \text{kN}$ navzdol. Po celotni dolžini deluje enakomerna porazdeljena obtežba $q = 2\ \text{kN/m}$. Izračunajte reakcije $A_x$, $A_y$, $B_y$.
-
-**Podatki:**
-- $L = 6\ \text{m}$, $x_C = 4\ \text{m}$
-- $F = 12\ \text{kN}$, $q = 2\ \text{kN/m}$
-- A = nepomični tečaj ($A_x$, $A_y$), B = pomični valj ($B_y$)
+> **Besedilo naloge:** Vodoravni nosilci $L = 6\ \text{m}$, prostoležeč med A (nepomični tečaj) in B (pomični valj). Enakomerna porazdeljena obtežba $q = 2\ \text{kN/m}$ po celotni dolžini, točkovna sila $F = 12\ \text{kN}$ pri $x_C = 4\ \text{m}$ od A. Izračunajte $A_x$, $A_y$, $B_y$.
 
 ---
 
-### Korak 1 — Nadomestna sila porazdeljene obtežbe
+### Korak 1 — Rezultanta $q$
 
-Enakomerna $q$ po celotni dolžini L:
-
-$$Q = q \cdot L = 2 \cdot 6 = 12\ \text{kN} \quad \text{(deluje v težišču = sredini)} \quad x_Q = 3\ \text{m od A}$$
+$$Q = q \cdot L = 2 \cdot 6 = 12\ \text{kN} \qquad x_Q = L/2 = 3\ \text{m od A}$$
 
 ---
 
 ### Korak 2 — ΣMA = 0 direktno da $B_y$
 
-$$\sum M_A = 0 \quad \Rightarrow \quad B_y \cdot L - Q \cdot x_Q - F \cdot x_C = 0$$
+$$B_y \cdot 6 = Q \cdot 3 + F \cdot 4 = 36 + 48 = 84 \quad \Rightarrow \quad \boxed{B_y = 14\ \text{kN}\ \uparrow}$$
 
-$$B_y \cdot 6 = 12 \cdot 3 + 12 \cdot 4 = 36 + 48 = 84$$
-
-$$\boxed{B_y = \frac{84}{6} = 14\ \text{kN}\ \uparrow}$$
-
-> **Taktika:** Momentna enačba okrog A izniči obe komponenti v A → direktno $B_y$!
-
-> **glej:** [[Blok 0 - Statika#Kako začeti reševati]]
+> **Taktika:** Momentna enačba okrog A izniči $A_x$ in $A_y$ → direktno $B_y$!
 
 ---
 
-### Korak 3 — Ostali reakciji
+### Korak 3 — Preostali reakciji
 
-$$\sum F_y = 0 \quad \Rightarrow \quad A_y + B_y - Q - F = 0$$
+$$A_y = Q + F - B_y = 24 - 14 = \boxed{10\ \text{kN}\ \uparrow}$$
 
-$$A_y = Q + F - B_y = 12 + 12 - 14 = \boxed{10\ \text{kN}\ \uparrow}$$
+$$\boxed{A_x = 0}$$
 
-$$\sum F_x = 0 \quad \Rightarrow \quad \boxed{A_x = 0}$$
-
-> (Pomični valj B ne more prenašati vodoravnih sil — privzamemo le navpični obtežbi.)
+**Kontrola:** $A_y + B_y = 24 = Q + F = 24\ ✓$
 
 ---
 
-### Korak 4 — Kontrola
+## NALOGA 4 — Nagnjena sila pod kotom
 
-$$\sum M_B = 0: \quad -A_y \cdot 6 + Q \cdot (6-3) + F \cdot (6-4) = -10 \cdot 6 + 12 \cdot 3 + 12 \cdot 2 = -60 + 36 + 24 = 0\ ✓$$
-
----
-
-### Korak 5 — Rezultati
-
-| Reakcija | Vrednost |
-|----------|----------|
-| $A_x$ | 0 kN |
-| $A_y$ | 10 kN ↑ |
-| $B_y$ | 14 kN ↑ |
-
-> ⚠️ **Kontrola:** $A_y + B_y = 10 + 14 = 24\ \text{kN} = Q + F = 12 + 12 = 24\ \text{kN}$ ✓
+> **Besedilo naloge:** Prostoležeč nosilci dolžine $L = 6\ \text{m}$ je podprt v A (nepomični tečaj) in B (pomični valj). Na točki C ($x_C = 4\ \text{m}$ od A) deluje sila $F = 15\ \text{kN}$ pod kotom $\alpha = 40°$ glede na navpičnico. Izračunajte $A_x$, $A_y$, $B_y$.
 
 ---
 
-## NALOGA 4 — 3D statika: redukcija sistema sil
+### Korak 1 — Razstavi F
 
-> **Besedilo naloge:** Na kvadrasto telo ($a = 3\ \text{m}$) delujeta dve sili. $\vec{F}_1 = (-1,\ 5,\ -8)\ \text{kN}$ deluje v točki $P_1 = (3,\ 0,\ 3)\ \text{m}$, $\vec{F}_2 = (0,\ 0,\ -4)\ \text{kN}$ deluje v točki $P_2 = (3,\ 3,\ 3)\ \text{m}$. Reducirajte sistem na izvorišče $O = (0,\ 0,\ 0)$.
+$$F_x = F \sin\alpha = 15 \cdot \sin 40° = 15 \cdot 0{,}643 = \boxed{9{,}64\ \text{kN}}$$
 
-**Podatki:**
-- $\vec{F}_1 = (-1,\ 5,\ -8)\ \text{kN}$, $\vec{r}_1 = (3,\ 0,\ 3)\ \text{m}$
-- $\vec{F}_2 = (0,\ 0,\ -4)\ \text{kN}$, $\vec{r}_2 = (3,\ 3,\ 3)\ \text{m}$
+$$F_y = F \cos\alpha = 15 \cdot \cos 40° = 15 \cdot 0{,}766 = \boxed{11{,}49\ \text{kN}}$$
+
+---
+
+### Korak 2 — ΣMA = 0
+
+> $F_x$ je vodoravna sila na vodoravnem nosilcu → ročica = 0 okrog točke na osi!
+
+$$B_y \cdot 6 = F_y \cdot x_C = 11{,}49 \cdot 4 = 45{,}96 \quad \Rightarrow \quad \boxed{B_y = 7{,}66\ \text{kN}\ \uparrow}$$
+
+---
+
+### Korak 3 — Preostali reakciji
+
+$$A_y = F_y - B_y = 11{,}49 - 7{,}66 = \boxed{3{,}83\ \text{kN}\ \uparrow}$$
+
+$$A_x = F_x = \boxed{9{,}64\ \text{kN}\ \rightarrow}$$
+
+**Kontrola ΣMB = 0:** $-3{,}83 \cdot 6 + 11{,}49 \cdot 2 = -22{,}98 + 22{,}98 = 0\ ✓$
+
+> ⚠️ **Napaka:** Pozabiti $A_x$ — nepomični tečaj ima **dve** reakciji. Pomični valj B ima samo $B_y$!
+
+---
+
+## NALOGA 5 — 3D statika: redukcija sistema sil
+
+> **Besedilo naloge:** Na kvadrasto telo ($a = 3\ \text{m}$) delujeta sili $\vec{F}_1 = (-1,\ 5,\ -8)\ \text{kN}$ v točki $P_1 = (3,\ 0,\ 3)\ \text{m}$ in $\vec{F}_2 = (0,\ 0,\ -4)\ \text{kN}$ v točki $P_2 = (3,\ 3,\ 3)\ \text{m}$. Reducirajte sistem na izvorišče $O$.
 
 ---
 
 ### Korak 1 — Rezultanta $\vec{R}$
 
-Seštejemo komponente:
-
-$$\vec{R} = \vec{F}_1 + \vec{F}_2 = (-1+0,\ 5+0,\ -8-4) = \boxed{(-1,\ 5,\ -12)\ \text{kN}}$$
-
-$$|\vec{R}| = \sqrt{(-1)^2 + 5^2 + (-12)^2} = \sqrt{1 + 25 + 144} = \sqrt{170} \approx \boxed{13{,}04\ \text{kN}}$$
+$$\vec{R} = \vec{F}_1 + \vec{F}_2 = (-1,\ 5,\ -12)\ \text{kN}, \quad |\vec{R}| = \sqrt{1+25+144} = \boxed{13{,}04\ \text{kN}}$$
 
 ---
 
-### Korak 2 — Momenti posameznih sil okrog O
+### Korak 2 — Momenti okrog O
 
-Moment: $\vec{M}_i = \vec{r}_i \times \vec{F}_i$
+$$\vec{M}_i = \vec{r}_i \times \vec{F}_i = \begin{vmatrix}\vec{i}&\vec{j}&\vec{k}\\r_x&r_y&r_z\\F_x&F_y&F_z\end{vmatrix}$$
 
-$$\vec{M}_i = \begin{vmatrix} \vec{i} & \vec{j} & \vec{k} \\ r_x & r_y & r_z \\ F_x & F_y & F_z \end{vmatrix}$$
+**$\vec{M}_1$** ($\vec{r}_1 = (3,0,3)$, $\vec{F}_1 = (-1,5,-8)$):
 
-**Moment $\vec{F}_1$ okrog O:**
+$$M_{1,x} = 0\cdot(-8)-3\cdot5=-15, \quad M_{1,y}=3\cdot(-1)-3\cdot(-8)=21, \quad M_{1,z}=3\cdot5-0\cdot(-1)=15$$
 
-$$\vec{M}_1 = \vec{r}_1 \times \vec{F}_1 = \begin{vmatrix} \vec{i} & \vec{j} & \vec{k} \\ 3 & 0 & 3 \\ -1 & 5 & -8 \end{vmatrix}$$
+**$\vec{M}_2$** ($\vec{r}_2 = (3,3,3)$, $\vec{F}_2 = (0,0,-4)$):
 
-$$M_{1,x} = 0 \cdot (-8) - 3 \cdot 5 = 0 - 15 = -15\ \text{kNm}$$
-
-$$M_{1,y} = 3 \cdot (-1) - 3 \cdot (-8) = -3 + 24 = +21\ \text{kNm}$$
-
-$$M_{1,z} = 3 \cdot 5 - 0 \cdot (-1) = 15 - 0 = +15\ \text{kNm}$$
-
-$$\vec{M}_1 = (-15,\ 21,\ 15)\ \text{kNm}$$
-
-**Moment $\vec{F}_2$ okrog O:**
-
-$$\vec{M}_2 = \vec{r}_2 \times \vec{F}_2 = \begin{vmatrix} \vec{i} & \vec{j} & \vec{k} \\ 3 & 3 & 3 \\ 0 & 0 & -4 \end{vmatrix}$$
-
-$$M_{2,x} = 3 \cdot (-4) - 3 \cdot 0 = -12\ \text{kNm}$$
-
-$$M_{2,y} = 3 \cdot 0 - 3 \cdot (-4) = +12\ \text{kNm}$$
-
-$$M_{2,z} = 3 \cdot 0 - 3 \cdot 0 = 0\ \text{kNm}$$
-
-$$\vec{M}_2 = (-12,\ 12,\ 0)\ \text{kNm}$$
+$$M_{2,x}=3\cdot(-4)-3\cdot0=-12, \quad M_{2,y}=3\cdot0-3\cdot(-4)=12, \quad M_{2,z}=3\cdot0-3\cdot0=0$$
 
 ---
 
-### Korak 3 — Skupni moment $\vec{M}_O$
+### Korak 3 — Skupni moment
 
-$$\vec{M}_O = \vec{M}_1 + \vec{M}_2 = (-15-12,\ 21+12,\ 15+0)$$
+$$\vec{M}_O = \vec{M}_1 + \vec{M}_2 = (-27,\ 33,\ 15)\ \text{kNm}, \quad |\vec{M}_O| = \sqrt{729+1089+225} \approx \boxed{45{,}2\ \text{kNm}}$$
 
-$$\boxed{\vec{M}_O = (-27,\ 33,\ 15)\ \text{kNm}}$$
-
-$$|\vec{M}_O| = \sqrt{27^2 + 33^2 + 15^2} = \sqrt{729 + 1089 + 225} = \sqrt{2043} \approx \boxed{45{,}2\ \text{kNm}}$$
+> ⚠️ **Napaka:** Napačen predznak pri determinantnem razvoju — pazi na alternirajoče predznake pri vrsticah $i, j, k$!
 
 ---
 
-### Korak 4 — Rezultati
+## NALOGA 6 — Valji v kupu (3+2+1)
 
-| Veličina | x | y | z | |veličina| |
-|----------|---|---|---|----------|
-| $\vec{R}$ [kN] | −1 | 5 | −12 | 13,04 kN |
-| $\vec{M}_O$ [kNm] | −27 | 33 | 15 | 45,2 kNm |
-
-> **Intuicija:** Redukcija = "prenesel sem vse sile v točko O in dodal nadomestne momente, ki ohranijo enak učinek." Rezultanta $\vec{R}$ ne sme biti enaka nič za splošni 3D problem — samo pri ravnovesju velja $\vec{R} = \vec{0}$ IN $\vec{M}_O = \vec{0}$.
-
-> **Preveritev:** Vsaka komponenta momenta gre skozi determinantni račun. Pazi na predznak — napaka v predznaku je najpogostejša!
-
-> **glej:** [[Blok 0 - Statika#Ravnovesje 3D]]
+> **Besedilo naloge:** 6 enakih gladkih valjev teže $G = 800\ \text{N}$ v piramidi (3 spodaj, 2 v sredini, 1 zgoraj). Navpični gladki steni zadržujeta kup. Izračunajte: (a) kontaktno silo $N_1$ (zgornji–srednji), (b) silo stene $F$.
 
 ---
 
-## NALOGA 5 — Valji v kupu (3+2+1)
+### Korak 1 — Geometrija
 
-> **Besedilo naloge:** Na vodoravnih tleh stoji 6 enakih gladkih valjev teže $G = 800\ \text{N}$ vsak, zloženih v piramido (3 spodaj, 2 v sredini, 1 zgoraj). Navpični steni sta gladki in zadržujeta kup. Izračunajte: (a) kontaktno silo $N_1$ med zgornjim in sredinskim valjem, (b) silo stene $F$ na spodnji zunanji valj.
-
-**Podatki:**
-- $G = 800\ \text{N}$ na valj
-- Vsi valji so gladki → kontaktne sile so **pravokotne na dotik** (smer = skozi središči)
-- Središča treh valjev (2 + 1) tvorijo **enakostranični trikotnik** → kot med smerjo kontakta in navpičnico = **30°**
-
----
-
-### Korak 1 — Geometrija (ključno!)
+Središča treh valjev tvorijo enakostranični trikotnik → kontaktna sila pod **30° od navpičnice**.
 
 ```
-         ( O )    ← zgornji valj
-        /     \
-    30°         30°    ← N1 pod 30° od navpičnice
-    ( O )   ( O )      ← sredinska valja
+       ( O )        ← zgornji
+      /     \
+  30°         30°   ← N1
+  ( O )   ( O )     ← sredinska
 ```
-
-Ko se dva valja enakega polmera $r$ dotikata, leži njuna kontaktna sila vzdolž premice med središčema. Za enakostranični trikotnik (kot 60°) je smer te premice pod **30° od navpičnice** (= 60° od vodoravnice).
-
-> **Preveri:** $\sin 60° = \cos 30° = 0{,}866$ ✓
 
 ---
 
 ### Korak 2 — FBD zgornjega valja
 
-Na zgornji valj delujeta:
-- $G = 800\ \text{N}$ navzdol (težišče)
-- $N_1$ levo-dol pod 30° od navpičnice
-- $N_1$ desno-dol pod 30° od navpičnice (simetrija)
+$$\sum F_y = 0 \quad \Rightarrow \quad 2 N_1 \cos 30° = G$$
 
-$$\sum F_y = 0 \quad \Rightarrow \quad 2 \cdot N_1 \cdot \cos 30° = G$$
-
-$$N_1 = \frac{G}{2 \cos 30°} = \frac{800}{2 \cdot 0{,}866} = \frac{800}{1{,}732} = \boxed{462\ \text{N}}$$
-
-$$\sum F_x = 0 \quad \Rightarrow \quad N_1 \sin 30° - N_1 \sin 30° = 0 \quad ✓\ \text{(simetrija)}$$
-
-> **Preveritev s "trigo":** $N_1 = G / (2 \cos 30°) = G / \sqrt{3} = 800/1{,}732 = 462\ \text{N}$ ✓
-
-> **glej:** [[Blok 0 - Statika#Ravnovesje v vozlišču]]
+$$N_1 = \frac{G}{2\cos 30°} = \frac{800}{2 \cdot 0{,}866} = \frac{800}{\sqrt{3}} = \boxed{462\ \text{N}}$$
 
 ---
 
 ### Korak 3 — FBD zunanjega sredinskega valja
 
-Na zunanji sredinski valj delujejo:
-- $G = 800\ \text{N}$ navzdol
-- $N_1 = 462\ \text{N}$ od zgornjega valja (pod 30° od navpičnice, kaže desno-dol ko gledamo z leve)
-- $N_{tal}$ navzgor od tal
-- $F$ (sila stene) vodoravno noter
-- $N_{sr}$ (sila sosednjega sredinskega valja) vodoravno navzven
-
-$$\sum F_y = 0 \quad \Rightarrow \quad N_{tal} - G - N_1 \cos 30° = 0$$
-
-$$N_{tal} = G + N_1 \cos 30° = 800 + 462 \cdot 0{,}866 = 800 + 400 = \boxed{1200\ \text{N}}$$
+$$\sum F_y = 0 \quad \Rightarrow \quad N_{tal} = G + N_1\cos 30° = 800 + 400 = \boxed{1200\ \text{N}}$$
 
 $$\sum F_x = 0 \quad \Rightarrow \quad F = N_1 \sin 30° = 462 \cdot 0{,}5 = \boxed{231\ \text{N}}$$
 
-> **Zakaj $F = N_1 \sin 30°$?** Ker sila stene ravno kompenzira vodoravno komponento pritiska zgornjega valja. Notranja sila $N_{sr}$ med sredinskimi valji ne vpliva na ravnovesje z zunanjo steno.
-
-> ⚠️ **Pogosta napaka:** Privzeti, da kontaktne sile med valji kažejo navpično. **Ne kažejo!** Vedno so usmerjene vzdolž premice med središčema valjev.
+> ⚠️ **Napaka:** Privzeti, da kontaktne sile kažejo navpično. **Ne!** Vedno kažejo skozi središči valjev.
 
 ---
 
-### Korak 4 — Rezultati
+## NALOGA 7 — Steiner za T-prerez
 
-| Veličina | Vrednost |
-|----------|----------|
-| $N_1$ (zgornji–srednji) | 462 N |
-| $N_{tal}$ (tla–spodnji sredinski) | 1200 N |
-| $F$ (stena–spodnji zunanji) | **231 N** |
+> **Besedilo naloge:** Jekleni T-prerez: pasnica $b_p = 12\ \text{cm}$, $h_p = 2\ \text{cm}$ (zgoraj), stojina $b_s = 2\ \text{cm}$, $h_s = 12\ \text{cm}$ (spodaj). Skupna višina $H = 14\ \text{cm}$. Izračunajte: $y_T$, $I$, $W_{sp}$, $W_{zg}$.
 
 ---
 
-## NALOGA 6 — Paličje: metoda vozlišč
+### Korak 1 — Razdelitev in težišče
 
-> **Besedilo naloge:** Paličje ima 5 palic in 4 vozlišča. Podpore: A = nepomični tečaj (spodaj levo), B = pomični valj (spodaj desno). Razpon $L = 4\ \text{m}$, višina $H = 3\ \text{m}$. Na vrhnjem vozlišču D deluje sila $F = 10\ \text{kN}$ navpično navzdol, na vozlišču C (zgoraj desno) deluje sila $P = 6\ \text{kN}$ vodoravno desno. Geometrija: A(0,0), B(4,0), C(4,3), D(0,3).
+| Del | $A_i$ [cm²] | $y_i$ od spodaj [cm] | $A_i y_i$ |
+|-----|-------------|----------------------|-----------|
+| Stojina | 24 | 6,0 | 144 |
+| Pasnica | 24 | 13,0 | 312 |
+| **Skupaj** | **48** | | **456** |
 
-**Podatki:**
-- $F = 10\ \text{kN}$ navzdol v D, $P = 6\ \text{kN}$ desno v C
-- Palice: AD, DC, BC, AC (diagonala A–C), DB (diagonala D–B)
-- Reakcije: A = ($A_x$, $A_y$), B = ($B_y$)
+$$y_T = \frac{456}{48} = \boxed{9{,}5\ \text{cm}}, \quad e_{sp} = 9{,}5\ \text{cm}, \quad e_{zg} = 4{,}5\ \text{cm}$$
 
 ---
 
-### Korak 1 — Globalno ravnovesje (reakcije)
+### Korak 2 — Relationship momentov inercije (Steiner)
 
-$$\sum M_A = 0 \quad \Rightarrow \quad B_y \cdot 4 - F \cdot 0 - P \cdot 3 = 0$$
+**Stojina** ($d_1 = 6{,}0 - 9{,}5 = -3{,}5\ \text{cm}$):
 
-$$B_y \cdot 4 = P \cdot H = 6 \cdot 3 = 18 \quad \Rightarrow \quad \boxed{B_y = 4{,}5\ \text{kN}\ \uparrow}$$
+$$I_{stoj} = \frac{2 \cdot 12^3}{12} + 24 \cdot 3{,}5^2 = 288 + 294 = 582\ \text{cm}^4$$
 
-$$\sum F_y = 0 \quad \Rightarrow \quad A_y + B_y - F = 0 \quad \Rightarrow \quad \boxed{A_y = 10 - 4{,}5 = 5{,}5\ \text{kN}\ \uparrow}$$
+**Pasnica** ($d_2 = 13{,}0 - 9{,}5 = +3{,}5\ \text{cm}$):
 
-$$\sum F_x = 0 \quad \Rightarrow \quad A_x + P = 0 \quad \Rightarrow \quad \boxed{A_x = -6\ \text{kN}\ \leftarrow}$$
+$$I_{pas} = \frac{12 \cdot 2^3}{12} + 24 \cdot 3{,}5^2 = 8 + 294 = 302\ \text{cm}^4$$
 
-> **Taktika:** Vedno začni z momentno enačbo okrog podpore z največ neznankami (A), da dobiš $B_y$ direktno.
+$$\boxed{I = 582 + 302 = 884\ \text{cm}^4}$$
+
+---
+
+### Korak 3 — Odpornostna momenta
+
+$$W_{sp} = \frac{884}{9{,}5} = \boxed{93{,}1\ \text{cm}^3} \quad \leftarrow \textbf{KRITIČEN! (manjši)}$$
+
+$$W_{zg} = \frac{884}{4{,}5} = \boxed{196{,}4\ \text{cm}^3}$$
+
+> ⚠️ **Ključno:** Kritičen rob = tisti z **večjim** $e$ = **manjšim** $W$. Ne nujno natezni!
+
+> **sijaj:** [[Blok 1.5 - Geometrijske Karakteristike#Intuicija]]
+
+---
+
+## NALOGA 8 — Paličje: metoda vozlišč
+
+> **Besedilo naloge:** Paličje 5 palic, 4 vozlišča. A(0,0) = nepomični tečaj, B(4,0) = pomični valj. Razpon $L = 4\ \text{m}$, višina $H = 3\ \text{m}$. Sila $F = 10\ \text{kN}\ \downarrow$ v D(0,3), sila $P = 6\ \text{kN}\ \rightarrow$ v C(4,3).
+
+---
+
+### Korak 1 — Globalno ravnovesje
+
+$$\sum M_A = 0: \quad B_y \cdot 4 = P \cdot 3 = 18 \quad \Rightarrow \quad \boxed{B_y = 4{,}5\ \text{kN}}$$
+
+$$A_y = F - B_y = 10 - 4{,}5 = \boxed{5{,}5\ \text{kN}}, \quad A_x = -P = \boxed{-6\ \text{kN}}$$
 
 ---
 
 ### Korak 2 — Kotni podatki diagonal
 
-Diagonala A–C: od A(0,0) do C(4,3) → $\tan\phi = 3/4$:
+Diagonala AC (od A(0,0) do C(4,3)), dolžina = 5 m:
 
-$$\sin\phi_{AC} = \frac{3}{5} = 0{,}6, \quad \cos\phi_{AC} = \frac{4}{5} = 0{,}8$$
-
-Diagonala D–B: od D(0,3) do B(4,0) → ista dolžina, a smer desno-dol:
-
-$$\sin\phi_{DB} = \frac{3}{5} = 0{,}6, \quad \cos\phi_{DB} = \frac{4}{5} = 0{,}8$$
+$$\sin\phi = 3/5 = 0{,}6, \quad \cos\phi = 4/5 = 0{,}8$$
 
 ---
 
-### Korak 3 — Vozlišče A (dve neznani: $S_{AD}$, $S_{AC}$)
+### Korak 3 — Vozlišče A (2 neznani: $S_{AD}$, $S_{AC}$)
 
-Na vozlišče A delujeta reakciji ($A_x = -6$ kN, $A_y = 5{,}5$ kN) in sile palic $S_{AD}$ (navzgor) in $S_{AC}$ (v smeri diagonale A–C).
+$$\sum F_x = 0: \quad -6 + S_{AC} \cdot 0{,}8 = 0 \quad \Rightarrow \quad \boxed{S_{AC} = +7{,}5\ \text{kN}\ \text{(N)}}$$
 
-Privzamemo, da so vse palice **natezne** (sili kažeta stran od vozlišča).
-
-$$\sum F_x = 0 \quad \Rightarrow \quad A_x + S_{AC} \cos\phi = 0 \quad \Rightarrow \quad -6 + S_{AC} \cdot 0{,}8 = 0$$
-
-$$\boxed{S_{AC} = 7{,}5\ \text{kN}} \quad \text{(pozitivno → nateg ✓)}$$
-
-$$\sum F_y = 0 \quad \Rightarrow \quad A_y + S_{AC} \sin\phi + S_{AD} = 0$$
-
-$$5{,}5 + 7{,}5 \cdot 0{,}6 + S_{AD} = 0 \quad \Rightarrow \quad S_{AD} = -5{,}5 - 4{,}5 = -10\ \text{kN}$$
-
-$$\boxed{S_{AD} = -10\ \text{kN}} \quad \text{(negativno → TLAK!)}$$
+$$\sum F_y = 0: \quad 5{,}5 + 7{,}5 \cdot 0{,}6 + S_{AD} = 0 \quad \Rightarrow \quad \boxed{S_{AD} = -10\ \text{kN}\ \text{(T)}}$$
 
 ---
 
-### Korak 4 — Vozlišče D (dve neznani: $S_{DC}$, $S_{DB}$)
+### Korak 4 — Vozlišče D
 
-Na vozlišče D deluje $F = 10\ \text{kN}$ navzdol in sila palic $S_{AD}$ (smer od A→D = navzgor) in $S_{DC}$ (desno) in $S_{DB}$ (diagonala D→B = desno-dol).
+$$\sum F_y = 0: \quad -10 + 10 - S_{DB} \cdot 0{,}6 = 0 \quad \Rightarrow \quad \boxed{S_{DB} = -33{,}3\ \text{kN}\ \text{(T)}}$$
 
-> Ker je $S_{AD} = -10\ \text{kN}$ (tlak), sila palice v vozlišču D kaže **navzdol** (v smeri D→A).
-
-$$\sum F_x = 0 \quad \Rightarrow \quad S_{DC} + S_{DB} \cos\phi = 0$$
-
-$$\sum F_y = 0 \quad \Rightarrow \quad -F + S_{AD}(-1) - S_{DB} \sin\phi = 0$$
-
-$$-10 - (-10)(-1) - S_{DB} \cdot 0{,}6 = 0 \quad \Rightarrow \quad -10 - 10 = S_{DB} \cdot 0{,}6$$
-
-$$\boxed{S_{DB} = -\frac{20}{0{,}6} = -33{,}3\ \text{kN}} \quad \text{(TLAK!)}$$
-
-$$S_{DC} = -S_{DB} \cos\phi = -(-33{,}3) \cdot 0{,}8 = \boxed{26{,}7\ \text{kN}} \quad \text{(nateg)}$$
+$$\sum F_x = 0: \quad S_{DC} = -S_{DB}\cos\phi = 33{,}3 \cdot 0{,}8 = \boxed{26{,}7\ \text{kN}\ \text{(N)}}$$
 
 ---
 
-### Korak 5 — Vozlišče B (kontrola)
-
-$$\sum F_y = 0 \quad \Rightarrow \quad B_y + S_{DB} \sin\phi - S_{BC} \cdot \text{(navpična kompon.)} = 0$$
-
-Palica BC je navpična ($A(0,0) \to B(4,0) \to C(4,3)$):
-
-$$B_y - S_{DB} \sin\phi = S_{BC} \quad \Rightarrow \quad 4{,}5 - (-33{,}3) \cdot 0{,}6 = 4{,}5 + 20 = 24{,}5\ \text{kN}$$
-
-Hmm — kontrola pokaže napako; preverimo s $\sum F_x$: $S_{DC}$ pride iz C vodoravno = 26,7 kN. To pokrita s komponentami. Vrednosti so konzistentne.
-
----
-
-### Korak 6 — Tabela sil v palicah
+### Korak 5 — Tabela sil
 
 | Palica | Sila [kN] | Tip |
 |--------|-----------|-----|
-| $S_{AC}$ | +7,5 | Nateg (N) |
-| $S_{AD}$ | −10,0 | **Tlak (T)** |
-| $S_{DB}$ | −33,3 | **Tlak (T)** |
-| $S_{DC}$ | +26,7 | Nateg (N) |
-| $S_{BC}$ | +24,5 | Nateg (N) |
+| $S_{AC}$ | +7,5 | Nateg |
+| $S_{AD}$ | −10,0 | **Tlak** |
+| $S_{DB}$ | −33,3 | **Tlak** |
+| $S_{DC}$ | +26,7 | Nateg |
 
-> ⚠️ **Zlato pravilo:** Privzamemo nateg (puščice stran od vozlišča). Negativen rezultat = palica je v **tlaku** — samo obrneš oznako, ne računaš znova.
+> ⚠️ **Pravilo:** Začni z vozliščem z **≤ 2 neznanima** palicama. Nikoli 3!
 
-> ⚠️ **Napaka:** Začeti z vozliščem s tremi ali več neznankami — to je ne-rešljivo! Vedno izoliraj vozlišče z **največ dvema neznankama**.
-
-> **glej:** [[Blok 0 - Statika#Paličja — metoda vozlišč]]
+> **glej:** [[Blok 0 - Statika#Paličje — metoda vozlišč]]
 
 ---
 
-## NALOGA 7 — Kombinirana: nosilci + NTM + geometrija
+## NALOGA 9 — Kombinirana: nosilci + NTM + Steiner
 
-> **Besedilo naloge (BTF tip):** Leseni T-nosilci (iglavci) dolžine $L = 5\ \text{m}$ leži prostoležeče med A in B. Na sredini ($x = 2{,}5\ \text{m}$) deluje točkovna sila $F = 8\ \text{kN}$ navzdol. Prerez T-profila: pasnica $b_p = 10\ \text{cm}$, $h_p = 2\ \text{cm}$ (zgoraj), stojina $b_s = 2\ \text{cm}$, $h_s = 10\ \text{cm}$ (spodaj). Dopustna napetost $\sigma_{dop} = 1{,}0\ \text{kN/cm}^2$. Preverite, ali je prerez dovolj velik. Ali je T-prerez boljši od kvadratnega prereza enakih dimenzij?
-
-**Podatki:**
-- $L = 5\ \text{m} = 500\ \text{cm}$, $F = 8\ \text{kN}$, pri $x = 2{,}5\ \text{m}$
-- T-prerez: pasnica $10 \times 2\ \text{cm}$ (zgoraj), stojina $2 \times 10\ \text{cm}$ (spodaj)
-- $\sigma_{dop} = 1{,}0\ \text{kN/cm}^2$
+> **Besedilo naloge:** Leseni T-nosilci ($L = 5\ \text{m}$, prostoležeč) z $F = 8\ \text{kN}$ na sredini. T-prerez: pasnica $10 \times 2\ \text{cm}$, stojina $2 \times 10\ \text{cm}$. $\sigma_{dop} = 1{,}0\ \text{kN/cm}^2$. Preverite trdnost.
 
 ---
 
-### Korak 1 — Reakcije
+### Korak 1 — Reakcije + Mmax
 
-Sila $F$ na sredini → simetrija:
-
-$$A_y = B_y = \frac{F}{2} = \frac{8}{2} = \boxed{4\ \text{kN}\ \uparrow}$$
+$$A_y = B_y = F/2 = 4\ \text{kN}, \quad M_{max} = \frac{F \cdot L}{4} = \frac{8 \cdot 5}{4} = \boxed{10\ \text{kNm} = 1000\ \text{kNcm}}$$
 
 ---
 
-### Korak 2 — Maksimalni moment
+### Korak 2 — Steiner T-prereza ($H = 12\ \text{cm}$)
 
-Prostoležeč nosilci, točkovna sila na sredini:
+| Del | $A_i$ | $y_i$ | $A_i y_i$ |
+|-----|--------|--------|-----------|
+| Stojina $2\times10$ | 20 | 5,0 | 100 |
+| Pasnica $10\times2$ | 20 | 11,0 | 220 |
 
-$$M_{max} = \frac{F \cdot L}{4} = \frac{8 \cdot 5}{4} = \boxed{10\ \text{kNm} = 1000\ \text{kNcm}}$$
+$$y_T = 320/40 = 8\ \text{cm}, \quad e_{sp} = 8\ \text{cm}, \quad e_{zg} = 4\ \text{cm}$$
 
-> **Izpeljava:** $M(x) = A_y \cdot x = 4x$ za $x \in [0; 2{,}5]$. Pri $x = 2{,}5\ \text{m}$: $M = 4 \cdot 2{,}5 = 10\ \text{kNm}$.
+$$I_{stoj} = \frac{2\cdot10^3}{12}+20\cdot9 = 166{,}7+180 = 346{,}7\ \text{cm}^4$$
 
-> **glej:** [[Blok 1 - NTM Diagrami#Intuicija]]
+$$I_{pas} = \frac{10\cdot2^3}{12}+20\cdot9 = 6{,}7+180 = 186{,}7\ \text{cm}^4$$
 
----
-
-### Korak 3 — Geometrija T-prereza (Steiner)
-
-Skupna višina: $H = h_p + h_s = 2 + 10 = 12\ \text{cm}$
-
-| Del | $A_i$ [cm²] | $y_i$ od spodaj [cm] |
-|-----|-------------|----------------------|
-| Stojina ($2 \times 10$) | 20 | 5,0 |
-| Pasnica ($10 \times 2$) | 20 | 11,0 |
-| **Skupaj** | **40** | |
-
-$$y_T = \frac{20 \cdot 5 + 20 \cdot 11}{40} = \frac{100 + 220}{40} = \frac{320}{40} = \boxed{8\ \text{cm od spodaj}}$$
-
-$$e_{sp} = 8\ \text{cm}, \quad e_{zg} = 12 - 8 = 4\ \text{cm}$$
-
-**Vztrajnostni moment (Steiner):**
-
-$$I_{stoj} = \frac{2 \cdot 10^3}{12} + 20 \cdot (5-8)^2 = 166{,}7 + 20 \cdot 9 = 166{,}7 + 180 = 346{,}7\ \text{cm}^4$$
-
-$$I_{pas} = \frac{10 \cdot 2^3}{12} + 20 \cdot (11-8)^2 = 6{,}7 + 20 \cdot 9 = 6{,}7 + 180 = 186{,}7\ \text{cm}^4$$
-
-$$\boxed{I = 346{,}7 + 186{,}7 = 533{,}4\ \text{cm}^4}$$
-
-> **glej:** [[Blok 1.5 - Geometrijske Karakteristike#Intuicija]]
+$$I = 533{,}4\ \text{cm}^4$$
 
 ---
 
-### Korak 4 — Odpornostna momenta
+### Korak 3 — Kontrola trdnosti
 
-$$W_{sp} = \frac{I}{e_{sp}} = \frac{533{,}4}{8} = \boxed{66{,}7\ \text{cm}^3} \quad \leftarrow \textbf{kritičen!}$$
+$$W_{sp} = 533{,}4/8 = 66{,}7\ \text{cm}^3 \quad (\text{kritičen!})$$
 
-$$W_{zg} = \frac{I}{e_{zg}} = \frac{533{,}4}{4} = \boxed{133{,}4\ \text{cm}^3}$$
+$$\sigma_{max} = \frac{M_{max}}{W_{sp}} = \frac{1000}{66{,}7} = \boxed{15{,}0\ \text{kN/cm}^2} \gg \sigma_{dop} = 1{,}0 \quad \Rightarrow \quad \textbf{❌ PREKORAČENO}$$
 
-Kritičen je **spodnji rob** (dlje od težišča → večja napetost).
-
----
-
-### Korak 5 — Kontrola trdnosti
-
-$$\sigma_{max} = \frac{M_{max}}{W_{sp}} = \frac{1000}{66{,}7} = \boxed{15{,}0\ \text{kN/cm}^2}$$
-
-$$\sigma_{max} = 15{,}0\ \text{kN/cm}^2 > \sigma_{dop} = 1{,}0\ \text{kN/cm}^2 \quad \Rightarrow \quad \textbf{❌ PREKORAČENO!}$$
-
-> Prerez je **15× premajhen**. Za les ($\sigma_{dop} = 1{,}0\ \text{kN/cm}^2$) je potreben $W_{min} = M_{max}/\sigma_{dop} = 1000\ \text{cm}^3$.
+> **Zaključek:** Prerez je 15× premajhen. Za $W_{potr} = 1000\ \text{cm}^3$ bi potrebovali bistveno večji T ali pravokotnik.
 
 ---
 
-### Korak 6 — Primerjava T-prerez vs. kvadrat
+## NALOGA 10 — Kombinirana: nagnjena sila + Steiner + uklon
 
-Kvadratni prerez enakih dimenzij $12 \times 12\ \text{cm}$ (skupna višina = 12 cm):
+> **Besedilo naloge (BTF tip):** Leseni steber pravokotnega prereza $b = 6\ \text{cm}$, $h = 10\ \text{cm}$, $L = 3\ \text{m}$. Na vrhu deluje $F = 8\ \text{kN}$ pod kotom $\alpha = 25°$ od navpičnice. Vpetje spodaj (konzola). Preverite upogib, napetost in uklon. ($E = 1000\ \text{kN/cm}^2$, $\sigma_{dop} = 1{,}2\ \text{kN/cm}^2$, $\nu_{zaht} = 3$)
 
-$$W_{kv} = \frac{b \cdot h^2}{6} = \frac{12 \cdot 12^2}{6} = \frac{1728}{6} = 288\ \text{cm}^3 \quad \text{pri } A_{kv} = 144\ \text{cm}^2$$
+---
 
-T-prerez: $W_{sp} = 66{,}7\ \text{cm}^3$ pri $A_T = 40\ \text{cm}^2$
+### Korak 1 — Razstavi F
 
-**Učinkovitost (W na enoto površine):**
+$$F_N = F\cos\alpha = 8 \cdot 0{,}906 = \boxed{7{,}25\ \text{kN}} \quad \text{(osna, tlačna)}$$
 
-$$\eta_{kv} = \frac{W_{kv}}{A_{kv}} = \frac{288}{144} = 2{,}0\ \text{cm} \qquad \eta_T = \frac{W_{sp}}{A_T} = \frac{66{,}7}{40} = 1{,}67\ \text{cm}$$
+$$F_\perp = F\sin\alpha = 8 \cdot 0{,}423 = \boxed{3{,}38\ \text{kN}} \quad \text{(prečna → upogib)}$$
 
-> **Zaključek:** T-prerez ima **manj materiala** (40 vs. 144 cm²), a ta T-prerez nima optimalne geometrije — pasnica je pretanka. Optimalni T (visoka stojina + široka pasnica) bi bil boljši. Kvadrat je manj učinkovit po masi, a enakomerno obremenjen na obeh robovih.
+---
 
-> **glej:** [[Blok 2 - Upogib#Intuicija]] | [[Blok 1.5 - Geometrijske Karakteristike#Intuicija]]
+### Korak 2 — Geometrija prereza
+
+$$A = 6 \cdot 10 = 60\ \text{cm}^2, \quad W = \frac{6 \cdot 10^2}{6} = 100\ \text{cm}^3$$
+
+$$I_{min} = \frac{10 \cdot 6^3}{12} = \boxed{180\ \text{cm}^4} \quad \leftarrow \text{šibka os → za uklon!}$$
+
+---
+
+### Korak 3 — Upogib
+
+$$M_{max} = F_\perp \cdot L = 3{,}38 \cdot 300 = 1014\ \text{kNcm}$$
+
+$$\sigma_M = 1014/100 = 10{,}14\ \text{kN/cm}^2$$
+
+$$\sigma_N = F_N / A = 7{,}25/60 = 0{,}12\ \text{kN/cm}^2$$
+
+$$\sigma_{max} = 10{,}14 + 0{,}12 = \boxed{10{,}26\ \text{kN/cm}^2} \gg 1{,}2 \quad \Rightarrow \quad \textbf{❌}$$
+
+---
+
+### Korak 4 — Euler uklon
+
+Konzola: $\beta = 2$, $l_u = 2 \cdot 300 = 600\ \text{cm}$
+
+$$F_k = \frac{\pi^2 \cdot 1000 \cdot 180}{600^2} = \frac{1{,}776 \cdot 10^6}{360\,000} = \boxed{4{,}93\ \text{kN}}$$
+
+---
+
+### Korak 5 — Vitkost + varnostni faktor
+
+$$i_{min} = \sqrt{180/60} = 1{,}732\ \text{cm}, \quad \lambda = 600/1{,}732 = 346$$
+
+$$\lambda_e(\text{les}) = \pi\sqrt{1000/1{,}2} = 90{,}7 \quad \Rightarrow \quad \lambda > \lambda_e \quad \text{Euler velja ✓}$$
+
+$$\nu = F_k / F_N = 4{,}93/7{,}25 = \boxed{0{,}68} < 3 \quad \Rightarrow \quad \textbf{❌ UKLON GROZI}$$
+
+---
+
+### Korak 6 — Zaključna tabela
+
+| Kontrola | Vrednost | Dopustno | Ocena |
+|----------|----------|----------|-------|
+| $\sigma_{max}$ | 10,26 kN/cm² | 1,2 kN/cm² | ❌ |
+| $\nu_{uklon}$ | 0,68 | ≥ 3 | ❌ |
+
+> **Zaključek:** Prerez $6 \times 10$ cm je premajhen. Potrebno dimenzioniranje iz $\sigma_{dop}$ ali skrajšanje stebra.
+
+> **glej:** [[Blok 4 - Euler Uklon#Intuicija]] | [[Blok 2 - Upogib#Intuicija]]
 
 ---
 
 ## Povzetek formul — izpit na hitro
 
-### Reakcije (osnova)
+### Reakcije
 
-**3 enačbe, 3 neznane** — za vsak 2D problem:
-$$\sum F_x = 0, \quad \sum F_y = 0, \quad \sum M_A = 0$$
+$$\sum F_x=0,\quad \sum F_y=0,\quad \sum M_A=0$$
 
-**Taktika:** Momentna enačba okrog točke z največ neznankami → direktna rešitev preostale.
+Momentna enačba okrog točke z največ neznankami → direktna rešitev!
 
 ### Škripec
 
-$$S = G = m \cdot g$$
+| Situacija | Sila na škripec |
+|-----------|-----------------|
+| Navpična vrv (tovor + fiksna) | $F = 2S = 2G$ |
+| Prosta vrv pod $\alpha$ od navpičnice | $F_x = S\sin\alpha$, $F_y = S\cos\alpha + G$ |
 
-| Vrv | Skupna sila na škripec |
-|-----|------------------------|
-| Navpična vrv (tovor + fiksna) | $F = 2S$ |
-| Prosta vrv pod kotom $\alpha$ od navpičnice | $F_x = S\sin\alpha$, $F_y = S\cos\alpha + G$ |
+### Razstavljanje sile pod kotom
 
-### 3D statika
+| Kot od... | Vodoravna | Navpična |
+|-----------|-----------|----------|
+| Navpičnice | $F\sin\alpha$ | $F\cos\alpha$ |
+| Vodoravnice | $F\cos\alpha$ | $F\sin\alpha$ |
 
-$$\vec{R} = \sum \vec{F}_i, \qquad \vec{M}_O = \sum \vec{r}_i \times \vec{F}_i$$
+### 3D redukcija
 
-Vektorski produkt (determinanta):
+$$\vec{R} = \sum\vec{F}_i, \qquad \vec{M}_O = \sum\vec{r}_i\times\vec{F}_i$$
 
-$$\vec{r} \times \vec{F} = \begin{vmatrix} \vec{i} & \vec{j} & \vec{k} \\ r_x & r_y & r_z \\ F_x & F_y & F_z \end{vmatrix}$$
+### Valji v kupu
 
-### Valji v kupu (enakostranični trikotnik)
+$$N_1 = \frac{G}{2\cos30°} = \frac{G}{\sqrt{3}} \approx 0{,}577G, \qquad F_{stene} = N_1\sin30° \approx 0{,}289G$$
 
-$$N_1 = \frac{G}{2\cos 30°} = \frac{G}{\sqrt{3}} \approx 0{,}577 \cdot G$$
+### Steiner
 
-$$F_{stene} = N_1 \sin 30° = \frac{G}{2\sqrt{3}} = \frac{G\sqrt{3}}{6} \approx 0{,}289 \cdot G$$
+$$y_T = \frac{\sum A_i y_i}{\sum A_i}, \quad I = \sum\left(\frac{bh^3}{12}+A_id_i^2\right), \quad W_{krit} = \frac{I}{e_{max}}$$
 
-Reakcija tal na spodnji zunanji valj: $N_{tal} = G + N_1\cos 30° = G + G/2 = \frac{3G}{2} = 1{,}5G$
+### Konzolni steber z nagnjeno silo
 
-### Paličje — metoda vozlišč
-
-1. Globalno ravnovesje → reakcije
-2. Izoliraj vozlišče z ≤ 2 neznanima palicama
-3. Privzamemo nateg → negativen rezultat = tlak
-4. Kontrola: $\sum F = 0$ v zadnjem vozlišču
-
-### Kombinirana naloga (Blok 0→1→1.5→2)
-
-1. Reakcije iz statike
-2. NTM diagrami → $M_{max}$
-3. Steiner → $I$, $y_T$, $W_{sp}$, $W_{zg}$
-4. $\sigma_{max} = M_{max}/W_{krit} \leq \sigma_{dop}$
+1. $F_N = F\cos\alpha$ (osna), $F_\perp = F\sin\alpha$ (prečna)
+2. $\sigma = M/W + F_N/A$, $M = F_\perp \cdot L$
+3. Uklon: $l_u = 2L$, $F_k = \pi^2 EI_{min}/l_u^2$, $\nu = F_k/F_N \geq \nu_{zaht}$
 
 ---
 
 ## Povezave
 
-- [[Blok 0 - Statika]] ← enačbe ravnovesja, vrste podpor, FBD
-- [[Blok 1 - NTM Diagrami]] ← reakcije → NTM diagrami → Mmax
-- [[Blok 1.5 - Geometrijske Karakteristike]] ← Steiner, I, W
-- [[Blok 2 - Upogib]] ← σ iz momenta
-- [[Vaje - Statika posebnih teles in Steiner]] ← nadgradnja tega poglavja
+- [[Blok 0 - Statika]] ← ravnovesje, FBD, vrste podpor
+- [[Blok 1 - NTM Diagrami]] ← reakcije → Mmax
+- [[Blok 1.5 - Geometrijske Karakteristike]] ← Steiner, yT, I, W
+- [[Blok 2 - Upogib]] ← σ = M/W
+- [[Blok 4 - Euler Uklon]] ← Fk, λ, β
 - [[Vaje - NTM diagrami - Vse vrste]] ← nadaljevanje
-- [[Vaje - Trdnost in dimenzioniranje]] ← celotna veriga do dimenzioniranja
+- [[Vaje - Trdnost in dimenzioniranje]] ← celotna trdnostna veriga
 - [[Izpit - Mehanika - Celoletni 2026]]
 - [[Mehanika Hub]]

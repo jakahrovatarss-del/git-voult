@@ -34,7 +34,59 @@ REZULTANTA PORAZDELJENE OBTEŽBE:
 
 MOMENT PARE SIL:
   M = F · d       (d = razdalja med silama)
+
+SESTAVLJANJE SIL — REZULTANTA:
+  Rx = ΣFx,i    Ry = ΣFy,i
+  R = √(Rx² + Ry²)
+  φ = arctan(Ry / Rx)   (smer rezultante)
+
+RAZSTAVLJANJE SILE POD KOTOM:
+  (kot od navpičnice α):  Fx = F·sinα,  Fy = F·cosα
+  (kot od vodoravnice α): Fx = F·cosα,  Fy = F·sinα
+
+REDUKCIJA SISTEMA SIL NA TOČKO O:
+  Rezultanta:  R = ΣFi
+  Moment:      M₀ = Σ(ri × Fi)   [vektorski produkt!]
+  Za 2D:       M₀ = Σ(xi·Fyi - yi·Fxi)
 ```
+
+---
+
+## Razstavljanje sil po komponentah
+
+Vsako silo razstavi na vodoravno in navpično komponento **preden pišeš ravnovesne enačbe**:
+
+| Kako je podan kot | Vodoravna $F_x$ | Navpična $F_y$ |
+|-------------------|-----------------|-----------------|
+| Od **navpičnice** α | $F\sin\alpha$ | $F\cos\alpha$ |
+| Od **vodoravnice** α | $F\cos\alpha$ | $F\sin\alpha$ |
+
+> **Mnemotehnika:** "sin od navpičnice" = odkloni od navpičnice → vodoravna komponenta.
+
+**Rezultanta sistema sil v točki:**
+
+$$R_x = \sum F_{x,i}, \quad R_y = \sum F_{y,i}, \quad R = \sqrt{R_x^2 + R_y^2}$$
+
+---
+
+## Redukcija sistema sil na točko O
+
+Vsak sistem sil nadomestimo z **eno rezultanto $\vec{R}$** in **enim momentom $M_O$** v izbrani točki:
+
+$$\vec{R} = \sum \vec{F}_i, \qquad M_O = \sum (r_i \times F_i)$$
+
+Za 2D:
+
+$$M_O = \sum (x_i \cdot F_{y,i} - y_i \cdot F_{x,i})$$
+
+**Praktični postopek:**
+1. Seštej vse sile komponento po komponento → $R_x$, $R_y$
+2. Za vsako silo izračunaj moment okrog O → vsota da $M_O$
+3. Rezultat: $(R_x,\ R_y,\ M_O)$ v točki O
+
+> **Posebni primeri:** $R = 0, M_O \neq 0$ → para sil (moment ne zavisi od izbire točke O). $R \neq 0, M_O = 0$ → sila gre skozi točko O.
+
+> **gl.:** [[Blok 0 - Statika#Intuicija]]
 
 ---
 

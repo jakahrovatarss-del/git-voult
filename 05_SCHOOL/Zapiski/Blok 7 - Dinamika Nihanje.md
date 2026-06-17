@@ -39,8 +39,20 @@ RESONANCA: Fmax ko ω_vzb ≈ ω₀
 NIHALO (matematično):
   ω₀ = √(g/L)
 
+ENERGETSKI ZAKONI — DELO, MOČ, ENERGIJA:
+  Delo sile:        A = F · s · cosφ    [J = Nm]
+                    A = ∫F·ds           (spremenljiva sila)
+  Delo momenta:     A = M · φ           [J], φ v radianih
+  Moč:              P = dA/dt = F · v   [W = J/s]
+  Moč (rotacija):   P = M · ω
+  IZREK o delu in energiji:
+    A_net = ΔEk = Ek2 - Ek1
+    (neto delo = sprememba kinetične energije)
+
 KINETIČNA ENERGIJA:
-  Ek = ½·m·v² + ½·I·ω²
+  Ek = ½·m·v²             (translacija)
+  Ek = ½·I·ω²             (rotacija okrog fiksne osi)
+  Ek = ½·m·v² + ½·I·ω²   (splošno gibanje togega telesa)
 
 POTENCIALNA ENERGIJA:
   Ep = m·g·h   (gravitacijska)
@@ -50,6 +62,43 @@ ENERGIJSKA METODA (nihanje):
   Emax = const → Ek,max = Ep,max
   ½·m·v²max = ½·k·x²max → ω₀ = √(k/m)
 ```
+
+---
+
+## Energetski zakoni — delo, moč, energija
+
+### Delo sile
+
+$$\boxed{A = F \cdot s \cdot \cos\varphi}$$
+
+kjer je $\varphi$ kot med silo in smerjo premika. Enota: $[\text{J}] = [\text{Nm}]$.
+
+- **Stalna sila:** $A = F \cdot s$ (ko sta $F$ in $s$ vzporedna)
+- **Spremenljiva sila:** $A = \int F \, ds$
+- **Moment:** $A = M \cdot \varphi$ ($\varphi$ v radianih!)
+
+### Moč
+
+$$\boxed{P = \frac{dA}{dt} = F \cdot v}, \qquad P_{rotacija} = M \cdot \omega$$
+
+Enota: $[\text{W}] = [\text{J/s}]$. Moč je hitrost opravljanja dela.
+
+### Izrek o delu in kinetični energiji
+
+$$\boxed{A_{net} = \Delta E_k = E_{k2} - E_{k1}}$$
+
+Neto delo vseh sil = sprememba kinetične energije. To je **alternativa Newtonu II** — posebej koristno kadar ne iščemo sil, ampak hitrosti.
+
+| Metoda | Kdaj | Kaj dobimo |
+|--------|------|------------|
+| Newton II $F = ma$ | Ko iščemo sile ali pospeške | $F(t)$, $a(t)$ |
+| Izrek o delu $A = ΔE_k$ | Ko iščemo hitrosti | $v$ brez $a$ |
+| Energijska ohranitev $E = const$ | Konzervativni sistem | $v$ pri dani legi |
+
+> **Konzervativni sistem** (brez trenja, brez dušenja): $E_k + E_p = \text{const}$  
+> → $\frac{1}{2}mv_1^2 + mgh_1 = \frac{1}{2}mv_2^2 + mgh_2$
+
+> **gl.:** [[Blok 6 - Kinematika#Gibalna stanja — primerjalna tabela]]
 
 ---
 
