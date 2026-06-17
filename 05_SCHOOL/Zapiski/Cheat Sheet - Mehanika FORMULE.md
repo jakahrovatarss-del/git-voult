@@ -72,6 +72,8 @@ $$\frac{dT}{ds} = -q, \qquad \frac{dM}{ds} = T$$
 | Konzola, porazdeljena $q$ | $q L^2 / 2$ |
 | Prostoležeč, $F$ na sredini | $F L / 4$ |
 | Prostoležeč, porazdeljena $q$ | $q L^2 / 8$ |
+| Prostoležeč, $F$ pri razdalji $a$ od leve podpore | $\dfrac{F \cdot a \cdot b}{L}$ (kjer $b = L-a$) |
+| Previs (sila $F$ za podporo pri razdalji $a$) | $F \cdot a$ |
 
 ### Oblika diagrama
 
@@ -106,6 +108,7 @@ $$I_x = \sum\left(I_{x,i} + A_i \cdot \Delta y_i^2\right)$$
 | Pravokotnik $b \times h$ | $\frac{bh^3}{12}$ | $\frac{bh^2}{6}$ |
 | Polni krog $d$ | $\frac{\pi d^4}{64}$ | $\frac{\pi d^3}{32}$ |
 | Votli krog $d_o, d_i$ | $\frac{\pi(d_o^4-d_i^4)}{64}$ | $\frac{\pi(d_o^4-d_i^4)}{32 d_o}$ |
+| Votel pravokotnik $B\times H$ brez $b\times h$ | $\dfrac{BH^3-bh^3}{12}$ | $\dfrac{BH^3-bh^3}{6H}$ |
 
 ### Polarna vztrajnost
 
@@ -322,6 +325,12 @@ $$\sigma = \frac{M}{W}, \quad \tau = \frac{M_t}{W_t}$$
 $$\text{VM:} \quad \sigma_{ekv} = \sqrt{\sigma^2+3\tau^2} \leq \sigma_{dop}$$
 $$\text{Tresca:} \quad \sigma_{ekv} = \sqrt{\sigma^2+4\tau^2} \leq \sigma_{dop}$$
 
+### Ekvivalentni moment (krožni prerez — direktno dimenzioniranje)
+
+$$M_{ekv,VM} = \sqrt{M^2 + 0{,}75\,M_t^2} \quad \Rightarrow \quad d = \sqrt[3]{\frac{32\,M_{ekv,VM}}{\pi\,\sigma_{dop}}}$$
+
+$$M_{ekv,T} = \frac{1}{2}\!\left(M + \sqrt{M^2 + M_t^2}\right) \quad \text{(velja ko } \sigma_2 \geq 0\text{)}$$
+
 ### Materialni podatki
 
 | Material | $G$ [kN/cm²] | $\tau_{dop}$ [kN/cm²] |
@@ -339,6 +348,10 @@ $$G = \frac{E}{2(1+\nu)}$$
 $$v = \dot{s}, \quad a = \dot{v}, \quad \omega = \dot{\varphi}, \quad \alpha = \dot{\omega}$$
 
 $$\omega = \frac{2\pi n}{60} \quad \text{[rpm → rad/s]}$$
+
+### EPG — enakomerno pospešeno gibanje ($a = \text{konst}$)
+
+$$v = v_0 + at, \qquad s = v_0 t + \tfrac{1}{2}at^2, \qquad v^2 = v_0^2 + 2a\Delta s \quad \text{(brez časa!)}$$
 
 ### Naravni koordinatni sistem
 
