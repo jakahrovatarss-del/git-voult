@@ -36,6 +36,73 @@ VARNOSTNI FAKTOR:
 
 ---
 
+## Intuicija
+
+### Fizikalna slika — "Kdaj material popusti?"
+
+Material ne "ve", ali ga obremenjuješ v eni ali treh smereh. Popusti takrat, ko notranja energija ali strižna napetost doseže kritično vrednost. Ker pa je material kompleksno, so se razvile hipoteze — vsaka "teorija" o tem, **kaj je tisto, kar uniči material**.
+
+> *Vizualizacija:* Predstavljaj si, da vsaka točka v materialu "čuti" svojo ekvivalentno napetost. Ko ta doseže $\sigma_{dop}$ — konec.
+
+**Analogija — dve teoriji:**
+- **Tresca (maks. strig):** Material popusti, ko strižna napetost doseže kritično vrednost. Konzervativnejša.
+- **Von Mises (distorzijska energija):** Material popusti, ko energija spremembe oblike doseže kritično vrednost. Bolj realistična za žilave materiale.
+
+---
+
+### Miselni eksperiment — "Čisto strižno stanje"
+
+Vzemi enoosni natezni test: material popusti pri $\sigma_{dop}$. Zdaj naredi čisti strižni test z istim materialom.
+
+- **Tresca** pravi: $\tau_{dop} = \sigma_{dop}/2$ (strig je dober preizkuševalec)
+- **Von Mises** pravi: $\tau_{dop} = \sigma_{dop}/\sqrt{3} \approx 0.577 \cdot \sigma_{dop}$
+
+Dejanski eksperiment je bližje Von Misesu. Tresca da **15% nižji** $\tau_{dop}$ → je bolj konzervativna.
+
+**Deformiraj do ekstrema:** Uniaksijalni nateg ($\sigma_1 = \sigma$, $\sigma_2 = \sigma_3 = 0$):
+- Tresca: $\sigma_{ekv} = \sigma_1 - \sigma_3 = \sigma$ ✓
+- Von Mises: $\sigma_{ekv} = \sqrt{\sigma^2} = \sigma$ ✓
+Obe hipotezi sta konsistentni z uniaksialnim testom — razlikujeta se šele pri kombiniranih stanjih.
+
+---
+
+### Zakaj enačba izgleda tako?
+
+$$\text{VM 2D:} \quad \sigma_{ekv} = \sqrt{\sigma^2 + 3\tau^2}$$
+$$\text{Tresca 2D:} \quad \sigma_{ekv} = \sqrt{\sigma^2 + 4\tau^2}$$
+
+**Zakaj 3 in 4?** Oba izhajata iz splošnih formul za $\sigma_1, \sigma_2$. Ko vstavljaš $\sigma_x = \sigma$, $\tau_{xy} = \tau$, $\sigma_y = 0$:
+- VM: $\sigma_{ekv}^2 = \sigma_1^2 - \sigma_1\sigma_2 + \sigma_2^2$ → po algebri dobíš $\sigma^2 + 3\tau^2$
+- Tresca: $\sigma_{ekv} = \sigma_1 - \sigma_2$ → po algebri dobíš $\sqrt{\sigma^2 + 4\tau^2}$
+
+**Zapomni si:** Tresca = **4** $\tau^2$, VM = **3** $\tau^2$. Tresca je vedno večja → bolj konzervativna.
+
+---
+
+### Mejni primeri (sanity check)
+
+| Stanje | Von Mises | Tresca | Komentar |
+|---|---|---|---|
+| Čisto nateg ($\tau = 0$) | $\sigma$ | $\sigma$ | Obe enaki ✓ |
+| Čisto strig ($\sigma = 0$) | $\sqrt{3}\tau$ | $2\tau$ | Tresca 15% višja |
+| Kombinirano, enako $\sigma = \tau$ | $2\sigma$ | $\sqrt{5}\sigma \approx 2.24\sigma$ | Tresca višja |
+
+> ⚠️ **Za 3D:** Razvrstitev $\sigma_1 \geq \sigma_2 \geq \sigma_3$ je OBVEZNA. $\sigma_3 = 0$ je pogosto vmesna vrednost, ne minimum!
+
+---
+
+### Veriga vzrokov — Konec verige trdnosti
+
+Blok 3.5 je **zadnji korak preveritve trdnosti**:
+
+$$\text{Blok 0} \to \text{Blok 1} \to \text{Blok 2/5} \to \text{Blok 3} \to \text{Blok 3.5} \quad (\sigma_{ekv} \leq \sigma_{dop}?)$$
+
+> **Povzetek:** $\sigma_{ekv} \leq \sigma_{dop}$ → varno. $\sigma_{ekv} > \sigma_{dop}$ → predimenzioniraj ali zamenjaj material.
+
+> **glej:** [[Blok 3 - Napetostno Stanje#Intuicija]] | [[Blok 5 - Torzija#Intuicija]]
+
+---
+
 ## Kako prepoznamo nalogo tega bloka
 
 **Ključne besede v besedilu:**

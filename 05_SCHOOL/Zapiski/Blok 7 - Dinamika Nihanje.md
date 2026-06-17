@@ -53,6 +53,82 @@ ENERGIJSKA METODA (nihanje):
 
 ---
 
+## Intuicija
+
+### Fizikalna slika — "Masa se upira, vzmet vrača, dušilnik troši"
+
+Nihanje je igra med **vztrajnostjo** in **elastičnostjo**:
+- Masa ($m$) hoče ostati tam, kjer je — upira se spremembi
+- Vzmet ($k$) jo vleče nazaj k ravnovesju — bolj je odmaknjena, bolj vleče
+- Dušilnik ($c$) troši energijo — zmanjšuje amplitudo
+
+> *Vizualizacija:* Masa na vzmeti je kot nihalo. Potisnéš ga → vzmet to vrne → inercija ga ponese čez ravnovesje → vzmet zopet vrne. Brez dušenja: neskončno nihanje. Z dušenjem: postopoma zamira.
+
+**Analogija — avtomobilska vzmetenje:** Udariš v luknjo → vzmet absorbira udarec → blažilnik prepreči, da bi avto "poskakoval" v nedogled. Brez blažilnika = resonanca pri vsaki neravnini.
+
+---
+
+### Miselni eksperiment — "Trda vzmet vs. mehka"
+
+Trda vzmet ($k$ velik):
+- Hitro nihanje, visoka frekvenca $\omega_0 = \sqrt{k/m}$ ✓
+- Primer: kvarcna ura — zelo toga vzmet, zelo visoka frekvenca
+
+Mehka vzmet ($k$ majhen):
+- Počasno nihanje, nizka frekvenca
+- Primer: avtomobilska vzmet — mehka, nizka frekvenca
+
+**Deformiraj do ekstrema:**
+- $k \to \infty$ (absolutno toga vzmet): $\omega_0 \to \infty$ → infinitely fast, the system doesn't move ✓
+- $k \to 0$ (ni vzmeti): $\omega_0 \to 0$ → ni nihanja, masa ostane tam kjer je ✓
+- $m \to \infty$ (ogromna masa): $\omega_0 \to 0$ → masivna telesa nihajo počasi ✓
+- $m \to 0$ (breztežna masa): $\omega_0 \to \infty$ → nima smisla fizikalno ✓
+
+---
+
+### Zakaj enačba izgleda tako?
+
+$$m\ddot{x} + kx = 0, \qquad \omega_0 = \sqrt{\frac{k}{m}}$$
+
+**Zakaj $m\ddot{x}$?** Newton II: $F = ma$. Masa se upira pospešku.
+
+**Zakaj $+kx$?** Vzmet sila je $F_{vzmet} = -kx$ (nazaj k ravnovesju). Newton II: $m\ddot{x} = -kx$ → $m\ddot{x} + kx = 0$.
+
+**Zakaj $\omega_0 = \sqrt{k/m}$?** Ker rešitev dif. enačbe je $x(t) = A\cos(\omega_0 t + \phi)$. Ko vstaviš nazaj: $-m\omega_0^2 + k = 0$ → $\omega_0 = \sqrt{k/m}$.
+
+**Intuicija:** Trda vzmet (velik $k$) → velik $\omega_0$ = hitra nihanja. Težka masa (velik $m$) → majhen $\omega_0$ = počasna nihanja.
+
+> *Enote:* $[\omega_0] = \sqrt{\frac{\text{N/m}}{\text{kg}}} = \sqrt{\frac{\text{kg/s}^2}{\text{kg}}} = \text{rad/s}$ ✓
+
+---
+
+### Mejni primeri (sanity check)
+
+| Situacija | Pričakuješ |
+|---|---|
+| $k$ se podvoji | $\omega_0$ naraste za $\sqrt{2}$, $f_0$ naraste za $\sqrt{2}$ |
+| $m$ se podvoji | $\omega_0$ pade za $\sqrt{2}$, nihanje postane počasnejše |
+| Resonanca ($\omega_{vzb} = \omega_0$) | Amplituda → $\infty$ (brez dušenja) |
+| Dušenje ($\xi > 1$) | Sistem ne niha → eksponentno zamira (preddušen) |
+
+> ⚠️ **Enote mase:** Vedno v **kg** (ali tonah za gradbene aplikacije), nikoli v kN!
+
+---
+
+### Veriga vzrokov — Konec kinematično-dinamične verige
+
+Blok 7 je zaključek kinematično-dinamičnega dela:
+
+$$\text{Blok 6 (kinematika)} \to a, \alpha \to \text{Blok 7 (Newton II)} \to F, M$$
+
+D'Alembertov princip: dodaj inercijsko silo $-m\vec{a}$ in reši dinamični problem statično (Blok 0).
+
+> **Povzetek:** Kinematika dá gibanje → dinamika dá sile → statika jih uravnovesi.
+
+> **glej:** [[Blok 6 - Kinematika#Intuicija]] | [[Blok 0 - Statika#Intuicija]]
+
+---
+
 ## Kako prepoznamo nalogo tega bloka
 
 **Ključne besede v besedilu:**

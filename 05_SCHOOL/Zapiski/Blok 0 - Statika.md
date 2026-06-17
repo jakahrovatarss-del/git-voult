@@ -38,6 +38,61 @@ MOMENT PARE SIL:
 
 ---
 
+## Intuicija
+
+### Fizikalna slika — "Ravnovesje je nič pospeška"
+
+Statika je Newton II z $a = 0$. Ko je telo v miru, vsota vseh sil natanko nič — ne zato, ker sil ni, ampak ker se **izničijo**. Vsaka podpora "potisne nazaj" ravno toliko, kolikor obremenitev pritiska nanjo.
+
+> *Vizualizacija:* Predstavljaj si konstrukcijo kot telo, ki "plava" v polju sil. Vsaka sila je puščica. Ko so vse puščice skupaj nič — telo ne gre nikamor.
+
+**Analogija — miza s štirimi nogami:** Ko porazdeling teže ni enaka, noge prevzamejo različne dele. Odstraviš eno nogo → teža se prerazporedi. Odstraviš dve → miza pade. To je razlika med statično določenim in nedoločenim sistemom.
+
+---
+
+### Miselni eksperiment — "Odreži podporo"
+
+Za vsako nalogo: miselno odreži eno podporo. Kaj se zgodi?
+- Konstrukcija se premakne → podpora je statično **nujna**.
+- Ostane v ravnovesju → je redundantna (statično nedoločena).
+
+Ko pišeš FBD in ne veš, ali si kaj pozabil: **"Ali bi se telo premaknilo brez te sile?"** Če da → jo potrebuješ.
+
+---
+
+### Zakaj enačba izgleda tako?
+
+$$\sum F_x = 0, \quad \sum F_y = 0, \quad \sum M_A = 0$$
+
+Tri enačbe, ker ima telo v ravnini **3 prostostne stopnje**: pomik x, pomik y, zasuk. Vsaka enačba "zaklene" eno.
+
+**Zakaj momentna enačba?** Ker sila na ročici povzroča vrtenje. $M = F \cdot r$ — enota $\text{N·m}$ = energija na radian. Momentna enačba je tista, ki locira, *kje* sila deluje. Brez nje ne bi razlikoval med silo nad podporo in silo na sredini.
+
+> *Mejni primer — sila točno nad tečajem:* Moment te sile je nič → ne prispeva k zasuku → tečaj jo prevzame 100 %.
+
+---
+
+### Mejni primeri (sanity check)
+
+| Situacija | Pričakuješ |
+|---|---|
+| Sila točno nad eno podporo | Ta podpora prevzame 100 %, druga 0 % |
+| Sila na sredini prostoležečega | Vsaka podpora prevzame $F/2$ (simetrija) |
+| Moment brez sil | Podpori prevzameta par sil $\pm M/L$ |
+| Konzola z $F$ na koncu | Vpetje: reakcija $F$ gor + moment $F \cdot L$ |
+
+---
+
+### Veriga vzrokov → Blok 1
+
+Reakcije iz statike so **vstopni podatek za vse nadaljnje bloke**. Ko poznaš $R_A$ in $R_B$, z metodo preseka izračunaš notranje sile $N$, $T$, $M$ — to je [[Blok 1 - NTM Diagrami|Blok 1]].
+
+> **Povzetek:** Statika → reakcije → ki postanejo obremenitve za [[Blok 1 - NTM Diagrami|NTM diagrami]] → [[Blok 2 - Upogib|napetosti]] → [[Blok 4 - Euler Uklon|uklon]].
+
+> **glej:** [[Blok 1 - NTM Diagrami#Intuicija]]
+
+---
+
 ## Kako prepoznamo nalogo tega bloka
 
 **Ključne besede v besedilu:**

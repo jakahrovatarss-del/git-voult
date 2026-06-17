@@ -53,6 +53,70 @@ ZASUK:
 
 ---
 
+## Intuicija
+
+### Fizikalna slika — "Zunanja vlakna delajo, center počiva"
+
+Ko zvijemo gred, vsaka točka prereza se premakne bočno. Točke na robu se premaknejo **največ**, točke ob osi se sploh ne premaknejo. Napetost je sorazmerna s premikom → **strižna napetost narašča od nič (os) do maksimuma (rob)**.
+
+> *Vizualizacija:* Zavrti konec radirke. Označi linijo vzdolž nje. Ko jo zavrtíš, linija postane spirala — zunanja vlakna so se "zasukala" več kot notranja. To je torzijski zasuk.
+
+**Analogija — brisača:** Ko zvijemo mokro brisačo, zunanja vlakna so bolj obremenjena. Tiste, ki so daleč od osi, "potovajo" daleč → večja deformacija → večja napetost.
+
+---
+
+### Miselni eksperiment — "Votla vs. polna gredi"
+
+Polna gredi premer $d$. Votla gredi zunanji premer $d_o$, notranji $d_i = 0.7 d_o$, enaka površina.
+
+- **Polna:** $W_t = \pi d^3/16$
+- **Votla:** $W_t = \pi(d_o^4 - d_i^4)/(16 d_o)$ — bistveno večji od polne pri enaki masi!
+
+**Zakaj votla rešuje?** Material ob osi skoro nič ne prispeva k torzijski togosti (majhen $r$), a zaseda maso. Odstrani ga → masa gre navzven → $I_p$ naraste → večji $W_t$ → manjša napetost.
+
+**Deformiraj do ekstrema:**
+- $r \to 0$ (os): prispevek k napetosti → nič
+- $r = r_{max}$ (rob): maksimalna napetost
+
+---
+
+### Zakaj enačba izgleda tako?
+
+$$\tau(r) = \frac{M_t \cdot r}{I_p}, \qquad \tau_{max} = \frac{M_t}{W_t} = \frac{M_t \cdot r_{max}}{I_p}$$
+
+**Zakaj $r$ (razdalja od osi)?** Ker pri čisti torziji se prerez zasuka za kot $\phi$. Točka na razdalji $r$ se premakne za $r \cdot \phi$ → deformacija $\gamma = r \cdot \phi / L$ → napetost $\tau = G \cdot \gamma = G \cdot r \cdot \phi/L$. Konstanta $M_t/GI_p$ zamenja $\phi/L$.
+
+**Zakaj $I_p = I_x + I_y$?** Ker polarna vztrajnost vključuje razdalje v obeh smereh — to je seštevek obeh osi.
+
+**Zakaj $W_t = 2W$ za polni krog?** Ker $I_p = 2I$ in $W_t = I_p/r_{max} = 2I/r = 2 \cdot I/e_{max} = 2W$.
+
+> *Enote:* $[\tau_{max}] = \frac{\text{kNcm}}{\text{cm}^3} = \text{kN/cm}^2$ ✓
+
+---
+
+### Mejni primeri (sanity check)
+
+| Situacija | Pričakuješ |
+|---|---|
+| Odprt profil (U, L, I) | $W_t \approx \frac{1}{3}\sum ht^3$ — zelo majhen! Torzija je katastrofalna. |
+| Zaprt box (Bredt) | $\tau = M_t / (2A_m t)$ — enakomeren po obodu, učinkovit |
+| Čista torzija, Mohr | $\sigma_1 = +\tau$, $\sigma_2 = -\tau$, $\phi_0 = 45°$ — spiralni lom pri krhkih |
+| $M_t = 0$ | $\tau = 0$, $\phi = 0$ ✓ |
+
+---
+
+### Veriga vzrokov → Blok 3 in Blok 3.5
+
+Torzija dá strižno napetost $\tau$ → v kombinaciji z upogibno napetostjo $\sigma$ (Blok 2):
+- → [[Blok 3 - Napetostno Stanje|Blok 3]]: tenzor z $\sigma$ in $\tau$ → Mohr → $\sigma_1, \sigma_2$
+- → [[Blok 3.5 - Hipoteze Porusitve|Blok 3.5]]: Von Mises $\sqrt{\sigma^2 + 3\tau^2}$ ali Tresca $\sqrt{\sigma^2 + 4\tau^2}$
+
+> **Povzetek:** Gredi pogosto nosijo upogib (M) in torzijo (Mt) skupaj → vedno preveri kombinirano obremenitev!
+
+> **glej:** [[Blok 3.5 - Hipoteze Porusitve#Intuicija]]
+
+---
+
 ## Kako prepoznamo nalogo tega bloka
 
 **Ključne besede v besedilu:**

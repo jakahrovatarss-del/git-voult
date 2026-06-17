@@ -47,6 +47,69 @@ STATIČNI MOMENT (za τ pri upogibu):
 
 ---
 
+## Intuicija
+
+### Fizikalna slika — "Kje je material in kako daleč je od osi?"
+
+Geometrijske karakteristike opisujejo **razporeditev materiala** prereza. Ključna intuicija:
+
+> Material daleč od upogibne osi prispeva **nesorazmerno veliko** k upogibni togosti — prispevek narašča s **kvadratom** razdalje ($e^2$).
+
+**Analogija — I-prerez vs. pravokotnik:**
+Vzemi kos plastelina — pravokotni prerez. Preoblikuj ga v I-profil brez dodajanja materiala. Masa je enaka, a upogibna togost I-prereza je **nekajkrat večja**. Zakaj? Ker si premaknil material stran od nevtralne osi — tja, kjer je deformacija največja in kjer "delo" šteje.
+
+> *Vizualizacija:* Nevtralna os je "os vrtenja" pri upogibu. Fiber na razdalji $e$ se raztegne za $e \cdot \kappa$. Napetost je $\sigma = E \cdot e \cdot \kappa$. Celoten moment odpornosti je integral napetosti × ročice → $I = \int e^2 \, dA$.
+
+---
+
+### Miselni eksperiment — "Preoblikuj brez dodajanja"
+
+Pravokoten prerez $b \times h$ preoblikuj v I-prerez z enako površino. Primerjaj $I$:
+- Pravokotnik: $I = bh^3/12$ — material enakomerno porazdeljen
+- I-prerez: skoraj ves material pri $e_{max}$ → $I$ bistveno večji
+
+**Deformiraj do ekstrema:** Stojino I-prereza naredi neskončno tanko — ves material je samo pri pasnicah → maksimalen možen $I$ za dano površino. (V praksi ta meja ni dosegljiva, a intuicija drži.)
+
+---
+
+### Zakaj enačba izgleda tako?
+
+$$I_x = \int_A y^2 \, dA, \qquad \text{Steiner:} \quad I = I_0 + A \cdot e^2$$
+
+**Zakaj $y^2$?** Ker pri upogibu $\sigma = M \cdot y / I$. Moment celotnega prereza je $\int \sigma \cdot y \, dA = \frac{M}{I} \int y^2 \, dA$ → iz tega sledi $I = \int y^2 \, dA$.
+
+**Zakaj Steiner ($+Ae^2$)?** Ko prerez ni v koordinatnem izhodišču, vsak element dobi dodatno razdaljo $e$ do referenčne osi. Ker razdalja nastopa kvadratno, je $Ae^2$ vedno pozitiven — Steiner samo sešteva.
+
+> *Enote kot kontrola:* $[I] = \text{m}^2 \cdot \text{m}^2 = \text{m}^4$ (ali $\text{cm}^4$) ✓
+
+---
+
+### Mejni primeri (sanity check)
+
+| Situacija | Pričakuješ |
+|---|---|
+| Ves material na nevtralni osi ($e = 0$) | $I \to 0$ → ni upogibne togosti |
+| Ves material čim dlje od osi | $I$ maksimalen → idealni I-prerez |
+| Simetričen prerez | Težišče vedno na simetralici |
+| Pravokotnik stoji na manjši strani ($b < h$ leže) | $I = hb^3/12 < bh^3/12$ → "pokončno" je vedno boljše |
+
+> ⚠️ **Kritičen odpornostni moment $W$:** Vedno vzemi $W = I / e_{max}$ — tisti fiber z največjo razdaljo od osi je kritičen!
+
+---
+
+### Veriga vzrokov — "Specifikacija prereza"
+
+Geometrijske karakteristike so **"hardware specs" prereza** — vstopajo v vsako napetostno formulo:
+- $W = I/e_{max}$ → [[Blok 2 - Upogib|upogibna napetost]] $\sigma = M/W$
+- $I_{min}$ → [[Blok 4 - Euler Uklon|kritična uklonska sila]] $F_k = \pi^2EI_{min}/l_u^2$
+- $I_p = I_x + I_y$ → [[Blok 5 - Torzija|torzijski zasuk]] $\phi = Mt \cdot L / (G \cdot I_p)$
+
+> **Povzetek:** Blok 1.5 = specifikacija prereza. Brez $I$, $W$, $A$ ne moreš izračunati ničesar v Blokih 2–5.
+
+> **glej:** [[Blok 2 - Upogib#Intuicija]]
+
+---
+
 ## Kako prepoznamo nalogo tega bloka
 
 **Ključne besede v besedilu:**

@@ -72,6 +72,66 @@ HOOKE-OV ZAKON 3D (Laméjeve konstante):
 
 ---
 
+## Intuicija
+
+### Fizikalna slika — "Majhna kocka v materialu"
+
+Predstavljaj si, da si mikroskopski opazovalec znotraj materiala. Okrog tebe je majhna kocka. Na vsaki ploskvi delujeta dve vrsti napetosti:
+- **Normalna napetost $\sigma$** — pritiska pravokotno na ploskev (nateg ali tlak)
+- **Strižna napetost $\tau$** — drsi vzdolž ploskve
+
+Zdaj zavrti kocko za kot $\phi$. Napetosti se spremenijo — **iste fizikalne sile, drug koordinatni sistem**. Mohrova krožnica je "kompas za te rotacije" — vsakemu zasuku ustreza točka na krožnici.
+
+> *Vizualizacija:* Mohrova krožnica je mapa napetostnih stanj. Obhodíš cel krog → vidiš vse možne kombinacije $(\sigma, \tau)$ pri vsakem kotu zasuka.
+
+---
+
+### Miselni eksperiment — "Stisni gumijasto kocko pod 45°"
+
+Stisni gumijasto kocko od leve in desne ($\sigma_x < 0$). Pod kotom 45° je napetost čisto strižna. Zakaj? Ker na tisti ravnini se dve tlačni napetosti "razporedita" — ena potisne, druga potegne — in skupaj ustvarita strig.
+
+**Deformiraj do ekstrema:**
+- Enoosni nateg → zasukaj za 45° → dobíš $\tau_{max} = \sigma/2$. To je Mohrova krožnica v akciji.
+- Dvoosno enako tlačno → $R = 0$ → krožnica je točka → zasukaj za katerikoli kot → napetosti se ne spremenijo (hidrostatično).
+
+---
+
+### Zakaj enačba izgleda tako?
+
+$$\sigma_1 = \frac{\sigma_x + \sigma_y}{2} + R, \qquad R = \sqrt{\left(\frac{\sigma_x - \sigma_y}{2}\right)^2 + \tau_{xy}^2}$$
+
+**Zakaj srednja vrednost in radij?** Ker transformacija napetosti pri zasuku je matematično rotacija v ravnini $(\sigma, \tau)$. Vsaka rotacija opiše krog. Središče = povprečje normalnih napetosti (to je invarianta pri rotaciji).
+
+**Invarianta $\sigma_1 + \sigma_2 = \sigma_x + \sigma_y$:** Seštevek normalnih napetosti se pri rotaciji ne spremeni. Je hiter preverjevalni filter.
+
+> *Enote:* $[\sigma_{1,2}] = \text{MPa}$ ✓
+
+---
+
+### Mejni primeri (sanity check)
+
+| Stanje | $\sigma_1$ | $\sigma_2$ | $\tau_{max}$ | $\phi_0$ |
+|---|---|---|---|---|
+| Enoosno ($\sigma_y=0$, $\tau=0$) | $\sigma$ | $0$ | $\sigma/2$ | $45°$ |
+| Čisto strižno ($\sigma=0$) | $+\tau$ | $-\tau$ | $\tau$ | $45°$ |
+| Dvoosno enako | $\sigma$ | $\sigma$ | $0$ | — |
+| Hidrostatično | $-p$ | $-p$ | $0$ | — |
+
+> ⚠️ **Čisto strižno:** $\sigma_{1,2} = \pm\tau$ pod 45°. Zato se krhki materiali pri torziji lomijo spiralno — natezna napetost pod 45° jih potrga!
+
+---
+
+### Veriga vzrokov → Blok 3.5
+
+Ko imaš $\sigma_1$, $\sigma_2$:
+- → [[Blok 3.5 - Hipoteze Porusitve|Blok 3.5]]: Von Mises ali Tresca → $\sigma_{ekv}$ → trdnostni pogoj
+
+> **Povzetek:** $(\sigma, \tau)$ iz Blok 2+5 → tenzor → Mohr → $\sigma_1, \sigma_2$ → porušitev.
+
+> **glej:** [[Blok 3.5 - Hipoteze Porusitve#Intuicija]]
+
+---
+
 ## Kako prepoznamo nalogo tega bloka
 
 **Ključne besede v besedilu:**

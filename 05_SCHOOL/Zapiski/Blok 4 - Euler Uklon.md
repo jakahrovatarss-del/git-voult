@@ -54,6 +54,72 @@ MEJE VELJAVNOSTI (les):
 
 ---
 
+## Intuicija
+
+### Fizikalna slika — "Nenadna izguba stabilnosti"
+
+Uklon je **drugačen** od prekoračitve napetosti. Pri napetostnem lomu material postopoma teče. Pri uklonu: palica zdrži, zdrži, zdrži — in potem **nenadoma** skoči v stran. Je pojav **stabilnosti**, ne trdnosti.
+
+> *Vizualizacija:* Potisneš slamico navzdol s prstom. Sprva nič. Potem en hip — uklon. Kritična sila je tista, pri kateri upognjeni položaj postane "stabilnejši" od ravnega.
+
+**Analogija — slamka:** Stisni slamico navpično. Preden se ukloni, prenesla je ogromno. Ko pa se ukloni — drži le še delček od kritične sile. Razlika s trganjem: slamka se ne zlomi po dolžini — se sklanata.
+
+**Analogija — ravnilo:** Pokončno postavljeno ravnilo. Pritisni s prsti. V nekem trenutku se upogne — takoj. Ta trenutek je kritična sila Eulerja.
+
+---
+
+### Miselni eksperiment — "Krajša palica ne ukloni"
+
+Skrajšaj palico 2×: $F_k = \pi^2EI/l_u^2$ → $F_k$ se poveča **4×** (kvadratna odvisnost!).
+
+Podvoji $I$ (prerez z višjim odpornostnim momentom): $F_k$ se podvoji.
+
+**Deformiraj do ekstrema:**
+- $l_u \to 0$: $F_k \to \infty$ → kratka palica ne more ukloniti (samo se zdrobi) ✓
+- $l_u \to \infty$: $F_k \to 0$ → dolga vitka palica ukloni pri minimalni sili ✓
+- $I \to 0$ (panel, rezilo): $F_k \to 0$ → tanek element nevarno ✓
+
+---
+
+### Zakaj enačba izgleda tako?
+
+$$F_k = \frac{\pi^2 E I_{min}}{l_u^2}$$
+
+**Zakaj $\pi^2$?** Ker upognjena oblika pri Eulerjevem uklonu (oba konca na členih) je **polovica sinusovale**. Sinusovale nastajajo pri nihanju, in $\pi$ pride od valovne dolžine. Matematično: rešitev dif. enačbe $EI y'' + F y = 0$ da $F_k = \pi^2 EI/L^2$.
+
+**Zakaj $I_{min}$ in ne $I_{max}$?** Ker palica vedno ukloni v smeri **najmanjše togosti** — po šibki osi. To je "šibko mesto" prereza.
+
+**Zakaj $l_u^2$ (kvadrat)?** Ker daljša palica = večja ročica za upogib. Moment od ekscentrično delujočega bremena narašča z dolžino — kvadratno, ker je ročica odvisna od amplitude upogiba.
+
+> *Enote:* $[F_k] = \frac{\text{kN/cm}^2 \cdot \text{cm}^4}{\text{cm}^2} = \text{kN}$ ✓
+
+---
+
+### Mejni primeri (sanity check)
+
+| Situacija | Pričakuješ |
+|---|---|
+| Konzola ($\beta = 2$) | $F_k$ je **4×** manjša kot pri $\beta = 1$ (najnevarnejša!) |
+| Oba konca vpeta ($\beta = 0.5$) | $F_k$ je **4×** večja kot $\beta = 1$ |
+| Kvadratni prerez vs. okrogel (enaka površina) | Krog ima večji $I_{min}$ → manj nagnjen k uklonu |
+| $\lambda > \lambda_e$ (Euler ne velja) | Uporabi Tetmajer za les, ω za jeklo |
+
+---
+
+### Veriga vzrokov — Ločena veja od trdnostnih blokov
+
+Uklon je **vzporedna veja** ob trdnosti. Tlačno obremenjen element moraš preveriti **oboje**:
+1. **Trdnostni pogoj:** $\sigma = F/A \leq \sigma_{dop}$
+2. **Uklonski pogoj:** $F \leq F_k / \nu$
+
+Oba pogoja morata biti izpolnjena. Kateri prevlada → odvisno od vitkosti $\lambda$.
+
+> **Povzetek:** Dolg + vitek + tlak → uklon. Kratek + debel + tlak → trdnost. Preveriti moraš oba.
+
+> **glej:** [[Blok 1.5 - Geometrijske Karakteristike#Intuicija]] | [[Blok 2 - Upogib#Intuicija]]
+
+---
+
 ## Kako prepoznamo nalogo tega bloka
 
 **Ključne besede v besedilu:**

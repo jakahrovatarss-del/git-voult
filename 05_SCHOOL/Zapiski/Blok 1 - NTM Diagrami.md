@@ -37,6 +37,68 @@ TIPIČNI Mmax:
 
 ---
 
+## Intuicija
+
+### Fizikalna slika — "Prereži in poglej"
+
+Metoda preseka je enostavna ideja: vzemi katerikoli del konstrukcije, **ga miselno prereži** in vpraši — kakšne sile morajo delovati na rezni ploskvi, da je ta del v ravnovesju?
+
+Tiste sile so notranje sile: **N** (normalna/osna), **T** (prečna/strižna), **M** (upogibni moment).
+
+> *Vizualizacija:* Notranja sila ni prisotna na celotni palici naenkrat — je različna vzdolž. V vsakem prerezu je drugačna vrednost. Diagram N/T/M je "rentgen" konstrukcije — pokaže, kako obremenitev teče skozi material.
+
+**Analogija — kruh:** Stisni palec v sredino palice kruha — prelomil se bo tam, kjer je moment največji. To je $M_{max}$ — ravno tam, kjer T = 0 (ker T je odvod M).
+
+---
+
+### Miselni eksperiment — "Premikaj rez"
+
+Začni na levem robu ($x = 0$), rez postopoma premikaj v desno. Opazuj:
+- **T(x):** Vsaka točkovna sila povzroči skok. Med silami je T = konst (brez porazd. obtežbe).
+- **M(x):** Raste pod ploskvijo T-diagrama. Vrh je tam, kjer T = 0.
+- **Porazdel. obtežba $q$:** T se menja linearno, M parabolično.
+
+Deformiraj do ekstrema: Kaj se zgodi, ko je na prostoležečem samo ena sila točno nad podporo? $M = 0$ povsod! (Sila nima ročice — moment je nič.)
+
+---
+
+### Zakaj enačba izgleda tako?
+
+$$\frac{dT}{dx} = -q(x), \qquad \frac{dM}{dx} = T(x)$$
+
+**Zakaj $dM/dx = T$?** Moment na prerezu $x + dx$ = moment na $x$ + prispevek strižne sile $T$ na razdalji $dx$. Torej $M$ je integral $T$ — in tam kjer $T = 0$, je $M$ na ekstremu.
+
+**Zakaj $dT/dx = -q$?** Ker vsak košček dolžine $dx$ nosi obtežbo $q \cdot dx$ direktno v T.
+
+> *Enote kot kontrola:* $[T] = \text{kN}$, $[M] = \text{kNm}$, $[q] = \text{kN/m}$ → $dM/dx: \frac{\text{kNm}}{\text{m}} = \text{kN}$ ✓
+
+---
+
+### Mejni primeri (sanity check)
+
+| Situacija | Pričakuješ |
+|---|---|
+| Točkovna sila $F$ na sredini prostoležečega | T skoči za $F$; $M_{max} = FL/4$ na sredini |
+| Enakomerna obtežba $q$ | T linearno, M parabolično, $M_{max} = qL^2/8$ |
+| Konzola z $F$ | T = konst $F$; M linearno od 0 (konec) do $FL$ (vpetje) |
+| Momentna obremenitev $M_0$ točkovno | T ostane enak, M skoči za $M_0$ |
+
+> ⚠️ **Preveritev:** $M$ ob tečaju ali valju = 0. $T$ pri vpetju konzole = reakcija.
+
+---
+
+### Veriga vzrokov → Blok 2
+
+Iz NTM diagramov dobiš $M_{max}$ v **kritičnem prerezu**. Ta vrednost gre direktno v:
+- [[Blok 1.5 - Geometrijske Karakteristike|Blok 1.5]] → geometrija prereza ($W$, $I$)
+- [[Blok 2 - Upogib|Blok 2]] → $\sigma = M/W$
+
+> **Povzetek:** NTM → kritičen prerez → $M_{max}$ → napetost → porušitev.
+
+> **glej:** [[Blok 2 - Upogib#Intuicija]]
+
+---
+
 ## Kako prepoznamo nalogo tega bloka
 
 **Ključne besede v besedilu:**

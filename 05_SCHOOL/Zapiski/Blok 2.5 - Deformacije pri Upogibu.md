@@ -34,6 +34,72 @@ SUPERPOZICIJA:
 
 ---
 
+## Intuicija
+
+### Fizikalna slika — "Polica z knjigami"
+
+Poves pri upogibu vidiš vsak dan: polica z debelimi knjigami se upogne v sredini. Dlje je polica, debelejše knjige, bolj se upogne. Ta slika je $y_{max} = FL^3 / (48EI)$ v živo.
+
+> *Vizualizacija:* Upognjeni nosilci je kot vzmet. Bolj ko obremenimo → bolj se upogne. Togost upogibe sile = $EI / L^3$ (za prostoležeče) ali $3EI/L^3$ (za konzolo).
+
+**Zakaj je $L$ na kubiku?** Ker vsak košček dolžine prispeva k naklonu osi ($\propto L^2$), in nagib osi se integrira v pomik ($\propto L^3$). Dolžina se "ojači" trikrat.
+
+---
+
+### Miselni eksperiment — "Podvoji dolžino"
+
+Konzola dolžine $L$, sila $F$: $y = FL^3 / (3EI)$
+
+Podvoji $L$ → $y$ se poveča **8×**! (kubični zakon)
+
+Podvoji $E$ ali $I$ → $y$ se prepolovi. (linearno)
+
+**Sklep:** Dolžina je daleč najpomembnejši faktor. Zato arhitekti in inženirji skrajšajo razpetino, kadar je poves problem.
+
+Deformiraj do ekstrema:
+- $L \to 0$: $y \to 0$ (kratka palica se ne upogne — tu trdi uklon govori) ✓
+- $EI \to \infty$ (absolutno togo): $y \to 0$ ✓
+- $F \to \infty$: $y \to \infty$ (material se prelomi — toda v elastičnem območju je formula veljavna) ✓
+
+---
+
+### Zakaj enačba izgleda tako?
+
+$$EI \cdot y''(x) = M(x) \qquad \Rightarrow \qquad y_{max} = \frac{FL^3}{3EI}$$
+
+**Zakaj $EI$ v imenovalcu?** $E$ je togost materiala (jeklo upogne manj kot les), $I$ je togost prereza (visok prerez upogne manj). Skupaj tvorita **upogibno togost** $EI$ — koliko "energije" je potrebne za določeno ukrivljenost.
+
+**Zakaj $y''(x) = M(x)/EI$?** Ker ukrivljenost nosilca je sorazmerna momentu — večji moment = bolj ukrivljeno. Matematično: $y'' \approx \kappa$ (ukrivljenost za majhne kote) in $\kappa = M / (EI)$ iz teorije elastičnosti.
+
+> *Enote:* $[FL^3/EI] = \frac{\text{kN} \cdot \text{m}^3}{\text{kN/m}^2 \cdot \text{m}^4} = \text{m}$ ✓
+
+---
+
+### Mejni primeri (sanity check)
+
+| Formula | Mejni primer | Rezultat |
+|---|---|---|
+| $y = FL^3/3EI$ (konzola) | $L \to 0$ | $y \to 0$ ✓ |
+| $y = FL^3/48EI$ (prostoležeč, $F$ sr.) | $F = 0$ | $y = 0$ ✓ |
+| Konzola: $y \propto L^3$ | Podvoji $L$ | $y$ se poveča 8× |
+| Prostoležeč: $y = 5qL^4/384EI$ | Podvoji $q$ | $y$ se podvoji (linearno z $q$) |
+
+---
+
+### Veriga vzrokov — Blok 2 in Blok 2.5 skupaj
+
+V praksi se **vedno** preverita oba pogoja sočasno:
+1. **Trdnostni pogoj:** $\sigma_{max} = M/W \leq \sigma_{dop}$ → [[Blok 2 - Upogib|Blok 2]]
+2. **Pogoj povesa:** $y_{max} \leq f_{dop} = L/300$ ali $L/500$ → Blok 2.5
+
+Oba pogoja dasta minimalni zahtevan $W$ oz. $I$ — prevlada večji.
+
+> **Povzetek:** Napetosti (Blok 2) + Poves (Blok 2.5) = celotno dimenzioniranje upogibnega elementa.
+
+> **glej:** [[Blok 2 - Upogib#Intuicija]] | [[Blok 1 - NTM Diagrami#Intuicija]]
+
+---
+
 ## Kako prepoznamo nalogo tega bloka
 
 **Ključne besede v besedilu:**

@@ -60,6 +60,65 @@ KINEMATIČNA VERIGA:
 
 ---
 
+## Intuicija
+
+### Fizikalna slika — "Vsako togo telo se trenutno vrti okrog neke točke"
+
+Kinematika je gibanje brez sil — samo geometrija gibanja. Ključna intuicija:
+
+> Vsako ravninsko gibanje togega telesa lahko v vsakem trenutku opišemo kot **vrtenje okrog neke točke** — pola hitrosti. Ta točka se premika, a v danem trenutku obstaja vedno ena.
+
+> *Vizualizacija:* Kolo na cesti. V trenutku, ko se dotika tal, je kontaktna točka pri miru — to je pol hitrosti. Vrh kolesa se giblje 2× hitreje od centra. Vsaka točka "obkroži" pol.
+
+**Analogija — kolesarjenje:** Kolo se kotali brez drsenja. Center se giblje naprej s $v$. Zgornja točka platišča se giblje s $2v$. Spodnja točka (kontakt z asfaltom) miruje. To je pol hitrosti.
+
+---
+
+### Miselni eksperiment — "Sledi točki na kolesu"
+
+Označi točko na obodu kolesa. Ko se kolo kotali, ta točka izrisuje **cikloido** — ne kroga, ne premice. V dnu je hitrost nič, v vrhu je hitrost maksimalna. To je direktna vizualizacija, zakaj je pol hitrosti pri stiku s podlago.
+
+**Deformiraj do ekstrema:**
+- Oba konca palice se gibljeta vzporedno (translacija): pol hitrosti je v neskončnosti → nič vrtenja.
+- Ena točka miruje: pol hitrosti je tam → čisto vrtenje.
+
+---
+
+### Zakaj enačba izgleda tako?
+
+$$v_B = v_A + \vec{\omega} \times \vec{r}_{AB}, \qquad |v_{B/A}| = \omega \cdot r_{AB}$$
+
+**Zakaj vektorski produkt?** Ker pri vrtenju je hitrost pravokotna na polmer. $\omega$ je kotna hitrost (smer: os vrtenja), $r$ je položajni vektor — produkt da vektor pravokoten na oba = hitrost.
+
+**Zakaj $v_B = \omega \cdot \overline{PB}$?** Ker pol $P$ miruje ($v_P = 0$). Vsaka točka se "vrti" okrog $P$ z isto $\omega$. Hitrost je sorazmerna razdalji od pola.
+
+> *Enote:* $[v] = [\omega] \cdot [r] = \text{rad/s} \cdot \text{m} = \text{m/s}$ ✓
+
+---
+
+### Mejni primeri (sanity check)
+
+| Situacija | Pol hitrosti | Pričakuješ |
+|---|---|---|
+| Kolo se kotali brez drsenja | Kontaktna točka s podlago | $v_{center} = \omega R$, $v_{vrh} = 2\omega R$ |
+| Čista translacija | V neskončnosti | Vse točke imajo enako hitrost |
+| Čisto vrtenje okrog $O$ | V točki $O$ | $v \propto r$ od $O$ |
+| Palica vpeta v $A$, $v_A = 0$ | Točka $A$ | $v_B = \omega \cdot AB$ |
+
+---
+
+### Veriga vzrokov → Blok 7
+
+Kinematika dá hitrosti in pospeške → te "odzive" poveže dinamika s silami:
+- $a$ iz Blok 6 → vstopi v Newton II: $F = m \cdot a$ (Blok 7)
+- $\alpha$ iz Blok 6 → vstopi v rotacijsko Newton II: $M = I \cdot \alpha$ (Blok 7)
+
+> **Povzetek:** Kinematika = geometrija gibanja. Dinamika = vzrok gibanja. Skupaj: Blok 6 + 7.
+
+> **glej:** [[Blok 7 - Dinamika Nihanje#Intuicija]]
+
+---
+
 ## Kako prepoznamo nalogo tega bloka
 
 **Ključne besede v besedilu:**

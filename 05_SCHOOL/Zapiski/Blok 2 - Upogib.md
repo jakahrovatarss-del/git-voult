@@ -38,6 +38,69 @@ MATERIALNI PODATKI:
 
 ---
 
+## Intuicija
+
+### Fizikalna slika — "Vlakna se raztegujejo in krčijo"
+
+Ko upogneš nosilci, vlakna nad nevtralno osjo se **stlačijo** (tlak), vlakna pod njo se **raztegnejo** (nateg). Nevtralna os je ravno na sredini — tam deformacija = 0, napetost = 0.
+
+> *Vizualizacija:* Upogni ravnilo. Rob, ki se skrajša = tlak. Rob, ki se podaljša = nateg. Ravno v sredini se nič ne zgodi — to je nevtralna os.
+
+**Analogija — knjiga v roki:** Ko upogneš knjigo, hrbet se raztegne, spredaj se stisne. Listi na sredini se komaj premaknejo. Če bi bila knjiga iz jekla — tisti najdaljši list (najdlje od sredine) bi bil najbolj obremenjen.
+
+---
+
+### Miselni eksperiment — "Povečaj višino prereza"
+
+Pravokotnik $b \times h$. Podvoji $h$ (višino):
+- $W = bh^2/6$ → $W$ se poveča **4×**
+- $\sigma_{max} = M/W$ → napetost pade **4×** pri istem momentu!
+
+Podvoji $b$ (širino):
+- $W$ se poveča le **2×**
+
+**Sklep:** Višina prereza je daleč bolj učinkovita kot širina. Zato so nosilci visoki in ozki, ne nizki in široki.
+
+---
+
+### Zakaj enačba izgleda tako?
+
+$$\sigma(y) = \frac{M \cdot y}{I}, \qquad \sigma_{max} = \frac{M}{W} = \frac{M \cdot e_{max}}{I}$$
+
+**Zakaj $M \cdot y$?** Ker pri upogibu se prerez zavrti za kot $\kappa$ (ukrivljenost). Fiber na razdalji $y$ od osi se raztegne za $y \cdot \kappa$ → deformacija $\varepsilon = y \cdot \kappa$ → napetost $\sigma = E \cdot y \cdot \kappa$. Konstanta $M/(EI)$ zamenja $\kappa$.
+
+**Zakaj delimo z $I$ (in ne z $A$)?** Ker $A$ opisuje površino, $I$ pa opisuje, kako je ta površina porazdeljena. Pri upogibu ni važno, koliko materiala je — važno je, **kje** je.
+
+> *Enote:* $[M/W] = \frac{\text{kNm}}{\text{m}^3} = \frac{\text{kN}}{\text{m}^2} = \text{MPa}$ ✓
+
+---
+
+### Mejni primeri (sanity check)
+
+| Situacija | Pričakuješ |
+|---|---|
+| $y = 0$ (nevtralna os) | $\sigma = 0$ — nič napetosti |
+| $y = e_{max}$ (rob prereza) | $\sigma = \sigma_{max}$ — maksimalna napetost |
+| $M = 0$ (ni obremenitve) | $\sigma = 0$ povsod |
+| Asimetričen prerez (T, L) | $\sigma_{nateg} \neq \sigma_{tlak}$ — kritičen je manjši $W$! |
+
+> ⚠️ **Za asimetričen prerez:** Izračunaj oba $W_{zg} = I/e_{zg}$ in $W_{sp} = I/e_{sp}$. Manjši je kritičen!
+
+---
+
+### Veriga vzrokov → Blok 3 in Blok 2.5
+
+Ko imaš $\sigma_{max}$:
+- → [[Blok 3 - Napetostno Stanje|Blok 3]]: sestavi napetostni tenzor ($\sigma_x = \sigma$, $\tau_{xy}$ iz Žuravski)
+- → [[Blok 2.5 - Deformacije pri Upogibu|Blok 2.5]]: izračunaj poves $y_{max}$ (iste enačbe, samo integrirane)
+- → [[Blok 3.5 - Hipoteze Porusitve|Blok 3.5]]: preveri trdnost z Von Mises ali Tresca
+
+> **Povzetek:** M → napetost ($\sigma = M/W$) → tenzor → porušitev.
+
+> **glej:** [[Blok 3 - Napetostno Stanje#Intuicija]]
+
+---
+
 ## Kako prepoznamo nalogo tega bloka
 
 **Ključne besede v besedilu:**
