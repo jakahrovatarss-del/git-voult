@@ -16,19 +16,19 @@ Celovit zapisek za **3. SKLOP: Kinematika** in **4. SKLOP: Dinamika** — vse ti
 
 ## Pregled tipov nalog
 
-| # | Tip naloge | Ključna formula | Naloge |
-|---|-----------|-----------------|--------|
-| 1 | Kinematika točke: at, an | $a_n = v^2/\rho = \omega^2 R$ | N1 |
-| 2 | Pol hitrosti — kolo na ravnini | Pol = stična točka | N2 |
-| 3 | Pol hitrosti — bat-klip drsnik | Pol = presečišče ⊥ na v | N3 |
-| 4 | Pol hitrosti — štirivezni mehanizem | $\omega = v/r_P$ | N4 |
-| 5 | Coriolisov pospešek | $a_{Cor} = 2\omega v_{rel}$ | N5 |
-| 6 | Newton II — dve kladi | $\sum F = ma$ za vsako telo | N6 |
-| 7 | Newton II — klanec s trenjem | $F_{net} = mg\sin\alpha - \mu mg\cos\alpha$ | N7 |
-| 8 | Energetski zakoni — vzmet+masa | $\frac{1}{2}kx_0^2 = \frac{1}{2}mv^2$ | N8 |
-| 9 | Dinamika togega telesa — rotacija | $\sum M_O = I_O \alpha$ | N9 |
-| 10 | Nihanje — lastna frekvenca | $\omega_0 = \sqrt{k/m}$ | N10 |
-| 11 | Prisilno nihanje — resonanca | $\omega_{vzb} = \omega_0$ | N11 |
+| #   | Tip naloge                          | Ključna formula                             | Naloge |
+| --- | ----------------------------------- | ------------------------------------------- | ------ |
+| 1   | Kinematika točke: at, an            | $a_n = v^2/\rho = \omega^2 R$               | N1     |
+| 2   | Pol hitrosti — kolo na ravnini      | Pol = stična točka                          | N2     |
+| 3   | Pol hitrosti — bat-klip drsnik      | Pol = presečišče ⊥ na v                     | N3     |
+| 4   | Pol hitrosti — štirivezni mehanizem | $\omega = v/r_P$                            | N4     |
+| 5   | Coriolisov pospešek                 | $a_{Cor} = 2\omega v_{rel}$                 | N5     |
+| 6   | Newton II — dve kladi               | $\sum F = ma$ za vsako telo                 | N6     |
+| 7   | Newton II — klanec s trenjem        | $F_{net} = mg\sin\alpha - \mu mg\cos\alpha$ | N7     |
+| 8   | Energetski zakoni — vzmet+masa      | $\frac{1}{2}kx_0^2 = \frac{1}{2}mv^2$       | N8     |
+| 9   | Dinamika togega telesa — rotacija   | $\sum M_O = I_O \alpha$                     | N9     |
+| 10  | Nihanje — lastna frekvenca          | $\omega_0 = \sqrt{k/m}$                     | N10    |
+| 11  | Prisilno nihanje — resonanca        | $\omega_{vzb} = \omega_0$                   | N11    |
 
 ---
 

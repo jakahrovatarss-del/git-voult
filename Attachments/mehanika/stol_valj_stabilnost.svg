@@ -1,0 +1,152 @@
+<svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" font-family="monospace" font-size="13">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 Z" fill="#FF9800"/>
+    </marker>
+    <marker id="arrG" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 Z" fill="#4CAF50"/>
+    </marker>
+    <marker id="arrR" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 Z" fill="#EF4444"/>
+    </marker>
+    <marker id="arrB" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 Z" fill="#90CAF9"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="520" fill="#1a1a2e"/>
+
+  <!-- ═══ LEFT PANEL: Chair geometry (normal) ═══ -->
+  <!-- Scale: d = 120px, origin at (170, 420) -->
+
+  <text x="20" y="22" fill="#FFD700" font-size="14" font-weight="bold">Stol + valj — mirovanje</text>
+  <text x="20" y="40" fill="#aaa" font-size="11">en okvir, teža G/2</text>
+
+  <!-- d annotation arrows -->
+  <line x1="85" y1="418" x2="85" y2="298" stroke="#555" stroke-dasharray="3,3"/>
+  <line x1="78" y1="420" x2="92" y2="420" stroke="#aaa"/>
+  <line x1="78" y1="300" x2="92" y2="300" stroke="#aaa"/>
+  <line x1="85" y1="420" x2="85" y2="300" stroke="#aaa" marker-end="url(#arrB)" marker-start="url(#arrB)"/>
+  <text x="60" y="365" fill="#90CAF9" font-size="11">d</text>
+
+  <line x1="85" y1="298" x2="85" y2="178" stroke="#555" stroke-dasharray="3,3"/>
+  <line x1="78" y1="300" x2="92" y2="300" stroke="#aaa"/>
+  <line x1="78" y1="180" x2="92" y2="180" stroke="#aaa"/>
+  <line x1="85" y1="300" x2="85" y2="180" stroke="#aaa"/>
+  <text x="60" y="245" fill="#90CAF9" font-size="11">d</text>
+
+  <!-- Chair frame — L shape -->
+  <!-- A=(170,420), B=(290,420), C=(170,300), D=(170,180) -->
+  <!-- Bottom beam A-B -->
+  <line x1="170" y1="420" x2="290" y2="420" stroke="#FFD700" stroke-width="4"/>
+  <!-- Vertical backrest A-D -->
+  <line x1="170" y1="420" x2="170" y2="180" stroke="#FFD700" stroke-width="4"/>
+  <!-- Seat C mark -->
+  <line x1="165" y1="300" x2="175" y2="300" stroke="#90CAF9" stroke-width="2"/>
+
+  <!-- Cylinder (person): center at (170+60, 300+60) = (230, 360), radius=60 -->
+  <circle cx="230" cy="360" r="60" fill="none" stroke="#90CAF9" stroke-width="2.5" stroke-dasharray="5,3"/>
+  <!-- Cylinder rests on seat (y=300) and touches backrest (x=170) -->
+  <!-- Contact point on seat -->
+  <circle cx="230" cy="300" r="4" fill="#FF9800"/>
+  <!-- Contact point on backrest -->
+  <circle cx="170" cy="360" r="4" fill="#FF9800"/>
+
+  <!-- Center of mass T -->
+  <circle cx="230" cy="360" r="5" fill="#FF9800"/>
+  <text x="238" y="357" fill="#FF9800" font-size="12" font-weight="bold">T</text>
+  <text x="218" y="380" fill="#FF9800" font-size="10">(d/2, 3d/2)</text>
+
+  <!-- Weight vector G/2 from T -->
+  <line x1="230" y1="360" x2="230" y2="430" stroke="#EF4444" stroke-width="2" marker-end="url(#arrR)"/>
+  <text x="235" y="400" fill="#EF4444" font-size="11">G/2</text>
+
+  <!-- Support A (pin) -->
+  <polygon points="170,420 155,442 185,442" fill="none" stroke="#4CAF50" stroke-width="2"/>
+  <line x1="145" y1="444" x2="195" y2="444" stroke="#4CAF50" stroke-width="2"/>
+  <text x="152" y="460" fill="#4CAF50" font-size="11">A</text>
+  <!-- Reaction arrows at A -->
+  <line x1="170" y1="420" x2="170" y2="380" stroke="#4CAF50" stroke-width="2" marker-end="url(#arrG)"/>
+  <text x="175" y="395" fill="#4CAF50" font-size="10">Ay=G/4</text>
+
+  <!-- Support B (roller) -->
+  <circle cx="290" cy="428" r="8" fill="none" stroke="#4CAF50" stroke-width="2"/>
+  <line x1="275" y1="436" x2="305" y2="436" stroke="#4CAF50" stroke-width="2"/>
+  <text x="295" y="460" fill="#4CAF50" font-size="11">B</text>
+  <!-- Reaction By at B -->
+  <line x1="290" y1="420" x2="290" y2="380" stroke="#4CAF50" stroke-width="2" marker-end="url(#arrG)"/>
+  <text x="295" y="395" fill="#4CAF50" font-size="10">By=G/4</text>
+
+  <!-- Labels -->
+  <text x="162" y="175" fill="#FFD700" font-size="11">D(0,2d)</text>
+  <text x="120" y="304" fill="#90CAF9" font-size="11">C(0,d)</text>
+  <text x="145" y="416" fill="#FFD700" font-size="11">A</text>
+  <text x="293" y="416" fill="#FFD700" font-size="11">B(d,0)</text>
+
+  <!-- d horizontal annotation -->
+  <line x1="170" y1="435" x2="290" y2="435" stroke="#aaa" stroke-dasharray="2,2"/>
+  <text x="222" y="450" fill="#90CAF9" font-size="11">d</text>
+
+  <!-- ═══ RIGHT PANEL: Tilted (tipping condition) ═══ -->
+  <text x="480" y="22" fill="#FFD700" font-size="14" font-weight="bold">Pogoj prevrnitve (By = 0)</text>
+  <text x="480" y="40" fill="#aaa" font-size="11">stol se nagiba za kot α, B se dvigne</text>
+
+  <!-- Tilted chair: pivot A at (620, 440), tilt angle α≈18.43° -->
+  <!-- sin(18.43°)≈0.316, cos(18.43°)≈0.949 -->
+  <!-- Rotated coordinates: Ax=620, Ay=440 -->
+  <!-- B_rot = A + R(d,0) = (620+d*cos, 440+d*sin) [d=120] = (620+113.9, 440+37.9) = (734,478) — but B is lifted -->
+  <!-- C_rot = A + R(0,d) rotated = A + (-d*sin, -d*cos) = (620-37.9, 440-113.9) = (582,326) -->
+  <!-- D_rot = A + R(0,2d) rotated = (620-75.8, 440-227.7) = (544,212) -->
+  <!-- T_rot = A + R(d/2, 3d/2) rotated -->
+  <!-- x'= 60*cos-180*sin = 60*0.949-180*0.316 = 56.9-56.9 = 0 ← T is directly above A! -->
+  <!-- y'= -(60*sin+180*cos) = -(60*0.316+180*0.949) = -(18.96+170.8) = -189.8 -->
+  <!-- T_global = (620+0, 440-189.8) = (620, 250) -->
+
+  <!-- Chair frame tilted -->
+  <!-- Bottom: A(620,440) to B(734,478) -->
+  <line x1="620" y1="440" x2="734" y2="478" stroke="#FFD700" stroke-width="4" opacity="0.5" stroke-dasharray="6,3"/>
+  <!-- Vertical: A(620,440) to D(544,212) -->
+  <line x1="620" y1="440" x2="544" y2="212" stroke="#FFD700" stroke-width="4"/>
+  <!-- C on backrest -->
+  <circle cx="582" cy="326" r="3" fill="#90CAF9"/>
+
+  <!-- Cylinder in tilted position: center T=(620,250) -->
+  <circle cx="620" cy="250" r="60" fill="none" stroke="#90CAF9" stroke-width="2" stroke-dasharray="5,3"/>
+  <circle cx="620" cy="250" r="5" fill="#FF9800"/>
+  <text x="628" y="248" fill="#FF9800" font-size="12" font-weight="bold">T</text>
+
+  <!-- Weight vector from T straight down -->
+  <line x1="620" y1="250" x2="620" y2="440" stroke="#EF4444" stroke-width="2.5" marker-end="url(#arrR)" stroke-dasharray="5,3"/>
+  <text x="625" y="340" fill="#EF4444" font-size="11">G/2</text>
+
+  <!-- Vertical dashed line through A -->
+  <line x1="620" y1="180" x2="620" y2="450" stroke="#555" stroke-dasharray="4,3"/>
+  <text x="625" y="175" fill="#555" font-size="10">navpičnica skozi A</text>
+
+  <!-- T is directly above A — marker -->
+  <line x1="615" y1="250" x2="625" y2="250" stroke="#4CAF50" stroke-width="1.5"/>
+  <text x="630" y="265" fill="#4CAF50" font-size="10">T nad A ✓</text>
+
+  <!-- Angle α arc at A -->
+  <path d="M620,420 A20,20 0 0 0 639,431" fill="none" stroke="#FF9800" stroke-width="1.5"/>
+  <text x="638" y="420" fill="#FF9800" font-size="11">α</text>
+
+  <!-- Support A marker -->
+  <polygon points="620,440 605,462 635,462" fill="none" stroke="#4CAF50" stroke-width="2"/>
+  <line x1="595" y1="464" x2="645" y2="464" stroke="#4CAF50" stroke-width="2"/>
+  <text x="608" y="480" fill="#4CAF50" font-size="11">A (vrtišče)</text>
+
+  <!-- B lifted — dashed circle -->
+  <circle cx="734" cy="478" r="8" fill="none" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <text x="740" y="475" fill="#EF4444" font-size="10">B dvignjen</text>
+
+  <!-- ═══ BOTTOM: Formula box ═══ -->
+  <rect x="20" y="486" width="860" height="28" rx="4" fill="#0f0f23" stroke="#333"/>
+  <text x="30" y="505" fill="#FFD700" font-size="12" font-weight="bold">Pogoj guganja:</text>
+  <text x="155" y="505" fill="white" font-size="12">xT·cosα − yT·sinα = 0</text>
+  <text x="380" y="505" fill="#aaa" font-size="12">→</text>
+  <text x="400" y="505" fill="white" font-size="12">tan α = xT / yT = (d/2) / (3d/2) = 1/3</text>
+  <text x="640" y="505" fill="#aaa" font-size="12">→</text>
+  <text x="660" y="505" fill="#4CAF50" font-size="12" font-weight="bold">α = arctan(1/3) ≈ 18,43°</text>
+</svg>

@@ -75,6 +75,9 @@ Poglobljene note z derivacijami, tipičnimi napakami, SVG diagrami:
 - Uklon: lesena deska (β=2), leseni steber, jeklo S_dop
 - Torzija: Bredt škatlast, Tresca/Von Mises kombinacija
 - Tenzorska analiza: deformacijski tenzor, aluminijast kvader, nagnjene ravnine
+- `Naloga - Mehanika - NTM Lomljeni okvir NotrSile N1.md` — Gerber + L-oblika, 3 palice (2026-06-18)
+- `Naloga - Mehanika - Dinamika Mesalo Steiner.md` — Steiner + navor, mešalo (2026-06-18)
+- `Naloga - Mehanika - Statika Stol Valj Stabilnost.md` — guganje, tan α=xT/yT, BTF 2019 (2026-06-18)
 
 ---
 

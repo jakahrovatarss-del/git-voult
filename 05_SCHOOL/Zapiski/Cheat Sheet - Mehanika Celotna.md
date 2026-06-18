@@ -15,6 +15,7 @@ datum: 2026-06-17
 | Sklop              | TIP | Tema                                         | Rešen primer                                             |
 | ------------------ | --- | -------------------------------------------- | -------------------------------------------------------- |
 | **1 — STATIKA**    | A   | Reakcije 2D (prostoležeč nosilci)            | N3, N4 → [[Vaje - Statika - Vse vrste]]                  |
+|                    | A2  | Stabilnost — kritični kot guganja            | [[Naloga - Mehanika - Statika Stol Valj Stabilnost]]     |
 |                    | B   | Razstavljanje sil, koti                      | [[Vaje - Statika - Vse vrste]]                           |
 |                    | C   | Škripci                                      | N1, N2 → [[Vaje - Statika - Vse vrste]]                  |
 |                    | D   | 3D statika — redukcija sistema sil           | N5 → [[Vaje - Statika - Vse vrste]]                      |
@@ -42,6 +43,7 @@ datum: 2026-06-17
 |                    | B   | Pol hitrosti — splošna metoda                | N2–N4 → [[Poglavje - Kinematika in Dinamika]]            |
 |                    | B1  | Kolo na ravnini — kotaljenje                 | N2 → [[Poglavje - Kinematika in Dinamika]]               |
 |                    | B2  | Bat-klip drsnik                              | N3 → [[Poglavje - Kinematika in Dinamika]]               |
+|                    | B3  | Štiričlenski mehanizem (pogon + odvodna pal.)| [[Naloga - Mehanika - Kinematika Mehanizem ADAC]]        |
 |                    | C   | Coriolisov pospešek                          | N5 → [[Poglavje - Kinematika in Dinamika]]               |
 | **4 — DINAMIKA**   | D   | Newton II — dve kladi                        | N6 → [[Poglavje - Kinematika in Dinamika]]               |
 |                    | E   | Newton II — klanec s trenjem                 | N7 → [[Poglavje - Kinematika in Dinamika]]               |
@@ -136,6 +138,35 @@ $$\boxed{A_y = 3{,}83\ \text{kN}}, \qquad \boxed{A_x = 9{,}64\ \text{kN}}$$
 ![[ravnotezje_T_rama.svg|697]]
 
 > 🔗 **Rešeno:** [[Poglavje - Statika]] — N3
+
+---
+
+## TIP A2: STABILNOST — kritični kot guganja
+
+**Pogoj:** Ko se telo nagne za $\alpha$, se podpora dvigne ($B_y = 0$). Telo balansira na vrtišču A samo, kadar leži težišče T točno nad A.
+
+$$\boxed{\tan\alpha = \frac{x_T}{y_T}}$$
+
+$x_T$ = vodoravna razdalja težišča od vrtišča A, $y_T$ = navpična razdalja.
+
+| # | Korak | Opis |
+|---|-------|------|
+| 1 | Določi koordinate | izhodišče = vrtišče A, poišči xT, yT glede na A |
+| 2 | Mirovanje: By | $\sum M_A = 0 \to B_y = \frac{G/2 \cdot x_T}{d}$ |
+| 3 | Mirovanje: Ay | $\sum F_y = 0 \to A_y = G/2 - B_y$ |
+| 4 | Guganje (By=0) | $\tan\alpha = x_T / y_T$ |
+| 5 | Kot | $\alpha = \arctan(x_T / y_T)$ |
+
+⚠️ $y_T$ = višina sedala + polmer valja — ne samo polmer!
+⚠️ Visoko težišče → majhen $\alpha$ → manjša stabilnost
+
+**Primer — stol + valj** ($d$×$d$ sedalo, naslonjalo do $2d$, valj $R=d/2$):
+
+$x_T = d/2$, $y_T = d + d/2 = 3d/2$ → $\tan\alpha = \frac{1}{3}$ → $\boxed{\alpha \approx 18{,}43°}$
+
+$B_y = G/4$, $A_y = G/4$ (simetrično, ker $x_T = d/2$)
+
+> 🔗 **Rešeno:** [[Naloga - Mehanika - Statika Stol Valj Stabilnost]] — BTF izpit 1. feb 2019
 
 ---
 
@@ -989,6 +1020,30 @@ $$\boxed{v_A = \omega \cdot \overline{PA}} \qquad \text{smer: ⊥ na } \overrigh
 
 ---
 
+## TIP B3: ŠTIRIČLENSKI MEHANIZEM — pogon + odvodna palica
+
+**Vzorec:** gred AD (vhod, NI = D) + palica AC (coupler) + odvodna palica EB (NI = E, pod kotom β)
+
+| # | Korak | Formula |
+|---|-------|---------|
+| 1 | vA = vhod | $v_A = \omega_{vhod} \cdot r_{DA}$, smer ⊥ na DA |
+| 2 | Pogoj EB | $v_B \perp \text{EB}$ → razmerje $v_{Bx}/v_{By} = -\cot\beta$ ali $-\tan\beta$ (glede na orientacijo) |
+| 3 | vB iz palice AC | $\vec{v}_B = \vec{v}_A + \omega_{AC}\hat{k}\times\vec{r}_{AB}$, dve enačbi |
+| 4 | Reši ωAC | iz razmerja vBx/vBy |
+| 5 | vC | $\vec{v}_C = \vec{v}_A + \omega_{AC}\hat{k}\times\vec{r}_{AC}$ |
+| 6 | Pol P (kontrola) | P = presečišče ⊥ na vA in ⊥ na vB; $v_C = \omega_{AC} \cdot PC$ |
+
+⚠️ Smer $v_B$: določi pravo perpendikularno orientacijo (iz znaka vBx)!
+⚠️ $\omega_{AC}$ negativen → urna smer (CW)
+
+**Primer — Izpit 17. 4. 2015** (AD=2m navp., AC=4m vorav., EB=60°, ω=2π):
+
+$$v_A = 4\pi\ \text{m/s},\quad \omega_{AC} = \frac{4\pi\sqrt{3}}{9} \approx 2{,}42\ \text{rad/s\ (↻)},\quad v_C = \frac{4\pi\sqrt{129}}{9} \approx 15{,}86\ \text{m/s}$$
+
+> 🔗 **Rešeno:** [[Naloga - Mehanika - Kinematika Mehanizem ADAC]] — Izpit 17. 4. 2015
+
+---
+
 ## TIP B1: KOLO NA RAVNINI — kotaljenje (N2 — Poglavje)
 
 ```
@@ -1220,8 +1275,10 @@ $$A_{net}=\Delta E_k,\quad E_k+E_p=\text{const},\quad \omega_0=\sqrt{k/m}$$
 - [[Poglavje - Statika]] ← vse naloge 1. sklopa
 - [[Poglavje - Trdnost]] ← vse naloge 2. sklopa
 - [[Poglavje - Kinematika in Dinamika]] ← vse naloge 3.+4. sklopa
-- [[Naloga - Mehanika - NTM Lomljeni okvir NotrSile N1]] ← TIP A2: Gerber + L-oblika, 5 polj
+- [[Naloga - Mehanika - Statika Stol Valj Stabilnost]] ← TIP A2 Statika: guganje, tan α = xT/yT, BTF 2019
+- [[Naloga - Mehanika - NTM Lomljeni okvir NotrSile N1]] ← TIP A2 Trdnost: Gerber + L-oblika, 5 polj
 - [[Naloga - Mehanika - Dinamika Mesalo Steiner]] ← TIP F: Steiner za odmaknjeno telo, navor
+- [[Naloga - Mehanika - Kinematika Mehanizem ADAC]] ← TIP B3: štiričlenski mehanizem, izpit 2015
 - [[Vaje - Statika - Vse vrste]] · [[Vaje - NTM diagrami - Vse vrste]]
 - [[Vaje - Trdnost in dimenzioniranje]] · [[Vaje - Napetostni tenzor in Mohrova kroznica]]
 - [[Blok 0 - Statika]] | [[Blok 1 - NTM Diagrami]] | [[Blok 2 - Upogib]]

@@ -42,6 +42,14 @@ $$\text{Za vsako vozlišče: } \sum F_x=0,\ \sum F_y=0 \quad \text{(privzami nat
 
 $$\text{Prereži 3 palice} \to \sum M \text{ okrog presečišča 2 neznanih} \to \text{direktno 3. neznanka}$$
 
+### Stabilnost — kritični kot guganja
+
+$$\tan\alpha = \frac{x_T}{y_T} \quad \text{(pogoj: težišče točno nad vrtiščem, } B_y = 0\text{)}$$
+
+Odmik težišča: $x_T$ = vodoravno od vrtišča, $y_T$ = navpično od vrtišča.
+
+🔗 [[Naloga - Mehanika - Statika Stol Valj Stabilnost]]
+
 ### Trenje (Coulomb)
 
 $$F_{tr} \leq \mu_s \cdot N, \qquad \tan\alpha \leq \mu_s$$
@@ -410,6 +418,16 @@ $$v_B = \omega \cdot \overline{PB} \quad \text{(P = točka kjer } v=0\text{)}$$
 
 Postopek: nariši $\bot$ na vsako znano hitrost → presečišče = P.
 
+### Mehanizem — štiričlenski (splošni postopek)
+
+$$\vec{v}_B = \vec{v}_A + \omega_{AC} \times \vec{r}_{AB} \quad \text{→ pogoj iz odvodne palice → } \omega_{AC}$$
+
+$$\vec{v}_C = \vec{v}_A + \omega_{AC} \times \vec{r}_{AC}$$
+
+**Pogoj odvodne palice EB (E = NI, kot $\beta$):** $\vec{v}_B \perp \text{EB}$ → $\dfrac{v_{Bx}}{v_{By}} = -\tan\beta$ (ali $-\cot\beta$, odvisno od smeri)
+
+🔗 [[Naloga - Mehanika - Kinematika Mehanizem ADAC]] — Izpit 17. 4. 2015
+
 ### Kolo, ki se kotali (brez drsenja)
 
 $$v_{kontakt} = 0 \quad \text{(pol = stik s podlago)}$$
@@ -670,6 +688,8 @@ $$\frac{1}{2}kx_0^2 = \frac{1}{2}mv_{max}^2 \quad \Rightarrow \quad v_{max} = x_
 - [[Izpit - Mehanika - Celoletni 2026]]
 - [[Naloga - Mehanika - NTM Lomljeni okvir NotrSile N1]] ← Blok 1: Gerber + L-oblika
 - [[Naloga - Mehanika - Dinamika Mesalo Steiner]] ← Blok 7: Steiner + navor
+- [[Naloga - Mehanika - Statika Stol Valj Stabilnost]] ← Blok 0: guganje, tan α = xT/yT
+- [[Naloga - Mehanika - Kinematika Mehanizem ADAC]] ← Blok 6: mehanizem, pol P, ωAC, vC
 - [[Blok 0 - Statika]] | [[Blok 1 - NTM Diagrami]] | [[Blok 1.5 - Geometrijske Karakteristike]]
 - [[Blok 2 - Upogib]] | [[Blok 2.5 - Deformacije pri Upogibu]] | [[Blok 3 - Napetostno Stanje]]
 - [[Blok 3.5 - Hipoteze Porusitve]] | [[Blok 4 - Euler Uklon]] | [[Blok 5 - Torzija]]

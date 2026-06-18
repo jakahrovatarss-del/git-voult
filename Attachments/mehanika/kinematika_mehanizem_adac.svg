@@ -1,0 +1,196 @@
+<svg viewBox="0 0 920 580" xmlns="http://www.w3.org/2000/svg" font-family="monospace" font-size="12">
+  <defs>
+    <marker id="vArr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 Z" fill="#FF9800"/>
+    </marker>
+    <marker id="gArr" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 Z" fill="#4CAF50"/>
+    </marker>
+    <marker id="bArr" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 Z" fill="#90CAF9"/>
+    </marker>
+    <marker id="wArr" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 Z" fill="#aaa"/>
+    </marker>
+    <marker id="rArr" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 Z" fill="#EF4444"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="920" height="580" fill="#1a1a2e"/>
+
+  <!-- ═══ TITLE ═══ -->
+  <text x="10" y="20" fill="#FFD700" font-size="14" font-weight="bold">Kinematika mehanizma — Izpit 17. 4. 2015</text>
+  <text x="10" y="36" fill="#aaa" font-size="11">AD navpično, AC vodoravno, EB pod 60°, ω = 2π rad/s (NI = D, E)</text>
+
+  <!-- ═══ GROUND LINE ═══ -->
+  <line x1="60" y1="370" x2="540" y2="370" stroke="#555" stroke-width="1.5"/>
+  <!-- Ground hatching -->
+  <line x1="60" y1="370" x2="50" y2="382" stroke="#555" stroke-width="1"/>
+  <line x1="90" y1="370" x2="80" y2="382" stroke="#555" stroke-width="1"/>
+  <line x1="120" y1="370" x2="110" y2="382" stroke="#555" stroke-width="1"/>
+  <line x1="150" y1="370" x2="140" y2="382" stroke="#555" stroke-width="1"/>
+  <line x1="180" y1="370" x2="170" y2="382" stroke="#555" stroke-width="1"/>
+  <line x1="210" y1="370" x2="200" y2="382" stroke="#555" stroke-width="1"/>
+  <line x1="240" y1="370" x2="230" y2="382" stroke="#555" stroke-width="1"/>
+  <line x1="270" y1="370" x2="260" y2="382" stroke="#555" stroke-width="1"/>
+  <line x1="300" y1="370" x2="290" y2="382" stroke="#555" stroke-width="1"/>
+  <line x1="330" y1="370" x2="320" y2="382" stroke="#555" stroke-width="1"/>
+  <line x1="360" y1="370" x2="350" y2="382" stroke="#555" stroke-width="1"/>
+  <line x1="390" y1="370" x2="380" y2="382" stroke="#555" stroke-width="1"/>
+  <line x1="420" y1="370" x2="410" y2="382" stroke="#555" stroke-width="1"/>
+  <line x1="450" y1="370" x2="440" y2="382" stroke="#555" stroke-width="1"/>
+  <line x1="480" y1="370" x2="470" y2="382" stroke="#555" stroke-width="1"/>
+  <line x1="510" y1="370" x2="500" y2="382" stroke="#555" stroke-width="1"/>
+  <line x1="540" y1="370" x2="530" y2="382" stroke="#555" stroke-width="1"/>
+
+  <!-- ═══ FIXED PIVOT D ═══ -->
+  <!-- D at (200, 370) — fixed on ground -->
+  <polygon points="200,370 186,390 214,390" fill="none" stroke="#4CAF50" stroke-width="1.5"/>
+  <line x1="178" y1="392" x2="222" y2="392" stroke="#4CAF50" stroke-width="1.5"/>
+  <circle cx="200" cy="370" r="4" fill="#FFD700"/>
+  <text x="205" y="395" fill="#4CAF50" font-size="11" font-weight="bold">D</text>
+
+  <!-- ═══ CRANK AD ═══ -->
+  <!-- A at (200, 250) — AD = 2m = 120px above D -->
+  <line x1="200" y1="370" x2="200" y2="254" stroke="#FFD700" stroke-width="4"/>
+  <!-- Dimension: AD = 2m -->
+  <line x1="170" y1="370" x2="170" y2="250" stroke="#555" stroke-dasharray="2,2"/>
+  <text x="140" y="315" fill="#90CAF9" font-size="11">AD=2m</text>
+
+  <!-- Rotation arc for ω at D -->
+  <path d="M200,345 A25,25 0 0 1 225,370" fill="none" stroke="#FF9800" stroke-width="1.5" marker-end="url(#vArr)"/>
+  <text x="223" y="355" fill="#FF9800" font-size="11">ω=2π</text>
+
+  <!-- ═══ PIVOT A (connects AD and AC) ═══ -->
+  <circle cx="200" cy="250" r="6" fill="#FFD700" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="183" y="245" fill="#FFD700" font-size="12" font-weight="bold">A</text>
+
+  <!-- ═══ ROD AC (horizontal) ═══ -->
+  <!-- B at (380, 250) [AB=3m=180px], C at (440, 250) [AC=4m=240px] -->
+  <line x1="200" y1="250" x2="444" y2="250" stroke="#FFD700" stroke-width="4"/>
+
+  <!-- Dimension AB = 3m -->
+  <line x1="200" y1="268" x2="380" y2="268" stroke="#555" stroke-dasharray="2,2"/>
+  <text x="270" y="283" fill="#90CAF9" font-size="11">AB = 3 m</text>
+  <!-- Dimension BC = 1m -->
+  <line x1="380" y1="268" x2="440" y2="268" stroke="#555" stroke-dasharray="2,2"/>
+  <text x="390" y="283" fill="#90CAF9" font-size="11">BC=1m</text>
+
+  <!-- ═══ PIVOT B ═══ -->
+  <circle cx="380" cy="250" r="5" fill="#90CAF9" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="375" y="242" fill="#90CAF9" font-size="12" font-weight="bold">B</text>
+
+  <!-- ═══ PIVOT C ═══ -->
+  <circle cx="440" cy="250" r="5" fill="#90CAF9" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="445" y="245" fill="#90CAF9" font-size="12" font-weight="bold">C</text>
+
+  <!-- ═══ FIXED PIVOT E ═══ -->
+  <!-- E at approximately (335, 328) — below B, EB at 60° -->
+  <polygon points="335,328 321,348 349,348" fill="none" stroke="#4CAF50" stroke-width="1.5"/>
+  <line x1="313" y1="350" x2="357" y2="350" stroke="#4CAF50" stroke-width="1.5"/>
+  <circle cx="335" cy="328" r="4" fill="#4CAF50"/>
+  <text x="340" y="352" fill="#4CAF50" font-size="11" font-weight="bold">E</text>
+
+  <!-- ═══ ROD EB ═══ -->
+  <line x1="335" y1="328" x2="380" y2="250" stroke="#FFD700" stroke-width="3"/>
+
+  <!-- Angle 60° annotation at E -->
+  <path d="M355,328 A20,20 0 0 1 345,311" fill="none" stroke="#aaa" stroke-width="1.2"/>
+  <text x="357" y="325" fill="#aaa" font-size="10">60°</text>
+
+  <!-- ═══ POL HITROSTI P (below ground) ═══ -->
+  <!-- P at (200, 370 + 3.196×120/2) — scaled: 3.196m × 60px/m = 192px below D(370) = y=562 -->
+  <!-- Actually let's use scale 50px/m: P_y = 370 + 3.196×50 = 370+160 = 530 -->
+  <!-- But let me place it at y=520 for visual purposes, scale=46px/m: 3.196×46≈147, 370+147=517 -->
+  <!-- Let's use y=520 and note it's the "current pole" -->
+
+  <!-- Pol P lines (dashed, from P to A, B, C) -->
+  <!-- PA: vertical line from P(200,520) to A(200,250) -->
+  <line x1="200" y1="370" x2="200" y2="515" stroke="#EF4444" stroke-width="1" stroke-dasharray="4,3" opacity="0.6"/>
+  <line x1="200" y1="515" x2="380" y2="255" stroke="#EF4444" stroke-width="1" stroke-dasharray="4,3" opacity="0.6"/>
+  <line x1="200" y1="515" x2="440" y2="255" stroke="#EF4444" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+
+  <!-- Pol P marker -->
+  <circle cx="200" cy="518" r="5" fill="#EF4444" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="210" y="516" fill="#EF4444" font-size="11" font-weight="bold">P</text>
+  <text x="210" y="528" fill="#EF4444" font-size="9">(pol hitrosti)</text>
+
+  <!-- PA and PC labels -->
+  <text x="167" y="390" fill="#EF4444" font-size="9">PA=3√3</text>
+  <text x="167" y="400" fill="#EF4444" font-size="9">≈5.20m</text>
+  <text x="325" y="430" fill="#EF4444" font-size="9">PC=√43≈6.56m</text>
+
+  <!-- ═══ VELOCITY VECTORS ═══ -->
+
+  <!-- vA: horizontal right at A (4π m/s = 12.57 m/s, scale 3px/m/s → 38px) -->
+  <line x1="200" y1="250" x2="238" y2="250" stroke="#FF9800" stroke-width="2.5" marker-end="url(#vArr)"/>
+  <text x="204" y="237" fill="#FF9800" font-size="11" font-weight="bold">vA = 4π</text>
+  <text x="200" y="228" fill="#FF9800" font-size="10">≈12.57 m/s</text>
+
+  <!-- vB: at -30° from horizontal (perp to EB at 60°), magnitude 14.51 m/s × 3px/m/s = 43px -->
+  <!-- direction: (cos(-30°), sin(-30°)) = (√3/2, -1/2) = (0.866, -0.5) -->
+  <line x1="380" y1="250" x2="417" y2="229" stroke="#FF9800" stroke-width="2.5" marker-end="url(#vArr)"/>
+  <text x="418" y="240" fill="#FF9800" font-size="10">vB≈14.51 m/s</text>
+  <text x="420" y="252" fill="#FF9800" font-size="9">⊥EB</text>
+
+  <!-- vC: at -37.59° from horizontal, magnitude 15.86 m/s × 3px/m/s = 48px -->
+  <!-- direction: (cos(-37.59°), sin(-37.59°)) = (0.793, -0.610) → (38px, -29px) -->
+  <line x1="440" y1="250" x2="478" y2="221" stroke="#FF9800" stroke-width="3" marker-end="url(#vArr)"/>
+  <text x="476" y="215" fill="#FF9800" font-size="11" font-weight="bold">vC</text>
+
+  <!-- ωAC arc on rod AC -->
+  <path d="M320,245 A15,15 0 0 0 305,258" fill="none" stroke="#90CAF9" stroke-width="1.5" marker-end="url(#bArr)"/>
+  <text x="308" y="240" fill="#90CAF9" font-size="10">ωAC</text>
+  <text x="308" y="252" fill="#90CAF9" font-size="9">↻ CW</text>
+
+  <!-- ═══ RIGHT PANEL: Results ═══ -->
+  <rect x="560" y="48" width="350" height="500" rx="6" fill="#0f0f1f" stroke="#333"/>
+  <text x="575" y="75" fill="#FFD700" font-size="13" font-weight="bold">REŠITEV — po korakih</text>
+
+  <!-- Step 1 -->
+  <text x="575" y="100" fill="#aaa" font-size="11" font-weight="bold">1. Geometrija</text>
+  <text x="585" y="116" fill="white" font-size="11">D=(0,0) [NI], A=(0,2), B=(3,2), C=(4,2)</text>
+  <text x="585" y="130" fill="white" font-size="11">AD navpično, AC vodoravno</text>
+
+  <!-- Step 2 -->
+  <text x="575" y="152" fill="#aaa" font-size="11" font-weight="bold">2. Hitrost točke A (vrti se okrog D)</text>
+  <text x="585" y="168" fill="#FF9800" font-size="12">vA = ω · AD = 2π · 2 = 4π m/s</text>
+  <text x="585" y="182" fill="#aaa" font-size="10">smer: vodoravno (⊥ na navpično AD)</text>
+
+  <!-- Step 3 -->
+  <text x="575" y="204" fill="#aaa" font-size="11" font-weight="bold">3. Pogoj iz EB (E = NI)</text>
+  <text x="585" y="220" fill="white" font-size="11">EB pod 60° → vB ⊥ EB → smer vB: -30°</text>
+  <text x="585" y="234" fill="white" font-size="11">vBx/vBy = -√3</text>
+
+  <!-- Step 4 -->
+  <text x="575" y="256" fill="#aaa" font-size="11" font-weight="bold">4. vB iz palice AC</text>
+  <text x="585" y="272" fill="white" font-size="11">vB = vA + ωAC × rAB</text>
+  <text x="585" y="286" fill="white" font-size="11">vBx = 4π,  vBy = 3·ωAC</text>
+  <text x="585" y="300" fill="white" font-size="11">4π / (3·ωAC) = -√3</text>
+  <rect x="578" y="308" width="315" height="24" rx="3" fill="#1a1a4e"/>
+  <text x="588" y="324" fill="#4CAF50" font-size="12" font-weight="bold">ωAC = 4π√3/9 ≈ 2.42 rad/s  (↻ CW)</text>
+
+  <!-- Step 5 -->
+  <text x="575" y="350" fill="#aaa" font-size="11" font-weight="bold">5. Hitrost točke C</text>
+  <text x="585" y="366" fill="white" font-size="11">vC = vA + ωAC × rAC</text>
+  <text x="585" y="380" fill="white" font-size="11">vCx = 4π ≈ 12.57 m/s</text>
+  <text x="585" y="394" fill="white" font-size="11">vCy = 4·ωAC = -16π√3/9 ≈ -9.67 m/s</text>
+  <rect x="578" y="402" width="315" height="38" rx="3" fill="#1a1a4e"/>
+  <text x="588" y="418" fill="#FF9800" font-size="12" font-weight="bold">vC = 4π√129/9 ≈ 15.86 m/s</text>
+  <text x="588" y="432" fill="#FF9800" font-size="11">kot: -37.6° od vodoravnice</text>
+
+  <!-- Step 6: Pol hitrosti -->
+  <text x="575" y="458" fill="#aaa" font-size="11" font-weight="bold">6. Pol hitrosti P</text>
+  <text x="585" y="474" fill="white" font-size="11">P na navpičnici skozi A, pod D</text>
+  <text x="585" y="488" fill="white" font-size="11">PA = 3√3 ≈ 5.20 m,  PC = √43 ≈ 6.56 m</text>
+  <text x="585" y="502" fill="#EF4444" font-size="10">vC = ωAC · PC = 2.42 × 6.56 ≈ 15.86 ✓</text>
+
+  <!-- ═══ FORMULA BOTTOM BAR ═══ -->
+  <rect x="0" y="548" width="920" height="32" fill="#0f0f23" stroke="#333"/>
+  <text x="14" y="568" fill="#aaa" font-size="11" font-weight="bold">Ključna enačba:</text>
+  <text x="130" y="568" fill="white" font-size="11">vB = vA + ωAC × rAB</text>
+  <text x="340" y="568" fill="#aaa" font-size="11">+  pogoj EB (60°) →</text>
+  <text x="480" y="568" fill="#4CAF50" font-size="11" font-weight="bold">ωAC = 4π√3/9 rad/s  |  vC = 4π√129/9 m/s</text>
+</svg>
