@@ -538,15 +538,15 @@ $$\text{Statika} \xrightarrow{\text{reakcije}} \text{NTM diagrami} \xrightarrow{
 
 **6 korakov:**
 
-| # | Korak | Kaj naredis |
-|---|-------|-------------|
-| 0 | Tip konstrukcije | Prosta greda / konzola / L-oblika / Gerber? Je os zlomljena? → N≠0 |
-| 1 | FBD + reakcije | Nariši vse sile, izračunaj Ay, By, Ax (ΣMA→By, ΣFy→Ay) |
-| 2 | Območja | Razdeli pri vsaki točkovni sili, momentu, začetku/koncu q |
-| 3 | T(x), M(x) | Za vsako območje: T = Ay − q·x; M = Ay·x − q·x²/2 − … |
-| 4 | Mmax | Reši T(x)=0 → vstavi x₀ v M(x) |
-| 5 | Diagrami | Nariši T in M; parabola kjer q≠0, ravna črta kjer q=0 |
-| 6 | Kontrola | Prosti konec: T=M=0 ✓; Vpetje: preberi Mmax ✓ |
+| #   | Korak            | Kaj naredis                                                        |
+| --- | ---------------- | ------------------------------------------------------------------ |
+| 0   | Tip konstrukcije | Prosta greda / konzola / L-oblika / Gerber? Je os zlomljena? → N≠0 |
+| 1   | FBD + reakcije   | Nariši vse sile, izračunaj Ay, By, Ax (ΣMA→By, ΣFy→Ay)             |
+| 2   | Območja          | Razdeli pri vsaki točkovni sili, momentu, začetku/koncu q          |
+| 3   | T(x), M(x)       | Za vsako območje: T = Ay − q·x; M = Ay·x − q·x²/2 − …              |
+| 4   | Mmax             | Reši T(x)=0 → vstavi x₀ v M(x)                                     |
+| 5   | Diagrami         | Nariši T in M; parabola kjer q≠0, ravna črta kjer q=0              |
+| 6   | Kontrola         | Prosti konec: T=M=0 ✓; Vpetje: preberi Mmax ✓                      |
 
 **Pravila za obliko diagrama:**
 
