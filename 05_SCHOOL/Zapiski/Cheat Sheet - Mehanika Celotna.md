@@ -27,7 +27,7 @@ datum: 2026-06-17
 |                    | J   | Euler jermen                                 | N18 → [[Poglavje - Statika]]                             |
 |                    | K   | Vrvi / katenoida                             | N10, N11 → [[Poglavje - Statika]]                        |
 | **2 — TRDNOST**    | A   | NTM diagrami — 6 korakov                     | N1–N5 → [[Vaje - NTM diagrami - Vse vrste]]              |
-|                    | A2  | Lomljeni nosilci / portalni okviri           | N3, N4 → [[Vaje - NTM diagrami - Vse vrste]]             |
+|                    | A2  | Lomljeni nosilci / portalni okviri           | N3, N4; [[Naloga - Mehanika - NTM Lomljeni okvir NotrSile N1]] |
 |                    | A3  | 3D NTM — prostorska gred (jermenica, zobnik) | NotrSileVaje N2                                          |
 |                    | B   | Upogib: σ = M/W, dimenzioniranje             | N1, N3, N9 → [[Vaje - Trdnost in dimenzioniranje]]       |
 |                    | C   | Ekscentrični tlak N + M                      | N4 → [[Vaje - Trdnost in dimenzioniranje]]               |
@@ -45,7 +45,7 @@ datum: 2026-06-17
 |                    | C   | Coriolisov pospešek                          | N5 → [[Poglavje - Kinematika in Dinamika]]               |
 | **4 — DINAMIKA**   | D   | Newton II — dve kladi                        | N6 → [[Poglavje - Kinematika in Dinamika]]               |
 |                    | E   | Newton II — klanec s trenjem                 | N7 → [[Poglavje - Kinematika in Dinamika]]               |
-|                    | F   | Dinamika togega telesa — rotacija            | N9 → [[Poglavje - Kinematika in Dinamika]]               |
+|                    | F   | Dinamika togega telesa — rotacija            | N9; [[Naloga - Mehanika - Dinamika Mesalo Steiner]]      |
 |                    | G   | Energetski zakoni                            | N8 → [[Poglavje - Kinematika in Dinamika]]               |
 |                    | H   | Nihanje — lastna frekvenca ω₀                | N10 → [[Poglavje - Kinematika in Dinamika]]              |
 |                    | I   | Resonanca                                    | N11 → [[Poglavje - Kinematika in Dinamika]]              |
@@ -536,6 +536,7 @@ Portalni okvir: vodoravna sila → stebra nosita $N + T + M$; prečnik samo $M +
 **Gerber + L-oblika** (NotrSileVaje N1 — 5 polj): Razreži v Gerber členku → reši ločeno za vsak del → preneši reakcijo členka naprej → NTM za vsako polje posebej.
 
 > 🔗 **Rešeno:** [[Vaje - NTM diagrami - Vse vrste]] — N3, N4
+> 🔗 **Naloga:** [[Naloga - Mehanika - NTM Lomljeni okvir NotrSile N1]] — 3 palice, 5 polj, $A_y=-1{,}25$ kN (nateg!), $M_{CD,max}=-6$ kNm
 
 ---
 
@@ -1055,18 +1056,32 @@ $$\boxed{I_O = I_T + m \cdot d^2} \qquad \text{(Steinerjev stavek)}$$
 
 ## TIP F: DINAMIKA TOGEGA TELESA — ROTACIJA (N9 — Poglavje)
 
-```
-1. I_O (s Steinerjem, če treba)
-2. ΣM_O = I_O·α  →  α = M_navor/I_O
-3. ω(t) = ω₀ + α·t
-4. n = ω·60/(2π)  [obr/min]
-```
+| # | Korak | Formula |
+|---|-------|---------|
+| 1 | Vztrajnostni moment | $I_O = I_T + m\cdot d^2$ (Steiner za vsak del) |
+| 2 | Newton II rotacija | $\sum M_O = I_O \cdot \alpha$ |
+| 3 | Kotni pospešek | $\alpha = \Delta\omega / \Delta t$ |
+| 4 | Kotna hitrost | $\omega = 2\pi n / 60$ [rad/s] |
+| 5 | Navor | $M = I \cdot \alpha$ [Nm] |
 
-⚠️ Masa v **kg** (ne kN!)
+**Momenti inercije:**
+
+| Telo | Formula |
+|------|---------|
+| Palica skozi konec | $mL^2/3$ |
+| Palica skozi sredino | $mL^2/12$ |
+| Disk/valj $R$ | $mR^2/2$ |
+| Pravokotna plošča $a\times b$ (os ⊥ skozi težišče) | $m(a^2+b^2)/12$ |
+
+⚠️ Masa v **kg** (ne kN!), razdalje v **m** (ne mm!) za $I$ v kg·m²
 
 **Primer N9:** $\alpha = 5\ \text{rad/s}^2$, $\omega(3) = 15\ \text{rad/s}$, $n = 143\ \text{obr/min}$
 
-> 🔗 **Rešeno:** [[Poglavje - Kinematika in Dinamika]] — N9
+**Primer — Mešalo** (Steiner za odmaknjeno rezilo):
+$$e = r_{gred} + L/2, \quad I_{rezilo} = \frac{m(L^2+w^2)}{12} + m\cdot e^2$$
+$$M_z = I_{tot}\cdot\alpha \quad [\text{Nm}] \qquad \text{(min. navor brez upora tekočine)}$$
+
+> 🔗 **Rešeno:** [[Poglavje - Kinematika in Dinamika]] — N9 · [[Naloga - Mehanika - Dinamika Mesalo Steiner]]
 
 ---
 
@@ -1159,6 +1174,8 @@ $$A_{net}=\Delta E_k,\quad E_k+E_p=\text{const},\quad \omega_0=\sqrt{k/m}$$
 - [[Poglavje - Statika]] ← vse naloge 1. sklopa
 - [[Poglavje - Trdnost]] ← vse naloge 2. sklopa
 - [[Poglavje - Kinematika in Dinamika]] ← vse naloge 3.+4. sklopa
+- [[Naloga - Mehanika - NTM Lomljeni okvir NotrSile N1]] ← TIP A2: Gerber + L-oblika, 5 polj
+- [[Naloga - Mehanika - Dinamika Mesalo Steiner]] ← TIP F: Steiner za odmaknjeno telo, navor
 - [[Vaje - Statika - Vse vrste]] · [[Vaje - NTM diagrami - Vse vrste]]
 - [[Vaje - Trdnost in dimenzioniranje]] · [[Vaje - Napetostni tenzor in Mohrova kroznica]]
 - [[Blok 0 - Statika]] | [[Blok 1 - NTM Diagrami]] | [[Blok 2 - Upogib]]

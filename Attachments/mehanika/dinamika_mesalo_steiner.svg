@@ -1,0 +1,127 @@
+<svg viewBox="0 0 860 560" xmlns="http://www.w3.org/2000/svg">
+<rect width="860" height="560" fill="#1a1a2e"/>
+<text x="430" y="26" text-anchor="middle" font-size="15" font-weight="bold" fill="#e2e8f0" font-family="Arial">Mešalo — Vztrajnostni moment in navor (Steinerjev stavek)</text>
+
+<!-- PANEL LEFT: Tloris (pogled od zgoraj) -->
+<rect x="20" y="38" width="400" height="340" rx="6" fill="#0d1b2a" stroke="#1e3a5f" stroke-width="1.5"/>
+<text x="220" y="58" text-anchor="middle" font-size="12" fill="#94a3b8" font-family="Arial">Tloris mešala (pogled od zgoraj)</text>
+
+<!-- Center cross-hairs -->
+<line x1="220" y1="80" x2="220" y2="360" stroke="#334155" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="60" y1="220" x2="380" y2="220" stroke="#334155" stroke-width="1" stroke-dasharray="4,3"/>
+
+<!-- Gred (shaft cross-section): circle d=20mm, scale: 1mm=2px so d=40px, r=20px -->
+<circle cx="220" cy="220" r="20" fill="#1e3a5f" stroke="#90CAF9" stroke-width="2.5"/>
+<text x="220" y="225" text-anchor="middle" font-size="10" fill="#90CAF9" font-family="Arial">∅20</text>
+
+<!-- Two rectangular blades: L=120mm=240px... too big. Use scale 1mm=1.4px: L=168px, w=112px -->
+<!-- Scale: 1mm = 1.3px: L=156px, w=104px, r=13px -->
+<!-- Blade 1: right side, from x=233 (r=13+20=233 at 220+13) to x=233+156=389... too wide -->
+<!-- Use 1mm=1.0px: L=120px, w=80px, r=10px offset from center -->
+<!-- Blade right: from x=230 (220+10) to 230+120=350, y=220-40=180 to 220+40=260 -->
+<rect x="230" y="180" width="120" height="80" fill="#1e4d7b" stroke="#4CAF50" stroke-width="2" rx="3"/>
+<text x="290" y="216" text-anchor="middle" font-size="10" fill="#4CAF50" font-family="Arial">Rezilo 1</text>
+<text x="290" y="229" text-anchor="middle" font-size="10" fill="#94a3b8" font-family="Arial">120×80×10</text>
+
+<!-- Blade left: mirror, from x=220-10-120=90 to x=210, same y -->
+<rect x="90" y="180" width="120" height="80" fill="#1e4d7b" stroke="#4CAF50" stroke-width="2" rx="3"/>
+<text x="150" y="216" text-anchor="middle" font-size="10" fill="#4CAF50" font-family="Arial">Rezilo 2</text>
+<text x="150" y="229" text-anchor="middle" font-size="10" fill="#94a3b8" font-family="Arial">120×80×10</text>
+
+<!-- Steiner distance e: from center to centroid of right blade -->
+<!-- e = r + L/2 = 10 + 60 = 70mm = 70px from center -->
+<!-- Centroid of right blade: x=220+70=290, y=220 -->
+<circle cx="290" cy="220" r="5" fill="#F44336" stroke="#F44336" stroke-width="1"/>
+<line x1="220" y1="220" x2="290" y2="220" stroke="#F44336" stroke-width="2.5" stroke-dasharray="5,3"/>
+<text x="255" y="214" text-anchor="middle" font-size="10" fill="#F44336" font-family="Arial" font-weight="bold">e=70mm</text>
+
+<!-- Same for left blade -->
+<circle cx="150" cy="220" r="5" fill="#F44336" stroke="#F44336" stroke-width="1"/>
+<line x1="220" y1="220" x2="150" y2="220" stroke="#F44336" stroke-width="2.5" stroke-dasharray="5,3"/>
+<text x="185" y="214" text-anchor="middle" font-size="10" fill="#F44336" font-family="Arial" font-weight="bold">e=70</text>
+
+<!-- Rotation arrows -->
+<path d="M 245 155 A 80 80 0 0 1 300 175" stroke="#FF9800" stroke-width="2.5" fill="none" marker-end="url(#arrowO)"/>
+<text x="285" y="148" font-size="11" fill="#FF9800" font-family="Arial">ω, α</text>
+
+<!-- Axis label -->
+<text x="224" y="178" font-size="11" fill="#90CAF9" font-family="Arial" font-weight="bold">z</text>
+
+<!-- Dimension annotations -->
+<line x1="230" y1="272" x2="350" y2="272" stroke="#475569" stroke-width="1"/>
+<line x1="230" y1="268" x2="230" y2="276" stroke="#475569" stroke-width="1"/>
+<line x1="350" y1="268" x2="350" y2="276" stroke="#475569" stroke-width="1"/>
+<text x="290" y="283" text-anchor="middle" font-size="10" fill="#475569" font-family="Arial">L = 120 mm</text>
+
+<line x1="358" y1="180" x2="358" y2="260" stroke="#475569" stroke-width="1"/>
+<text x="368" y="224" font-size="10" fill="#475569" font-family="Arial">w=80</text>
+
+<!-- rotation marker -->
+<defs>
+  <marker id="arrowO" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <path d="M0,0 L8,3 L0,6 Z" fill="#FF9800"/>
+  </marker>
+</defs>
+
+<!-- PANEL RIGHT: Calculation steps -->
+<rect x="435" y="38" width="405" height="340" rx="6" fill="#0d1b2a" stroke="#1e3a5f" stroke-width="1.5"/>
+<text x="637" y="58" text-anchor="middle" font-size="12" fill="#94a3b8" font-family="Arial">Izračun</text>
+
+<!-- Step 1: masa -->
+<text x="448" y="76" font-size="11" fill="#f59e0b" font-family="Arial" font-weight="bold">1. Masa rezila:</text>
+<text x="448" y="91" font-size="10.5" fill="#e2e8f0" font-family="monospace">V = 1,2·0,8·0,1 = 0,096 dm³</text>
+<text x="448" y="106" font-size="10.5" fill="#e2e8f0" font-family="monospace">m_R = 8·0,096 = 0,768 kg</text>
+
+<line x1="448" y1="114" x2="828" y2="114" stroke="#1e3a5f" stroke-width="1"/>
+
+<!-- Step 2: I_lastni -->
+<text x="448" y="130" font-size="11" fill="#f59e0b" font-family="Arial" font-weight="bold">2. Lastni I_z (plošča):</text>
+<text x="448" y="145" font-size="10.5" fill="#e2e8f0" font-family="monospace">I_lastni = m/12·(L²+w²)</text>
+<text x="448" y="160" font-size="10.5" fill="#e2e8f0" font-family="monospace">= 0,768/12·(0,12²+0,08²)</text>
+<text x="448" y="175" font-size="10.5" fill="#4CAF50" font-family="monospace">= 0,001331 kg·m²</text>
+
+<line x1="448" y1="183" x2="828" y2="183" stroke="#1e3a5f" stroke-width="1"/>
+
+<!-- Step 3: Steiner -->
+<text x="448" y="199" font-size="11" fill="#f59e0b" font-family="Arial" font-weight="bold">3. Steinerjev stavek:</text>
+<text x="448" y="214" font-size="10.5" fill="#e2e8f0" font-family="monospace">e = r + L/2 = 10+60 = 70 mm</text>
+<text x="448" y="229" font-size="10.5" fill="#e2e8f0" font-family="monospace">I_St = m·e² = 0,768·0,07²</text>
+<text x="448" y="244" font-size="10.5" fill="#4CAF50" font-family="monospace">= 0,003763 kg·m²</text>
+<text x="448" y="261" font-size="10.5" fill="#e2e8f0" font-family="monospace">I_rezilo = I_lastni + I_St</text>
+<text x="448" y="276" font-size="10.5" fill="#4CAF50" font-family="monospace">= 0,005094 kg·m²</text>
+
+<line x1="448" y1="284" x2="828" y2="284" stroke="#1e3a5f" stroke-width="1"/>
+
+<!-- Step 4: I_tot -->
+<text x="448" y="300" font-size="11" fill="#f59e0b" font-family="Arial" font-weight="bold">4. Skupni I (2 rezili):</text>
+<text x="448" y="315" font-size="10.5" fill="#e2e8f0" font-family="monospace">I_tot = 2 · I_rezilo</text>
+<rect x="448" y="320" width="200" height="22" rx="3" fill="#1e3a5f" stroke="#4CAF50" stroke-width="1.5"/>
+<text x="548" y="335" text-anchor="middle" font-size="11" fill="#4CAF50" font-family="Arial" font-weight="bold">= 0,01019 kg·m²</text>
+
+<!-- PANEL BOTTOM: Dynamics -->
+<rect x="20" y="392" width="820" height="150" rx="6" fill="#0d1b2a" stroke="#1e3a5f" stroke-width="1.5"/>
+<text x="430" y="412" text-anchor="middle" font-size="12" fill="#94a3b8" font-family="Arial">Dinamika — navor za pospeševanje</text>
+
+<!-- omega -->
+<text x="35" y="432" font-size="11" fill="#f59e0b" font-family="Arial" font-weight="bold">5. Kotna hitrost:</text>
+<text x="35" y="447" font-size="10.5" fill="#e2e8f0" font-family="monospace">ω = 2π·n/60 = 2π·2800/60 ≈ 293,2 rad/s</text>
+
+<!-- alpha -->
+<text x="35" y="467" font-size="11" fill="#f59e0b" font-family="Arial" font-weight="bold">6. Kotni pospešek:</text>
+<text x="35" y="482" font-size="10.5" fill="#e2e8f0" font-family="monospace">α = Δω/Δt = 293,2/3 ≈ 97,73 rad/s²</text>
+
+<!-- M_z -->
+<text x="35" y="502" font-size="11" fill="#f59e0b" font-family="Arial" font-weight="bold">7. Potreben navor (Newton II za rotacijo):</text>
+<text x="35" y="517" font-size="10.5" fill="#e2e8f0" font-family="monospace">M_z = I_tot · α = 0,01019 · 97,73</text>
+<rect x="290" y="505" width="160" height="22" rx="3" fill="#1e3a5f" stroke="#FF9800" stroke-width="2"/>
+<text x="370" y="521" text-anchor="middle" font-size="12" fill="#FF9800" font-family="Arial" font-weight="bold">M_z ≈ 0,995 Nm</text>
+
+<!-- Note -->
+<text x="470" y="432" font-size="11" fill="#94a3b8" font-family="Arial" font-weight="bold">Enačbe:</text>
+<text x="470" y="448" font-size="10.5" fill="#e2e8f0" font-family="monospace">ΣM_z = I_z · α   (Newton II rotacija)</text>
+<text x="470" y="463" font-size="10.5" fill="#e2e8f0" font-family="monospace">I_z = I_lastni + m·e²   (Steiner)</text>
+<text x="470" y="478" font-size="10.5" fill="#e2e8f0" font-family="monospace">I_plošča = m/12·(a²+b²)</text>
+<text x="470" y="493" font-size="10.5" fill="#e2e8f0" font-family="monospace">ω = 2πn/60,  α = Δω/Δt</text>
+<text x="470" y="512" font-size="10" fill="#64748b" font-family="Arial">⚠ Gred zanemarjena (r≈0 → I_gred ≈ 0)</text>
+<text x="470" y="527" font-size="10" fill="#64748b" font-family="Arial">⚠ Masa v kg, ne kN!</text>
+</svg>

@@ -89,6 +89,8 @@ $$\frac{dT}{ds} = -q, \qquad \frac{dM}{ds} = T$$
 | Vpetje | $y=0$, $y'=0$ |
 | Notranje tečišče | $M=0$ |
 
+> 🔗 Naloge: [[Naloga - Mehanika - NTM Lomljeni okvir NotrSile N1]] — lomljeni okvir, Gerber memberek, 5 polj
+
 ### 3D NTM — prostorska gred
 
 6 notranjih veličin v vsakem prerezu:
@@ -450,6 +452,9 @@ $$I_O = I_T + m \cdot d^2 \quad \text{(Steiner)}$$
 | Disk/valj $R$ | Os simetrije | $\dfrac{mR^2}{2}$ |
 | Obroč $R$ | Os simetrije | $mR^2$ |
 | Sfera $R$ | Diameter | $\dfrac{2mR^2}{5}$ |
+| Pravokotna plošča $a \times b$ | Os ⊥ plošči skozi težišče | $\dfrac{m(a^2+b^2)}{12}$ |
+
+> 🔗 Naloge: [[Naloga - Mehanika - Dinamika Mesalo Steiner]] — Steiner za odmaknjeno rezilo, navor za pospeševanje
 
 ### D'Alembertov princip
 
@@ -637,6 +642,8 @@ $$\frac{1}{2}kx_0^2 = \frac{1}{2}mv_{max}^2 \quad \Rightarrow \quad v_{max} = x_
 - [[Cheat Sheet - Mehanika Celotna]] ← celoten cheat sheet z razlagami in SVG diagrami
 - [[Mehanika Hub]]
 - [[Izpit - Mehanika - Celoletni 2026]]
+- [[Naloga - Mehanika - NTM Lomljeni okvir NotrSile N1]] ← Blok 1: Gerber + L-oblika
+- [[Naloga - Mehanika - Dinamika Mesalo Steiner]] ← Blok 7: Steiner + navor
 - [[Blok 0 - Statika]] | [[Blok 1 - NTM Diagrami]] | [[Blok 1.5 - Geometrijske Karakteristike]]
 - [[Blok 2 - Upogib]] | [[Blok 2.5 - Deformacije pri Upogibu]] | [[Blok 3 - Napetostno Stanje]]
 - [[Blok 3.5 - Hipoteze Porusitve]] | [[Blok 4 - Euler Uklon]] | [[Blok 5 - Torzija]]
