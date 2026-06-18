@@ -46,6 +46,14 @@ $$\text{Prereži 3 palice} \to \sum M \text{ okrog presečišča 2 neznanih} \to
 
 $$F_{tr} \leq \mu_s \cdot N, \qquad \tan\alpha \leq \mu_s$$
 
+### Zagozda (wedge friction)
+
+Na **vsaki** kontaktni površini ločeno: $F_{tr,i} = \mu_i \cdot N_i$
+
+$$\text{FBD zagozde} \to \sum F_x = 0,\ \sum F_y = 0 \to F_{min}$$
+
+Tipično: 2–3 trenjske sile hkrati → zapiši vsako normalo + trenje posebej. Trenjska sila deluje **nasprotno** smeri premika zagozde.
+
 ### Podpore
 
 | Podpora | Reakcije | Neznanke |
@@ -564,11 +572,29 @@ $$\frac{F_1}{F_2} = e^{\mu\theta} \quad \text{($F_1$ = napeta stran, $\theta$ v 
 
 $$180° = \pi\ \text{rad}, \quad 270° = \frac{3\pi}{2}\ \text{rad}$$
 
+### Kolut + trak (band brake)
+
+$$\frac{F_1}{F_2} = e^{\mu\theta} \quad \text{(Euler za trak)}, \qquad M_{zav} = (F_1 - F_2) \cdot R$$
+
+**Postopek:** 1. Euler → $F_1/F_2$ iz kota ovoja $\theta$. 2. Pogoj $M_{zav} = M_{mot}$ → $F_1 - F_2$. 3. $F_1, F_2$ iz razmerja.
+
 ### Vrvi — katenoida
 
 $$y = a\cosh\frac{x}{a}, \qquad a = \frac{H_0}{q_0}$$
 
 $H_0$ = vodoravna komponenta (konstanta vzdolž vrvi), $q_0$ = obtežba na m.
+
+### Vrvi — segmentna vrv (točkovne obtežbe)
+
+$$H = \text{const vzdolž celotne vrvi}$$
+
+$$T_i = \sqrt{H^2 + V_i^2}, \qquad \tan\theta_i = \frac{V_i}{H}$$
+
+**Postopek:**
+1. Globalno ravnotežje → $A_x, A_y, B_x, B_y$
+2. $V_i$ = vertikalna vsota sil od leve do i-tega segmenta
+3. $H$ iz geometrijskega pogoja (znana kotota ali dolžina segmenta)
+4. $T_{max}$ = maksimalna vertikalna vsota $V$
 
 ### Škripci
 

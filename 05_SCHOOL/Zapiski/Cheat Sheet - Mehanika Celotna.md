@@ -23,9 +23,9 @@ datum: 2026-06-17
 |                    | F2  | Paličje — Ritter (metoda prereza)            | N13 → [[Poglavje - Statika]]                             |
 |                    | G   | Gerber nosilci                               | N16 → [[Poglavje - Statika]]                             |
 |                    | H   | Steiner (yT, I, W)                           | N7 Vaje, N15 → [[Poglavje - Statika]]                    |
-|                    | I   | Trenje — Coulomb                             | N17 → [[Poglavje - Statika]]                             |
-|                    | J   | Euler jermen                                 | N18 → [[Poglavje - Statika]]                             |
-|                    | K   | Vrvi / katenoida                             | N10, N11 → [[Poglavje - Statika]]                        |
+|                    | I   | Trenje — Coulomb + **zagozda**               | N17 → [[Poglavje - Statika]]                             |
+|                    | J   | Euler jermen + **kolut+trak**                | N18 → [[Poglavje - Statika]]                             |
+|                    | K   | Vrvi — katenoida + **segmentna vrv**         | N10, N11 → [[Poglavje - Statika]]                        |
 | **2 — TRDNOST**    | A   | NTM diagrami — 6 korakov                     | N1–N5 → [[Vaje - NTM diagrami - Vse vrste]]              |
 |                    | A2  | Lomljeni nosilci / portalni okviri           | N3, N4; [[Naloga - Mehanika - NTM Lomljeni okvir NotrSile N1]] |
 |                    | A3  | 3D NTM — prostorska gred (jermenica, zobnik) | NotrSileVaje N2                                          |
@@ -394,16 +394,32 @@ $$\boxed{F_{tr} \leq \mu_s \cdot N}$$
 
 **Klanec:** $mg\sin\alpha \leq \mu_s \cdot mg\cos\alpha \Rightarrow \boxed{\tan\alpha \leq \mu_s}$
 
-```
-1. N = mg·cosα
-2. F_tang = mg·sinα
-3. F_tr,max = μs·N
-4. Pogoj: F_tang ≤ F_tr,max  (ali tan(α) ≤ μs)
-```
+| # | Korak | Opis |
+|---|-------|------|
+| 1 | N = mg·cosα | normalna sila na površino |
+| 2 | F_tang = mg·sinα | gonilna sila |
+| 3 | F_tr,max = μs·N | max trenjska sila |
+| 4 | Pogoj | F_tang ≤ F_tr,max  (ali tan α ≤ μs) |
 
 **Primer N17:** $F = 84\ \text{N}$
 
-> 🔗 **Rešeno:** [[Poglavje - Statika]] — N17
+### Zagozda (wedge friction)
+
+Na **vsaki** kontaktni površini ločeno: $F_{tr,i} = \mu_i \cdot N_i$
+
+$$\text{FBD zagozde} \to \sum F_x = 0,\ \sum F_y = 0 \to F_{min}$$
+
+| # | Korak | Opis |
+|---|-------|------|
+| 1 | FBD za vsako telo posebej | zaznamuj vse normale + trenjske sile |
+| 2 | Smer trenja | nasprotna smeri premika zagozde |
+| 3 | Za vsako površino | $N_i$ ⊥ površini, $F_{tr,i} = \mu_i \cdot N_i$ vzdolž površine |
+| 4 | Ravnotežje zagozde | ΣFx=0, ΣFy=0 → $F_{min}$ |
+| 5 | Ravnotežje bremena | ΣF=0 → preveritev |
+
+⚠️ Tipično 2–3 trenjske sile hkrati — zapiši vsako ločeno!
+
+> 🔗 **Rešeno:** [[Poglavje - Statika]] — N17, zagozda
 
 ---
 
@@ -413,28 +429,58 @@ $$\boxed{\frac{F_1}{F_2} = e^{\mu \theta}}$$
 
 $F_1 > F_2$ (napeta stran), $\theta$ = kot ovoja v **radianih** (180° = π, 270° = 3π/2)
 
-```
-1. Določi θ [rad]
-2. F1/F2 = e^(μθ)
-3. F1 + F2 = skupna sila → reši za F1, F2
-4. F_neto = F1 - F2
-```
+| # | Korak | Opis |
+|---|-------|------|
+| 1 | Določi θ [rad] | 180° = π, 270° = 3π/2 |
+| 2 | F1/F2 = e^(μθ) | Euler razmerje |
+| 3 | Dodatni pogoj | F1 + F2 = skupna sila ali M = (F1−F2)·R |
+| 4 | Reši | F1, F2 iz razmerja + vsote |
 
-> 🔗 **Rešeno:** [[Poglavje - Statika]] — N18
+### Kolut + trak (band brake)
+
+$$\boxed{M_{zav} = (F_1 - F_2) \cdot R}, \qquad \frac{F_1}{F_2} = e^{\mu\theta}$$
+
+| # | Korak | Opis |
+|---|-------|------|
+| 1 | θ [rad] | kot ovoja traku na kolutu |
+| 2 | Euler → F1/F2 | $F_1 = F_2 \cdot e^{\mu\theta}$ |
+| 3 | M_zav = M_mot | določi $F_1 - F_2$ |
+| 4 | Reši F1, F2 | iz razmerja in razlike |
+| 5 | Momentno ravnotežje diska | preveri prenos momenta |
+
+⚠️ $F_1$ = napeta (vlečna) stran, $F_2$ = ohlapna stran — ne zamenjaj!
+
+> 🔗 **Rešeno:** [[Poglavje - Statika]] — N18, kolut+trak
 
 ---
 
-## TIP K: VRVI — Katenoida (N10, N11 — Poglavje Statika)
+## TIP K: VRVI (N10, N11 — Poglavje Statika)
+
+### Katenoida (zvezna obtežba)
 
 **Katenoida:** $y = a\cosh(x/a)$, $a = H_0/q_0$
 
-$H_0$ = vodoravna komponenta (konstanta vzdolž vrvi!), $q_0$ = obtežba na m.
+$H_0$ = vodoravna komponenta (**konstanta vzdolž vrvi!**), $q_0$ = obtežba na m.
 
 **Primer N10:** vrv → $H = 7{,}78\ \text{kN}$
 
 **Primer N11:** katenoida → $H = 2{,}0\ \text{kN}$, $T_{max} = 2{,}04\ \text{kN}$
 
-> 🔗 **Rešeno:** [[Poglavje - Statika]] — N10, N11
+### Segmentna vrv (točkovne obtežbe)
+
+$$H = \text{const}, \qquad T_i = \sqrt{H^2 + V_i^2}, \qquad \tan\theta_i = \frac{V_i}{H}$$
+
+| # | Korak | Opis |
+|---|-------|------|
+| 1 | FBD celote | globalno ΣFx=0, ΣFy=0, ΣM=0 → Ax, Ay, Bx, By |
+| 2 | $V_i$ po segmentih | seštevaj vertikalne sile od leve |
+| 3 | H iz geometrije | kotota vozlišča ali dolžina segmenta |
+| 4 | Ti = √(H²+Vi²) | natezna sila v i-tem segmentu |
+| 5 | T_max | segment z max \|Vi\| |
+
+⚠️ $H$ je ista v vseh segmentih — to je ključni pogoj!
+
+> 🔗 **Rešeno:** [[Poglavje - Statika]] — N10, N11, segmentna vrv
 
 ---
 
