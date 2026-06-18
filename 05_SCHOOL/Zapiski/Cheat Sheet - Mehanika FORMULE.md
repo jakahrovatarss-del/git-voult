@@ -89,6 +89,33 @@ $$\frac{dT}{ds} = -q, \qquad \frac{dM}{ds} = T$$
 | Vpetje | $y=0$, $y'=0$ |
 | Notranje tečišče | $M=0$ |
 
+### 3D NTM — prostorska gred
+
+6 notranjih veličin v vsakem prerezu:
+
+| Veličina | Opis |
+|----------|------|
+| $N$ | Osna sila (vzdolž osi gredi) |
+| $T_n$, $T_b$ | Prečni sili v ravnini $n$ in $b$ |
+| $M_t$ | Torzijski moment |
+| $M_n$, $M_b$ | Upogibna momenta v dveh ravninah |
+
+Naravni koordinatni sistem (levoročni): os $t$ = tangenta (vzdolž gredi), os $n$ = normala (navpik), os $b$ = binormala (vodoravno).
+
+Postopek prereza — ravnotežje **levo** od P pri koordinati $s$:
+$$N = -\sum F_t, \quad T_n = -\sum F_n, \quad T_b = -\sum F_b$$
+$$M_t = -\sum M_t^{ext}, \quad M_n(s) = A_z \cdot s - \ldots, \quad M_b(s) = -A_y \cdot s + \ldots$$
+
+**Jermenica** (razlika napetosti v krakoma, polmer $R$):
+$$\boxed{M_t = (S_1 - S_2) \cdot R}$$
+
+**Poševno ozobljenje** (kot poševnosti $\beta$, sila $F$ pravokotno na bočnico):
+$$F_t = F\cos\beta \quad \text{(tangencialna → povzroča } M_t\text{)}, \qquad F_a = F\sin\beta \quad \text{(aksialna → povzroča upogib)}$$
+
+**Risanje 3D diagramov:** $T_n$ in $T_b$ v ločenih ravninah (ali skupaj z oznakama ↕ in ↔); enako $M_n$ in $M_b$.
+
+> 🔗 Primer: [[Vaje - NTM diagrami - Vse vrste]] / NotrSileVaje N2
+
 ---
 
 ## BLOK 1.5 — GEOMETRIJSKE KARAKTERISTIKE

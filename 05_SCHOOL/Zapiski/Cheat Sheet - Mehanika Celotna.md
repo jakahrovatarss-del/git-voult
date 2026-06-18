@@ -28,6 +28,7 @@ datum: 2026-06-17
 | | K | Vrvi / katenoida | N10, N11 → [[Poglavje - Statika]] |
 | **2 — TRDNOST** | A | NTM diagrami — 6 korakov | N1–N5 → [[Vaje - NTM diagrami - Vse vrste]] |
 | | A2 | Lomljeni nosilci / portalni okviri | N3, N4 → [[Vaje - NTM diagrami - Vse vrste]] |
+| | A3 | 3D NTM — prostorska gred (jermenica, zobnik) | NotrSileVaje N2 |
 | | B | Upogib: σ = M/W, dimenzioniranje | N1, N3, N9 → [[Vaje - Trdnost in dimenzioniranje]] |
 | | C | Ekscentrični tlak N + M | N4 → [[Vaje - Trdnost in dimenzioniranje]] |
 | | D | Napetostni tenzor + Mohrova krožnica | N1–N5 → [[Vaje - Napetostni tenzor in Mohrova kroznica]] |
@@ -349,23 +350,21 @@ $$S_{GH} = +30\ \text{kN (nateg)}, \quad S_{EF} = -45\ \text{kN (tlak)}, \quad S
 
 ## TIP H: STEINER — GEOMETRIJSKE KARAKTERISTIKE (N7, N15 — Vaje/Poglavje)
 
-**Korak 1 — Težiščna os:**
+| # | Korak | Formula |
+|---|-------|---------|
+| 1 | Razstavi na enostavne like | Pravokotnik, krog, odprtina (−A) |
+| 2 | Težišče vsakega dela | $y_i$ meri od spodnjega roba |
+| 3 | Skupno težišče | $y_T = \sum A_i y_i / \sum A_i$ |
+| 4 | Lastni I vsakega dela | $I_{x,i} = b_i h_i^3 / 12$ |
+| 5 | Steiner | $I = \sum(I_{x,i} + A_i \cdot d_i^2)$; $d_i = \|y_T - y_{T,i}\|$ |
+| 6 | Odpornostni moment | $W_{sp} = I/e_{sp}$, $W_{zg} = I/e_{zg}$ |
 
-$$\boxed{y_T = \frac{\sum A_i \cdot y_i}{\sum A_i}}$$
+$e_{sp} = y_T$ (spodnja vlakna), $e_{zg} = H - y_T$ (zgornja vlakna)
 
-**Korak 2 — Steinerjev stavek:**
+$$\boxed{y_T = \frac{\sum A_i \cdot y_i}{\sum A_i}}, \qquad \boxed{I = \sum\left(\frac{b_i h_i^3}{12} + A_i \cdot d_i^2\right)}$$
 
-$$\boxed{I = \sum\left(\frac{b_i h_i^3}{12} + A_i \cdot d_i^2\right)}$$
-
-$d_i = |y_T - y_{T,i}|$ = razdalja skupnega težišča od težišča dela $i$
-
-**Korak 3 — Odpornostni moment:**
-
-$$\boxed{W_{sp} = \frac{I}{e_{sp}}}, \qquad \boxed{W_{zg} = \frac{I}{e_{zg}}}$$
-
-$e_{sp} = y_T$, $e_{zg} = H - y_T$
-
-⚠️ Za asimetrične prereze: kritičen je **manjši** $W$ (večji $e$)!
+⚠️ Za asimetrične prereze: kritičen je **manjši** $W$ (večji $e$) — tam je $\sigma$ največji!
+⚠️ Steiner = $A_i \cdot d_i^2$, **ne** $I_i \cdot d_i^2$!
 
 **Primer N15 (Poglavje):** U-prerez → $y_T = 4{,}077\ \text{cm}$, $I = 485\ \text{cm}^4$
 
@@ -461,25 +460,26 @@ $$\text{Statika} \xrightarrow{\text{reakcije}} \text{NTM diagrami} \xrightarrow{
 
 **6 korakov:**
 
-```
-KORAK 0: Prepoznaj tip (prosta greda, konzola, L-oblika, okvir, Gerber)
-KORAK 1: FBD + reakcije
-KORAK 2: Določi območja med točkami spremembe obtežbe
-KORAK 3: Za vsako območje zapiši T(x) in M(x)
-KORAK 4: Poišči T=0 → tam je Mmax
-KORAK 5: Nariši T in M diagram (znaki, skoki, parabole)
-KORAK 6: Kontrola: prost konec T=M=0, vpetje preberi
-```
+| # | Korak | Kaj naredis |
+|---|-------|-------------|
+| 0 | Tip konstrukcije | Prosta greda / konzola / L-oblika / Gerber? Je os zlomljena? → N≠0 |
+| 1 | FBD + reakcije | Nariši vse sile, izračunaj Ay, By, Ax (ΣMA→By, ΣFy→Ay) |
+| 2 | Območja | Razdeli pri vsaki točkovni sili, momentu, začetku/koncu q |
+| 3 | T(x), M(x) | Za vsako območje: T = Ay − q·x; M = Ay·x − q·x²/2 − … |
+| 4 | Mmax | Reši T(x)=0 → vstavi x₀ v M(x) |
+| 5 | Diagrami | Nariši T in M; parabola kjer q≠0, ravna črta kjer q=0 |
+| 6 | Kontrola | Prosti konec: T=M=0 ✓; Vpetje: preberi Mmax ✓ |
 
-**Diferencialne zveze:**
+**Pravila za obliko diagrama:**
 
-$$\boxed{\frac{dT}{dx} = -q(x)}, \qquad \boxed{\frac{dM}{dx} = T(x)}$$
+$$\boxed{\frac{dT}{dx} = -q}, \qquad \boxed{\frac{dM}{dx} = T}$$
 
-→ $q$ → T poševna → M parabola. Brez $q$ → T konstanta → M poševna.
-
-**Skoki:**
-- Točkovna sila $F$ ↓ → T skoči za $-F$
-- Točkasti moment $M_0$ → M skoči za $+M_0$ (brez skoka v T!)
+| Obtežba | T | M |
+|---------|---|---|
+| Brez q | konstantna | linearna |
+| Enakomerna q | linearna | parabola (2. red) |
+| Točkovna F↓ | **skok −F** | kink (lom) |
+| Moment M₀ | brez skoka | **skok +M₀** |
 
 $$T(x) = A_y - q\cdot x = 0 \quad \Rightarrow \quad x_{T=0} \quad \Rightarrow \quad M_{max}$$
 
@@ -533,7 +533,52 @@ $$N_{navp} = T_{vodor}, \qquad T_{navp} = N_{vodor}$$
 
 Portalni okvir: vodoravna sila → stebra nosita $N + T + M$; prečnik samo $M + T$.
 
+**Gerber + L-oblika** (NotrSileVaje N1 — 5 polj): Razreži v Gerber členku → reši ločeno za vsak del → preneši reakcijo členka naprej → NTM za vsako polje posebej.
+
 > 🔗 **Rešeno:** [[Vaje - NTM diagrami - Vse vrste]] — N3, N4
+
+---
+
+## TIP A3: 3D NTM — PROSTORSKA GRED (NotrSileVaje N2)
+
+Gred prenaša **6 notranjih veličin:** $N$, $T_n$, $T_b$, $M_t$, $M_n$, $M_b$.
+
+**Naravni koordinatni sistem:** $t$ = os gredi (tangenta), $n$ = navpično (normala), $b$ = vodoravno (binormala). Sistem je levoročni.
+
+**Zunanje obremenitve gredi:**
+
+| Vir | Sila/moment |
+|-----|-------------|
+| Jermenica (polmer $R$) | $M_t = (S_1-S_2)\cdot R$; prečni sili $S_1+S_2$ |
+| Poševno ozobljenje ($\beta$) | $F_t = F\cos\beta$ (tang.), $F_a = F\sin\beta$ (aks.) |
+| Radialni ležaj | prečni reakciji $A_y$, $A_z$ |
+| Radialno-aksialni ležaj | $A_y$, $A_z$ + aksialno $A_x$ |
+
+**Postopek — 3D gred:**
+
+```
+1. Shema gredi + razstavi vse obremenitve na komponente (Ft, Fa, Fn)
+2. Poveži z naravnim koordinatnim sistemom gredi (t, n, b)
+3. Zapiši 6 ravnotežnih enačb → reši 6 reakcij
+4. Razdeli gred na polja (med ležaji, med obremenitvami)
+5. Za vsako polje — prerez pri P (koordinata s):
+   • Levi del (ali desni — izberi manj sil)
+   • 6 enačb: t→N,Mt; n→Tn,Mn; b→Tb,Mb
+   • Nekatere so konstantne, nekatere linearne v s
+6. Nariši 4 diagrame: N, T (Tn↕ in Tb↔ skupaj), Mt, M (Mn↔ in Mb↕ skupaj)
+```
+
+**Skoki v diagramih:**
+- $M_t$: skoči pri jermenici/zobniku za $M_t = (S_1-S_2)\cdot R$
+- $M_n$ ali $M_b$: skoči pri aksialni sili $F_a$ na ročici $r$: $\Delta M = F_a \cdot r$
+
+⚠️ Naravni koordinatni sistem je **levoročni** v standardni obliki (desnoročni le pri desni strani prereza).
+
+**Primer N2 (NotrSileVaje):** Gred z jermenico ($S_1=2$, $S_2=5$, $R=0{,}2$ m) in poševnim zobnikom ($\beta=15°$):
+$$F_t = 3{,}0\ \text{kN},\quad F_a = 0{,}803\ \text{kN},\quad M_t = -0{,}6\ \text{kNm}$$
+$$A_x = 0{,}803\ \text{kN},\quad A_y = 2{,}307\ \text{kN},\quad A_z = 2{,}277\ \text{kN}$$
+
+> 🔗 Vir: NotrSileVaje (1).pdf — N2
 
 ---
 
@@ -609,20 +654,21 @@ $$[\sigma] = \begin{pmatrix} \sigma_x & \tau_{xy} \\ \tau_{xy} & \sigma_y \end{p
 
 **6-koračni postopek:**
 
-```
-1. Preberi σx, σy, τxy
-2. S = (σx + σy)/2
-3. R = √((σx-σy)²/4 + τxy²)
-4. σ1,2 = S ± R
-5. tan(2φ0) = 2τxy/(σx-σy)
-6. τmax = R
-```
+| # | Korak | Formula |
+|---|-------|---------|
+| 1 | Preberi napetosti | $\sigma_x$, $\sigma_y$, $\tau_{xy}$ |
+| 2 | Središče krožnice | $S = (\sigma_x+\sigma_y)/2$ |
+| 3 | Polmer | $R = \sqrt{((\sigma_x-\sigma_y)/2)^2+\tau_{xy}^2}$ |
+| 4 | Glavne napetosti | $\sigma_{1,2} = S \pm R$ |
+| 5 | Kot ravnine | $\tan(2\varphi_0) = 2\tau_{xy}/(\sigma_x-\sigma_y)$ |
+| 6 | Max strižna | $\tau_{max} = R$ |
 
 $$\boxed{S = \frac{\sigma_x+\sigma_y}{2}}, \quad \boxed{R = \sqrt{\left(\frac{\sigma_x-\sigma_y}{2}\right)^2+\tau_{xy}^2}}, \quad \boxed{\sigma_{1,2} = S \pm R}$$
 
 ![[mohrova_kroznica.svg|697]]
 
 ⚠️ Kot na krožnici je $2\varphi_0$ — v fizičnem prostoru je $\varphi_0$!
+⚠️ Kontrola: $\sigma_1 + \sigma_2 = \sigma_x + \sigma_y$ (invarianta — mora se ujemati!)
 
 ---
 
@@ -707,7 +753,14 @@ $$\boxed{\lambda = \frac{l_u}{i_{min}}}, \qquad i_{min} = \sqrt{\frac{I_{min}}{A
 
 $$\boxed{\nu = \frac{F_k}{F} \geq \nu_{zaht}} \quad (\nu_{zaht} = 3\text{–}5 \text{ za les})$$
 
-Šibka os: uklon vedno po $I_{min}$! Za $b \times h$ ($b < h$): $I_{min} = \frac{h b^3}{12}$
+**Šibka os:** uklon vedno po $I_{min}$! Za $b \times h$ kjer $b < h$: $I_{min} = \frac{h b^3}{12}$ — **manjša dimenzija $b$ se kubira!**
+
+| Postopek dimenzioniranja | |
+|---|---|
+| 1. Določi β (vpetje) | 2. $l_u = \beta \cdot L$ |
+| 3. $i = \sqrt{I_{min}/A}$ | 4. $\lambda = l_u/i$ |
+| 5. Primerjaj z $\lambda_E$ | 6. Euler ($\lambda>\lambda_E$) ali Tetmajer |
+| 7. $F_k = \pi^2 E I_{min}/l_u^2$ | 8. $\nu = F_k/F \geq \nu_{zaht}$ |
 
 ![[uklon_palica_Sdop.svg|697]]
 
@@ -786,6 +839,8 @@ Bredt velja samo za zaprte profile, tankostenski ($t \ll B, H$).
 
 ## TIP J: SESTAVLJENE OBREMENITVE N + M + $M_t$ (N22 "Rezkar" — Poglavje Trdnost)
 
+**2D verzija (N22):**
+
 ```
 1. Mmax = F⊥·L           (upogib)
 2. σM = Mmax/W           (upogibna napetost)
@@ -796,9 +851,22 @@ Bredt velja samo za zaprte profile, tankostenski ($t \ll B, H$).
    σekv = √(σ²+4τ²) ≤ σdop   (Tresca)
 ```
 
-**Primer N22 Rezkar:** $\sigma_{ekv,VM} = 42{,}2 \gg \sigma_{dop} = 15\ \text{kN/cm}^2$ ❌
+**3D verzija (DN1 — Rezkar, NotrSileVaje):** konzola z $F_a$ (aksialno), $F_r$ (radialno), $F_c$ (obodno/cirkularno):
 
-> 🔗 **Rešeno:** [[Poglavje - Trdnost]] — N22
+```
+Reduciraj sile v vrh konzole:
+  Fa → osna sila N v konzoli (brez momenta vzdolž osi)
+  Fr → radialna sila → upogib v eni ravnini: Mb = Fr·s
+  Fc → obodna sila → upogib v drugi ravnini: Mn = Fc·s
+             PLUS torzija: Mt = Fc·r (r = polmer rezkarja)
+
+6 notranjih veličin: N, Tn, Tb, Mt, Mn, Mb (gl. TIP A3)
+Kritično mesto: vpetje (s = L), kjer so vsi momenti max.
+```
+
+**Primer N22 Rezkar (2D):** $\sigma_{ekv,VM} = 42{,}2 \gg \sigma_{dop} = 15\ \text{kN/cm}^2$ ❌
+
+> 🔗 **Rešeno:** [[Poglavje - Trdnost]] — N22 · NotrSileVaje DN1
 
 ---
 
