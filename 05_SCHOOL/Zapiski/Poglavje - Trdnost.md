@@ -16,19 +16,19 @@ Celovit zapisek za **2. SKLOP: Trdnost** — vse tipe nalog z rešitvami po kate
 
 ## Pregled tipov nalog
 
-| # | Tip naloge | Ključna formula | Naloge |
-|---|-----------|-----------------|--------|
-| 1 | NTM diagrami — prosta greda | ΣM=0 → T=0 → Mmax | N1–N5 |
-| 2 | NTM — lomljeni nosilci in okvirji | N/T se zamenjata v oglu | N6–N7 |
-| 3 | Upogib — dimenzioniranje | W = M/σ_dop | N8–N9 |
-| 4 | Ekscentrični tlak (N + M) | σ = N/A ± M/W | N10 |
-| 5 | Napetostni tenzor + Mohr | σ₁₂ = S ± R | N11–N15 |
-| 6 | Hipoteze porušitve | Tresca / Von Mises | N16 |
-| 7 | Torzija — polna gred | τ = Mt/Wt | N17 |
-| 8 | Torzija — votli prerez (Bredt) | τ = Mt/(2·Am·t) | N18 ← NOVA |
-| 9 | Uklon Euler | Fk = π²EI/lu² | N19–N20 |
-| 10 | Uklon Tetmajer | σk = a − b·λ | N21 ← NOVA |
-| 11 | Sestavljene obremenitve (N+M+Mt) | superpozicija + Mises | N22 ← NOVA |
+| #   | Tip naloge                        | Ključna formula         | Naloge     |
+| --- | --------------------------------- | ----------------------- | ---------- |
+| 1   | NTM diagrami — prosta greda       | ΣM=0 → T=0 → Mmax       | N1–N5      |
+| 2   | NTM — lomljeni nosilci in okvirji | N/T se zamenjata v oglu | N6–N7      |
+| 3   | Upogib — dimenzioniranje          | W = M/σ_dop             | N8–N9      |
+| 4   | Ekscentrični tlak (N + M)         | σ = N/A ± M/W           | N10        |
+| 5   | Napetostni tenzor + Mohr          | σ₁₂ = S ± R             | N11–N15    |
+| 6   | Hipoteze porušitve                | Tresca / Von Mises      | N16        |
+| 7   | Torzija — polna gred              | τ = Mt/Wt               | N17        |
+| 8   | Torzija — votli prerez (Bredt)    | τ = Mt/(2·Am·t)         | N18 ← NOVA |
+| 9   | Uklon Euler                       | Fk = π²EI/lu²           | N19–N20    |
+| 10  | Uklon Tetmajer                    | σk = a − b·λ            | N21 ← NOVA |
+| 11  | Sestavljene obremenitve (N+M+Mt)  | superpozicija + Mises   | N22 ← NOVA |
 
 ---
 
