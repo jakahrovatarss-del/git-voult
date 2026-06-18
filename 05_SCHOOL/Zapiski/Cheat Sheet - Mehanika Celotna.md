@@ -346,11 +346,12 @@ KORAK 6: Kontrola predznaka
 
 ### Ključna tehnika — izbira momentne točke
 
-| Iščeš silo palice | Postavi ΣM okrog |
-|-------------------|-----------------|
-| Zgornjega pasu | Vozlišče spodnjega pasu pod njo |
-| Spodnjega pasu | Vozlišče zgornjega pasu nad njo |
-| Diagonale | Presečišče zgornjega in spodnjega pasu |
+| Iščeš silo palice | Postavi ΣM okrog                       |
+| ----------------- | -------------------------------------- |
+| Zgornjega pasu    | Vozlišče spodnjega pasu pod njo        |
+| Spodnjega pasu    | Vozlišče zgornjega pasu nad njo        |
+| Diagonale         | Presečišče zgornjega in spodnjega pasu |
+|                   |                                        |
 
 > 💡 Vedno izberi točko, ki **eliminira 2 neznani naenkrat** → preostane 1 enačba, 1 neznanka.
 
