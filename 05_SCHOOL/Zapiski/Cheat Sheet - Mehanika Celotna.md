@@ -12,43 +12,43 @@ datum: 2026-06-17
 
 ## 📋 KAZALO
 
-| Sklop | TIP | Tema | Rešen primer |
-|-------|-----|------|--------------|
-| **1 — STATIKA** | A | Reakcije 2D (prostoležeč nosilci) | N3, N4 → [[Vaje - Statika - Vse vrste]] |
-| | B | Razstavljanje sil, koti | [[Vaje - Statika - Vse vrste]] |
-| | C | Škripci | N1, N2 → [[Vaje - Statika - Vse vrste]] |
-| | D | 3D statika — redukcija sistema sil | N5 → [[Vaje - Statika - Vse vrste]] |
-| | E | Valji v kupu (60°) | N6 → [[Vaje - Statika - Vse vrste]] |
-| | F | Paličje — metoda vozlišč | N8 → [[Vaje - Statika - Vse vrste]] |
-| | F2 | Paličje — Ritter (metoda prereza) | N13 → [[Poglavje - Statika]] |
-| | G | Gerber nosilci | N16 → [[Poglavje - Statika]] |
-| | H | Steiner (yT, I, W) | N7 Vaje, N15 → [[Poglavje - Statika]] |
-| | I | Trenje — Coulomb | N17 → [[Poglavje - Statika]] |
-| | J | Euler jermen | N18 → [[Poglavje - Statika]] |
-| | K | Vrvi / katenoida | N10, N11 → [[Poglavje - Statika]] |
-| **2 — TRDNOST** | A | NTM diagrami — 6 korakov | N1–N5 → [[Vaje - NTM diagrami - Vse vrste]] |
-| | A2 | Lomljeni nosilci / portalni okviri | N3, N4 → [[Vaje - NTM diagrami - Vse vrste]] |
-| | A3 | 3D NTM — prostorska gred (jermenica, zobnik) | NotrSileVaje N2 |
-| | B | Upogib: σ = M/W, dimenzioniranje | N1, N3, N9 → [[Vaje - Trdnost in dimenzioniranje]] |
-| | C | Ekscentrični tlak N + M | N4 → [[Vaje - Trdnost in dimenzioniranje]] |
-| | D | Napetostni tenzor + Mohrova krožnica | N1–N5 → [[Vaje - Napetostni tenzor in Mohrova kroznica]] |
-| | E | Hipoteze porušitve: Tresca + Von Mises | N5 Mohr, N16 → [[Poglavje - Trdnost]] |
-| | F | Uklon — Euler | N2, N6 Vaje; N19, N20 → [[Poglavje - Trdnost]] |
-| | G | Uklon — Tetmajer | N21 → [[Poglavje - Trdnost]] |
-| | H | Torzija — polna gred | N5 Vaje, N17 → [[Poglavje - Trdnost]] |
-| | I | Torzija — Bredt (votli prerez) | N18 → [[Poglavje - Trdnost]] |
-| | J | Sestavljene obremenitve N + M + Mt | N22 → [[Poglavje - Trdnost]] ("Rezkar") |
-| **3 — KINEMATIKA** | A | Kinematika točke: at, an, a | N1 → [[Poglavje - Kinematika in Dinamika]] |
-| | B | Pol hitrosti — splošna metoda | N2–N4 → [[Poglavje - Kinematika in Dinamika]] |
-| | B1 | Kolo na ravnini — kotaljenje | N2 → [[Poglavje - Kinematika in Dinamika]] |
-| | B2 | Bat-klip drsnik | N3 → [[Poglavje - Kinematika in Dinamika]] |
-| | C | Coriolisov pospešek | N5 → [[Poglavje - Kinematika in Dinamika]] |
-| **4 — DINAMIKA** | D | Newton II — dve kladi | N6 → [[Poglavje - Kinematika in Dinamika]] |
-| | E | Newton II — klanec s trenjem | N7 → [[Poglavje - Kinematika in Dinamika]] |
-| | F | Dinamika togega telesa — rotacija | N9 → [[Poglavje - Kinematika in Dinamika]] |
-| | G | Energetski zakoni | N8 → [[Poglavje - Kinematika in Dinamika]] |
-| | H | Nihanje — lastna frekvenca ω₀ | N10 → [[Poglavje - Kinematika in Dinamika]] |
-| | I | Resonanca | N11 → [[Poglavje - Kinematika in Dinamika]] |
+| Sklop              | TIP | Tema                                         | Rešen primer                                             |
+| ------------------ | --- | -------------------------------------------- | -------------------------------------------------------- |
+| **1 — STATIKA**    | A   | Reakcije 2D (prostoležeč nosilci)            | N3, N4 → [[Vaje - Statika - Vse vrste]]                  |
+|                    | B   | Razstavljanje sil, koti                      | [[Vaje - Statika - Vse vrste]]                           |
+|                    | C   | Škripci                                      | N1, N2 → [[Vaje - Statika - Vse vrste]]                  |
+|                    | D   | 3D statika — redukcija sistema sil           | N5 → [[Vaje - Statika - Vse vrste]]                      |
+|                    | E   | Valji v kupu (60°)                           | N6 → [[Vaje - Statika - Vse vrste]]                      |
+|                    | F   | Paličje — metoda vozlišč                     | N8 → [[Vaje - Statika - Vse vrste]]                      |
+|                    | F2  | Paličje — Ritter (metoda prereza)            | N13 → [[Poglavje - Statika]]                             |
+|                    | G   | Gerber nosilci                               | N16 → [[Poglavje - Statika]]                             |
+|                    | H   | Steiner (yT, I, W)                           | N7 Vaje, N15 → [[Poglavje - Statika]]                    |
+|                    | I   | Trenje — Coulomb                             | N17 → [[Poglavje - Statika]]                             |
+|                    | J   | Euler jermen                                 | N18 → [[Poglavje - Statika]]                             |
+|                    | K   | Vrvi / katenoida                             | N10, N11 → [[Poglavje - Statika]]                        |
+| **2 — TRDNOST**    | A   | NTM diagrami — 6 korakov                     | N1–N5 → [[Vaje - NTM diagrami - Vse vrste]]              |
+|                    | A2  | Lomljeni nosilci / portalni okviri           | N3, N4 → [[Vaje - NTM diagrami - Vse vrste]]             |
+|                    | A3  | 3D NTM — prostorska gred (jermenica, zobnik) | NotrSileVaje N2                                          |
+|                    | B   | Upogib: σ = M/W, dimenzioniranje             | N1, N3, N9 → [[Vaje - Trdnost in dimenzioniranje]]       |
+|                    | C   | Ekscentrični tlak N + M                      | N4 → [[Vaje - Trdnost in dimenzioniranje]]               |
+|                    | D   | Napetostni tenzor + Mohrova krožnica         | N1–N5 → [[Vaje - Napetostni tenzor in Mohrova kroznica]] |
+|                    | E   | Hipoteze porušitve: Tresca + Von Mises       | N5 Mohr, N16 → [[Poglavje - Trdnost]]                    |
+|                    | F   | Uklon — Euler                                | N2, N6 Vaje; N19, N20 → [[Poglavje - Trdnost]]           |
+|                    | G   | Uklon — Tetmajer                             | N21 → [[Poglavje - Trdnost]]                             |
+|                    | H   | Torzija — polna gred                         | N5 Vaje, N17 → [[Poglavje - Trdnost]]                    |
+|                    | I   | Torzija — Bredt (votli prerez)               | N18 → [[Poglavje - Trdnost]]                             |
+|                    | J   | Sestavljene obremenitve N + M + Mt           | N22 → [[Poglavje - Trdnost]] ("Rezkar")                  |
+| **3 — KINEMATIKA** | A   | Kinematika točke: at, an, a                  | N1 → [[Poglavje - Kinematika in Dinamika]]               |
+|                    | B   | Pol hitrosti — splošna metoda                | N2–N4 → [[Poglavje - Kinematika in Dinamika]]            |
+|                    | B1  | Kolo na ravnini — kotaljenje                 | N2 → [[Poglavje - Kinematika in Dinamika]]               |
+|                    | B2  | Bat-klip drsnik                              | N3 → [[Poglavje - Kinematika in Dinamika]]               |
+|                    | C   | Coriolisov pospešek                          | N5 → [[Poglavje - Kinematika in Dinamika]]               |
+| **4 — DINAMIKA**   | D   | Newton II — dve kladi                        | N6 → [[Poglavje - Kinematika in Dinamika]]               |
+|                    | E   | Newton II — klanec s trenjem                 | N7 → [[Poglavje - Kinematika in Dinamika]]               |
+|                    | F   | Dinamika togega telesa — rotacija            | N9 → [[Poglavje - Kinematika in Dinamika]]               |
+|                    | G   | Energetski zakoni                            | N8 → [[Poglavje - Kinematika in Dinamika]]               |
+|                    | H   | Nihanje — lastna frekvenca ω₀                | N10 → [[Poglavje - Kinematika in Dinamika]]              |
+|                    | I   | Resonanca                                    | N11 → [[Poglavje - Kinematika in Dinamika]]              |
 
 ---
 

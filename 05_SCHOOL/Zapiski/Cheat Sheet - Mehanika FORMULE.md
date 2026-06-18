@@ -66,14 +66,14 @@ $$\frac{dT}{ds} = -q, \qquad \frac{dM}{ds} = T$$
 
 ### Tipični $M_{max}$
 
-| Obremenitev | $M_{max}$ |
-|-------------|-----------|
-| Konzola, sila $F$ na koncu | $F \cdot L$ |
-| Konzola, porazdeljena $q$ | $q L^2 / 2$ |
-| Prostoležeč, $F$ na sredini | $F L / 4$ |
-| Prostoležeč, porazdeljena $q$ | $q L^2 / 8$ |
+| Obremenitev                                       | $M_{max}$                                       |
+| ------------------------------------------------- | ----------------------------------------------- |
+| Konzola, sila $F$ na koncu                        | $F \cdot L$                                     |
+| Konzola, porazdeljena $q$                         | $q L^2 / 2$                                     |
+| Prostoležeč, $F$ na sredini                       | $F L / 4$                                       |
+| Prostoležeč, porazdeljena $q$                     | $q L^2 / 8$                                     |
 | Prostoležeč, $F$ pri razdalji $a$ od leve podpore | $\dfrac{F \cdot a \cdot b}{L}$ (kjer $b = L-a$) |
-| Previs (sila $F$ za podporo pri razdalji $a$) | $F \cdot a$ |
+| Previs (sila $F$ za podporo pri razdalji $a$)     | $F \cdot a$                                     |
 
 ### Oblika diagrama
 
