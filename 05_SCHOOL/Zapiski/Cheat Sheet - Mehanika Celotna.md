@@ -301,11 +301,11 @@ KORAK 5: Kontrola — zadnje vozlišče
 
 **Koristni kotni razmerji:**
 
-| Geometrija | sin | cos |
-|-----------|-----|-----|
-| 45° | $\frac{\sqrt{2}}{2} \approx 0{,}707$ | $\frac{\sqrt{2}}{2} \approx 0{,}707$ |
-| 30° / 60° | $0{,}5$ / $0{,}866$ | $0{,}866$ / $0{,}5$ |
-| Splošno: h=140, l=150 | $\frac{h}{l}$ | $\frac{\sqrt{l^2-h^2}}{l}$ |
+| Geometrija            | sin                                  | cos                                  |
+| --------------------- | ------------------------------------ | ------------------------------------ |
+| 45°                   | $\frac{\sqrt{2}}{2} \approx 0{,}707$ | $\frac{\sqrt{2}}{2} \approx 0{,}707$ |
+| 30° / 60°             | $0{,}5$ / $0{,}866$                  | $0{,}866$ / $0{,}5$                  |
+| Splošno: h=140, l=150 | $\frac{h}{l}$                        | $\frac{\sqrt{l^2-h^2}}{l}$           |
 
 ![[palicje_diagram.svg|697]]
 
