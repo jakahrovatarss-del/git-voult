@@ -11,7 +11,9 @@ metadata:
 
 - [Mehanika workflow](mehanika-workflow.md) — korak 0, 4 viri, slog izpeljav, shranjevanje (vprašaj pred shranjevanjem)
 - [Obsidian note style](obsidian-note-style.md) — struktura Koncept/Naloga/Izpit not, enačbe, flashcards, wikilinki
-- [Mehanika vault status](mehanika-vault-status.md) — inventar obstoječih not, PDF viri, stanje junij 2026
+- [Mehanika vault status](mehanika-vault-status.md) — inventar obstoječih not (Blok 0–7, Koncept, Naloge), PDF viri, stanje junij 2026
+- [Mehanika reševanje nalog](mehanika-reševanje-nalog.md) — korak-po-korak algoritmi za vse bloke (Statika, NTM, Upogib, Mohr, Uklon, Torzija), tipične napake, format odgovora
+- [Mehanika SVG diagrami](mehanika-svg-diagrami.md) — barvna paleta, podpore, puščice, M-diagrami, viewBox konvencije
 
 ## Fizika (sekundarno)
 
