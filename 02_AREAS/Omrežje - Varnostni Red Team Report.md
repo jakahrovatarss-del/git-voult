@@ -14,6 +14,9 @@ related-to:
 
 Red team analiza domačega omrežja (192.168.0.0/24) — black-box pristop s fizičnim dostopom do LAN. Rezultat: **2 kritični**, **5 visokih** ranljivosti. Zunanji IP: 93.103.163.90. Ta stroj (Surface Pro 7, 192.168.0.148) je edini varen — vse storitve na localhost.
 
+> [!info] Posodobljeno 13.7.2026
+> Nov nmap sken je odkril dodatno kritično ranljivost (odprt SOCKS5 proxy brez auth na .100) in novo napravo (Windows PC z izpostavljenim MySQL na .177). Poln podroben zapis z vsemi detajli: [[Red Team Report - Domace omrezje]].
+
 # Inventar omrežja
 
 | IP | Naprava | Tveganje |

@@ -1,5 +1,6 @@
 ---
 created: 06/28/2026
+updated: 07/13/2026
 categories:
   - "[[OPSEC]]"
 rating: 8
@@ -13,19 +14,26 @@ related-to:
 
 Black-box testiranje domačega omrežja (192.168.0.0/24). Zunanji IP: 93.103.163.90 (T-2). Pristop: simulacija zunanjega napadalca z LAN dostopom.
 
+> [!info] Posodobljeno 13.7.2026
+> Nov nmap sken (`-A`, celotno /24, 13:38-13:48) je potrdil večino prejšnjih ugotovitev in odkril **eno novo kritično ranljivost** (odprt SOCKS5 proxy brez auth na .100) ter eno prej neopaženo napravo (Windows PC z izpostavljenim MySQL/SMB na .177). Podrobnosti spodaj v [[#Posodobitev — 13.7.2026]].
+
 ## Inventar naprav
 
 | IP | Naprava | Odprta vrata | Tveganje |
 |----|---------|--------------|----------|
-| 192.168.0.1 | TP-LINK Router | 53, 80, 443 | 🔴 KRITIČNO |
-| 192.168.0.100 | Amazon (Echo/FireTV) | vse filtrirano | ✅ dobro |
-| 192.168.0.133 | Neznana naprava (MAC rand.) | — | 🟡 SREDNJE |
+| 192.168.0.1 | TP-LINK Router | 22, 53, 80, 443, 1900, 20005 | 🔴 KRITIČNO |
+| 192.168.0.100 | Neznana naprava (Amazon MAC) | 1080 (SOCKS5 brez auth), 8888 | 🔴 KRITIČNO (spremenjeno) |
+| 192.168.0.133 | Neznana naprava (MAC rand.) | — (ni bila zaznana 13.7.) | 🟡 SREDNJE |
 | 192.168.0.171 | Miele gospodinjska naprava | 80 | 🔴 KRITIČNO |
-| 192.168.0.191 | TP-LINK RE580D razširjevalnik | 80 | 🟠 VISOKO |
-| 192.168.0.206 | Sony Smart TV | 80 | 🟠 VISOKO |
-| 192.168.0.225 | Neznana naprava (MAC rand.) | — | 🟡 SREDNJE |
-| 192.168.0.226 | HP Smart Tank 750 | 80, 443 | 🟠 VISOKO |
+| 192.168.0.177 | **Windows PC** (host.docker.internal) | 135, 139, 445, 3306, 5357 | 🟠 VISOKO (novo odkrito) |
+| 192.168.0.191 | TP-LINK RE580D razširjevalnik | 22, 80 | 🟠 VISOKO |
+| 192.168.0.206 | Sony Smart TV | 80 | 🟠 VISOKO (ni bila zaznana 13.7., mogoče spremenjen IP → glej .167) |
+| 192.168.0.167 | Chromecast / Android TV naprava | 80, 8008, 8009, 8443, 9000 | 🟠 VISOKO (novo odkrito, verjetno nasledek/dodatek Sony TV) |
+| 192.168.0.225 | Neznana naprava (MAC rand.) | — (ni bila zaznana 13.7.) | 🟡 SREDNJE |
+| 192.168.0.226 | HP Smart Tank 750 | 80, 443, 631, 8080, 9100 | 🟠 VISOKO |
+| 192.168.0.107 | Sony PlayStation 5 | vse filtrirano | ✅ dobro |
 | 192.168.0.148 | Surface Pro 7 (ta stroj) | localhost only | ✅ varno |
+| 192.168.0.120, .144, .188, .198 | Razne neznane IoT/naprave | brez odprtih vrat | 🟢 nizko |
 
 ## Kritične ranljivosti
 
@@ -206,6 +214,43 @@ curl -sk https://192.168.0.226/DevMgmt/DiscoveryTree.xml
 nmap --script http-vuln* 192.168.0.1
 ```
 
+## Posodobitev — 13.7.2026
+
+Nov popoln nmap `-A` sken /24 omrežja. Primerjava s prejšnjim reportom:
+
+### Nova kritična ranljivost: odprt SOCKS5 proxy (192.168.0.100)
+
+Port 1080 sprejema SOCKS5 povezave **brez avtentikacije**. Prej je bila ta naprava (Amazon MAC) opisana kot "vse filtrirano" — zdaj eksplicitno izpostavlja proxy. Kdorkoli na LAN-u ga lahko uporabi za tuneliranje prometa mimo firewalla/NAT-a, kar otežuje forenziko in lahko prikrije zlonamerno aktivnost kot promet te naprave.
+
+**Sanacija:** preveri, katera naprava/aplikacija to dejansko streže (izgleda kot Amazon Fire TV/Echo z nenamerno izpostavljenim dev/debug proxyjem), onemogoči SOCKS5 ali dodaj avtentikacijo.
+
+### Novo odkrita naprava: Windows PC (192.168.0.177 / host.docker.internal)
+
+Ni bila vključena v prejšnji red team report. Izpostavlja:
+- SMB (445) in NetBIOS (139) — Windows file sharing
+- MySQL (3306) — **odziva se kot "unauthorized", torej posluša na omrežnem vmesniku, ne samo localhost**
+- RPC (135), WSD/SSDP HTTP API (5357)
+
+**Tveganje:** MySQL izpostavljen izven localhost je nenavadna konfiguracija (primerjaj z opombo v prejšnjem reportu, da naj bi bile "vse lokalne storitve vezane na localhost" — to tu ni res). SMB signing je sicer enabled+required (dobro), kar omejuje NTLM relay napade.
+
+**Sanacija:** preveri MySQL `bind-address` nastavitev, omeji na `127.0.0.1` če ni namenoma deljen v omrežju; preveri, zakaj se SMB/RPC izpostavljata navzven (file sharing namenoma vklopljen?).
+
+### Nesprejeto / spremenjeno
+
+- **192.168.0.206 (Sony Smart TV)** iz starega reporta ni bila zaznana zdaj — najverjetneje je to **192.168.0.167** (Chromecast/Android TV z Google cast certifikatom), torej se je IP spremenil (DHCP lease). Tveganja iz starega reporta (Bravia API brez auth) veljajo enako.
+- **192.168.0.133, .225** (neznane naprave z random MAC) niso bile aktivne med skenom — verjetno telefoni, ki so bili takrat izklopljeni/offline.
+- **192.168.0.191** zdaj kaže tudi odprt SSH (Dropbear) poleg HTTP — prej ni bil zaznan.
+- Router (.1) ima zdaj dodatno odprt port **20005/tcp** (neznana storitev, `btx?`) — vredno preveriti, kaj to streže.
+- Odkrita nova naprava **192.168.0.107 — Sony PlayStation 5**, brez odprtih vrat, ni tveganje.
+
+### Posodobljen akcijski načrt — dodatno k obstoječemu
+
+1. **Takoj:** preveri in zapri/zaščiti SOCKS5 proxy na .100
+2. **Takoj:** preveri MySQL bind-address na .177 (Windows PC), omeji na localhost če ni namenoma deljen
+3. Preveri kaj streže port 20005 na routerju
+4. Potrdi, da je .167 res ista TV kot prejšnji .206 (DHCP reservation bi preprečila to zmedo)
+
 # Povezave
 
 - [[OPSEC - digitalna anonimnost]] — širši kontekst digitalne varnosti
+- [[Vir - Zenmap Cheat Sheet]] — orodje, s katerim so bili narejeni ti skeni
