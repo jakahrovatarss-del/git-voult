@@ -19,3 +19,10 @@ debugInConsole: false # Print debug info in Obsidian console
 
 # Tvoje zadeve
 [[ARSS zate]]
+
+## Aktivni projekti
+
+- [[Wireless M-Bus Gateway V4 - NZ]] — Tether lead, čaka na dogovor s Klaro
+- [[AURA price list 2026]]
+- [[To-Do - Website & Brochure]]
+- [[ARSS- ZAČETEK PRODAJE POSAMEZNIKOM]]

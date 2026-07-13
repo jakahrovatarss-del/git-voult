@@ -1,6 +1,6 @@
 ---
 type: gmail-sync
-synced: 2026-06-17T06:00:00Z
+synced: 2026-07-13T09:55:14Z
 tags:
   - inbox
   - gmail
@@ -8,25 +8,18 @@ tags:
 
 # 📧 Gmail Inbox
 
-> *Avtomatsko sinhronizirano — zadnji sync: 17. 6. 2026 ob 06:00*
+> *Avtomatsko sinhronizirano — zadnji sync: 13. 7. 2026 ob 11:55*
 
 <!-- GMAIL_SYNC_START -->
 | # | Ikona | Od | Zadeva | Čas |
 |---|-------|----|--------|-----|
-| 1 | 🔴📬 | fred@fireflies.ai | Your meeting summary is ready: May 29, 08:57 AM | 16.6. 21:43 |
-| 2 | ⚪📬 | hello@fortelabs.com | Your AI Gives Generic Answers? Here's the 3-Step Fix | 16.6. 16:03 |
-| 3 | ⚪📬 | info@add.org | Share Your Book with the ADHD Community | 16.6. 15:42 |
-| 4 | ⚪📬 | zdravo@lotus-dental.si | Kaj se zgodi, ko pred ogledalo stopi Jurij Zrnec? | 16.6. 13:15 |
-| 5 | ⚪📬 | leif@turboscribe.ai | ☀️ TurboScribe Summer Sale: 50 % off yearly plans | 16.6. 09:36 |
-| 6 | ⚪📬 | no-reply@revolut.com | Only 7 days left to earn €50 | 16.6. 07:53 |
-| 7 | ⚪📬 | support@codepen.io | Staggering Animation, Sticky Notes, and VFX-JS Hatching | 15.6. 19:04 |
-| 8 | ⚪📬 | info@news.terme-olimia.com | Poletne počitnice v Prestolnici termalnih užitkov | 15.6. 16:38 |
-| 9 | ⚪📬 | boots@mail.boot.dev | Get 30% Off Boot.dev for Father's Day | 15.6. 14:01 |
-| 10 | ⚪📬 | info@add.org | 🌈 FREE Webinar: Loving Your Queer ADHD Brain | 15.6. 11:06 |
-| 11 | 🔴 | eDavki.durs@gov.si | Prijava na elektronsko vročanje | 15.6. 19:40 |
-| 12 | 🔴 | jakahrovat331@gmail.com | (opomba sebi — brez zadeve) | 15.6. 19:04 |
-| 13 | 🔴 | nina.hrovat@mbe.si | Fwd: Jaka | 15.6. 14:13 |
-| 14 | 🔴 | jakahrovat331@gmail.com | (opomba sebi — brez zadeve) | 15.6. 10:24 |
+| 1 | ⚪📬 | notification@emails.avast.com | Ending soon: Save 54% savings on Avast Cleanup Premium | 13.7. 11:18 |
+| 2 | ⚪📬 | hello@johnnydecimal.com | This week at JDHQ – 2026-07-13 [D25.W0179] | 13.7. 09:37 |
+| 3 | ⚪📬 | no-reply@sender.skyscanner.com | Spotlight on: Málaga | 12.7. 11:11 |
+| 4 | ⚪📬 | no-reply@revolut.com | Relax in comfort at over 1,600 airport lounges | 11.7. 17:22 |
+| 5 | ⚪📬 | info@add.org | Meet the Official ADHD2026 T-Shirt! | 11.7. 15:04 |
+| 6 | ⚪📬 | ebay@reply.ebay.com | Spend your $10 off in the app now, Jaka | 11.7. 13:27 |
+| 7 | ⚪📬 | notification@emails.avast.com | REMINDER: Before you pay for more cloud storage... | 11.7. 13:13 |
 <!-- GMAIL_SYNC_END -->
 
 ---

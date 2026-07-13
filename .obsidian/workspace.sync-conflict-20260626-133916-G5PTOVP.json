@@ -1,0 +1,396 @@
+{
+  "main": {
+    "id": "8efa3d0dcfb01879",
+    "type": "split",
+    "children": [
+      {
+        "id": "5793151aafcdd9d8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "56ee77a305bdebc5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "05_SCHOOL/Zapiski/Poglavje - Statika.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Poglavje - Statika"
+            }
+          },
+          {
+            "id": "38d6dd7cc0be5749",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "05_SCHOOL/Zapiski/Blok 2 - Upogib.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Blok 2 - Upogib"
+            }
+          }
+        ]
+      },
+      {
+        "id": "31db9ed5107cd9a5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f75b1d842135f73e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "05_SCHOOL/Izpiti/Izpit - Mehanika - Celoletni 2026.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Izpit - Mehanika - Celoletni 2026"
+            }
+          },
+          {
+            "id": "fa6e9e3fbfd45150",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "05_SCHOOL/Zapiski/Cheat Sheet - Mehanika FORMULE.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Cheat Sheet - Mehanika FORMULE"
+            }
+          },
+          {
+            "id": "17bf5c9023bcebe5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "05_SCHOOL/Zapiski/Cheat Sheet - Mehanika Celotna.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Cheat Sheet - Mehanika Celotna"
+            }
+          },
+          {
+            "id": "1967bae14cf86d06",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "05_SCHOOL/Zapiski/Blok 0 - Statika.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Blok 0 - Statika"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "854de40b39b0069d",
+    "type": "split",
+    "children": [
+      {
+        "id": "42267455e0449c82",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "566b6050f927cffc",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "byModifiedTime",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "bfae977e8492ab08",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "e1dfc782c6b553cb",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 576.5
+  },
+  "right": {
+    "id": "1401f35ed19638a3",
+    "type": "split",
+    "children": [
+      {
+        "id": "58d7b23c47e57089",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d1e4870eaf105ffa",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "05_SCHOOL/Zapiski/Poglavje - Statika.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Poglavje - Statika"
+            }
+          },
+          {
+            "id": "0d81f67de2fb9147",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "05_SCHOOL/Zapiski/Poglavje - Statika.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Poglavje - Statika"
+            }
+          },
+          {
+            "id": "120d323d7767bd3e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "2f5e36b97ce5a2de",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "b74790882b773b22",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "05_SCHOOL/Zapiski/Cheat Sheet - Mehanika Celotna.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Cheat Sheet - Mehanika Celotna"
+            }
+          },
+          {
+            "id": "e3ba63b3d62f7046",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "tasknotes:Open mini calendar view": false,
+      "tasknotes:Open calendar view": false,
+      "tasknotes:Open tasks view": false,
+      "tasknotes:Open agenda view": false,
+      "tasknotes:Open Kanban board": false,
+      "tasknotes:Open Pomodoro timer": false,
+      "tasknotes:Open Pomodoro statistics": false,
+      "tasknotes:Create new task": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "omnisearch:Omnisearch": false,
+      "pdf-plus:PDF++: Toggle auto-copy": false,
+      "pdf-plus:PDF++: Toggle auto-focus": false,
+      "pdf-plus:PDF++: Toggle auto-paste": false,
+      "obsidian-git:Open Git source control": false,
+      "templater-obsidian:Templater": false
+    }
+  },
+  "active": "17bf5c9023bcebe5",
+  "lastOpenFiles": [
+    "05_SCHOOL/Zapiski/Cheat Sheet - Mehanika FORMULE.md",
+    "05_SCHOOL/Zapiski/Poglavje - Statika.md",
+    "05_SCHOOL/Zapiski/Poglavje - Trdnost.md",
+    "05_SCHOOL/Zapiski/Vaje - NTM diagrami - Vse vrste.md",
+    "05_SCHOOL/Zapiski/Vaje - Trdnost in dimenzioniranje.md",
+    "05_SCHOOL/Zapiski/Blok 2 - Upogib.md",
+    "05_SCHOOL/Zapiski/Cheat Sheet - Mehanika FORMULE.md.tmp.23396.6606cea06676",
+    "05_SCHOOL/Zapiski/Cheat Sheet - Mehanika Celotna.md",
+    "05_SCHOOL/Izpiti/Izpit - Mehanika - Celoletni 2026.md",
+    "05_SCHOOL/Zapiski/Cheat Sheet - Mehanika Celotna.md.tmp.8672.9e9f220051d4",
+    "Attachments/mehanika/palicje_diagram.svg",
+    "05_SCHOOL/Zapiski/Vaje - Statika - Vse vrste.md",
+    "05_SCHOOL/Zapiski/Cheat Sheet - Mehanika Celotna.md.tmp.48524.fc3e81bacf10",
+    "05_SCHOOL/Zapiski/Blok 0 - Statika.md",
+    "05_SCHOOL/Zapiski/Cheat Sheet - Mehanika Celotna.md.tmp.46512.a4c402dacf82",
+    "05_SCHOOL/Zapiski/Cheat Sheet - Mehanika Celotna.md.tmp.46512.50f3862f91fc",
+    "05_SCHOOL/Zapiski/Cheat Sheet - Mehanika Celotna.md.tmp.46512.7e48235409f7",
+    "05_SCHOOL/Zapiski/Cheat Sheet - Mehanika Celotna.md.tmp.46512.4be768f8d532",
+    "05_SCHOOL/Zapiski/Cheat Sheet - Mehanika Celotna.md.tmp.46512.5e475b6dc820",
+    "Pasted image 20260617141332.png",
+    "05_SCHOOL/Zapiski/Blok 1 - NTM Diagrami.md",
+    "05_SCHOOL/Zapiski/Poglavje - Kinematika in Dinamika.md",
+    "05_SCHOOL/Zapiski/Poglavje - Trdnost.md.tmp.32848.7903228ba1d4",
+    "05_SCHOOL/Zapiski/Blok 1.5 - Geometrijske Karakteristike.md",
+    "05_SCHOOL/Zapiski/Blok 7 - Dinamika Nihanje.md.tmp.41872.476544b3f459",
+    "05_SCHOOL/Zapiski/Vaje - Statika posebnih teles in Steiner.md",
+    "05_SCHOOL/Zapiski/Blok 7 - Dinamika Nihanje.md",
+    "05_SCHOOL/Zapiski/Blok 6 - Kinematika.md",
+    "05_SCHOOL/Izpiti/Izpit - Mehanika - Junij 2026.md",
+    "05_SCHOOL/Izpiti/Izpit - Mehanika - Upogib.md",
+    "05_SCHOOL/Vir - The Efficient Engineer Kanal.md",
+    "05_SCHOOL/Vir - Tehnično Risanje in GDT.md",
+    "05_SCHOOL/Vir - Intuitivno Razumevanje Mehanike.md",
+    "04_RESOURCES/Vir - Intuitivno Razumevanje Mehanike.md",
+    "04_RESOURCES/Vir - The Efficient Engineer Kanal.md",
+    "04_RESOURCES/Vir - Tehnično Risanje in GDT.md",
+    "04_RESOURCES/Vir - Pregled Mehanike Fizike.md",
+    "Attachments/mehanika/statika_n6.svg",
+    "Attachments/mehanika/statika_n5.svg",
+    "Attachments/mehanika/statika_n4.svg",
+    "Attachments/mehanika/statika_n3.svg",
+    "Attachments/mehanika/statika_n2.svg",
+    "Attachments/mehanika/statika_n1.svg",
+    "Attachments/mehanika/mohr_naloga5.svg",
+    "Attachments/mehanika/mohr_naloga4.svg"
+  ]
+}
